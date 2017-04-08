@@ -1,0 +1,29 @@
+20:11:21.395 TRACE [26823] [FFSCENE_PYTHON] ffscene_python_t::open begin
+20:11:21.631 TRACE [26823] [FFSCENE] ffscene_t::open begin
+20:11:21.632 INFO  [26823] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[6] begin
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::open end ok m_node_id[6]
+20:11:21.633 TRACE [26823] [FFSCENE] ffscene_t::open end ok
+20:11:21.633 TRACE [26823] [FFSCENE_PYTHON] ffscene_python_t::open end ok
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+20:11:21.633 TRACE [26823] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[0] begin
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@0] -> node id[12],bind_broker_id[0]
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+20:11:21.636 TRACE [26823] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok

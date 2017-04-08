@@ -93,8 +93,8 @@ CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, pro
 CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, proto):$/;"	kind:member	line:536
 CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, proto):$/;"	kind:member	line:604
 CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, proto):$/;"	kind:member	line:669
-DB_CALLBACK_DICT	../pylib/ffext.py	/^DB_CALLBACK_DICT = {}$/;"	kind:variable	line:190
-DB_CALLBACK_ID	../pylib/ffext.py	/^DB_CALLBACK_ID = 0$/;"	kind:variable	line:189
+DB_CALLBACK_DICT	../pylib/ffext.py	/^DB_CALLBACK_DICT = {}$/;"	kind:variable	line:191
+DB_CALLBACK_ID	../pylib/ffext.py	/^DB_CALLBACK_ID = 0$/;"	kind:variable	line:190
 DEFAULT_BUFFER	../pylib/thrift/transport/TTransport.py	/^  DEFAULT_BUFFER = 4096$/;"	kind:variable	line:137
 DEFAULT_BUFFSIZE	../pylib/thrift/transport/TZlibTransport.py	/^  DEFAULT_BUFFSIZE = 4096$/;"	kind:variable	line:77
 DESCRIPTOR	../pylib/google/protobuf/compiler/plugin_pb2.py	/^    DESCRIPTOR = _CODEGENERATORRESPONSE_FILE$/;"	kind:variable	line:156
@@ -129,6 +129,8 @@ DESCRIPTOR	../pylib/protobuf_example/msg_pb2.py	/^  DESCRIPTOR = _TESTMSG$/;"	ki
 DESCRIPTOR	../pylib/protobuf_example/msg_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:13
 DESCRIPTOR	../pyproject/proto/recv_msg_pb2.py	/^  DESCRIPTOR = _RECV_INFO,$/;"	kind:variable	line:76
 DESCRIPTOR	../pyproject/proto/recv_msg_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:18
+DESCRIPTOR	../pyproject/recv_msg_pb2.py	/^  DESCRIPTOR = _RECV_INFO,$/;"	kind:variable	line:76
+DESCRIPTOR	../pyproject/recv_msg_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:18
 DEVELOP_DIST	../pylib/pkg_resources.py	/^DEVELOP_DIST = -1$/;"	kind:variable	line:183
 DISTRO	../pylib/pkg_resources.py	/^DISTRO   = re.compile(r"\\s*((\\w|[-.])+)").match    # Distribution or extra$/;"	kind:variable	line:1860
 DOUBLE	../pylib/thrift/Thrift.py	/^  DOUBLE = 4$/;"	kind:variable	line:29
@@ -162,7 +164,7 @@ DoubleEncoder	../pylib/google/protobuf/internal/encoder.py	/^DoubleEncoder   = _
 EGG_DIST	../pylib/pkg_resources.py	/^EGG_DIST    = 3$/;"	kind:variable	line:179
 EGG_NAME	../pylib/pkg_resources.py	/^EGG_NAME = re.compile($/;"	kind:variable	line:1866
 END_OF_FILE	../pylib/thrift/transport/TTransport.py	/^  END_OF_FILE = 4$/;"	kind:variable	line:32
-ERROR	../pylib/ffext.py	/^def ERROR(content_):$/;"	kind:function	line:345
+ERROR	../pylib/ffext.py	/^def ERROR(content_):$/;"	kind:function	line:346
 EXCEPTION	../pylib/thrift/Thrift.py	/^  EXCEPTION = 3$/;"	kind:variable	line:65
 EggMetadata	../pylib/pkg_resources.py	/^class EggMetadata(ZipProvider):$/;"	kind:class	line:1543
 EggProvider	../pylib/pkg_resources.py	/^class EggProvider(NullProvider):$/;"	kind:class	line:1246
@@ -260,7 +262,7 @@ FloatEncoder	../pylib/google/protobuf/internal/encoder.py	/^FloatEncoder    = _F
 FromString	../pylib/google/protobuf/internal/cpp_message.py	/^  def FromString(string):$/;"	kind:function	line:650
 FromString	../pylib/google/protobuf/internal/python_message.py	/^  def FromString(s):$/;"	kind:function	line:555
 GID	../pylib/ffext.py	/^GID = 0$/;"	kind:variable	line:29
-G_ALLOC_ID	../pylib/ffext.py	/^G_ALLOC_ID = 0$/;"	kind:variable	line:324
+G_ALLOC_ID	../pylib/ffext.py	/^G_ALLOC_ID = 0$/;"	kind:variable	line:325
 GeneratedProtocolMessageType	../pylib/google/protobuf/reflection.py	/^class GeneratedProtocolMessageType(type):$/;"	kind:class	line:73
 GeneratedServiceStubType	../pylib/google/protobuf/service_reflection.py	/^class GeneratedServiceStubType(GeneratedServiceType):$/;"	kind:class	line:84
 GeneratedServiceType	../pylib/google/protobuf/service_reflection.py	/^class GeneratedServiceType(type):$/;"	kind:class	line:42
@@ -339,12 +341,12 @@ LABEL_REQUIRED	../pylib/google/protobuf/descriptor.py	/^  LABEL_REQUIRED      = 
 LINE_END	../pylib/pkg_resources.py	/^LINE_END = re.compile(r"\\s*(#.*)?$").match         # whitespace and comment$/;"	kind:variable	line:1858
 LIST	../pylib/thrift/Thrift.py	/^  LIST   = 15$/;"	kind:variable	line:38
 LIST	../pylib/thrift/protocol/TCompactProtocol.py	/^  LIST = 0x09$/;"	kind:variable	line:89
-LOGDEBUG	../pylib/ffext.py	/^def LOGDEBUG(mod_, content_):$/;"	kind:function	line:334
-LOGERROR	../pylib/ffext.py	/^def LOGERROR(mod_, content_):$/;"	kind:function	line:340
-LOGFATAL	../pylib/ffext.py	/^def LOGFATAL(mod_, content_):$/;"	kind:function	line:342
-LOGINFO	../pylib/ffext.py	/^def LOGINFO(mod_, content_):$/;"	kind:function	line:336
-LOGTRACE	../pylib/ffext.py	/^def LOGTRACE(mod_, content_):$/;"	kind:function	line:332
-LOGWARN	../pylib/ffext.py	/^def LOGWARN(mod_, content_):$/;"	kind:function	line:338
+LOGDEBUG	../pylib/ffext.py	/^def LOGDEBUG(mod_, content_):$/;"	kind:function	line:335
+LOGERROR	../pylib/ffext.py	/^def LOGERROR(mod_, content_):$/;"	kind:function	line:341
+LOGFATAL	../pylib/ffext.py	/^def LOGFATAL(mod_, content_):$/;"	kind:function	line:343
+LOGINFO	../pylib/ffext.py	/^def LOGINFO(mod_, content_):$/;"	kind:function	line:337
+LOGTRACE	../pylib/ffext.py	/^def LOGTRACE(mod_, content_):$/;"	kind:function	line:333
+LOGWARN	../pylib/ffext.py	/^def LOGWARN(mod_, content_):$/;"	kind:function	line:339
 ListFields	../pylib/google/protobuf/internal/cpp_message.py	/^  def ListFields(self):$/;"	kind:function	line:594
 ListFields	../pylib/google/protobuf/internal/python_message.py	/^  def ListFields(self):$/;"	kind:function	line:577
 ListFields	../pylib/google/protobuf/message.py	/^  def ListFields(self):$/;"	kind:member	line:223
@@ -810,6 +812,7 @@ _ParseOptions	../pylib/google/protobuf/descriptor.py	/^def _ParseOptions(message
 _PopLine	../pylib/google/protobuf/text_format.py	/^  def _PopLine(self):$/;"	kind:member	line:336
 _PropertyName	../pylib/google/protobuf/internal/python_message.py	/^def _PropertyName(proto_field_name):$/;"	kind:function	line:113
 _RECV_INFO	../pyproject/proto/recv_msg_pb2.py	/^_RECV_INFO = _descriptor.Descriptor($/;"	kind:variable	line:29
+_RECV_INFO	../pyproject/recv_msg_pb2.py	/^_RECV_INFO = _descriptor.Descriptor($/;"	kind:variable	line:29
 _RaiseInvalidWireType	../pylib/google/protobuf/internal/decoder.py	/^def _RaiseInvalidWireType(buffer, pos, end):$/;"	kind:function	line:682
 _ResultClass	../pylib/google/protobuf/reflection.py	/^  class _ResultClass(message.Message):$/;"	kind:class	line:163
 _SERVICEDESCRIPTORPROTO	../pylib/google/protobuf/descriptor_pb2.py	/^_SERVICEDESCRIPTORPROTO = _descriptor.Descriptor($/;"	kind:variable	line:573
@@ -938,8 +941,8 @@ __hash__	../pylib/pkg_resources.py	/^    def __hash__(self):$/;"	kind:member	lin
 __iadd__	../pylib/pkg_resources.py	/^    def __iadd__(self, other):$/;"	kind:member	line:821
 __initArgs__	../pylib/thrift/server/TServer.py	/^  def __initArgs__(self, processor, serverTransport,$/;"	kind:member	line:54
 __init__	../pylib/event_bus.py	/^    def __init__(self):$/;"	kind:member	line:5
-__init__	../pylib/ffext.py	/^    def __init__(self, flag_, result_, col_):$/;"	kind:member	line:213
-__init__	../pylib/ffext.py	/^    def __init__(self, host, id):$/;"	kind:member	line:192
+__init__	../pylib/ffext.py	/^    def __init__(self, flag_, result_, col_):$/;"	kind:member	line:214
+__init__	../pylib/ffext.py	/^    def __init__(self, host, id):$/;"	kind:member	line:193
 __init__	../pylib/google/protobuf/descriptor.py	/^  def __init__(self, name, full_name, filename, containing_type, fields,$/;"	kind:member	line:226
 __init__	../pylib/google/protobuf/descriptor.py	/^  def __init__(self, name, full_name, filename, values,$/;"	kind:member	line:514
 __init__	../pylib/google/protobuf/descriptor.py	/^  def __init__(self, name, full_name, index, containing_service,$/;"	kind:member	line:629
@@ -1075,6 +1078,7 @@ __metaclass__	../pylib/google/protobuf/descriptor_pb2.py	/^  __metaclass__ = _re
 __metaclass__	../pylib/google/protobuf/reflection.py	/^    __metaclass__ = GeneratedProtocolMessageType$/;"	kind:variable	line:164
 __metaclass__	../pylib/protobuf_example/msg_pb2.py	/^  __metaclass__ = _reflection.GeneratedProtocolMessageType$/;"	kind:variable	line:65
 __module__	../pyproject/proto/recv_msg_pb2.py	/^  __module__ = 'recv_msg_pb2'$/;"	kind:variable	line:77
+__module__	../pyproject/recv_msg_pb2.py	/^  __module__ = 'recv_msg_pb2'$/;"	kind:variable	line:77
 __ne__	../pylib/google/protobuf/internal/containers.py	/^  def __ne__(self, other):$/;"	kind:member	line:70
 __ne__	../pylib/google/protobuf/internal/cpp_message.py	/^  def __ne__(self, other):$/;"	kind:function	line:622
 __ne__	../pylib/google/protobuf/internal/cpp_message.py	/^  def __ne__(self, other):$/;"	kind:member	line:155
@@ -1143,6 +1147,7 @@ __writeUByte	../pylib/thrift/protocol/TCompactProtocol.py	/^  def __writeUByte(s
 __writeVarint	../pylib/thrift/protocol/TCompactProtocol.py	/^  def __writeVarint(self, n):$/;"	kind:member	line:134
 _added_new	../pylib/pkg_resources.py	/^    def _added_new(self, dist):$/;"	kind:member	line:681
 _b	../pyproject/proto/recv_msg_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
+_b	../pyproject/recv_msg_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
 _bypass_ensure_directory	../pylib/pkg_resources.py	/^def _bypass_ensure_directory(name, mode=0777):$/;"	kind:function	line:29
 _cbProcess	../pylib/thrift/transport/TTwisted.py	/^    def _cbProcess(self, _, request, tmo):$/;"	kind:member	line:203
 _declare_state	../pylib/pkg_resources.py	/^def _declare_state(vartype, **kw):$/;"	kind:function	line:44
@@ -1206,6 +1211,7 @@ _sset_object	../pylib/pkg_resources.py	/^def _sset_object(key, ob, state):$/;"	k
 _state_vars	../pylib/pkg_resources.py	/^_state_vars = {}$/;"	kind:variable	line:42
 _strip_package	../pylib/google/protobuf/descriptor_pool.py	/^        def _strip_package(symbol):$/;"	kind:function	line:199
 _sym_db	../pyproject/proto/recv_msg_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
+_sym_db	../pyproject/recv_msg_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
 _validate_cert	../pylib/thrift/transport/TSSLSocket.py	/^  def _validate_cert(self):$/;"	kind:member	line:105
 _zipinfo_name	../pylib/pkg_resources.py	/^    def _zipinfo_name(self, fspath):$/;"	kind:member	line:1323
 accept	../pylib/thrift/transport/TSSLSocket.py	/^  def accept(self):$/;"	kind:member	line:186
@@ -1223,7 +1229,7 @@ add	../pyproject/main.py	/^    def add(self, session_id_, player):$/;"	kind:memb
 add	../pyproject/player_mgr/player_mgr_model.py	/^    def add(self, session_id_, player):$/;"	kind:member	line:10
 add_activation_listener	../pylib/pkg_resources.py	/^add_activation_listener = working_set.subscribe$/;"	kind:variable	line:2617
 add_entry	../pylib/pkg_resources.py	/^    def add_entry(self, entry):$/;"	kind:member	line:428
-alloc_id	../pylib/ffext.py	/^def alloc_id():$/;"	kind:function	line:325
+alloc_id	../pylib/ffext.py	/^def alloc_id():$/;"	kind:function	line:326
 allowedMethods	../pylib/thrift/transport/TTwisted.py	/^    allowedMethods = ('POST',)$/;"	kind:variable	line:188
 api_implementation.py	../pylib/google/protobuf/internal/api_implementation.py	1;"	kind:file	line:1
 append	../pylib/google/protobuf/internal/containers.py	/^  def append(self, value):$/;"	kind:member	line:109
@@ -1232,21 +1238,22 @@ as_requirement	../pylib/pkg_resources.py	/^    def as_requirement(self):$/;"	kin
 best_match	../pylib/pkg_resources.py	/^    def best_match(self, req, working_set, installer=None):$/;"	kind:member	line:780
 bind_event	../pylib/event_bus.py	/^    def bind_event(self, event_class_, consumer_func):$/;"	kind:member	line:17
 bind_event	../pylib/event_bus.py	/^def bind_event(event_class_):$/;"	kind:function	line:52
-bind_func	../pylib/ffext.py	/^    def bind_func(func_):$/;"	kind:function	line:299
+bind_func	../pylib/ffext.py	/^    def bind_func(func_):$/;"	kind:function	line:300
 bp	../pylib/thrift_example/thrift_example.py	/^bp = TCompactProtocol.TCompactProtocol(mb)$/;"	kind:variable	line:11
 bp2	../pylib/thrift_example/thrift_example.py	/^bp2 = TCompactProtocol.TCompactProtocol(mb2)$/;"	kind:variable	line:23
-bridge_call_service	../pylib/ffext.py	/^def bridge_call_service(group_name_, name_, cmd_, msg_, callback_ = None):$/;"	kind:function	line:253
-broadcast_msg_gate	../pylib/ffext.py	/^def broadcast_msg_gate(gate_name_, cmd_, body):$/;"	kind:function	line:164
-broadcast_msg_session	../pylib/ffext.py	/^def broadcast_msg_session(cmd_, body):$/;"	kind:function	line:161
+bridge_call_service	../pylib/ffext.py	/^def bridge_call_service(group_name_, name_, cmd_, msg_, callback_ = None):$/;"	kind:function	line:254
+broadcast_msg_gate	../pylib/ffext.py	/^def broadcast_msg_gate(gate_name_, cmd_, body):$/;"	kind:function	line:165
+broadcast_msg_session	../pylib/ffext.py	/^def broadcast_msg_session(cmd_, body):$/;"	kind:function	line:162
+buffer	../pyproject/test.py	/^buffer = struct.pack(szFormat, nTotalSize, 1, 0, szMsg)$/;"	kind:variable	line:40
+buffer	../pyproject/test.py	/^buffer = struct.pack(szFormat, nTotalSize, 1001, 0, szMsg)$/;"	kind:variable	line:22
 buffer	../test.py	/^buffer = struct.pack(szFormat, nTotalSize, 1001, 0, szMsg)$/;"	kind:variable	line:22
 buildProtocol	../pylib/thrift/transport/TTwisted.py	/^    def buildProtocol(self, addr):$/;"	kind:member	line:179
-call_service	../pylib/ffext.py	/^def call_service(name_, cmd_, msg_, callback_ = None):$/;"	kind:function	line:245
-callback	../pyproject/player_mgr/player_mgr_handler.py	/^    def callback():$/;"	kind:function	line:36
+call_service	../pylib/ffext.py	/^def call_service(name_, cmd_, msg_, callback_ = None):$/;"	kind:function	line:246
 can_add	../pylib/pkg_resources.py	/^    def can_add(self, dist):$/;"	kind:member	line:724
 cb	../pyproject/db/dbservice.py	/^    def cb(ret):$/;"	kind:function	line:57
-cb	../pyproject/main.py	/^    def cb(err_, msg_):$/;"	kind:function	line:135
-cb	../pyproject/main.py	/^    def cb(ret):$/;"	kind:function	line:107
-cb	../pyproject/main.py	/^    def cb(ret):$/;"	kind:function	line:126
+cb	../pyproject/main.py	/^    def cb(err_, msg_):$/;"	kind:function	line:145
+cb	../pyproject/main.py	/^    def cb(ret):$/;"	kind:function	line:117
+cb	../pyproject/main.py	/^    def cb(ret):$/;"	kind:function	line:136
 chat_msg_t	../pyproject/msg_def/ttypes.py	/^class chat_msg_t:$/;"	kind:class	line:20
 chat_msg_t	../thrift_def/gen-py/msg_def/ttypes.py	/^class chat_msg_t:$/;"	kind:class	line:20
 check_version_conflict	../pylib/pkg_resources.py	/^    def check_version_conflict(self):$/;"	kind:member	line:2298
@@ -1264,7 +1271,7 @@ close	../pylib/thrift/transport/TTransport.py	/^  def close(self):$/;"	kind:memb
 close	../pylib/thrift/transport/TTransport.py	/^  def close(self):$/;"	kind:member	line:320
 close	../pylib/thrift/transport/TTransport.py	/^  def close(self):$/;"	kind:member	line:48
 close	../pylib/thrift/transport/TZlibTransport.py	/^  def close(self):$/;"	kind:member	line:175
-close_session	../pylib/ffext.py	/^def close_session(session_id):$/;"	kind:function	line:166
+close_session	../pylib/ffext.py	/^def close_session(session_id):$/;"	kind:function	line:167
 cls	../pylib/pkg_resources.py	/^        class cls(cls,object): pass$/;"	kind:class	line:2533
 collect_children	../pylib/thrift/server/TServer.py	/^  def collect_children(self):$/;"	kind:member	line:259
 compatible_platforms	../pylib/pkg_resources.py	/^def compatible_platforms(provided,required):$/;"	kind:function	line:247
@@ -1304,6 +1311,7 @@ containing_type	../pylib/google/protobuf/descriptor_pb2.py	/^  containing_type=N
 containing_type	../pylib/google/protobuf/descriptor_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:993
 containing_type	../pylib/protobuf_example/msg_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:26
 containing_type	../pyproject/proto/recv_msg_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:34
+containing_type	../pyproject/recv_msg_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:34
 cpp_message.py	../pylib/google/protobuf/internal/cpp_message.py	1;"	kind:file	line:1
 cstringio_buf	../pylib/thrift/transport/TTransport.py	/^  def cstringio_buf(self):$/;"	kind:member	line:174
 cstringio_buf	../pylib/thrift/transport/TTransport.py	/^  def cstringio_buf(self):$/;"	kind:member	line:233
@@ -1330,8 +1338,8 @@ dispatch	../pylib/thrift/transport/TTwisted.py	/^    def dispatch(self, msg):$/;
 dispatch	../pylib/thrift/transport/TTwisted.py	/^    def dispatch(self, msg):$/;"	kind:member	line:75
 do_POST	../pylib/thrift/server/THttpServer.py	/^      def do_POST(self):$/;"	kind:member	line:65
 dump	../pylib/event_bus.py	/^    def dump(self):$/;"	kind:member	line:45
-dump	../pylib/ffext.py	/^    def dump(self):$/;"	kind:member	line:217
-dump_stdout_to_log	../pylib/ffext.py	/^def dump_stdout_to_log():$/;"	kind:function	line:319
+dump	../pylib/ffext.py	/^    def dump(self):$/;"	kind:member	line:218
+dump_stdout_to_log	../pylib/ffext.py	/^def dump_stdout_to_log():$/;"	kind:function	line:320
 eagers	../pylib/pkg_resources.py	/^    eagers = None$/;"	kind:variable	line:1316
 egg_info	../pylib/pkg_resources.py	/^    egg_info = None$/;"	kind:variable	line:1153
 egg_name	../pylib/pkg_resources.py	/^    def egg_name(self):$/;"	kind:member	line:2175
@@ -1365,7 +1373,8 @@ enum_types	../pylib/google/protobuf/descriptor_pb2.py	/^  enum_types=[$/;"	kind:
 enum_types	../pylib/google/protobuf/descriptor_pb2.py	/^  enum_types=[$/;"	kind:variable	line:978
 enum_types	../pylib/protobuf_example/msg_pb2.py	/^  enum_types=[$/;"	kind:variable	line:53
 enum_types	../pyproject/proto/recv_msg_pb2.py	/^  enum_types=[$/;"	kind:variable	line:61
-escape	../pylib/ffext.py	/^def escape(s_):$/;"	kind:function	line:239
+enum_types	../pyproject/recv_msg_pb2.py	/^  enum_types=[$/;"	kind:variable	line:61
+escape	../pylib/ffext.py	/^def escape(s_):$/;"	kind:function	line:240
 escape	../pylib/google/protobuf/text_format.py	/^  def escape(c):$/;"	kind:function	line:595
 event_bus	../pylib/event_bus.py	/^event_bus = event_bus_t()$/;"	kind:variable	line:48
 event_bus.py	../pylib/event_bus.py	1;"	kind:file	line:1
@@ -1399,6 +1408,7 @@ extension_ranges	../pylib/google/protobuf/descriptor_pb2.py	/^  extension_ranges
 extension_ranges	../pylib/google/protobuf/descriptor_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:658
 extension_ranges	../pylib/protobuf_example/msg_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:57
 extension_ranges	../pyproject/proto/recv_msg_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:66
+extension_ranges	../pyproject/recv_msg_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:66
 extensions	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  extensions=[$/;"	kind:variable	line:127
 extensions	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  extensions=[$/;"	kind:variable	line:51
 extensions	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  extensions=[$/;"	kind:variable	line:93
@@ -1424,6 +1434,7 @@ extensions	../pylib/google/protobuf/descriptor_pb2.py	/^  extensions=[$/;"	kind:
 extensions	../pylib/google/protobuf/descriptor_pb2.py	/^  extensions=[$/;"	kind:variable	line:975
 extensions	../pylib/protobuf_example/msg_pb2.py	/^  extensions=[$/;"	kind:variable	line:50
 extensions	../pyproject/proto/recv_msg_pb2.py	/^  extensions=[$/;"	kind:variable	line:58
+extensions	../pyproject/recv_msg_pb2.py	/^  extensions=[$/;"	kind:variable	line:58
 extraction_error	../pylib/pkg_resources.py	/^    def extraction_error(self):$/;"	kind:member	line:903
 extraction_path	../pylib/pkg_resources.py	/^    extraction_path = None$/;"	kind:variable	line:864
 extras	../pylib/pkg_resources.py	/^    def extras(self):$/;"	kind:member	line:2340
@@ -1432,16 +1443,16 @@ fastbinary	../pylib/thrift/protocol/TBase.py	/^  fastbinary = None$/;"	kind:vari
 fastbinary	../pylib/thrift_example/ff/ttypes.py	/^  fastbinary = None$/;"	kind:variable	line:16
 fastbinary	../pyproject/msg_def/ttypes.py	/^  fastbinary = None$/;"	kind:variable	line:16
 fastbinary	../thrift_def/gen-py/msg_def/ttypes.py	/^  fastbinary = None$/;"	kind:variable	line:16
-ff_db_query_callback	../pylib/ffext.py	/^def ff_db_query_callback(callback_id_, flag_, result_, col_):$/;"	kind:function	line:221
-ff_scene_call	../pylib/ffext.py	/^def ff_scene_call(cmd_, msg_):$/;"	kind:function	line:265
-ff_scene_call_return_msg	../pylib/ffext.py	/^def ff_scene_call_return_msg(id_, err_, msg_type_, msg_):$/;"	kind:function	line:280
+ff_db_query_callback	../pylib/ffext.py	/^def ff_db_query_callback(callback_id_, flag_, result_, col_):$/;"	kind:function	line:222
+ff_scene_call	../pylib/ffext.py	/^def ff_scene_call(cmd_, msg_):$/;"	kind:function	line:266
+ff_scene_call_return_msg	../pylib/ffext.py	/^def ff_scene_call_return_msg(id_, err_, msg_type_, msg_):$/;"	kind:function	line:281
 ff_session_enter	../pylib/ffext.py	/^def ff_session_enter(session_id, from_scene, extra_data):$/;"	kind:function	line:97
 ff_session_logic	../pylib/ffext.py	/^def ff_session_logic(session_id, cmd, body):$/;"	kind:function	line:114
 ff_session_offline	../pylib/ffext.py	/^def ff_session_offline(session_id, online_time):$/;"	kind:function	line:106
 ff_session_verify	../pylib/ffext.py	/^def ff_session_verify(session_key, online_time, ip, gate_name):$/;"	kind:function	line:86
-ff_timer_callback	../pylib/ffext.py	/^def ff_timer_callback(id):$/;"	kind:function	line:124
-ffdb_create	../pylib/ffext.py	/^def ffdb_create(host_):$/;"	kind:function	line:231
-ffdb_t	../pylib/ffext.py	/^class ffdb_t(object):$/;"	kind:class	line:191
+ff_timer_callback	../pylib/ffext.py	/^def ff_timer_callback(id):$/;"	kind:function	line:125
+ffdb_create	../pylib/ffext.py	/^def ffdb_create(host_):$/;"	kind:function	line:232
+ffdb_t	../pylib/ffext.py	/^class ffdb_t(object):$/;"	kind:class	line:192
 ffext.py	../pylib/ffext.py	1;"	kind:file	line:1
 fields	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  fields=[$/;"	kind:variable	line:111
 fields	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  fields=[$/;"	kind:variable	line:28
@@ -1468,6 +1479,7 @@ fields	../pylib/google/protobuf/descriptor_pb2.py	/^  fields=[$/;"	kind:variable
 fields	../pylib/google/protobuf/descriptor_pb2.py	/^  fields=[$/;"	kind:variable	line:994
 fields	../pylib/protobuf_example/msg_pb2.py	/^  fields=[$/;"	kind:variable	line:27
 fields	../pyproject/proto/recv_msg_pb2.py	/^  fields=[$/;"	kind:variable	line:35
+fields	../pyproject/recv_msg_pb2.py	/^  fields=[$/;"	kind:variable	line:35
 file	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:109
 file	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:26
 file	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:68
@@ -1497,6 +1509,7 @@ file	../pylib/google/protobuf/descriptor_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:va
 file	../pylib/google/protobuf/descriptor_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:992
 file	../pylib/protobuf_example/msg_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:25
 file	../pyproject/proto/recv_msg_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:33
+file	../pyproject/recv_msg_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:33
 file_ns_handler	../pylib/pkg_resources.py	/^def file_ns_handler(importer, path_item, packageName, module):$/;"	kind:function	line:1805
 filename	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  filename=None,$/;"	kind:variable	line:108
 filename	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  filename=None,$/;"	kind:variable	line:25
@@ -1527,6 +1540,7 @@ filename	../pylib/google/protobuf/descriptor_pb2.py	/^  filename=None,$/;"	kind:
 filename	../pylib/google/protobuf/descriptor_pb2.py	/^  filename=None,$/;"	kind:variable	line:991
 filename	../pylib/protobuf_example/msg_pb2.py	/^  filename=None,$/;"	kind:variable	line:24
 filename	../pyproject/proto/recv_msg_pb2.py	/^  filename=None,$/;"	kind:variable	line:32
+filename	../pyproject/recv_msg_pb2.py	/^  filename=None,$/;"	kind:variable	line:32
 fileno	../pylib/thrift/server/TNonblockingServer.py	/^    def fileno(self):$/;"	kind:member	line:212
 find	../pylib/pkg_resources.py	/^    def find(self, req):$/;"	kind:member	line:452
 find_distributions	../pylib/pkg_resources.py	/^def find_distributions(path_item, only=False):$/;"	kind:function	line:1653
@@ -1583,14 +1597,15 @@ full_name	../pylib/google/protobuf/descriptor_pb2.py	/^  full_name='google.proto
 full_name	../pylib/google/protobuf/descriptor_pb2.py	/^  full_name='google.protobuf.UninterpretedOption.NamePart',$/;"	kind:variable	line:990
 full_name	../pylib/protobuf_example/msg_pb2.py	/^  full_name='TestMsg',$/;"	kind:variable	line:23
 full_name	../pyproject/proto/recv_msg_pb2.py	/^  full_name='recv_info',$/;"	kind:variable	line:31
+full_name	../pyproject/recv_msg_pb2.py	/^  full_name='recv_info',$/;"	kind:variable	line:31
 g_ReadTBinaryProtocol	../pylib/ffext.py	/^g_ReadTBinaryProtocol = TBinaryProtocol.TBinaryProtocol(g_ReadTMemoryBuffer)$/;"	kind:variable	line:46
 g_ReadTMemoryBuffer	../pylib/ffext.py	/^g_ReadTMemoryBuffer   = TTransport.TMemoryBuffer()$/;"	kind:variable	line:45
-g_WriteTBinaryProtocol	../pylib/ffext.py	/^g_WriteTBinaryProtocol = TBinaryProtocol.TBinaryProtocol(g_WriteTMemoryBuffer)$/;"	kind:variable	line:133
-g_WriteTMemoryBuffer	../pylib/ffext.py	/^g_WriteTMemoryBuffer   = TTransport.TMemoryBuffer()$/;"	kind:variable	line:132
+g_WriteTBinaryProtocol	../pylib/ffext.py	/^g_WriteTBinaryProtocol = TBinaryProtocol.TBinaryProtocol(g_WriteTMemoryBuffer)$/;"	kind:variable	line:134
+g_WriteTMemoryBuffer	../pylib/ffext.py	/^g_WriteTMemoryBuffer   = TTransport.TMemoryBuffer()$/;"	kind:variable	line:133
 g_async_db	../pyproject/db/dbservice.py	/^g_async_db = None$/;"	kind:variable	line:8
-g_call_service_id	../pylib/ffext.py	/^g_call_service_id   = 1$/;"	kind:variable	line:243
-g_call_service_wait_return_dict	../pylib/ffext.py	/^g_call_service_wait_return_dict = {}$/;"	kind:variable	line:242
-g_py_service_func_dict	../pylib/ffext.py	/^g_py_service_func_dict = {}$/;"	kind:variable	line:263
+g_call_service_id	../pylib/ffext.py	/^g_call_service_id   = 1$/;"	kind:variable	line:244
+g_call_service_wait_return_dict	../pylib/ffext.py	/^g_call_service_wait_return_dict = {}$/;"	kind:variable	line:243
+g_py_service_func_dict	../pylib/ffext.py	/^g_py_service_func_dict = {}$/;"	kind:variable	line:264
 g_session_enter_callback	../pylib/ffext.py	/^g_session_enter_callback   = None$/;"	kind:variable	line:12
 g_session_logic_callback_dict	../pylib/ffext.py	/^g_session_logic_callback_dict = {}#cmd -> func callback$/;"	kind:variable	line:14
 g_session_offline_callback	../pylib/ffext.py	/^g_session_offline_callback = None$/;"	kind:variable	line:13
@@ -1656,12 +1671,12 @@ has_resource	../pylib/pkg_resources.py	/^    def has_resource(self, resource_nam
 has_version	../pylib/pkg_resources.py	/^    def has_version(self):$/;"	kind:member	line:2318
 hashcmp	../pylib/pkg_resources.py	/^    hashcmp = property($/;"	kind:variable	line:2083
 helper	../pylib/thrift/protocol/TCompactProtocol.py	/^  def helper(func):$/;"	kind:function	line:37
-host	../pylib/ffext.py	/^    def host(self):$/;"	kind:member	line:195
+host	../pylib/ffext.py	/^    def host(self):$/;"	kind:member	line:196
 id	../pyproject/main.py	/^    def id():$/;"	kind:member	line:31
 id	../pyproject/player_mgr/player_mgr_model.py	/^    def id(self):$/;"	kind:member	line:29
 idlist	../pyproject/main.py	/^    def idlist(self):$/;"	kind:member	line:24
 idlist	../pyproject/player_mgr/player_mgr_model.py	/^    def idlist(self):$/;"	kind:member	line:14
-impl_func	../pylib/ffext.py	/^        def impl_func(msg_):$/;"	kind:function	line:300
+impl_func	../pylib/ffext.py	/^        def impl_func(msg_):$/;"	kind:function	line:301
 inc_chat_times	../pyproject/main.py	/^    def inc_chat_times(self):$/;"	kind:member	line:33
 init	../pylib/google/protobuf/internal/python_message.py	/^  def init(self, **kwargs):$/;"	kind:function	line:300
 init	../pyproject/db/dbservice.py	/^def init():$/;"	kind:function	line:9
@@ -1706,6 +1721,7 @@ is_extendable	../pylib/google/protobuf/descriptor_pb2.py	/^  is_extendable=True,
 is_extendable	../pylib/google/protobuf/descriptor_pb2.py	/^  is_extendable=True,$/;"	kind:variable	line:981
 is_extendable	../pylib/protobuf_example/msg_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:56
 is_extendable	../pyproject/proto/recv_msg_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:64
+is_extendable	../pyproject/recv_msg_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:64
 is_readable	../pylib/thrift/server/TNonblockingServer.py	/^    def is_readable(self):$/;"	kind:member	line:203
 is_writeable	../pylib/thrift/server/TNonblockingServer.py	/^    def is_writeable(self):$/;"	kind:member	line:197
 issue_warning	../pylib/pkg_resources.py	/^def issue_warning(*args,**kw):$/;"	kind:function	line:2345
@@ -1741,14 +1757,17 @@ metadata_isdir	../pylib/pkg_resources.py	/^    def metadata_isdir(self,name):$/;
 metadata_listdir	../pylib/pkg_resources.py	/^    def metadata_listdir(name):$/;"	kind:member	line:346
 metadata_listdir	../pylib/pkg_resources.py	/^    def metadata_listdir(self,name):$/;"	kind:member	line:1193
 module_path	../pylib/pkg_resources.py	/^    module_path   = None$/;"	kind:variable	line:1303
+msg_decode	../pyproject/main.py	/^def msg_decode():$/;"	kind:function	line:39
 msg_pb2.py	../pylib/protobuf_example/msg_pb2.py	1;"	kind:file	line:1
-multi_send_msg_session	../pylib/ffext.py	/^def multi_send_msg_session(session_id_list, cmd_, body):$/;"	kind:function	line:159
-my_session_enter	../pyproject/main.py	/^def my_session_enter(session_id, from_scene, extra_data):$/;"	kind:function	line:90
-my_session_offline	../pyproject/main.py	/^def my_session_offline(session_id, online_time):$/;"	kind:function	line:81
-my_session_verify	../pyproject/main.py	/^def my_session_verify(session_key, online_time, ip, gate_name):$/;"	kind:function	line:74
-mysql_test	../pyproject/main.py	/^def mysql_test():$/;"	kind:function	line:119
-mystdout_t	../pylib/ffext.py	/^class mystdout_t(object):$/;"	kind:class	line:313
+multi_send_msg_session	../pylib/ffext.py	/^def multi_send_msg_session(session_id_list, cmd_, body):$/;"	kind:function	line:160
+my_session_enter	../pyproject/main.py	/^def my_session_enter(session_id, from_scene, extra_data):$/;"	kind:function	line:100
+my_session_offline	../pyproject/main.py	/^def my_session_offline(session_id, online_time):$/;"	kind:function	line:91
+my_session_verify	../pyproject/main.py	/^def my_session_verify(session_key, online_time, ip, gate_name):$/;"	kind:function	line:84
+mysql_test	../pyproject/main.py	/^def mysql_test():$/;"	kind:function	line:129
+mystdout_t	../pylib/ffext.py	/^class mystdout_t(object):$/;"	kind:class	line:314
 nHeadSize	../test.py	/^    nHeadSize = struct.calcsize("IHH")$/;"	kind:variable	line:31
+nTotalSize	../pyproject/test.py	/^nTotalSize = struct.calcsize(szFormat)$/;"	kind:variable	line:17
+nTotalSize	../pyproject/test.py	/^nTotalSize = struct.calcsize(szFormat)$/;"	kind:variable	line:35
 nTotalSize	../test.py	/^nTotalSize = struct.calcsize(szFormat)$/;"	kind:variable	line:17
 name	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  name='CodeGeneratorRequest',$/;"	kind:variable	line:23
 name	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  name='CodeGeneratorResponse',$/;"	kind:variable	line:106
@@ -1783,6 +1802,8 @@ name	../pylib/protobuf_example/msg_pb2.py	/^  name='TestMsg',$/;"	kind:variable	
 name	../pylib/protobuf_example/msg_pb2.py	/^  name='msg.proto',$/;"	kind:variable	line:14
 name	../pyproject/proto/recv_msg_pb2.py	/^  name='recv_info',$/;"	kind:variable	line:30
 name	../pyproject/proto/recv_msg_pb2.py	/^  name='recv_msg.proto',$/;"	kind:variable	line:19
+name	../pyproject/recv_msg_pb2.py	/^  name='recv_info',$/;"	kind:variable	line:30
+name	../pyproject/recv_msg_pb2.py	/^  name='recv_msg.proto',$/;"	kind:variable	line:19
 nested	../pylib/thrift/protocol/TCompactProtocol.py	/^    def nested(self, *args, **kwargs):$/;"	kind:function	line:38
 nested	../pylib/thrift/server/TNonblockingServer.py	/^    def nested(self, *args, **kwargs):$/;"	kind:function	line:69
 nested_types	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:53
@@ -1810,11 +1831,13 @@ nested_types	../pylib/google/protobuf/descriptor_pb2.py	/^  nested_types=[_SOURC
 nested_types	../pylib/google/protobuf/descriptor_pb2.py	/^  nested_types=[_UNINTERPRETEDOPTION_NAMEPART, ],$/;"	kind:variable	line:1081
 nested_types	../pylib/protobuf_example/msg_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:52
 nested_types	../pyproject/proto/recv_msg_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:60
+nested_types	../pyproject/recv_msg_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:60
 normalize_path	../pylib/pkg_resources.py	/^def normalize_path(filename):$/;"	kind:function	line:1827
 null_ns_handler	../pylib/pkg_resources.py	/^def null_ns_handler(importer, path_item, packageName, module):$/;"	kind:function	line:1821
 obtain	../pylib/pkg_resources.py	/^    def obtain(self, requirement, installer=None):$/;"	kind:member	line:801
 once_timer	../pylib/ffext.py	/^def once_timer(timeout_, func_):$/;"	kind:function	line:30
 oneofs	../pyproject/proto/recv_msg_pb2.py	/^  oneofs=[$/;"	kind:variable	line:67
+oneofs	../pyproject/recv_msg_pb2.py	/^  oneofs=[$/;"	kind:variable	line:67
 open	../pylib/thrift/transport/THttpClient.py	/^  def open(self):$/;"	kind:member	line:71
 open	../pylib/thrift/transport/TSSLSocket.py	/^  def open(self):$/;"	kind:member	line:74
 open	../pylib/thrift/transport/TSocket.py	/^  def open(self):$/;"	kind:member	line:79
@@ -1976,10 +1999,15 @@ options	../pyproject/proto/recv_msg_pb2.py	/^      options=None),$/;"	kind:varia
 options	../pyproject/proto/recv_msg_pb2.py	/^      options=None),$/;"	kind:variable	line:49
 options	../pyproject/proto/recv_msg_pb2.py	/^      options=None),$/;"	kind:variable	line:56
 options	../pyproject/proto/recv_msg_pb2.py	/^  options=None,$/;"	kind:variable	line:63
+options	../pyproject/recv_msg_pb2.py	/^      options=None),$/;"	kind:variable	line:42
+options	../pyproject/recv_msg_pb2.py	/^      options=None),$/;"	kind:variable	line:49
+options	../pyproject/recv_msg_pb2.py	/^      options=None),$/;"	kind:variable	line:56
+options	../pyproject/recv_msg_pb2.py	/^  options=None,$/;"	kind:variable	line:63
 package	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  package='google.protobuf.compiler',$/;"	kind:variable	line:16
 package	../pylib/google/protobuf/descriptor_pb2.py	/^  package='google.protobuf',$/;"	kind:variable	line:14
 package	../pylib/protobuf_example/msg_pb2.py	/^  package='',$/;"	kind:variable	line:15
 package	../pyproject/proto/recv_msg_pb2.py	/^  package='',$/;"	kind:variable	line:20
+package	../pyproject/recv_msg_pb2.py	/^  package='',$/;"	kind:variable	line:20
 parse	../pylib/pkg_resources.py	/^    def parse(cls, src, dist=None):$/;"	kind:member	line:1971
 parse	../pylib/pkg_resources.py	/^    def parse(s):$/;"	kind:member	line:2509
 parse	../pylib/pkg_resources.py	/^    parse = classmethod(parse)$/;"	kind:variable	line:2002
@@ -2000,6 +2028,7 @@ player_mgr_t	../pyproject/player_mgr/player_mgr_model.py	/^class player_mgr_t:$/
 player_t	../pyproject/main.py	/^class player_t(object):$/;"	kind:class	line:27
 player_t	../pyproject/player_mgr/player_mgr_model.py	/^class player_t:$/;"	kind:class	line:17
 plugin_pb2.py	../pylib/google/protobuf/compiler/plugin_pb2.py	1;"	kind:file	line:1
+po	../pyproject/test.py	/^po = recv_msg_pb2.recv_info()$/;"	kind:variable	line:8
 po	../test.py	/^    po = recv_msg_pb2.recv_info()$/;"	kind:variable	line:36
 po	../test.py	/^po = recv_msg_pb2.recv_info()$/;"	kind:variable	line:8
 post	../pylib/event_bus.py	/^    def post(self, event_):$/;"	kind:member	line:25
@@ -2008,8 +2037,8 @@ prepare	../pylib/thrift/server/TNonblockingServer.py	/^    def prepare(self):$/;
 process	../pylib/thrift/Thrift.py	/^  def process(iprot, oprot):$/;"	kind:member	line:72
 processError	../pylib/thrift/transport/TTwisted.py	/^    def processError(self, error):$/;"	kind:member	line:111
 processOk	../pylib/thrift/transport/TTwisted.py	/^    def processOk(self, _, tmo):$/;"	kind:member	line:114
-process_chat	../pyproject/main.py	/^def process_chat(session_id, msg):$/;"	kind:function	line:40
-process_test	../pyproject/main.py	/^def process_test(session_id, msg):$/;"	kind:function	line:62
+process_chat	../pyproject/main.py	/^def process_chat(session_id, msg):$/;"	kind:function	line:46
+process_test	../pyproject/main.py	/^def process_test(session_id, msg):$/;"	kind:function	line:72
 processor	../pylib/thrift/transport/TTwisted.py	/^    processor = Attribute("Thrift processor")$/;"	kind:variable	line:134
 protobuf_example.py	../pylib/protobuf_example/protobuf_example.py	1;"	kind:file	line:1
 protobuf_to_value	../pylib/ffext.py	/^            def protobuf_to_value(val_):$/;"	kind:function	line:78
@@ -2017,8 +2046,8 @@ protobuf_to_value	../pylib/ffext.py	/^def protobuf_to_value(msg_type_, val_):$/;
 protocol	../pylib/thrift/transport/TTwisted.py	/^    protocol = ThriftClientProtocol$/;"	kind:variable	line:169
 protocol	../pylib/thrift/transport/TTwisted.py	/^    protocol = ThriftServerProtocol$/;"	kind:variable	line:154
 python_message.py	../pylib/google/protobuf/internal/python_message.py	1;"	kind:file	line:1
-query	../pylib/ffext.py	/^    def query(self, sql_, callback_ = None):$/;"	kind:member	line:197
-query_result_t	../pylib/ffext.py	/^class query_result_t(object):$/;"	kind:class	line:212
+query	../pylib/ffext.py	/^    def query(self, sql_, callback_ = None):$/;"	kind:member	line:198
+query_result_t	../pylib/ffext.py	/^class query_result_t(object):$/;"	kind:class	line:213
 read	../pylib/thrift/Thrift.py	/^  def read(self, iprot):$/;"	kind:member	line:125
 read	../pylib/thrift/protocol/TBase.py	/^  def read(self, iprot):$/;"	kind:member	line:51
 read	../pylib/thrift/protocol/TBase.py	/^  read = TBase.read.im_func$/;"	kind:variable	line:80
@@ -2112,14 +2141,16 @@ real_session_enter	../pyproject/player_mgr/player_mgr_handler.py	/^def real_sess
 real_session_offline	../pyproject/player_mgr/player_mgr_handler.py	/^def real_session_offline(session_id, online_time):$/;"	kind:function	line:49
 real_session_verify	../pyproject/player_mgr/player_mgr_handler.py	/^def real_session_verify(session_key, online_time, ip, gate_name):$/;"	kind:function	line:14
 recv_info	../pyproject/proto/recv_msg_pb2.py	/^recv_info = _reflection.GeneratedProtocolMessageType('recv_info', (_message.Message,), dict($/;"	kind:variable	line:75
+recv_info	../pyproject/recv_msg_pb2.py	/^recv_info = _reflection.GeneratedProtocolMessageType('recv_info', (_message.Message,), dict($/;"	kind:variable	line:75
 recv_msg_pb2.py	../pyproject/proto/recv_msg_pb2.py	1;"	kind:file	line:1
+recv_msg_pb2.py	../pyproject/recv_msg_pb2.py	1;"	kind:file	line:1
 reflection.py	../pylib/google/protobuf/reflection.py	1;"	kind:file	line:1
-reg_service	../pylib/ffext.py	/^def reg_service(cmd_, msg_type_ = None):$/;"	kind:function	line:298
+reg_service	../pylib/ffext.py	/^def reg_service(cmd_, msg_type_ = None):$/;"	kind:function	line:299
 register_finder	../pylib/pkg_resources.py	/^def register_finder(importer_type, distribution_finder):$/;"	kind:function	line:1643
 register_loader_type	../pylib/pkg_resources.py	/^def register_loader_type(loader_type, provider_factory):$/;"	kind:function	line:185
 register_namespace_handler	../pylib/pkg_resources.py	/^def register_namespace_handler(importer_type, namespace_handler):$/;"	kind:function	line:1726
 register_player	../pyproject/db/dbservice.py	/^def register_player(player):$/;"	kind:function	line:27
-reload	../pylib/ffext.py	/^def reload(name_):$/;"	kind:function	line:169
+reload	../pylib/ffext.py	/^def reload(name_):$/;"	kind:function	line:170
 remove	../pylib/google/protobuf/internal/containers.py	/^  def remove(self, elem):$/;"	kind:member	line:142
 remove	../pylib/google/protobuf/internal/containers.py	/^  def remove(self, elem):$/;"	kind:member	line:243
 remove	../pylib/google/protobuf/internal/cpp_message.py	/^  def remove(self, value):$/;"	kind:member	line:127
@@ -2145,6 +2176,7 @@ resource_listdir	../pylib/pkg_resources.py	/^    def resource_listdir(self,resou
 resource_stream	../pylib/pkg_resources.py	/^    def resource_stream(self, package_or_requirement, resource_name):$/;"	kind:member	line:885
 resource_string	../pylib/pkg_resources.py	/^    def resource_string(self, package_or_requirement, resource_name):$/;"	kind:member	line:891
 ret	../pylib/thrift_example/thrift_example.py	/^ret = mb.getvalue()$/;"	kind:variable	line:18
+rsp	../pyproject/test.py	/^rsp = sock.recv(1000)$/;"	kind:variable	line:47
 run	../pylib/thrift/server/TNonblockingServer.py	/^    def run(self):$/;"	kind:member	line:47
 run_main	../pylib/pkg_resources.py	/^run_main = run_script   # backward compatibility$/;"	kind:variable	line:2619
 run_main	../pylib/pkg_resources.py	/^run_main = run_script   # backward compatibility$/;"	kind:variable	line:306
@@ -2156,13 +2188,13 @@ run_script	../pylib/pkg_resources.py	/^run_script = working_set.run_script$/;"	k
 safe_extra	../pylib/pkg_resources.py	/^def safe_extra(extra):$/;"	kind:function	line:1126
 safe_name	../pylib/pkg_resources.py	/^def safe_name(name):$/;"	kind:function	line:1108
 safe_version	../pylib/pkg_resources.py	/^def safe_version(version):$/;"	kind:function	line:1116
-save_stdout	../pylib/ffext.py	/^save_stdout = None$/;"	kind:variable	line:312
+save_stdout	../pylib/ffext.py	/^save_stdout = None$/;"	kind:variable	line:313
 scan	../pylib/pkg_resources.py	/^    def scan(self, search_path=None):$/;"	kind:member	line:739
 scan_list	../pylib/pkg_resources.py	/^    def scan_list(ITEM,TERMINATOR,line,p,groups,item_name):$/;"	kind:function	line:2389
 scons_env	../pylib/thrift/TSCons.py	/^def scons_env(env, add=''):$/;"	kind:function	line:24
 sendMessage	../pylib/thrift/transport/TTwisted.py	/^    def sendMessage(self, message):$/;"	kind:member	line:46
 sendMessage	../pylib/thrift/transport/TTwisted.py	/^    def sendMessage(self, message):$/;"	kind:member	line:56
-send_msg_session	../pylib/ffext.py	/^def send_msg_session(session_id, cmd_, body):$/;"	kind:function	line:156
+send_msg_session	../pylib/ffext.py	/^def send_msg_session(session_id, cmd_, body):$/;"	kind:function	line:157
 serialize	../pylib/thrift/TSerialization.py	/^def serialize(thrift_object,$/;"	kind:function	line:24
 serialized_end	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_end=226,$/;"	kind:variable	line:60
 serialized_end	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_end=399,$/;"	kind:variable	line:102
@@ -2193,10 +2225,12 @@ serialized_end	../pylib/google/protobuf/descriptor_pb2.py	/^  serialized_end=409
 serialized_end	../pylib/google/protobuf/descriptor_pb2.py	/^  serialized_end=586,$/;"	kind:variable	line:302
 serialized_end	../pylib/protobuf_example/msg_pb2.py	/^  serialized_end=62,$/;"	kind:variable	line:59
 serialized_end	../pyproject/proto/recv_msg_pb2.py	/^  serialized_end=93,$/;"	kind:variable	line:70
+serialized_end	../pyproject/recv_msg_pb2.py	/^  serialized_end=93,$/;"	kind:variable	line:70
 serialized_pb	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_pb='\\n%google\/protobuf\/compiler\/plugin.proto\\x12\\x18google.protobuf.compiler\\x1a google\/protobuf\/descriptor.proto\\"}\\n\\x14\\x43odeGeneratorRequest\\x12\\x18\\n\\x10\\x66ile_to_generate\\x18\\x01 \\x03(\\t\\x12\\x11\\n\\tparameter\\x18\\x02 \\x01(\\t\\x12\\x38\\n\\nproto_file\\x18\\x0f \\x03(\\x0b\\x32$.google.protobuf.FileDescriptorProto\\"\\xaa\\x01\\n\\x15\\x43odeGeneratorResponse\\x12\\r\\n\\x05\\x65rror\\x18\\x01 \\x01(\\t\\x12\\x42\\n\\x04\\x66ile\\x18\\x0f \\x03(\\x0b\\x32\\x34.google.protobuf.compiler.CodeGeneratorResponse.File\\x1a>\\n\\x04\\x46ile\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x17\\n\\x0finsertion_point\\x18\\x02 \\x01(\\t\\x12\\x0f\\n\\x07\\x63ontent\\x18\\x0f \\x01(\\tB,\\n\\x1c\\x63om.google.protobuf.compilerB\\x0cPluginProtos')$/;"	kind:variable	line:17
 serialized_pb	../pylib/google/protobuf/descriptor_pb2.py	/^  serialized_pb='\\n google\/protobuf\/descriptor.proto\\x12\\x0fgoogle.protobuf\\"G\\n\\x11\\x46ileDescriptorSet\\x12\\x32\\n\\x04\\x66ile\\x18\\x01 \\x03(\\x0b\\x32$.google.protobuf.FileDescriptorProto\\"\\xcb\\x03\\n\\x13\\x46ileDescriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x0f\\n\\x07package\\x18\\x02 \\x01(\\t\\x12\\x12\\n\\ndependency\\x18\\x03 \\x03(\\t\\x12\\x19\\n\\x11public_dependency\\x18\\n \\x03(\\x05\\x12\\x17\\n\\x0fweak_dependency\\x18\\x0b \\x03(\\x05\\x12\\x36\\n\\x0cmessage_type\\x18\\x04 \\x03(\\x0b\\x32 .google.protobuf.DescriptorProto\\x12\\x37\\n\\tenum_type\\x18\\x05 \\x03(\\x0b\\x32$.google.protobuf.EnumDescriptorProto\\x12\\x38\\n\\x07service\\x18\\x06 \\x03(\\x0b\\x32\\'.google.protobuf.ServiceDescriptorProto\\x12\\x38\\n\\textension\\x18\\x07 \\x03(\\x0b\\x32%.google.protobuf.FieldDescriptorProto\\x12-\\n\\x07options\\x18\\x08 \\x01(\\x0b\\x32\\x1c.google.protobuf.FileOptions\\x12\\x39\\n\\x10source_code_info\\x18\\t \\x01(\\x0b\\x32\\x1f.google.protobuf.SourceCodeInfo\\"\\xa9\\x03\\n\\x0f\\x44\\x65scriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x34\\n\\x05\\x66ield\\x18\\x02 \\x03(\\x0b\\x32%.google.protobuf.FieldDescriptorProto\\x12\\x38\\n\\textension\\x18\\x06 \\x03(\\x0b\\x32%.google.protobuf.FieldDescriptorProto\\x12\\x35\\n\\x0bnested_type\\x18\\x03 \\x03(\\x0b\\x32 .google.protobuf.DescriptorProto\\x12\\x37\\n\\tenum_type\\x18\\x04 \\x03(\\x0b\\x32$.google.protobuf.EnumDescriptorProto\\x12H\\n\\x0f\\x65xtension_range\\x18\\x05 \\x03(\\x0b\\x32\/.google.protobuf.DescriptorProto.ExtensionRange\\x12\\x30\\n\\x07options\\x18\\x07 \\x01(\\x0b\\x32\\x1f.google.protobuf.MessageOptions\\x1a,\\n\\x0e\\x45xtensionRange\\x12\\r\\n\\x05start\\x18\\x01 \\x01(\\x05\\x12\\x0b\\n\\x03\\x65nd\\x18\\x02 \\x01(\\x05\\"\\x94\\x05\\n\\x14\\x46ieldDescriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x0e\\n\\x06number\\x18\\x03 \\x01(\\x05\\x12:\\n\\x05label\\x18\\x04 \\x01(\\x0e\\x32+.google.protobuf.FieldDescriptorProto.Label\\x12\\x38\\n\\x04type\\x18\\x05 \\x01(\\x0e\\x32*.google.protobuf.FieldDescriptorProto.Type\\x12\\x11\\n\\ttype_name\\x18\\x06 \\x01(\\t\\x12\\x10\\n\\x08\\x65xtendee\\x18\\x02 \\x01(\\t\\x12\\x15\\n\\rdefault_value\\x18\\x07 \\x01(\\t\\x12.\\n\\x07options\\x18\\x08 \\x01(\\x0b\\x32\\x1d.google.protobuf.FieldOptions\\"\\xb6\\x02\\n\\x04Type\\x12\\x0f\\n\\x0bTYPE_DOUBLE\\x10\\x01\\x12\\x0e\\n\\nTYPE_FLOAT\\x10\\x02\\x12\\x0e\\n\\nTYPE_INT64\\x10\\x03\\x12\\x0f\\n\\x0bTYPE_UINT64\\x10\\x04\\x12\\x0e\\n\\nTYPE_INT32\\x10\\x05\\x12\\x10\\n\\x0cTYPE_FIXED64\\x10\\x06\\x12\\x10\\n\\x0cTYPE_FIXED32\\x10\\x07\\x12\\r\\n\\tTYPE_BOOL\\x10\\x08\\x12\\x0f\\n\\x0bTYPE_STRING\\x10\\t\\x12\\x0e\\n\\nTYPE_GROUP\\x10\\n\\x12\\x10\\n\\x0cTYPE_MESSAGE\\x10\\x0b\\x12\\x0e\\n\\nTYPE_BYTES\\x10\\x0c\\x12\\x0f\\n\\x0bTYPE_UINT32\\x10\\r\\x12\\r\\n\\tTYPE_ENUM\\x10\\x0e\\x12\\x11\\n\\rTYPE_SFIXED32\\x10\\x0f\\x12\\x11\\n\\rTYPE_SFIXED64\\x10\\x10\\x12\\x0f\\n\\x0bTYPE_SINT32\\x10\\x11\\x12\\x0f\\n\\x0bTYPE_SINT64\\x10\\x12\\"C\\n\\x05Label\\x12\\x12\\n\\x0eLABEL_OPTIONAL\\x10\\x01\\x12\\x12\\n\\x0eLABEL_REQUIRED\\x10\\x02\\x12\\x12\\n\\x0eLABEL_REPEATED\\x10\\x03\\"\\x8c\\x01\\n\\x13\\x45numDescriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x38\\n\\x05value\\x18\\x02 \\x03(\\x0b\\x32).google.protobuf.EnumValueDescriptorProto\\x12-\\n\\x07options\\x18\\x03 \\x01(\\x0b\\x32\\x1c.google.protobuf.EnumOptions\\"l\\n\\x18\\x45numValueDescriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x0e\\n\\x06number\\x18\\x02 \\x01(\\x05\\x12\\x32\\n\\x07options\\x18\\x03 \\x01(\\x0b\\x32!.google.protobuf.EnumValueOptions\\"\\x90\\x01\\n\\x16ServiceDescriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x36\\n\\x06method\\x18\\x02 \\x03(\\x0b\\x32&.google.protobuf.MethodDescriptorProto\\x12\\x30\\n\\x07options\\x18\\x03 \\x01(\\x0b\\x32\\x1f.google.protobuf.ServiceOptions\\"\\x7f\\n\\x15MethodDescriptorProto\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x12\\n\\ninput_type\\x18\\x02 \\x01(\\t\\x12\\x13\\n\\x0boutput_type\\x18\\x03 \\x01(\\t\\x12\/\\n\\x07options\\x18\\x04 \\x01(\\x0b\\x32\\x1e.google.protobuf.MethodOptions\\"\\xe9\\x03\\n\\x0b\\x46ileOptions\\x12\\x14\\n\\x0cjava_package\\x18\\x01 \\x01(\\t\\x12\\x1c\\n\\x14java_outer_classname\\x18\\x08 \\x01(\\t\\x12\\"\\n\\x13java_multiple_files\\x18\\n \\x01(\\x08:\\x05\\x66\\x61lse\\x12,\\n\\x1djava_generate_equals_and_hash\\x18\\x14 \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\x46\\n\\x0coptimize_for\\x18\\t \\x01(\\x0e\\x32).google.protobuf.FileOptions.OptimizeMode:\\x05SPEED\\x12\\x12\\n\\ngo_package\\x18\\x0b \\x01(\\t\\x12\\"\\n\\x13\\x63\\x63_generic_services\\x18\\x10 \\x01(\\x08:\\x05\\x66\\x61lse\\x12$\\n\\x15java_generic_services\\x18\\x11 \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\"\\n\\x13py_generic_services\\x18\\x12 \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption\\":\\n\\x0cOptimizeMode\\x12\\t\\n\\x05SPEED\\x10\\x01\\x12\\r\\n\\tCODE_SIZE\\x10\\x02\\x12\\x10\\n\\x0cLITE_RUNTIME\\x10\\x03*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"\\xb8\\x01\\n\\x0eMessageOptions\\x12&\\n\\x17message_set_wire_format\\x18\\x01 \\x01(\\x08:\\x05\\x66\\x61lse\\x12.\\n\\x1fno_standard_descriptor_accessor\\x18\\x02 \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"\\xbe\\x02\\n\\x0c\\x46ieldOptions\\x12:\\n\\x05\\x63type\\x18\\x01 \\x01(\\x0e\\x32#.google.protobuf.FieldOptions.CType:\\x06STRING\\x12\\x0e\\n\\x06packed\\x18\\x02 \\x01(\\x08\\x12\\x13\\n\\x04lazy\\x18\\x05 \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\x19\\n\\ndeprecated\\x18\\x03 \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\x1c\\n\\x14\\x65xperimental_map_key\\x18\\t \\x01(\\t\\x12\\x13\\n\\x04weak\\x18\\n \\x01(\\x08:\\x05\\x66\\x61lse\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption\\"\/\\n\\x05\\x43Type\\x12\\n\\n\\x06STRING\\x10\\x00\\x12\\x08\\n\\x04\\x43ORD\\x10\\x01\\x12\\x10\\n\\x0cSTRING_PIECE\\x10\\x02*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"x\\n\\x0b\\x45numOptions\\x12\\x19\\n\\x0b\\x61llow_alias\\x18\\x02 \\x01(\\x08:\\x04true\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"b\\n\\x10\\x45numValueOptions\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"`\\n\\x0eServiceOptions\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"_\\n\\rMethodOptions\\x12\\x43\\n\\x14uninterpreted_option\\x18\\xe7\\x07 \\x03(\\x0b\\x32$.google.protobuf.UninterpretedOption*\\t\\x08\\xe8\\x07\\x10\\x80\\x80\\x80\\x80\\x02\\"\\x9e\\x02\\n\\x13UninterpretedOption\\x12;\\n\\x04name\\x18\\x02 \\x03(\\x0b\\x32-.google.protobuf.UninterpretedOption.NamePart\\x12\\x18\\n\\x10identifier_value\\x18\\x03 \\x01(\\t\\x12\\x1a\\n\\x12positive_int_value\\x18\\x04 \\x01(\\x04\\x12\\x1a\\n\\x12negative_int_value\\x18\\x05 \\x01(\\x03\\x12\\x14\\n\\x0c\\x64ouble_value\\x18\\x06 \\x01(\\x01\\x12\\x14\\n\\x0cstring_value\\x18\\x07 \\x01(\\x0c\\x12\\x17\\n\\x0f\\x61ggregate_value\\x18\\x08 \\x01(\\t\\x1a\\x33\\n\\x08NamePart\\x12\\x11\\n\\tname_part\\x18\\x01 \\x02(\\t\\x12\\x14\\n\\x0cis_extension\\x18\\x02 \\x02(\\x08\\"\\xb1\\x01\\n\\x0eSourceCodeInfo\\x12:\\n\\x08location\\x18\\x01 \\x03(\\x0b\\x32(.google.protobuf.SourceCodeInfo.Location\\x1a\\x63\\n\\x08Location\\x12\\x10\\n\\x04path\\x18\\x01 \\x03(\\x05\\x42\\x02\\x10\\x01\\x12\\x10\\n\\x04span\\x18\\x02 \\x03(\\x05\\x42\\x02\\x10\\x01\\x12\\x18\\n\\x10leading_comments\\x18\\x03 \\x01(\\t\\x12\\x19\\n\\x11trailing_comments\\x18\\x04 \\x01(\\tB)\\n\\x13\\x63om.google.protobufB\\x10\\x44\\x65scriptorProtosH\\x01')$/;"	kind:variable	line:15
 serialized_pb	../pylib/protobuf_example/msg_pb2.py	/^  serialized_pb='\\n\\tmsg.proto\\"1\\n\\x07TestMsg\\x12\\n\\n\\x02id\\x18\\x01 \\x02(\\x05\\x12\\x0c\\n\\x04time\\x18\\x02 \\x02(\\x05\\x12\\x0c\\n\\x04note\\x18\\x03 \\x01(\\t')$/;"	kind:variable	line:16
 serialized_pb	../pyproject/proto/recv_msg_pb2.py	/^  serialized_pb=_b('\\n\\x0erecv_msg.proto\\"K\\n\\trecv_info\\x12\\x12\\n\\nsession_id\\x18\\x01 \\x02(\\x0c\\x12\\x14\\n\\x0crequest_type\\x18\\x02 \\x02(\\x05\\x12\\x14\\n\\x0crequest_data\\x18\\x03 \\x02(\\x0c')$/;"	kind:variable	line:22
+serialized_pb	../pyproject/recv_msg_pb2.py	/^  serialized_pb=_b('\\n\\x0erecv_msg.proto\\"K\\n\\trecv_info\\x12\\x12\\n\\nsession_id\\x18\\x01 \\x02(\\x0c\\x12\\x14\\n\\x0crequest_type\\x18\\x02 \\x02(\\x05\\x12\\x14\\n\\x0crequest_data\\x18\\x03 \\x02(\\x0c')$/;"	kind:variable	line:22
 serialized_start	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_start=101,$/;"	kind:variable	line:59
 serialized_start	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_start=229,$/;"	kind:variable	line:135
 serialized_start	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_start=337,$/;"	kind:variable	line:101
@@ -2226,6 +2260,7 @@ serialized_start	../pylib/google/protobuf/descriptor_pb2.py	/^  serialized_start
 serialized_start	../pylib/google/protobuf/descriptor_pb2.py	/^  serialized_start=970,$/;"	kind:variable	line:336
 serialized_start	../pylib/protobuf_example/msg_pb2.py	/^  serialized_start=13,$/;"	kind:variable	line:58
 serialized_start	../pyproject/proto/recv_msg_pb2.py	/^  serialized_start=18,$/;"	kind:variable	line:69
+serialized_start	../pyproject/recv_msg_pb2.py	/^  serialized_start=18,$/;"	kind:variable	line:69
 serve	../pylib/thrift/server/THttpServer.py	/^  def serve(self):$/;"	kind:member	line:86
 serve	../pylib/thrift/server/TNonblockingServer.py	/^    def serve(self):$/;"	kind:member	line:338
 serve	../pylib/thrift/server/TProcessPoolServer.py	/^    def serve(self):$/;"	kind:member	line:83
@@ -2259,30 +2294,38 @@ set_id	../pyproject/player_mgr/player_mgr_model.py	/^    def set_id(self, id_):$
 setter	../pylib/google/protobuf/internal/python_message.py	/^  def setter(self, new_value):$/;"	kind:function	line:422
 setter	../pylib/google/protobuf/internal/python_message.py	/^  def setter(self, new_value):$/;"	kind:function	line:453
 setter	../pylib/google/protobuf/internal/python_message.py	/^  def setter(self, new_value):$/;"	kind:function	line:511
-singleton	../pylib/ffext.py	/^def singleton(type_):$/;"	kind:function	line:174
-singleton_register_dict	../pylib/ffext.py	/^singleton_register_dict = {}$/;"	kind:variable	line:173
+singleton	../pylib/ffext.py	/^def singleton(type_):$/;"	kind:function	line:175
+singleton_register_dict	../pylib/ffext.py	/^singleton_register_dict = {}$/;"	kind:variable	line:174
 size	../pyproject/main.py	/^    def size(self):$/;"	kind:member	line:22
 size	../pyproject/player_mgr/player_mgr_model.py	/^    def size(self):$/;"	kind:member	line:12
 skip	../pylib/thrift/protocol/TProtocol.py	/^  def skip(self, type):$/;"	kind:member	line:160
-so	../pyproject/test.py	/^so = socket.create_connection(("127.0.0.1", 10242))$/;"	kind:variable	line:2
+sock	../pyproject/test.py	/^sock = socket.create_connection(("127.0.0.1", 10242))$/;"	kind:variable	line:4
 sock	../test.py	/^sock = socket.create_connection(("127.0.0.1", 10242))$/;"	kind:variable	line:4
 socket_exception	../pylib/thrift/server/TNonblockingServer.py	/^def socket_exception(func):$/;"	kind:function	line:78
 sort	../pylib/google/protobuf/internal/containers.py	/^  def sort(self, *args, **kwargs):$/;"	kind:member	line:81
 sort	../pylib/google/protobuf/internal/cpp_message.py	/^  def sort(self, *args, **kwargs):$/;"	kind:member	line:161
 sort	../pylib/google/protobuf/internal/cpp_message.py	/^  def sort(self, cmp=None, key=None, reverse=False, **kwargs):$/;"	kind:member	line:249
 split_sections	../pylib/pkg_resources.py	/^def split_sections(s):$/;"	kind:function	line:2550
-sqlite_test	../pyproject/main.py	/^def sqlite_test():$/;"	kind:function	line:105
+sqlite_test	../pyproject/main.py	/^def sqlite_test():$/;"	kind:function	line:115
 state_machine	../pylib/pkg_resources.py	/^state_machine = {$/;"	kind:variable	line:2519
 stop	../pylib/thrift/server/TNonblockingServer.py	/^    def stop(self):$/;"	kind:member	line:272
 stop	../pylib/thrift/server/TProcessPoolServer.py	/^    def stop(self):$/;"	kind:member	line:114
 stringReceived	../pylib/thrift/transport/TTwisted.py	/^    def stringReceived(self, frame):$/;"	kind:member	line:120
 stringReceived	../pylib/thrift/transport/TTwisted.py	/^    def stringReceived(self, frame):$/;"	kind:member	line:90
 subscribe	../pylib/pkg_resources.py	/^    def subscribe(self, callback):$/;"	kind:member	line:673
-sync_query	../pylib/ffext.py	/^    def sync_query(self, sql_):$/;"	kind:member	line:202
+sync_query	../pylib/ffext.py	/^    def sync_query(self, sql_):$/;"	kind:member	line:203
 syntax	../pyproject/proto/recv_msg_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
 syntax	../pyproject/proto/recv_msg_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:65
+syntax	../pyproject/recv_msg_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
+syntax	../pyproject/recv_msg_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:65
+szFormat	../pyproject/test.py	/^szFormat = "%ds" % len(szMsg)$/;"	kind:variable	line:16
+szFormat	../pyproject/test.py	/^szFormat = "%ds" % len(szMsg)$/;"	kind:variable	line:34
+szFormat	../pyproject/test.py	/^szFormat = "IHH%ds" % len(szMsg)$/;"	kind:variable	line:21
+szFormat	../pyproject/test.py	/^szFormat = "IHH%ds" % len(szMsg)$/;"	kind:variable	line:39
 szFormat	../test.py	/^szFormat = "%ds" % len(szMsg)$/;"	kind:variable	line:16
 szFormat	../test.py	/^szFormat = "IHH%ds" % len(szMsg)$/;"	kind:variable	line:21
+szMsg	../pyproject/test.py	/^szMsg = "2348348"$/;"	kind:variable	line:12
+szMsg	../pyproject/test.py	/^szMsg = po.SerializeToString()$/;"	kind:variable	line:30
 szMsg	../test.py	/^szMsg = po.SerializeToString()$/;"	kind:variable	line:12
 szProtoBufData	../test.py	/^    szProtoBufData = szrsp[nHeadSize:]$/;"	kind:variable	line:35
 szrsp	../test.py	/^    szrsp = sock.recv(10000)# print 'Original values:', values$/;"	kind:variable	line:28
@@ -2291,8 +2334,8 @@ test	../pylib/protobuf_example/protobuf_example.py	/^test = msg_pb2.TestMsg()$/;
 test.py	../pyproject/test.py	1;"	kind:file	line:1
 test.py	../test.py	1;"	kind:file	line:1
 test1	../pylib/protobuf_example/protobuf_example.py	/^test1 = msg_pb2.TestMsg()$/;"	kind:variable	line:16
-test_call_scene	../pyproject/main.py	/^def test_call_scene():$/;"	kind:function	line:133
-test_scene_call	../pyproject/main.py	/^def test_scene_call(msg_):$/;"	kind:function	line:143
+test_call_scene	../pyproject/main.py	/^def test_call_scene():$/;"	kind:function	line:143
+test_scene_call	../pyproject/main.py	/^def test_scene_call(msg_):$/;"	kind:function	line:153
 test_str	../pylib/protobuf_example/protobuf_example.py	/^test_str = test.SerializeToString()$/;"	kind:variable	line:12
 text_format.py	../pylib/google/protobuf/text_format.py	1;"	kind:file	line:1
 thrift_example.py	../pylib/thrift_example/thrift_example.py	1;"	kind:file	line:1
@@ -2303,7 +2346,7 @@ thrift_spec	../thrift_def/gen-py/msg_def/ttypes.py	/^  thrift_spec = ($/;"	kind:
 thrift_spec	../thrift_def/gen-py/msg_def/ttypes.py	/^  thrift_spec = ($/;"	kind:variable	line:27
 thrift_to_value	../pylib/ffext.py	/^            def thrift_to_value(val_):$/;"	kind:function	line:64
 to_filename	../pylib/pkg_resources.py	/^def to_filename(name):$/;"	kind:function	line:1135
-to_str	../pylib/ffext.py	/^def to_str(msg):$/;"	kind:function	line:135
+to_str	../pylib/ffext.py	/^def to_str(msg):$/;"	kind:function	line:136
 try_close	../pylib/thrift/server/TServer.py	/^    def try_close(file):$/;"	kind:function	line:208
 ttypes.py	../pylib/thrift_example/ff/ttypes.py	1;"	kind:file	line:1
 ttypes.py	../pyproject/msg_def/ttypes.py	1;"	kind:file	line:1
@@ -2353,7 +2396,7 @@ wake_up	../pylib/thrift/server/TNonblockingServer.py	/^    def wake_up(self):$/;
 wire_format.py	../pylib/google/protobuf/internal/wire_format.py	1;"	kind:file	line:1
 workerProcess	../pylib/thrift/server/TProcessPoolServer.py	/^    def workerProcess(self):$/;"	kind:member	line:51
 wraper	../pylib/event_bus.py	/^    def wraper(func_):$/;"	kind:function	line:58
-write	../pylib/ffext.py	/^    def write(self, x):$/;"	kind:member	line:314
+write	../pylib/ffext.py	/^    def write(self, x):$/;"	kind:member	line:315
 write	../pylib/thrift/Thrift.py	/^  def write(self, oprot):$/;"	kind:member	line:146
 write	../pylib/thrift/protocol/TBase.py	/^  def write(self, oprot):$/;"	kind:member	line:62
 write	../pylib/thrift/protocol/TBase.py	/^  write = TBase.write.im_func$/;"	kind:variable	line:81

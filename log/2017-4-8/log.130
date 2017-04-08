@@ -1,0 +1,38 @@
+19:49:38.551 TRACE [25610] [FFSCENE_PYTHON] ffscene_python_t::open begin
+19:49:38.794 TRACE [25610] [FFSCENE] ffscene_t::open begin
+19:49:38.794 INFO  [25610] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+19:49:38.795 TRACE [25610] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+19:49:38.795 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[6] begin
+19:49:38.795 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+19:49:38.795 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+19:49:38.795 TRACE [25610] [FFRPC] ffrpc_t::open end ok m_node_id[6]
+19:49:38.795 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+19:49:38.796 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+19:49:38.796 TRACE [25610] [FFSCENE] ffscene_t::open end ok
+19:49:38.796 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+19:49:38.796 TRACE [25610] [FFSCENE_PYTHON] ffscene_python_t::open end ok
+19:49:38.796 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+19:49:38.796 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+19:49:38.796 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+19:49:38.796 TRACE [25610] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+19:49:38.806 TRACE [25610] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+19:49:38.806 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[0] begin
+19:49:38.806 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+19:49:38.806 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+19:49:38.806 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@0] -> node id[12],bind_broker_id[0]
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+19:49:38.807 TRACE [25610] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+19:49:47.315 TRACE [25610] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+19:49:47.316 TRACE [25610] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[8],callback_id[2] begin
+19:49:47.316 TRACE [25610] [FFSCENE] ffscene_t::process_scene_call begin cmd[200]
+19:49:47.316 INFO  [25610] [FFSCENE_PYTHON] ffscene_python_t::gen_scene_call_callback len[15]
+19:49:47.316 TRACE [25610] [FFSCENE] ffscene_t::process_scene_call end ok
+19:49:47.316 INFO  [25610] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+19:49:47.316 TRACE [25610] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+19:49:47.316 INFO  [25610] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+19:49:47.316 TRACE [25610] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[12], broker_node_id[0], msgid<0>, callback_id_[2] end ok

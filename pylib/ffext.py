@@ -154,6 +154,9 @@ def to_str(msg):
     else:
         return json.dumps(msg, ensure_ascii=False)
 
+def change_session_scene(session_id, scene_name, extra):
+    return ff.ffscene_obj.change_session_scene(session_id, scene_name, extra)
+
 def send_msg_session(session_id, cmd_, body):
     return ff.py_send_msg_session(session_id, cmd_, to_str(body))
     ff.ffscene_obj.send_msg_session(session_id, cmd_, to_str(body))

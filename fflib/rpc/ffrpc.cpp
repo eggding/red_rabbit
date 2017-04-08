@@ -314,6 +314,11 @@ int ffrpc_t::call_impl(const string& service_name_, const string& msg_name_, con
     map<string, uint32_t>::iterator it = m_broker_client_name2nodeid.find(service_name_);
     if (it == m_broker_client_name2nodeid.end())
     {
+        for (it = m_broker_client_name2nodeid.begin(); it != m_broker_client_name2nodeid.end(); ++ it)
+        {
+            cout << it->first << endl;
+        }
+        cout << "no name 2 node id " << endl;
         delete callback_;
         return -1;
     }

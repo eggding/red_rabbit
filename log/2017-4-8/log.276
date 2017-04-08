@@ -1,0 +1,5 @@
+21:34:56.208 TRACE [31700] [FFGATE] ffgate_t::open begin broker<tcp:://127.0.0.1:10241>
+21:34:56.210 INFO  [31700] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp:://127.0.0.1:10241>,node_id_[0]
+21:34:56.210 ERROR [31700] [FFRPC] ffrpc_t::register_to_broker_master failed, can't connect to remote broker<tcp:://127.0.0.1:10241>
+21:34:56.210 ERROR [31700] [FFRPC] ffrpc_t::open failed, can't connect to remote broker<tcp:://127.0.0.1:10241>
+21:34:56.210 ERROR [31700] [FFGATE] ffgate_t::open failed check -broker argmuent

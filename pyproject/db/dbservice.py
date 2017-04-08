@@ -24,6 +24,21 @@ def get_async_db():
 def format_player_table(player):
     return 'account'
 
+def get_session_by_auth_key(szAuthKey):
+    sql = "select `SESSION_ID` FROM `account` WHERE `ACCOUNT_ID` = '%s'" % (szAuthKey)
+    ret = get_sync_db().sync_query(sql)
+    if ret.flag is False:
+        return
+    if len(ret.result) == 0:
+        import id_manager.idmanager as idmgr_
+        session_id = idmgr_.GenPlayerID()
+        sql = "INSERT INTO `account` (`ACCOUNT_ID`, `SESSION_ID`, `SESSION_UPD_TIME`, `CREATE_DATA`) VALUES ('%s', '%s', now(), now()) " % (szAuthKey, session_id)
+        ret = get_sync_db().sync_query(sql)
+        assert ret.flag is True
+        return session_id
+    else:
+        return int(ret.result[0][0])
+
 def register_player(player):
     sql = "INSERT INTO `player_register` (`NAME` , `PASSWORD`) VALUES ('%s', '%s') " % (player.nick_name, player.password)
     ret = get_sync_db().sync_query(sql)
@@ -52,14 +67,37 @@ def verify_password(player):
     player.set_id(int(ret.result[0][0]))
     return True
 
-def load_player(player, callback):
-    sql = "SELECT * FROM `%s`  WHERE `ACCOUNT_ID` = '%s' " % (format_player_table(player), player.id())
-    def cb(ret):
-        print("on cb ", ret)
-        if ret.flag == False or len(ret.result) == 0:
-            ffext.ERROR('load_player载入数据出错%s'%(sql))
-            return
-        ret.dump()
-        callback()
-    get_async_db().query(sql, cb)
-    return True
+def load_player(session, callback):
+    dictRet = {"session": session}
+    sql = "SELECT NAME, SEX FROM `player` WHERE `SESSION_ID` = '%s' " % (session)
+    print("sql ", sql)
+    ret = get_sync_db().sync_query(sql)
+    if ret.flag is False:
+        ffext.ERROR('load_player载入数据出错%s' % (sql))
+        return
+
+    if len(ret.result) == 0:
+        sql = "INSERT INTO `player` (`SESSION_ID`, `NAME` , `SEX`) VALUES ('%s', '%s', '%d')" % (session, "_{0}".format(session), 0)
+        dictRet["name"] = "_{0}".format(session)
+        dictRet["sex"] = 0
+    else:
+        dictRet["name"] = ret.result[0][0]
+        dictRet["sex"] = ret.result[0][1]
+
+    sql = "SELECT MONEY_TYPE, MONEY_VALUE FROM `player_money` WHERE `SESSION_ID` = '%s' " % (session)
+    ret = get_sync_db().sync_query(sql)
+    if ret.flag is False:
+        ffext.ERROR('load_player载入数据出错%s' % (sql))
+        return
+
+    dictRet["money"] = []
+    callback(dictRet)
+
+    # def cb(ret):
+    #     print("on cb ", ret)
+    #     if ret.flag == False or len(ret.result) == 0:
+    #         ffext.ERROR('load_player载入数据出错%s'%(sql))
+    #         return
+    #     ret.dump()
+    #     callback(ret.result)
+    # get_async_db().query(sql, cb)
