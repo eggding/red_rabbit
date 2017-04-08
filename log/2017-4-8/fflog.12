@@ -1,0 +1,2 @@
+16:40:38.215 INFO  [16464] [BROKER] ffbroker_t::connect_to_master_broker begin<tcp://127.0.0.1:20242>
+16:40:38.216 ERROR [16464] [BROKER] ffbroker_t::register_to_broker_master failed, can't connect to master broker<tcp://127.0.0.1:20242>

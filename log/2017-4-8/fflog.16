@@ -1,0 +1,11 @@
+17:40:54.948 TRACE [19538] [FFSCENE_PYTHON] ffscene_python_t::open begin
+17:40:54.954 TRACE [19538] [FFSCENE_PYTHON] ffscene_python_t::open end ok
+17:41:02.252 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:34.216 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:35.309 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:36.300 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:37.365 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:46.439 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:48.685 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:41:49.933 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 
+17:45:05.457 ERROR [19538] [PY] load_player载入数据出错SELECT * FROM `account`  WHERE `ACCOUNT_ID` = 'pascal_session_key' 

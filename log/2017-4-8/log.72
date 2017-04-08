@@ -1,0 +1,74 @@
+18:49:22.099 TRACE [21783] [BROKER] ffbroker_t::open accept ok<tcp://127.0.0.1:10241>
+18:49:22.100 TRACE [21783] [FFGATE] ffgate_t::open begin broker<tcp://127.0.0.1:10241>
+18:49:22.100 INFO  [21783] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+18:49:22.100 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+18:49:22.100 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+18:49:22.100 TRACE [21783] [BROKER] ffbroker_t::handle_client_register alloc node id<1>,binder_broker[0]
+18:49:22.100 TRACE [21783] [BROKER] ffbroker_t::sync_all_register_info begin
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[1] begin
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_broadcast_msg_to_session_t::in_t] -> msg id[2]
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::open end ok m_node_id[1]
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_change_logic_node_t::in_t] -> msg id[3]
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_close_session_t::in_t] -> msg id[4]
+18:49:22.101 TRACE [21783] [FFGATE] ffgate_t::open end ok
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_route_msg_to_session_t::in_t] -> msg id[5]
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+18:49:22.101 TRACE [21783] [BROKER] ffbroker_t::sync_all_register_info to node_id[1]
+18:49:22.101 TRACE [21783] [BROKER] ffbroker_t::sync_all_register_info end ok
+18:49:22.101 TRACE [21783] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+18:49:22.102 TRACE [21783] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+18:49:22.102 TRACE [21783] [BROKER] ffbroker_t::handle_client_register end ok
+18:49:22.102 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:06:53.829 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:06:53.829 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:06:53.829 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:06:53.829 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:07:15.421 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:07:15.421 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:07:15.421 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:07:15.421 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:08:11.581 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:08:11.581 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:08:11.581 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:08:11.581 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:08:18.234 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:08:18.234 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:08:18.234 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:08:18.234 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:08:30.553 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:08:30.553 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:08:30.553 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:08:30.553 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:08:45.840 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:08:45.840 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:08:45.840 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:08:45.840 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:08:53.028 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:08:53.028 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:08:53.028 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:08:53.029 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:09:08.331 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:09:08.332 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:09:08.332 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:09:08.332 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:09:10.466 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:09:10.466 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:09:10.466 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:09:10.466 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:09:11.458 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:09:11.458 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:09:11.458 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:09:11.458 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:09:12.502 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:09:12.502 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:09:12.502 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:09:12.502 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:09:13.496 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:09:13.496 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:09:13.496 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:09:13.496 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+19:09:52.517 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+19:09:52.517 TRACE [21783] [BROKER] ffbroker_t::handle_client_register begin
+19:09:52.517 TRACE [21783] [BROKER] ffbroker_t::handle_client_register service<gate@0> has been registed
+19:09:52.517 TRACE [21783] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok

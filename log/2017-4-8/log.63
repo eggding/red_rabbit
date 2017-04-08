@@ -1,0 +1,67 @@
+18:25:56.826 TRACE [20838] [BROKER] ffbroker_t::open accept ok<tcp://127.0.0.1:10244>
+18:25:56.827 TRACE [20838] [FFGATE] ffgate_t::open begin broker<tcp://127.0.0.1:10244>
+18:25:56.827 INFO  [20838] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10244>,node_id_[0]
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::handle_client_register begin
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::handle_client_register alloc node id<1>,binder_broker[0]
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info begin
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info to node_id[1]
+18:25:56.827 TRACE [20838] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+18:25:56.827 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[1] begin
+18:25:56.827 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_broadcast_msg_to_session_t::in_t] -> msg id[2]
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info end ok
+18:25:56.827 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_change_logic_node_t::in_t] -> msg id[3]
+18:25:56.827 TRACE [20838] [BROKER] ffbroker_t::handle_client_register end ok
+18:25:56.828 TRACE [20838] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+18:25:56.828 TRACE [20838] [FFRPC] ffrpc_t::open end ok m_node_id[1]
+18:25:56.828 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_close_session_t::in_t] -> msg id[4]
+18:25:56.828 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_route_msg_to_session_t::in_t] -> msg id[5]
+18:25:56.828 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@1] -> node id[1],bind_broker_id[0]
+18:25:56.828 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+18:25:56.828 TRACE [20838] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+18:25:56.828 TRACE [20838] [FFGATE] ffgate_t::open end ok
+18:25:56.857 TRACE [20838] [FFSCENE_PYTHON] ffscene_python_t::open begin
+18:25:57.078 TRACE [20838] [FFSCENE] ffscene_t::open begin
+18:25:57.078 INFO  [20838] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10244>,node_id_[0]
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::handle_client_register begin
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::handle_client_register alloc node id<6>,binder_broker[0]
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info begin
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info to node_id[0]
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info to node_id[6]
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::sync_all_register_info end ok
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::handle_client_register end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+18:25:57.078 TRACE [20838] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[0] begin
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_broadcast_msg_to_session_t::in_t] -> msg id[2]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_change_logic_node_t::in_t] -> msg id[3]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_close_session_t::in_t] -> msg id[4]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_route_msg_to_session_t::in_t] -> msg id[5]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@1] -> node id[1],bind_broker_id[0]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[6] begin
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::open end ok m_node_id[6]
+18:25:57.078 TRACE [20838] [FFSCENE] ffscene_t::open end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@1] -> node id[1],bind_broker_id[0]
+18:25:57.078 TRACE [20838] [FFSCENE_PYTHON] ffscene_python_t::open end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+18:25:57.078 TRACE [20838] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+18:26:17.724 TRACE [20838] [FFNET] gateway_socket_controller_t::handle_read begin len<15>
+18:26:17.725 TRACE [20838] [FFNET] gateway_socket_controller_t::handle_read end msg size<0>
+18:26:17.725 TRACE [20838] [FFGATE] ffgate_t::verify_session_id session_key len=7, ip[127.0.0.1]
+18:26:17.725 TRACE [20838] [FFGATE] ffgate_t::verify_session_id end ok
+18:26:17.725 TRACE [20838] [FFRPC] ffrpc_t::call_impl begin service_name_<scene@0>, msg_name_<ff::session_verify_t::in_t>
+18:26:18.726 TRACE [20838] [FFNET] gateway_socket_controller_t::handle_read begin len<36>
+18:26:18.726 TRACE [20838] [FFNET] gateway_socket_controller_t::handle_read end msg size<0>
+18:26:18.726 TRACE [20838] [FFGATE] ffgate_t::broken begin
+18:26:18.726 TRACE [20838] [FFGATE] ffgate_t::broken session_id[0]

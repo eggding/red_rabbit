@@ -1,0 +1,2 @@
+16:28:09.112 INFO  [15758] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+16:28:09.144 INFO  [15758] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]

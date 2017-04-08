@@ -1,0 +1,5 @@
+19:11:02.228 TRACE [22939] [FFGATE] ffgate_t::open begin broker<tcp://127.0.0.1:10241>
+19:11:02.228 INFO  [22939] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+19:11:02.228 ERROR [22939] [FFRPC] ffrpc_t::register_to_broker_master failed, can't connect to remote broker<tcp://127.0.0.1:10241>
+19:11:02.228 ERROR [22939] [FFRPC] ffrpc_t::open failed, can't connect to remote broker<tcp://127.0.0.1:10241>
+19:11:02.228 ERROR [22939] [FFGATE] ffgate_t::open failed check -broker argmuent
