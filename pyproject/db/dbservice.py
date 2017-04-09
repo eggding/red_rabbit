@@ -6,19 +6,23 @@ table_num = 1
 
 g_sync_db = None
 g_async_db = None
+
+szDbName = "red_rabbit"
+szMysqlPwd = "pascalx64"
+
 def init():
     pass
 
 def get_sync_db():
     global g_sync_db
     if None == g_sync_db:
-        g_sync_db = ffext.ffdb_create('mysql://localhost:3306/root/pascalx64/red_rabbit')
+        g_sync_db = ffext.ffdb_create('mysql://localhost:3306/root/{0}/{1}'.format(szMysqlPwd, szDbName))
     return g_sync_db
 
 def get_async_db():
     global g_async_db
     if None == g_async_db:
-        g_async_db = ffext.ffdb_create('mysql://localhost:3306/root/pascalx64/red_rabbit')
+        g_async_db = ffext.ffdb_create('mysql://localhost:3306/root/{0}/{1}'.format(szMysqlPwd, szDbName))
     return g_async_db
 
 def format_player_table(player):
