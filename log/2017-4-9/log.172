@@ -49,3 +49,13 @@
 10:11:18.662 TRACE [10396] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
 10:11:18.662 INFO  [10396] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
 10:11:18.662 TRACE [10396] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[3] end ok
+10:33:54.435 TRACE [10396] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+10:33:54.435 TRACE [10396] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[8],callback_id[1] begin
+10:33:54.435 TRACE [10396] [FFSCENE] ffscene_t::process_scene_call begin cmd[1]
+10:33:54.435 INFO  [10396] [FFSCENE_PYTHON] ffscene_python_t::gen_scene_call_callback len[17]
+10:33:54.435 INFO  [10396] [FFSCENE] RoomCenter 玩家下线处理 {u'0': 4360573304}
+10:33:54.435 TRACE [10396] [FFSCENE] ffscene_t::process_scene_call end ok
+10:33:54.435 INFO  [10396] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+10:33:54.435 TRACE [10396] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+10:33:54.435 INFO  [10396] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+10:33:54.435 TRACE [10396] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[12], broker_node_id[0], msgid<0>, callback_id_[1] end ok

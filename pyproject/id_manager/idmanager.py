@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import ffext
+import db.dbservice as dbservice
 
 class idgen_t(object):
     def __init__(self, db_host_, type_id_ = 0, server_id_ = 0):
@@ -56,7 +57,7 @@ class idgen_t(object):
         self.db.query("UPDATE `id_generator` SET `AUTO_INC_ID` = '%d' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d' AND `AUTO_INC_ID` < '%d'" % (now_val, self.type_id, self.server_id, now_val), cb)
         return
 
-_PlayerIDMgr = idgen_t("mysql://localhost:3306/root/pascalx64/red_rabbit", 1, 1001)
+_PlayerIDMgr = idgen_t("mysql://localhost:3306/root/{0}/{1}".format(dbservice.szMysqlPwd, dbservice.szDbName), 1, 1001)
 _PlayerIDMgr.init()
 GenPlayerID = _PlayerIDMgr.gen_id
 

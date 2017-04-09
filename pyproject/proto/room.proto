@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+// 分配协议号 10201
+message reqest_create_room
+{
+};
+
+message respon

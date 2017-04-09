@@ -90,3 +90,9 @@
 10:11:18.699 TRACE [10380] [FFGATE] ffgate_t::enter_scene_callback session_id[4360573304]
 10:11:18.699 TRACE [10380] [FFGATE] ffgate_t::enter_scene_callback end ok
 10:11:18.699 TRACE [10380] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+10:33:54.433 TRACE [10380] [FFGATE] ffgate_t::broken begin
+10:33:54.433 TRACE [10380] [FFGATE] ffgate_t::broken session_id[4360573304]
+10:33:54.433 TRACE [10380] [FFRPC] ffrpc_t::call_impl begin service_name_<scene@0>, msg_name_<ff::session_offline_t::in_t>
+10:33:54.433 INFO  [10380] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+10:33:54.433 TRACE [10380] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[12], broker_node_id[0], msgid<10>, callback_id_[0] end ok
+10:33:54.433 TRACE [10380] [FFRPC] ffrpc_t::call_impl msgid<10> callback_id[0] end ok
