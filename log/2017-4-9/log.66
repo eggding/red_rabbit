@@ -1,0 +1,71 @@
+08:52:03.731 TRACE [6114] [FFGATE] ffgate_t::open begin broker<tcp:://127.0.0.1:10241>
+08:52:03.731 INFO  [6114] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp:://127.0.0.1:10241>,node_id_[0]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[1] begin
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_broadcast_msg_to_session_t::in_t] -> msg id[2]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_change_logic_node_t::in_t] -> msg id[3]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::open end ok m_node_id[1]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_close_session_t::in_t] -> msg id[4]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_route_msg_to_session_t::in_t] -> msg id[5]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+08:52:03.731 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+08:52:03.731 TRACE [6114] [FFGATE] ffgate_t::open end ok
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[0] begin
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_broadcast_msg_to_session_t::in_t] -> msg id[2]
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_change_logic_node_t::in_t] -> msg id[3]
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_close_session_t::in_t] -> msg id[4]
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_route_msg_to_session_t::in_t] -> msg id[5]
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+08:52:03.972 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+08:52:03.973 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+08:52:04.104 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+08:52:04.104 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[0] begin
+08:52:04.104 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_broadcast_msg_to_session_t::in_t] -> msg id[2]
+08:52:04.104 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_change_logic_node_t::in_t] -> msg id[3]
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_close_session_t::in_t] -> msg id[4]
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::gate_route_msg_to_session_t::in_t] -> msg id[5]
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@0] -> node id[12],bind_broker_id[0]
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+08:52:04.105 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+08:52:05.497 TRACE [6114] [FFNET] gateway_socket_controller_t::handle_read begin len<14>
+08:52:05.497 TRACE [6114] [FFNET] gateway_socket_controller_t::handle_read end msg size<0>
+08:52:05.497 TRACE [6114] [FFGATE] ffgate_t::verify_session_id session_key len=6, ip[127.0.0.1]
+08:52:05.497 TRACE [6114] [FFGATE] ffgate_t::verify_session_id end ok
+08:52:05.497 TRACE [6114] [FFRPC] ffrpc_t::call_impl begin service_name_<scene@0>, msg_name_<ff::session_verify_t::in_t>
+08:52:05.497 INFO  [6114] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+08:52:05.497 TRACE [6114] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[12], broker_node_id[0], msgid<11>, callback_id_[1] end ok
+08:52:05.497 TRACE [6114] [FFRPC] ffrpc_t::call_impl msgid<11> callback_id[1] end ok
+08:52:05.501 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+08:52:05.501 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[0],callback_id[1] begin
+08:52:05.501 TRACE [6114] [FFGATE] ffgate_t::verify_session_callback session_id[4360573304], err[]
+08:52:05.501 TRACE [6114] [FFGATE] ffgate_t::verify_session_callback end ok
+08:52:05.501 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+08:52:05.501 TRACE [6114] [FFRPC] ffrpc_t::call_impl begin service_name_<scene@0>, msg_name_<ff::session_enter_scene_t::in_t>
+08:52:05.501 INFO  [6114] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+08:52:05.501 TRACE [6114] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[12], broker_node_id[0], msgid<9>, callback_id_[2] end ok
+08:52:05.501 TRACE [6114] [FFRPC] ffrpc_t::call_impl msgid<9> callback_id[2] end ok
+08:52:05.504 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+08:52:05.504 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[3],callback_id[0] begin
+08:52:05.505 TRACE [6114] [FFGATE] ffgate_t::change_session_logic session_id[4360573304]
+08:52:05.505 TRACE [6114] [FFGATE] ffgate_t::change_session_logic end ok
+08:52:05.505 INFO  [6114] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+08:52:05.505 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+08:52:05.505 TRACE [6114] [FFRPC] ffrpc_t::call_impl begin service_name_<scene@1>, msg_name_<ff::session_enter_scene_t::in_t>
+08:52:05.506 INFO  [6114] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+08:52:05.506 TRACE [6114] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[6], broker_node_id[0], msgid<9>, callback_id_[3] end ok
+08:52:05.506 TRACE [6114] [FFRPC] ffrpc_t::call_impl msgid<9> callback_id[3] end ok
+08:52:05.539 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+08:52:05.540 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[0],callback_id[3] begin
+08:52:05.540 TRACE [6114] [FFGATE] ffgate_t::enter_scene_callback session_id[4360573304]
+08:52:05.540 TRACE [6114] [FFGATE] ffgate_t::enter_scene_callback end ok
+08:52:05.540 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+08:52:05.575 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+08:52:05.576 TRACE [6114] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[0],callback_id[2] begin
+08:52:05.576 TRACE [6114] [FFGATE] ffgate_t::enter_scene_callback session_id[4360573304]
+08:52:05.576 TRACE [6114] [FFGATE] ffgate_t::enter_scene_callback end ok
+08:52:05.576 TRACE [6114] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok

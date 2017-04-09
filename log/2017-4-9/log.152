@@ -1,0 +1,340 @@
+09:35:19.562 TRACE [8568] [FFSCENE_PYTHON] ffscene_python_t::open begin
+09:35:19.951 TRACE [8568] [FFSCENE] ffscene_t::open begin
+09:35:19.951 INFO  [8568] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+09:35:19.951 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[12] begin
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::open end ok m_node_id[12]
+09:35:19.952 TRACE [8568] [FFSCENE] ffscene_t::open end ok
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+09:35:19.952 TRACE [8568] [FFSCENE_PYTHON] ffscene_python_t::open end ok
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@0] -> node id[6],bind_broker_id[0]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[12],bind_broker_id[0]
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+09:35:19.952 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+09:35:21.960 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:21.960 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[9],callback_id[3] begin
+09:35:21.960 TRACE [8568] [FFSCENE] ffscene_t::process_session_enter begin gate[gate@0]
+09:35:21.960 INFO  [8568] [FFSCENE] 进入大厅场景成功 4360573304
+09:35:21.963 INFO  [8568] [FFSCENE] OnLoadPlayerDataDone {"money": [], "session": 4360573304, "name": "_43605733", "sex": "0"}
+09:35:21.963 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:21.963 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:21.963 TRACE [8568] [FFSCENE] ffscene_t::process_session_enter end ok
+09:35:21.963 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:21.963 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:21.963 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:21.963 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:21.963 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:21.963 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:21.963 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:21.963 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[3] end ok
+09:35:22.965 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:22.965 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[4] begin
+09:35:22.965 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:22.965 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:22.965 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:22.965 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:22.966 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:22.966 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:22.966 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:22.966 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:22.966 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:22.966 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:22.966 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:22.966 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:22.966 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[4] end ok
+09:35:23.968 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:23.968 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[5] begin
+09:35:23.968 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:23.968 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:23.969 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:23.969 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:23.969 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:23.969 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:23.969 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:23.969 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:23.969 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:23.969 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:23.969 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:23.969 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:23.969 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[5] end ok
+09:35:24.971 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:24.971 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[6] begin
+09:35:24.971 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:24.971 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:24.971 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:24.971 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:24.971 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:24.971 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:24.972 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:24.972 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:24.972 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:24.972 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:24.972 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:24.972 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:24.972 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[6] end ok
+09:35:25.974 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:25.974 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[7] begin
+09:35:25.974 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:25.974 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:25.974 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:25.974 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:25.974 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:25.974 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:25.974 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:25.974 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:25.974 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:25.975 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:25.975 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:25.975 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:25.975 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[7] end ok
+09:35:26.976 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:26.976 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[8] begin
+09:35:26.976 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:26.976 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:26.976 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:26.976 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:26.976 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:26.976 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:26.976 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:26.976 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:26.976 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:26.977 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:26.977 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:26.977 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:26.977 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[8] end ok
+09:35:27.979 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:27.979 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[9] begin
+09:35:27.979 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:27.979 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:27.980 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:27.980 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:27.980 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:27.980 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:27.980 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:27.980 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:27.980 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:27.980 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:27.980 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:27.980 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:27.981 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[9] end ok
+09:35:28.982 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:28.982 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[10] begin
+09:35:28.982 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:28.982 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:28.982 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:28.983 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:28.983 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:28.983 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:28.983 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:28.983 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:28.983 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:28.983 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:28.983 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:28.983 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:28.983 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[10] end ok
+09:35:29.984 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:29.984 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[11] begin
+09:35:29.984 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:29.984 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:29.985 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:29.985 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:29.985 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:29.985 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:29.985 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:29.985 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:29.985 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:29.985 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:29.985 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:29.985 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:29.985 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[11] end ok
+09:35:30.986 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:30.986 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[12] begin
+09:35:30.986 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:30.986 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:30.986 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:30.986 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:30.986 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:30.986 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:30.986 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:30.986 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:30.986 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:30.986 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:30.986 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:30.987 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:30.987 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[12] end ok
+09:35:31.988 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:31.988 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[13] begin
+09:35:31.988 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:31.988 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:31.988 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:31.988 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:31.988 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:31.988 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:31.988 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:31.989 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:31.989 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:31.989 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:31.989 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:31.989 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:31.989 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[13] end ok
+09:35:32.990 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:32.990 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[14] begin
+09:35:32.990 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:32.990 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:32.991 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:32.991 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:32.991 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:32.991 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:32.991 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:32.991 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:32.991 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:32.991 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:32.991 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:32.991 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:32.992 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[14] end ok
+09:35:33.993 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:33.993 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[15] begin
+09:35:33.993 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:33.993 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:33.994 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:33.994 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:33.994 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:33.994 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:33.994 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:33.994 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:33.994 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:33.995 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:33.995 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:33.995 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:33.995 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[15] end ok
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[16] begin
+09:35:34.997 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:34.997 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:34.997 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:34.997 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:34.997 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:34.997 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:34.997 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:34.997 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:34.997 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[16] end ok
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[17] begin
+09:35:36.000 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:36.000 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:36.000 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:36.000 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:36.000 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:36.000 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:36.000 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:36.000 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:36.000 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[17] end ok
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[18] begin
+09:35:37.002 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:37.002 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:37.002 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:37.002 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:37.002 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:37.002 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:37.002 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:37.002 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:37.002 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[18] end ok
+09:35:38.004 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:38.004 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[19] begin
+09:35:38.004 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:38.004 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:38.005 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:38.005 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:38.005 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:38.005 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:38.005 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:38.005 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:38.005 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:38.005 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:38.005 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:38.005 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:38.005 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[19] end ok
+09:35:39.006 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:39.006 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[20] begin
+09:35:39.006 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:39.007 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:39.007 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:39.007 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:39.007 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:39.007 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:39.007 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:39.007 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:39.007 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:39.007 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:39.007 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:39.007 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:39.008 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[20] end ok
+09:35:40.009 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:40.009 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[7],callback_id[21] begin
+09:35:40.009 TRACE [8568] [FFSCENE] ffscene_t::process_session_req begin cmd[30002]
+09:35:40.009 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[4]
+09:35:40.010 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:35:40.010 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:35:40.010 TRACE [8568] [FFSCENE] ffscene_t::process_session_req end ok
+09:35:40.010 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:40.010 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:40.010 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:35:40.010 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:40.010 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:35:40.010 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:35:40.010 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:40.010 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[21] end ok
+09:35:40.639 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:35:40.639 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[8],callback_id[1] begin
+09:35:40.639 TRACE [8568] [FFSCENE] ffscene_t::process_scene_call begin cmd[8011]
+09:35:40.639 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_scene_call_callback len[17]
+09:35:40.639 INFO  [8568] [FFSCENE] RoomCenter 玩家下线处理 {u'0': 4360573304}
+09:35:40.639 TRACE [8568] [FFSCENE] ffscene_t::process_scene_call end ok
+09:35:40.639 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:35:40.639 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:35:40.639 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:35:40.639 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[6], broker_node_id[0], msgid<0>, callback_id_[1] end ok
+09:36:13.805 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:36:13.805 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[9],callback_id[24] begin
+09:36:13.805 TRACE [8568] [FFSCENE] ffscene_t::process_session_enter begin gate[gate@0]
+09:36:13.805 INFO  [8568] [FFSCENE] 进入大厅场景成功 4360573304
+09:36:13.806 INFO  [8568] [FFSCENE] OnLoadPlayerDataDone {"money": [], "session": 4360573304, "name": "_43605733", "sex": "0"}
+09:36:13.806 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session begin session_id_<4360573304>
+09:36:13.806 TRACE [8568] [FFSCENE] ffscene_t::send_msg_session end ok gate[gate@0]
+09:36:13.806 TRACE [8568] [FFSCENE] ffscene_t::process_session_enter end ok
+09:36:13.806 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:36:13.806 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:36:13.806 TRACE [8568] [FFRPC] ffrpc_t::call_impl begin service_name_<gate@0>, msg_name_<ff::gate_route_msg_to_session_t::in_t>
+09:36:13.806 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:36:13.807 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<5>, callback_id_[0] end ok
+09:36:13.807 TRACE [8568] [FFRPC] ffrpc_t::call_impl msgid<5> callback_id[0] end ok
+09:36:13.807 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:36:13.807 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[24] end ok
+09:36:18.395 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:36:18.395 TRACE [8568] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[8],callback_id[2] begin
+09:36:18.395 TRACE [8568] [FFSCENE] ffscene_t::process_scene_call begin cmd[8011]
+09:36:18.395 INFO  [8568] [FFSCENE_PYTHON] ffscene_python_t::gen_scene_call_callback len[17]
+09:36:18.395 INFO  [8568] [FFSCENE] RoomCenter 玩家下线处理 {u'0': 4360573304}
+09:36:18.396 TRACE [8568] [FFSCENE] ffscene_t::process_scene_call end ok
+09:36:18.396 INFO  [8568] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:36:18.396 TRACE [8568] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:36:18.396 INFO  [8568] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:36:18.396 TRACE [8568] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[6], broker_node_id[0], msgid<0>, callback_id_[2] end ok

@@ -1,0 +1,26 @@
+09:20:11.291 TRACE [7553] [FFSCENE_PYTHON] ffscene_python_t::open begin
+09:20:11.567 TRACE [7553] [FFSCENE] ffscene_t::open begin
+09:20:11.567 INFO  [7553] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] begin
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data node_id[12] begin
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[7]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::open end ok m_node_id[12]
+09:20:11.568 TRACE [7553] [FFSCENE] ffscene_t::open end ok
+09:20:11.568 TRACE [7553] [FFSCENE_PYTHON] ffscene_python_t::open end ok
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[8]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[9]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[10]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[11]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data name[gate@0] -> node id[1],bind_broker_id[0]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@1] -> node id[6],bind_broker_id[0]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data name[scene@0] -> node id[12],bind_broker_id[0]
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_sync_data end ok
+09:20:11.568 TRACE [7553] [FFRPC] ffrpc_t::handle_msg_impl cmd[5] call end ok
+09:20:13.499 TRACE [7553] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] begin
+09:20:13.499 TRACE [7553] [FFRPC] ffrpc_t::handle_broker_route_msg msg_id[11],callback_id[1] begin
+09:20:13.499 TRACE [7553] [FFSCENE] ffscene_t::process_session_verify begin session_key size=2
+09:20:13.499 TRACE [7553] [FFSCENE] ffscene_t::process_session_verify end ok
+09:20:13.499 INFO  [7553] [FFRPC] ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=0
+09:20:13.499 TRACE [7553] [FFRPC] ffrpc_t::handle_msg_impl cmd[6] call end ok
+09:20:13.500 INFO  [7553] [FFRPC] ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[0]
+09:20:13.500 TRACE [7553] [FFRPC] ffrpc_t::send_to_broker_by_nodeid dest_node_id[1], broker_node_id[0], msgid<0>, callback_id_[1] end ok

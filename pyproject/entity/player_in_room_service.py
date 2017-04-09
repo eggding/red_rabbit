@@ -11,9 +11,17 @@ class RoomPlayer(object):
         return self.m_session
 
     def InitFromDict(self, dictData):
-        self.m_session = dictData["session"]
+        self.m_session = int(dictData["session"])
         self.m_szName = dictData["name"]
-        self.m_nSex = dictData["sex"]
+        self.m_nSex = int(dictData["sex"])
 
     def Serial2Client(self):
-        pass
+        import proto.login_pb2 as login_pb2
+        syn_req = login_pb2.syn_player_data()
+        syn_req.ret = 0
+        syn_req.session = self.m_session
+        syn_req.name = self.m_szName
+        syn_req.sex = self.m_nSex
+        syn_req.money_info = ""
+        syn_req.bag_item_info = ""
+        return syn_req.SerializeToString()

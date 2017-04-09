@@ -49,8 +49,16 @@ class player_t(object):
 
 
 def OnEnterLoginScene(session, src, data):
-    print("Onenter login scene ", session, src, data)
-    ffext.change_session_scene(session, "scene@1", "oops")
+    import proto.login_pb2 as login_pb2
+    rsp_login = login_pb2.response_login()
+    rsp_login.ret = 0
+    rsp_login.session_id = int(session)
+    import rpc.rpc_def as rpc_def
+    ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp_login.SerializeToString())
+
+    ffext.LOGINFO("FFSCENE", "认证完成，玩家进入登录场景 {0}".format(session))
+    ffext.change_session_scene(session, scene_def.ROOM_SCENE, "")
+    ffext.LOGINFO("FFSCENE", "请求转到大厅场景 {0}".format(session))
 
 ffext.g_session_enter_callback = OnEnterLoginScene
 

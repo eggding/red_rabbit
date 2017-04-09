@@ -27,10 +27,10 @@ def session_offline_callback(func_):
     g_session_offline_callback = func_
     return func_
 GID = 0
-def once_timer(timeout_, func_):
+def once_timer(timeout_, func_, data):
     global g_timer_callback_dict, GID
     GID += 1
-    g_timer_callback_dict[GID] = func_
+    g_timer_callback_dict[GID] = [func_, data]
     ff.ffscene_obj.once_timer(timeout_, GID);
 
 
@@ -124,9 +124,9 @@ def ff_session_logic(session_id, cmd, body):
 
 def ff_timer_callback(id):
     try:
-        cb = g_timer_callback_dict[id]
+        cb, data = g_timer_callback_dict[id]
         del g_timer_callback_dict[id]
-        cb()
+        cb(data)
     except:
         return False
 

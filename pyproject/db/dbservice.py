@@ -77,7 +77,11 @@ def load_player(session, callback):
         return
 
     if len(ret.result) == 0:
-        sql = "INSERT INTO `player` (`SESSION_ID`, `NAME` , `SEX`) VALUES ('%s', '%s', '%d')" % (session, "_{0}".format(session), 0)
+        sql = "INSERT INTO `player` (`SESSION_ID`, `NAME` , `SEX`, `CREATE_DATA`) VALUES ('%s', '%s', %d, now())" % (session, "_{0}".format(str(session)[:8]), 0)
+        print("cereate new ", sql)
+        ret = get_sync_db().sync_query(sql)
+        assert ret.flag is True
+
         dictRet["name"] = "_{0}".format(session)
         dictRet["sex"] = 0
     else:

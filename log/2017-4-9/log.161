@@ -1,0 +1,76 @@
+09:51:38.657 TRACE [9230] [BROKER] ffbroker_t::open accept ok<tcp://127.0.0.1:10241>
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::handle_client_register begin
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::handle_client_register alloc node id<1>,binder_broker[4294967295]
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info begin
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info to node_id[1]
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info end ok
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::handle_client_register end ok
+09:51:38.740 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+09:51:39.188 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+09:51:39.188 TRACE [9230] [BROKER] ffbroker_t::handle_client_register begin
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::handle_client_register alloc node id<6>,binder_broker[4294967295]
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info begin
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info to node_id[0]
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info to node_id[6]
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info end ok
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::handle_client_register end ok
+09:51:39.189 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<3> begin
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::handle_client_register begin
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::handle_client_register alloc node id<12>,binder_broker[4294967295]
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info begin
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info to node_id[0]
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info to node_id[0]
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info to node_id[12]
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::sync_all_register_info end ok
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::handle_client_register end ok
+09:51:39.315 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<3> end ok
+09:51:41.092 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.092 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[6]
+09:51:41.092 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234311296]
+09:51:41.092 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[1]
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234310928]
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[6]
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234311296]
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[1]
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234310928]
+09:51:41.095 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.096 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.096 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[12]
+09:51:41.096 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234311456]
+09:51:41.096 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.098 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.098 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[1]
+09:51:41.098 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234310928]
+09:51:41.098 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[1]
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234310928]
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[1]
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234310928]
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[1]
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234310928]
+09:51:41.135 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[6]
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234311296]
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[12]
+09:51:55.792 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234311456]
+09:51:55.793 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
+09:51:55.793 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> begin
+09:51:55.793 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client begin dest node id[6]
+09:51:55.793 TRACE [9230] [BROKER] ffbroker_t::route_msg_to_broker_client end ok sock[140294234311296]
+09:51:55.793 TRACE [9230] [BROKER] ffbroker_t::handle_msg_impl cmd<4> end ok
