@@ -2,10 +2,10 @@
 import socket
 import struct, time
 
-sock = socket.create_connection(("112.74.124.100", 10242))
+sock = socket.create_connection(("192.168.74.130", 10242))
 
 def PacketLoginBuff():
-    szAuthCode = "pascal"
+    szAuthCode = "sfaee"
 
     import proto.login_pb2 as login_pb2
     req_login = login_pb2.request_login()
@@ -40,6 +40,6 @@ def SendEcho():
 
 sock.send(PacketLoginBuff())
 print(sock.recv(3844))
-
-while True:
-    print(sock.recv(4949))
+print(sock.recv(4949))
+print(sock.recv(4949))
+sock.send("dd")

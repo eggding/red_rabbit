@@ -1,4 +1,0 @@
-19:08:11.580 TRACE [22678] [FFGATE] ffgate_t::open begin broker<tcp:://127.0.0.1:10241>
-19:08:11.581 INFO  [22678] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp:://127.0.0.1:10241>,node_id_[0]
-19:08:11.581 ERROR [22678] [FFRPC] ffrpc_t::open failed
-19:08:11.581 ERROR [22678] [FFGATE] ffgate_t::open failed check -broker argmuent

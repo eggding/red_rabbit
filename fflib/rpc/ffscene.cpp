@@ -6,7 +6,8 @@ using namespace ff;
 
 ffscene_t::ffscene_t()
 {
-    
+    m_cb_serial = 0;
+    m_map_rpc_base.clear();
 }
 ffscene_t::~ffscene_t()
 {
@@ -47,17 +48,21 @@ int ffscene_t::close()
 int ffscene_t::process_session_verify(ffreq_t<session_verify_t::in_t, session_verify_t::out_t>& req_)
 {
     LOGTRACE((FFSCENE, "ffscene_t::process_session_verify begin session_key size=%u", req_.arg.session_key.size()));
-    session_verify_t::out_t out;
+    // session_verify_t::out_t out;
     if (m_callback_info.verify_callback)
     {
         session_verify_arg arg(req_.arg.session_key, req_.arg.online_time, req_.arg.ip, req_.arg.gate_name);
+        arg.set_cb_id(++ m_cb_serial);
+        struct rpc_base_info_t rpc_b;
+        req_.make_copy(rpc_b);
+        m_map_rpc_base.insert(make_pair(m_cb_serial, rpc_b));
+
         m_callback_info.verify_callback->exe(&arg);
-        out.session_id = arg.alloc_session_id;
-        out.extra_data = arg.extra_data;
+        // out.session_id = arg.alloc_session_id;
+        // out.extra_data = arg.extra_data;        
     }
     
-    req_.response(out);
-    LOGTRACE((FFSCENE, "ffscene_t::process_session_verify end ok"));
+    // req_.response(out);
     return 0;
 }
 //! 处理client 进入场景
@@ -215,4 +220,19 @@ int ffscene_t::change_session_scene(const userid_t& session_id_, const string& t
     m_ffrpc->call(it->second.gate_name, msg);
     m_session_info.erase(it);
     return 0;
+}
+
+void ffscene_t::on_verify_auth_callback(userid_t session, string& extra_data, int cb_id)
+{
+    map<int, struct rpc_base_info_t>::iterator it = m_map_rpc_base.find(cb_id);
+    if (it == m_map_rpc_base.end())
+    {
+        return ;
+    }
+    struct rpc_base_info_t& req_ = it->second;
+    session_verify_t::out_t out;
+    out.session_id = session;
+    out.extra_data = extra_data;      
+    this->get_rpc().response(req_.node_id, 0, req_.callback_id, req_.bridge_route_id, out.encode_data());
+    LOGTRACE((FFSCENE, "ffscene_t::process_session_verify end ok"));
 }

@@ -83,7 +83,7 @@ def session_call(cmd_, protocol_type_ = 'json'):
         return func_
     return session_logic_callback
 
-def ff_session_verify(session_key, online_time, ip, gate_name):
+def ff_session_verify(session_key, online_time, ip, gate_name, cb_id):
     '''
     session_key 为client发过来的验证key，可能包括账号密码
     online_time 为上线时间
@@ -91,7 +91,7 @@ def ff_session_verify(session_key, online_time, ip, gate_name):
     '''
     ret= [session_key]
     if g_session_verify_callback != None:
-       ret = g_session_verify_callback(session_key, online_time, ip, gate_name) 
+       ret = g_session_verify_callback(session_key, online_time, ip, gate_name, cb_id)
     return ret
 
 def ff_session_enter(session_id, from_scene, extra_data):
@@ -170,6 +170,9 @@ def broadcast_msg_gate(gate_name_, cmd_, body):
 def close_session(session_id):
     return ff.ffscene_obj.close_session(session_id)
 
+def on_verify_auth_callback(session, extra_data, cb_id):
+    ff.ffscene_obj.on_verify_auth_callback(session, extra_data, cb_id)
+
 def reload(name_):
     if name_ != 'ff':
         return ff.ffscene_obj.reload(name_)
@@ -198,10 +201,10 @@ class ffdb_t(object):
         self.db_id  = id
     def host(self):
         return self.host
-    def query(self, sql_, callback_ = None):
+    def query(self, sql_, callback_=None, dict_params=None):
         global DB_CALLBACK_DICT, DB_CALLBACK_ID
         DB_CALLBACK_ID += 1
-        DB_CALLBACK_DICT[DB_CALLBACK_ID] = callback_
+        DB_CALLBACK_DICT[DB_CALLBACK_ID] = [callback_, dict_params]
         ff.ffscene_obj.db_query(self.db_id, sql_, DB_CALLBACK_ID)
     def sync_query(self, sql_):
         ret = ff.ffscene_obj.sync_db_query(self.db_id, sql_)
@@ -224,11 +227,19 @@ class query_result_t(object):
 #C++ 异步执行完毕db操作回调
 def ff_db_query_callback(callback_id_, flag_, result_, col_):
     global DB_CALLBACK_DICT
-    cb = DB_CALLBACK_DICT.get(callback_id_)
+    listData = DB_CALLBACK_DICT.get(callback_id_)
     del DB_CALLBACK_DICT[callback_id_]
-    #print('db_query_callback', callback_id_, flag_, result_, col_)
-    if cb != None:
-        ret = query_result_t(flag_, result_, col_)
+    if listData is None:
+        return
+
+    cb, params = listData
+    if cb is None:
+        return
+
+    ret = query_result_t(flag_, result_, col_)
+    if params is not None:
+        cb(ret, params)
+    else:
         cb(ret)
 
 # 封装异步操作数据库类

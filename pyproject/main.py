@@ -171,7 +171,7 @@ def test_call_scene():
             print(err_, msg_)
 
     ffext.call_service('scene@0', 200, {'hello': 'world'}, cb)
-    ffext.call_service('scene@1', 200, {'hello': 'ae'}, cb)
+    # ffext.call_service('scene@1', 200, {'hello': 'ae'}, cb)
 
     # ffext.bridge_call_service('groupa', 'scene@0', 200, {'hello':'world'}, cb)
 

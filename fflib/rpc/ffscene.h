@@ -45,6 +45,7 @@ public:
     {
         string gate_name;//! 所在的gate
     };
+
 public:
     ffscene_t();
     virtual ~ffscene_t();
@@ -66,6 +67,8 @@ public:
     //! 切换scene
     int change_session_scene(const userid_t& session_id_, const string& to_scene_, const string& extra_data);
 
+    void on_verify_auth_callback(userid_t session, string& extra_data, int cb_id);
+
     ffrpc_t& get_rpc() { return *m_ffrpc; }
 private:
     //! 处理client 上线
@@ -83,6 +86,9 @@ protected:
     shared_ptr_t<ffrpc_t>                       m_ffrpc;
     callback_info_t                             m_callback_info;
     map<userid_t/*sessionid*/, session_info_t>    m_session_info;
+
+    int m_cb_serial;
+    map<int, rpc_base_info_t> m_map_rpc_base;
 };
 
 
@@ -101,6 +107,11 @@ public:
     {
         return TYPEID(session_verify_arg);
     }
+    void set_cb_id(int id)
+    {
+        m_cb_id = id;
+    }
+    int             m_cb_id;
     string          session_key;
     int64_t         online_time;
     string          ip;

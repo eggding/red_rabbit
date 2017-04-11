@@ -72,6 +72,13 @@ class null_type_t: public ffmsg_t<null_type_t>
     void decode(){}
 };
 
+struct rpc_base_info_t
+{
+    uint32_t        node_id;
+    uint32_t        callback_id;
+    uint32_t        bridge_route_id;
+};
+
 template<typename IN, typename OUT = null_type_t>
 struct ffreq_t
 {
@@ -82,6 +89,7 @@ struct ffreq_t
         responser(NULL)
     {}
     IN              arg;
+    int             m_cb_id;
     uint32_t        node_id;
     uint32_t        callback_id;
     uint32_t        bridge_route_id;
@@ -90,6 +98,16 @@ struct ffreq_t
     {
         if (0 != callback_id)
             responser->response(node_id, 0, callback_id, bridge_route_id, out_.encode_data());
+    }
+    void set_cb_id(int id)
+    {
+        m_cb_id = id;
+    }
+    void make_copy(struct rpc_base_info_t& cp)
+    {
+        cp.node_id = node_id;
+        cp.callback_id = callback_id;
+        cp.bridge_route_id = bridge_route_id;
     }
 };
 

@@ -1,4 +1,0 @@
-00:19:36.895 TRACE [7153] [BROKER] ffbroker_t::sync_all_register_info begin
-00:19:36.895 TRACE [7153] [BROKER] ffbroker_t::sync_all_register_info to node_id[0]
-00:19:36.895 TRACE [7153] [BROKER] ffbroker_t::sync_all_register_info to node_id[0]
-00:19:36.895 TRACE [7153] [BROKER] ffbroker_t::sync_all_register_info end ok

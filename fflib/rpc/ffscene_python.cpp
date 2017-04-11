@@ -41,8 +41,8 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
               .reg(&ffscene_python_t::db_query, "db_query")
               .reg(&ffscene_python_t::sync_db_query, "sync_db_query")
               .reg(&ffscene_python_t::call_service, "call_service")
-              .reg(&ffscene_python_t::bridge_call_service, "bridge_call_service");
-
+              .reg(&ffscene_python_t::bridge_call_service, "bridge_call_service")
+              .reg(&ffscene_python_t::on_verify_auth_callback, "on_verify_auth_callback");
 
     (*m_ffpython).reg(&ffdb_t::escape, "escape")
                  .reg(&ffscene_python_t::py_send_msg_session, "py_send_msg_session")
@@ -160,7 +160,7 @@ ffslot_t::callback_t* ffscene_python_t::gen_verify_callback()
             {
                 vector<string> ret = ffscene->get_ffpython().call<vector<string> >(ffscene->m_ext_name, func_name,
                                                                                data->session_key, data->online_time,
-                                                                               data->ip, data->gate_name);
+                                                                               data->ip, data->gate_name, data->m_cb_id);
                 if (ret.size() >= 1)
                 {
                     data->alloc_session_id = ::atol(ret[0].c_str());

@@ -10,9 +10,12 @@ class RoomPlayer(object):
     def GetSession(self):
         return self.m_session
 
-    def InitFromDict(self, dictData):
-        self.m_session = int(dictData["session"])
-        self.m_szName = dictData["name"]
+    def InitFromDict(self, dictDbRet):
+        import db.dbs_def as dbs_def
+        session = dictDbRet[dbs_def.SESSION]
+        dictData = dictDbRet[dbs_def.RESULT]
+        self.m_session = int(session)
+        self.m_szName = dictData["name"].encode("utf-8")
         self.m_nSex = int(dictData["sex"])
 
     def Serial2Client(self):

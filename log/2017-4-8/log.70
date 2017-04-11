@@ -1,3 +1,0 @@
-18:44:46.853 TRACE [21615] [FFSCENE_PYTHON] ffscene_python_t::open begin
-18:44:47.054 TRACE [21615] [FFSCENE] ffscene_t::open begin
-18:44:47.055 INFO  [21615] [FFRPC] ffrpc_t::connect_to_broker begin...host_<>,node_id_[0]
