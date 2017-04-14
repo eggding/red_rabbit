@@ -39,7 +39,8 @@ int main(int argc, char* argv[])
     }
     else
     {
-        LOG.start("-log_path ./log -log_filename log -log_class DB_MGR,XX,BROKER,FFRPC,FFGATE,FFSCENE,FFSCENE_PYTHON,FFNET -log_print_screen true -log_print_file true -log_level 6");
+        // LOG.start("-log_path ./log -log_filename log -log_class DB_MGR,XX,BROKER,FFRPC,FFGATE,FFSCENE,FFSCENE_PYTHON,FFNET -log_print_screen true -log_print_file true -log_level 6");
+        LOG.start("-log_path ./log -log_filename log -log_class DB_MGR,XX,BROKER,FFRPC,FFGATE,FFSCENE,FFSCENE_PYTHON,FFNET -log_print_screen true -log_print_file false -log_level 3");
     }
     string perf_path = "./perf";
     long perf_timeout = 30*60;//! second
@@ -61,7 +62,20 @@ int main(int argc, char* argv[])
 
     try
     {
-        if (arg_helper.is_enable_option("-main-broker"))
+        if (arg_helper.is_enable_option("-master"))
+        {
+            //! 启动broker，负责网络相关的操作，如消息转发，节点注册，重连等
+            if (arg_helper.is_enable_option("-broker"))
+            {
+                cout << "init broker " << endl;
+                if (ffbroker.open(arg_helper))
+                {
+                    printf("broker open failed\n");
+                    return -1;
+                }
+            }
+        }
+        if (arg_helper.is_enable_option("-slave"))
         {
             //! 启动broker，负责网络相关的操作，如消息转发，节点注册，重连等
             if (arg_helper.is_enable_option("-broker"))

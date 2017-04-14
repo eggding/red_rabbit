@@ -32,10 +32,10 @@ def get_session_by_auth_key(szAuthKey):
     sql = "select `SESSION_ID` FROM `account` WHERE `ACCOUNT_ID` = '%s'" % (szAuthKey)
     ret = get_sync_db().sync_query(sql)
     if ret.flag is False:
-        return
+        return 0
     if len(ret.result) == 0:
         import id_manager.idmanager as idmgr_
-        session_id = idmgr_.GenPlayerID()
+        session_id = idmgr_.GenPlayerID(get_sync_db())
         sql = "INSERT INTO `account` (`ACCOUNT_ID`, `SESSION_ID`, `SESSION_UPD_TIME`, `CREATE_DATA`) VALUES ('%s', '%s', now(), now()) " % (szAuthKey, session_id)
         ret = get_sync_db().sync_query(sql)
         assert ret.flag is True

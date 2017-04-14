@@ -97,6 +97,7 @@ int ffbroker_t::open(arg_helper_t& arg)
 //! 连接到broker master
 int ffbroker_t::connect_to_master_broker()
 {
+    LOGINFO((BROKER, "ffbroker_t::connect_to_master_broker begin test <%s>", m_broker_host.c_str()));
     if (m_master_broker_sock)
     {
         return 0;
@@ -114,7 +115,7 @@ int ffbroker_t::connect_to_master_broker()
     //! 发送注册消息给master broker
     register_slave_broker_t::in_t msg;
     msg.host = m_listen_host;
-    msg_sender_t::send(m_master_broker_sock, BROKER_BRIDGE_REGISTER, msg);
+    msg_sender_t::send(m_master_broker_sock, BROKER_SLAVE_REGISTER, msg);
     LOGINFO((BROKER, "ffbroker_t::connect_to_master_broker ok<%s>", m_broker_host.c_str()));
     return 0;
 }
@@ -351,6 +352,7 @@ uint32_t ffbroker_t::alloc_broker_id()
     //! 若本进程内有broker 那么直接分配本进程的
     if (false == m_slave_broker_sockets.empty())
     {
+        cout << "alloc_broker_id " << endl;
         uint32_t index = m_alloc_slave_broker_index++;
         index = index % m_slave_broker_sockets.size();
         //! 分配一个broker slave，如果有的话

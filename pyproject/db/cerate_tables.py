@@ -22,7 +22,7 @@ create table IF NOT EXISTS account
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 """
 
-# ALTER TABLE `account` ADD INDEX account_search ( `ACCOUNT_ID` );
+ALTER TABLE `account` ADD INDEX account_search ( `ACCOUNT_ID` );
 
 
 sql_create_player_base = """
@@ -35,6 +35,8 @@ create table IF NOT EXISTS player
   primary key(SESSION_ID)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 """
+
+# ALTER TABLE `player` ADD INDEX player_search ( `SESSION_ID` );
 
 sql_create_player_money = """
 create table IF NOT EXISTS player_money

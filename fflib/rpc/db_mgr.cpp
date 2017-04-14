@@ -15,7 +15,7 @@ db_mgr_t::~db_mgr_t()
 
 int db_mgr_t::start()
 {
-    for (size_t i = 0; i < 3; ++i)
+    for (size_t i = 0; i < 4; ++i)
     {
         m_tq.push_back(new task_queue_t());
         m_thread.create_thread(task_binder_t::gen(&task_queue_t::run, (m_tq[i]).get()), 1);
@@ -63,6 +63,7 @@ void db_mgr_t::db_query(long db_id_,const string& sql_, ffslot_t::callback_t* ca
         db_query_result_t ret;
         callback_->exe(&ret);
         delete callback_;
+        cout << "db_connection_info null " << endl;
         return;
     }
     else

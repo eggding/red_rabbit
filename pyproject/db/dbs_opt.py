@@ -10,19 +10,29 @@ import rpc.rpc_def as rpc_def
 import dbs_def as dbs_def
 import id_manager.idmanager as idmgr_
 
+def ImpDbsTest(conn, job):
+    sql = "select * from player limit 10;"
+    # ret = conn.sync_query(sql)
+    # db_mgr.OnOneDbQueryDone(ret, job)
+    conn.query(sql, db_mgr.OnOneDbQueryDone, job)
+
 def ImpDbsCreateUserSession(conn, job):
-    session_id = idmgr_.GenPlayerID()
+    # print("ImpDbsCreateUserSession")
+    session_id = idmgr_.GenPlayerID(conn)
     szAuthKey = job.GetParam()
     sql = "INSERT INTO `account` (`ACCOUNT_ID`, `SESSION_ID`, `SESSION_UPD_TIME`, `CREATE_DATA`) VALUES ('%s', '%s', now(), now()) " % (szAuthKey, session_id)
     job.SetSession(session_id)
+    # print("start running create user session job ",  session_id, job.GetCbID())
     conn.query(sql, db_mgr.OnOneDbQueryDone, job)
 
 def ImpDbsLoadPlayerData(conn, job):
+    # print("ImpDbsLoadPlayerData")
     dictSerial = {
         dbs_def.FLAG: True,
     }
     session = job.GetSession()
     sql = "SELECT NAME, SEX FROM `player` WHERE `SESSION_ID` = '%s' " % (session)
+    # print("step 1 ", job.GetCbID())
     ret = conn.sync_query(sql)
     if ret.flag is False:
         ffext.ERROR('load_player载入数据出错%s' % (sql))
@@ -32,9 +42,13 @@ def ImpDbsLoadPlayerData(conn, job):
 
     dictRet = {}
     if len(ret.result) == 0:
+        # print("step 2 ", job.GetCbID())
         sql = "INSERT INTO `player` (`SESSION_ID`, `NAME` , `SEX`, `CREATE_DATA`) VALUES ('%s', '%s', %d, now())" % (session, "_{0}".format(str(session)[:8]), 0)
         ret = conn.sync_query(sql)
-        assert ret.flag is True
+        if ret.flag is False:
+            dictSerial[dbs_def.FLAG] = False
+            db_mgr.OnOneDbQueryDone(dictSerial, job)
+            return
 
         dictRet["name"] = "_{0}".format(session)
         dictRet["sex"] = 0
@@ -43,6 +57,7 @@ def ImpDbsLoadPlayerData(conn, job):
         dictRet["sex"] = ret.result[0][1]
 
     sql = "SELECT MONEY_TYPE, MONEY_VALUE FROM `player_money` WHERE `SESSION_ID` = '%s' " % (session)
+    # print("step 3 ", job.GetCbID())
     ret = conn.sync_query(sql)
     if ret.flag is False:
         ffext.ERROR('load_player载入数据出错%s' % (sql))

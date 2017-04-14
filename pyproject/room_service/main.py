@@ -31,12 +31,14 @@ def OnLoadPlayerDataDone(dictSerialData):
     syn_scene.ret = 0
     syn_scene.scene_id = 1
     syn_scene.scene_info = scene_def.CUR_SCENE_NAME
-    ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynSceneInfo, syn_scene.SerializeToString())
-    ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynPlayerData, roomPlayer.Serial2Client())
+    # ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynSceneInfo, syn_scene.SerializeToString())
+    # ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynPlayerData, roomPlayer.Serial2Client())
 
 def OnPlayerEnterScene(session, szSrcScene, dictSerialData):
+    print("OnPlayerEnterScene room  ", session)
     ffext.LOGINFO("FFSCENE_PYTHON", "enter room center {0}".format(session))
     if szSrcScene == scene_def.LOGIN_SCENE:
+        print("start load player data from db")
         dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, session, funCb=OnLoadPlayerDataDone)
     else:
         OnLoadPlayerDataDone(dictSerialData)
@@ -58,6 +60,15 @@ ffext.g_session_enter_callback = OnPlayerEnterScene
 #     # player = ffext.singleton(player_mgr_t).get(session_id)
 #     # ffext.send_msg_session(session_id, 2, "try 2 change scene...")
 #     # ffext.change_session_scene(session_id, "scene@1", "e")
+
+import proto.login_pb2 as login_pb2
+@ffext.session_call(rpc_def.Gac2RoomServiceQueryAll, login_pb2.request_login)
+def Gac2RoomServiceQueryAll(session, dictData):
+    def OnDbsTestCb(ret):
+        print("OnDbsTestCb")
+        ffext.send_msg_session(session, 344, dictData.auth_info)
+
+    dbs_client.DoAsynCall(rpc_def.DbsTest, session, OnDbsTestCb)
 
 @ffext.reg_service(rpc_def.OnPlayerOffline)
 def OnPlayerOffline(session):

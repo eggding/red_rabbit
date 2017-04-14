@@ -90,6 +90,7 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         {
             //! reconnect and try it again
             ping();
+            cout << " do mysql reconnect ... " << endl;
             if (0 == ::mysql_query(&m_mysql, sql_.c_str()))
             {
                 err = false;
@@ -98,6 +99,8 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         if (err)
         {
             m_error = ::mysql_error(&m_mysql);
+            cout << " do mysql reconnect err ... " << m_error << endl;
+            cout << " error sql " << sql_ << endl;
             return -1;
         }
     }

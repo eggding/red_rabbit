@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 from player_mgr_model import *
 import ffext
-import msg_def.ttypes as msg_def
-from db import dbservice
 import proto.login_pb2 as login_pb2
 import db.dbs_client as dbs_client
 import rpc.rpc_def as rpc_def
 import db.dbs_def as dbs_def
 
 def OnCreateUserSessionCb(dictRet, listBindData):
-    print("OnCreateUserSessionCb ", dictRet)
+    print("OnCreateUserSessionCb")
     online_time, ip, gate_name, cb_id = listBindData
     nFlag = dictRet[dbs_def.FLAG]
     if nFlag is True:
@@ -18,7 +16,7 @@ def OnCreateUserSessionCb(dictRet, listBindData):
         ffext.on_verify_auth_callback(0, "", cb_id)
         return
 
-    if len(dictRet[dbs_def.SESSION]) == 0:
+    if dictRet[dbs_def.SESSION] == 0:
         # no session
         ffext.on_verify_auth_callback(0, "", cb_id)
         return
@@ -36,7 +34,7 @@ def OnCreateUserSessionCb(dictRet, listBindData):
     ffext.LOGINFO("FFSCENE", "session 认证完成 {0}".format(session_id))
 
 def OnGetUseSessonCb(dictRet, listBindData):
-    # print("OnGetUseSessonCb ", dictRet, listBindData)
+    print("OnGetUseSessonCb ", dictRet, listBindData)
     szAuthKey, online_time, ip, gate_name, cb_id = listBindData
     nFlag = dictRet[dbs_def.FLAG]
     if nFlag is True:
@@ -73,6 +71,7 @@ def OnGetUseSessonCb(dictRet, listBindData):
 def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     '''
     '''
+    print("real_session_verify ", szAuthKey, online_time, ip, gate_name, cb_id)
     req_login = login_pb2.request_login()
     try:
         req_login.ParseFromString(szAuthKey)

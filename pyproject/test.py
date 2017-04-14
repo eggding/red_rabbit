@@ -2,27 +2,31 @@
 import socket
 import struct, time
 
-sock = socket.create_connection(("192.168.74.130", 10242))
+import random
+szMsg = "pas_______{0}".format(random.randint(1, 104994))
 
 def PacketLoginBuff():
-    szAuthCode = "sfaee"
-
     import proto.login_pb2 as login_pb2
     req_login = login_pb2.request_login()
-    req_login.auth_info = szAuthCode
-    szAuthCode = req_login.SerializeToString()
+    global szMsg
+    szMsg = "pas_______{0}".format(random.randint(1, 104994))
+    req_login.auth_info = szMsg
+    print(szMsg)
+    szMsg = req_login.SerializeToString()
 
     # 计算protobol消息体的字节数
-    szFormat = "%ds" % len(szAuthCode)
+    szFormat = "%ds" % len(szMsg)
     nTotalSize = struct.calcsize(szFormat)
 
     # 二进制化消息包
     # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
-    szFormat = "IHH%ds" % len(szAuthCode)
-    return struct.pack(szFormat, nTotalSize, 10001, 0, szAuthCode)
+    szFormat = "IHH%ds" % len(szMsg)
+    return struct.pack(szFormat, nTotalSize, 10001, 0, szMsg)
 
 def SendEcho():
-    szAuthCode = "hi"
+    import random
+    global szMsg
+    szAuthCode = szMsg + " ***** " + str(random.randint(1, 10049))
 
     import proto.login_pb2 as login_pb2
     req_login = login_pb2.request_login()
@@ -36,10 +40,19 @@ def SendEcho():
     # 二进制化消息包
     # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
     szFormat = "IHH%ds" % len(szAuthCode)
-    return struct.pack(szFormat, nTotalSize, 30002, 0, szAuthCode)
+    return struct.pack(szFormat, nTotalSize, 10004, 0, szAuthCode)
 
-sock.send(PacketLoginBuff())
-print(sock.recv(3844))
-print(sock.recv(4949))
-print(sock.recv(4949))
-sock.send("dd")
+c = 0
+import random
+while True:
+    sock = socket.create_connection(("192.168.74.130", 10242))
+    sock.send(PacketLoginBuff())
+    print(sock.recv(93939))
+    s = random.randint(1, 1)
+    # time.sleep(s * 0.1)
+    time.sleep(12.1)
+    sock.close()
+    print("c ", c)
+    c += 1
+
+

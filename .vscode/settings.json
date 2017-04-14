@@ -22,6 +22,9 @@
         "deque": "cpp",
         "initializer_list": "cpp",
         "list": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "streambuf": "cpp",
+        "ios": "cpp",
+        "system_error": "cpp"
     }
 }
