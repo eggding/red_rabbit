@@ -47,8 +47,8 @@ class AsynJob(object):
 
 class DbsMgr(object):
     def __init__(self):
-        self.m_nNumDbConn = 3
-        self.m_nQueueNum = 10
+        self.m_nNumDbConn = 5
+        self.m_nQueueNum = self.m_nNumDbConn
         self.m_listConnChannel = []
         self.m_dictChannel2Queue = {}
         self.m_dictQueueWorkStatus = {}
@@ -84,7 +84,7 @@ class DbsMgr(object):
         return nDstQueue
 
     def DispathJob(self, a):
-        print("DispathJob ", a)
+        # print("DispathJob ", a)
         ffext.once_timer(10, self.DispathJob, 1)
         self.m_nCount += 1
         if self.m_nCount % 100 == 0:
@@ -128,14 +128,15 @@ class DbsMgr(object):
         dictSerial[dbs_def.SESSION] = job.GetSession()
         dictSerial[dbs_def.CB_ID] = job.GetCbID()
         ffext.call_service(job.GetSceneName(), rpc_def.OnDbAsynCallReturn, json.dumps(dictSerial))
+
         if job.GetQueueID() is not None:
             self.m_dictQueueWorkStatus[job.GetQueueID()] = False
 
-        # nDstQueue = self.RandomChoose()
-        # if nDstQueue is None:
-        #     nDstQueue = self.ChooseMaxLen()
-        # if nDstQueue is not None:
-        #     self.GrapJobFromQueue(nDstQueue)
+        nDstQueue = self.RandomChoose()
+        if nDstQueue is None:
+            nDstQueue = self.ChooseMaxLen()
+        if nDstQueue is not None:
+            self.GrapJobFromQueue(nDstQueue)
 
     def GrapJobFromQueue(self, nQueueID):
         jobQueue = self.m_dictChannel2Queue[nQueueID]

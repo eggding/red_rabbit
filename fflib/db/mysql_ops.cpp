@@ -82,7 +82,7 @@ bool mysql_ops_t::is_connected()
 int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
 {
     clear_env();
-
+    cout << "start exe sql " << sql_ << endl;
     if (::mysql_query(&m_mysql, sql_.c_str()))
     {
         bool err = true;
@@ -105,15 +105,21 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         }
     }
     m_affect_rows_num = (int)::mysql_affected_rows(&m_mysql);
+
+    cout << " m_affect_rows_num " << m_affect_rows_num << endl;
     
     if (cb_ == NULL)
     {
         return 0;
     }
+
+    cout << "test res eve " << endl;
     MYSQL_RES* res = ::mysql_store_result(&m_mysql);
+    cout << "test res sdf " << endl;
     
     if (res)
     {
+        cout << "test res " << endl;
         MYSQL_FIELD* column_infos = ::mysql_fetch_fields(res);
         int column_num = ::mysql_num_fields(res);
         vector<char*> vt_col_name;
@@ -125,6 +131,7 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         
 
         int num_row = ::mysql_num_rows(res);
+        cout << "test res rpw " << num_row << endl;
         for (int i= 0; i < num_row; ++i)
         {
             MYSQL_ROW row = ::mysql_fetch_row(res);
@@ -133,6 +140,11 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         }
         ::mysql_free_result(res);
         res = NULL;
+    }
+    else
+    {
+        m_error = ::mysql_error(&m_mysql);
+        cout << " do mysql eee err ... " << m_error << " " << mysql_field_count(&m_mysql) << endl;
     }
     return 0;
 }
