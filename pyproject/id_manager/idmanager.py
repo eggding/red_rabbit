@@ -66,5 +66,5 @@ class idgen_t(object):
 import conf as conf
 dictDbCfg = conf.dict_cfg["dbs"]
 szConn = 'mysql://{0}/{1}/{2}/{3}'.format(dictDbCfg["host"], dictDbCfg["user"], dictDbCfg["pwd"], dictDbCfg["db"])
-_PlayerIDMgr = idgen_t(szConn, 1, 1001)
+_PlayerIDMgr = idgen_t(szConn, 1, 101)
 GenPlayerID = _PlayerIDMgr.gen_id

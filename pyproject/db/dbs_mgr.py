@@ -85,10 +85,10 @@ class DbsMgr(object):
 
     def DispathJob(self, a):
         # print("DispathJob ", a)
-        ffext.once_timer(10, self.DispathJob, 1)
-        self.m_nCount += 1
-        if self.m_nCount % 100 == 0:
-            self.ShowDbsJobStatus()
+        ffext.once_timer(200, self.DispathJob, 1)
+        # self.m_nCount += 1
+        # if self.m_nCount % 100 == 0:
+        #     self.ShowDbsJobStatus()
 
         nDstQueue = self.RandomChoose()
         if nDstQueue is None:

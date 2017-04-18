@@ -24,7 +24,11 @@ def DoAsynCall(cmd, sendParams, funCb=None, callbackParams=None):
         dbs_def.SRC_SCENE: scene_def.CUR_SCENE_NAME,
         dbs_def.CB_ID: nCbID,
     }
-    ffext.call_service(scene_def.DB_SERVICE, cmd, json.dumps(dictPacket))
+    if isinstance(sendParams, int) is False:
+        ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
+    else:
+        nDbQueueID = sendParams % 5
+        ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nDbQueueID), cmd, json.dumps(dictPacket))
 
 @ffext.reg_service(rpc_def.OnDbAsynCallReturn)
 def OnDbAsynCallReturn(dictRet):

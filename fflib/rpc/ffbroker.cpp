@@ -326,12 +326,15 @@ int ffbroker_t::handle_client_register(register_broker_client_t::in_t& msg_, soc
 
     broker_client_info_t& broker_client_info = m_broker_client_info[psession->get_node_id()];
     broker_client_info.bind_broker_id        = msg_.binder_broker_node_id;
-    if (broker_client_info.bind_broker_id < 0)
+
+    uint32_t random_alloc = -1;
+    if (broker_client_info.bind_broker_id == random_alloc)
     {
         broker_client_info.bind_broker_id        = alloc_broker_id();
     }
     broker_client_info.service_name          = msg_.service_name;
     broker_client_info.sock                  = sock_;
+    cout << "service " << msg_.service_name << " alloc to broker " << broker_client_info.bind_broker_id << endl;
 
     for (std::set<string>::iterator it = msg_.msg_names.begin(); it != msg_.msg_names.end(); ++it)
     {
@@ -352,7 +355,6 @@ uint32_t ffbroker_t::alloc_broker_id()
     //! 若本进程内有broker 那么直接分配本进程的
     if (false == m_slave_broker_sockets.empty())
     {
-        cout << "alloc_broker_id " << endl;
         uint32_t index = m_alloc_slave_broker_index++;
         index = index % m_slave_broker_sockets.size();
         //! 分配一个broker slave，如果有的话
