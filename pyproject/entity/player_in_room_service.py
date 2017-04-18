@@ -6,6 +6,11 @@ class RoomPlayer(object):
         self.m_szName = None
         self.m_nSex = 0
         self.m_GoldCoin = 0
+        self.level      = 0
+        self.exp        = 0
+        self.online_time = 0
+        self.ip         = None
+        self.gate_name  = None
 
     def GetSession(self):
         return self.m_session

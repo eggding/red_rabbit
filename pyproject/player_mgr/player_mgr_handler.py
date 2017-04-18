@@ -81,19 +81,10 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
     return []
 
-    # print('real_session_verify用户名[%s]对应的id[%s]'%(player.nick_name, player.id()))
-    # #异步载入数据库中的数据
-    # def callback():
-    #     print('real_session_verify载入数据库数据完成%s'%(player.nick_name))
-
-    # dbservice.load_player(player, callback)
-    # return [str(player.id())]
-
 
 @ffext.session_enter_callback
 def real_session_enter(session_id, from_scene, extra_data):
     print("real_session_enter ", session_id, from_scene, extra_data)
-
 
 @ffext.session_offline_callback
 def real_session_offline(session_id, online_time):

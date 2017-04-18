@@ -32,12 +32,12 @@ def OnLoadPlayerDataDone(dictSerialData):
     # ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynSceneInfo, syn_scene.SerializeToString())
     # ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynPlayerData, roomPlayer.Serial2Client())
 
-def OnPlayerEnterScene(session, szSrcScene, dictSerialData):
-    print("OnPlayerEnterScene room  ", session)
-    ffext.LOGINFO("FFSCENE_PYTHON", "enter room center {0}".format(session))
+def OnPlayerEnterScene(nPlayerGID, szSrcScene, dictSerialData):
+    print("OnPlayerEnterScene room  ", nPlayerGID)
+    ffext.LOGINFO("FFSCENE_PYTHON", "enter room center {0}".format(nPlayerGID))
     if szSrcScene == scene_def.LOGIN_SCENE:
         print("start load player data from db")
-        dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, session, funCb=OnLoadPlayerDataDone)
+        dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, funCb=OnLoadPlayerDataDone)
     else:
         OnLoadPlayerDataDone(dictSerialData)
 
@@ -70,7 +70,7 @@ def Gac2RoomServiceQueryAll(session, dictData):
 
 @ffext.reg_service(rpc_def.OnPlayerOffline)
 def OnPlayerOffline(session):
-    ffext.LOGINFO("FFSCENE", "RoomCenter 玩家下线处理 {0}".format(session))
+    ffext.LOGINFO("FFSCENE_PYTHON", "RoomCenter 玩家下线处理 {0}".format(session))
     session = session["0"]
     room_mgr.OnPlayerLeaveScene(session)
     return {"ret": True}

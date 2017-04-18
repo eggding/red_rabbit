@@ -49,7 +49,6 @@ class player_t(object):
 
 
 def OnEnterLoginScene(session, src, data):
-    print("OnEnterLoginScene ", session)
     import proto.login_pb2 as login_pb2
     rsp_login = login_pb2.response_login()
     rsp_login.ret = 0

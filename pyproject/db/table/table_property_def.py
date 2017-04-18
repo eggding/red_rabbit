@@ -9,6 +9,10 @@ class Const(object):
             raise self.ConstError, "Can't rebind const(%s)" % name
         self.__dict__[name] = value
 
+class MemoryAttr(Const):
+    GATE = "g"
+    IP = "ip"
+    ONLINE_TIME = "ot"
 
 # 表名称定义
 class Player(Const):
