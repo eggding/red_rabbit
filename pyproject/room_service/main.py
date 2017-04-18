@@ -3,8 +3,6 @@ import ffext
 import sys, json
 sys.path.append("./pyproject")
 
-import db.dbservice as dbservice
-
 import rpc.rpc_def as rpc_def
 import room_service.room_mgr as room_mgr
 import entity.player_in_room_service as player_in_room_service
@@ -65,8 +63,8 @@ import proto.login_pb2 as login_pb2
 @ffext.session_call(rpc_def.Gac2RoomServiceQueryAll, login_pb2.request_login)
 def Gac2RoomServiceQueryAll(session, dictData):
     def OnDbsTestCb(ret):
-        print("OnDbsTestCb")
-        ffext.send_msg_session(session, 344, dictData.auth_info)
+        print("OnDbsTestCb", ret)
+        ffext.send_msg_session(session, 344, ret)
 
     dbs_client.DoAsynCall(rpc_def.DbsTest, session, OnDbsTestCb)
 

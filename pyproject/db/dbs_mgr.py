@@ -117,13 +117,14 @@ class DbsMgr(object):
         self.DispathJob(1)
 
     def OnOneDbQueryDone(self, dbRet, job):
-        if isinstance(dbRet, dict):
-            dictSerial = dbRet
-        else:
+        if isinstance(dbRet, ffext.query_result_t):
             dictSerial = {
                 dbs_def.FLAG: dbRet.flag,
+                dbs_def.COL: dbRet.column,
                 dbs_def.RESULT: dbRet.result,
             }
+        else:
+            dictSerial = dbRet
 
         dictSerial[dbs_def.SESSION] = job.GetSession()
         dictSerial[dbs_def.CB_ID] = job.GetCbID()

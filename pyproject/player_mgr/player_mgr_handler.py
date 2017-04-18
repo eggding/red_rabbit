@@ -44,19 +44,18 @@ def OnGetUseSessonCb(dictRet, listBindData):
         ffext.on_verify_auth_callback(0, "", cb_id)
         return
 
-    if len(dictRet[dbs_def.RESULT]) == 0:
+    listRet = dictRet[dbs_def.RESULT]
+    if len(listRet) == 0:
         # no session, craete it
         ffext.LOGINFO("FFSCENE", "session not exist request 2 register session {0}".format(szAuthKey))
         dbs_client.DoAsynCall(rpc_def.DbsCreateUserSession, szAuthKey, funCb=OnCreateUserSessionCb, callbackParams=[online_time, ip, gate_name, cb_id])
         return
 
-    session_id = int(dictRet[dbs_def.RESULT][0][0])
+    session_id = int(listRet[0][0])
     if ffext.singleton(player_mgr_t).get(session_id) is not None:
         ffext.on_verify_auth_callback(0, "player is on line.", cb_id)
         return
 
-    # {u'cb': 1, u'c': [u'SESSION_ID'], u'r': [[u'65601537']], u's': 0, u'f': True}
-    session_id = int(dictRet[dbs_def.RESULT][0][0])
     player = player_t(session_id)
     player.nick_name = session_id
     player.password  = session_id

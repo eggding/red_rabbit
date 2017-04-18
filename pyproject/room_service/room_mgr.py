@@ -16,7 +16,6 @@ class RoomService(object):
     def OnPlayerLeaveScene(self, session):
         entity_mgr.DelEntity(session)
 
-
 _room = RoomService()
 OnPlayerEnterScene = _room.OnPlayerEnterScene
 OnPlayerLeaveScene = _room.OnPlayerLeaveScene

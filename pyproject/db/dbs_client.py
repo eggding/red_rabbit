@@ -32,6 +32,7 @@ def DoAsynCall(cmd, sendParams, funCb=None, callbackParams=None):
 
 @ffext.reg_service(rpc_def.OnDbAsynCallReturn)
 def OnDbAsynCallReturn(dictRet):
+
     nCbId = dictRet[dbs_def.CB_ID]
     global g_dictSerial2CbInfo
     listData = g_dictSerial2CbInfo.get(nCbId)

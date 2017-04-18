@@ -51,8 +51,13 @@ while True:
     s = random.randint(1, 1)
     # time.sleep(s * 0.1)
     time.sleep(0.1)
+
+    sock.send(SendEcho())
+    print(sock.recv(93939))
+
+    time.sleep(10.1)
+
     sock.close()
     print("c ", c)
     c += 1
-
 

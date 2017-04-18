@@ -2,7 +2,7 @@
 import os
 import time
 import ffext
-import sys
+import sys, json
 sys.path.append("./pyproject")
 
 import db.dbs_mgr as db_mgr
@@ -11,9 +11,7 @@ import dbs_def as dbs_def
 import id_manager.idmanager as idmgr_
 
 def ImpDbsTest(conn, job):
-    sql = "select * from player limit 10;"
-    # ret = conn.sync_query(sql)
-    # db_mgr.OnOneDbQueryDone(ret, job)
+    sql = "SELECT SESSION_ID, NAME, SEX FROM player limit 10;"
     conn.query(sql, db_mgr.OnOneDbQueryDone, job)
 
 def ImpDbsCreateUserSession(conn, job):
@@ -32,9 +30,7 @@ def ImpDbsLoadPlayerData(conn, job):
     }
     session = job.GetSession()
     sql = "SELECT NAME, SEX FROM `player` WHERE `SESSION_ID` = '%s' " % (session)
-    print("step 1 ", job.GetCbID(), sql)
     ret = conn.sync_query(sql)
-    print("setp 1 done.")
     if ret.flag is False:
         ffext.ERROR('load_player载入数据出错%s' % (sql))
         dictSerial[dbs_def.FLAG] = False
@@ -43,7 +39,6 @@ def ImpDbsLoadPlayerData(conn, job):
 
     dictRet = {}
     if len(ret.result) == 0:
-        print("step 2 ", job.GetCbID())
         sql = "INSERT INTO `player` (`SESSION_ID`, `NAME` , `SEX`, `CREATE_DATA`) VALUES ('%s', '%s', %d, now())" % (session, "_{0}".format(str(session)[:8]), 0)
         ret = conn.sync_query(sql)
         if ret.flag is False:
@@ -58,7 +53,6 @@ def ImpDbsLoadPlayerData(conn, job):
         dictRet["sex"] = ret.result[0][1]
 
     sql = "SELECT MONEY_TYPE, MONEY_VALUE FROM `player_money` WHERE `SESSION_ID` = '%s' " % (session)
-    print("step 3 ", job.GetCbID())
     ret = conn.sync_query(sql)
     if ret.flag is False:
         ffext.ERROR('load_player载入数据出错%s' % (sql))

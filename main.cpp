@@ -12,6 +12,7 @@
 #include "base/signal_helper.h"
 #include "base/daemon_tool.h"
 #include "base/performance_daemon.h"
+#include <sys/prctl.h>
 
 using namespace ff;
 //./app_redrabbit -gate gate@0 -broker tcp://127.0.0.1:10241 -gate_listen tcp://121.199.21.238:10242 -python_path ./ -scene scene@0
@@ -26,6 +27,12 @@ int main(int argc, char* argv[])
 
     arg_helper_t arg_helper(argc, argv);
     arg_helper.load_from_file("default.config");
+
+    if (arg_helper.is_enable_option("-name"))
+    {
+        string process_name = arg_helper.get_option_value("-name");
+        prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
+    }
 
     if (arg_helper.is_enable_option("-d"))
     {
