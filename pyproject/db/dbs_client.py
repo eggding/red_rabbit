@@ -14,7 +14,7 @@ def GenCbSerial():
     g_nCbSerial += 1
     return g_nCbSerial
 
-def DoAsynCall(cmd, sendParams, funCb=None, callbackParams=None):
+def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChannel=None):
     nCbID = GenCbSerial()
     global g_dictSerial2CbInfo
     g_dictSerial2CbInfo[nCbID] = [funCb, callbackParams]
@@ -23,11 +23,15 @@ def DoAsynCall(cmd, sendParams, funCb=None, callbackParams=None):
         dbs_def.PARAMS: sendParams,
         dbs_def.SRC_SCENE: scene_def.CUR_SCENE_NAME,
         dbs_def.CB_ID: nCbID,
+        dbs_def.SESSION: session
     }
-    if isinstance(sendParams, int) is False:
+    if nChannel is None:
+        dictPacket[dbs_def.USE_CHANNEL] = 0
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
     else:
-        nDbQueueID = sendParams % 5
+        nChannel = int(nChannel)
+        nDbQueueID = nChannel % 1
+        dictPacket[dbs_def.USE_CHANNEL] = nChannel
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nDbQueueID), cmd, json.dumps(dictPacket))
 
 @ffext.reg_service(rpc_def.OnDbAsynCallReturn)

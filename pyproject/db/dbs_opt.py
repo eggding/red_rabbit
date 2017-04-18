@@ -14,6 +14,11 @@ def ImpDbsTest(conn, job):
     sql = "SELECT SESSION_ID, NAME, SEX FROM player limit 10;"
     conn.query(sql, db_mgr.OnOneDbQueryDone, job)
 
+def ImpGetUserSession(conn, job):
+    szAuthKey = job.GetParam()
+    sql = "select `SESSION_ID` FROM `account` WHERE `ACCOUNT_ID` = '%s'" % (szAuthKey)
+    conn.query(sql, db_mgr.OnOneDbQueryDone, job)
+
 def ImpDbsCreateUserSession(conn, job):
     # print("ImpDbsCreateUserSession")
     session_id = idmgr_.GenPlayerID(conn)

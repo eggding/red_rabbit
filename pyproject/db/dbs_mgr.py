@@ -6,6 +6,7 @@ import Queue as queue
 import rpc.rpc_def as rpc_def
 import dbs_def as dbs_def
 
+
 class AsynJob(object):
     def __init__(self):
         self.m_funObj = None
@@ -56,11 +57,6 @@ class DbsMgr(object):
         self.m_nPreTime = time.clock()
         self.m_bInited = False
 
-    def ShowDbsJobStatus(self):
-        print("ShowDbsJobStatus begin *****")
-        for i in xrange(0, self.m_nQueueNum):
-            print("Queue {0}, job num {1}".format(i, self.m_dictChannel2Queue[i].qsize()))
-
     def RandomChoose(self):
         nRanQueue = random.randint(0, self.m_nQueueNum - 1)
         if self.m_dictQueueWorkStatus[nRanQueue] is False:
@@ -84,11 +80,7 @@ class DbsMgr(object):
         return nDstQueue
 
     def DispathJob(self, a):
-        # print("DispathJob ", a)
         ffext.once_timer(200, self.DispathJob, 1)
-        # self.m_nCount += 1
-        # if self.m_nCount % 100 == 0:
-        #     self.ShowDbsJobStatus()
 
         nDstQueue = self.RandomChoose()
         if nDstQueue is None:
@@ -151,24 +143,30 @@ class DbsMgr(object):
         self.m_dictQueueWorkStatus[nQueueID] = True
         jobQueue.get(timeout=1).exe(self.m_listConnChannel[nConnID])
 
-    def Add2JobQueue(self, szSrcScene, cb_id, nSession, funObj, param=None):
+    def Add2JobQueue(self, szSrcScene, cb_id, nSessionID, nChannel, funObj, param=None):
         if self.m_bInited is False:
             self.Init()
 
-        if isinstance(nSession, int) is False:
-            nQueueID = 0
-        else:
-            nQueueID = nSession % self.m_nQueueNum
-
+        nQueueID = nChannel % self.m_nQueueNum
         job = AsynJob()
-        job.Init(funObj, nQueueID, nSession, szSrcScene, cb_id, param)
+        job.Init(funObj, nQueueID, nSessionID, szSrcScene, cb_id, param)
         jobQueue = self.m_dictChannel2Queue[nQueueID]
         jobQueue.put(job)
         self.GrapJobFromQueue(nQueueID)
 
+    def GenJob(self, dictSerial, funObj):
+        szScene = dictSerial[dbs_def.SRC_SCENE]
+        szSceneCbID = dictSerial[dbs_def.CB_ID]
+        nSessionID = dictSerial[dbs_def.SESSION]
+        nChannel = dictSerial[dbs_def.USE_CHANNEL]
+        param = dictSerial[dbs_def.PARAMS]
+        self.Add2JobQueue(szScene, szSceneCbID, nSessionID, nChannel, funObj, param)
+
+
 _dbs = DbsMgr()
 OnOneDbQueryDone = _dbs.OnOneDbQueryDone
 Add2JobQueue = _dbs.Add2JobQueue
+GenJob = _dbs.GenJob
 
 # p = Pool(processes=1)
 # pw = p.apply_async(_dbs.DispathJob, args=(q,lock))

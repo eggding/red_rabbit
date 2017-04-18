@@ -48,7 +48,7 @@ def OnGetUseSessonCb(dictRet, listBindData):
     if len(listRet) == 0:
         # no session, craete it
         ffext.LOGINFO("FFSCENE", "session not exist request 2 register session {0}".format(szAuthKey))
-        dbs_client.DoAsynCall(rpc_def.DbsCreateUserSession, szAuthKey, funCb=OnCreateUserSessionCb, callbackParams=[online_time, ip, gate_name, cb_id])
+        dbs_client.DoAsynCall(rpc_def.DbsCreateUserSession, 0, szAuthKey, funCb=OnCreateUserSessionCb, callbackParams=[online_time, ip, gate_name, cb_id])
         return
 
     session_id = int(listRet[0][0])
@@ -78,7 +78,7 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
         return []
 
     szAuthKey = req_login.auth_info
-    dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
+    dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
     return []
 
 

@@ -1,19 +1,10 @@
-# -*- coding:utf-8 -*-
+import entity.const_entity as const_entity
 
-class Const(object):
-    class ConstError(TypeError):
-        pass
-
-    def __setattr__(self, name, value):
-        if self.__dict__.has_key(name):
-            raise self.ConstError, "Can't rebind const(%s)" % name
-        self.__dict__[name] = value
-
-class MemoryAttr(Const):
+class MemoryAttr(const_entity.Const):
     GATE = "g"
     IP = "ip"
     ONLINE_TIME = "ot"
 
 # 表名称定义
-class Player(Const):
+class Player(const_entity.Const):
      SESSION_ID = "SESSION_ID"

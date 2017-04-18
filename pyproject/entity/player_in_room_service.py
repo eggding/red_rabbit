@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+import rpc.rpc_def as rpc_def
+import db.dbs_def as dbs_def
+import proto.login_pb2 as login_pb2
+import db.dbs_client as dbclient
 
 class RoomPlayer(object):
     def __init__(self):
@@ -16,7 +20,6 @@ class RoomPlayer(object):
         return self.m_session
 
     def InitFromDict(self, dictDbRet):
-        import db.dbs_def as dbs_def
         session = dictDbRet[dbs_def.SESSION]
         dictData = dictDbRet[dbs_def.RESULT]
         self.m_session = int(session)
@@ -24,7 +27,6 @@ class RoomPlayer(object):
         self.m_nSex = int(dictData["sex"])
 
     def Serial2Client(self):
-        import proto.login_pb2 as login_pb2
         syn_req = login_pb2.syn_player_data()
         syn_req.ret = 0
         syn_req.session = self.m_session
@@ -33,3 +35,10 @@ class RoomPlayer(object):
         syn_req.money_info = ""
         syn_req.bag_item_info = ""
         return syn_req.SerializeToString()
+
+    def GetPersistentDict(self):
+        pass
+
+    def Serial2Db(self):
+        dictSerial = self.GetPersistentDict()
+        # dbclient.DoAsynCall(rpc_def.DbsCreateUserSession)

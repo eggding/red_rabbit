@@ -37,7 +37,7 @@ def OnPlayerEnterScene(nPlayerGID, szSrcScene, dictSerialData):
     ffext.LOGINFO("FFSCENE_PYTHON", "enter room center {0}".format(nPlayerGID))
     if szSrcScene == scene_def.LOGIN_SCENE:
         print("start load player data from db")
-        dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, funCb=OnLoadPlayerDataDone)
+        dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, 0, nChannel=nPlayerGID, funCb=OnLoadPlayerDataDone)
     else:
         OnLoadPlayerDataDone(dictSerialData)
 
@@ -66,7 +66,7 @@ def Gac2RoomServiceQueryAll(session, dictData):
         print("OnDbsTestCb", ret)
         ffext.send_msg_session(session, 344, ret)
 
-    dbs_client.DoAsynCall(rpc_def.DbsTest, session, OnDbsTestCb)
+    dbs_client.DoAsynCall(rpc_def.DbsTest, session, 0, OnDbsTestCb, nChannel=session)
 
 @ffext.reg_service(rpc_def.OnPlayerOffline)
 def OnPlayerOffline(session):

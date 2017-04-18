@@ -18,4 +18,8 @@ DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001
 DbsCreateUserSession = 7002
 DbsTest = 7003
+
+# 持久化玩家数据
+DbsPersistentPlayerData = 7004
+
 OnDbAsynCallReturn = 8001

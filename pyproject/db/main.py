@@ -10,26 +10,22 @@ import rpc.rpc_def as rpc_def
 import dbs_def as dbs_def
 import db.dbs_opt as dbs_opt
 
+@ffext.reg_service(rpc_def.DbsPersistentPlayerData)
+def DbsPersistentPlayerData(dictSerial):
+    nPlayerGID = dictSerial[dbs_def.PARAMS]
+
 @ffext.reg_service(rpc_def.DbsTest)
 def DbsTest(dictSerial):
-    szAuthKey = dictSerial[dbs_def.PARAMS]
-    db_mgr.Add2JobQueue(dictSerial[dbs_def.SRC_SCENE], dictSerial[dbs_def.CB_ID], szAuthKey, dbs_opt.ImpDbsTest, szAuthKey)
+    db_mgr.GenJob(dictSerial, dbs_opt.ImpDbsTest)
 
 @ffext.reg_service(rpc_def.DbsCreateUserSession)
 def DbsCreateUserSession(dictSerial):
-    szAuthKey = dictSerial[dbs_def.PARAMS]
-    db_mgr.Add2JobQueue(dictSerial[dbs_def.SRC_SCENE], dictSerial[dbs_def.CB_ID], None, dbs_opt.ImpDbsCreateUserSession, szAuthKey)
+    db_mgr.GenJob(dictSerial, dbs_opt.ImpDbsCreateUserSession)
 
 @ffext.reg_service(rpc_def.DbsLoadPlayerData)
 def DbsLoadPlayerData(dictSerial):
-    session = dictSerial[dbs_def.PARAMS]
-    db_mgr.Add2JobQueue(dictSerial[dbs_def.SRC_SCENE], dictSerial[dbs_def.CB_ID], session, dbs_opt.ImpDbsLoadPlayerData)
+    db_mgr.GenJob(dictSerial, dbs_opt.ImpDbsLoadPlayerData)
 
 @ffext.reg_service(rpc_def.DbsGetUserSession)
 def DbsGetUserSession(dictSerial):
-    szAuthKey = dictSerial[dbs_def.PARAMS]
-    def _imp(conn, job):
-        print("DbsGetUserSession._Imp")
-        sql = "select `SESSION_ID` FROM `account` WHERE `ACCOUNT_ID` = '%s'" % (szAuthKey)
-        conn.query(sql, db_mgr.OnOneDbQueryDone, job)
-    db_mgr.Add2JobQueue(dictSerial[dbs_def.SRC_SCENE], dictSerial[dbs_def.CB_ID], None, _imp)
+    db_mgr.GenJob(dictSerial, dbs_opt.ImpGetUserSession)

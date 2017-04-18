@@ -56,10 +56,8 @@ def OnEnterLoginScene(session, src, data):
     import rpc.rpc_def as rpc_def
     ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp_login.SerializeToString())
 
-    ffext.LOGINFO("FFSCENE", "认证完成，玩家进入登录场景 {0}".format(session))
-    print("request change scene room center ", session)
     ffext.change_session_scene(session, scene_def.ROOM_SCENE, "")
-    ffext.LOGINFO("FFSCENE", "请求转到大厅场景 {0}".format(session))
+    ffext.LOGINFO("FFSCENE", "Auth done, request change 2 room center {0}".format(session))
 
 ffext.g_session_enter_callback = OnEnterLoginScene
 
