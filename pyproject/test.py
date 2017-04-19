@@ -45,18 +45,18 @@ def SendEcho():
 c = 0
 import random
 while True:
-    # sock = socket.create_connection(("192.168.74.130", 10242))
-    sock = socket.create_connection(("127.0.0.1", 10242))
+    sock = socket.create_connection(("192.168.74.130", 10242))
+    # sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
     s = random.randint(1, 1)
     # time.sleep(s * 0.1)
-    time.sleep(0.1)
+    time.sleep(1.1)
 
-    sock.send(SendEcho())
-    print(sock.recv(93939))
-
-    time.sleep(0.1)
+    for i in xrange(1, 10000):
+        sock.send(SendEcho())
+        print(sock.recv(93939))
+        time.sleep(1)
 
     sock.close()
     print("c ", c)

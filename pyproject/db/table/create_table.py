@@ -29,9 +29,8 @@ sql_create_player_base = """
 create table IF NOT EXISTS player
 (
   SESSION_ID bigint not null,
-  NAME varchar(10) not null,
-  SEX varchar(1) not null,
-  CREATE_DATA datetime default null,
+  DATA_INFO_BASE JSON,
+  DATA_INFO JSON,
   primary key(SESSION_ID)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 """
@@ -44,7 +43,7 @@ create table IF NOT EXISTS player_money
   SESSION_ID bigint not null,
   MONEY_TYPE int not null,
   MONEY_VALUE int not null,
-  primary key(SESSION_ID)
+  primary key(SESSION_ID, MONEY_TYPE)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 """
 

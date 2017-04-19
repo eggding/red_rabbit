@@ -90,7 +90,8 @@ def real_session_enter(session_id, from_scene, extra_data):
 def real_session_offline(session_id, online_time):
     import rpc.scene_def as scene_def
     import rpc.rpc_def as rpc_def
-    ffext.LOGINFO("FFSCENE", "real_session_offline {0}, last scene {1}".format(session_id, scene_def.CUR_SCENE_NAME))
+    import ff
+    ffext.LOGINFO("FFSCENE", "real_session_offline {0}, last scene {1}".format(session_id, ff.service_name))
     ffext.singleton(player_mgr_t).remove(session_id)
 
     def cb(err_, msg_):

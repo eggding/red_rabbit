@@ -17,7 +17,6 @@ class AsynJob(object):
         self.m_cb = None
 
     def Init(self, funObj, nQueueID, nSession, szSrcScene, cb_id=0, funParam=None):
-        # print("AddJob ", cb_id)
         self.m_funObj = funObj
         self.m_funParam = funParam
         self.m_nQueueID = nQueueID
@@ -167,9 +166,3 @@ _dbs = DbsMgr()
 OnOneDbQueryDone = _dbs.OnOneDbQueryDone
 Add2JobQueue = _dbs.Add2JobQueue
 GenJob = _dbs.GenJob
-
-# p = Pool(processes=1)
-# pw = p.apply_async(_dbs.DispathJob, args=(q,lock))
-# pr = p.apply_async(read, args=(q,))
-# p.close()
-# p.join()

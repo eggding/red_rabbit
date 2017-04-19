@@ -242,7 +242,7 @@ int ffrpc_t::handle_broker_sync_data(broker_sync_all_registered_data_t::out_t& m
         broker_client_info.bind_broker_id = it4->second.bind_broker_id;
         broker_client_info.service_name   = it4->second.service_name;
 
-        cout << broker_client_info.service_name << " " << broker_client_info.bind_broker_id << endl;
+        // cout << broker_client_info.service_name << " " << broker_client_info.bind_broker_id << endl;
 
         if (false == broker_client_info.service_name.empty())
         {

@@ -28,11 +28,11 @@ int main(int argc, char* argv[])
     arg_helper_t arg_helper(argc, argv);
     arg_helper.load_from_file("default.config");
 
-    if (arg_helper.is_enable_option("-name"))
-    {
-        string process_name = arg_helper.get_option_value("-name");
-        prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
-    }
+    // if (arg_helper.is_enable_option("-name"))
+    // {
+    //     string process_name = arg_helper.get_option_value("-name");
+    //     prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
+    // }
 
     if (arg_helper.is_enable_option("-d"))
     {
@@ -71,10 +71,10 @@ int main(int argc, char* argv[])
     {
         if (arg_helper.is_enable_option("-master"))
         {
+            prctl(PR_SET_NAME, "broker_master", NULL, NULL, NULL);
             //! 启动broker，负责网络相关的操作，如消息转发，节点注册，重连等
             if (arg_helper.is_enable_option("-broker"))
             {
-                cout << "init broker " << endl;
                 if (ffbroker.open(arg_helper))
                 {
                     printf("broker open failed\n");
@@ -85,9 +85,12 @@ int main(int argc, char* argv[])
         if (arg_helper.is_enable_option("-slave"))
         {
             //! 启动broker，负责网络相关的操作，如消息转发，节点注册，重连等
+            string process_name = "broker_slave_";
+            process_name += arg_helper.get_option_value("-slave");
+            prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
+
             if (arg_helper.is_enable_option("-broker"))
             {
-                cout << "init broker " << endl;
                 if (ffbroker.open(arg_helper))
                 {
                     printf("broker open failed\n");
@@ -98,7 +101,9 @@ int main(int argc, char* argv[])
         
         if (arg_helper.is_enable_option("-gate"))
         {
-            cout << "init gate " << endl;
+            string process_name = arg_helper.get_option_value("-gate");
+            prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
+
             if (ffgate.open(arg_helper))
             {
                 printf("gate open error!\n");
@@ -107,7 +112,9 @@ int main(int argc, char* argv[])
         }
         if (arg_helper.is_enable_option("-scene"))
         {
-            cout << "init scene " << endl;
+            string process_name = arg_helper.get_option_value("-scene");
+            prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
+
             if (singleton_t<ffscene_python_t>::instance().open(arg_helper))
             {
                 printf("scene open error!\n");

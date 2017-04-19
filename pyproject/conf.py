@@ -4,5 +4,8 @@ dict_cfg = {
         "user": "root",
         "db": "red_rabbit",
         "pwd": "pascalx64",
+    },
+    "redis": {
+        "host": "127.0.0.1:6379"
     }
 }

@@ -5,6 +5,7 @@ import ffext
 import rpc.rpc_def as rpc_def
 import rpc.scene_def as scene_def
 import dbs_def as dbs_def
+import ff
 
 g_nCbSerial = 0
 g_dictSerial2CbInfo = {}
@@ -21,7 +22,7 @@ def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChann
 
     dictPacket = {
         dbs_def.PARAMS: sendParams,
-        dbs_def.SRC_SCENE: scene_def.CUR_SCENE_NAME,
+        dbs_def.SRC_SCENE: ff.service_name,
         dbs_def.CB_ID: nCbID,
         dbs_def.SESSION: session
     }
@@ -30,7 +31,7 @@ def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChann
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
     else:
         nChannel = int(nChannel)
-        nDbQueueID = nChannel % 1
+        nDbQueueID = nChannel % 4
         dictPacket[dbs_def.USE_CHANNEL] = nChannel
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nDbQueueID), cmd, json.dumps(dictPacket))
 

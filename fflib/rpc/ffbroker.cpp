@@ -334,7 +334,7 @@ int ffbroker_t::handle_client_register(register_broker_client_t::in_t& msg_, soc
     }
     broker_client_info.service_name          = msg_.service_name;
     broker_client_info.sock                  = sock_;
-    cout << "service " << msg_.service_name << " alloc to broker " << broker_client_info.bind_broker_id << endl;
+    // cout << "service " << msg_.service_name << " alloc to broker " << broker_client_info.bind_broker_id << endl;
 
     for (std::set<string>::iterator it = msg_.msg_names.begin(); it != msg_.msg_names.end(); ++it)
     {

@@ -26,12 +26,32 @@ def session_offline_callback(func_):
     global g_session_offline_callback
     g_session_offline_callback = func_
     return func_
+
 GID = 0
-def once_timer(timeout_, func_, data):
+def once_timer(timeout_, func_, data=None):
     global g_timer_callback_dict, GID
     GID += 1
     g_timer_callback_dict[GID] = [func_, data]
-    ff.ffscene_obj.once_timer(timeout_, GID);
+    ff.ffscene_obj.once_timer(timeout_, GID)
+    return GID
+
+def cancel_timer(id):
+    global g_timer_callback_dict
+    if id in g_timer_callback_dict:
+        del g_timer_callback_dict[id]
+
+def ff_timer_callback(id):
+    try:
+        global g_timer_callback_dict
+        if id in g_timer_callback_dict:
+            cb, data = g_timer_callback_dict[id]
+            del g_timer_callback_dict[id]
+            if data is not None:
+                cb(data)
+            else:
+                cb()
+    except:
+        return False
 
 
 def json_to_value(val_):
@@ -121,14 +141,6 @@ def ff_session_logic(session_id, cmd, body):
     info = g_session_logic_callback_dict[cmd]
     arg  = info[0](body)
     return info[1](session_id, arg)
-
-def ff_timer_callback(id):
-    try:
-        cb, data = g_timer_callback_dict[id]
-        del g_timer_callback_dict[id]
-        cb(data)
-    except:
-        return False
 
 g_WriteTMemoryBuffer   = TTransport.TMemoryBuffer()
 g_WriteTBinaryProtocol = TBinaryProtocol.TBinaryProtocol(g_WriteTMemoryBuffer)

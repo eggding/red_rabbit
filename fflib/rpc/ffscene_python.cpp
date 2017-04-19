@@ -65,7 +65,22 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
     (*m_ffpython).load("main");
     int ret = ffscene_t::open(arg_helper);
 
-    m_db_mgr.start();
+    if (arg_helper.is_enable_option("-gate"))
+    {
+        (*m_ffpython).set_global_var("ff", "service_name", arg_helper.get_option_value("-gate"));
+    }
+    else if (arg_helper.is_enable_option("-scene"))
+    {
+        string service_name = arg_helper.get_option_value("-scene");
+        (*m_ffpython).set_global_var("ff", "service_name", service_name);
+
+        // dbs
+        if (service_name.find("db") != -1)
+        {
+            m_db_mgr.start();
+        }
+    }
+
     LOGTRACE((FFSCENE_PYTHON, "ffscene_python_t::open end ok"));
     return ret;
 }

@@ -12,7 +12,7 @@ import db.dbs_opt as dbs_opt
 
 @ffext.reg_service(rpc_def.DbsPersistentPlayerData)
 def DbsPersistentPlayerData(dictSerial):
-    nPlayerGID = dictSerial[dbs_def.PARAMS]
+    db_mgr.GenJob(dictSerial, dbs_opt.ImpDbsPersistentPlayerData)
 
 @ffext.reg_service(rpc_def.DbsTest)
 def DbsTest(dictSerial):

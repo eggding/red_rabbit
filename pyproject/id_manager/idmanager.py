@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import ffext
-import db.dbservice as dbservice
 
 class idgen_t(object):
     def __init__(self, db_host_, type_id_ = 0, server_id_ = 0):
@@ -63,8 +62,5 @@ class idgen_t(object):
         conn.query("UPDATE `id_generator` SET `AUTO_INC_ID` = '%d' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d' AND `AUTO_INC_ID` < '%d'" % (now_val, self.type_id, self.server_id, now_val), cb)
         return
 
-import conf as conf
-dictDbCfg = conf.dict_cfg["dbs"]
-szConn = 'mysql://{0}/{1}/{2}/{3}'.format(dictDbCfg["host"], dictDbCfg["user"], dictDbCfg["pwd"], dictDbCfg["db"])
-_PlayerIDMgr = idgen_t(szConn, 1, 101)
+_PlayerIDMgr = idgen_t("", 1, 1)
 GenPlayerID = _PlayerIDMgr.gen_id
