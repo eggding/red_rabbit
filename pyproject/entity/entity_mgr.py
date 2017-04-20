@@ -14,3 +14,7 @@ def DelEntity(session):
 
 def GetEntity(session):
     return g_dictAllEntity.get(session)
+
+def PlayerOffline(nPlayerGID):
+    Player = GetEntity(nPlayerGID)
+    assert Player is not None

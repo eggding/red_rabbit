@@ -10,6 +10,11 @@ import rpc.rpc_def as rpc_def
 import dbs_def as dbs_def
 import db.dbs_opt as dbs_opt
 
+
+@ffext.reg_service(rpc_def.DbsGetRoomIDSector)
+def DbsGetRoomIDSector(dictSerial):
+    db_mgr.GenJob(dictSerial, dbs_opt.ImpDbsGetRoomIDSector)
+
 @ffext.reg_service(rpc_def.DbsPersistentPlayerData)
 def DbsPersistentPlayerData(dictSerial):
     db_mgr.GenJob(dictSerial, dbs_opt.ImpDbsPersistentPlayerData)

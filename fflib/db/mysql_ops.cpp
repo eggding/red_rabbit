@@ -82,15 +82,12 @@ bool mysql_ops_t::is_connected()
 int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
 {
     clear_env();
-    // cout << "start exe sql " << sql_ << endl;
     if (::mysql_query(&m_mysql, sql_.c_str()))
     {
         bool err = true;
         if(CR_SERVER_GONE_ERROR == mysql_errno(&m_mysql) || CR_SERVER_LOST == mysql_errno(&m_mysql))
         {
-            //! reconnect and try it again
             ping();
-            cout << " do mysql reconnect ... " << endl;
             if (0 == ::mysql_query(&m_mysql, sql_.c_str()))
             {
                 err = false;
@@ -99,15 +96,10 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         if (err)
         {
             m_error = ::mysql_error(&m_mysql);
-            cout << " do mysql reconnect err ... " << m_error << endl;
-            cout << " error sql " << sql_ << endl;
             return -1;
         }
     }
-    m_affect_rows_num = (int)::mysql_affected_rows(&m_mysql);
-
-    // cout << " m_affect_rows_num " << m_affect_rows_num << endl;
-    
+    m_affect_rows_num = (int)::mysql_affected_rows(&m_mysql);    
     if (cb_ == NULL)
     {
         return 0;
@@ -139,7 +131,6 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
     else
     {
         m_error = ::mysql_error(&m_mysql);
-        cout << " do mysql eee err ... " << m_error << " " << mysql_field_count(&m_mysql) << endl;
     }
     return 0;
 }

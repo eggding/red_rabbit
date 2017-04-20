@@ -25,6 +25,7 @@
         "queue": "cpp",
         "streambuf": "cpp",
         "ios": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "exception": "cpp"
     }
 }

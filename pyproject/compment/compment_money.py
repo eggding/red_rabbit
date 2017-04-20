@@ -24,6 +24,7 @@ class PlayerMoneyMgr(base_compment.BaseCompment):
 
     def Serial2List(self):
         listRet = []
+        import random
         for nType, nVal in self.m_dictType2Money.iteritems():
-            listRet.append((nType, nVal))
+            listRet.append((nType, nVal + random.randint(1, 3949)))
         return listRet

@@ -21,6 +21,9 @@ class RoomPlayer(base_entity.BaseEntity):
         self.ip         = None
         self.gate_name  = None
 
+        self.m_nCurRoomID = None
+        self.m_listSoulInRoom = None
+
     def GetSession(self):
         return self.m_session
 
@@ -54,5 +57,4 @@ class RoomPlayer(base_entity.BaseEntity):
         }
 
         import json
-        print("Persistent ", json.dumps(dictSerial))
         dbs_client.DoAsynCall(rpc_def.DbsPersistentPlayerData, self.GetSession(), json.dumps(dictSerial), nChannel=self.GetSession())

@@ -28,12 +28,6 @@ int main(int argc, char* argv[])
     arg_helper_t arg_helper(argc, argv);
     arg_helper.load_from_file("default.config");
 
-    // if (arg_helper.is_enable_option("-name"))
-    // {
-    //     string process_name = arg_helper.get_option_value("-name");
-    //     prctl(PR_SET_NAME, process_name.c_str(), NULL, NULL, NULL);
-    // }
-
     if (arg_helper.is_enable_option("-d"))
     {
         daemon_tool_t::daemon();

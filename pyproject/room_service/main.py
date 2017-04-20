@@ -11,14 +11,13 @@ import proto.login_pb2 as login_pb2
 @ffext.session_call(rpc_def.Gac2RoomServiceQueryAll, login_pb2.request_login)
 def Gac2RoomServiceQueryAll(session, dictData):
     def OnDbsTestCb(ret):
-        print("OnDbsTestCb", ret)
         ffext.send_msg_session(session, 344, ret)
 
     dbs_client.DoAsynCall(rpc_def.DbsTest, session, 0, OnDbsTestCb, nChannel=session)
 
 @ffext.reg_service(rpc_def.OnPlayerOffline)
 def OnPlayerOffline(session):
-    ffext.LOGINFO("FFSCENE_PYTHON", "RoomCenter 玩家下线处理 {0}".format(session))
+    ffext.LOGINFO("FFSCENE_PYTHON", "RoomCenter player offline {0}".format(session))
     session = session["0"]
     room_mgr.OnPlayerLeaveScene(session)
     return {"ret": True}
