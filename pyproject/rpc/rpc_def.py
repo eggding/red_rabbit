@@ -14,6 +14,8 @@ SynPlayerData = 30003
 # 内部协议1-8011
 OnPlayerOffline = 1
 
+Room2MjStartGame = 1001
+
 DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001
 DbsCreateUserSession = 7002

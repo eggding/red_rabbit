@@ -25,10 +25,7 @@ class RoomStateWaiting(state_machine.StateBase):
     def MemberExit(self, nMember):
         roomObj = self.GetOwner()
         assert nMember in roomObj.m_dictMember
-        roomObj.m_dictMember.pop(nMember)
-
-    def MemberOffline(self, nMember):
-        roomObj = self.GetOwner()
-        assert nMember in roomObj.m_dictMember
-        dictState = roomObj.m_dictMember[nMember]
-        dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eOffline
+        if 1 == len(roomObj.m_dictMember):
+            roomObj.Dismiss()
+        else:
+            roomObj.m_dictMember.pop(nMember)

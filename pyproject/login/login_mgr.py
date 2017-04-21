@@ -6,6 +6,9 @@ import db.dbs_client as dbs_client
 import rpc.rpc_def as rpc_def
 import db.dbs_def as dbs_def
 import entity.player_in_login as player_in_login
+import json
+import proto.recv_msg_pb2 as recv_msg_pb2
+import rpc.scene_def as scene_def
 
 class LoginMgr(object):
     def __init__(self):
@@ -102,11 +105,6 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
     return []
 
-
-@ffext.session_enter_callback
-def real_session_enter(session_id, from_scene, extra_data):
-    print("real_session_enter ", session_id, from_scene, extra_data)
-
 @ffext.session_offline_callback
 def real_session_offline(session_id, online_time):
     import rpc.scene_def as scene_def
@@ -120,3 +118,18 @@ def real_session_offline(session_id, online_time):
 
 def GetPlayer(nPlayerGID):
     return _loginMgr.get(nPlayerGID)
+
+@ffext.session_enter_callback
+def OnEnterLoginScene(session, src, data):
+    import proto.login_pb2 as login_pb2
+    rsp_login = login_pb2.response_login()
+    rsp_login.ret = 0
+    rsp_login.session_id = int(session)
+    import rpc.rpc_def as rpc_def
+    ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp_login.SerializeToString())
+
+    loginPlayer = GetPlayer(session)
+    assert loginPlayer is not None
+
+    ffext.change_session_scene(session, scene_def.ROOM_SCENE, json.dumps(loginPlayer.Serial2Dict()))
+    ffext.LOGINFO("FFSCENE", "Auth done, request change 2 room center {0}, {1}".format(session, json.dumps(loginPlayer.Serial2Dict())))

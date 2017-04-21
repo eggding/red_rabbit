@@ -81,11 +81,6 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
     return []
 
-
-@ffext.session_enter_callback
-def real_session_enter(session_id, from_scene, extra_data):
-    print("real_session_enter ", session_id, from_scene, extra_data)
-
 @ffext.session_offline_callback
 def real_session_offline(session_id, online_time):
     import rpc.scene_def as scene_def

@@ -24,7 +24,7 @@ class RoomPlayer(base_entity.BaseEntity):
         self.m_nCurRoomID = None
         self.m_listSoulInRoom = None
 
-    def GetSession(self):
+    def GetGlobalID(self):
         return self.m_session
 
     def InitFromDict(self, dictDbRet):

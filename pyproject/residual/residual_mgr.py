@@ -9,9 +9,12 @@ class ResidualMgr(object):
         self.m_sceneObj = sceneObj
         self.m_dictRsidualPlayer = {} # nplayerid -> tickid
 
+    def IsPlayerInResidual(self, nPlayerGID):
+        return True if nPlayerGID in self.m_dictRsidualPlayer else False
+
     def OnResdualTimeOut(self, nPlayerGID):
         self.m_dictRsidualPlayer.pop(nPlayerGID)
-        self.m_sceneObj.OnPlayerLeaveScene()
+        self.m_sceneObj.PlayerTrueOffline()
 
     def RemoveResidualPlayer(self, nPlayerGID):
         assert nPlayerGID in self.m_dictRsidualPlayer
