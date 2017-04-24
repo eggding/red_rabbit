@@ -26,6 +26,7 @@
         "streambuf": "cpp",
         "ios": "cpp",
         "system_error": "cpp",
-        "exception": "cpp"
+        "exception": "cpp",
+        "sstream": "cpp"
     }
 }

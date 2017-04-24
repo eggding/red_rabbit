@@ -2,8 +2,8 @@
 
 # 开放给客户端的协议 10001 - 20000
 GacRequsetLogin = 10001
-Gac2RoomServiceCreateCreateRoom = 10002
-Gac2RoomServiceGetEcho = 10003
+Gac2RoomServiceCreateRoom = 10002
+Gac2RoomServiceEnterRoom = 10003
 Gac2RoomServiceQueryAll = 10004
 
 # 主动同步给客户端的协议 30001 - 32000
@@ -14,7 +14,12 @@ SynPlayerData = 30003
 # 内部协议1-8011
 OnPlayerOffline = 1
 
-Room2MjStartGame = 1001
+GetGateIp = 1001
+OnSessionConnectGate = 1002
+OnSessionDisConnGate = 1003
+
+Room2MjStartGame = 2001
+Logic2RoomServiceGameEnd = 2002
 
 DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001

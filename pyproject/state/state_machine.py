@@ -3,7 +3,7 @@
 
 class StateBase(object):
     def __init__(self, owner):
-        self.m_Owner = None
+        self.m_Owner = owner
 
     def GetOwner(self):
         return self.m_Owner
@@ -27,6 +27,9 @@ class StateMachine(object):
 
     def IsInState(self, state):
         return isinstance(self.m_CurState, state)
+
+    def GetCurState(self):
+        return self.m_CurState
 
     def Destroy(self):
         if self.m_CurState is not None:

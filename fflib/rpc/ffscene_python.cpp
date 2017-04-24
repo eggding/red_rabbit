@@ -301,7 +301,7 @@ ffslot_t::callback_t* ffscene_python_t::gen_scene_call_callback()
             }
             scene_call_msg_arg* data = (scene_call_msg_arg*)args_;
             static string func_name  = SCENE_CALL_CB_NAME;
-            LOGINFO((FFSCENE_PYTHON, "ffscene_python_t::gen_scene_call_callback len[%lu]", data->body.size()));
+            LOGTRACE((FFSCENE_PYTHON, "ffscene_python_t::gen_scene_call_callback len[%lu]", data->body.size()));
             
             AUTO_CMD_PERF("scene_callback", data->cmd);
             try

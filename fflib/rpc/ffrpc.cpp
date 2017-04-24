@@ -288,7 +288,7 @@ int ffrpc_t::trigger_callback(broker_route_t::in_t& msg_)
             {
                 ffslot_req_arg arg(msg_.body, msg_.from_node_id, msg_.callback_id, msg_.bridge_route_id, this);
                 cb->exe(&arg);
-                LOGINFO((FFRPC, "ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=%u", msg_.bridge_route_id));
+                LOGTRACE((FFRPC, "ffrpc_t::handle_broker_route_msg end ok msg_.bridge_route_id=%u", msg_.bridge_route_id));
                 return 0;
             }
             else
@@ -384,7 +384,7 @@ int ffrpc_t::bridge_call_impl(const string& broker_group_, const string& service
 //! 通过node id 发送消息给broker
 void ffrpc_t::send_to_broker_by_nodeid(uint32_t dest_node_id, const string& body_, uint32_t msg_id_, uint32_t callback_id_, uint32_t bridge_route_id_)
 {
-    LOGINFO((FFRPC, "ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[%u]", bridge_route_id_));
+    LOGTRACE((FFRPC, "ffbroker_t::send_to_broker_by_nodeid begin bridge_route_id_[%u]", bridge_route_id_));
     
     broker_route_t::in_t msg;
     msg.dest_node_id     = dest_node_id;

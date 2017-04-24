@@ -209,6 +209,7 @@ int ffscene_t::change_session_scene(const userid_t& session_id_, const string& t
     map<userid_t/*sessionid*/, session_info_t>::iterator it = m_session_info.find(session_id_);
     if (it == m_session_info.end())
     {
+        cout << "ffscene_t::change_session_scene no session id" << endl;
         LOGWARN((FFSCENE, "ffscene_t::change_session_scene no session id[%ld]", session_id_));
         return -1;
     }

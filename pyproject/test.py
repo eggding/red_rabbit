@@ -23,7 +23,7 @@ def PacketLoginBuff():
     szFormat = "IHH%ds" % len(szMsg)
     return struct.pack(szFormat, nTotalSize, 10001, 0, szMsg)
 
-def SendEcho():
+def PacketCreateRoomBuff():
     import random
     global szMsg
     szAuthCode = szMsg + " ***** " + str(random.randint(1, 10049))
@@ -40,7 +40,7 @@ def SendEcho():
     # 二进制化消息包
     # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
     szFormat = "IHH%ds" % len(szAuthCode)
-    return struct.pack(szFormat, nTotalSize, 10004, 0, szAuthCode)
+    return struct.pack(szFormat, nTotalSize, 10002, 0, szAuthCode)
 
 c = 0
 import random
@@ -49,14 +49,11 @@ while True:
     # sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
-    s = random.randint(1, 1)
-    # time.sleep(s * 0.1)
-    time.sleep(1.1)
 
-    for i in xrange(1, 10000):
-        sock.send(SendEcho())
-        print(sock.recv(93939))
-        time.sleep(1)
+    time.sleep(0.1)
+    sock.send(PacketCreateRoomBuff())
+
+    time.sleep(9939)
 
     sock.close()
     print("c ", c)

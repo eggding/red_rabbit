@@ -51,6 +51,8 @@ def ff_timer_callback(id):
             else:
                 cb()
     except:
+        import traceback
+        LOGERROR("FFSCENE_PYTHON", "timer call back error {0}".format(traceback.format_exc()))
         return False
 
 
@@ -355,19 +357,34 @@ def alloc_id():
     return G_ALLOC_ID
 
 
+def GetSceneName():
+    return "<{0}>".format(ff.service_name)
+
 #日志相关的接口
 def LOGTRACE(mod_, content_):
+    content_ = GetSceneName() + " " + content_
     return ff.ffscene_obj.pylog(6, mod_, content_)
+
 def LOGDEBUG(mod_, content_):
+    content_ = GetSceneName() + " " + content_
     return ff.ffscene_obj.pylog(5, mod_, content_)
+
 def LOGINFO(mod_, content_):
+    content_ = GetSceneName() + " " + content_
     return ff.ffscene_obj.pylog(4, mod_, content_)
+
 def LOGWARN(mod_, content_):
+    content_ = GetSceneName() + " " + content_
     return ff.ffscene_obj.pylog(3, mod_, content_)
+
 def LOGERROR(mod_, content_):
+    content_ = GetSceneName() + " " + content_
     return ff.ffscene_obj.pylog(2, mod_, content_)
+
 def LOGFATAL(mod_, content_):
+    content_ = GetSceneName() + " " + content_
     return ff.ffscene_obj.pylog(1, mod_, content_)
 
 def ERROR(content_):
+    content_ = GetSceneName() + " " + content_
     return LOGERROR('PY', content_)

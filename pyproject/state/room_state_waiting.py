@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author  : jh.feng
 
+import ffext
 import state_machine as state_machine
 from util.enum_def import EStatusInRoom, RoomMemberProperty
 
@@ -22,6 +23,9 @@ class RoomStateWaiting(state_machine.StateBase):
                 RoomMemberProperty.eStatus: EStatusInRoom.eReady
             }
 
+        import json
+        ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberEnter {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
+
     def MemberExit(self, nMember):
         roomObj = self.GetOwner()
         assert nMember in roomObj.m_dictMember
@@ -29,3 +33,7 @@ class RoomStateWaiting(state_machine.StateBase):
             roomObj.Dismiss()
         else:
             roomObj.m_dictMember.pop(nMember)
+
+        import json
+        ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberExit {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
+

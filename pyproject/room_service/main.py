@@ -8,12 +8,15 @@ import room_service.room_mgr as room_mgr
 import db.dbs_client as dbs_client
 
 import proto.login_pb2 as login_pb2
-@ffext.session_call(rpc_def.Gac2RoomServiceQueryAll, login_pb2.request_login)
-def Gac2RoomServiceQueryAll(session, dictData):
-    def OnDbsTestCb(ret):
-        ffext.send_msg_session(session, 344, ret)
+@ffext.session_call(rpc_def.Gac2RoomServiceCreateRoom, login_pb2.request_login)
+def Gac2RoomServiceCreateRoom(session, reqObj):
+    ffext.LOGINFO("FFSCENE_PYTHON", "Gac2RoomServiceCreateRoom {0}".format(session))
+    room_mgr._roomMgr.CreateRoom(session, {})
 
-    dbs_client.DoAsynCall(rpc_def.DbsTest, session, 0, OnDbsTestCb, nChannel=session)
+@ffext.session_call(rpc_def.Gac2RoomServiceEnterRoom, login_pb2.request_login)
+def Gac2RoomServiceEnterRoom(session, reqObj):
+    room_mgr._roomMgr.EnterRoom(session)
+    room_mgr._roomMgr.StartGame(session)
 
 @ffext.reg_service(rpc_def.OnPlayerOffline)
 def OnPlayerOffline(session):
@@ -21,3 +24,11 @@ def OnPlayerOffline(session):
     session = session["0"]
     room_mgr.OnPlayerLeaveScene(session)
     return {"ret": True}
+
+@ffext.reg_service(rpc_def.Logic2RoomServiceGameEnd)
+def Logic2RoomServiceGameEnd(dictData):
+    ffext.LOGINFO("FFSCENE_PYTHON", "Logic2RoomServiceGameEnd {0}".format(json.dumps(dictData)))
+    from rpc.rpc_property_def import RpcProperty
+    nRoomID = dictData[RpcProperty.ret]
+    room_mgr.OnGameEnd(nRoomID)
+
