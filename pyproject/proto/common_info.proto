@@ -1,0 +1,97 @@
+syntax = "proto2";
+
+enum room_option
+{
+    half = 1;
+    full = 2;
+};
+
+enum event_type_member
+{
+    ev_member_enter = 1;
+    ev_member_exit = 2;
+};
+
+enum event_type
+{
+    ev_gang_with_peng = 1; // ev_target = player_id, ev_data = card_id
+    ev_gang_other = 2;
+    ev_gang_all = 3;
+
+    ev_peng = 11;
+    ev_chi = 12;
+    ev_bu_hua = 13;
+    ev_kai_jin = 14;
+    ev_mo_pai = 15;
+    ev_qi_pai = 16;
+
+    ev_dan_you = 21;
+    ev_shuang_you = 22;
+    ev_san_you = 23;
+
+    ev_hu_normal = 81;
+    ev_hu_cha_hua = 82;
+    ev_hu_qiang_gang = 83;
+    ev_hu_qiang_jin = 84;
+
+    ev_syn_order = 150; // ev_target = player_id, ev_data = game_num, round, turn
+};
+
+message other_player_info
+{
+    required uint64 player_id = 1;
+    required bytes  player_name = 2;
+    required bytes  wechat_info = 3;
+    required bytes  ip = 4;
+    required uint32 pos = 5;
+};
+
+message game_cfg
+{
+    required uint32         member_num = 1;
+    required uint32         multi = 2;
+    required uint32         total_start_game_num = 3;
+    required room_option    opt = 4;
+};
+
+message syn_game_info
+{
+    required uint32             room_id = 1;
+    required game_cfg           cfg = 2;
+    required uint32             cur_game_num = 3;
+    required uint32             cur_round = 4;
+    required uint32             cur_turn = 5;
+    required uint32             remain_card_num = 6;
+    required uint32             master_id = 7;
+    repeated uint32             list_gold_card = 8;
+    repeated uint32             list_owner_card = 9;
+    repeated other_player_info  list_members = 10;
+};
+
+
+message on_touch_event
+{
+    required event_type ev_type = 1;
+    required uint64     ev_target = 2;
+    required bytes      ev_data = 3;
+};
+
+message on_touch_event_member
+{
+    required event_type_member ev_type = 1;
+    repeated other_player_info list_member = 2;
+}
+
+message card_serial
+{
+    required uint64 player_id = 1;
+    repeated uint32 list_card_info = 2;
+    required uint32 score = 3;
+};
+
+message syn_game_ret
+{
+    required uint32             room_id = 1;
+    repeated other_player_info  list_member = 2;
+    repeated card_serial        list_car_serial = 3;
+};

@@ -5,8 +5,9 @@ ps -ef|grep app_engine |grep -v grep|cut -c 9-15|xargs kill -9
 sleep 0.1
 
 # broker slave
-./app_engine -slave 1 -broker tcp://127.0.0.1:10398 -master_broker tcp://127.0.0.1:10241 &
-./app_engine -slave 2 -broker tcp://127.0.0.1:10399 -master_broker tcp://127.0.0.1:10241 &
+./app_engine -slave 1 -broker tcp://127.0.0.1:11398 -master_broker tcp://127.0.0.1:10241 &
+./app_engine -slave 2 -broker tcp://127.0.0.1:11399 -master_broker tcp://127.0.0.1:10241 &
+./app_engine -slave 3 -broker tcp://127.0.0.1:11400 -master_broker tcp://127.0.0.1:10241 &
 
 # dbs 任务持久化任务队列
 ./app_engine -scene db_queue@ -broker tcp://127.0.0.1:10241 -python_path ./pyproject/db &

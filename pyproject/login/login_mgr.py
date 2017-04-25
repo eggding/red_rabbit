@@ -129,5 +129,5 @@ def OnEnterLoginScene(session, src, data):
     loginPlayer = GetPlayer(session)
     assert loginPlayer is not None
 
-    ffext.change_session_scene(session, scene_def.ROOM_SCENE, json.dumps(loginPlayer.Serial2Dict()))
-    ffext.LOGINFO("FFSCENE", "Auth done, request change 2 room center {0}, {1}".format(session, json.dumps(loginPlayer.Serial2Dict())))
+    ffext.change_session_scene(session, scene_def.GCC_SCENE, json.dumps(loginPlayer.Serial2Dict()))
+    ffext.LOGINFO("FFSCENE_PYTHON", "Auth done, request change 2 room center {0}, {1}".format(session, json.dumps(loginPlayer.Serial2Dict())))

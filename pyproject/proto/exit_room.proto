@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+import "common_info.proto"
+
+message exit_room_req
+{
+    required uint32 room_id = 1;
+};
+
+message exit_room_rsp
+{
+    required uint32 ret = 1;
+};

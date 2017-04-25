@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+import "common_info.proto"
+
+message enter_room_req
+{
+    required uint32 room_id = 1;
+};
+
+message enter_room_rsp
+{
+    required uint32 ret = 1;
+    optional syn_game_info ret_data = 2;
+};

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+message serivce_info
+{
+    required uint32 service_id = 2;
+    required bytes  service_scene = 1;
+};
+
+message syn_service_req
+{
+};
+
+message syn_service_rsp
+{
+    required uint32 ret = 1;
+    repeated serivce_info list_service = 2;
+};

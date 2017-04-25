@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+import "common_info.proto"
+
+message create_room_req
+{
+    required game_cfg cfg = 1;
+};
+
+message create_room_rsp
+{
+    required uint32     ret = 1;
+    optional uint32     room_id = 2;
+    optional uint32     pos = 3;
+    optional game_cfg   cfg = 4;
+};

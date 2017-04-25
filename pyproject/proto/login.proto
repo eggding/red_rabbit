@@ -1,35 +1,32 @@
 syntax = "proto2";
 
-// 分配协议号 10001
-message request_login
+message serivce_info
 {
-    required bytes auth_info = 1; // 认证信息(测试环境随便填字符)
+    required uint32 service_id = 1;
+    required bytes  service_scene = 2;
 };
 
-// 分配协议号 30001
-message response_login
-{
-    required int32 ret = 1;
-    required uint64 session_id = 2;
-}
 
-// 分配协议号 30002
-message syn_enter_scene
+message get_gate_info_req
 {
-    //同步玩家场景信息场景
-    required int32 ret = 1;
-    required int32 scene_id = 2; //场景id
-    required bytes scene_info = 3;
-}
 
-// 分配协议号 30003
-message syn_player_data
+};
+
+message get_gate_info_rsp
 {
-    // 同步玩家信息
-    required int32 ret = 1;
-    required uint64 session = 2;
-    required bytes name = 3;
-    required int32 sex = 4;
-    required bytes money_info = 5;
-    required bytes bag_item_info = 6;
-}
+    required uint32     ret = 1;
+    optional bytes      gate_info = 2;
+};
+
+message login_req
+{
+    required bytes auth_info = 1;
+};
+
+message login_rsp
+{
+    required uint32     ret = 1;
+    optional uint64     player_id = 2;
+    optional uint32     room_id = 3;
+};
+

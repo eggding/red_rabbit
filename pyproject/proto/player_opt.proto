@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+import "common_info.proto"
+
+message opt_req
+{
+    required event_type opt = 1;
+    required bytes opt_data = 2;
+};
+
+message opt_rsp
+{
+    required event_type opt = 1;
+    required uint32     ret = 2;
+    required bytes      ret_data = 3;
+};
