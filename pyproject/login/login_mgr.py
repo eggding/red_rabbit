@@ -33,7 +33,6 @@ _loginMgr = LoginMgr()
 
 
 def OnCreateUserSessionCb(dictRet, listBindData):
-    print("OnCreateUserSessionCb")
     online_time, ip, gate_name, cb_id = listBindData
     nFlag = dictRet[dbs_def.FLAG]
     if nFlag is True:
@@ -55,7 +54,7 @@ def OnCreateUserSessionCb(dictRet, listBindData):
     ffext.LOGINFO("FFSCENE", "session 认证完成 {0}".format(session_id))
 
 def OnGetUseSessonCb(dictRet, listBindData):
-    print("OnGetUseSessonCb ", dictRet, listBindData)
+    # print("OnGetUseSessonCb ", dictRet, listBindData)
     szAuthKey, online_time, ip, gate_name, cb_id = listBindData
     nFlag = dictRet[dbs_def.FLAG]
     if nFlag is True:
@@ -77,7 +76,6 @@ def OnGetUseSessonCb(dictRet, listBindData):
         ffext.on_verify_auth_callback(0, "player is online.", cb_id)
         return
 
-    session_id = int(dictRet[dbs_def.SESSION])
     player = player_in_login.PlayerInLogin(session_id, online_time, ip, gate_name)
     _loginMgr.add(session_id, player)
     ffext.on_verify_auth_callback(player.GetGlobalID(), "", cb_id)

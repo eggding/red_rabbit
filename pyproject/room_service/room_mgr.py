@@ -19,7 +19,7 @@ import state.room_state_running as room_state_running
 class RoomObj(object):
     def __init__(self, nRoomID,  nMaster):
         self.m_nMaxMember = 4
-        self.m_szRoomInScene = None
+        self.m_szGameLogicScene = None
         self.m_nRoomID = nRoomID
         self.m_nMaster = nMaster
         self.m_dictMember = {nMaster: {RoomMemberProperty.ePos: 1,
@@ -28,6 +28,12 @@ class RoomObj(object):
         # 初始化状态机
         self.m_sm = state_machine.StateMachine()
         self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
+
+    def SetGameLogicScene(self, szScene):
+        self.m_szGameLogicScene = szScene
+
+    def GetGameLogicScene(self):
+        return self.m_szGameLogicScene
 
     def GetRoomID(self):
         return self.m_nRoomID
@@ -41,9 +47,13 @@ class RoomObj(object):
         return dictSerial
 
     def CanStartGame(self):
+        if self.m_sm.IsInState(room_state_running.RoomStateRunning) is True:
+            return False
+
         return len(self.m_dictMember) == self.m_nMaxMember
 
     def StartGameOnRoom(self, szLogicScene):
+        self.SetGameLogicScene(szLogicScene)
         self.m_sm.ChangeState(room_state_running.RoomStateRunning(self))
         for nPlayerGID in self.m_dictMember.iterkeys():
             ffext.LOGINFO("FFSCENE_PYTHON", "StartGameOnRoom {0} request change scene {1}".format(nPlayerGID, szLogicScene))
@@ -198,7 +208,6 @@ class RoomService(object):
         :return:
         """
         roomObj = self.GetRoomObjByPlayerGID(nRoomMaster)
-        print("test ", roomObj)
         if roomObj is None:
             return
 
@@ -219,7 +228,7 @@ class RoomService(object):
         :param roomPlayer:
         :return:
         """
-        ffext.LOGINFO("FFSCENE_PYTHON", "OnPlayerEnterScene {0}".format(roomPlayer.GetGlobalID()))
+        ffext.LOGINFO("FFSCENE_PYTHON", " OnEnterScene {0}".format(roomPlayer.GetGlobalID()))
         assert roomPlayer is not None
 
     def OnLeaveScene(self, nPlayerGID):

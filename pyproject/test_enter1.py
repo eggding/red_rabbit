@@ -8,7 +8,7 @@ def PacketLoginBuff():
     import proto.login_pb2 as login_pb2
     req_login = login_pb2.request_login()
     global szMsg
-    szMsg = "acc0"
+    szMsg = "acc1"
     req_login.auth_info = szMsg
     szMsg = req_login.SerializeToString()
 

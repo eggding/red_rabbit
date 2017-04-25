@@ -26,11 +26,16 @@ class idgen_t(object):
             self.auto_inc_id = int(ret.result[0][0])
             self.runing_flag = int(ret.result[0][1])
             if self.runing_flag != 0:
-                self.auto_inc_id += 10000
-                ffext.ERROR('last idgen shut down not ok, inc 10000')
+                self.auto_inc_id += 50
+                ffext.ERROR('last idgen shut down not ok, inc 50')
             conn.sync_query("UPDATE `id_generator` SET `RUNING_FLAG` = '1' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (self.type_id, self.server_id))
-        if self.auto_inc_id < 65535:
-           self.auto_inc_id = 65535
+
+        if self.type_id == EIdType.eIdTypeRoom:
+            if self.auto_inc_id < 100000:
+               self.auto_inc_id = 100000
+        else:
+            if self.auto_inc_id < 65535:
+               self.auto_inc_id = 65535
         return True
 
     def cleanup(self):
@@ -50,6 +55,9 @@ class idgen_t(object):
         return high | (self.server_id << 16)| low16
 
     def gen_id_sector(self, conn, nInc=1):
+        if self.m_bInit is False:
+            self.init(conn)
+
         listRet = [self.auto_inc_id + 1, self.auto_inc_id + nInc]
         self.auto_inc_id += nInc
         self.update_id(conn)

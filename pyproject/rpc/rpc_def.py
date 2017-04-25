@@ -19,7 +19,10 @@ OnSessionConnectGate = 1002
 OnSessionDisConnGate = 1003
 
 Room2MjStartGame = 2001
-Logic2RoomServiceGameEnd = 2002
+Room2MjOnRoomMemberEnter = 2002
+Room2MjOnRoomMemberOffline = 2003
+
+Logic2RoomServiceGameEnd = 2052
 
 DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001

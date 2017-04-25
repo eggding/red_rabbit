@@ -75,7 +75,8 @@ def ImpDbsLoadPlayerData(conn, job):
             table_property_def.Player.CREATE_TIME: int(time.time()),
         }
         szDataInfo = json.dumps(dictPlayerInfo)
-        sql = "INSERT INTO `player` VALUES('%s', '%s', '%s')" % (session, szDataInfo, "{}")
+        szExtraInfo = json.dumps({table_property_def.Player.MONEY_LIST: []})
+        sql = "INSERT INTO `player` VALUES('%s', '%s', '%s')" % (session, szDataInfo, szExtraInfo)
         ret = conn.sync_query(sql)
         if ret.flag is False:
             ffext.ERROR('load_player载入数据出错%s' % (sql))
@@ -86,7 +87,8 @@ def ImpDbsLoadPlayerData(conn, job):
         szPlayerInfoBase = ret.result[0][0]
         szPlayerInfoExtra = ret.result[0][1]
         dictPlayerInfo = json.loads(szPlayerInfoBase)
-        dictTmp = json.load(szPlayerInfoExtra)
+        dictTmp = json.loads(szPlayerInfoExtra)
+        print(szPlayerInfoExtra)
         util.dict_merge(dictTmp, dictPlayerInfo)
 
 

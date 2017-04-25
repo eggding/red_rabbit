@@ -139,7 +139,7 @@ def ff_session_logic(session_id, cmd, body):
     body 为请求的消息
     '''
     #print('ff_session_logic', session_id, cmd, body)
-    print(g_session_logic_callback_dict)
+    # print(g_session_logic_callback_dict)
     info = g_session_logic_callback_dict[cmd]
     arg  = info[0](body)
     return info[1](session_id, arg)
@@ -235,6 +235,7 @@ class query_result_t(object):
         self.flag    = flag_
         self.result  = result_
         self.column  = col_
+
     def dump(self):
         print(self.flag, self.result, self.column)
 

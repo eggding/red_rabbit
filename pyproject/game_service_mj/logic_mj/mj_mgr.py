@@ -35,7 +35,7 @@ class RoomInMjService(object):
 
     def StartGame(self):
         self.m_bIsRunning = True
-        tick_mgr.RegisterOnceTick(5000, _mjMgr.OnGameOver, self.m_nRoomID)
+        tick_mgr.RegisterOnceTick(30000, _mjMgr.OnGameOver, self.m_nRoomID)
 
     def GetAllMember(self):
         return self.m_dictMember.keys()
@@ -46,9 +46,12 @@ class RoomInMjService(object):
         # syn all
 
     def MemberEnter(self, nPlayerGID):
-        assert self.m_bIsRunning is False
-        self.m_dictMember[nPlayerGID] = EStatusInRoom.eReady
-        if self.CanStartGame() is True:
+        if self.m_bIsRunning is True:
+            self.m_dictMember[nPlayerGID] = EStatusInRoom.ePlaying
+        else:
+            self.m_dictMember[nPlayerGID] = EStatusInRoom.eReady
+            if self.CanStartGame() is False:
+                return
             for nGid in self.m_dictMember.iterkeys():
                 self.m_dictMember[nGid] = EStatusInRoom.ePlaying
             self.StartGame()
@@ -77,7 +80,6 @@ class MjMgr(object):
             entity_mgr.DelEntity(nPlayerGID)
         self.m_dictRoomID2Room.pop(nRoomID)
 
-        print("call service ", scene_def.ROOM_SCENE)
         ffext.call_service(scene_def.ROOM_SCENE, rpc_def.Logic2RoomServiceGameEnd, {RpcProperty.ret: nRoomID})
 
     def OnPlayerEnterScene(self, nPlayerGID, nRoomID):
@@ -97,12 +99,14 @@ CreateMjRoomService = _mjMgr.CreateMjRoomService
 
 @ffext.session_enter_callback
 def OnEnterScene(nPlayerGID, szFromScene, dictSerial):
-    import json
     ffext.LOGINFO("FFSCENE_PYTHON", "from {0} -> {1}, {2} enter mj scene".format(szFromScene, nPlayerGID, dictSerial))
-    Player = player_in_mj_service.MjPlayer()
+
+    import json
     dictSerial = json.loads(dictSerial)
-    Player.InitFromDict(nPlayerGID, dictSerial)
-    entity_mgr.AddEntity(nPlayerGID, Player)
+    if entity_mgr.GetEntity(nPlayerGID) is None:
+        Player = player_in_mj_service.MjPlayer()
+        Player.InitFromDict(nPlayerGID, dictSerial)
+        entity_mgr.AddEntity(nPlayerGID, Player)
 
     nRoomID = dictSerial["room_id"]
     _mjMgr.OnPlayerEnterScene(nPlayerGID, nRoomID)
