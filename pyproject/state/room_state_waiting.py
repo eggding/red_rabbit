@@ -26,6 +26,9 @@ class RoomStateWaiting(state_machine.StateBase):
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberEnter {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
 
+        if roomObj.CanStartGame() is True:
+            roomObj.StartGameOnRoom()
+
     def MemberExit(self, nMember):
         roomObj = self.GetOwner()
         assert nMember in roomObj.m_dictMember

@@ -7,5 +7,11 @@ class GccRoomObj(object):
         self.m_nStatus = None
         self.m_dictRoomMember = None
 
+    def SetGasID(self, szGasID):
+        self.m_GasID = szGasID
+
+    def GetGasID(self):
+        return self.m_GasID
+
     def Init(self, dictData):
         pass

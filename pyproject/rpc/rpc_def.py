@@ -2,9 +2,11 @@
 
 # 开放给客户端的协议 10001 - 20000
 GacRequsetLogin = 10001
-Gac2RoomServiceCreateRoom = 10002
-Gac2RoomServiceEnterRoom = 10003
-Gac2RoomServiceQueryAll = 10004
+Gac2GasCreateRoom = 10002
+Gac2GasEnterRoom = 10003
+# Gac2RoomServiceCreateRoom = 10002
+# Gac2RoomServiceEnterRoom = 10003
+# Gac2RoomServiceQueryAll = 10004
 
 # 主动同步给客户端的协议 30001 - 32000
 ResponseLogin = 30001
@@ -24,8 +26,15 @@ Room2MjOnRoomMemberOffline = 2003
 Logic2RoomServiceGameEnd = 2052
 
 Login2GccPlayerOffline = 1059
+
 Gas2GccSynPlayerGasID = 2060
+Gas2GccPlayerTrueOffline = 2061
+Gas2GccGenRoomID = 2062
+Gas2GccGetRoomSceneByRoomID = 2063
+
 Gcc2GasPlayerOffline = 3000
+Gcc2GasRetGenRoomID = 3001
+Gcc2GasRetGetRoomScene = 3002
 
 DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001

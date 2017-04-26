@@ -12,6 +12,7 @@ import rpc.rpc_def as rpc_def
 import rpc.scene_def as scene_def
 import entity.gas_player_entity as gas_player_entity
 import residual.residual_mgr as residual_mgr
+import gas.gas_room_mgr.gas_room_mgr as gas_room_mgr
 
 class GasSceneMgr(object):
     def __init__(self):
@@ -19,13 +20,12 @@ class GasSceneMgr(object):
 
     def OnLoadPlayerDataDone(self, dictSerialData, szSerial):
         assert dictSerialData[dbs_def.FLAG] is True
-
-        dictExtra = json.loads(szSerial)
-        util.dict_merge(json.loads(dictExtra), dictSerialData)
+        util.dict_merge(json.loads(szSerial), dictSerialData)
 
         ffext.LOGINFO("FFSCENE_PYTHON", "OnLoadPlayerDataDone {0}".format(json.dumps(dictSerialData)))
         gasPlayer = gas_player_entity.GasPlayerEntity()
         gasPlayer.InitFromDict(dictSerialData)
+        gasPlayer.SetScene(self)
         entity_mgr.AddEntity(gasPlayer.GetGlobalID(), gasPlayer)
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": gasPlayer.GetGlobalID(),
                                                                                 "scene": ff.service_name})
@@ -36,12 +36,15 @@ class GasSceneMgr(object):
         if gasPlayer is not None:
             if self.m_residualMgr.IsPlayerInResidual(nPlayerGID) is True:
                 self.m_residualMgr.RemoveResidualPlayer(nPlayerGID)
+            gas_room_mgr.OnMemberEnter(nPlayerGID)
         else:
             dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, 0, nChannel=nPlayerGID, funCb=self.OnLoadPlayerDataDone, callbackParams=szSerial)
 
     def OnPlayerOffline(self, nPlayerGID):
         ffext.LOGINFO("FFSCENE_PYTHON", "GasSceneMgr.OnPlayerOffline {0}".format(nPlayerGID, nPlayerGID))
-        self.m_residualMgr.AddResidualPlayer(nPlayerGID)
+        gasPlayer = entity_mgr.GetEntity(nPlayerGID)
+        if gasPlayer is not None:
+            self.m_residualMgr.AddResidualPlayer(nPlayerGID)
 
     def PlayerTrueOffline(self, nPlayerGID):
         ffext.LOGINFO("FFSCENE_PYTHON", "player true offline {0}".format(nPlayerGID))
@@ -50,7 +53,24 @@ class GasSceneMgr(object):
             Player.Destroy()
         entity_mgr.DelEntity(nPlayerGID)
 
+        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccPlayerTrueOffline, {"id": nPlayerGID})
+
         # self.ExitRoom(nPlayerGID)
+
+    def OnPlayerChangeScene(self, nPlayerGID, szSerial):
+        ffext.LOGINFO("FFSCENE_PYTHON", "OnPlayerChangeScene {0}".format(szSerial))
+        Player = entity_mgr.GetEntity(nPlayerGID)
+        assert Player is None
+        Player = gas_player_entity.GasPlayerEntity()
+        dictSerial = json.loads(szSerial)
+        Player.DeSerial(dictSerial)
+        entity_mgr.AddEntity(nPlayerGID, Player)
+        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": Player.GetGlobalID(),
+                                                                                "scene": ff.service_name})
+
+        if "room_id" in dictSerial:
+            nRoomID = dictSerial["room_id"]
+            gas_room_mgr.EnterRoom(nPlayerGID, nRoomID)
 
 _gasSceneMgr = GasSceneMgr()
 
@@ -58,9 +78,15 @@ _gasSceneMgr = GasSceneMgr()
 def Gcc2GasPlayerOffline(dictData):
     nPlayerGID = dictData["id"]
     _gasSceneMgr.OnPlayerOffline(nPlayerGID)
+    gas_room_mgr.OnMemberExit(nPlayerGID)
 
 @ffext.session_enter_callback
-def Gcc2GasSessionConn(nPlayerGID, szSrcScene, szSerial):
-    _gasSceneMgr.Gcc2GasSessionConn(nPlayerGID, szSerial)
+def OnEnteredGasScene(nPlayerGID, szSrcScene, szSerial):
+    if szSrcScene == scene_def.GCC_SCENE:
+        _gasSceneMgr.Gcc2GasSessionConn(nPlayerGID, szSerial)
+    elif util.IsGasScene(szSrcScene) is True:
+        _gasSceneMgr.OnPlayerChangeScene(nPlayerGID, szSerial)
+    else:
+        assert False
 
 

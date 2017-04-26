@@ -18,8 +18,14 @@ sleep 0.1
 
 ./app_engine -scene scene@0 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/login/ &
 
-./app_engine -scene room_service -broker tcp://127.0.0.1:10241 -python_path ./pyproject/room_service &
-./app_engine -scene mj_service@0 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/game_service_mj &
+# ./app_engine -scene room_service -broker tcp://127.0.0.1:10241 -python_path ./pyproject/room_service &
+# ./app_engine -scene mj_service@0 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/game_service_mj &
+
+./app_engine -scene gcc -broker tcp://127.0.0.1:10241 -python_path ./pyproject/gcc &
+./app_engine -scene gas@0 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/gas &
+./app_engine -scene gas@1 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/gas &
+./app_engine -scene gas@2 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/gas &
+./app_engine -scene gas@3 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/gas &
 
 # ./app_engine -name gate@0 -gate gate@0 -gate_listen tcp://127.0.0.1:10242 -broker tcp:://127.0.0.1:10241 &
 # ./app_engine -gate gate@master -gate_listen tcp://192.168.74.130:10242 -broker tcp:://127.0.0.1:10241 &

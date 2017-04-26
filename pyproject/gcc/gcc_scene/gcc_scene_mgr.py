@@ -31,7 +31,7 @@ class GccSceneMgr(object):
             gccPlayer.SetIp(dictSerial[PlayerPro.IP])
             gccPlayer.SetGateName(dictSerial[PlayerPro.GATE_NAME])
             entity_mgr.AddEntity(nPlayerGID, gccPlayer)
-            ffext.change_session_scene(nPlayerGID, self.ChooseOneGas(), "")
+            ffext.change_session_scene(nPlayerGID, self.ChooseOneGas(), szSerial)
 
     def Gas2GccSynPlayerGasID(self, nPlayerGID, szGasID):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.Gas2GccSynPlayerGasID {0}, {1}".format(nPlayerGID, szGasID))
@@ -45,7 +45,15 @@ class GccSceneMgr(object):
         assert gccPlayer is not None
         ffext.call_service(gccPlayer.GetGasID(), rpc_def.Gcc2GasPlayerOffline, {"id": nPlayerGID})
 
+    def OnPlayerTrueOffline(self, nPlayerGID):
+        ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.OnPlayerTrueOffline {0}".format(nPlayerGID))
+
 _gccSceneMgr = GccSceneMgr()
+
+@ffext.reg_service(rpc_def.Gas2GccPlayerTrueOffline)
+def Gas2GccPlayerTrueOffline(dictData):
+    nPlayerGID = dictData["id"]
+    _gccSceneMgr.OnPlayerTrueOffline(nPlayerGID)
 
 @ffext.reg_service(rpc_def.Login2GccPlayerOffline)
 def Login2GccPlayerOffline(dictData):

@@ -5,106 +5,20 @@ import ff, ffext
 import json
 import entity.entity_mgr as entity_mgr
 import rpc.rpc_def as rpc_def
-from rpc.rpc_property_def import RpcProperty
-import entity.player_in_room_service as player_in_room_service
-import rpc.scene_def as scene_def
 import db.dbs_client as dbs_client
 import db.dbs_def as dbs_def
-import util.util as util
-from util.enum_def import EStatusInRoom, RoomMemberProperty
-import residual.residual_mgr as residual_mgr
-import state.state_machine as state_machine
-import state.room_state_waiting as room_state_waiting
-import state.room_state_running as room_state_running
+import rpc.scene_def as scene_def
+from rpc.rpc_property_def import RpcProperty
 
-class RoomObj(object):
-    def __init__(self, nRoomID,  nMaster):
-        self.m_nMaxMember = 4
-        self.m_szGameLogicScene = None
-        self.m_nRoomID = nRoomID
-        self.m_nMaster = nMaster
-        self.m_dictMember = {nMaster: {RoomMemberProperty.ePos: 1,
-                                       RoomMemberProperty.eStatus: EStatusInRoom.eReady}} # member -> [nPos, status]
-
-        # 初始化状态机
-        self.m_sm = state_machine.StateMachine()
-        self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
-
-    def SetGameLogicScene(self, szScene):
-        self.m_szGameLogicScene = szScene
-
-    def GetGameLogicScene(self):
-        return self.m_szGameLogicScene
-
-    def GetRoomID(self):
-        return self.m_nRoomID
-
-    def Serial(self):
-        dictSerial = {
-            "id": self.m_nRoomID,
-            "member": self.m_dictMember.keys(),
-            "master": self.m_nMaster,
-        }
-        return dictSerial
-
-    def CanStartGame(self):
-        if self.m_sm.IsInState(room_state_running.RoomStateRunning) is True:
-            return False
-
-        return len(self.m_dictMember) == self.m_nMaxMember
-
-    def StartGameOnRoom(self, szLogicScene):
-        self.SetGameLogicScene(szLogicScene)
-        self.m_sm.ChangeState(room_state_running.RoomStateRunning(self))
-        for nPlayerGID in self.m_dictMember.iterkeys():
-            ffext.LOGINFO("FFSCENE_PYTHON", "StartGameOnRoom {0} request change scene {1}".format(nPlayerGID, szLogicScene))
-            Player = entity_mgr.GetEntity(nPlayerGID)
-            dictSerial = Player.Serial2Dict()
-            dictSerial["room_id"] = self.m_nRoomID
-            ffext.change_session_scene(nPlayerGID, szLogicScene, json.dumps(dictSerial))
-
-    def MemberEnter(self, nMember):
-        self.m_sm.GetCurState().MemberEnter(nMember)
-
-    def MemberExit(self, nMember):
-        self.m_sm.GetCurState().MemberExit(nMember)
-
-    def MemberOffline(self, nMember):
-        self.m_sm.GetCurState().MemberOffline(nMember)
-
-    def Dismiss(self):
-        _roomMgr.OnRoomDismiss(self.GetRoomID(), self.m_dictMember.keys())
-        self.Destroy()
-
-    def Destroy(self):
-        self.m_sm.Destroy()
-
-    def GetEmptyPos(self):
-        return self.m_nMaxMember - len(self.m_dictMember)
-
-    def GenPos(self):
-        for nPos in xrange(1, self.m_nMaxMember + 1):
-            bExist = False
-            for dictData in self.m_dictMember.itervalues():
-                nHavePos = dictData[RoomMemberProperty.ePos]
-                if nHavePos == nPos:
-                    bExist = True
-                    break
-            if bExist is False:
-                return nPos
-        assert False
-
+import gas_room_obj as gas_room_obj
 
 class RoomService(object):
     def __init__(self):
-        self.m_nRoomIDBegin = 0
-        self.m_nRoomIDEnd = self.m_nRoomIDBegin - 1
-
         self.m_dictRoomID2Room = {}
         self.m_dictSession2RoomID = {}
-        self.m_residualMgr = residual_mgr.ResidualMgr(self)
 
     def OnRoomDismiss(self, nRoomID, listRoomPlayers):
+        ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.OnRoomDismiss {0}".format(nRoomID))
         self.m_dictRoomID2Room.pop(nRoomID)
         for nPlayerGID in listRoomPlayers:
             self.m_dictSession2RoomID.pop(nPlayerGID)
@@ -116,49 +30,35 @@ class RoomService(object):
         roomObj = self.m_dictRoomID2Room[nRoomID]
         return roomObj
 
-    def RandomChooseRoom(self):
-        nRoomID = self.SelectRoom()
-        if nRoomID is None:
-            return None
-        return self.m_dictRoomID2Room[nRoomID]
-
-    def SelectRoom(self):
-        nDstRoomID = None
-        nEmptyPos = None
-        for nRoomID, roomObj in self.m_dictRoomID2Room.iteritems():
-            nHavePosNum = roomObj.GetEmptyPos()
-            if 0 == nHavePosNum:
-                continue
-
-            if nDstRoomID is None:
-                nDstRoomID = nRoomID
-                nEmptyPos = nHavePosNum
-                continue
-
-            if nEmptyPos > nHavePosNum:
-                nEmptyPos = nHavePosNum
-                nDstRoomID = nRoomID
-
-        return nDstRoomID
-
     def EnterRoom(self, nPlayerGID, nRoomID=None):
-        # 已经有room
-        roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
-        if roomObj is not None:
-            roomObj.MemberEnter(nPlayerGID)
+        if nRoomID is None:
+            ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGetRoomSceneByRoomID, {"room_id": 0,
+                                                                                          "gas_id": ff.service_name,
+                                                                                          "player_id": nPlayerGID})
             return
 
-        if nRoomID is None:
-            roomObj = self.RandomChooseRoom()
-            if roomObj is None:
-                return
-        else:
-            roomObj = self.m_dictRoomID2Room[nRoomID]
+        roomObj = self.m_dictRoomID2Room.get(nRoomID)
+        if roomObj is None:
+            ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGetRoomSceneByRoomID, {"room_id": 0,
+                                                                                          "gas_id": ff.service_name,
+                                                                                          "player_id": nPlayerGID})
+            return
 
         roomObj.MemberEnter(nPlayerGID)
-        self.m_dictSession2RoomID[nPlayerGID] = roomObj.GetRoomID()
+        self.m_dictSession2RoomID[nPlayerGID] = nRoomID
 
-        # syn room info 2 client
+    def OnGetRoomIDRet(self, nRoomID, nPlayerGID):
+        ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.OnGetRoomIDRet {0}, {1}".format(nRoomID, nPlayerGID))
+        roomObj = gas_room_obj.RoomObj(nRoomID, nPlayerGID, self)
+        self.m_dictRoomID2Room[nRoomID] = roomObj
+        self.m_dictSession2RoomID[nPlayerGID] = nRoomID
+
+    def CreateRoom(self, nRoomMaster):
+        ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.CreateRoom {0}".format(nRoomMaster))
+        if nRoomMaster in self.m_dictSession2RoomID:
+            return
+        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGenRoomID, {"player_id": nRoomMaster,
+                                                                           "gas_id": ff.service_name})
 
     def ExitRoom(self, nPlayerGID):
         if nPlayerGID not in self.m_dictSession2RoomID:
@@ -169,131 +69,66 @@ class RoomService(object):
         if roomObj is not None:
             roomObj.MemberExit(nPlayerGID)
 
-    def OnGetRoomIdSectorCB(self, dictDbRet, listData):
-        if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            nBegin, nEnd = dictDbRet[dbs_def.RESULT]
-            self.m_nRoomIDBegin = nBegin
-            self.m_nRoomIDEnd = nEnd
-        self.CreateRoom(*listData)
-
-    def CreateRoom(self, nRoomMaster, data):
-        if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            dbs_client.DoAsynCall(rpc_def.DbsGetRoomIDSector, 0, 0, funCb=self.OnGetRoomIdSectorCB, callbackParams=[nRoomMaster, data])
-            return
-
-        nRoomId = self.m_nRoomIDBegin
-        self.m_nRoomIDBegin += 1
-        roomObj = RoomObj(nRoomId, nRoomMaster)
-        self.m_dictRoomID2Room[nRoomId] = roomObj
-        self.m_dictSession2RoomID[nRoomMaster] = nRoomId
-
-        # to gac.
-        ffext.LOGINFO("FFSCENE_PYTHON", "CreateRoom {0}, {1}".format(nRoomMaster, nRoomId))
-
-    def ChooseServiceScene(self):
-        return "mj_service@0"
-
-    def OnLogicSceneCreateRoomCb(self, err_, dictRet):
-        print(err_)
-        ffext.LOGINFO("FFSCENE_PYTHON", "RoomMgr.OnLogicSceneCreateRoomCb {0}".format(json.dumps(dictRet)))
-        dictRet = dictRet[RpcProperty.ret]
-        nRoomID = dictRet["id"]
-        roomObj = self.m_dictRoomID2Room[nRoomID]
-        assert roomObj is not None
-        roomObj.StartGameOnRoom(dictRet["scene"])
-
-    def StartGame(self, nRoomMaster):
-        """
-        开局入口
-        :param nRoomMaster:
-        :return:
-        """
-        roomObj = self.GetRoomObjByPlayerGID(nRoomMaster)
-        if roomObj is None:
-            return
-
-        if roomObj.CanStartGame() is False:
-            return
-
-        ffext.call_service(self.ChooseServiceScene(), rpc_def.Room2MjStartGame, roomObj.Serial(), self.OnLogicSceneCreateRoomCb)
-        ffext.LOGINFO("FFSCENE_PYTHON", "RoomMgr.StartGame {0}".format(nRoomMaster))
-
     def OnGameEnd(self, nRoomId):
         roomObj = self.m_dictRoomID2Room[nRoomId]
         assert roomObj is not None
         roomObj.Dismiss()
 
     def OnEnterScene(self, roomPlayer):
-        """
-        进入场景
-        :param roomPlayer:
-        :return:
-        """
         ffext.LOGINFO("FFSCENE_PYTHON", " OnEnterScene {0}".format(roomPlayer.GetGlobalID()))
         assert roomPlayer is not None
 
     def OnLeaveScene(self, nPlayerGID):
-        """
-        离开场景
-        :param nPlayerGID:
-        :return:
-        """
         ffext.LOGINFO("FFSCENE_PYTHON", "OnPlayerLeaveScene {0}".format(nPlayerGID))
 
-        # 加入残留
-        self.m_residualMgr.AddResidualPlayer(nPlayerGID)
-
-        # 通知成员
         roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
         if roomObj is not None:
             roomObj.MemberExit(nPlayerGID)
 
-    def PlayerTrueOffline(self, nPlayerGID):
-        """
-        下线
-        :param nPlayerGID:
-        :return:
-        """
-        ffext.LOGINFO("FFSCENE_PYTHON", "player true offline {0}".format(nPlayerGID))
-        Player = entity_mgr.GetEntity(nPlayerGID)
-        if Player is not None:
-            Player.Destroy()
-        entity_mgr.DelEntity(nPlayerGID)
+    def OnMemberExit(self, nPlayerGID):
+        roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
+        if roomObj is None:
+            return
+        roomObj.MemberExit(nPlayerGID)
 
-        self.ExitRoom(nPlayerGID)
+    def OnMemberEnter(self, nPlayerGID):
+        roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
+        if roomObj is None:
+            return
+        roomObj.OnMemberEnter(nPlayerGID)
 
 _roomMgr = RoomService()
-OnPlayerLeaveScene = _roomMgr.OnLeaveScene
-OnGameEnd = _roomMgr.OnGameEnd
+EnterRoom = _roomMgr.EnterRoom
+OnMemberExit = _roomMgr.OnMemberExit
+OnMemberEnter = _roomMgr.OnMemberEnter
 
-def OnLoadPlayerDataDone(dictSerialData, dictExtra):
-    assert dictSerialData[dbs_def.FLAG] is True
-    util.dict_merge(json.loads(dictExtra), dictSerialData)
+@ffext.reg_service(rpc_def.Gcc2GasRetGetRoomScene)
+def Gcc2GasRetGetRoomScene(dictData):
+    szRoomGasID = dictData["gas_id"]
+    nPlayerGID = dictData["player_id"]
+    nRoomID = dictData["room_id"]
+    if nRoomID == 0:
+        return
+    Player = entity_mgr.GetEntity(nPlayerGID)
+    if Player is None:
+        return
 
-    ffext.LOGINFO("FFSCENE_PYTHON", "OnLoadPlayerDataDone {0}".format(json.dumps(dictSerialData)))
-    roomPlayer = player_in_room_service.RoomPlayer()
-    roomPlayer.InitFromDict(dictSerialData)
-    entity_mgr.AddEntity(roomPlayer.GetGlobalID(), roomPlayer)
+    if szRoomGasID != ff.service_name:
+        Player.RequestChangeScene(szRoomGasID, {"room_id": nRoomID})
+    else:
+        _roomMgr.EnterRoom(nPlayerGID, nRoomID)
 
-    _roomMgr.OnEnterScene(roomPlayer)
+@ffext.reg_service(rpc_def.Gcc2GasRetGenRoomID)
+def Gcc2GasRetGenRoomID(dictData):
+    nRoomID = dictData["room_id"]
+    nPlayerGID = dictData["player_id"]
+    _roomMgr.OnGetRoomIDRet(nRoomID, nPlayerGID)
 
-    import proto.login_pb2 as login_pb2
-    syn_scene = login_pb2.syn_enter_scene()
-    syn_scene.ret = 0
-    syn_scene.scene_id = 1
-    syn_scene.scene_info = ff.service_name
-    # ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynSceneInfo, syn_scene.SerializeToString())
-    # ffext.send_msg_session(roomPlayer.GetSession(), rpc_def.SynPlayerData, roomPlayer.Serial2Client())
+import proto.login_pb2 as login_pb2
+@ffext.session_call(rpc_def.Gac2GasCreateRoom, login_pb2.request_login)
+def Gac2GasCreateRoom(nPlayerGID, reqObj):
+    _roomMgr.CreateRoom(nPlayerGID)
 
-@ffext.session_enter_callback
-def OnSessionEnterScene(nPlayerGID, szSrcScene, dictSerialData):
-    ffext.LOGINFO("FFSCENE_PYTHON", "enter room center {0}".format(nPlayerGID))
-    if szSrcScene == scene_def.LOGIN_SCENE:
-        if _roomMgr.m_residualMgr.IsPlayerInResidual(nPlayerGID) is True:
-            _roomMgr.m_residualMgr.RemoveResidualPlayer(nPlayerGID)
-            _roomMgr.OnEnterScene(entity_mgr.GetEntity(nPlayerGID))
-        else:
-            # load from dbs
-            dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, 0, nChannel=nPlayerGID, funCb=OnLoadPlayerDataDone, callbackParams=dictSerialData)
-
-
+@ffext.session_call(rpc_def.Gac2GasEnterRoom, login_pb2.request_login)
+def Gac2GasEnterRoom(nPlayerGID, reqObj):
+    _roomMgr.EnterRoom(nPlayerGID)

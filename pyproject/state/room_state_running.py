@@ -20,11 +20,6 @@ class RoomStateRunning(state_machine.StateBase):
         dictState = roomObj.m_dictMember[nMember]
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.ePlaying
 
-        dictSerial = {
-            "room_id": roomObj.GetRoomID()
-        }
-        ffext.change_session_scene(nMember, roomObj.GetGameLogicScene(), json.dumps(dictSerial))
-
 
     def MemberExit(self, nMember):
         self.MemberOffline(nMember)
@@ -40,5 +35,4 @@ class RoomStateRunning(state_machine.StateBase):
             "room_id": roomObj.GetRoomID(),
             "member": nMember,
         }
-        ffext.call_service(roomObj.GetGameLogicScene(), rpc_def.Room2MjOnRoomMemberOffline, dictParam)
 

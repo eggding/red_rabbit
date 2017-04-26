@@ -2,22 +2,84 @@
 # @Author  : jh.feng
 
 import ff, ffext
-import json
-import entity.entity_mgr as entity_mgr
 import rpc.rpc_def as rpc_def
-from rpc.rpc_property_def import RpcProperty
-import entity.player_in_room_service as player_in_room_service
-import rpc.scene_def as scene_def
 import db.dbs_client as dbs_client
 import db.dbs_def as dbs_def
-import util.util as util
-from util.enum_def import EStatusInRoom, RoomMemberProperty
-import residual.residual_mgr as residual_mgr
-import state.state_machine as state_machine
-import state.room_state_waiting as room_state_waiting
-import state.room_state_running as room_state_running
+import gcc_room_obj as gcc_room_obj
 
 class GccRoomMgr(object):
     def __init__(self):
+        self.m_nRoomIDBegin = 0
+        self.m_nRoomIDEnd = self.m_nRoomIDBegin - 1
+
         self.m_dictPlayer2RoomID = {}
-        self.m_dictRoomID2GasID = {}
+        self.m_dictRoomID2RoomObj = {}
+
+    def AutoSelectRoom(self):
+        for nRoomID, roomObj in self.m_dictRoomID2RoomObj.iteritems():
+            return nRoomID, roomObj.GetGasID()
+
+    def Gas2GccGetRoomSceneByRoomID(self, szGasID, nPlayerGID, nRoomID):
+        if 0 == nRoomID:
+            listRet = self.AutoSelectRoom()
+            if listRet is None:
+                return
+            nRoomID, szRoomInGas = listRet
+        else:
+            roomObj = self.m_dictRoomID2RoomObj.get(nRoomID)
+            if roomObj is not None:
+                szRoomInGas = roomObj.GetGasID()
+            else:
+                szRoomInGas = None
+
+        if szRoomInGas is None:
+            return
+
+        ffext.call_service(szGasID, rpc_def.Gcc2GasRetGetRoomScene, {"player_id": nPlayerGID,
+                                                                     "gas_id": szRoomInGas,
+                                                                     "room_id": nRoomID})
+
+    def OnGetRoomIdSectorCB(self, dictDbRet, listData):
+        if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
+            nBegin, nEnd = dictDbRet[dbs_def.RESULT]
+            self.m_nRoomIDBegin = nBegin
+            self.m_nRoomIDEnd = nEnd
+        self.Gas2GccGenRoomID(*listData)
+
+    def Gas2GccGenRoomID(self, szGasID, nPlayerGID):
+        if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
+            dbs_client.DoAsynCall(rpc_def.DbsGetRoomIDSector, 0, 0, funCb=self.OnGetRoomIdSectorCB, callbackParams=[szGasID, nPlayerGID])
+            return
+
+        nRoomId = self.m_nRoomIDBegin
+        self.m_nRoomIDBegin += 1
+
+        gccRoomObj = gcc_room_obj.GccRoomObj()
+        gccRoomObj.SetGasID(szGasID)
+        self.m_dictRoomID2RoomObj[nRoomId] = gccRoomObj
+        self.m_dictPlayer2RoomID[nPlayerGID] = nRoomId
+        ffext.call_service(szGasID, rpc_def.Gcc2GasRetGenRoomID, {"room_id": nRoomId,
+                                                                  "player_id": nPlayerGID})
+
+    def OnPlayerExit(self, nPlayerGID):
+        pass
+
+    def OnPlayerEnter(self, nPlayerGID):
+        pass
+
+_gccRoomMgr = GccRoomMgr()
+OnPlayerExit = _gccRoomMgr.OnPlayerExit
+OnPlayerEnter = _gccRoomMgr.OnPlayerEnter
+
+@ffext.reg_service(rpc_def.Gas2GccGetRoomSceneByRoomID)
+def Gas2GccGetRoomSceneByRoomID(dictData):
+    szGasID = dictData["gas_id"]
+    nPlayerGID = dictData["player_id"]
+    nRoomID = dictData["room_id"]
+    _gccRoomMgr.Gas2GccGetRoomSceneByRoomID(szGasID, nPlayerGID, nRoomID)
+
+@ffext.reg_service(rpc_def.Gas2GccGenRoomID)
+def Gas2GccGenRoomID(dictData):
+    szGasID = dictData["gas_id"]
+    nPlayerGID = dictData["player_id"]
+    _gccRoomMgr.Gas2GccGenRoomID(szGasID, nPlayerGID)

@@ -6,9 +6,16 @@ g_nPersistentGap = 1000 * 60 * 5
 
 class BaseEntity(object):
     def __init__(self):
+        self.m_sceneObj = None
         self.m_listCompmentName = []
         self.m_nTick2Persistent = None
         self.StartOnceTick()
+
+    def SetScene(self, sceneObj):
+        self.m_sceneObj = sceneObj
+
+    def GetScene(self):
+        return self.m_sceneObj
 
     def StopOnceTick(self):
         if self.m_nTick2Persistent is None:
@@ -37,3 +44,4 @@ class BaseEntity(object):
             compObj = getattr(self, szOneCompment)
             compObj.Destroy()
         self.m_listCompmentName = None
+        self.m_sceneObj = None

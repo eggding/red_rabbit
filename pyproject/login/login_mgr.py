@@ -109,10 +109,7 @@ def real_session_offline(session_id, online_time):
     import rpc.rpc_def as rpc_def
     ffext.LOGINFO("FFSCENE", "real_session_offline {0}, last scene {1}".format(session_id, ff.service_name))
     _loginMgr.remove(session_id)
-
-    def cb(err_, msg_):
-        pass
-    ffext.call_service(scene_def.ROOM_SCENE, rpc_def.OnPlayerOffline, {"0": session_id}, cb)
+    ffext.call_service(scene_def.GCC_SCENE, rpc_def.Login2GccPlayerOffline, {"id": session_id})
 
 def GetPlayer(nPlayerGID):
     return _loginMgr.get(nPlayerGID)
@@ -130,4 +127,4 @@ def OnEnterLoginScene(session, src, data):
     assert loginPlayer is not None
 
     ffext.change_session_scene(session, scene_def.GCC_SCENE, json.dumps(loginPlayer.Serial2Dict()))
-    ffext.LOGINFO("FFSCENE_PYTHON", "Auth done, request change 2 room center {0}, {1}".format(session, json.dumps(loginPlayer.Serial2Dict())))
+    ffext.LOGINFO("FFSCENE_PYTHON", "Auth done, request change scene 2 gcc {0}, {1}".format(session, json.dumps(loginPlayer.Serial2Dict())))
