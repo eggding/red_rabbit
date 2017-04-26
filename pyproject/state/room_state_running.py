@@ -4,6 +4,7 @@
 import ffext
 import json
 import rpc.rpc_def as rpc_def
+import entity.entity_mgr as entity_mgr
 import state_machine as state_machine
 from util.enum_def import EStatusInRoom, RoomMemberProperty
 
@@ -16,6 +17,9 @@ class RoomStateRunning(state_machine.StateBase):
         roomObj = self.GetOwner()
         if nMember not in roomObj.m_dictMember:
             return
+
+        Player = entity_mgr.GetEntity(nMember)
+        Player.SetRoomID(roomObj.GetRoomID())
 
         dictState = roomObj.m_dictMember[nMember]
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.ePlaying
@@ -30,9 +34,4 @@ class RoomStateRunning(state_machine.StateBase):
         assert nMember in roomObj.m_dictMember
         dictState = roomObj.m_dictMember[nMember]
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eOffline
-
-        dictParam = {
-            "room_id": roomObj.GetRoomID(),
-            "member": nMember,
-        }
 

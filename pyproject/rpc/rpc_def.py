@@ -31,10 +31,12 @@ Gas2GccSynPlayerGasID = 2060
 Gas2GccPlayerTrueOffline = 2061
 Gas2GccGenRoomID = 2062
 Gas2GccGetRoomSceneByRoomID = 2063
+Gas2GccOnRoomDismiss = 2064
 
 Gcc2GasPlayerOffline = 3000
 Gcc2GasRetGenRoomID = 3001
 Gcc2GasRetGetRoomScene = 3002
+Gcc2GasRetSynPlayerState = 3003
 
 DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001

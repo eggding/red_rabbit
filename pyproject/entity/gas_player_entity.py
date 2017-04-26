@@ -28,6 +28,12 @@ class GasPlayerEntity(base_entity.BaseEntity):
 
         self.m_nCurRoomID = None
 
+    def SetRoomID(self, nRoomID):
+        self.m_nCurRoomID = nRoomID
+
+    def GetRoomID(self):
+        return self.m_nCurRoomID
+
     def GetGlobalID(self):
         return self.m_session
 

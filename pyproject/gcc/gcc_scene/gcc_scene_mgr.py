@@ -6,6 +6,7 @@ import ffext
 import random
 import conf as conf
 import rpc.rpc_def as rpc_def
+import util.enum_def as enum_def
 import entity.entity_mgr as entity_mgr
 import entity.gcc_player_entity as gcc_player_entity
 
@@ -21,15 +22,16 @@ class GccSceneMgr(object):
 
     def Login2GccSessionConn(self, nPlayerGID, szSerial):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.Login2GccSessionConn {0}, {1}".format(nPlayerGID, szSerial))
-
         gccPlayer = entity_mgr.GetEntity(nPlayerGID)
         if gccPlayer is not None:
+            gccPlayer.SetState(enum_def.EPlayerState.eOnline)
             ffext.change_session_scene(nPlayerGID, gccPlayer.GetGasID(), "")
         else:
             dictSerial = json.loads(szSerial)
             gccPlayer = gcc_player_entity.GccPlayerEntity()
             gccPlayer.SetIp(dictSerial[PlayerPro.IP])
             gccPlayer.SetGateName(dictSerial[PlayerPro.GATE_NAME])
+            gccPlayer.SetState(enum_def.EPlayerState.eOnline)
             entity_mgr.AddEntity(nPlayerGID, gccPlayer)
             ffext.change_session_scene(nPlayerGID, self.ChooseOneGas(), szSerial)
 
@@ -39,14 +41,25 @@ class GccSceneMgr(object):
         assert gccPlayer is not None
         gccPlayer.SetGasID(szGasID)
 
+        # check state
+        if gccPlayer.GetState() == enum_def.EPlayerState.eDisConnect:
+            ffext.call_service(szGasID, rpc_def.Gcc2GasRetSynPlayerState, {"state": gccPlayer.GetState(),
+                                                                           "player_id": nPlayerGID})
+
     def OnPlayerOffline(self, nPlayerGID):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.OnPlayerOffline {0}".format(nPlayerGID))
         gccPlayer = entity_mgr.GetEntity(nPlayerGID)
         assert gccPlayer is not None
+        gccPlayer.SetState(enum_def.EPlayerState.eDisConnect)
         ffext.call_service(gccPlayer.GetGasID(), rpc_def.Gcc2GasPlayerOffline, {"id": nPlayerGID})
 
     def OnPlayerTrueOffline(self, nPlayerGID):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.OnPlayerTrueOffline {0}".format(nPlayerGID))
+        gccPlayer = entity_mgr.GetEntity(nPlayerGID)
+        assert gccPlayer is not None
+        gccPlayer.Destroy()
+        entity_mgr.DelEntity(nPlayerGID)
+
 
 _gccSceneMgr = GccSceneMgr()
 

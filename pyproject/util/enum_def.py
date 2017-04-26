@@ -4,9 +4,9 @@
 import entity.const_entity as const_entity
 
 
-class ETrueOfflineReason(const_entity.Const):
+class EPlayerState(const_entity.Const):
     eDisConnect = 0
-    eChangeScene = 1
+    eOnline = 1
 
 class EIdType(const_entity.Const):
     eIdTypePlayer = 1

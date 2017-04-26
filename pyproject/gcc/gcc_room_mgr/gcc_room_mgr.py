@@ -11,9 +11,10 @@ class GccRoomMgr(object):
     def __init__(self):
         self.m_nRoomIDBegin = 0
         self.m_nRoomIDEnd = self.m_nRoomIDBegin - 1
-
-        self.m_dictPlayer2RoomID = {}
         self.m_dictRoomID2RoomObj = {}
+
+    def OnRoomDismiss(self, nRoomID):
+        self.m_dictRoomID2RoomObj.pop(nRoomID)
 
     def AutoSelectRoom(self):
         for nRoomID, roomObj in self.m_dictRoomID2RoomObj.iteritems():
@@ -57,7 +58,6 @@ class GccRoomMgr(object):
         gccRoomObj = gcc_room_obj.GccRoomObj()
         gccRoomObj.SetGasID(szGasID)
         self.m_dictRoomID2RoomObj[nRoomId] = gccRoomObj
-        self.m_dictPlayer2RoomID[nPlayerGID] = nRoomId
         ffext.call_service(szGasID, rpc_def.Gcc2GasRetGenRoomID, {"room_id": nRoomId,
                                                                   "player_id": nPlayerGID})
 
@@ -70,6 +70,12 @@ class GccRoomMgr(object):
 _gccRoomMgr = GccRoomMgr()
 OnPlayerExit = _gccRoomMgr.OnPlayerExit
 OnPlayerEnter = _gccRoomMgr.OnPlayerEnter
+
+
+@ffext.reg_service(rpc_def.Gas2GccOnRoomDismiss)
+def Gas2GccOnRoomDismiss(dictData):
+    nRoomID = dictData["room_id"]
+    _gccRoomMgr.OnRoomDismiss(nRoomID)
 
 @ffext.reg_service(rpc_def.Gas2GccGetRoomSceneByRoomID)
 def Gas2GccGetRoomSceneByRoomID(dictData):

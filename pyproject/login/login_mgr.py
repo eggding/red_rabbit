@@ -107,7 +107,7 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
 def real_session_offline(session_id, online_time):
     import rpc.scene_def as scene_def
     import rpc.rpc_def as rpc_def
-    ffext.LOGINFO("FFSCENE", "real_session_offline {0}, last scene {1}".format(session_id, ff.service_name))
+    ffext.LOGINFO("FFSCENE_PYTHON", "real_session_offline {0}, last scene {1}".format(session_id, ff.service_name))
     _loginMgr.remove(session_id)
     ffext.call_service(scene_def.GCC_SCENE, rpc_def.Login2GccPlayerOffline, {"id": session_id})
 
@@ -120,7 +120,6 @@ def OnEnterLoginScene(session, src, data):
     rsp_login = login_pb2.response_login()
     rsp_login.ret = 0
     rsp_login.session_id = int(session)
-    import rpc.rpc_def as rpc_def
     ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp_login.SerializeToString())
 
     loginPlayer = GetPlayer(session)

@@ -7,6 +7,16 @@ class GccPlayerEntity(object):
         self.m_szGasID = None
         self.m_szIp = None
         self.m_szGateName = None
+        self.m_nState = None
+
+    def GetState(self):
+        return self.m_nState
+
+    def SetState(self, nState):
+        self.m_nState = nState
+
+    def Destroy(self):
+        pass
 
     def SetIp(self, szIp):
         self.m_szIp = szIp
