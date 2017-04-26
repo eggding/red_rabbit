@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Author  : jh.feng
 
-
 import ff, ffext
 import entity.entity_mgr as entity_mgr
 import util.tick_mgr as tick_mgr
