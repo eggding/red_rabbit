@@ -91,7 +91,7 @@ def real_session_offline(session_id, online_time):
 
     def cb(err_, msg_):
         pass
-    ffext.call_service(scene_def.ROOM_SCENE, rpc_def.OnPlayerOffline, {"0": session_id}, cb)
+    # ffext.call_service(scene_def.ROOM_SCENE, rpc_def.OnPlayerOffline, {"0": session_id}, cb)
 
 
 

@@ -19,22 +19,84 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='login.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0blogin.proto\"\"\n\rrequest_login\x12\x11\n\tauth_info\x18\x01 \x02(\x0c\"1\n\x0eresponse_login\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x12\n\nsession_id\x18\x02 \x02(\x04\"D\n\x0fsyn_enter_scene\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x10\n\x08scene_id\x18\x02 \x02(\x05\x12\x12\n\nscene_info\x18\x03 \x02(\x0c\"u\n\x0fsyn_player_data\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0f\n\x07session\x18\x02 \x02(\x04\x12\x0c\n\x04name\x18\x03 \x02(\x0c\x12\x0b\n\x03sex\x18\x04 \x02(\x05\x12\x12\n\nmoney_info\x18\x05 \x02(\x0c\x12\x15\n\rbag_item_info\x18\x06 \x02(\x0c')
+  serialized_pb=_b('\n\x0blogin.proto\"\x13\n\x11get_gate_info_req\"3\n\x11get_gate_info_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tgate_info\x18\x02 \x01(\x0c\"\x1e\n\tlogin_req\x12\x11\n\tauth_info\x18\x01 \x02(\x0c\"<\n\tlogin_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
 
-_REQUEST_LOGIN = _descriptor.Descriptor(
-  name='request_login',
-  full_name='request_login',
+_GET_GATE_INFO_REQ = _descriptor.Descriptor(
+  name='get_gate_info_req',
+  full_name='get_gate_info_req',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15,
+  serialized_end=34,
+)
+
+
+_GET_GATE_INFO_RSP = _descriptor.Descriptor(
+  name='get_gate_info_rsp',
+  full_name='get_gate_info_rsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='auth_info', full_name='request_login.auth_info', index=0,
+      name='ret', full_name='get_gate_info_rsp.ret', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gate_info', full_name='get_gate_info_rsp.gate_info', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=36,
+  serialized_end=87,
+)
+
+
+_LOGIN_REQ = _descriptor.Descriptor(
+  name='login_req',
+  full_name='login_req',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='auth_info', full_name='login_req.auth_info', index=0,
       number=1, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -52,28 +114,35 @@ _REQUEST_LOGIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15,
-  serialized_end=49,
+  serialized_start=89,
+  serialized_end=119,
 )
 
 
-_RESPONSE_LOGIN = _descriptor.Descriptor(
-  name='response_login',
-  full_name='response_login',
+_LOGIN_RSP = _descriptor.Descriptor(
+  name='login_rsp',
+  full_name='login_rsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ret', full_name='response_login.ret', index=0,
-      number=1, type=5, cpp_type=1, label=2,
+      name='ret', full_name='login_rsp.ret', index=0,
+      number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='session_id', full_name='response_login.session_id', index=1,
-      number=2, type=4, cpp_type=4, label=2,
+      name='player_id', full_name='login_rsp.player_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='room_id', full_name='login_rsp.room_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -90,153 +159,42 @@ _RESPONSE_LOGIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=51,
-  serialized_end=100,
+  serialized_start=121,
+  serialized_end=181,
 )
 
+DESCRIPTOR.message_types_by_name['get_gate_info_req'] = _GET_GATE_INFO_REQ
+DESCRIPTOR.message_types_by_name['get_gate_info_rsp'] = _GET_GATE_INFO_RSP
+DESCRIPTOR.message_types_by_name['login_req'] = _LOGIN_REQ
+DESCRIPTOR.message_types_by_name['login_rsp'] = _LOGIN_RSP
 
-_SYN_ENTER_SCENE = _descriptor.Descriptor(
-  name='syn_enter_scene',
-  full_name='syn_enter_scene',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ret', full_name='syn_enter_scene.ret', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='scene_id', full_name='syn_enter_scene.scene_id', index=1,
-      number=2, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='scene_info', full_name='syn_enter_scene.scene_info', index=2,
-      number=3, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=102,
-  serialized_end=170,
-)
-
-
-_SYN_PLAYER_DATA = _descriptor.Descriptor(
-  name='syn_player_data',
-  full_name='syn_player_data',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ret', full_name='syn_player_data.ret', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='session', full_name='syn_player_data.session', index=1,
-      number=2, type=4, cpp_type=4, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='syn_player_data.name', index=2,
-      number=3, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='sex', full_name='syn_player_data.sex', index=3,
-      number=4, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='money_info', full_name='syn_player_data.money_info', index=4,
-      number=5, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='bag_item_info', full_name='syn_player_data.bag_item_info', index=5,
-      number=6, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=172,
-  serialized_end=289,
-)
-
-DESCRIPTOR.message_types_by_name['request_login'] = _REQUEST_LOGIN
-DESCRIPTOR.message_types_by_name['response_login'] = _RESPONSE_LOGIN
-DESCRIPTOR.message_types_by_name['syn_enter_scene'] = _SYN_ENTER_SCENE
-DESCRIPTOR.message_types_by_name['syn_player_data'] = _SYN_PLAYER_DATA
-
-request_login = _reflection.GeneratedProtocolMessageType('request_login', (_message.Message,), dict(
-  DESCRIPTOR = _REQUEST_LOGIN,
+get_gate_info_req = _reflection.GeneratedProtocolMessageType('get_gate_info_req', (_message.Message,), dict(
+  DESCRIPTOR = _GET_GATE_INFO_REQ,
   __module__ = 'login_pb2'
-  # @@protoc_insertion_point(class_scope:request_login)
+  # @@protoc_insertion_point(class_scope:get_gate_info_req)
   ))
-_sym_db.RegisterMessage(request_login)
+_sym_db.RegisterMessage(get_gate_info_req)
 
-response_login = _reflection.GeneratedProtocolMessageType('response_login', (_message.Message,), dict(
-  DESCRIPTOR = _RESPONSE_LOGIN,
+get_gate_info_rsp = _reflection.GeneratedProtocolMessageType('get_gate_info_rsp', (_message.Message,), dict(
+  DESCRIPTOR = _GET_GATE_INFO_RSP,
   __module__ = 'login_pb2'
-  # @@protoc_insertion_point(class_scope:response_login)
+  # @@protoc_insertion_point(class_scope:get_gate_info_rsp)
   ))
-_sym_db.RegisterMessage(response_login)
+_sym_db.RegisterMessage(get_gate_info_rsp)
 
-syn_enter_scene = _reflection.GeneratedProtocolMessageType('syn_enter_scene', (_message.Message,), dict(
-  DESCRIPTOR = _SYN_ENTER_SCENE,
+login_req = _reflection.GeneratedProtocolMessageType('login_req', (_message.Message,), dict(
+  DESCRIPTOR = _LOGIN_REQ,
   __module__ = 'login_pb2'
-  # @@protoc_insertion_point(class_scope:syn_enter_scene)
+  # @@protoc_insertion_point(class_scope:login_req)
   ))
-_sym_db.RegisterMessage(syn_enter_scene)
+_sym_db.RegisterMessage(login_req)
 
-syn_player_data = _reflection.GeneratedProtocolMessageType('syn_player_data', (_message.Message,), dict(
-  DESCRIPTOR = _SYN_PLAYER_DATA,
+login_rsp = _reflection.GeneratedProtocolMessageType('login_rsp', (_message.Message,), dict(
+  DESCRIPTOR = _LOGIN_RSP,
   __module__ = 'login_pb2'
-  # @@protoc_insertion_point(class_scope:syn_player_data)
+  # @@protoc_insertion_point(class_scope:login_rsp)
   ))
-_sym_db.RegisterMessage(syn_player_data)
+_sym_db.RegisterMessage(login_rsp)
 
 
 # @@protoc_insertion_point(module_scope)

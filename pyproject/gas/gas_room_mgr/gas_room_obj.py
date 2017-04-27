@@ -4,19 +4,18 @@
 import ff, ffext
 import entity.entity_mgr as entity_mgr
 import util.tick_mgr as tick_mgr
-from util.enum_def import EStatusInRoom, RoomMemberProperty
+from util.enum_def import RoomMemberProperty, EGameRule
 import state.state_machine as state_machine
 import state.room_state_waiting as room_state_waiting
 import state.room_state_running as room_state_running
+import gas.gas_game_rule.game_rule_mgr as game_rule_mgr
 
 class RoomObj(object):
-    def __init__(self, nRoomID, nMaster, roomMgr, gameRuleObj=None):
+    def __init__(self, nRoomID, nMaster, roomMgr, dictConfig=None):
         self.m_nMaxMember = 4
         self.m_roomMgr = roomMgr
-        self.m_szGameLogicScene = None
         self.m_nRoomID = nRoomID
         self.m_nMaster = nMaster
-        self.m_gameRuleObj = gameRuleObj
         self.m_dictMember = {} # member -> [nPos, status]
 
         # 初始化状态机
@@ -24,6 +23,11 @@ class RoomObj(object):
         self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
 
         self.MemberEnter(nMaster)
+
+        self.m_gameRuleObj = game_rule_mgr.GetGameRule(EGameRule.eGameRuleMj)(self)
+
+    def GetMemberList(self):
+        return self.m_dictMember.keys()
 
     def GetRoomID(self):
         return self.m_nRoomID
@@ -48,8 +52,11 @@ class RoomObj(object):
         for nMember in self.m_dictMember.iterkeys():
             Player = entity_mgr.GetEntity(nMember)
             Player.SetRoomID(self.GetRoomID())
-        # self.m_gameRuleObj.Start()
-        tick_mgr.RegisterOnceTick(10 * 1000, self.m_roomMgr.OnGameEnd, self.GetRoomID())
+
+        self.m_gameRuleObj.GameStart()
+
+    def GetGameRule(self):
+        return self.m_gameRuleObj
 
     def MemberEnter(self, nMember):
         self.m_sm.GetCurState().MemberEnter(nMember)

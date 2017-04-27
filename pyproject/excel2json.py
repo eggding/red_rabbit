@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import sys
 import xlrd
 import json
@@ -16,6 +17,8 @@ for i in xrange(1, nrows):
     dictRet[i] = {}
     listRowValues = table.row_values(i)
     for nPos, szKey in enumerate(listKeys):
+        szKey = szKey.encode("utf-8")
         dictRet[listRowValues[0]][szKey] = listRowValues[nPos]
 
 print(dictRet)
+print(dictRet[2]["类型"])

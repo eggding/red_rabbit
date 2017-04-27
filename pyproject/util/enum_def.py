@@ -3,6 +3,8 @@
 
 import entity.const_entity as const_entity
 
+class EGameRule(const_entity.Const):
+    eGameRuleMj = 1
 
 class EPlayerState(const_entity.Const):
     eDisConnect = 0

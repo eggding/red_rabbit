@@ -1,81 +1,104 @@
 syntax = "proto2";
 
+//1-108为序数牌，1-36为万子，37-72为筒子，73-108为索子，以万字为例9,18,27,36分别代表九万
+//109-112 -> 东
+//113-116 -> 南
+//117-120 -> 西
+//121-124 -> 北
+//125-128 -> 中
+//128-132 -> 发
+//123-126 -> 白
+//127-134 -> 春、夏、秋、冬，梅、兰、竹、菊
+
 enum room_option
 {
-    half = 1;
-    full = 2;
+    half = 1; // 半自摸
+    full = 2; // 全自摸
 };
 
 enum event_type_member
 {
-    ev_member_enter = 1;
-    ev_member_exit = 2;
+    ev_member_enter = 1; // 玩家进入房间事件
+    ev_member_exit = 2; // 玩家推出房间事件
 };
 
 enum event_type
 {
-    ev_gang_with_peng = 1; // ev_target = player_id, ev_data = card_id
-    ev_gang_other = 2;
-    ev_gang_all = 3;
+    ev_gang_with_peng = 1; // 杠其他人，自己的3个牌有1个是碰回来的
+    ev_gang_other = 2; // 杠其他人，自己摸了3个
+    ev_gang_all = 3; // 自己摸回来4个一样的杠牌
 
-    ev_peng = 11;
-    ev_chi = 12;
-    ev_bu_hua = 13;
-    ev_kai_jin = 14;
-    ev_mo_pai = 15;
-    ev_qi_pai = 16;
+    ev_peng = 11; // 碰
+    ev_chi = 12; // 吃
+    ev_bu_hua = 13; // 补花
+    ev_kai_jin = 14; // 开金
+    ev_mo_pai = 15; // 摸牌
+    ev_qi_pai = 16; // 弃牌
 
-    ev_dan_you = 21;
-    ev_shuang_you = 22;
-    ev_san_you = 23;
+    ev_dan_you = 21; // 单游
+    ev_shuang_you = 22; // 双游
+    ev_san_you = 23; // 三游
 
-    ev_hu_normal = 81;
-    ev_hu_cha_hua = 82;
-    ev_hu_qiang_gang = 83;
-    ev_hu_qiang_jin = 84;
+    ev_fen_bing_1 = 24; // 1轮被跟
+    ev_fen_bing_2 = 25; // 2轮被跟
 
-    ev_syn_order = 150; // ev_target = player_id, ev_data = game_num, round, turn
+    ev_hu_normal = 81; // 普通胡
+    ev_hu_cha_hua = 82; // 查花胡
+    ev_hu_qiang_gang = 83; // 抢杠胡
+    ev_hu_qiang_jin = 84; // 枪金胡
+    ev_hu_san_jin_dao = 85; // 三金倒
+    ev_hu_si_jin_dao = 86; // 四金倒
+    ev_hu_wu_jin_dao = 87; // 五金倒
+    ev_hu_ba_xian_guo_hai = 88; // 八仙过海
+    ev_hu_shi_san_yao = 89; // 十三幺
+    ev_hu_qi_dui_zi = 90; // 七对子
+
+
+    ev_syn_card = 149; // 同步自己的牌序
+    ev_syn_order = 150; // 同步当前局数、第几轮、出牌顺序顺序
 };
 
 message other_player_info
 {
-    required uint64 player_id = 1;
-    required bytes  player_name = 2;
-    required bytes  wechat_info = 3;
-    required bytes  ip = 4;
-    required uint32 pos = 5;
+    required uint64 player_id = 1; // 玩家id
+    required bytes  player_name = 2; // 玩家名字
+    required bytes  wechat_info = 3; // 微信信息
+    required bytes  ip = 4; // ip
+    required uint32 pos = 5; // 位置
 };
 
 message game_cfg
 {
-    required uint32         member_num = 1;
-    required uint32         multi = 2;
-    required uint32         total_start_game_num = 3;
-    required room_option    opt = 4;
+    required uint32         member_num = 1; // 开局人数
+    required uint32         multi = 2; // 游金倍数
+    required uint32         total_start_game_num = 3; // 总场数
+    required room_option    opt = 4; // 玩法选项
 };
 
+// 同步房间信息，协议号 20014
 message syn_game_info
 {
-    required uint32             room_id = 1;
-    required game_cfg           cfg = 2;
-    required uint32             cur_game_num = 3;
-    required uint32             cur_round = 4;
-    required uint32             cur_turn = 5;
-    required uint32             remain_card_num = 6;
-    required uint32             master_id = 7;
-    repeated uint32             list_gold_card = 8;
-    repeated uint32             list_owner_card = 9;
-    repeated other_player_info  list_members = 10;
+    required uint32             room_id = 1; // 房间id
+    required game_cfg           cfg = 2; // 玩法配置
+    required uint32             cur_game_num = 3; // 当前场数
+    required uint32             cur_round = 4; // 当前局数
+    required uint32             cur_turn = 5; // 当前第几轮
+    required uint32             remain_card_num = 6; //剩余牌的数量
+    required uint32             master_id = 7; // 庄家
+    repeated uint32             list_gold_card = 8; // 金牌
+    repeated uint32             list_owner_card = 9; // 自己的牌
+    repeated other_player_info  list_members = 10;  // 房间其他成员
 };
 
-
+// 触发事件, 协议号20013
 message on_touch_event
 {
-    required event_type ev_type = 1;
-    required uint64     ev_target = 2;
-    required bytes      ev_data = 3;
+    required event_type ev_type = 1; // 事件类型
+    required uint64     ev_target = 2; // 事件产生对象
+    required bytes      ev_data = 3; // 事件参数
 };
 
+// 触发玩家事件, 分配协议号 20011
 message on_touch_event_member
 {
     required event_type_member ev_type = 1;
@@ -89,6 +112,8 @@ message card_serial
     required uint32 score = 3;
 };
 
+
+// 同步战斗结果, 分配协议号 20012
 message syn_game_ret
 {
     required uint32             room_id = 1;

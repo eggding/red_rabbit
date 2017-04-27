@@ -1,28 +1,25 @@
 syntax = "proto2";
 
-message serivce_info
-{
-    required uint32 service_id = 1;
-    required bytes  service_scene = 2;
-};
-
-
+// 获取gate信息，协议号 10001
 message get_gate_info_req
 {
 
 };
 
+// 协议号 20001
 message get_gate_info_rsp
 {
     required uint32     ret = 1;
     optional bytes      gate_info = 2;
 };
 
+// 请求登录, 协议号 10002
 message login_req
 {
     required bytes auth_info = 1;
 };
 
+// 协议号 20002
 message login_rsp
 {
     required uint32     ret = 1;

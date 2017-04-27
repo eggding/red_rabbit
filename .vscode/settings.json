@@ -27,6 +27,7 @@
         "ios": "cpp",
         "system_error": "cpp",
         "exception": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "stdexcept": "cpp"
     }
 }

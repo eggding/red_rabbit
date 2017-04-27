@@ -2,15 +2,20 @@ syntax = "proto2";
 
 import "common_info.proto"
 
+// 创建房间 分配协议号 10010
 message create_room_req
 {
-    required game_cfg cfg = 1;
+    required uint32 game_type = 1; // 游戏类型
+    required game_cfg cfg = 2;
 };
 
+
+// 分配协议号 20010
 message create_room_rsp
 {
     required uint32     ret = 1;
-    optional uint32     room_id = 2;
-    optional uint32     pos = 3;
-    optional game_cfg   cfg = 4;
+    required uint32     game_type = 2;
+    optional uint32     room_id = 3;
+    optional uint32     pos = 4;
+    optional game_cfg   cfg = 5;
 };

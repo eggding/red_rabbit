@@ -20,7 +20,8 @@ using namespace std;
 #include "base/arg_helper.h"
 
 namespace ff {
-#define DEFAULT_LOGIC_SERVICE "scene@0"
+#define DEFAULT_LOGIC_SERVICE "login"
+#define GATE_MASTER "gate_master"
 
 class ffgate_t: public msg_handler_i
 {

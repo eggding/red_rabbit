@@ -24,6 +24,7 @@ class RoomStateRunning(state_machine.StateBase):
         dictState = roomObj.m_dictMember[nMember]
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.ePlaying
 
+        roomObj.GetGameRule().OnMemberEnter(nMember)
 
     def MemberExit(self, nMember):
         self.MemberOffline(nMember)
@@ -34,4 +35,6 @@ class RoomStateRunning(state_machine.StateBase):
         assert nMember in roomObj.m_dictMember
         dictState = roomObj.m_dictMember[nMember]
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eOffline
+
+        roomObj.GetGameRule().OnMemberExit(nMember)
 
