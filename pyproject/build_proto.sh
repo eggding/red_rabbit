@@ -6,4 +6,3 @@ protoc -I ./proto/ --python_out=./proto ./proto/enter_room.proto
 protoc -I ./proto/ --python_out=./proto ./proto/exit_room.proto
 protoc -I ./proto/ --python_out=./proto ./proto/opt.proto
 protoc -I ./proto/ --python_out=./proto ./proto/syn_owner.proto
-

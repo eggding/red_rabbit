@@ -2,7 +2,7 @@
 # @Author  : jh.feng
 
 import json
-import ffext
+import ffext, ff
 import rpc.rpc_def as rpc_def
 import db.dbs_client as dbs_client
 import db.dbs_def as dbs_def
@@ -55,8 +55,13 @@ class GasPlayerEntity(base_entity.BaseEntity):
         moneyMgr.InitFromDict(dictData.get(PlayerPro.MONEY_LIST, {}))
 
     def RequestChangeScene(self, szDstScene, dictExtra=None):
-        dictTmp = self.Serial2Dict()
+        if szDstScene == ff.service_name:
+            return False
 
+        if util.IsGasScene(szDstScene) is False:
+            return False
+
+        dictTmp = self.Serial2Dict()
         if dictExtra is not None:
             util.dict_merge(dictExtra, dictTmp)
 
@@ -64,6 +69,7 @@ class GasPlayerEntity(base_entity.BaseEntity):
         entity_mgr.DelEntity(self.GetGlobalID())
         self.Destroy()
         ffext.change_session_scene(self.GetGlobalID(), szDstScene, szSerial)
+        return True
 
     def Serial2Dict(self):
         dictSerial = self.GetPersistentDict()
