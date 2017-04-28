@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+// proto 10003
+message query_room_scene_req
+{
+    required uint32 room_id = 1;
+};
+
+// proto 20003
+message query_room_scene_rsp
+{
+    required uint32 ret = 1;
+    required uint32 room_id = 2;
+    required bytes  scene_name = 3;
+};

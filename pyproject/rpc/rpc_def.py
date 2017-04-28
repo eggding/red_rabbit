@@ -3,14 +3,14 @@
 # 开放给客户端的协议 10001 - 20000
 GacRequsetLogin = 10001
 Gac2GasChangeScene = 10002
+Gac2GasQueryRoomScene = 10003
 Gac2GasCreateRoom = 10010
-Gac2GasEnterRoom = 10003
-# Gac2RoomServiceCreateRoom = 10002
-# Gac2RoomServiceEnterRoom = 10003
-# Gac2RoomServiceQueryAll = 10004
+Gac2GasEnterRoom = 10011
 
-# 主动同步给客户端的协议 30001 - 32000
-ResponseLogin = 30001
+ResponseLogin = 20001
+Gas2GacRetChangeScene = 20002
+Gas2GacretQueryRoomScene = 20003
+
 SynSceneInfo = 30002
 SynPlayerData = 30003
 

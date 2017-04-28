@@ -79,7 +79,7 @@ def OnGetUseSessonCb(dictRet, listBindData):
     player = player_in_login.PlayerInLogin(session_id, online_time, ip, gate_name)
     _loginMgr.add(session_id, player)
     ffext.on_verify_auth_callback(player.GetGlobalID(), "", cb_id)
-    ffext.LOGINFO("FFSCENE", "session 认证完成 {0}".format(session_id))
+    ffext.LOGINFO("FFSCENE", "session auth ok {0}".format(session_id))
 
 @ffext.session_verify_callback
 def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
@@ -137,6 +137,11 @@ def GetPlayer(nPlayerGID):
 def OnEnterLoginScene(session, src, data):
     loginPlayer = GetPlayer(session)
     assert loginPlayer is not None
+
+    rsp = login_pb2.login_rsp()
+    rsp.ret = 0
+    rsp.player_id = session
+    ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp.SerializeToString())
 
     # gate master
     ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnSessionConnectGate, {"player_id": loginPlayer.GetGlobalID(),

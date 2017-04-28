@@ -12,9 +12,14 @@ import rpc.scene_def as scene_def
 import entity.gas_player_entity as gas_player_entity
 import residual.residual_mgr as residual_mgr
 import gas.gas_room_mgr.gas_room_mgr as gas_room_mgr
+import base_scene.base_scene as base_scene
 
-class GasSceneMgr(object):
+import proto.change_scene_pb2 as change_scene_pb2
+
+class GasSceneMgr(base_scene.BaseScene):
     def __init__(self):
+        super(GasSceneMgr, self).__init__()
+
         self.m_residualMgr = residual_mgr.ResidualMgr(self)
 
     def OnLoadPlayerDataDone(self, dictSerialData, szSerial):
@@ -28,6 +33,13 @@ class GasSceneMgr(object):
         entity_mgr.AddEntity(gasPlayer.GetGlobalID(), gasPlayer)
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": gasPlayer.GetGlobalID(),
                                                                                 "scene": ff.service_name})
+        self.SynSceneInfo(gasPlayer.GetGlobalID())
+
+    def SynSceneInfo(self, nPlayerGID):
+        rsp = change_scene_pb2.change_scene_rsp()
+        rsp.ret = 0
+        rsp.scene_name = ff.service_name
+        ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
     def Gcc2GasSessionConn(self, nPlayerGID, szSerial):
         ffext.LOGINFO("FFSCENE_PYTHON", "GasSceneMgr.Login2GccSessionConn {0}, {1}".format(nPlayerGID, szSerial))
@@ -36,6 +48,7 @@ class GasSceneMgr(object):
             if self.m_residualMgr.IsPlayerInResidual(nPlayerGID) is True:
                 self.m_residualMgr.RemoveResidualPlayer(nPlayerGID)
             gas_room_mgr.OnMemberEnter(nPlayerGID)
+            self.SynSceneInfo(nPlayerGID)
         else:
             dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, 0, nChannel=nPlayerGID, funCb=self.OnLoadPlayerDataDone, callbackParams=szSerial)
 
@@ -80,6 +93,24 @@ class GasSceneMgr(object):
             gas_room_mgr.EnterRoom(nPlayerGID, nRoomID)
 
 _gasSceneMgr = GasSceneMgr()
+
+@ffext.session_call(rpc_def.Gac2GasChangeScene, change_scene_pb2.change_scene_req)
+def Gac2GasRequestChangeScene(nPlayerGID, reqObj):
+    szDstScene = reqObj.scene_name
+    if util.IsGasScene(szDstScene) is False:
+        return
+
+    Player = entity_mgr.GetEntity(nPlayerGID)
+    if Player is None:
+        return
+
+    bRet = Player.RequestChangeScene(szDstScene)
+    if bRet is False:
+        import util.error_msg as error_msg
+        rsp = change_scene_pb2.change_scene_rsp()
+        rsp.ret = error_msg.ErrorMsg.eSceneInvalid
+        rsp.scene_name = ""
+        ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
 @ffext.reg_service(rpc_def.Gcc2GasPlayerOffline)
 def Gcc2GasPlayerOffline(dictData):

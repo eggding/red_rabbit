@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='change_scene.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x12\x63hange_scene.proto\"&\n\x10\x63hange_scene_req\x12\x12\n\nscene_name\x18\x01 \x02(\x0c\"3\n\x10\x63hange_scene_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x12\n\nscene_name\x18\x02 \x02(\x0c\"5\n\x12syn_cur_scene_info\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x12\n\nscene_name\x18\x02 \x02(\x0c')
+  serialized_pb=_b('\n\x12\x63hange_scene.proto\"&\n\x10\x63hange_scene_req\x12\x12\n\nscene_name\x18\x01 \x02(\x0c\"3\n\x10\x63hange_scene_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x12\n\nscene_name\x18\x02 \x02(\x0c')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -94,47 +94,8 @@ _CHANGE_SCENE_RSP = _descriptor.Descriptor(
   serialized_end=113,
 )
 
-
-_SYN_CUR_SCENE_INFO = _descriptor.Descriptor(
-  name='syn_cur_scene_info',
-  full_name='syn_cur_scene_info',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ret', full_name='syn_cur_scene_info.ret', index=0,
-      number=1, type=13, cpp_type=3, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='scene_name', full_name='syn_cur_scene_info.scene_name', index=1,
-      number=2, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=115,
-  serialized_end=168,
-)
-
 DESCRIPTOR.message_types_by_name['change_scene_req'] = _CHANGE_SCENE_REQ
 DESCRIPTOR.message_types_by_name['change_scene_rsp'] = _CHANGE_SCENE_RSP
-DESCRIPTOR.message_types_by_name['syn_cur_scene_info'] = _SYN_CUR_SCENE_INFO
 
 change_scene_req = _reflection.GeneratedProtocolMessageType('change_scene_req', (_message.Message,), dict(
   DESCRIPTOR = _CHANGE_SCENE_REQ,
@@ -149,13 +110,6 @@ change_scene_rsp = _reflection.GeneratedProtocolMessageType('change_scene_rsp', 
   # @@protoc_insertion_point(class_scope:change_scene_rsp)
   ))
 _sym_db.RegisterMessage(change_scene_rsp)
-
-syn_cur_scene_info = _reflection.GeneratedProtocolMessageType('syn_cur_scene_info', (_message.Message,), dict(
-  DESCRIPTOR = _SYN_CUR_SCENE_INFO,
-  __module__ = 'change_scene_pb2'
-  # @@protoc_insertion_point(class_scope:syn_cur_scene_info)
-  ))
-_sym_db.RegisterMessage(syn_cur_scene_info)
 
 
 # @@protoc_insertion_point(module_scope)

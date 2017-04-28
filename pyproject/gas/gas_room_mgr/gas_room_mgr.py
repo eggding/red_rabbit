@@ -10,6 +10,8 @@ import db.dbs_def as dbs_def
 import rpc.scene_def as scene_def
 from rpc.rpc_property_def import RpcProperty
 
+import proto.query_room_scene_pb2 as query_room_scene_pb2
+
 import gas_room_obj as gas_room_obj
 
 class RoomService(object):
@@ -113,10 +115,11 @@ def Gcc2GasRetGetRoomScene(dictData):
     if Player is None:
         return
 
-    if szRoomGasID != ff.service_name:
-        Player.RequestChangeScene(szRoomGasID, {"room_id": nRoomID})
-    else:
-        _roomMgr.EnterRoom(nPlayerGID, nRoomID)
+    rsp = query_room_scene_pb2.query_room_scene_rsp()
+    rsp.ret = 0
+    rsp.room_id = nRoomID
+    rsp.scene_name = szRoomGasID.encode('utf-8')
+    ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacretQueryRoomScene, rsp.SerializeToString())
 
 @ffext.reg_service(rpc_def.Gcc2GasRetGenRoomID)
 def Gcc2GasRetGenRoomID(dictData):
@@ -124,12 +127,20 @@ def Gcc2GasRetGenRoomID(dictData):
     nPlayerGID = dictData["player_id"]
     _roomMgr.OnGetRoomIDRet(nRoomID, nPlayerGID)
 
+
+@ffext.session_call(rpc_def.Gac2GasQueryRoomScene, query_room_scene_pb2.query_room_scene_req)
+def Gac2GasQueryRoomScene(nPlayerGID, reqObj):
+    nRoomID = reqObj.room_id
+    ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGetRoomSceneByRoomID, {"room_id": nRoomID,
+                                                                              "gas_id": ff.service_name,
+                                                                              "player_id": nPlayerGID})
+
 import proto.create_room_pb2 as create_room_pb2
 @ffext.session_call(rpc_def.Gac2GasCreateRoom, create_room_pb2.create_room_req)
-def Gac2GasCreateRoom(nPlayerGID, reqObj):
+def GacGasCreateRoom(nPlayerGID, reqObj):
     nGameType = reqObj.game_type
-    gameCfg = reqObj.game_cfg
-    print(gameCfg, nGameType)
+    gameCfg = reqObj.cfg
+    print(gameCfg.member_num, gameCfg.multi, nGameType)
     _roomMgr.CreateRoom(nPlayerGID)
 
 import proto.enter_room_pb2 as enter_room_pb2
