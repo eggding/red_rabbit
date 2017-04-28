@@ -2,7 +2,7 @@
 
 # 开放给客户端的协议 10001 - 20000
 GacRequsetLogin = 10001
-Gac2GasCreateRoom = 10002
+Gac2GasCreateRoom = 10010
 Gac2GasEnterRoom = 10003
 # Gac2RoomServiceCreateRoom = 10002
 # Gac2RoomServiceEnterRoom = 10003

@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+// proto 10002
+message change_scene_req
+{
+    required bytes scene_name = 1;
+};
+
+// proto 20002
+message change_scene_rsp
+{
+    required uint32 ret = 1;
+    required bytes  scene_name = 2;
+};
+
+// proto 20003
+message syn_cur_scene_info
+{
+    required uint32 ret = 1;
+    required bytes  scene_name = 2;
+};
