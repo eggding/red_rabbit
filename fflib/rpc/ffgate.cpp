@@ -152,7 +152,7 @@ int ffgate_t::verify_session_id(const message_t& msg_, socket_ptr_t sock_)
 //! 验证sessionid 的回调函数
 int ffgate_t::verify_session_callback(ffreq_t<session_verify_t::out_t>& req_, socket_ptr_t sock_)
 {
-    LOGTRACE((FFGATE, "ffgate_t::verify_session_callback session_id[%ld], err[%s]", req_.arg.session_id, req_.arg.err));
+    LOGINFO((FFGATE, "ffgate_t::verify_session_callback session_id[%ld], err[%s]", req_.arg.session_id, req_.arg.err));
     set<socket_ptr_t>::iterator it = m_wait_verify_set.find(sock_);
     if (it == m_wait_verify_set.end())
     {
@@ -163,11 +163,12 @@ int ffgate_t::verify_session_callback(ffreq_t<session_verify_t::out_t>& req_, so
     
     if (false == req_.arg.err.empty() || req_.arg.session_id == 0)
     {
-        LOGTRACE((FFGATE, "ffgate_t::close connection"));
+
         if (false == req_.arg.extra_data.empty())
         {
             msg_sender_t::send(sock_, 0, req_.arg.extra_data);
         }
+        LOGTRACE((FFGATE, "ffgate_t::close connection"));
         sock_->close();
         return 0;
     }

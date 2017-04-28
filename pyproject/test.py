@@ -10,6 +10,7 @@ def PacketLoginBuff():
     req_login = login_pb2.login_req()
     global szMsg
     szMsg = "acc"
+    req_login.type = login_pb2.login_type.Value("login")
     req_login.auth_info = szMsg
     print(szMsg)
     szMsg = req_login.SerializeToString()
@@ -28,10 +29,10 @@ def PacketCreateRoomBuff():
     global szMsg
     szAuthCode = szMsg + " ***** " + str(random.randint(1, 10049))
 
-    import proto.login_pb2 as login_pb2
-    req_login = login_pb2.login_req()
-    req_login.auth_info = szAuthCode
-    szAuthCode = req_login.SerializeToString()
+    # import proto.login_pb2 as login_pb2
+    # req_login = login_pb2.login_req()
+    # req_login.auth_info = szAuthCode
+    szAuthCode = "333"
 
     # 计算protobol消息体的字节数
     szFormat = "%ds" % len(szAuthCode)
@@ -50,8 +51,8 @@ while True:
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
 
-    time.sleep(0.1)
-    sock.send(PacketCreateRoomBuff())
+    time.sleep(2.1)
+    # sock.send(PacketCreateRoomBuff())
     #
     time.sleep(9939)
 

@@ -4,4 +4,4 @@
 import sys
 sys.path.append("./pyproject")
 
-import gate_mgr.gate_mgr as gate_mgr
+import gate_mgr as gate_mgr

@@ -3,6 +3,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -19,20 +20,59 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='login.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0blogin.proto\"\x13\n\x11get_gate_info_req\"3\n\x11get_gate_info_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tgate_info\x18\x02 \x01(\x0c\"\x1e\n\tlogin_req\x12\x11\n\tauth_info\x18\x01 \x02(\x0c\"<\n\tlogin_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r')
+  serialized_pb=_b('\n\x0blogin.proto\"9\n\tlogin_req\x12\x19\n\x04type\x18\x01 \x02(\x0e\x32\x0b.login_type\x12\x11\n\tauth_info\x18\x02 \x02(\x0c\"O\n\tlogin_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x11\n\tgate_info\x18\x04 \x01(\x0c**\n\nlogin_type\x12\x11\n\rget_gate_info\x10\x01\x12\t\n\x05login\x10\x02')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
+_LOGIN_TYPE = _descriptor.EnumDescriptor(
+  name='login_type',
+  full_name='login_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='get_gate_info', index=0, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='login', index=1, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=155,
+  serialized_end=197,
+)
+_sym_db.RegisterEnumDescriptor(_LOGIN_TYPE)
+
+login_type = enum_type_wrapper.EnumTypeWrapper(_LOGIN_TYPE)
+get_gate_info = 1
+login = 2
 
 
 
-_GET_GATE_INFO_REQ = _descriptor.Descriptor(
-  name='get_gate_info_req',
-  full_name='get_gate_info_req',
+_LOGIN_REQ = _descriptor.Descriptor(
+  name='login_req',
+  full_name='login_req',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='login_req.type', index=0,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='auth_info', full_name='login_req.auth_info', index=1,
+      number=2, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -46,76 +86,7 @@ _GET_GATE_INFO_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=15,
-  serialized_end=34,
-)
-
-
-_GET_GATE_INFO_RSP = _descriptor.Descriptor(
-  name='get_gate_info_rsp',
-  full_name='get_gate_info_rsp',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ret', full_name='get_gate_info_rsp.ret', index=0,
-      number=1, type=13, cpp_type=3, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='gate_info', full_name='get_gate_info_rsp.gate_info', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=36,
-  serialized_end=87,
-)
-
-
-_LOGIN_REQ = _descriptor.Descriptor(
-  name='login_req',
-  full_name='login_req',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='auth_info', full_name='login_req.auth_info', index=0,
-      number=1, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=89,
-  serialized_end=119,
+  serialized_end=72,
 )
 
 
@@ -147,6 +118,13 @@ _LOGIN_RSP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='gate_info', full_name='login_rsp.gate_info', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -159,28 +137,14 @@ _LOGIN_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=121,
-  serialized_end=181,
+  serialized_start=74,
+  serialized_end=153,
 )
 
-DESCRIPTOR.message_types_by_name['get_gate_info_req'] = _GET_GATE_INFO_REQ
-DESCRIPTOR.message_types_by_name['get_gate_info_rsp'] = _GET_GATE_INFO_RSP
+_LOGIN_REQ.fields_by_name['type'].enum_type = _LOGIN_TYPE
 DESCRIPTOR.message_types_by_name['login_req'] = _LOGIN_REQ
 DESCRIPTOR.message_types_by_name['login_rsp'] = _LOGIN_RSP
-
-get_gate_info_req = _reflection.GeneratedProtocolMessageType('get_gate_info_req', (_message.Message,), dict(
-  DESCRIPTOR = _GET_GATE_INFO_REQ,
-  __module__ = 'login_pb2'
-  # @@protoc_insertion_point(class_scope:get_gate_info_req)
-  ))
-_sym_db.RegisterMessage(get_gate_info_req)
-
-get_gate_info_rsp = _reflection.GeneratedProtocolMessageType('get_gate_info_rsp', (_message.Message,), dict(
-  DESCRIPTOR = _GET_GATE_INFO_RSP,
-  __module__ = 'login_pb2'
-  # @@protoc_insertion_point(class_scope:get_gate_info_rsp)
-  ))
-_sym_db.RegisterMessage(get_gate_info_rsp)
+DESCRIPTOR.enum_types_by_name['login_type'] = _LOGIN_TYPE
 
 login_req = _reflection.GeneratedProtocolMessageType('login_req', (_message.Message,), dict(
   DESCRIPTOR = _LOGIN_REQ,

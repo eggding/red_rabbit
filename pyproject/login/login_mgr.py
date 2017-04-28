@@ -99,31 +99,48 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     except:
         return []
 
-    szAuthKey = req_login.auth_info
-    dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
-    return []
+    nType = req_login.type
+    if nType == login_pb2.login_type.Value("get_gate_info"):
+        def _retGetGateAddr(err, msg):
+            szGateAddr = msg["gate_info"]
+            rsp = login_pb2.login_rsp()
+            rsp.ret = 0
+            rsp.gate_info = szGateAddr.encode("utf-8")
+            ffext.on_verify_auth_callback(0, rsp.SerializeToString(), cb_id)
+        ffext.call_service(scene_def.GATE_MASTER, rpc_def.GetGateIp, {"0": 0}, _retGetGateAddr)
+        return []
+    else:
+        szAuthKey = req_login.auth_info
+        dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
+        return []
 
 @ffext.session_offline_callback
 def real_session_offline(session_id, online_time):
     import rpc.scene_def as scene_def
     import rpc.rpc_def as rpc_def
     ffext.LOGINFO("FFSCENE_PYTHON", "real_session_offline {0}, last scene {1}".format(session_id, ff.service_name))
+
+    loginPlayer = GetPlayer(session_id)
+    assert loginPlayer is not None
     _loginMgr.remove(session_id)
+
     ffext.call_service(scene_def.GCC_SCENE, rpc_def.Login2GccPlayerOffline, {"id": session_id})
+
+    # gate master
+    ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnSessionDisConnGate, {"player_id": loginPlayer.GetGlobalID(),
+                                                                             "gate_id": loginPlayer.GetGateName()})
 
 def GetPlayer(nPlayerGID):
     return _loginMgr.get(nPlayerGID)
 
 @ffext.session_enter_callback
 def OnEnterLoginScene(session, src, data):
-    import proto.login_pb2 as login_pb2
-    # rsp_login = login_pb2.response_login()
-    # rsp_login.ret = 0
-    # rsp_login.session_id = int(session)
-    ffext.send_msg_session(session, rpc_def.ResponseLogin, str(session))
-
     loginPlayer = GetPlayer(session)
     assert loginPlayer is not None
+
+    # gate master
+    ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnSessionConnectGate, {"player_id": loginPlayer.GetGlobalID(),
+                                                                             "gate_id": loginPlayer.GetGateName()})
 
     ffext.change_session_scene(session, scene_def.GCC_SCENE, json.dumps(loginPlayer.Serial2Dict()))
     ffext.LOGINFO("FFSCENE_PYTHON", "Auth done, request change scene 2 gcc {0}, {1}".format(session, json.dumps(loginPlayer.Serial2Dict())))

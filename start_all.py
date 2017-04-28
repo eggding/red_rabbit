@@ -69,6 +69,11 @@ def StartAllGas():
         os.system(szCmd)
 
 def StartAllGate():
+    # gate master
+    szCmd = "{0} -scene gate@master {1} -python_path ./pyproject/gate_mgr &".format(szEngineBin, szBrokerMaster)
+    print(szCmd)
+    os.system(szCmd)
+
     for i in xrange(0, 10):
         szGateName = "gate@{0}".format(i)
         if szGateName not in conf.dict_cfg["gate"]:

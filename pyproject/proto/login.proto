@@ -1,29 +1,24 @@
 syntax = "proto2";
 
-// 获取gate信息，协议号 10001
-message get_gate_info_req
+enum login_type
 {
+    get_gate_info = 1;
+    login = 2;
+};
 
+// 请求登录, 协议号 10001
+message login_req
+{
+    required login_type type = 1;
+    required bytes      auth_info = 2;
 };
 
 // 协议号 20001
-message get_gate_info_rsp
-{
-    required uint32     ret = 1;
-    optional bytes      gate_info = 2;
-};
-
-// 请求登录, 协议号 10002
-message login_req
-{
-    required bytes auth_info = 1;
-};
-
-// 协议号 20002
 message login_rsp
 {
     required uint32     ret = 1;
     optional uint64     player_id = 2;
     optional uint32     room_id = 3;
+    optional bytes      gate_info = 4;
 };
 

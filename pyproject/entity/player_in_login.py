@@ -8,6 +8,12 @@ class PlayerInLogin(object):
         self.ip = ip
         self.gate = gate
 
+    def GetGlobalID(self):
+        return self.session_id
+
+    def GetGateName(self):
+        return self.gate
+
     def Serial2Dict(self):
         dictSerial = {
             table_property_def.Player.IP: self.ip,
