@@ -82,8 +82,8 @@ while True:
     szRet = sock.recv(93939)
     print(szRet)
 
-    szFormat = "IH"
-    nTotalBytes, cmd = struct.unpack_from(szFormat, szRet)
+    szFormat = "IHH"
+    nTotalBytes, cmd, flag = struct.unpack_from(szFormat, szRet)
     szRet = szRet[struct.calcsize(szFormat):]
 
     import proto.query_room_scene_pb2 as query_room_scene_pb2

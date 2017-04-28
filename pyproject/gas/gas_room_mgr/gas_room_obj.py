@@ -26,8 +26,26 @@ class RoomObj(object):
 
         self.m_gameRuleObj = game_rule_mgr.GetGameRule(EGameRule.eGameRuleMj)(self)
 
+    def GetMemberNum(self):
+        return len(self.m_dictMember)
+
+    def GetMemberPos(self, nMember):
+        return self.m_dictMember[nMember][RoomMemberProperty.ePos]
+
     def GetMemberList(self):
         return self.m_dictMember.keys()
+
+    # def FunSortByPos(self, m1, m2):
+    #     p1 = self.m_dictMember[m1][RoomMemberProperty.ePos]
+    #     p2 = self.m_dictMember[m2][RoomMemberProperty.ePos]
+    #     if p1 < p2:
+    #         return -1
+    #     return 1
+    #
+    # def GetMemberListSortByPos(self):
+    #     listMember = self.m_dictMember.keys()
+    #     listMember.sort(self.FunSortByPos)
+    #     return listMember
 
     def GetRoomID(self):
         return self.m_nRoomID

@@ -127,7 +127,6 @@ def Gcc2GasRetGenRoomID(dictData):
     nPlayerGID = dictData["player_id"]
     _roomMgr.OnGetRoomIDRet(nRoomID, nPlayerGID)
 
-
 @ffext.session_call(rpc_def.Gac2GasQueryRoomScene, query_room_scene_pb2.query_room_scene_req)
 def Gac2GasQueryRoomScene(nPlayerGID, reqObj):
     nRoomID = reqObj.room_id
