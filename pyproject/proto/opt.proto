@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-import "common_info.proto"
+import "common_info.proto";
 
 // 玩家操作请求信息，协议号 10021
 message opt_req

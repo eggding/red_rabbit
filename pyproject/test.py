@@ -7,7 +7,7 @@ szMsg = "pas_______{0}".format(random.randint(1, 104994))
 
 def PacketLoginBuff():
     import proto.login_pb2 as login_pb2
-    req_login = login_pb2.request_login()
+    req_login = login_pb2.login_req()
     global szMsg
     szMsg = "acc"
     req_login.auth_info = szMsg
@@ -29,7 +29,7 @@ def PacketCreateRoomBuff():
     szAuthCode = szMsg + " ***** " + str(random.randint(1, 10049))
 
     import proto.login_pb2 as login_pb2
-    req_login = login_pb2.request_login()
+    req_login = login_pb2.login_req()
     req_login.auth_info = szAuthCode
     szAuthCode = req_login.SerializeToString()
 
@@ -45,8 +45,8 @@ def PacketCreateRoomBuff():
 c = 0
 import random
 while True:
-    sock = socket.create_connection(("192.168.74.130", 10242))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
+    # sock = socket.create_connection(("192.168.74.130", 10242))
+    sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
 

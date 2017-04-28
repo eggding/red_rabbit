@@ -6,7 +6,7 @@ import struct, time
 
 def PacketLoginBuff():
     import proto.login_pb2 as login_pb2
-    req_login = login_pb2.request_login()
+    req_login = login_pb2.login_req()
     global szMsg
     szMsg = "acc1"
     req_login.auth_info = szMsg
@@ -25,7 +25,7 @@ def PacketEnterRoomBuff():
     szAuthCode = "aa"
 
     import proto.login_pb2 as login_pb2
-    req_login = login_pb2.request_login()
+    req_login = login_pb2.login_req()
     req_login.auth_info = szAuthCode
     szAuthCode = req_login.SerializeToString()
 

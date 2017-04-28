@@ -71,7 +71,7 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     '''
     '''
     print("real_session_verify ", szAuthKey, online_time, ip, gate_name, cb_id)
-    req_login = login_pb2.request_login()
+    req_login = login_pb2.login_req()
     try:
         req_login.ParseFromString(szAuthKey)
     except:

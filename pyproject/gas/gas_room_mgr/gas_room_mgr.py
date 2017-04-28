@@ -124,11 +124,15 @@ def Gcc2GasRetGenRoomID(dictData):
     nPlayerGID = dictData["player_id"]
     _roomMgr.OnGetRoomIDRet(nRoomID, nPlayerGID)
 
-import proto.login_pb2 as login_pb2
-@ffext.session_call(rpc_def.Gac2GasCreateRoom, login_pb2.request_login)
+import proto.create_room_pb2 as create_room_pb2
+@ffext.session_call(rpc_def.Gac2GasCreateRoom, create_room_pb2.create_room_req)
 def Gac2GasCreateRoom(nPlayerGID, reqObj):
+    nGameType = reqObj.game_type
+    gameCfg = reqObj.game_cfg
+    print(gameCfg, nGameType)
     _roomMgr.CreateRoom(nPlayerGID)
 
-@ffext.session_call(rpc_def.Gac2GasEnterRoom, login_pb2.request_login)
+import proto.enter_room_pb2 as enter_room_pb2
+@ffext.session_call(rpc_def.Gac2GasEnterRoom, enter_room_pb2.enter_room_req)
 def Gac2GasEnterRoom(nPlayerGID, reqObj):
     _roomMgr.EnterRoom(nPlayerGID)

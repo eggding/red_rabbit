@@ -93,7 +93,7 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     :return:
     """
     print("real_session_verify ", szAuthKey, online_time, ip, gate_name, cb_id)
-    req_login = login_pb2.request_login()
+    req_login = login_pb2.login_req()
     try:
         req_login.ParseFromString(szAuthKey)
     except:
@@ -117,10 +117,10 @@ def GetPlayer(nPlayerGID):
 @ffext.session_enter_callback
 def OnEnterLoginScene(session, src, data):
     import proto.login_pb2 as login_pb2
-    rsp_login = login_pb2.response_login()
-    rsp_login.ret = 0
-    rsp_login.session_id = int(session)
-    ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp_login.SerializeToString())
+    # rsp_login = login_pb2.response_login()
+    # rsp_login.ret = 0
+    # rsp_login.session_id = int(session)
+    ffext.send_msg_session(session, rpc_def.ResponseLogin, str(session))
 
     loginPlayer = GetPlayer(session)
     assert loginPlayer is not None

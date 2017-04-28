@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-import "common_info.proto"
+import "common_info.proto";
 
 message opt_req
 {
