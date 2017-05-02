@@ -148,7 +148,22 @@ def sortArr(arr):
         return
     arr.sort( None, key=lambda v:v%10 )
 
+listCombRet = []
+listHunMjTmp = []
+
+def GetAllBaiBanComb(nUsedNum, nTotalNum, listOrder):
+    global listHunMjTmp, listCombRet
+    if nUsedNum == nTotalNum:
+        listCombRet.append(listOrder)
+        return
+
+    for mj in listHunMjTmp:
+        listTmp = listOrder[:]
+        listTmp.append(mj)
+        GetAllBaiBanComb(nUsedNum + 1, nTotalNum, listTmp)
+
 def seprateArr( mjArr, hunMj ):
+
     reArr = [[],[],[],[],[]]
 
     listHunMj = []
@@ -171,6 +186,38 @@ def seprateArr( mjArr, hunMj ):
         #     t = 0
         reArr[t].append( mj )
         sortArr( reArr[t] )
+
+    # global listCombRet, listHunMjTmp
+    # listCombRet = []
+    # listHunMjTmp = hunMj
+    # nNumBaiBan = mjArr.count(GetBaiBanCard())
+    # GetAllBaiBanComb(0, nNumBaiBan, [])
+    #
+    # listRet = [reArr]
+    # import copy
+    # for listOneOrder in listCombRet:
+    #     tmpArr = copy.deepcopy(reArr)
+    #
+    #     while True:
+    #         if GetBaiBanCard() in tmpArr[GetCardType(GetBaiBanCard())]:
+    #             tmpArr.remove(GetBaiBanCard())
+    #         else:
+    #             break
+    #
+    #     for mj in listOneOrder:
+    #         tmpArr[GetCardType(mj)].append(mj)
+    #
+    #     if isinstance(hunMj, list) is False:
+    #         hunMj = [hunMj]
+    #
+    #     for mj in hunMj:
+    #         sortArr(tmpArr[GetCardType(mj)])
+    #
+    #     listRet.append(tmpArr)
+
+    # for a in listRet:
+    #     print("t ", a)
+
     return reArr
 
 def test3Combine( mj1, mj2, mj3 ):
@@ -706,7 +753,7 @@ import datetime
 
 if __name__ == "__main__":
 
-    print(len(g_mjsArr))
+    # print(len(g_mjsArr))
 
     #####################################
     #测试胡牌
@@ -793,11 +840,7 @@ if __name__ == "__main__":
         key = str(tingArr[i])
         rstr +=  majmap.get(key) + " , "
     rstr += "]"
-    a = [1,4,5]
-    a.remove(1)
-    a.remove(4)
-    a.remove(5)
-    print(a)
+
     print  rstr
 
 
