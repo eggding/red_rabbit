@@ -162,7 +162,7 @@ def GetAllBaiBanComb(nUsedNum, nTotalNum, listOrder):
         listTmp.append(mj)
         GetAllBaiBanComb(nUsedNum + 1, nTotalNum, listTmp)
 
-def seprateArr( mjArr, hunMj ):
+def seprateArrAllCombBaiBan( mjArr, hunMj ):
 
     reArr = [[],[],[],[],[]]
 
@@ -187,36 +187,58 @@ def seprateArr( mjArr, hunMj ):
         reArr[t].append( mj )
         sortArr( reArr[t] )
 
-    # global listCombRet, listHunMjTmp
-    # listCombRet = []
-    # listHunMjTmp = hunMj
-    # nNumBaiBan = mjArr.count(GetBaiBanCard())
-    # GetAllBaiBanComb(0, nNumBaiBan, [])
-    #
-    # listRet = [reArr]
-    # import copy
-    # for listOneOrder in listCombRet:
-    #     tmpArr = copy.deepcopy(reArr)
-    #
-    #     while True:
-    #         if GetBaiBanCard() in tmpArr[GetCardType(GetBaiBanCard())]:
-    #             tmpArr.remove(GetBaiBanCard())
-    #         else:
-    #             break
-    #
-    #     for mj in listOneOrder:
-    #         tmpArr[GetCardType(mj)].append(mj)
-    #
-    #     if isinstance(hunMj, list) is False:
-    #         hunMj = [hunMj]
-    #
-    #     for mj in hunMj:
-    #         sortArr(tmpArr[GetCardType(mj)])
-    #
-    #     listRet.append(tmpArr)
+    global listCombRet, listHunMjTmp
+    listCombRet = []
+    listHunMjTmp = hunMj
+    nNumBaiBan = mjArr.count(GetBaiBanCard())
+    GetAllBaiBanComb(0, nNumBaiBan, [])
 
-    # for a in listRet:
-    #     print("t ", a)
+    listRet = [reArr]
+    import copy
+    for listOneOrder in listCombRet:
+        tmpArr = copy.deepcopy(reArr)
+
+        while True:
+            if GetBaiBanCard() in tmpArr[GetCardType(GetBaiBanCard())]:
+                tmpArr[GetCardType(GetBaiBanCard())].remove(GetBaiBanCard())
+            else:
+                break
+
+        for mj in listOneOrder:
+            tmpArr[GetCardType(mj)].append(mj)
+
+        if isinstance(hunMj, list) is False:
+            hunMj = [hunMj]
+
+        for mj in hunMj:
+            sortArr(tmpArr[GetCardType(mj)])
+
+        listRet.append(tmpArr)
+
+    return listRet
+
+def seprateArr( mjArr, hunMj ):
+    reArr = [[],[],[],[],[]]
+    listHunMj = []
+    if isinstance(hunMj, list):
+        for h in hunMj:
+            ht = h / 100
+            hv = h % 10
+            listHunMj.append((ht, hv))
+    else:
+        ht = hunMj / 100
+        hv = hunMj % 10
+        listHunMj.append((ht, hv))
+
+    for mj in mjArr:
+        t = mj / 100
+        v = mj % 10
+        if (t, v) in listHunMj:
+            t = 0
+        # if ht == t and hv == v:
+        #     t = 0
+        reArr[t].append( mj )
+        sortArr( reArr[t] )
 
     return reArr
 
@@ -427,46 +449,49 @@ def testHu( mj, mjArr, hunMj ):
     tmpArr.extend(mjArr) # 创建一个麻将数组的copy
     if mj != 0:
         tmpArr.append( mj ) # 插入一个麻将
-    sptArr = seprateArr( tmpArr, hunMj )
-    curHunNum = len( sptArr[0] )
-    if curHunNum > 3:
-        return True
 
-    ndHunArr = [] # 每个分类需要混的数组
-    for i in range( 1, 5 ):
-        g_NeedHunCount = 4
-        getNeedHunInSub( sptArr[i], 0 )
-        ndHunArr.append(g_NeedHunCount)
-    isHu = False
-    # 将在万中
-    #如果需要的混小于等于当前的则计算将在将在万中需要的混的个数
-    ndHunAll = ndHunArr[1] + ndHunArr[2] + ndHunArr[3]
-    if ndHunAll <= curHunNum:
-        hasNum = curHunNum - ndHunAll
-        isHu = canHu( hasNum, sptArr[1] )
-        if isHu:
+    listTmpRet = seprateArrAllCombBaiBan(tmpArr, hunMj)
+    for sptArr in listTmpRet:
+        # sptArr = seprateArr( tmpArr, hunMj )
+        curHunNum = len( sptArr[0] )
+        if curHunNum > 3:
             return True
-    # 将在筒中
-    ndHunAll = ndHunArr[0] + ndHunArr[2] + ndHunArr[3]
-    if ndHunAll <= curHunNum:
-        hasNum = curHunNum - ndHunAll
-        isHu = canHu( hasNum, sptArr[2] )
-        if isHu:
-            return True
-    # 将在索中
-    ndHunAll = ndHunArr[0] + ndHunArr[1] + ndHunArr[3]
-    if ndHunAll <= curHunNum:
-        hasNum = curHunNum - ndHunAll
-        isHu = canHu( hasNum, sptArr[3] )
-        if isHu:
-            return True
-    # 将在风中
-    ndHunAll = ndHunArr[0] + ndHunArr[1] + ndHunArr[2]
-    if ndHunAll <= curHunNum:
-        hasNum = curHunNum - ndHunAll
-        isHu = canHu( hasNum, sptArr[4] )
-        if isHu:
-            return True
+
+        ndHunArr = [] # 每个分类需要混的数组
+        for i in range( 1, 5 ):
+            g_NeedHunCount = 4
+            getNeedHunInSub( sptArr[i], 0 )
+            ndHunArr.append(g_NeedHunCount)
+        isHu = False
+        # 将在万中
+        #如果需要的混小于等于当前的则计算将在将在万中需要的混的个数
+        ndHunAll = ndHunArr[1] + ndHunArr[2] + ndHunArr[3]
+        if ndHunAll <= curHunNum:
+            hasNum = curHunNum - ndHunAll
+            isHu = canHu( hasNum, sptArr[1] )
+            if isHu:
+                return True
+        # 将在筒中
+        ndHunAll = ndHunArr[0] + ndHunArr[2] + ndHunArr[3]
+        if ndHunAll <= curHunNum:
+            hasNum = curHunNum - ndHunAll
+            isHu = canHu( hasNum, sptArr[2] )
+            if isHu:
+                return True
+        # 将在索中
+        ndHunAll = ndHunArr[0] + ndHunArr[1] + ndHunArr[3]
+        if ndHunAll <= curHunNum:
+            hasNum = curHunNum - ndHunAll
+            isHu = canHu( hasNum, sptArr[3] )
+            if isHu:
+                return True
+        # 将在风中
+        ndHunAll = ndHunArr[0] + ndHunArr[1] + ndHunArr[2]
+        if ndHunAll <= curHunNum:
+            hasNum = curHunNum - ndHunAll
+            isHu = canHu( hasNum, sptArr[4] )
+            if isHu:
+                return True
     return False
 
 def testGang( mj, mjArr, hunMj ):
@@ -813,14 +838,14 @@ if __name__ == "__main__":
     # tingNumArr = [405,201,201,201,201,202,202,202,202,205,205,205,205,209]#运行时间:0:00:00.006123 <callTime:356>  [ 五筒 , 九筒 , ]
     tingNumArr = [405,405,202,204,205,205,206,206,207,208,208,208,209,306]#运行时间:0:00:00.002929 <callTime:358>  [ 二筒 , 九筒 , 六索 , ]
     # samArr = [405,201,201,201,201,201,202,202,202,202,204,204,205]#运行时间:0:00:00.016391 <callTime:1029>  [ 三筒 , 六筒 , 红中 , ]
-    samArr = [405,405,201,201,201,201,202,202,202,202,204,204,209]#运行时间:0:00:00.026671 <callTime:1527>  [ 三筒 , 四筒 , 七筒 , 八筒 , 九筒 , 红中 , ]
+    samArr = [405,405,201,201,201,201,202,202,202,202,407,204,407]#运行时间:0:00:00.026671 <callTime:1527>  [ 三筒 , 四筒 , 七筒 , 八筒 , 九筒 , 红中 , ]
     ##############################
 
     global callTime
     callTime = 0
     begin = datetime.datetime.now()
     # 测试摸哪些牌能胡牌
-    tingArr = getTingArr(samArr,405)
+    tingArr = testHu(0, samArr, [405, 302])
     #测试打哪些牌能听牌
     # tingArr = getTingNumArr(tingNumArr, 405)
     #测试摸到这张牌是不是能胡牌
@@ -833,14 +858,14 @@ if __name__ == "__main__":
     #     tmp.remove(i)
     #     getTingNumArr(tmp,405)
 
-    end = datetime.datetime.now()
-    runTime = end - begin
-    rstr = "运行时间:" + str(runTime) + " <callTime:" + str(callTime) + ">  [ "
-    for i in range(0,len(tingArr)):
-        key = str(tingArr[i])
-        rstr +=  majmap.get(key) + " , "
-    rstr += "]"
-
-    print  rstr
+    # end = datetime.datetime.now()
+    # runTime = end - begin
+    # rstr = "运行时间:" + str(runTime) + " <callTime:" + str(callTime) + ">  [ "
+    # for i in range(0,len(tingArr)):
+    #     key = str(tingArr[i])
+    #     rstr +=  majmap.get(key) + " , "
+    # rstr += "]"
+    #
+    # print  rstr
 
 
