@@ -36,6 +36,22 @@ def PacketQueryRoomScene():
     szFormat = "IHH%ds" % len(szAuthCode)
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
+def PacketEnterRoom(nRoomID):
+    import proto.enter_room_pb2 as enter_room_pb2
+    req = enter_room_pb2.enter_room_req()
+    req.room_id = nRoomID
+    szAuthCode = req.SerializeToString()
+
+    # 计算protobol消息体的字节数
+    szFormat = "%ds" % len(szAuthCode)
+    nTotalSize = struct.calcsize(szFormat)
+
+    # 二进制化消息包
+    # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
+    szFormat = "IHH%ds" % len(szAuthCode)
+    return struct.pack(szFormat, nTotalSize, 10011, 0, szAuthCode)
+
+
 def PacketChangeScene(scene_name):
     import proto.change_scene_pb2 as change_scene_pb2
     req = change_scene_pb2.change_scene_req()
@@ -70,8 +86,8 @@ def PacketEnterRoomBuff():
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
 while True:
-    sock = socket.create_connection(("192.168.74.130", 10242))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
+    # sock = socket.create_connection(("192.168.74.130", 10242))
+    sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
 
@@ -90,9 +106,12 @@ while True:
     rsp = query_room_scene_pb2.query_room_scene_rsp()
     rsp.ParseFromString(szRet)
 
-    print("room in scene ", rsp.scene_name)
+    print("room in scene ", rsp.scene_name, rsp.room_id)
     sock.send(PacketChangeScene(rsp.scene_name))
-    print(sock.recv(93939))
+    print("recv change scene ", sock.recv(494949))
+
+    sock.send(PacketEnterRoom(rsp.room_id))
+    print("send enter room done.")
 
 
     time.sleep(9939)

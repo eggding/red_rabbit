@@ -3,8 +3,7 @@
 
 import ff, ffext
 import entity.entity_mgr as entity_mgr
-import util.tick_mgr as tick_mgr
-from util.enum_def import RoomMemberProperty, EGameRule
+from util.enum_def import RoomMemberProperty, EGameRule, EMemberEvent
 import state.state_machine as state_machine
 import state.room_state_waiting as room_state_waiting
 import state.room_state_running as room_state_running
@@ -26,29 +25,29 @@ class RoomObj(object):
 
         self.m_gameRuleObj = game_rule_mgr.GetGameRule(EGameRule.eGameRuleMj)(self)
 
+    def GameRuleOpt(self, nPlayerGID, reqObj):
+        self.m_gameRuleObj.GacOpt(nPlayerGID, reqObj)
+
     def GetMemberNum(self):
         return len(self.m_dictMember)
 
     def GetMemberPos(self, nMember):
         return self.m_dictMember[nMember][RoomMemberProperty.ePos]
 
+    def GetMemberIDByPos(self, nPos):
+        for nMemberGID, dictData in self.m_dictMember.iteritems():
+            if dictData[RoomMemberProperty.ePos] == nPos:
+                return nMemberGID
+        assert False
+
     def GetMemberList(self):
         return self.m_dictMember.keys()
 
-    # def FunSortByPos(self, m1, m2):
-    #     p1 = self.m_dictMember[m1][RoomMemberProperty.ePos]
-    #     p2 = self.m_dictMember[m2][RoomMemberProperty.ePos]
-    #     if p1 < p2:
-    #         return -1
-    #     return 1
-    #
-    # def GetMemberListSortByPos(self):
-    #     listMember = self.m_dictMember.keys()
-    #     listMember.sort(self.FunSortByPos)
-    #     return listMember
-
     def GetRoomID(self):
         return self.m_nRoomID
+
+    def OnGameEnd(self):
+        self.Dismiss()
 
     def Serial(self):
         dictSerial = {
@@ -76,17 +75,38 @@ class RoomObj(object):
     def GetGameRule(self):
         return self.m_gameRuleObj
 
+    def NoticeMemberEvent(self, ev, nModMember):
+        # notice other members
+        import rpc.rpc_def as rpc_def
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.on_touch_event_member()
+        rsp.ev_type = ev
+
+        inf = rsp.list_member.add()
+        inf.pos = self.GetMemberPos(nModMember)
+        Player = entity_mgr.GetEntity(nModMember)
+        Player.Serial2Client(inf)
+
+        for nMemberOther, dictData in self.m_dictMember.iteritems():
+            if nMemberOther == nModMember:
+                continue
+            ffext.send_msg_session(nMemberOther, rpc_def.Gas2GacOnTouchMemberEvent, rsp.SerializeToString())
+
     def MemberEnter(self, nMember):
         self.m_sm.GetCurState().MemberEnter(nMember)
+        self.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
 
     def MemberExit(self, nMember):
+        self.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
         self.m_sm.GetCurState().MemberExit(nMember)
 
     def MemberOffline(self, nMember):
+        self.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
         self.m_sm.GetCurState().MemberOffline(nMember)
 
     def Dismiss(self):
         self.m_roomMgr.OnRoomDismiss(self.GetRoomID(), self.m_dictMember.keys())
+        self.m_dictMember = {}
         self.Destroy()
 
     def Destroy(self):

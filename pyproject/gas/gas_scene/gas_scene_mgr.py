@@ -88,9 +88,11 @@ class GasSceneMgr(base_scene.BaseScene):
         entity_mgr.AddEntity(nPlayerGID, Player)
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": Player.GetGlobalID(),
                                                                                 "scene": ff.service_name})
-        if "room_id" in dictSerial:
-            nRoomID = dictSerial["room_id"]
-            gas_room_mgr.EnterRoom(nPlayerGID, nRoomID)
+
+        rsp = change_scene_pb2.change_scene_rsp()
+        rsp.ret = 0
+        rsp.scene_name = ff.service_name
+        ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
 _gasSceneMgr = GasSceneMgr()
 

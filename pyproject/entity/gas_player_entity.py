@@ -71,6 +71,12 @@ class GasPlayerEntity(base_entity.BaseEntity):
         ffext.change_session_scene(self.GetGlobalID(), szDstScene, szSerial)
         return True
 
+    def Serial2Client(self, rsp):
+        rsp.player_id = self.GetGlobalID()
+        rsp.player_name = self.m_szName.encode("utf-8")
+        rsp.wechat_info = "xx"
+        rsp.ip = self.ip.encode("utf-8")
+
     def Serial2Dict(self):
         dictSerial = self.GetPersistentDict()
         dictSerial[PlayerPro.SESSION_ID] = self.GetGlobalID()

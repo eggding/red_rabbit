@@ -45,8 +45,8 @@ def PacketCreateRoomBuff():
 c = 0
 import random
 while True:
-    sock = socket.create_connection(("192.168.74.130", 10242))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
+    # sock = socket.create_connection(("192.168.74.130", 10242))
+    sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
     # syn scene
@@ -55,6 +55,10 @@ while True:
     # time.sleep(0.3)
     sock.send(PacketCreateRoomBuff())
     print(sock.recv(93939))
+
+    while True:
+        print(sock.recv(3948))
+        time.sleep(1)
 
     time.sleep(9939)
 

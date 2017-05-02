@@ -39,8 +39,8 @@ def PacketEnterRoomBuff():
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
 while True:
-    sock = socket.create_connection(("192.168.74.130", 10242))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
+    # sock = socket.create_connection(("192.168.74.130", 10242))
+    sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
 

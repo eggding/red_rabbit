@@ -39,18 +39,15 @@ class RoomService(object):
 
     def EnterRoom(self, nPlayerGID, nRoomID=None):
         if nRoomID is None:
-            ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGetRoomSceneByRoomID, {"room_id": 0,
-                                                                                          "gas_id": ff.service_name,
-                                                                                          "player_id": nPlayerGID})
             return
+
+        if 0 == nRoomID and len(self.m_dictRoomID2Room) != 0:
+            nRoomID = self.m_dictRoomID2Room.keys()[0]
 
         roomObj = self.m_dictRoomID2Room.get(nRoomID)
+        print("EnterRoom ", nPlayerGID, nRoomID, roomObj)
         if roomObj is None:
-            ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGetRoomSceneByRoomID, {"room_id": 0,
-                                                                                          "gas_id": ff.service_name,
-                                                                                          "player_id": nPlayerGID})
             return
-
         roomObj.MemberEnter(nPlayerGID)
 
     def OnGetRoomIDRet(self, nRoomID, nPlayerGID):
@@ -70,11 +67,6 @@ class RoomService(object):
         roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
         if roomObj is not None:
             roomObj.MemberExit(nPlayerGID)
-
-    def OnGameEnd(self, nRoomId):
-        roomObj = self.m_dictRoomID2Room[nRoomId]
-        assert roomObj is not None
-        roomObj.Dismiss()
 
     def OnEnterScene(self, roomPlayer):
         ffext.LOGINFO("FFSCENE_PYTHON", " OnEnterScene {0}".format(roomPlayer.GetGlobalID()))
@@ -145,4 +137,13 @@ def GacGasCreateRoom(nPlayerGID, reqObj):
 import proto.enter_room_pb2 as enter_room_pb2
 @ffext.session_call(rpc_def.Gac2GasEnterRoom, enter_room_pb2.enter_room_req)
 def Gac2GasEnterRoom(nPlayerGID, reqObj):
-    _roomMgr.EnterRoom(nPlayerGID)
+    nRoomID = reqObj.room_id
+    _roomMgr.EnterRoom(nPlayerGID, nRoomID)
+
+import proto.opt_pb2 as opt_pb2
+@ffext.session_call(rpc_def.Gac2GasOptMj, opt_pb2.opt_req)
+def Gac2GasOptMj(nPlayerGID, reqObj):
+    roomObj = _roomMgr.GetRoomObjByPlayerGID(nPlayerGID)
+    if roomObj is None:
+        return
+    roomObj.GameRuleOpt(nPlayerGID, reqObj)

@@ -6,14 +6,14 @@ import "common_info.proto";
 message opt_req
 {
     required event_type opt_type = 1; // 碰、杠、胡等
-    required uint32 opt_data = 2;
-    required bytes opt_data_str = 3;
+    optional uint32 opt_data = 2;
+    optional bytes opt_data_str = 3;
 };
 
 // 协议号 20021
 message opt_rsp
 {
     required uint32 ret = 1;
-    required bytes  ret_data = 2;
+    optional bytes  ret_data = 2;
 };
 
