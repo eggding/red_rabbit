@@ -8,6 +8,8 @@ import state.state_machine as state_machine
 import state.room_state_waiting as room_state_waiting
 import state.room_state_running as room_state_running
 import gas.gas_game_rule.game_rule_mgr as game_rule_mgr
+import rpc.scene_def as scene_def
+import rpc.rpc_def as rpc_def
 
 class RoomObj(object):
     def __init__(self, nRoomID, nMaster, roomMgr, dictConfig=None):
@@ -71,6 +73,8 @@ class RoomObj(object):
             Player.SetRoomID(self.GetRoomID())
 
         self.m_gameRuleObj.GameStart()
+
+        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccStartGameOnRoom, {"room_id": self.GetRoomID()})
 
     def GetGameRule(self):
         return self.m_gameRuleObj

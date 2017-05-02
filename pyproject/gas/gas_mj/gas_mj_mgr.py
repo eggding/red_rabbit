@@ -45,6 +45,8 @@ class GasMjRule(rule_base.GameRuleBase):
         # 每个玩家的牌
         self.m_dictPosCarList = {}
 
+        self.m_nEventTick = None
+
         # peng/gang
         self.m_dictPosCarListEx = {}
         self.m_dictOptTick = {}
@@ -91,7 +93,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictCfg = dictCfg
 
     def GetQiPaiExpireSecond(self):
-        return self.m_dictCfg.get("qi_pai_expire", 1)
+        return self.m_dictCfg.get("qi_pai_expire", 0.5)
 
     def DingZhuang(self):
         """
@@ -112,6 +114,10 @@ class GasMjRule(rule_base.GameRuleBase):
 
         nLen = self.m_nMaxCardNum - 1
         while nLen > 0:
+            if random.randint(1, 10) <= 8:
+                nLen -= 1
+                continue
+
             nPos = random.randint(0, nLen)
             nTmpVal = self.m_listGlobalCard[nLen]
             self.m_listGlobalCard[nLen] = self.m_listGlobalCard[nPos]
@@ -255,6 +261,9 @@ class GasMjRule(rule_base.GameRuleBase):
         nPos = self.GetNextPos()
         self.MoPai(nPos)
 
+    def GetEventExpireTime(self):
+        return self.m_dictCfg.get("event_expire_time", 3)
+
     def AutoQiPai(self, nPos):
         self.StopQiPaiTick(nPos)
         tingArr = check_hu.getTingNumArr(self.m_dictPosCarList[nPos], self.m_listJinPai)
@@ -266,10 +275,23 @@ class GasMjRule(rule_base.GameRuleBase):
             nCardID = self.m_dictPosCarList[nPos][nCardIndex]
 
         self.m_dictPosCarList[nPos].remove(nCardID)
-        self.m_dictPosHistory[nPos].append(nCardID)
+        self.m_dictPosHistory[nPos].append((self.m_nNextCardIndex - 1, nCardID))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.AutoQiPai {0}, {1}, {2}. {3} {4}".format(nPos, self.m_roomObj.GetMemberIDByPos(nPos), check_hu.GetCardNameChinese(nCardID), json.dumps(tingArr), len(self.m_dictPosCarList[nPos])))
-        gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_qi_pai, [nPos, nCardID])
-        self.NextTurn()
+        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_qi_pai, [nPos, nCardID])
+        if bCanNextTurn is True:
+            self.NextTurn()
+        else:
+            self.StartEventTick()
+
+    def StopEventTick(self):
+        if self.m_nEventTick is None:
+            return
+        tick_mgr.UnRegisterOnceTick(self.m_nEventTick)
+        self.m_nEventTick = None
+
+    def StartEventTick(self):
+        self.StopEventTick()
+        self.m_nEventTick = tick_mgr.RegisterOnceTick(self.GetEventExpireTime() * 1000, self.NextTurn)
 
     def OptQiPai(self, nPos, nCardID):
         listCard = self.m_dictPosCarList[nPos]
@@ -277,7 +299,7 @@ class GasMjRule(rule_base.GameRuleBase):
 
         self.StopQiPaiTick(nPos)
         listCard.remove(nCardID)
-        self.m_dictPosHistory[nPos].append(nCardID)
+        self.m_dictPosHistory[nPos].append((self.m_nNextCardIndex - 1, nCardID))
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.OptQiPai {0}, {1}".format(nPos, check_hu.GetCardNameChinese(nCardID)))
         gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_qi_pai, [nPos, nCardID])
@@ -325,9 +347,10 @@ class GasMjRule(rule_base.GameRuleBase):
         self.StartQiPaiTick(nToPos)
 
     def RequestHu(self, nPlayerGID):
+        nPlayerGID = nPlayerGID[0]
         nPos = self.m_roomObj.GetMemberPos(nPlayerGID)
         listCard = self.m_dictPosCarList[nPos]
-        if check_hu.testHu(listCard[0], listCard[1:], self.m_listJinPai) is False:
+        if check_hu.testHu(0, listCard, self.m_listJinPai) is False:
             return
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.Hu@@@@@ {0}, {1}, {2}".format(nPlayerGID, self.DumpPos(nPos), self.m_listJinPai))
@@ -336,7 +359,12 @@ class GasMjRule(rule_base.GameRuleBase):
     def RequestGang(self, listData):
         nPlayerGID, nTargetMember, nCardID = listData
         nPosTarget = self.m_roomObj.GetMemberPos(nTargetMember)
-        if nCardID != self.m_dictPosHistory[nPosTarget][-1:][0]:
+        tupleTmp = self.m_dictPosHistory[nPosTarget][-1:][0]
+        nTurnIndex, nHistCardID = tupleTmp
+        if nTurnIndex != self.m_nNextCardIndex - 1:
+            return
+
+        if nCardID != nHistCardID:
             return
 
         nPosOwner = self.m_roomObj.GetMemberPos(nPlayerGID)
@@ -348,14 +376,28 @@ class GasMjRule(rule_base.GameRuleBase):
         for _ in xrange(0, 4):
             self.m_dictPosCarListEx[nPosOwner].append(nCardID)
 
+        nCard = self.GetNextCard()
+        self.m_dictPosCarList[nPosOwner].append(nCard)
+        while True:
+            bHaveHuaPai, nCard = self.CheckBuHua(nPosOwner, nCard)
+            if bHaveHuaPai is False:
+                break
+
         self.ChangeOrder(nPosTarget, nPosOwner)
+        self.StopEventTick()
+
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGang {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGangRet {0}".format(self.DumpPos(nPosOwner)))
 
     def RequestPeng(self, listData):
         nPlayerGID, nTargetMember, nCardID = listData
         nPosTarget = self.m_roomObj.GetMemberPos(nTargetMember)
-        if nCardID != self.m_dictPosHistory[nPosTarget][-1:][0]:
+        tupleTmp = self.m_dictPosHistory[nPosTarget][-1:][0]
+        nTurnIndex, nHistCardID = tupleTmp
+        if nTurnIndex != self.m_nNextCardIndex - 1:
+            return
+
+        if nCardID != nHistCardID:
             return
 
         nPosOwner = self.m_roomObj.GetMemberPos(nPlayerGID)
@@ -367,6 +409,7 @@ class GasMjRule(rule_base.GameRuleBase):
         for _ in xrange(0, 3):
             self.m_dictPosCarListEx[nPosOwner].append(nCardID)
 
+        self.StopEventTick()
         self.ChangeOrder(nPosTarget, nPosOwner)
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPeng {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPengRet {0}".format(self.DumpPos(nPosOwner)))

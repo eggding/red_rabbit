@@ -57,6 +57,9 @@ majmap = {"101":"一万","102":"二万","103":"三万","104":"四万","105":"五
 def IsBaiBan(nCard):
     return 407 == nCard
 
+def GetBaiBanCard():
+    return 407
+
 def GetCardType(nCard):
     return nCard / 100
 
@@ -791,7 +794,10 @@ if __name__ == "__main__":
         rstr +=  majmap.get(key) + " , "
     rstr += "]"
     a = [1,4,5]
-    print(a[-1:])
+    a.remove(1)
+    a.remove(4)
+    a.remove(5)
+    print(a)
     print  rstr
 
 

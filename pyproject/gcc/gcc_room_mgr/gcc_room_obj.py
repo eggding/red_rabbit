@@ -4,8 +4,14 @@
 class GccRoomObj(object):
     def __init__(self):
         self.m_GasID = None
-        self.m_nStatus = None
+        self.m_bIsRunning = False
         self.m_dictRoomMember = None
+
+    def SetIsRunning(self):
+        self.m_bIsRunning = True
+
+    def IsRunning(self):
+        return self.m_bIsRunning
 
     def SetGasID(self, szGasID):
         self.m_GasID = szGasID

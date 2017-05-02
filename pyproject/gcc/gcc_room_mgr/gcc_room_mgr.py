@@ -18,6 +18,8 @@ class GccRoomMgr(object):
 
     def AutoSelectRoom(self):
         for nRoomID, roomObj in self.m_dictRoomID2RoomObj.iteritems():
+            if roomObj.IsRunning() is True:
+                continue
             return nRoomID, roomObj.GetGasID()
 
     def Gas2GccGetRoomSceneByRoomID(self, szGasID, nPlayerGID, nRoomID):
@@ -61,6 +63,11 @@ class GccRoomMgr(object):
         ffext.call_service(szGasID, rpc_def.Gcc2GasRetGenRoomID, {"room_id": nRoomId,
                                                                   "player_id": nPlayerGID})
 
+    def ChangeRoomStateRunning(self, nRoomID):
+        roomObj = self.m_dictRoomID2RoomObj.get(nRoomID)
+        assert roomObj is not None
+        roomObj.SetIsRunning()
+
     def OnPlayerExit(self, nPlayerGID):
         pass
 
@@ -89,3 +96,8 @@ def Gas2GccGenRoomID(dictData):
     szGasID = dictData["gas_id"]
     nPlayerGID = dictData["player_id"]
     _gccRoomMgr.Gas2GccGenRoomID(szGasID, nPlayerGID)
+
+@ffext.reg_service(rpc_def.Gas2GccStartGameOnRoom)
+def Gas2GccStartGameOnRoom(dictData):
+    nRoomID = dictData["room_id"]
+    _gccRoomMgr.ChangeRoomStateRunning(nRoomID)

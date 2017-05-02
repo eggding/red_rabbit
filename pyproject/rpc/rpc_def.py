@@ -32,6 +32,7 @@ Gas2GccPlayerTrueOffline = 2061
 Gas2GccGenRoomID = 2062
 Gas2GccGetRoomSceneByRoomID = 2063
 Gas2GccOnRoomDismiss = 2064
+Gas2GccStartGameOnRoom = 2065
 
 Gcc2GasPlayerOffline = 3000
 Gcc2GasRetGenRoomID = 3001

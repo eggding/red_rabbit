@@ -8,7 +8,8 @@ def PacketLoginBuff():
     import proto.login_pb2 as login_pb2
     req_login = login_pb2.login_req()
     global szMsg
-    szMsg = "acc1"
+    import random
+    szMsg = "acc1" + str(random.randint(1, 99999))
     req_login.type = login_pb2.login_type.Value("login")
     req_login.auth_info = szMsg
     szMsg = req_login.SerializeToString()
@@ -86,8 +87,8 @@ def PacketEnterRoomBuff():
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
 while True:
-    # sock = socket.create_connection(("192.168.74.130", 10242))
-    sock = socket.create_connection(("127.0.0.1", 10242))
+    sock = socket.create_connection(("192.168.74.130", 10242))
+    # sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PacketLoginBuff())
     print(sock.recv(93939))
 

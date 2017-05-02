@@ -49,8 +49,8 @@ class GasMjEventMgr(object):
             framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
 
         listCardOwner = mjMgr.GetCardListByPos(nPos)
-        listCardEx = mjMgr.GetCardListEx(nPos)
-        nTotal = len(listCardOwner) + len(listCardEx)
+        # listCardEx = mjMgr.GetCardListEx(nPos)
+        nTotal = len(listCardOwner)
         assert ((nTotal - 1) % 3 == 0), nTotal
 
         listJinPai = mjMgr.GetJinPaiList()
@@ -65,11 +65,11 @@ class GasMjEventMgr(object):
             framework.LOGINFO("FFSCENE_PYTHON",
                               "GasMj.tingArr {0}, {1}, {2} ".format(nPos, json.dumps(tingArr), mjMgr.DumpPos(nPos)))
 
+        bNextTurn = True
         for nMember in listMember:
             if nMember == nOptMember:
                 continue
 
-            # syn listen cards
             nMemberPos = mjMgr.GetRoomObj().GetMemberPos(nMember)
             listCard = mjMgr.GetCardListByPos(nMemberPos)
 
@@ -80,11 +80,11 @@ class GasMjEventMgr(object):
                 rsp.ev_data = str(nCard)
                 szRspSerial = rsp.SerializeToString()
                 framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-                framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Gang {0}, {1} ".format(json.dumps(listCard), nCard))
-
                 if mjMgr.IsTuoGuan(nMember):
-                    tick_mgr.RegisterOnceTick(50, mjMgr.RequestGang, [nMember, nOptMember, nCard])
-                    # mjMgr.RequestGang(nMember, nOptMember, nCard)
+                    tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
+
+                framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Gang {0}, {1} ".format(json.dumps(listCard), nCard))
+                bNextTurn = False
                 continue
 
             # check peng
@@ -96,12 +96,13 @@ class GasMjEventMgr(object):
                 framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
 
                 if mjMgr.IsTuoGuan(nMember):
-                    tick_mgr.RegisterOnceTick(50, mjMgr.RequestPeng, [nMember, nOptMember, nCard])
-                    # mjMgr.RequestPeng(nMember, nOptMember, nCard)
+                    tick_mgr.RegisterOnceTick(100, mjMgr.RequestPeng, [nMember, nOptMember, nCard])
 
+                framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Peng {0}, {1} ".format(json.dumps(listCard), nCard))
+                bNextTurn = False
                 continue
-                # framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Peng {0}, {1} ".format(json.dumps(listCard), nCard))
 
+        return bNextTurn
 
     def TouchEventMoPai(self, mjMgr, listData):
         nPos, nCard = listData
@@ -124,12 +125,7 @@ class GasMjEventMgr(object):
 
         listJinPai = mjMgr.GetJinPaiList()
 
-        bCanHu = False
-        for nJinPaiCard in listJinPai:
-            bCanHu = check_hu_mgr.testHu(0, listCard, nJinPaiCard)
-            if bCanHu is True:
-                break
-
+        bCanHu = check_hu_mgr.testHu(0, listCard, listJinPai)
         if bCanHu is True:
             rsp = common_info_pb2.on_touch_event()
             rsp.ev_type = EMjEvent.ev_hu_normal
@@ -139,7 +135,8 @@ class GasMjEventMgr(object):
             framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
             framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CanHu {0}, {0} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
             if mjMgr.IsTuoGuan(nOptMember) is True:
-                mjMgr.RequestHu(nOptMember)
+                # mjMgr.RequestHu(nOptMember)
+                tick_mgr.RegisterOnceTick(100, mjMgr.RequestHu, [nOptMember])
 
         return True
 
