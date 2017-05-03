@@ -49,9 +49,9 @@ class GccRoomMgr(object):
             self.m_nRoomIDEnd = nEnd
         self.Gas2GccGenRoomID(*listData)
 
-    def Gas2GccGenRoomID(self, szGasID, nPlayerGID):
+    def Gas2GccGenRoomID(self, szGasID, nPlayerGID, dictCfg):
         if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            dbs_client.DoAsynCall(rpc_def.DbsGetRoomIDSector, 0, 0, funCb=self.OnGetRoomIdSectorCB, callbackParams=[szGasID, nPlayerGID])
+            dbs_client.DoAsynCall(rpc_def.DbsGetRoomIDSector, 0, 0, funCb=self.OnGetRoomIdSectorCB, callbackParams=[szGasID, nPlayerGID, dictCfg])
             return
 
         nRoomId = self.m_nRoomIDBegin
@@ -61,7 +61,8 @@ class GccRoomMgr(object):
         gccRoomObj.SetGasID(szGasID)
         self.m_dictRoomID2RoomObj[nRoomId] = gccRoomObj
         ffext.call_service(szGasID, rpc_def.Gcc2GasRetGenRoomID, {"room_id": nRoomId,
-                                                                  "player_id": nPlayerGID})
+                                                                  "player_id": nPlayerGID,
+                                                                  "cfg": dictCfg})
 
     def ChangeRoomStateRunning(self, nRoomID):
         roomObj = self.m_dictRoomID2RoomObj.get(nRoomID)
@@ -95,7 +96,8 @@ def Gas2GccGetRoomSceneByRoomID(dictData):
 def Gas2GccGenRoomID(dictData):
     szGasID = dictData["gas_id"]
     nPlayerGID = dictData["player_id"]
-    _gccRoomMgr.Gas2GccGenRoomID(szGasID, nPlayerGID)
+    dictCfg = dictData["cfg"]
+    _gccRoomMgr.Gas2GccGenRoomID(szGasID, nPlayerGID, dictCfg)
 
 @ffext.reg_service(rpc_def.Gas2GccStartGameOnRoom)
 def Gas2GccStartGameOnRoom(dictData):

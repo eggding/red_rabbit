@@ -43,6 +43,9 @@ class EMjEvent(const_entity.Const):
     ev_syn_card = 149 # 同步自己的牌序
     ev_syn_order = 150 # 同步当前局数、第几轮、出牌顺序顺序
 
+class EMoneyType(const_entity.Const):
+    eZhuanShi = 1
+
 class EMemberEvent(const_entity.Const):
     evMemberEnter = 1 # 玩家进入房间事件
     evMemberExit = 2 # 玩家推出房间事件
@@ -57,9 +60,6 @@ class EPlayerState(const_entity.Const):
 class EIdType(const_entity.Const):
     eIdTypePlayer = 1
     eIdTypeRoom = 2
-
-class EMoneyType(const_entity.Const):
-    eYuanbao = 1
 
 class RoomMemberProperty(const_entity.Const):
     ePos = 0

@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 
 dict_cfg = {
+    "debug_env": True,
+
     "broker": {
         "listen_addr": "tcp://127.0.0.1:10241"
     },

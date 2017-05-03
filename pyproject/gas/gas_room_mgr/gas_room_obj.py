@@ -12,12 +12,14 @@ import rpc.scene_def as scene_def
 import rpc.rpc_def as rpc_def
 
 class RoomObj(object):
-    def __init__(self, nRoomID, nMaster, roomMgr, dictConfig=None):
-        self.m_nMaxMember = 4
+    def __init__(self, nRoomID, nMaster, roomMgr, dictConfig):
+        self.m_nMaxMember = dictConfig.get("member_num", 4)
         self.m_roomMgr = roomMgr
         self.m_nRoomID = nRoomID
         self.m_nMaster = nMaster
         self.m_dictMember = {} # member -> [nPos, status]
+
+        self.m_dictCfg = dictConfig
 
         # 初始化状态机
         self.m_sm = state_machine.StateMachine()
@@ -29,6 +31,9 @@ class RoomObj(object):
 
     def GameRuleOpt(self, nPlayerGID, reqObj):
         self.m_gameRuleObj.GacOpt(nPlayerGID, reqObj)
+
+    def GetConfig(self):
+        return self.m_dictCfg
 
     def GetMemberNum(self):
         return len(self.m_dictMember)

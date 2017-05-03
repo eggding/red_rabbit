@@ -1,12 +1,11 @@
-# -*- coding:utf-8 -*-
-
-    bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_qi_pai, [nPos, nCardID])
-  File "./pyproject/gas/gas_mj/gas_mj_event_mgr.py", line 25, in TouchEvent
-    return funOpt(mjMgr, evData)
-  File "./pyproject/gas/gas_mj/gas_mj_event_mgr.py", line 109, in TouchEventQiPai
-    if check_hu_mgr.testGang(nCard, listCardEx, listJinPai) is True:
-  File "./pyproject/gas/gas_mj/check_hu.py", line 575, in testGang
-    sptArr = seprateArr( tmpArr, hunMj )
-  File "./pyproject/gas/gas_mj/check_hu.py", line 241, in seprateArr
-    reArr[t].append( mj )
-IndexError: list index out of range
+04:14:05.115 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.StartJu 1
+04:14:05.115 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.DingZhuang 68719589812, pos 3
+04:14:05.117 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.XiPai [101, 104, 103, 105, 104, 109, 107, 102, 403, 101, 202, 103, 302, 105, 102, 107, 108, 106, 101, 102, 103, 106, 104, 205, 107, 401, 109, 101, 102, 103, 104, 106, 209, 107, 108, 109, 201, 504, 203, 105, 205, 404, 207, 202, 208, 201, 209, 203, 204, 304, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 308, 209, 208, 305, 203, 204, 205, 206, 207, 201, 106, 306, 302, 303, 304, 305, 301, 303, 404, 309, 301, 105, 303, 304, 202, 306, 307, 208, 309, 301, 302, 303, 304, 508, 306, 307, 308, 309, 301, 302, 307, 204, 305, 306, 307, 308, 309, 401, 402, 403, 404, 405, 406, 407, 401, 402, 403, 308, 405, 406, 407, 108, 402, 109, 206, 405, 406, 407, 401, 402, 403, 404, 405, 406, 407, 501, 502, 503, 108, 505, 506, 507, 305]
+04:14:05.117 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.KaiJin [101, 104]
+04:14:05.118 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.BuHua 1, 冬, 九筒
+04:14:05.118 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.FaPai 1, 一万, 四万, 二万, 三万, 六万, 七万, 八万, 九万, 九万, 一筒, 三筒, 九筒, 九筒,
+04:14:05.118 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.FaPai 2, 五万, 一筒, 二筒, 三筒, 四筒, 五筒, 六筒, 七筒, 七筒, 八筒, 九筒, 四索, 北风,
+04:14:05.119 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.FaPai 3, 一万, 一万, 四万, 四万, 二万, 三万, 三万, 五万, 七万, 九万, 二筒, 八筒, 二索, 南风,
+04:14:05.119 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.FaPai 4, 一万, 四万, 二万, 二万, 三万, 五万, 六万, 六万, 七万, 七万, 八万, 五筒, 东风,
+04:14:35.127 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.AutoQiPai 3, 68719589812, 三万. [] 13
+04:14:35.128 INFO  [10875] [FFSCENE_PYTHON] <gas@2> GasMj.MoPai 4, 68719589813, 一筒 14

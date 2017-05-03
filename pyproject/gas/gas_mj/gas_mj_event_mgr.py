@@ -157,7 +157,11 @@ class GasMjEventMgr(object):
 
         listJinPai = mjMgr.GetJinPaiList()
 
+        import time
+        nTimeCheckPre = time.clock()
         bCanHu = check_hu_mgr.testHu(0, listCard, listJinPai)
+        nTimeENd = time.clock()
+        framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CheckHU {0} ".format(nTimeENd - nTimeCheckPre))
         if bCanHu is True:
             rsp = common_info_pb2.on_touch_event()
             rsp.ev_type = EMjEvent.ev_hu_normal
@@ -165,7 +169,7 @@ class GasMjEventMgr(object):
             rsp.ev_data = str(nCard)
             szRspSerial = rsp.SerializeToString()
             framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-            framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CanHu {0}, {0} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
+            framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CanHu {0}, {1} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
             if mjMgr.IsTuoGuan(nOptMember) is True:
                 tick_mgr.RegisterOnceTick(100, mjMgr.RequestHu, [nOptMember])
 

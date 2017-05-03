@@ -8,6 +8,8 @@ Gac2GasCreateRoom = 10010
 Gac2GasEnterRoom = 10011
 Gac2GasOptMj = 10021
 
+Gac2GasExeCode = 10900
+
 ResponseLogin = 20001
 Gas2GacRetChangeScene = 20002
 Gas2GacretQueryRoomScene = 20003

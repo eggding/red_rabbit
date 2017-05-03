@@ -54,6 +54,9 @@ class GasPlayerEntity(base_entity.BaseEntity):
         self.AddCompment(moneyMgr)
         moneyMgr.InitFromDict(dictData.get(PlayerPro.MONEY_LIST, {}))
 
+    def IsMoneyEnough(self, nMoneyType, nNeedNum):
+        return self.m_PlayerMoneyMgr.IsMoneyEnough(nMoneyType, nNeedNum)
+
     def RequestChangeScene(self, szDstScene, dictExtra=None):
         if szDstScene == ff.service_name:
             return False

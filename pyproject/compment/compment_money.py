@@ -1,5 +1,6 @@
 # coding=UTF-8
-from util.enum_def import EMoneyType
+
+import ffext as framework
 import compment.base_compment as base_compment
 
 class PlayerMoneyMgr(base_compment.BaseCompment):
@@ -16,15 +17,25 @@ class PlayerMoneyMgr(base_compment.BaseCompment):
         for moneyType, nMoneyValue in listMoneyData:
             self.m_dictType2Money[moneyType] = nMoneyValue
 
-        import random
-        if len(self.m_dictType2Money) == 0:
-            self.m_dictType2Money[EMoneyType.eYuanbao] = random.randint(1, 10494)
+    def IsMoneyEnough(self, nMoneyType, nNeedNum):
+        nHaveMoney = self.m_dictType2Money.get(nMoneyType, 0)
+        return nHaveMoney >= nNeedNum
+
+    def SerialAllMoney(self):
+        import json
+        return json.dumps(self.m_dictType2Money)
+
+    def AddMoney(self, nMoneyType, nAdd, szReason):
+        if nAdd >= 0:
+            self.m_dictType2Money[nMoneyType] = self.m_dictType2Money.get(nMoneyType, 0) + nAdd
         else:
-            self.m_dictType2Money[EMoneyType.eYuanbao] = random.randint(23, 498444)
+            assert self.m_dictType2Money.get(nMoneyType, 0) >= nAdd
+            self.m_dictType2Money[nMoneyType] += nAdd
+
+        framework.LOGINFO("FFSCENE_PYTHON", "AddMoney {0} {1} {2} {3}".format(self.GetOwner().GetGlobalID(), nAdd, self.SerialAllMoney(), szReason))
 
     def Serial2List(self):
         listRet = []
-        import random
         for nType, nVal in self.m_dictType2Money.iteritems():
-            listRet.append((nType, nVal + random.randint(1, 3949)))
+            listRet.append((nType, nVal))
         return listRet

@@ -54,9 +54,6 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictPosHistory = {}
         self.m_dictPosEventRecord = {}
 
-    def IsHalf(self):
-        return self.m_dictCfg.get("game_type", 2) == 1
-
     def GetCardListEx(self, nPos):
         return self.m_dictPosCarListEx[nPos]
 
@@ -91,14 +88,15 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictPosEventRecord[nPos].append(tupleEventData)
 
     def GetMaxJuNum(self):
-        return self.m_dictCfg.get("chang_shu", 10) * self.m_dictCfg.get("ju_for_chang", 10)
+        nChangNum = self.GetConfig()["total_start_game_num"]
+        return nChangNum * 5
 
     def InitWithCfg(self, dictCfg):
         self.m_dictCfg = dictCfg
 
     def GetQiPaiExpireSecond(self):
+        print(parameter_common.parameter_common[1]["参数"])
         return parameter_common.parameter_common[1]["参数"]
-        # return self.m_dictCfg.get("qi_pai_expire", 0.5)
 
     def DingZhuang(self):
         """
@@ -215,8 +213,14 @@ class GasMjRule(rule_base.GameRuleBase):
     def GetCardListByPos(self, nPos):
         return self.m_dictPosCarList[nPos]
 
+    def GetConfig(self):
+        return self.m_roomObj.GetConfig()
+
+    def IsHalf(self):
+        return self.GetConfig()["opt"]
+
     def GetJinPaiNum(self):
-        return self.m_dictCfg.get("jin_pai_num", 2)
+        return 1 if self.IsHalf() else 2
 
     def KaiJin(self):
         nNum = self.GetJinPaiNum()
@@ -276,6 +280,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.MoPai(nPos)
 
     def GetEventExpireTime(self):
+        print(parameter_common.parameter_common[2]["参数"])
         return parameter_common.parameter_common[2]["参数"]
         # return self.m_dictCfg.get("event_expire_time", 3)
 
