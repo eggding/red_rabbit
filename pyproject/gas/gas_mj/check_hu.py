@@ -24,6 +24,8 @@
 # [511-518] 春、夏、秋、冬，梅、兰、竹、菊
 
 # global callTime
+from util.enum_def import EMjEvent
+
 callTime = 0
 
 import random
@@ -53,6 +55,8 @@ majmap = {"101":"一万","102":"二万","103":"三万","104":"四万","105":"五
           "301":"一索","302":"二索","303":"三索","304":"四索","305":"五索","306":"六索","307":"七索","308":"八索","309":"九索",
           "401":"东风","402":"西风","403":"南风","404":"北风","405":"红中","406":"发财","407":"白板",
           "501": "春", "502": "夏", "503": "秋", "504": "冬", "505": "梅", "506": "兰", "507": "竹", "508": "菊"}
+
+listShiSanYao = [101, 109, 201, 209, 301, 309, 401, 402, 403, 404, 405, 406, 407]
 
 def IsBaiBan(nCard):
     return 407 == nCard
@@ -163,18 +167,13 @@ def GetAllBaiBanComb(nUsedNum, nTotalNum, listOrder):
         GetAllBaiBanComb(nUsedNum + 1, nTotalNum, listTmp)
 
 def seprateArrAllCombBaiBan( mjArr, hunMj ):
-
+    assert isinstance(hunMj, list)
     reArr = [[],[],[],[],[]]
 
     listHunMj = []
-    if isinstance(hunMj, list):
-        for h in hunMj:
-            ht = h / 100
-            hv = h % 10
-            listHunMj.append((ht, hv))
-    else:
-        ht = hunMj / 100
-        hv = hunMj % 10
+    for h in hunMj:
+        ht = h / 100
+        hv = h % 10
         listHunMj.append((ht, hv))
 
     for mj in mjArr:
@@ -194,24 +193,26 @@ def seprateArrAllCombBaiBan( mjArr, hunMj ):
     GetAllBaiBanComb(0, nNumBaiBan, [])
 
     listRet = [reArr]
+    nMjBaiBan = GetBaiBanCard()
+    nBaiBanType = GetCardType(nMjBaiBan)
     import copy
     for listOneOrder in listCombRet:
         tmpArr = copy.deepcopy(reArr)
 
         while True:
-            if GetBaiBanCard() in tmpArr[GetCardType(GetBaiBanCard())]:
-                tmpArr[GetCardType(GetBaiBanCard())].remove(GetBaiBanCard())
+            if nMjBaiBan in tmpArr[nBaiBanType]:
+                tmpArr[nBaiBanType].remove(nMjBaiBan)
             else:
                 break
 
+        listSordID = []
         for mj in listOneOrder:
             tmpArr[GetCardType(mj)].append(mj)
+            if GetCardType(mj) not in listSordID:
+                listSordID.append(GetCardType(mj))
 
-        if isinstance(hunMj, list) is False:
-            hunMj = [hunMj]
-
-        for mj in hunMj:
-            sortArr(tmpArr[GetCardType(mj)])
+        for id in listSordID:
+            sortArr(tmpArr[id])
 
         listRet.append(tmpArr)
 
@@ -440,8 +441,96 @@ def canHu( hunNum, arr ):
                 sortArr( tmpArr )
     return False
 
+def GetHuType(mjArr, hunMj):
+    if CheckIsQiDuiZi(mjArr, hunMj) is True:
+        return EMjEvent.ev_hu_qi_dui_zi
+
+    if CheckShiSanYao(mjArr, hunMj) is True:
+        return EMjEvent.ev_hu_shi_san_yao
+
+    if CheckDanYou(mjArr, hunMj) is True:
+        return EMjEvent.ev_dan_you
+
+    return EMjEvent.ev_hu_normal
+
+def CheckDanYou(listMj, listHunMj):
+    reArr = seprateArr(listMj, listHunMj)
+    if 2 != len(reArr[0]):
+        return False
+    for i in xrange(1, 5):
+        if 0 == len(reArr[i]):
+            continue
+        if 3 != len(reArr[i]):
+            return False
+
+        if reArr[i][0] + 1 == reArr[i][1] and reArr[i][1] + 1 == reArr[i][2]:
+            # a, a+1, a+2
+            pass
+        elif reArr[i][0] == reArr[i][1] and reArr[i][1] == reArr[i][2]:
+            # a, a, a
+            pass
+        else:
+            return False
+    return True
+
+def CheckShiSanYao(listMj, listHunMj):
+    if len(listMj) != 14:
+        return False
+
+    nHunNum = 0
+    dictExist = {}
+    for mj in listMj:
+        if mj in listHunMj:
+            nHunNum += 1
+        else:
+            dictExist[mj] = dictExist.get(mj, 0) + 1
+
+    if len(dictExist) != len(listMj) - nHunNum:
+        return False
+
+    global listShiSanYao
+    nRequireNum = 0
+    for mj in listShiSanYao:
+        if mj not in dictExist:
+            nRequireNum += 1
+
+    if nRequireNum > nHunNum:
+        return False
+
+    return True
+
+def CheckIsQiDuiZi(listMj, listHunMj):
+    if len(listMj) != 14:
+        return False
+
+    nHunNum = 0
+    dictExist = {}
+    for mj in listMj:
+        if mj in listHunMj:
+            nHunNum += 1
+        else:
+            dictExist[mj] = dictExist.get(mj, 0) + 1
+
+    for mj, nCount in dictExist.iteritems():
+        if nCount % 2 == 0:
+            continue
+        nHunNum -= 1
+
+    if nHunNum < 0:
+        return False
+
+    return True
+
+def CheckBaXianGuoHai(listMj):
+    nNum = 0
+    for mj in listMj:
+        if GetCardType(mj) == 5:
+            nNum += 1
+    return nNum == 8
+
 # 判断胡牌
 def testHu( mj, mjArr, hunMj ):
+
     global g_NeedHunCount
     global callTime
     callTime = 0
@@ -449,6 +538,12 @@ def testHu( mj, mjArr, hunMj ):
     tmpArr.extend(mjArr) # 创建一个麻将数组的copy
     if mj != 0:
         tmpArr.append( mj ) # 插入一个麻将
+
+    if CheckIsQiDuiZi(tmpArr, hunMj) is True:
+        return True
+
+    if CheckShiSanYao(tmpArr, hunMj) is True:
+        return True
 
     listTmpRet = seprateArrAllCombBaiBan(tmpArr, hunMj)
     for sptArr in listTmpRet:
@@ -499,7 +594,12 @@ def testGang( mj, mjArr, hunMj ):
     v = mj % 10
     c = 0
     tmpArr = []
-    tmpArr.extend(mjArr)
+    for tmj in mjArr:
+        if 5 == GetCardType(tmj):
+            continue
+        else:
+            tmpArr.append(tmj)
+    # tmpArr.extend(mjArr)
     sptArr = seprateArr( tmpArr, hunMj )
     if len( sptArr[t] ) < 2:
         return False
@@ -509,6 +609,8 @@ def testGang( mj, mjArr, hunMj ):
                 c = c+1
         if c == 3:
             return True
+
+        return False
 
 def testPeng( mj, mjArr, hunMj ):
     t = mj / 100
@@ -610,81 +712,85 @@ def getTingArr(mjArr,hunMj):
     global callTime
     tmpArr = []
     tmpArr.extend(mjArr) # 创建一个麻将数组的copy
-    sptArr = seprateArr( tmpArr, hunMj )
-
-    ndHunArr = [] # 每个分类需要混的数组
-    for i in range( 1, 5 ):
-        g_NeedHunCount = 4
-        getNeedHunInSub( sptArr[i], 0 )
-        ndHunArr.append(g_NeedHunCount)
-
-
-    jaNdHunArr = []#每个将分类需要混的数组
-    for i in range(1,5):
-        jdNeedHunNum = getJiangNeedHum(sptArr[i])
-        jaNdHunArr.append(jdNeedHunNum)
-
-
-    curHunNum = len( sptArr[0])
+    listRetArr = seprateArrAllCombBaiBan( tmpArr, hunMj )
     tingArr = []
-    paiArr = [[101,110],[201,210],[301,310],[401,408]]
+    for sptArr in listRetArr:
 
-    #是否单调将
-    isAllHu = False
-    needNum = 0
-    for i in range(0,4):
-        needNum += ndHunArr[i]
-    if curHunNum - needNum == 1:
-        isAllHu = True
-    if isAllHu:
-        for lis in paiArr:
-            for x in range(lis[0],lis[1]):
-                tingArr.append(x)
-        return  tingArr
+        ndHunArr = [] # 每个分类需要混的数组
+        for i in range( 1, 5 ):
+            g_NeedHunCount = 4
+            getNeedHunInSub( sptArr[i], 0 )
+            ndHunArr.append(g_NeedHunCount)
 
 
-    for i in range(0,4):
-        # if len(sptArr[i+1]) == 0:
-        #     continue;
-        # 听牌是将
+        jaNdHunArr = []#每个将分类需要混的数组
+        for i in range(1,5):
+            jdNeedHunNum = getJiangNeedHum(sptArr[i])
+            jaNdHunArr.append(jdNeedHunNum)
+
+
+        curHunNum = len( sptArr[0])
+        paiArr = [[101,110],[201,210],[301,310],[401,408]]
+
+        #是否单调将
+        isAllHu = False
         needNum = 0
-        for j in range(0,4):
-            if(i != j):
-                needNum = needNum + ndHunArr[j]
+        for i in range(0,4):
+            needNum += ndHunArr[i]
+        if curHunNum - needNum == 1:
+            isAllHu = True
+        if isAllHu:
+            for lis in paiArr:
+                for x in range(lis[0],lis[1]):
+                    if x not in tingArr:
+                        tingArr.append(x)
+            return  tingArr
 
-        if needNum <= curHunNum:
-            for k in range(paiArr[i][0],paiArr[i][1]):
-                t = [k]
-                t.extend(sptArr[i+1])
-                sortArr(t)
-                if canHu(curHunNum-needNum,t):
-                    tingArr.append(k)
-                    # print callTime
 
-        # 听牌是扑
-        for j in range(0,4):
-            if(i != j):
-                needNum = 0
-                for k in range(0,4):
-                    if(k != i):
-                        if(k == j):
-                            needNum += jaNdHunArr[k]
-                        else:
-                            needNum += ndHunArr[k]
-                if needNum <= curHunNum:
-                    for k in range(paiArr[i][0],paiArr[i][1]):
+        for i in range(0,4):
+            # if len(sptArr[i+1]) == 0:
+            #     continue;
+            # 听牌是将
+            needNum = 0
+            for j in range(0,4):
+                if(i != j):
+                    needNum = needNum + ndHunArr[j]
+
+            if needNum <= curHunNum:
+                for k in range(paiArr[i][0],paiArr[i][1]):
+                    t = [k]
+                    t.extend(sptArr[i+1])
+                    sortArr(t)
+                    if canHu(curHunNum-needNum,t):
                         if k not in tingArr:
-                            t = [k]
-                            t.extend(sptArr[i+1])
-                            g_NeedHunCount = 4
-                            sortArr(t)
-                            getNeedHunInSub(t, 0 )
-                            if g_NeedHunCount <= curHunNum - needNum:
-                                tingArr.append(k)
+                            tingArr.append(k)
+                        # print callTime
 
-    if(len(tingArr) > 0) and hunMj not in tingArr:
-        tingArr.append(hunMj)
-    return  tingArr;
+            # 听牌是扑
+            for j in range(0,4):
+                if(i != j):
+                    needNum = 0
+                    for k in range(0,4):
+                        if(k != i):
+                            if(k == j):
+                                needNum += jaNdHunArr[k]
+                            else:
+                                needNum += ndHunArr[k]
+                    if needNum <= curHunNum:
+                        for k in range(paiArr[i][0],paiArr[i][1]):
+                            if k not in tingArr:
+                                t = [k]
+                                t.extend(sptArr[i+1])
+                                g_NeedHunCount = 4
+                                sortArr(t)
+                                getNeedHunInSub(t, 0 )
+                                if g_NeedHunCount <= curHunNum - needNum:
+                                    tingArr.append(k)
+
+        if(len(tingArr) > 0) and hunMj not in tingArr:
+            tingArr.append(hunMj)
+
+    return  tingArr
 
 
 
