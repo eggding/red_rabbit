@@ -14,21 +14,21 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/pyproject$check_hu.coverage" NAME="check_hu Coverage Results" MODIFIED="1493821285658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gas/gas_mj" />
     <SUITE FILE_PATH="coverage/pyproject$Unittests_in_pyproject__1_.coverage" NAME="Unittests in pyproject (1) Coverage Results" MODIFIED="1492577032638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pyproject$test_enter2.coverage" NAME="test_enter2 Coverage Results" MODIFIED="1493890110170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyproject$test_enter2.coverage" NAME="test_enter2 Coverage Results" MODIFIED="1493890493016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$conf.coverage" NAME="conf Coverage Results" MODIFIED="1491976196337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$Unittests_in_pyproject.coverage" NAME="Unittests in pyproject Coverage Results" MODIFIED="1492577033618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$excel2json.coverage" NAME="excel2json Coverage Results" MODIFIED="1493796101932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$Unittests_in_pyproject__2_.coverage" NAME="Unittests in pyproject (2) Coverage Results" MODIFIED="1492577033190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$main.coverage" NAME="main Coverage Results" MODIFIED="1493795746860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gas" />
-    <SUITE FILE_PATH="coverage/pyproject$test_enter.coverage" NAME="test_enter Coverage Results" MODIFIED="1493890090488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyproject$test_enter.coverage" NAME="test_enter Coverage Results" MODIFIED="1493890432487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$Unittests_in_pyproject__5_.coverage" NAME="Unittests in pyproject (5) Coverage Results" MODIFIED="1492577033351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pyproject$test_enter1.coverage" NAME="test_enter1 Coverage Results" MODIFIED="1493890086605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyproject$test_enter1.coverage" NAME="test_enter1 Coverage Results" MODIFIED="1493890488577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$Unittests_in_pyproject__3_.coverage" NAME="Unittests in pyproject (3) Coverage Results" MODIFIED="1492577033481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$test.coverage" NAME="test Coverage Results" MODIFIED="1493888838908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pyproject$test_enter3.coverage" NAME="test_enter3 Coverage Results" MODIFIED="1493890098280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyproject$test_enter3.coverage" NAME="test_enter3 Coverage Results" MODIFIED="1493890491403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$Unittests_in_pyproject__4_.coverage" NAME="Unittests in pyproject (4) Coverage Results" MODIFIED="1492577033707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pyproject$test_query_room_and_enter.coverage" NAME="test_query_room_and_enter Coverage Results" MODIFIED="1493653833720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pyproject$test_create_room.coverage" NAME="test_create_room Coverage Results" MODIFIED="1493890083712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyproject$test_create_room.coverage" NAME="test_create_room Coverage Results" MODIFIED="1493890486645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -47,21 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gas_scene_mgr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gas/gas_scene/gas_scene_mgr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="134" column="45" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_enter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_enter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_enter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.501002">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
                 <element signature="e#68#81#0" expanded="true" />
               </folding>
@@ -69,83 +59,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gas_mj_event_mgr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py">
+      <file leaf-file-name="room_state_running.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/state/room_state_running.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="169" column="49" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
+              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="time.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-762174762/time.py">
+      <file leaf-file-name="room_state_waiting.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/state/room_state_waiting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="7" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.37096775">
+              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cProfile.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/cProfile.py">
+      <file leaf-file-name="state_machine.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/state/state_machine.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_create_room.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_create_room.py">
+      <file leaf-file-name="login_pb2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/proto/login_pb2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+      <file leaf-file-name="message.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/google/protobuf/message.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-              <folding>
-                <element signature="e#25#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gas_room_mgr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gas/gas_room_mgr/gas_room_mgr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <caret line="186" column="6" selection-start-line="186" selection-start-column="6" selection-end-line="186" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xupdate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto_update/xupdate.py">
+      <file leaf-file-name="socket.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/socket.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="358" column="32" selection-start-line="358" selection-start-column="19" selection-end-line="358" selection-end-column="32" />
+              <caret line="540" column="4" selection-start-line="540" selection-start-column="4" selection-end-line="540" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auto_update.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto_update/auto_update.py">
+      <file leaf-file-name="_struct.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-762174762/_struct.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -227,12 +205,10 @@
         <option value="$PROJECT_DIR$/../start_all_2.py" />
         <option value="$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py" />
         <option value="$PROJECT_DIR$/gcc/gcc_room_mgr/gcc_room_mgr.py" />
-        <option value="$PROJECT_DIR$/gas/gas_mj/gas_mj_mgr.py" />
         <option value="$PROJECT_DIR$/util/enum_def.py" />
         <option value="$PROJECT_DIR$/compment/compment_money.py" />
         <option value="$PROJECT_DIR$/gas/gas_mj/check_hu.py" />
         <option value="$PROJECT_DIR$/proto/common_info.proto" />
-        <option value="$PROJECT_DIR$/test_create_room.py" />
         <option value="$PROJECT_DIR$/gas/gas_room_mgr/gas_room_obj.py" />
         <option value="$PROJECT_DIR$/conf.py" />
         <option value="$PROJECT_DIR$/db/table/create_table.py" />
@@ -251,6 +227,8 @@
         <option value="$PROJECT_DIR$/gas/gas_room_mgr/gas_room_mgr.py" />
         <option value="$PROJECT_DIR$/auto_update/xupdate.py" />
         <option value="$PROJECT_DIR$/auto_update/auto_update.py" />
+        <option value="$PROJECT_DIR$/test_create_room.py" />
+        <option value="$PROJECT_DIR$/gas/gas_mj/gas_mj_mgr.py" />
         <option value="$PROJECT_DIR$/test_enter.py" />
       </list>
     </option>
@@ -626,9 +604,9 @@
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.test_enter2" />
         <item index="1" class="java.lang.String" itemvalue="Python.test_enter3" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_enter" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test_enter1" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test_create_room" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_enter1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_create_room" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test_enter" />
       </list>
     </recent_temporary>
   </component>
@@ -664,16 +642,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27759197" sideWeight="0.33955225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.650108" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.64994425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41137123" sideWeight="0.6604478" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41137123" sideWeight="0.6604478" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -736,107 +714,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/proto/common_info.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8214286">
-          <caret line="80" column="2" selection-start-line="80" selection-start-column="2" selection-end-line="80" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proto/common_info_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/state/room_state_running.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/state/room_state_waiting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gas/gas_room_mgr/gas_room_obj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
-          <folding>
-            <element signature="e#46#62#0" expanded="true" />
-            <marker date="1493868313216" expanded="true" signature="46:102" placeholder="import ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base_scene/base_scene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="e#46#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compment/base_compment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gate_mgr/gate_mgr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-          <folding>
-            <element signature="e#136#1213#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/table/create_table.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <marker date="1493879718143" expanded="true" signature="54:268" placeholder="create table... IF" />
-            <marker date="1493879718143" expanded="true" signature="300:565" placeholder="create table... IF" />
-            <marker date="1493879718143" expanded="true" signature="597:719" placeholder="create table... IF" />
-            <marker date="1493879718143" expanded="true" signature="824:992" placeholder="create table... IF" />
-            <marker date="1493879718143" expanded="true" signature="1095:1295" placeholder="create table... IF" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/enum_def.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/error_msg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -893,14 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player_mgr/player_mgr_handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="30" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/gm_tool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -930,16 +799,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/login_mgr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="119" column="11" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="11" />
-          <folding>
-            <element signature="e#23#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -989,14 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="113" column="15" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_enter1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1099,26 +950,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="169" column="49" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gas/gas_scene/gas_scene_mgr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="45" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_create_room.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1157,13 +992,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/proto/common_info.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.714286">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_create_room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/enum_def.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_mgr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="237" column="33" selection-start-line="237" selection-start-column="33" selection-end-line="237" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="196" column="16" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_enter1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/login_mgr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="106" selection-start-line="131" selection-start-column="106" selection-end-line="131" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="540" column="4" selection-start-line="540" selection-start-column="4" selection-end-line="540" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto/login_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/google/protobuf/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="186" column="6" selection-start-line="186" selection-start-column="6" selection-end-line="186" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-762174762/_struct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_enter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.501002">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding>
             <element signature="e#68#81#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state/state_machine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state/room_state_running.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state/room_state_waiting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37096775">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

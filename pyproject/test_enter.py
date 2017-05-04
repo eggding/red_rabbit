@@ -12,7 +12,7 @@ def func(self, nPlayerGID, nRoomID=None):
     if nRoomID is None:
         return
 
-    print("hello enter udpate test")
+    print("hello enter udpate test ")
 
     if 0 == nRoomID and len(self.m_dictRoomID2Room) != 0:
         nRoomID = self.m_dictRoomID2Room.keys()[0]

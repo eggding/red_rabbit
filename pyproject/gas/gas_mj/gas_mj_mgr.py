@@ -217,7 +217,7 @@ class GasMjRule(rule_base.GameRuleBase):
         return self.m_roomObj.GetConfig()
 
     def IsHalf(self):
-        return self.GetConfig()["opt"]
+        return self.GetConfig()["opt"] == 1
 
     def GetJinPaiNum(self):
         return 1 if self.IsHalf() else 2

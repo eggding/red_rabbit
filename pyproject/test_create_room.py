@@ -30,7 +30,7 @@ def PacketCreateRoomBuff():
     req.cfg.member_num = 4
     req.cfg.multi = 5
     req.cfg.total_start_game_num = 5
-    req.cfg.opt = 1
+    req.cfg.opt = 2
     # req.cfg.avg = 0
     szRet = req.SerializeToString()
 
