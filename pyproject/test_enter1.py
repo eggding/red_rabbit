@@ -86,39 +86,44 @@ def PacketEnterRoomBuff():
     szFormat = "IHH%ds" % len(szAuthCode)
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
-while True:
-    sock = socket.create_connection(("192.168.74.130", 10242))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
-    sock.send(PacketLoginBuff())
-    print(sock.recv(93939))
-
-    # syn scene
-    print(sock.recv(93939))
-
-    sock.send(PacketQueryRoomScene())
-    szRet = sock.recv(93939)
-    print(szRet)
-
-    szFormat = "IHH"
-    nTotalBytes, cmd, flag = struct.unpack_from(szFormat, szRet)
-    szRet = szRet[struct.calcsize(szFormat):]
-
-    import proto.query_room_scene_pb2 as query_room_scene_pb2
-    rsp = query_room_scene_pb2.query_room_scene_rsp()
-    rsp.ParseFromString(szRet)
-
-    print("room in scene ", rsp.scene_name, rsp.room_id)
-    sock.send(PacketChangeScene(rsp.scene_name))
-    sock.recv(399)
-
-    sock.send(PacketEnterRoom(rsp.room_id))
-    print("send enter room done.")
-
+def StartUp():
     while True:
-        print(sock.recv(3948))
-        time.sleep(1)
+        sock = socket.create_connection(("192.168.74.130", 10243))
+        # sock = socket.create_connection(("127.0.0.1", 10242))
+        sock.send(PacketLoginBuff())
+        print(sock.recv(93939))
+
+        # syn scene
+        print(sock.recv(93939))
+
+        sock.send(PacketQueryRoomScene())
+        szRet = sock.recv(93939)
+        print(szRet)
+
+        szFormat = "IHH"
+        nTotalBytes, cmd, flag = struct.unpack_from(szFormat, szRet)
+        szRet = szRet[struct.calcsize(szFormat):]
+
+        import proto.query_room_scene_pb2 as query_room_scene_pb2
+        rsp = query_room_scene_pb2.query_room_scene_rsp()
+        rsp.ParseFromString(szRet)
+
+        print("room in scene ", rsp.scene_name, rsp.room_id)
+        sock.send(PacketChangeScene(rsp.scene_name))
+        sock.recv(399)
+
+        sock.send(PacketEnterRoom(rsp.room_id))
+        print("send enter room done.")
+
+        while True:
+            # print(sock.recv(3948))
+            sock.recv(39484)
+            time.sleep(1)
 
 
-    time.sleep(9939)
+        time.sleep(9939)
 
-    sock.close()
+        sock.close()
+
+if __name__ == "__main__":
+    StartUp()

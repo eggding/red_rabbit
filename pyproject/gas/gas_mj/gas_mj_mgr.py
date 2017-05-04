@@ -481,7 +481,11 @@ class GasMjRule(rule_base.GameRuleBase):
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPeng {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPengRet {0}".format(self.DumpPos(nPosOwner)))
 
+    def CalScore(self):
+        pass
+
     def OneJuEnd(self):
+        self.CalScore()
         self.StartJu()
 
     def StartJu(self):

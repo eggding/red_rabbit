@@ -28,6 +28,7 @@
         "system_error": "cpp",
         "exception": "cpp",
         "sstream": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "cerrno": "cpp"
     }
 }

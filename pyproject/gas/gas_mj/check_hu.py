@@ -499,6 +499,13 @@ def CheckShiSanYao(listMj, listHunMj):
 
     return True
 
+def CheckSanJinDao(listMj, listHunMj):
+    if 1 != len(listHunMj):
+        return False
+    if 3 != listMj.count(listHunMj[0]):
+        return False
+    return True
+
 def CheckIsQiDuiZi(listMj, listHunMj):
     if len(listMj) != 14:
         return False

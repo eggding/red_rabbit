@@ -136,8 +136,9 @@ class RoomObj(object):
             ffext.send_msg_session(nMemberOther, rpc_def.Gas2GacOnTouchMemberEvent, rsp.SerializeToString())
 
     def MemberEnter(self, nMember):
-        self.m_sm.GetCurState().MemberEnter(nMember)
-        self.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
+        bRet = self.m_sm.GetCurState().MemberEnter(nMember)
+        if bRet is True:
+            self.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
 
     def MemberExit(self, nMember):
         self.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)

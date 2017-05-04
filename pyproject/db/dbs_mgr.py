@@ -47,7 +47,7 @@ class AsynJob(object):
 
 class DbsMgr(object):
     def __init__(self):
-        self.m_nNumDbConn = 5
+        self.m_nNumDbConn = 10
         self.m_nQueueNum = self.m_nNumDbConn
         self.m_listConnChannel = []
         self.m_dictChannel2Queue = {}
@@ -105,9 +105,24 @@ class DbsMgr(object):
             self.m_dictQueueWorkStatus[i] = False
 
         self.m_bInited = True
-        self.DispathJob(1)
+        # self.DispathJob(1)
+
+    def DumpDbQueue(self):
+        dictQueueJobNum = {}
+        for nChannelID, queueObj in self.m_dictChannel2Queue.iteritems():
+            if queueObj.qsize() != 0:
+                dictQueueJobNum[nChannelID] = queueObj.qsize()
+
+        if len(dictQueueJobNum) == 0:
+            return None
+        return json.dumps(dictQueueJobNum)
 
     def OnOneDbQueryDone(self, dbRet, job):
+
+        szDumpData = self.DumpDbQueue()
+        if szDumpData is not None:
+            ffext.LOGINFO("FFSCENE_PYTHON", "DbsMgr.OnOneDbQueryDone {0}".format(szDumpData))
+
         if isinstance(dbRet, ffext.query_result_t):
             dictSerial = {
                 dbs_def.FLAG: dbRet.flag,

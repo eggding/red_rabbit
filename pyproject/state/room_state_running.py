@@ -16,7 +16,7 @@ class RoomStateRunning(state_machine.StateBase):
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateRunning.MemberEnter {0}".format(nMember))
         roomObj = self.GetOwner()
         if nMember not in roomObj.m_dictMember:
-            return
+            return False
 
         Player = entity_mgr.GetEntity(nMember)
         Player.SetRoomID(roomObj.GetRoomID())
@@ -25,6 +25,7 @@ class RoomStateRunning(state_machine.StateBase):
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.ePlaying
 
         roomObj.GetGameRule().OnMemberEnter(nMember)
+        return True
 
     def MemberExit(self, nMember):
         self.MemberOffline(nMember)

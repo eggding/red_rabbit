@@ -64,35 +64,38 @@ def PacketExeCode():
     szFormat = "IHH%ds" % len(szAuthCode)
     return struct.pack(szFormat, nTotalSize, 10900, 0, szAuthCode)
 
-
-c = 0
-import random
-while True:
-    sock = socket.create_connection(("192.168.74.130", 10242))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
-    sock.send(PacketLoginBuff())
-    print(sock.recv(93939))
-    # syn scene
-    print(sock.recv(93939))
-
-    sock.send(PacketExeCode())
-    print("send exe code done.")
-
-    # time.sleep(0.3)
-    sock.send(PacketCreateRoomBuff())
-
-    # time.sleep(1)
-    # sock.send(PacketExeCode())
-    # print("send exe code done.")
-
-
+def StartUp():
+    c = 0
+    import random
     while True:
-        print(sock.recv(3948))
-        time.sleep(1)
+        sock = socket.create_connection(("192.168.74.130", 10243))
+        # sock = socket.create_connection(("127.0.0.1", 10242))
+        sock.send(PacketLoginBuff())
+        print(sock.recv(93939))
+        # syn scene
+        print(sock.recv(93939))
 
-    time.sleep(9939)
+        sock.send(PacketExeCode())
+        print("send exe code done.")
 
-    sock.close()
-    print("c ", c)
-    c += 1
+        # time.sleep(0.3)
+        sock.send(PacketCreateRoomBuff())
 
+        # time.sleep(1)
+        # sock.send(PacketExeCode())
+        # print("send exe code done.")
+
+
+        while True:
+            # print(sock.recv(3948))
+            sock.recv(39484)
+            time.sleep(1)
+
+        time.sleep(9939)
+
+        sock.close()
+        print("c ", c)
+        c += 1
+
+if __name__ == "__main__":
+    StartUp()

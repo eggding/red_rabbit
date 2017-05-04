@@ -51,7 +51,7 @@ def OnCreateUserSessionCb(dictRet, listBindData):
     player = player_in_login.PlayerInLogin(session_id, online_time, ip, gate_name)
     _loginMgr.add(session_id, player)
     ffext.on_verify_auth_callback(player.GetGlobalID(), "", cb_id)
-    ffext.LOGINFO("FFSCENE", "session 认证完成 {0}".format(session_id))
+    ffext.LOGINFO("FFSCENE", "session auth ok {0}".format(session_id))
 
 def OnGetUseSessonCb(dictRet, listBindData):
     # print("OnGetUseSessonCb ", dictRet, listBindData)
@@ -92,6 +92,11 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     :param cb_id:
     :return:
     """
+
+    if _loginMgr.size() > 2000:
+        ffext.on_verify_auth_callback(0, "", cb_id)
+        return []
+
     print("real_session_verify ", szAuthKey, online_time, ip, gate_name, cb_id)
     req_login = login_pb2.login_req()
     try:
@@ -109,10 +114,12 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
             ffext.on_verify_auth_callback(0, rsp.SerializeToString(), cb_id)
         ffext.call_service(scene_def.GATE_MASTER, rpc_def.GetGateIp, {"0": 0}, _retGetGateAddr)
         return []
+
     elif nType == login_pb2.login_type.Value("login"):
         szAuthKey = req_login.auth_info
         dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
         return []
+
     elif nType == login_pb2.login_type.Value("gm_code"):
         # gm
         szToken, szScene, szCode = req_login.auth_info.split("#")
@@ -121,6 +128,7 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
         else:
             gm_tool.SendCode(szScene, szCode)
         return []
+
     else:
         ffext.on_verify_auth_callback(0, "", cb_id)
         return []

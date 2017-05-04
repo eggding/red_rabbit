@@ -13,7 +13,7 @@ class RoomStateWaiting(state_machine.StateBase):
     def MemberEnter(self, nMember):
         roomObj = self.GetOwner()
         if len(roomObj.m_dictMember) >= roomObj.m_nMaxMember:
-            return
+            return False
 
         if nMember in roomObj.m_dictMember:
             dictState = roomObj.m_dictMember[nMember]
@@ -32,6 +32,8 @@ class RoomStateWaiting(state_machine.StateBase):
 
         if roomObj.CanStartGame() is True:
             roomObj.StartGameOnRoom()
+
+        return True
 
     def MemberExit(self, nMember):
         roomObj = self.GetOwner()
