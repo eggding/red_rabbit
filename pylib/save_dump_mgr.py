@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+# @Author  : jh.feng
 
+import ffext
 import traceback
 import os, time, linecache
 import tokenize, sys, inspect
@@ -128,4 +130,5 @@ def DumpTraceBack():
         szVar = ""
 
     szRet = szTrace + szVar
-    print(szRet)
+    # print(szRet)
+    ffext.LOGERROR("FFSCENE_PYTHON", "{0}".format(szRet))

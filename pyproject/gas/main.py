@@ -11,7 +11,7 @@ import StringIO, pstats
 pr = cProfile.Profile()
 pr.enable()
 
-g_nProfileSeconds = 10
+g_nProfileSeconds = 60
 
 import util.tick_mgr as tick_mgr
 def Tick2DumpProfile():

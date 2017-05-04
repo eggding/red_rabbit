@@ -2,6 +2,7 @@
 import json
 import ff
 import sys
+import save_dump_mgr as save_dump_mgr
 
 import thrift.Thrift as Thrift
 import thrift.protocol.TBinaryProtocol as TBinaryProtocol
@@ -51,8 +52,7 @@ def ff_timer_callback(id):
             else:
                 cb()
     except:
-        import traceback
-        LOGERROR("FFSCENE_PYTHON", "timer call back error {0}".format(traceback.format_exc()))
+        save_dump_mgr.DumpTraceBack()
         return False
 
 
@@ -142,7 +142,10 @@ def ff_session_logic(session_id, cmd, body):
     # print(g_session_logic_callback_dict)
     info = g_session_logic_callback_dict[cmd]
     arg  = info[0](body)
-    return info[1](session_id, arg)
+    try:
+        return info[1](session_id, arg)
+    except:
+        save_dump_mgr.DumpTraceBack()
 
 g_WriteTMemoryBuffer   = TTransport.TMemoryBuffer()
 g_WriteTBinaryProtocol = TBinaryProtocol.TBinaryProtocol(g_WriteTMemoryBuffer)
