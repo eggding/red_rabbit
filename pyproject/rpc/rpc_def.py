@@ -41,6 +41,8 @@ Gcc2GasRetGenRoomID = 3001
 Gcc2GasRetGetRoomScene = 3002
 Gcc2GasRetSynPlayerState = 3003
 
+All2ExeCode = 4000
+
 DbsGetUserSession = 7000
 DbsLoadPlayerData = 7001
 DbsCreateUserSession = 7002

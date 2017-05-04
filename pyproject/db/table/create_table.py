@@ -22,6 +22,14 @@ create table IF NOT EXISTS account
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 """
 
+sql_create_account = """
+create table IF NOT EXISTS gm_token
+(
+  TOKEN_ID varchar(100),
+  primary key(TOKEN_ID)
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
+"""
+
 # ALTER TABLE `account` ADD INDEX account_search ( `ACCOUNT_ID` );
 
 

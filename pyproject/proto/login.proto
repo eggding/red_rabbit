@@ -4,6 +4,7 @@ enum login_type
 {
     get_gate_info = 1;
     login = 2;
+    gm_code = 3;
 };
 
 // 请求登录, 协议号 10001

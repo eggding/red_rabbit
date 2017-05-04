@@ -5,13 +5,14 @@ import ffext
 import sys
 sys.path.append("./pyproject")
 
+import excel2json as excel2json
+excel2json.LoadAllCfg()
+
+
 import conf as conf
 import rpc.rpc_def as rpc_def
 import entity.entity_mgr as entity_mgr
 import gas.gas_scene.gas_scene_mgr as gas_scene_mgr
-import excel2json as excel2json
-
-excel2json.LoadAllCfg()
 
 @ffext.session_call(rpc_def.Gac2GasExeCode)
 def Gac2GasExeCode(nPlayerGID, szCode):
@@ -19,10 +20,5 @@ def Gac2GasExeCode(nPlayerGID, szCode):
         return
 
     szCode = szCode["0"]
-
-    Player = entity_mgr.GetEntity(nPlayerGID)
-    assert Player is not None
-
-    print(szCode)
-    exec(szCode)
-
+    import util.gm_tool as gm_tool
+    gm_tool.ExeCode(szCode, nPlayerGID)

@@ -85,7 +85,8 @@ message game_cfg
     required uint32         member_num = 1; // 开局人数
     required uint32         multi = 2; // 游金倍数
     required uint32         total_start_game_num = 3; // 总场数
-    required room_option    opt = 4; // 玩法选项
+    required uint32         avg = 4; // 是否均摊
+    required room_option    opt = 5; // 玩法选项
 };
 
 // 同步房间信息，协议号 20014
@@ -133,3 +134,10 @@ message syn_game_ret
     repeated other_player_info  list_member = 2;
     repeated card_serial        list_car_serial = 3;
 };
+
+// 公告/提示 消息同步, 分配协议号 20013
+message notic_msg
+{
+    required uint32 msg_id = 1;
+    optional bytes msg_content = 2;
+}

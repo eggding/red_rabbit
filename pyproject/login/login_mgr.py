@@ -7,8 +7,8 @@ import rpc.rpc_def as rpc_def
 import db.dbs_def as dbs_def
 import entity.player_in_login as player_in_login
 import json
-import proto.recv_msg_pb2 as recv_msg_pb2
 import rpc.scene_def as scene_def
+import util.gm_tool as gm_tool
 
 class LoginMgr(object):
     def __init__(self):
@@ -109,9 +109,20 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
             ffext.on_verify_auth_callback(0, rsp.SerializeToString(), cb_id)
         ffext.call_service(scene_def.GATE_MASTER, rpc_def.GetGateIp, {"0": 0}, _retGetGateAddr)
         return []
-    else:
+    elif nType == login_pb2.login_type.Value("login"):
         szAuthKey = req_login.auth_info
         dbs_client.DoAsynCall(rpc_def.DbsGetUserSession, 0, szAuthKey, funCb=OnGetUseSessonCb, callbackParams=[szAuthKey, online_time, ip, gate_name, cb_id])
+        return []
+    elif nType == login_pb2.login_type.Value("gm_code"):
+        # gm
+        szToken, szScene, szCode = req_login.auth_info.split("#")
+        if gm_tool.IsTokenValid(szToken, ip) is False:
+            ffext.on_verify_auth_callback(0, "", cb_id)
+        else:
+            gm_tool.SendCode(szScene, szCode)
+        return []
+    else:
+        ffext.on_verify_auth_callback(0, "", cb_id)
         return []
 
 @ffext.session_offline_callback

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='login.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0blogin.proto\"9\n\tlogin_req\x12\x19\n\x04type\x18\x01 \x02(\x0e\x32\x0b.login_type\x12\x11\n\tauth_info\x18\x02 \x02(\x0c\"O\n\tlogin_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x11\n\tgate_info\x18\x04 \x01(\x0c**\n\nlogin_type\x12\x11\n\rget_gate_info\x10\x01\x12\t\n\x05login\x10\x02')
+  serialized_pb=_b('\n\x0blogin.proto\"9\n\tlogin_req\x12\x19\n\x04type\x18\x01 \x02(\x0e\x32\x0b.login_type\x12\x11\n\tauth_info\x18\x02 \x02(\x0c\"O\n\tlogin_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x11\n\tgate_info\x18\x04 \x01(\x0c*7\n\nlogin_type\x12\x11\n\rget_gate_info\x10\x01\x12\t\n\x05login\x10\x02\x12\x0b\n\x07gm_code\x10\x03')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -38,17 +38,22 @@ _LOGIN_TYPE = _descriptor.EnumDescriptor(
       name='login', index=1, number=2,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='gm_code', index=2, number=3,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=155,
-  serialized_end=197,
+  serialized_end=210,
 )
 _sym_db.RegisterEnumDescriptor(_LOGIN_TYPE)
 
 login_type = enum_type_wrapper.EnumTypeWrapper(_LOGIN_TYPE)
 get_gate_info = 1
 login = 2
+gm_code = 3
 
 
 

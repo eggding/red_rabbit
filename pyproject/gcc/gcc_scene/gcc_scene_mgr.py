@@ -63,6 +63,12 @@ class GccSceneMgr(object):
 
 _gccSceneMgr = GccSceneMgr()
 
+@ffext.reg_service(rpc_def.All2ExeCode)
+def All2ExeCode(dictData):
+    szCode = dictData["code"]
+    import util.gm_tool as gm_tool
+    gm_tool.ExeCode(szCode)
+
 @ffext.reg_service(rpc_def.Gas2GccPlayerTrueOffline)
 def Gas2GccPlayerTrueOffline(dictData):
     nPlayerGID = dictData["id"]

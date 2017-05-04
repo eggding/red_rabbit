@@ -31,5 +31,8 @@ dict_cfg = {
     # },
     "gas": {
         "num": 3
+    },
+    "gm_service": {
+
     }
 }

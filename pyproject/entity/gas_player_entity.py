@@ -57,6 +57,9 @@ class GasPlayerEntity(base_entity.BaseEntity):
     def IsMoneyEnough(self, nMoneyType, nNeedNum):
         return self.m_PlayerMoneyMgr.IsMoneyEnough(nMoneyType, nNeedNum)
 
+    def AddMoney(self, nMoneyType, nAddNum, szReason):
+        self.m_PlayerMoneyMgr.AddMoney(nMoneyType, nAddNum, szReason)
+
     def RequestChangeScene(self, szDstScene, dictExtra=None):
         if szDstScene == ff.service_name:
             return False

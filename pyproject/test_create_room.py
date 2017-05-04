@@ -31,6 +31,7 @@ def PacketCreateRoomBuff():
     req.cfg.multi = 5
     req.cfg.total_start_game_num = 5
     req.cfg.opt = 1
+    # req.cfg.avg = 0
     szRet = req.SerializeToString()
 
     # 计算protobol消息体的字节数
@@ -42,6 +43,28 @@ def PacketCreateRoomBuff():
     szFormat = "IHH%ds" % len(szRet)
     return struct.pack(szFormat, nTotalSize, 10010, 0, szRet)
 
+
+szCode = """
+Player.m_PlayerMoneyMgr.AddMoney(1, 200, "gm test add money")
+"""
+
+
+def PacketExeCode():
+    d = {"0": szCode}
+
+    import json
+    szAuthCode = json.dumps(d)
+
+    # 计算protobol消息体的字节数
+    szFormat = "%ds" % len(szAuthCode)
+    nTotalSize = struct.calcsize(szFormat)
+
+    # 二进制化消息包
+    # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
+    szFormat = "IHH%ds" % len(szAuthCode)
+    return struct.pack(szFormat, nTotalSize, 10900, 0, szAuthCode)
+
+
 c = 0
 import random
 while True:
@@ -52,9 +75,16 @@ while True:
     # syn scene
     print(sock.recv(93939))
 
+    sock.send(PacketExeCode())
+    print("send exe code done.")
+
     # time.sleep(0.3)
     sock.send(PacketCreateRoomBuff())
-    print(sock.recv(93939))
+
+    # time.sleep(1)
+    # sock.send(PacketExeCode())
+    # print("send exe code done.")
+
 
     while True:
         print(sock.recv(3948))

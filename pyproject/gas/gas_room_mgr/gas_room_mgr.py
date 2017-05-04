@@ -2,21 +2,21 @@
 # @Author  : jh.feng
 
 import ff, ffext
-import json
 import entity.entity_mgr as entity_mgr
 import rpc.rpc_def as rpc_def
-import db.dbs_client as dbs_client
-import db.dbs_def as dbs_def
 import rpc.scene_def as scene_def
-from rpc.rpc_property_def import RpcProperty
-
 import proto.query_room_scene_pb2 as query_room_scene_pb2
-
 import gas_room_obj as gas_room_obj
+import cfg_py.parameter_common as parameter_common
+
+from util.enum_def import EMoneyType
 
 class RoomService(object):
     def __init__(self):
         self.m_dictRoomID2Room = {}
+
+    def GetCreateRoomNeedMoney(self):
+        return parameter_common.parameter_common[3]["参数"]
 
     def OnRoomDismiss(self, nRoomID, listRoomPlayers):
         ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.OnRoomDismiss {0}".format(nRoomID))
@@ -45,7 +45,6 @@ class RoomService(object):
             nRoomID = self.m_dictRoomID2Room.keys()[0]
 
         roomObj = self.m_dictRoomID2Room.get(nRoomID)
-        print("EnterRoom ", nPlayerGID, nRoomID, roomObj)
         if roomObj is None:
             return
         roomObj.MemberEnter(nPlayerGID)
@@ -56,10 +55,21 @@ class RoomService(object):
         self.m_dictRoomID2Room[nRoomID] = roomObj
 
     def CreateRoom(self, nRoomMaster, dictRoomCfg):
-        ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.CreateRoom {0}".format(nRoomMaster))
         Player = entity_mgr.GetEntity(nRoomMaster)
         if Player.GetRoomID() is not None:
             return
+
+        nNeedZhuanShiNum = self.GetCreateRoomNeedMoney()
+        bIsAvg = True if dictRoomCfg.get('avg', 0) == 1 else False
+        if bIsAvg is True:
+            nDelZhuanShiNum = nNeedZhuanShiNum / dictRoomCfg.get("member_num", 4)
+        else:
+            nDelZhuanShiNum = nNeedZhuanShiNum
+
+        if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelZhuanShiNum) is False:
+            return
+
+        ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.CreateRoom {0}".format(nRoomMaster))
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGenRoomID, {"player_id": nRoomMaster,
                                                                            "gas_id": ff.service_name,
                                                                            "cfg": dictRoomCfg})
@@ -131,13 +141,14 @@ def Gac2GasQueryRoomScene(nPlayerGID, reqObj):
 import proto.create_room_pb2 as create_room_pb2
 @ffext.session_call(rpc_def.Gac2GasCreateRoom, create_room_pb2.create_room_req)
 def GacGasCreateRoom(nPlayerGID, reqObj):
-    nGameType = reqObj.game_type
+    # nGameType = reqObj.game_type
     gameCfg = reqObj.cfg
     dictRoomCfg = {
         "member_num": gameCfg.member_num,
         "multi": gameCfg.multi,
         "total_start_game_num": gameCfg.total_start_game_num,
-        "opt": gameCfg.opt
+        "opt": gameCfg.opt,
+        "avg": 0,
     }
     _roomMgr.CreateRoom(nPlayerGID, dictRoomCfg)
 

@@ -114,6 +114,13 @@ def Gac2GasRequestChangeScene(nPlayerGID, reqObj):
         rsp.scene_name = ""
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
+
+@ffext.reg_service(rpc_def.All2ExeCode)
+def All2ExeCode(dictData):
+    szCode = dictData["code"]
+    import util.gm_tool as gm_tool
+    gm_tool.ExeCode(szCode)
+
 @ffext.reg_service(rpc_def.Gcc2GasPlayerOffline)
 def Gcc2GasPlayerOffline(dictData):
     nPlayerGID = dictData["id"]
