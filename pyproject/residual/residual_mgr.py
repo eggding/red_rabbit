@@ -4,7 +4,7 @@ import ff
 import ffext
 import util.tick_mgr as tick_mgr
 
-RESIDUAL_TIME = 30 * 60 * 1000
+RESIDUAL_TIME = 60 * 60 * 1000
 
 class ResidualMgr(object):
     def __init__(self, sceneObj):

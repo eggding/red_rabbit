@@ -62,8 +62,8 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
     {
         ffpython_t::add_path(arg_helper.get_option_value("-python_path"));
     }
-    (*m_ffpython).load("main");
     int ret = ffscene_t::open(arg_helper);
+    (*m_ffpython).load("main");
 
     if (arg_helper.is_enable_option("-gate"))
     {

@@ -5,6 +5,28 @@ import ffext
 import sys
 sys.path.append("./pyproject")
 
+import cProfile
+import StringIO, pstats
+
+pr = cProfile.Profile()
+pr.enable()
+
+g_nProfileSeconds = 10
+
+import util.tick_mgr as tick_mgr
+def Tick2DumpProfile():
+    tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
+    s = StringIO.StringIO()
+    # sortby = 'cumulative'
+    ps = pstats.Stats(pr, stream=s)# .sort_stats(sortby)
+    ps.print_stats()
+    aa = s.getvalue()
+
+    import ff
+    with open('./profile_{0}.out'.format(ff.service_name),'w') as f:
+        f.write(aa)
+
+
 import excel2json as excel2json
 excel2json.LoadAllCfg()
 
@@ -22,3 +44,6 @@ def Gac2GasExeCode(nPlayerGID, szCode):
     szCode = szCode["0"]
     import util.gm_tool as gm_tool
     gm_tool.ExeCode(szCode, nPlayerGID)
+
+
+tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
