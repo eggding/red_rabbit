@@ -4,14 +4,25 @@
 import socket
 import struct, time
 
-import entity.entity_mgr as entity_mgr
-print(entity_mgr.g_dictAllEntity)
 
 szCode = """
-import entity.entity_mgr as entity_mgr
-print(entity_mgr.g_dictAllEntity.keys())
-for Player in entity_mgr.g_dictAllEntity.values():
-    print(Player.Serial2Dict())
+import auto_update.xupdate as xupdate
+import gas.gas_room_mgr.gas_room_mgr as gas_room_mgr
+def func(self, nPlayerGID, nRoomID=None):
+    if nRoomID is None:
+        return
+
+    print("hello enter udpate test")
+
+    if 0 == nRoomID and len(self.m_dictRoomID2Room) != 0:
+        nRoomID = self.m_dictRoomID2Room.keys()[0]
+
+    roomObj = self.m_dictRoomID2Room.get(nRoomID)
+    if roomObj is None:
+        return
+    roomObj.MemberEnter(nPlayerGID)
+
+xupdate.updateFuncCode(gas_room_mgr._roomMgr.EnterRoom, func)
 """
 
 def PackSendGmCode():
