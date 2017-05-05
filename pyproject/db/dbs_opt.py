@@ -26,9 +26,37 @@ def ImpDbsTest(conn, job):
     conn.query(sql, db_mgr.OnOneDbQueryDone, job)
 
 def ImpGetUserSession(conn, job):
+    dictRet = {
+        dbs_def.FLAG: True,
+    }
     szAuthKey = job.GetParam()
     sql = "select `SESSION_ID` FROM `account` WHERE `ACCOUNT_ID` = '%s'" % (szAuthKey)
-    conn.query(sql, db_mgr.OnOneDbQueryDone, job)
+    ret = conn.sync_query(sql)
+
+    if ret.flag is False:
+        dictRet[dbs_def.FLAG] = False
+        db_mgr.OnOneDbQueryDone(dictRet, job)
+        return
+
+    print("ret.result", ret.result)
+    if len(ret.result) == 0:
+        session_id = idmgr_.GenPlayerID(conn)
+        # sql = "INSERT INTO `account` VALUES ('%s', '%s', now(), now()) " % (szAuthKey, session_id)
+        sql = "INSERT INTO `account` VALUES('%s', '%s', now(), now())" % (szAuthKey, session_id)
+        print(sql)
+        job.SetSession(session_id)
+        ret = conn.sync_query(sql)
+        if ret.flag is False:
+            dictRet[dbs_def.FLAG] = False
+            db_mgr.OnOneDbQueryDone(dictRet, job)
+            return
+
+        dictRet[dbs_def.RESULT] = [[session_id]]
+    else:
+        dictRet[dbs_def.RESULT] = ret.result
+
+    db_mgr.OnOneDbQueryDone(dictRet, job)
+
 
 def ImpDbsCreateUserSession(conn, job):
     # print("ImpDbsCreateUserSession")

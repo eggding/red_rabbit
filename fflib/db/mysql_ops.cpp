@@ -109,16 +109,17 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
     if (res)
     {
         MYSQL_FIELD* column_infos = ::mysql_fetch_fields(res);
-        int column_num = ::mysql_num_fields(res);
+        int column_num = (int)::mysql_num_fields(res);
         vector<char*> vt_col_name;
         for (int c = 0; c < column_num; ++ c)
         {
             vt_col_name.push_back(column_infos[c].name);
         }
-        char** pcol_name = &(vt_col_name.front());
-        
+        char** pcol_name = &(vt_col_name.front());        
 
-        int num_row = ::mysql_num_rows(res);
+        int num_row = (int)::mysql_num_rows(res);
+        cout << sql_ << " have res " << num_row << " col " << column_num << endl;
+
         for (int i= 0; i < num_row; ++i)
         {
             MYSQL_ROW row = ::mysql_fetch_row(res);
@@ -130,7 +131,16 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
     }
     else
     {
-        m_error = ::mysql_error(&m_mysql);
+        // m_error = ::mysql_error(&m_mysql);
+        if (mysql_field_count(&m_mysql) == 0)
+        {
+            ;
+        }
+        else
+        {
+            cout << "error " << mysql_error(&m_mysql) << endl;
+            return -1;
+        }
     }
     return 0;
 }

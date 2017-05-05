@@ -67,8 +67,9 @@ def OnGetUseSessonCb(dictRet, listBindData):
     listRet = dictRet[dbs_def.RESULT]
     if len(listRet) == 0:
         # no session, craete it
-        ffext.LOGINFO("FFSCENE", "session not exist request 2 register session {0}".format(szAuthKey))
-        dbs_client.DoAsynCall(rpc_def.DbsCreateUserSession, 0, szAuthKey, funCb=OnCreateUserSessionCb, callbackParams=[online_time, ip, gate_name, cb_id])
+        # ffext.LOGINFO("FFSCENE", "session not exist request 2 register session {0}".format(szAuthKey))
+        # dbs_client.DoAsynCall(rpc_def.DbsCreateUserSession, 0, szAuthKey, funCb=OnCreateUserSessionCb, callbackParams=[online_time, ip, gate_name, cb_id])
+        ffext.on_verify_auth_callback(0, "err.", cb_id)
         return
 
     session_id = int(listRet[0][0])
