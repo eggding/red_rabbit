@@ -5,7 +5,7 @@ import ffext
 import Queue as queue
 import rpc.rpc_def as rpc_def
 import dbs_def as dbs_def
-
+import MySQLdb
 
 class AsynJob(object):
     def __init__(self):
@@ -47,11 +47,12 @@ class AsynJob(object):
 
 class DbsMgr(object):
     def __init__(self):
-        self.m_nNumDbConn = 10
-        self.m_nQueueNum = self.m_nNumDbConn
+        self.m_nNumDbConn = 5
+        self.m_nQueueNum = 100
         self.m_listConnChannel = []
         self.m_dictChannel2Queue = {}
         self.m_dictQueueWorkStatus = {}
+        self.m_dictQueueWorkTime = {}
         self.m_nCount = 1
         self.m_nPreTime = time.clock()
         self.m_bInited = False
@@ -78,6 +79,18 @@ class DbsMgr(object):
                 nDstQueue = nQueueID
         return nDstQueue
 
+    def CheckWorkTime(self, a):
+        ffext.once_timer(3000, self.CheckWorkTime, 1)
+        nGap = 5 * 1000
+        for nQueueID, nTime in self.m_dictQueueWorkTime.iteritems():
+            queueObj = self.m_dictChannel2Queue[nQueueID]
+            if queueObj.qsize() == 0:
+                continue
+
+            if nTime + nGap > time.time():
+                continue
+            ffext.ERROR('queue {0} running too long, should it blocking? {1}'.format(nQueueID, self.DumpDbQueue()))
+
     def DispathJob(self, a):
         ffext.once_timer(200, self.DispathJob, 1)
 
@@ -96,16 +109,27 @@ class DbsMgr(object):
         self.m_dictChannel2Queue = {}
         self.m_dictQueueWorkStatus = {}
         for i in xrange(0, self.m_nNumDbConn):
-            dbServiceObj = ffext.ffdb_create('mysql://{0}/{1}/{2}/{3}'.format(dictDbCfg["host"], dictDbCfg["user"], dictDbCfg["pwd"], dictDbCfg["db"]))
-            assert dbServiceObj is not None
-            self.m_listConnChannel.append(dbServiceObj)
+            # dbServiceObj = ffext.ffdb_create('mysql://{0}/{1}/{2}/{3}'.format(dictDbCfg["host"], dictDbCfg["user"], dictDbCfg["pwd"], dictDbCfg["db"]))
+            szHost, port = dictDbCfg["host"].split(":")
+            conn = MySQLdb.connect(
+                host=szHost,
+                port=int(port),
+                user=dictDbCfg["user"],
+                passwd=dictDbCfg["pwd"],
+                db=dictDbCfg["db"],
+                charset = 'utf8',
+            )
+            assert conn is not None
+            self.m_listConnChannel.append(conn)
 
         for i in xrange(0, self.m_nQueueNum):
             self.m_dictChannel2Queue[i] = queue.Queue()
             self.m_dictQueueWorkStatus[i] = False
+            self.m_dictQueueWorkTime[i] = time.time()
 
         self.m_bInited = True
         # self.DispathJob(1)
+        self.CheckWorkTime(1)
 
     def DumpDbQueue(self):
         dictQueueJobNum = {}
@@ -117,27 +141,15 @@ class DbsMgr(object):
             return None
         return json.dumps(dictQueueJobNum)
 
-    def OnOneDbQueryDone(self, dbRet, job):
-
-        szDumpData = self.DumpDbQueue()
-        if szDumpData is not None:
-            ffext.LOGINFO("FFSCENE_PYTHON", "DbsMgr.OnOneDbQueryDone {0}".format(szDumpData))
-
-        if isinstance(dbRet, ffext.query_result_t):
-            dictSerial = {
-                dbs_def.FLAG: dbRet.flag,
-                dbs_def.COL: dbRet.column,
-                dbs_def.RESULT: dbRet.result,
-            }
-        else:
-            dictSerial = dbRet
-
-        dictSerial[dbs_def.SESSION] = job.GetSession()
-        dictSerial[dbs_def.CB_ID] = job.GetCbID()
-        ffext.call_service(job.GetSceneName(), rpc_def.OnDbAsynCallReturn, json.dumps(dictSerial))
+    def OnOneDbQueryDone(self, dictSerial, job):
+        if job.GetSceneName() is not None:
+            dictSerial[dbs_def.SESSION] = job.GetSession()
+            dictSerial[dbs_def.CB_ID] = job.GetCbID()
+            ffext.call_service(job.GetSceneName(), rpc_def.OnDbAsynCallReturn, json.dumps(dictSerial))
 
         if job.GetQueueID() is not None:
             self.m_dictQueueWorkStatus[job.GetQueueID()] = False
+            self.m_dictQueueWorkTime[job.GetQueueID()] = time.time()
 
         nDstQueue = self.RandomChoose()
         if nDstQueue is None:
@@ -155,6 +167,7 @@ class DbsMgr(object):
 
         nConnID = nQueueID % self.m_nNumDbConn
         self.m_dictQueueWorkStatus[nQueueID] = True
+        self.m_dictQueueWorkTime[nQueueID] = time.time()
         jobQueue.get(timeout=1).exe(self.m_listConnChannel[nConnID])
 
     def Add2JobQueue(self, szSrcScene, cb_id, nSessionID, nChannel, funObj, param=None):

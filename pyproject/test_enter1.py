@@ -4,12 +4,16 @@
 import socket
 import struct, time
 
+gIndex = 0
+
 def PacketLoginBuff():
     import proto.login_pb2 as login_pb2
     req_login = login_pb2.login_req()
     global szMsg
     import random
-    szMsg = "acc0" + str(random.randint(1, 99999))
+    global gIndex
+    szMsg = "acc0" + str(gIndex)
+    gIndex += 1
     req_login.type = login_pb2.login_type.Value("login")
     req_login.auth_info = szMsg
     szMsg = req_login.SerializeToString()
@@ -86,10 +90,15 @@ def PacketEnterRoomBuff():
     szFormat = "IHH%ds" % len(szAuthCode)
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
-def StartUp():
+def StartUp(nId=None):
+    if nId is None:
+        import random
+        nId = random.randint(1, 984784)
+    global gIndex
+    gIndex = nId
     while True:
-        sock = socket.create_connection(("192.168.74.130", 10243))
-        # sock = socket.create_connection(("127.0.0.1", 10242))
+        # sock = socket.create_connection(("192.168.74.130", 10243))
+        sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
 
@@ -126,4 +135,5 @@ def StartUp():
         sock.close()
 
 if __name__ == "__main__":
-    StartUp()
+    import random
+    StartUp(random.randint(1, 984784))

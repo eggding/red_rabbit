@@ -4,26 +4,15 @@
 import socket
 import struct, time
 
+import entity.entity_mgr as entity_mgr
+print(len(entity_mgr.g_dictAllEntity))
+
 
 szCode = """
-import auto_update.xupdate as xupdate
-import gas.gas_room_mgr.gas_room_mgr as gas_room_mgr
-def func(self, nPlayerGID, nRoomID=None):
-    if nRoomID is None:
-        return
-
-    print("hello enter udpate test ")
-
-    if 0 == nRoomID and len(self.m_dictRoomID2Room) != 0:
-        nRoomID = self.m_dictRoomID2Room.keys()[0]
-
-    roomObj = self.m_dictRoomID2Room.get(nRoomID)
-    if roomObj is None:
-        return
-    roomObj.MemberEnter(nPlayerGID)
-
-xupdate.updateFuncCode(gas_room_mgr._roomMgr.EnterRoom, func)
+import entity.entity_mgr as entity_mgr
+print(len(entity_mgr.g_dictAllEntity))
 """
+
 
 def PackSendGmCode():
     szScene = "all_gas"
@@ -43,8 +32,8 @@ def PackSendGmCode():
     return struct.pack(szFormat, nTotalSize, 10001, 0, szMsg)
 
 while True:
-    sock = socket.create_connection(("192.168.74.130", 10243))
-    # sock = socket.create_connection(("127.0.0.1", 10242))
+    # sock = socket.create_connection(("192.168.74.130", 10243))
+    sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PackSendGmCode())
     print(sock.recv(93939))
     time.sleep(39)

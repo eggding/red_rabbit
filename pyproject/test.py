@@ -29,7 +29,7 @@ def StartGame():
         t.start()
 
 if __name__ == '__main__':
-    for i in xrange(0, 500):
+    for i in xrange(0, 300):
         print("start game ", i)
         print("\n" * 10)
         StartGame()

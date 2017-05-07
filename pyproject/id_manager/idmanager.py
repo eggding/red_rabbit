@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import ffext
-from util.enum_def import EIdType
+from util.enum_def import EIdType, EDbsOptType
+import db.dbs_common as dbs_common
 
 class idgen_t(object):
     def __init__(self, db_host_, type_id_ = 0, server_id_ = 0):
@@ -16,19 +17,22 @@ class idgen_t(object):
     def init(self, conn):
         self.m_bInit = True
 
-        ret = conn.sync_query("SELECT `AUTO_INC_ID`, `RUNING_FLAG` FROM `id_generator` WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (self.type_id, self.server_id))
-        #print(ret.flag, ret.result, ret.column)
-        if len(ret.result) == 0:
+        sql = "SELECT `AUTO_INC_ID`, `RUNING_FLAG` FROM `id_generator` WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (self.type_id, self.server_id)
+        ret = dbs_common.SyncQueryTrans(EDbsOptType.eQuery, conn, sql)
+        if len(ret) == 0:
             #数据库中还没有这一行，插入
-            conn.sync_query("INSERT INTO `id_generator` SET `AUTO_INC_ID` = '0',`TYPE` = '%d', `SERVER_ID` = '%d', `RUNING_FLAG` = '1' " % (self.type_id, self.server_id))
+            sql = "INSERT INTO `id_generator` SET `AUTO_INC_ID` = '0',`TYPE` = '%d', `SERVER_ID` = '%d', `RUNING_FLAG` = '1' " % (self.type_id, self.server_id)
+            assert dbs_common.SyncQueryTrans(EDbsOptType.eInsert, conn, sql) is not None
             return True
         else:
-            self.auto_inc_id = int(ret.result[0][0])
-            self.runing_flag = int(ret.result[0][1])
+            self.auto_inc_id = int(ret[0][0])
+            self.runing_flag = int(ret[0][1])
             if self.runing_flag != 0:
-                self.auto_inc_id += 50
+                self.auto_inc_id += 500
                 ffext.ERROR('last idgen shut down not ok, inc 50')
-            conn.sync_query("UPDATE `id_generator` SET `RUNING_FLAG` = '1' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (self.type_id, self.server_id))
+
+            sql = "UPDATE `id_generator` SET `RUNING_FLAG` = '1' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (self.type_id, self.server_id)
+            assert dbs_common.SyncQueryTrans(EDbsOptType.eUpdate, conn, sql) is not None
 
         if self.type_id == EIdType.eIdTypeRoom:
             if self.auto_inc_id < 100000:
@@ -39,10 +43,11 @@ class idgen_t(object):
         return True
 
     def cleanup(self):
-        db = ffext.ffdb_create(self.db_host)
-        now_val = self.auto_inc_id
-        db.sync_query("UPDATE `id_generator` SET `AUTO_INC_ID` = '%d', `RUNING_FLAG` = '0' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (now_val, self.type_id, self.server_id))
-        return True
+        assert False
+        # db = ffext.ffdb_create(self.db_host)
+        # now_val = self.auto_inc_id
+        # db.sync_query("UPDATE `id_generator` SET `AUTO_INC_ID` = '%d', `RUNING_FLAG` = '0' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (now_val, self.type_id, self.server_id))
+        # return True
 
     def gen_id(self, conn):
         if self.m_bInit is False:
@@ -74,12 +79,22 @@ class idgen_t(object):
             return
         self.saving_flag = True
         now_val = self.auto_inc_id
-        def cb(ret):
-            #print(ret.flag, ret.result, ret.column)
-            self.saving_flag = False
-            if now_val < self.auto_inc_id:
-                self.update_id(conn)
-        conn.query("UPDATE `id_generator` SET `AUTO_INC_ID` = '%d' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d' AND `AUTO_INC_ID` < '%d'" % (now_val, self.type_id, self.server_id, now_val), cb)
+        # def cb(ret):
+        #     #print(ret.flag, ret.result, ret.column)
+        #     self.saving_flag = False
+        #     if now_val < self.auto_inc_id:
+        #         self.update_id(conn)
+        import db.dbs_mgr as dbs_mgr
+        import db.dbs_def as dbs_def
+        import db.dbs_opt as dbs_opt
+        dictSerial = {
+            dbs_def.SRC_SCENE: None,
+            dbs_def.CB_ID: 0,
+            dbs_def.SESSION: 0,
+            dbs_def.USE_CHANNEL: 0,
+            dbs_def.PARAMS: [now_val, self.type_id, self.server_id, now_val]
+        }
+        dbs_mgr.GenJob(dictSerial, dbs_opt.ImpUpdateID)
         return
 
 nServerID = 1

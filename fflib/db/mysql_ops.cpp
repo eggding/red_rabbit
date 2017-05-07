@@ -118,7 +118,7 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         char** pcol_name = &(vt_col_name.front());        
 
         int num_row = (int)::mysql_num_rows(res);
-        cout << sql_ << " have res " << num_row << " col " << column_num << endl;
+        // cout << sql_ << " have res " << num_row << " col " << column_num << endl;
 
         for (int i= 0; i < num_row; ++i)
         {
@@ -134,7 +134,7 @@ int  mysql_ops_t::exe_sql(const string& sql_, db_each_row_callback_i* cb_)
         // m_error = ::mysql_error(&m_mysql);
         if (mysql_field_count(&m_mysql) == 0)
         {
-            ;
+            ; 
         }
         else
         {

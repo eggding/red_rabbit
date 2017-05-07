@@ -75,6 +75,7 @@ class RoomObj(object):
         return len(self.m_dictMember) == self.m_nMaxMember
 
     def StartGameOnRoom(self):
+        return
         ffext.LOGINFO("FFSCENE_PYTHON", "StartGameOnRoom {0}".format(self.GetRoomID()))
         bIsAvg = True if self.GetConfig()["avg"] != 0 else False
         if bIsAvg is True:

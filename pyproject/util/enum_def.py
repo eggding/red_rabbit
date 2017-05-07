@@ -3,6 +3,12 @@
 
 import entity.const_entity as const_entity
 
+class EDbsOptType(const_entity.Const):
+    eQuery = 1
+    eUpdate = 2
+    eDel = 3
+    eInsert = 4
+
 class ECardType(const_entity.Const):
     eWanZi = 1
     eTongZi = 2
