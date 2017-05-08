@@ -10,7 +10,8 @@ g_nOrder = random.randint(1, 2938388383)
 def CreateRoom():
     test_create_room.StartUp()
 
-def TestEnterRoom():
+def TestEnterRoom()\
+        :
     global g_nOrder
     g_nOrder += 1
     test_enter1.StartUp(g_nOrder)

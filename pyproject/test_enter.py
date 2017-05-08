@@ -4,13 +4,16 @@
 import socket
 import struct, time
 
-import entity.entity_mgr as entity_mgr
-print(len(entity_mgr.g_dictAllEntity))
+# import wsurl.wsurl as wsurl
+# wsurl.Test1()
+
 
 
 szCode = """
-import entity.entity_mgr as entity_mgr
-print(len(entity_mgr.g_dictAllEntity))
+import sys
+print(sys.getcheckinterval())
+import wsurl.http_mod as http_mod
+http_mod.Test1()
 """
 
 

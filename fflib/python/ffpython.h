@@ -431,6 +431,8 @@ public:
     {
         if (!Py_IsInitialized())
             Py_Initialize();
+            PyEval_InitThreads();
+            cout << "start up thread support" << endl;
     }
 
     //static int init_py();
@@ -443,6 +445,8 @@ public:
     static int init_py()
     {
         Py_Initialize();
+        PyEval_InitThreads();
+        cout << "start up thread support" << endl;
         return 0;
     }
     static int final_py()

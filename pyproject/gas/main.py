@@ -46,4 +46,4 @@ def Gac2GasExeCode(nPlayerGID, szCode):
     gm_tool.ExeCode(szCode, nPlayerGID)
 
 
-tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
+# tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
