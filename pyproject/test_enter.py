@@ -32,8 +32,8 @@ def PackSendGmCode():
     return struct.pack(szFormat, nTotalSize, 10001, 0, szMsg)
 
 while True:
-    # sock = socket.create_connection(("192.168.74.130", 10243))
-    sock = socket.create_connection(("127.0.0.1", 10242))
+    sock = socket.create_connection(("192.168.74.130", 10243))
+    # sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PackSendGmCode())
     print(sock.recv(93939))
     time.sleep(39)

@@ -27,7 +27,8 @@ class RoomService(object):
             Player.SetRoomID(None)
             Player.GetScene().OnPlayerGameEnd(nPlayerGID)
 
-        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccOnRoomDismiss, {"room_id": nRoomID})
+        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccOnRoomDismiss, {"room_id": nRoomID,
+                                                                               "gas_id": ff.service_name})
 
     def GetRoomObjByPlayerGID(self, nPlayerGID):
         Player = entity_mgr.GetEntity(nPlayerGID)
@@ -73,22 +74,6 @@ class RoomService(object):
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGenRoomID, {"player_id": nRoomMaster,
                                                                            "gas_id": ff.service_name,
                                                                            "cfg": dictRoomCfg})
-
-    def ExitRoom(self, nPlayerGID):
-        roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
-        if roomObj is not None:
-            roomObj.MemberExit(nPlayerGID)
-
-    def OnEnterScene(self, roomPlayer):
-        ffext.LOGINFO("FFSCENE_PYTHON", " OnEnterScene {0}".format(roomPlayer.GetGlobalID()))
-        assert roomPlayer is not None
-
-    def OnLeaveScene(self, nPlayerGID):
-        ffext.LOGINFO("FFSCENE_PYTHON", "OnPlayerLeaveScene {0}".format(nPlayerGID))
-
-        roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
-        if roomObj is not None:
-            roomObj.MemberExit(nPlayerGID)
 
     def OnMemberExit(self, nPlayerGID):
         roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)

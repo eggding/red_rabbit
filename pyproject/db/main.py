@@ -1,15 +1,12 @@
 # coding=UTF-8
-import os
-import time
+
 import ffext
 import sys
 sys.path.append("./pyproject")
 
 import db.dbs_mgr as db_mgr
 import rpc.rpc_def as rpc_def
-import dbs_def as dbs_def
 import db.dbs_opt as dbs_opt
-
 
 @ffext.reg_service(rpc_def.DbsGetRoomIDSector)
 def DbsGetRoomIDSector(dictSerial):

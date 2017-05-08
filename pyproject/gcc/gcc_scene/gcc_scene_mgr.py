@@ -16,9 +16,22 @@ class GccSceneMgr(object):
     def __init__(self):
         self.m_nGasNum = conf.dict_cfg["gas"]["num"]
 
+        self.m_dictGasOnlineNum = {}
+        for i in xrange(0, self.m_nGasNum):
+            self.m_dictGasOnlineNum[self.GetGasName(i)] = 0
+
+    def GetGasName(self, n):
+        return "gas@{0}".format(n)
+
     def ChooseOneGas(self):
-        ret = random.randint(0, 10000)
-        return "gas@{0}".format(ret % self.m_nGasNum)
+        nMinestNum = None
+        nRet = None
+        for i in xrange(0, self.m_nGasNum):
+            nNum = self.m_dictGasOnlineNum[self.GetGasName(i)]
+            if nRet is None or nMinestNum > nNum:
+                nRet = i
+                nMinestNum = nNum
+        return self.GetGasName(nRet)
 
     def Login2GccSessionConn(self, nPlayerGID, szSerial):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.Login2GccSessionConn {0}, {1}".format(nPlayerGID, szSerial))
@@ -39,7 +52,12 @@ class GccSceneMgr(object):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.Gas2GccSynPlayerGasID {0}, {1}".format(nPlayerGID, szGasID))
         gccPlayer = entity_mgr.GetEntity(nPlayerGID)
         assert gccPlayer is not None
+        szPrevGasID = gccPlayer.GetGasID()
         gccPlayer.SetGasID(szGasID)
+
+        if szPrevGasID is not None:
+            self.m_dictGasOnlineNum[szPrevGasID] -= 1
+        self.m_dictGasOnlineNum[szGasID] += 1
 
         # check state
         if gccPlayer.GetState() == enum_def.EPlayerState.eDisConnect:
@@ -56,10 +74,10 @@ class GccSceneMgr(object):
     def OnPlayerTrueOffline(self, nPlayerGID):
         ffext.LOGINFO("FFSCENE_PYTHON", "GccSceneMgr.OnPlayerTrueOffline {0}".format(nPlayerGID))
         gccPlayer = entity_mgr.GetEntity(nPlayerGID)
+        self.m_dictGasOnlineNum[gccPlayer.GetGasID()] -= 1
         assert gccPlayer is not None
         gccPlayer.Destroy()
         entity_mgr.DelEntity(nPlayerGID)
-
 
 _gccSceneMgr = GccSceneMgr()
 

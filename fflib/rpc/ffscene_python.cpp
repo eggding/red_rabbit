@@ -75,10 +75,10 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
         (*m_ffpython).set_global_var("ff", "service_name", service_name);
 
         // dbs
-        if (service_name.find("db") != -1)
-        {
-            m_db_mgr.start();
-        }
+        // if (service_name.find("db") != -1)
+        // {
+        //     m_db_mgr.start();
+        // }
     }
 
     LOGTRACE((FFSCENE_PYTHON, "ffscene_python_t::open end ok"));

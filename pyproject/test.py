@@ -4,11 +4,16 @@ from time import ctime,sleep
 import test_create_room as test_create_room
 import test_enter1 as test_enter1
 
+import random
+g_nOrder = random.randint(1, 2938388383)
+
 def CreateRoom():
     test_create_room.StartUp()
 
 def TestEnterRoom():
-    test_enter1.StartUp()
+    global g_nOrder
+    g_nOrder += 1
+    test_enter1.StartUp(g_nOrder)
 
 def StartGame():
     threads = []
@@ -29,7 +34,7 @@ def StartGame():
         t.start()
 
 if __name__ == '__main__':
-    for i in xrange(0, 300):
+    for i in xrange(0, 1250):
         print("start game ", i)
         print("\n" * 10)
         StartGame()

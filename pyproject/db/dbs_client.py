@@ -6,6 +6,9 @@ import rpc.rpc_def as rpc_def
 import rpc.scene_def as scene_def
 import dbs_def as dbs_def
 import ff
+import conf as conf
+
+g_nQueueNum = conf.dict_cfg["dbs"]["queue_num"]
 
 g_nCbSerial = 0
 g_dictSerial2CbInfo = {}
@@ -30,11 +33,11 @@ def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChann
         dictPacket[dbs_def.USE_CHANNEL] = 0
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
     else:
+        global g_nQueueNum
         nChannel = int(nChannel)
-        # nDbQueueID = nChannel % 1
+        nDbQueueID = nChannel % g_nQueueNum
         dictPacket[dbs_def.USE_CHANNEL] = nChannel
-        ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
-        # ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nDbQueueID), cmd, json.dumps(dictPacket))
+        ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nDbQueueID), cmd, json.dumps(dictPacket))
 
 @ffext.reg_service(rpc_def.OnDbAsynCallReturn)
 def OnDbAsynCallReturn(dictRet):
