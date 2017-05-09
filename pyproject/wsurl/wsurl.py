@@ -93,7 +93,6 @@ class WsUrl(object):
             except Queue.Empty:
                 break
             cb = self.RemoveJob(httpReponse.id)
-            print("Test cb")
             if cb:
                 cb(httpReponse)
 
@@ -144,7 +143,7 @@ def Test1():
         time.sleep(0.1)
 
 
-def Test2():
+def Test2(q):
 
     import time
 
@@ -156,7 +155,8 @@ def Test2():
     w.Start()
 
     def callback1(httpReponse):
-        print("rsp cb 1 ")
+        print("11 rsp cb 1 ")
+        q.put("ret rsp cb 1")
 
     #url="https://g51-udataresys.nie.netease.com:8443/Recommender/FriendshipService?request=friendship_data&gameId=g51&token=tHAf25XUgM8Amfj&orderId=1852038034&server=1003&roleId=583a3c72353e9d0b47b92599&friends="
     url = "http://img3.126.net/kaola/dsp1e/img/short.png"

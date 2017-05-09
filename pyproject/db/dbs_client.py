@@ -33,15 +33,14 @@ def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChann
         dictPacket[dbs_def.USE_CHANNEL] = 0
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
     else:
-        global g_nQueueNum
         nChannel = int(nChannel)
-        nDbQueueID = nChannel % g_nQueueNum
         dictPacket[dbs_def.USE_CHANNEL] = nChannel
-        ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nDbQueueID), cmd, json.dumps(dictPacket))
+        ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
 
 @ffext.reg_service(rpc_def.OnDbAsynCallReturn)
 def OnDbAsynCallReturn(dictRet):
-
+    dictRet = json.loads(dictRet)
+    # print("OnDbAsynCallReturn ", ff.service_name, dictRet)
     nCbId = dictRet[dbs_def.CB_ID]
     global g_dictSerial2CbInfo
     listData = g_dictSerial2CbInfo.get(nCbId)

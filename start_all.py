@@ -45,11 +45,11 @@ def StartDbMgr():
     print("szCmd ", szCmd)
     os.system(szCmd)
 
-    for i in xrange(0, conf.dict_cfg["dbs"]["queue_num"]):
-        time.sleep(0.1)
-        szCmd = "{0} -scene {1} {2} -python_path ./pyproject/{3} &".format(szEngineBin, "db_queue@{0}".format(i), szBrokerMaster, szCodeDir)
-        print("szCmd ", szCmd)
-        os.system(szCmd)
+    # for i in xrange(0, conf.dict_cfg["dbs"]["queue_num"]):
+    #     time.sleep(0.1)
+    #     szCmd = "{0} -scene {1} {2} -python_path ./pyproject/{3} &".format(szEngineBin, "db_queue@{0}".format(i), szBrokerMaster, szCodeDir)
+    #     print("szCmd ", szCmd)
+    #     os.system(szCmd)
 
 def StartLoginAndGcc():
     # ./app_engine -scene scene@0 -broker tcp://127.0.0.1:10241 -python_path ./pyproject/login/ &
