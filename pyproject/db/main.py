@@ -41,3 +41,8 @@ def DbsLoadPlayerData(dictSerial):
 @ffext.reg_service(rpc_def.DbsGetUserSession)
 def DbsGetUserSession(dictSerial):
     db_mgr.GenJob(dictSerial, "ImpGetUserSession")
+
+@ffext.reg_service(rpc_def.DbsQueueStartUp)
+def DbsQueueStartUp(dictSerial):
+    szName = dictSerial["queue_name"]
+    db_mgr.OnQueueStartUp(szName)

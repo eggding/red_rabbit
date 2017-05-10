@@ -3,6 +3,9 @@
 def IsGasScene(szScene):
     return True if szScene.find("gas") != -1 else False
 
+def IsDbQueue(szScene):
+    return True if szScene.find("db") != -1 else False
+
 def dict_merge(dictSrc, dictDst):
     """
     字典合并, dictSrc合并到dictDst

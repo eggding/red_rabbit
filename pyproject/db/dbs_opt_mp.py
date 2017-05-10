@@ -8,7 +8,6 @@ sys.path.append("./pyproject")
 import util.util as util
 import dbs_def as dbs_def
 import db.table.table_property_def as table_property_def
-import id_manager.idmanager as idmgr_
 from util.enum_def import EDbsOptType
 import dbs_common as dbs_common
 

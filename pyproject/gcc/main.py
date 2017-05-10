@@ -11,6 +11,7 @@ import gcc.gcc_room_mgr.gcc_room_mgr as gcc_room_mgr
 
 @ffext.reg_service(rpc_def.OnDbsStartUp)
 def OnDbsStartUp(dictSerial):
-    import gcc.gcc_id_mgr.gcc_id_mgr as gcc_id_mgr
-    pass
+    import id_manager.room_id_mgr as room_id_mgr
+    room_id_mgr.init()
+
 

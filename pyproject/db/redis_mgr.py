@@ -1,31 +1,47 @@
 
-#coding:gbk
+import multiprocessing as multiprocessing
+import time, random
 
-from multiprocessing import Process,Queue,Pool
-import multiprocessing
-import os, time, random
-
-# 写数据进程执行的代码:
-def write(q):
+def R(qret_, qjob_):
+    import wsurl.http_mod as http_mod
+    httpMgr = http_mod.GetUrlMgr()
     while True:
-        for value in ['A', 'B', 'C']:
-            print 'Put %s to queue...' % value
-            # with lock:
-            q.put(value)
+        szUrl = qjob.get()
 
-# 读数据进程执行的代码:
-def read(q):
-    while True:
-        if not q.empty():
-            value = q.get(False)
-            print 'Get %s from queue.' % value
-            time.sleep(random.random())
-        else:
-            break
+        def _onGetHttpRet(httpRsp):
+            qret_.put(httpRsp)
 
-if __name__=='__main__':
-    q = Queue()
-    p = Process(target=read, args=(q,))
-    p.start()
-    while True:
-        write(q)
+        httpMgr.Get(szUrl, _onGetHttpRet)
+        httpMgr.DispatchRequest()
+
+qret = multiprocessing.Queue()
+qjob = multiprocessing.Queue()
+p = multiprocessing.Process(target=R, args=(qret, qjob))
+p.start()
+
+p1 = multiprocessing.Process(target=R, args=(qret, qjob))
+p1.start()
+#
+# p2 = multiprocessing.Process(target=R, args=(qret, qjob))
+# p2.start()
+
+c = 0
+def ProdJob():
+    # print("ProdJob")
+    t = random.randint(1, 8) / 10
+    tick_mgr.RegisterOnceTick(t * 1000, ProdJob)
+    szUrl = "https://g51-udataresys.nie.netease.com:8443/Recommender/FriendshipService?request=friendship_data&gameId=g51&token=tHAf25XUgM8Amfj&orderId=1852038034&server=1003&roleId=583a3c72353e9d0b47b92599&friends="
+    # GetUrlMgr().Get(szUrl, callback=cb)
+    qjob.put(szUrl)
+
+def GetRet():
+    tick_mgr.RegisterOnceTick(10, GetRet)
+    if qret.empty() is True:
+        return
+    job = qret.get()
+    global c
+    c += 1
+    print("main get job ret ", c, qret.qsize())
+
+ProdJob()
+GetRet()

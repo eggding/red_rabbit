@@ -34,8 +34,9 @@ def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChann
         ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
     else:
         nChannel = int(nChannel)
+        nQueueID = nChannel % g_nQueueNum
         dictPacket[dbs_def.USE_CHANNEL] = nChannel
-        ffext.call_service(scene_def.DB_SERVICE_DEFAULT, cmd, json.dumps(dictPacket))
+        ffext.call_service(scene_def.DB_SERVICE_DEFAULT + str(nQueueID), cmd, json.dumps(dictPacket))
 
 @ffext.reg_service(rpc_def.OnDbAsynCallReturn)
 def OnDbAsynCallReturn(dictRet):

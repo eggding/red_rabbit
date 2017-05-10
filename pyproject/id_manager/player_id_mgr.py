@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Author  : jh.feng
 
-import ffext
+import ffext, ff
 import rpc.rpc_def as rpc_def
 import db.dbs_client as dbs_client
 import db.dbs_def as dbs_def
-from util.enum_def import EIdType, EDbsOptType
-import db.dbs_common as dbs_common
+from util.enum_def import EIdType
+import rpc.scene_def as scene_def
 
 class idgen_t(object):
     def __init__(self, type_id_ = 0, server_id_ = 0):
@@ -16,7 +16,6 @@ class idgen_t(object):
         self.saving_flag = False
         self.runing_flag = 0
         self.m_bInit = False
-        self.init()
 
     def RetGetIDAutoInc(self, dbRet):
         print("RetGetIDAutoInc ", dbRet)
@@ -38,25 +37,21 @@ class idgen_t(object):
         self.m_bInit = True
 
     def init(self):
-        dbs_client.DoAsynCall(rpc_def.DbsGetIDData, 0, [self.type_id, self.server_id], funCb=self.RetGetIDAutoInc)
+        # dbs_client.DoAsynCall(rpc_def.DbsGetIDData, 0, [self.type_id, self.server_id], funCb=self.RetGetIDAutoInc)
+        pass
 
     def cleanup(self):
         assert False
 
     def gen_id(self):
         assert self.m_bInit is True
+        assert ff.service_name == scene_def.DB_SERVICE_DEFAULT
+
         self.auto_inc_id += 1
         self.update_id()
         low16 = self.auto_inc_id & 0xFFFF
         high  = (self.auto_inc_id >> 16) << 32
         return high | (self.server_id << 16)| low16
-
-    def gen_id_sector(self, nInc=1):
-        assert self.m_bInit is True
-        listRet = [self.auto_inc_id + 1, self.auto_inc_id + nInc]
-        self.auto_inc_id += nInc
-        self.update_id()
-        return listRet
 
     def dump_id(self, id_):
         low16 = id_ & 0xFFFF
@@ -70,9 +65,5 @@ class idgen_t(object):
         now_val = self.auto_inc_id
         dbs_client.DoAsynCall(rpc_def.DbsUpdateID, 0, [now_val, self.type_id, self.server_id, now_val])
 
-nServerID = 1
-_PlayerIDMgr = idgen_t(EIdType.eIdTypePlayer, nServerID)
-GenPlayerID = _PlayerIDMgr.gen_id
-
-_roomIDMgr = idgen_t(EIdType.eIdTypeRoom, nServerID)
-GenRoomIDSector = _roomIDMgr.gen_id_sector
+import conf as conf
+_idMgr = idgen_t(EIdType.eIdTypePlayer, conf.dict_cfg["server_id"])

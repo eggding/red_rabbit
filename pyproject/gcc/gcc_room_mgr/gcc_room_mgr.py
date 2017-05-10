@@ -46,8 +46,8 @@ class GccRoomMgr(object):
 
     def Gas2GccGenRoomID(self, szGasID, nPlayerGID, dictCfg):
         if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            import gcc.gcc_id_mgr.gcc_id_mgr as gcc_id_mgr
-            self.m_nRoomIDBegin, self.m_nRoomIDEnd = gcc_id_mgr.GenRoomIDSector()
+            import id_manager.room_id_mgr as room_id_mgr
+            self.m_nRoomIDBegin, self.m_nRoomIDEnd = room_id_mgr.GenRoomIDSector()
 
         nRoomId = self.m_nRoomIDBegin
         self.m_nRoomIDBegin += 1

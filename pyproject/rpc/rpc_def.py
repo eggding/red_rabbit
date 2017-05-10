@@ -53,6 +53,7 @@ DbsPersistentPlayerData = 7004
 DbsGetRoomIDSector = 7005
 DbsGetIDData = 7006
 DbsUpdateID = 7007
+DbsQueueStartUp = 7008
 
 OnDbAsynCallReturn = 8001
 OnDbsStartUp = 8002
