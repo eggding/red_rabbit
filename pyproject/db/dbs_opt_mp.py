@@ -12,6 +12,23 @@ import id_manager.idmanager as idmgr_
 from util.enum_def import EDbsOptType
 import dbs_common as dbs_common
 
+def ImpGetIDData(conn, job):
+    dictRet = {dbs_def.FLAG: True}
+    nTypeID, nServerID = job.GetParam()
+    sql = "SELECT `AUTO_INC_ID`, `RUNING_FLAG` FROM `id_generator` WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (nTypeID, nServerID)
+    ret = dbs_common.SyncQueryTrans(EDbsOptType.eQuery, conn, sql)
+    if len(ret) == 0:
+        # 数据库中还没有这一行，插入
+        sql = "INSERT INTO `id_generator` SET `AUTO_INC_ID` = '0',`TYPE` = '%d', `SERVER_ID` = '%d', `RUNING_FLAG` = '1' " % (nTypeID, nServerID)
+        assert dbs_common.SyncQueryTrans(EDbsOptType.eInsert, conn, sql) is not None
+        dictRet[dbs_def.RESULT] = [0, 1]
+        return dictRet
+
+    sql = "UPDATE `id_generator` SET `RUNING_FLAG` = '1' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (nTypeID, nServerID)
+    assert dbs_common.SyncQueryTrans(EDbsOptType.eUpdate, conn, sql) is not None
+    dictRet[dbs_def.RESULT] = ret[0]
+    return dictRet
+
 def ImpUpdateID(conn, job):
     now_val, type_id, server_id, now_val = job.GetParam()
     sql = "UPDATE `id_generator` SET `AUTO_INC_ID` = '%d' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d' AND `AUTO_INC_ID` < '%d'" % (now_val, type_id, server_id, now_val)

@@ -63,7 +63,6 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
         ffpython_t::add_path(arg_helper.get_option_value("-python_path"));
     }
     int ret = ffscene_t::open(arg_helper);
-    (*m_ffpython).load("main");
 
     if (arg_helper.is_enable_option("-gate"))
     {
@@ -80,6 +79,7 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
         //     m_db_mgr.start();
         // }
     }
+    (*m_ffpython).load("main");
 
     LOGTRACE((FFSCENE_PYTHON, "ffscene_python_t::open end ok"));
     return ret;

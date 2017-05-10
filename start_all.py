@@ -88,7 +88,7 @@ def StartAllGate():
 if __name__ == "__main__":
     KillAllProcess()
     StartBrokerCluster()
-    StartDbMgr()
     StartLoginAndGcc()
     StartAllGas()
     StartAllGate()
+    StartDbMgr()

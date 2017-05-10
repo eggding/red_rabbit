@@ -44,17 +44,10 @@ class GccRoomMgr(object):
                                                                      "gas_id": szRoomInGas,
                                                                      "room_id": nRoomID})
 
-    def OnGetRoomIdSectorCB(self, dictDbRet, listData):
-        if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            nBegin, nEnd = dictDbRet[dbs_def.RESULT]
-            self.m_nRoomIDBegin = nBegin
-            self.m_nRoomIDEnd = nEnd
-        self.Gas2GccGenRoomID(*listData)
-
     def Gas2GccGenRoomID(self, szGasID, nPlayerGID, dictCfg):
         if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            dbs_client.DoAsynCall(rpc_def.DbsGetRoomIDSector, 0, 0, funCb=self.OnGetRoomIdSectorCB, callbackParams=[szGasID, nPlayerGID, dictCfg])
-            return
+            import gcc.gcc_id_mgr.gcc_id_mgr as gcc_id_mgr
+            self.m_nRoomIDBegin, self.m_nRoomIDEnd = gcc_id_mgr.GenRoomIDSector()
 
         nRoomId = self.m_nRoomIDBegin
         self.m_nRoomIDBegin += 1

@@ -9,6 +9,15 @@ import db.dbs_mgr_mp as db_mgr
 import rpc.rpc_def as rpc_def
 import db.dbs_opt_mp as dbs_opt
 
+
+@ffext.reg_service(rpc_def.DbsUpdateID)
+def DbsUpdateID(dictSerial):
+    db_mgr.GenJob(dictSerial, "ImpUpdateID")
+
+@ffext.reg_service(rpc_def.DbsGetIDData)
+def DbsGetIDData(dictSerial):
+    db_mgr.GenJob(dictSerial, "ImpGetIDData")
+
 @ffext.reg_service(rpc_def.DbsGetRoomIDSector)
 def DbsGetRoomIDSector(dictSerial):
     db_mgr.GenJob(dictSerial, "ImpDbsGetRoomIDSector")

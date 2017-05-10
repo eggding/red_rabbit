@@ -36,6 +36,10 @@ import rpc.rpc_def as rpc_def
 import entity.entity_mgr as entity_mgr
 import gas.gas_scene.gas_scene_mgr as gas_scene_mgr
 
+@ffext.reg_service(rpc_def.OnDbsStartUp)
+def OnDbsStartUp(dictSerial):
+    pass
+
 @ffext.session_call(rpc_def.Gac2GasExeCode)
 def Gac2GasExeCode(nPlayerGID, szCode):
     if conf.dict_cfg["debug_env"] is False:

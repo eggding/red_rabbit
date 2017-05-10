@@ -18,7 +18,7 @@ def ImpUpdateID(conn, job):
     assert dbs_common.SyncQueryTrans(EDbsOptType.eUpdate, conn, sql) is not None
 
     dictSerial = {dbs_def.FLAG: True}
-    db_mgr.OnOneDbQueryDone(dictSerial, job)
+    return dictSerial
 
 def ImpDbsGetRoomIDSector(conn, job):
     nIdBegin, nIDEnd = idmgr_.GenRoomIDSector(conn)

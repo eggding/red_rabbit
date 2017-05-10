@@ -51,5 +51,8 @@ DbsTest = 7003
 # 持久化玩家数据
 DbsPersistentPlayerData = 7004
 DbsGetRoomIDSector = 7005
+DbsGetIDData = 7006
+DbsUpdateID = 7007
 
 OnDbAsynCallReturn = 8001
+OnDbsStartUp = 8002

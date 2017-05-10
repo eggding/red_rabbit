@@ -10,6 +10,7 @@ import MySQLdb
 import multiprocessing as multiprocessing
 import util.tick_mgr as tick_mgr
 import conf as conf
+import dbs_opt_mp as dbs_opt
 
 class SyncJob(object):
     def __init__(self):
@@ -92,25 +93,25 @@ class DbsMgr(object):
             charset = 'utf8',
         )
 
-        import dbs_opt_mp as dbs_opt
         while True:
             szSerial = workQueue.get()
-
-            dictData = json.loads(szSerial)
-
-            job = SyncJob()
-            funObj = getattr(dbs_opt, dictData[dbs_def.IMP_FUN])
-
-            szScene = dictData[dbs_def.SRC_SCENE]
-            szSceneCbID = dictData[dbs_def.CB_ID]
-            nSessionID = dictData[dbs_def.SESSION]
-            param = dictData[dbs_def.PARAMS]
-            job.Init(funObj, 0, nSessionID, szScene, szSceneCbID, param)
-            dictRet = job.exe(self.m_nConn)
-            if job.GetSceneName() is not None:
-                dictRet[dbs_def.SESSION] = job.GetSession()
-                dictRet[dbs_def.CB_ID] = job.GetCbID()
-                retQueue.put((job.GetSceneName(), json.dumps(dictRet)))
+            try:
+                dictData = json.loads(szSerial)
+                job = SyncJob()
+                funObj = getattr(dbs_opt, dictData[dbs_def.IMP_FUN])
+                szScene = dictData[dbs_def.SRC_SCENE]
+                szSceneCbID = dictData[dbs_def.CB_ID]
+                nSessionID = dictData[dbs_def.SESSION]
+                param = dictData[dbs_def.PARAMS]
+                job.Init(funObj, 0, nSessionID, szScene, szSceneCbID, param)
+                dictRet = job.exe(self.m_nConn)
+                if job.GetSceneName() is not None:
+                    dictRet[dbs_def.SESSION] = job.GetSession()
+                    dictRet[dbs_def.CB_ID] = job.GetCbID()
+                    retQueue.put((job.GetSceneName(), json.dumps(dictRet)))
+            except:
+                pass
+                # retQueue.put((False, job.GetSceneName(), json.dumps(dictRet)))
 
     def Init(self):
         if self.m_bInited is True:
@@ -128,6 +129,17 @@ class DbsMgr(object):
             p.start()
 
         self.DispathWorkRet()
+        DbsMgr.NoticeOtherService()
+
+    @staticmethod
+    def NoticeOtherService():
+        listService = ["gcc", "login"]
+        nGasNum = conf.dict_cfg["gas"]["num"]
+        for i in xrange(0, nGasNum):
+            listService.append("gas@{0}".format(i))
+
+        # for szScene in listService:
+        #     ffext.call_service(szScene, rpc_def.OnDbsStartUp, {})
 
     def Add2JobQueue(self, nChannel, szSerial):
         nQueueID = nChannel % self.m_nQueueNum
