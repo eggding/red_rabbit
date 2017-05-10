@@ -29,7 +29,7 @@ class idgen_t(object):
             self.runing_flag = int(ret[0][1])
             if self.runing_flag != 0:
                 self.auto_inc_id += 500
-                ffext.ERROR('last idgen shut down not ok, inc 50')
+                # ffext.ERROR('last idgen shut down not ok, inc 50')
 
             sql = "UPDATE `id_generator` SET `RUNING_FLAG` = '1' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d'" % (self.type_id, self.server_id)
             assert dbs_common.SyncQueryTrans(EDbsOptType.eUpdate, conn, sql) is not None

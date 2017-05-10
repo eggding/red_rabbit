@@ -18,8 +18,8 @@ def TestEnterRoom()\
 
 def StartGame():
     threads = []
-    t1 = threading.Thread(target=CreateRoom)
-    threads.append(t1)
+    # t1 = threading.Thread(target=CreateRoom)
+    # threads.append(t1)
 
     t2 = threading.Thread(target=TestEnterRoom)
     threads.append(t2)
@@ -35,7 +35,7 @@ def StartGame():
         t.start()
 
 if __name__ == '__main__':
-    for i in xrange(0, 1250):
+    for i in xrange(0, 10):
         print("start game ", i)
         print("\n" * 10)
         StartGame()
