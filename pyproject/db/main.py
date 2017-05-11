@@ -20,7 +20,8 @@ def DbsGetIDData(dictSerial):
 
 @ffext.reg_service(rpc_def.DbsGetRoomIDSector)
 def DbsGetRoomIDSector(dictSerial):
-    db_mgr.GenJob(dictSerial, "ImpDbsGetRoomIDSector")
+    pass
+    # db_mgr.GenJob(dictSerial, "ImpDbsGetRoomIDSector")
 
 @ffext.reg_service(rpc_def.DbsPersistentPlayerData)
 def DbsPersistentPlayerData(dictSerial):

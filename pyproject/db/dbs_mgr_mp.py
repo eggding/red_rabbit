@@ -147,13 +147,13 @@ class DbsMgr(object):
 
         self.m_dictDbsQueueLoad = {}
         for i in xrange(0, self.m_nQueueNum):
-            self.m_dictDbsQueueLoad["db_queue@{0}".format(i)] = False
+            self.m_dictDbsQueueLoad["{0}{1}".format(scene_def.DB_SERVICE_DEFAULT, i)] = False
 
     def OnQueueStartUp(self, szQueueName):
         if ff.service_name != scene_def.DB_SERVICE_DEFAULT:
             return
         self.m_dictDbsQueueLoad[szQueueName] = True
-        for bFlag in self.m_dictChannel2Queue.itervalues():
+        for bFlag in self.m_dictDbsQueueLoad.itervalues():
             if bFlag is False:
                 return
         DbsMgr.NoticeOtherService()

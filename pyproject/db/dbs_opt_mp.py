@@ -10,6 +10,7 @@ import dbs_def as dbs_def
 import db.table.table_property_def as table_property_def
 from util.enum_def import EDbsOptType
 import dbs_common as dbs_common
+import id_manager.player_id_mgr as player_id_mgr
 
 def ImpGetIDData(conn, job):
     dictRet = {dbs_def.FLAG: True}
@@ -32,15 +33,7 @@ def ImpUpdateID(conn, job):
     now_val, type_id, server_id, now_val = job.GetParam()
     sql = "UPDATE `id_generator` SET `AUTO_INC_ID` = '%d' WHERE `TYPE` = '%d' AND `SERVER_ID` = '%d' AND `AUTO_INC_ID` < '%d'" % (now_val, type_id, server_id, now_val)
     assert dbs_common.SyncQueryTrans(EDbsOptType.eUpdate, conn, sql) is not None
-
     dictSerial = {dbs_def.FLAG: True}
-    # db_mgr.OnOneDbQueryDone(dictSerial, job)
-    return dictSerial
-
-def ImpDbsGetRoomIDSector(conn, job):
-    nIdBegin, nIDEnd = idmgr_.GenRoomIDSector(conn)
-    dictSerial = {dbs_def.FLAG: True,
-                  dbs_def.RESULT: [nIdBegin, nIDEnd]}
     # db_mgr.OnOneDbQueryDone(dictSerial, job)
     return dictSerial
 
@@ -61,7 +54,7 @@ def ImpGetUserSession(conn, job):
         return dictRet
 
     if len(ret) == 0:
-        session_id = idmgr_.GenPlayerID(conn)
+        session_id = player_id_mgr.GenPlayerID(conn)
         sql = "INSERT INTO `account` VALUES('%s', '%s', now(), now())" % (szAuthKey, session_id)
         job.SetSession(session_id)
         ret = dbs_common.SyncQueryTrans(EDbsOptType.eInsert, conn, sql)
