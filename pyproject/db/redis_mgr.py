@@ -45,3 +45,39 @@ def GetRet():
 
 ProdJob()
 GetRet()
+#
+# BIN=app_engine
+#
+# #源文件目录
+# SrcDir= . fflib/base fflib/net fflib/rpc fflib/db
+# #头文件目录
+# IncDir=  fflib/ /usr/local/python27/include/python2.7 /usr/include
+# #连接库目录
+# LibDir= /usr/local/python27/lib /usr/local/mysql/lib
+# SRCS=$(foreach dir,$(SrcDir),$(wildcard $(dir)/*.cpp))
+# #INCS=$(foreach dir,$(IncDir),$(wildcard $(dir)/*.h))
+# INCS=$(foreach dir,$(IncDir),$(addprefix -I,$(dir)))
+# LINKS=$(foreach dir,$(LibDir),$(addprefix -L,$(dir)))
+# CFLAGS := $(CFLAGS) $(INCS)
+# LDFLAGS:= $(LINKS) $(LDFLAGS)
+# CC=gcc
+# ARCH=PC
+# OBJS = $(SRCS:%.cpp=%.o)
+# .PHONY:all clean
+#
+# all:$(BIN)
+# $(BIN):$(OBJS)
+#         gcc -c fflib/db/sqlite3.c -o sqlite3.o
+#         g++ -o $(BIN) $(OBJS) sqlite3.o $(LDFLAGS)
+#         @echo  " OK! Compile $@ "
+# # @$(LN) $(shell pwd)/$(LIB_NAME).$(LIB_VER) /lib/$(LIB_NAME)
+#
+# %.o:%.cpp
+#         @echo  "[$(ARCH)] Compile $@..."
+#         @$(CC) $(CFLAGS) -fno-stack-protector -c $< -o $@
+#
+# .PHONY: clean
+# clean:
+#         @echo  "[$(ARCH)] Cleaning files..."
+#         @$(RM) $(OBJS) $(BIN)
+#         @$(RM) sqlite3.o

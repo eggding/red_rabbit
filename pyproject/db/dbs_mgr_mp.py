@@ -156,7 +156,9 @@ class DbsMgr(object):
         for bFlag in self.m_dictDbsQueueLoad.itervalues():
             if bFlag is False:
                 return
-        DbsMgr.NoticeOtherService()
+
+        tick_mgr.RegisterOnceTick(1000, DbsMgr.NoticeOtherService)
+        # DbsMgr.NoticeOtherService()
 
     @staticmethod
     def NoticeOtherService():
