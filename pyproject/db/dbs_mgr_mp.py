@@ -55,7 +55,7 @@ class DbsMgr(object):
         self.m_nQueueNum = conf.dict_cfg["dbs"]["queue_num"]
         self.m_dictChannel2Queue = {}
         self.m_dictChannel2QueueRet = {}
-        self.m_nTick2CheckWorkQueue = 1
+        self.m_nTick2CheckWorkQueue = 5
         self.m_nConn = None
         self.m_bInited = False
 
@@ -104,11 +104,13 @@ class DbsMgr(object):
                 nSessionID = dictData[dbs_def.SESSION]
                 param = dictData[dbs_def.PARAMS]
                 job.Init(funObj, 0, nSessionID, szScene, szSceneCbID, param)
+                print("job start ", time.time(), dictData[dbs_def.IMP_FUN])
                 dictRet = job.exe(self.m_nConn)
                 if job.GetSceneName() is not None:
                     dictRet[dbs_def.SESSION] = job.GetSession()
                     dictRet[dbs_def.CB_ID] = job.GetCbID()
                     retQueue.put((job.GetSceneName(), json.dumps(dictRet)))
+                    print("job done ", time.time(), dictData[dbs_def.IMP_FUN])
             except:
                 pass
                 # retQueue.put((False, job.GetSceneName(), json.dumps(dictRet)))
@@ -129,7 +131,8 @@ class DbsMgr(object):
             p.start()
 
         self.DispathWorkRet()
-        DbsMgr.NoticeOtherService()
+
+        tick_mgr.RegisterOnceTick(1000, DbsMgr.NoticeOtherService)
 
     @staticmethod
     def NoticeOtherService():
@@ -138,8 +141,8 @@ class DbsMgr(object):
         for i in xrange(0, nGasNum):
             listService.append("gas@{0}".format(i))
 
-        # for szScene in listService:
-        #     ffext.call_service(szScene, rpc_def.OnDbsStartUp, {})
+        for szScene in listService:
+            ffext.call_service(szScene, rpc_def.OnDbsStartUp, {})
 
     def Add2JobQueue(self, nChannel, szSerial):
         nQueueID = nChannel % self.m_nQueueNum
@@ -147,9 +150,36 @@ class DbsMgr(object):
         jobQueue.put(szSerial)
 
     def GenJob(self, dictSerial, szFunName):
+        if self.m_nConn is None:
+            cfg = conf.dict_cfg["dbs"]
+            szHost, port = cfg["host"].split(":")
+            self.m_nConn = MySQLdb.connect(
+                host=szHost,
+                port=int(port),
+                user=cfg["user"],
+                passwd=cfg["pwd"],
+                db=cfg["db"],
+                charset='utf8',
+            )
+
+        print("Gen job ", time.time(), szFunName)
         dictSerial[dbs_def.IMP_FUN] = szFunName
         nChannel = dictSerial[dbs_def.USE_CHANNEL]
-        self.Add2JobQueue(nChannel, json.dumps(dictSerial))
+        # self.Add2JobQueue(nChannel, json.dumps(dictSerial))
+        job = SyncJob()
+        funObj = getattr(dbs_opt, dictSerial[dbs_def.IMP_FUN])
+        szScene = dictSerial[dbs_def.SRC_SCENE]
+        szSceneCbID = dictSerial[dbs_def.CB_ID]
+        nSessionID = dictSerial[dbs_def.SESSION]
+        param = dictSerial[dbs_def.PARAMS]
+        job.Init(funObj, 0, nSessionID, szScene, szSceneCbID, param)
+        print("job start ", time.time(), dictSerial[dbs_def.IMP_FUN])
+        dictRet = job.exe(self.m_nConn)
+        if job.GetSceneName() is not None:
+            dictRet[dbs_def.SESSION] = job.GetSession()
+            dictRet[dbs_def.CB_ID] = job.GetCbID()
+            # retQueue.put((job.GetSceneName(), json.dumps(dictRet)))
+            ffext.call_service(szScene, rpc_def.OnDbAsynCallReturn, json.dumps(dictRet))
 
 
 _dbs = DbsMgr()
