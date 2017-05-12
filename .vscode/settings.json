@@ -29,6 +29,7 @@
         "exception": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
-        "cerrno": "cpp"
+        "cerrno": "cpp",
+        "array": "cpp"
     }
 }

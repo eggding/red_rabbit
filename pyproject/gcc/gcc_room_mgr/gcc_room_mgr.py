@@ -6,6 +6,7 @@ import rpc.rpc_def as rpc_def
 import db.dbs_client as dbs_client
 import db.dbs_def as dbs_def
 import gcc_room_obj as gcc_room_obj
+import id_manager.room_id_mgr as room_id_mgr
 
 class GccRoomMgr(object):
     def __init__(self):
@@ -46,7 +47,6 @@ class GccRoomMgr(object):
 
     def Gas2GccGenRoomID(self, szGasID, nPlayerGID, dictCfg):
         if self.m_nRoomIDBegin > self.m_nRoomIDEnd:
-            import id_manager.room_id_mgr as room_id_mgr
             self.m_nRoomIDBegin, self.m_nRoomIDEnd = room_id_mgr.GenRoomIDSector()
 
         nRoomId = self.m_nRoomIDBegin

@@ -1,10 +1,10 @@
 # coding=UTF-8
 
-import ffext
+import ffext, ff
 import sys
 sys.path.append("./pyproject")
 
-import util.tick_mgr as tick_mgr
+import rpc.scene_def as scene_def
 import db.dbs_mgr_mp as db_mgr
 import rpc.rpc_def as rpc_def
 import db.dbs_opt_mp as dbs_opt
@@ -21,7 +21,6 @@ def DbsGetIDData(dictSerial):
 @ffext.reg_service(rpc_def.DbsGetRoomIDSector)
 def DbsGetRoomIDSector(dictSerial):
     pass
-    # db_mgr.GenJob(dictSerial, "ImpDbsGetRoomIDSector")
 
 @ffext.reg_service(rpc_def.DbsPersistentPlayerData)
 def DbsPersistentPlayerData(dictSerial):
@@ -43,7 +42,12 @@ def DbsLoadPlayerData(dictSerial):
 def DbsGetUserSession(dictSerial):
     db_mgr.GenJob(dictSerial, "ImpGetUserSession")
 
-@ffext.reg_service(rpc_def.DbsQueueStartUp)
-def DbsQueueStartUp(dictSerial):
-    szName = dictSerial["queue_name"]
-    db_mgr.OnQueueStartUp(szName)
+@ffext.reg_service(rpc_def.OnAllServiceStartUp)
+def OnAllServiceStartUp(dictSerial):
+    pass
+
+def A():
+    ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnServiceConn, {"service": ff.service_name})
+
+import util.tick_mgr as tick_mgr
+tick_mgr.RegisterOnceTick(100, A)

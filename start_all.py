@@ -73,6 +73,7 @@ def StartAllGate():
     szCmd = "{0} -scene gate@master {1} -python_path ./pyproject/gate_mgr &".format(szEngineBin, szBrokerMaster)
     print(szCmd)
     os.system(szCmd)
+    time.sleep(0.1)
 
     for i in xrange(0, 10):
         szGateName = "gate@{0}".format(i)
@@ -88,7 +89,7 @@ def StartAllGate():
 if __name__ == "__main__":
     KillAllProcess()
     StartBrokerCluster()
+    StartAllGate()
     StartLoginAndGcc()
     StartAllGas()
-    StartAllGate()
     StartDbMgr()

@@ -56,4 +56,5 @@ DbsUpdateID = 7007
 DbsQueueStartUp = 7008
 
 OnDbAsynCallReturn = 8001
-OnDbsStartUp = 8002
+OnAllServiceStartUp = 8002
+OnServiceConn = 8003

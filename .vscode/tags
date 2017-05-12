@@ -7,12 +7,10 @@
 ALREADY_OPEN	../pylib/thrift/transport/TTransport.py	/^  ALREADY_OPEN = 2$/;"	kind:variable	line:30
 Add	../pylib/google/protobuf/descriptor_database.py	/^  def Add(self, file_desc_proto):$/;"	kind:member	line:43
 Add	../pylib/google/protobuf/descriptor_pool.py	/^  def Add(self, file_desc_proto):$/;"	kind:member	line:83
-Add2JobQueue	../pyproject/db/backup.py	/^    def Add2JobQueue(self, szSrcScene, cb_id, nSessionID, nChannel, funObj, param=None):$/;"	kind:member	line:178
-Add2JobQueue	../pyproject/db/backup.py	/^Add2JobQueue = _dbs.Add2JobQueue$/;"	kind:variable	line:200
 Add2JobQueue	../pyproject/db/dbs_mgr.py	/^    def Add2JobQueue(self, szSrcScene, cb_id, nSessionID, nChannel, funObj, param=None):$/;"	kind:member	line:152
 Add2JobQueue	../pyproject/db/dbs_mgr.py	/^Add2JobQueue = _dbs.Add2JobQueue$/;"	kind:variable	line:174
-Add2JobQueue	../pyproject/db/dbs_mgr_mp.py	/^    def Add2JobQueue(self, nChannel, szSerial):$/;"	kind:member	line:133
-Add2JobQueue	../pyproject/db/dbs_mgr_mp.py	/^Add2JobQueue = _dbs.Add2JobQueue$/;"	kind:variable	line:145
+Add2JobQueue	../pyproject/db/dbs_mgr_mp.py	/^    def Add2JobQueue(self, nChannel, szSerial):$/;"	kind:member	line:174
+Add2JobQueue	../pyproject/db/dbs_mgr_mp.py	/^Add2JobQueue = _dbs.Add2JobQueue$/;"	kind:variable	line:195
 AddCompment	../pyproject/entity/base_entity.py	/^    def AddCompment(self, compObj):$/;"	kind:member	line:34
 AddDecoder	../pylib/google/protobuf/internal/python_message.py	/^  def AddDecoder(wiretype, is_packed):$/;"	kind:function	line:210
 AddEntity	../pyproject/entity/entity_mgr.py	/^def AddEntity(session, entity):$/;"	kind:function	line:5
@@ -24,7 +22,10 @@ AddTouchEvent	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def AddTouchEvent(self
 All2ExeCode	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^def All2ExeCode(dictData):$/;"	kind:function	line:119
 All2ExeCode	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^def All2ExeCode(dictData):$/;"	kind:function	line:85
 All2ExeCode	../pyproject/rpc/rpc_def.py	/^All2ExeCode = 4000$/;"	kind:variable	line:44
-AsynJob	../pyproject/db/backup.py	/^class AsynJob(object):$/;"	kind:class	line:10
+AppendInt	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendInt(self, nVal):$/;"	kind:member	line:20
+AppendInt	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendInt(self, nVal):$/;"	kind:member	line:90
+AppendStr	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendStr(self, szMsg):$/;"	kind:member	line:11
+AppendStr	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendStr(self, szMsg):$/;"	kind:member	line:81
 AsynJob	../pyproject/db/dbs_mgr.py	/^class AsynJob(object):$/;"	kind:class	line:10
 AtEnd	../pylib/google/protobuf/text_format.py	/^  def AtEnd(self):$/;"	kind:member	line:328
 AutoQiPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def AutoQiPai(self, nPos):$/;"	kind:member	line:287
@@ -37,12 +38,16 @@ BINARY_DIST	../pylib/pkg_resources.py	/^BINARY_DIST = 2$/;"	kind:variable	line:1
 BOOL	../pylib/thrift/Thrift.py	/^  BOOL   = 2$/;"	kind:variable	line:26
 BOOL_READ	../pylib/thrift/protocol/TCompactProtocol.py	/^BOOL_READ = 8$/;"	kind:variable	line:33
 BOOL_WRITE	../pylib/thrift/protocol/TCompactProtocol.py	/^BOOL_WRITE = 4$/;"	kind:variable	line:29
+BROKER_CLIENT_REGISTER	../pyproject/encode_mgr/bin_encoder.py	/^BROKER_CLIENT_REGISTER = 3$/;"	kind:variable	line:73
 BYTE	../pylib/thrift/Thrift.py	/^  BYTE   = 3$/;"	kind:variable	line:27
 BYTE	../pylib/thrift/protocol/TCompactProtocol.py	/^  BYTE = 0x03$/;"	kind:variable	line:83
 BaseCompment	../pyproject/compment/base_compment.py	/^class BaseCompment(object):$/;"	kind:class	line:3
 BaseContainer	../pylib/google/protobuf/internal/containers.py	/^class BaseContainer(object):$/;"	kind:class	line:45
 BaseEntity	../pyproject/entity/base_entity.py	/^class BaseEntity(object):$/;"	kind:class	line:7
 BaseScene	../pyproject/base_scene/base_scene.py	/^class BaseScene(object):$/;"	kind:class	line:10
+BinDecoder	../pyproject/encode_mgr/bin_encoder.py	/^class BinDecoder(object):$/;"	kind:class	line:29
+BinEncoder	../pyproject/encode_mgr/bin_encoder.py	/^class BinEncoder(object):$/;"	kind:class	line:6
+BinEncoder	../pyproject/encode_mgr/bin_encoder.py	/^class BinEncoder(object):$/;"	kind:class	line:76
 BoolByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def BoolByteSize(field_number, b):$/;"	kind:function	line:175
 BoolDecoder	../pylib/google/protobuf/internal/decoder.py	/^BoolDecoder = _ModifiedDecoder($/;"	kind:variable	line:373
 BoolEncoder	../pylib/google/protobuf/internal/encoder.py	/^def BoolEncoder(field_number, is_repeated, is_packed):$/;"	kind:function	line:615
@@ -102,8 +107,6 @@ CheckShiSanYao	../pyproject/gas/gas_mj/check_hu.py	/^def CheckShiSanYao(listMj, 
 CheckValue	../pylib/google/protobuf/internal/type_checkers.py	/^  def CheckValue(self, proposed_value):$/;"	kind:member	line:100
 CheckValue	../pylib/google/protobuf/internal/type_checkers.py	/^  def CheckValue(self, proposed_value):$/;"	kind:member	line:113
 CheckValue	../pylib/google/protobuf/internal/type_checkers.py	/^  def CheckValue(self, proposed_value):$/;"	kind:member	line:87
-CheckWorkTime	../pyproject/db/backup.py	/^    def CheckWorkTime(self, a):$/;"	kind:member	line:82
-ChooseMaxLen	../pyproject/db/backup.py	/^    def ChooseMaxLen(self):$/;"	kind:member	line:67
 ChooseMaxLen	../pyproject/db/dbs_mgr.py	/^    def ChooseMaxLen(self):$/;"	kind:member	line:64
 ChooseOneGas	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def ChooseOneGas(self):$/;"	kind:member	line:26
 Clear	../pylib/google/protobuf/internal/cpp_message.py	/^  def Clear(self):$/;"	kind:function	line:539
@@ -216,22 +219,23 @@ DEVELOP_DIST	../pylib/pkg_resources.py	/^DEVELOP_DIST = -1$/;"	kind:variable	lin
 DISTRO	../pylib/pkg_resources.py	/^DISTRO   = re.compile(r"\\s*((\\w|[-.])+)").match    # Distribution or extra$/;"	kind:variable	line:1860
 DOUBLE	../pylib/thrift/Thrift.py	/^  DOUBLE = 4$/;"	kind:variable	line:29
 DOUBLE	../pylib/thrift/protocol/TCompactProtocol.py	/^  DOUBLE = 0x07$/;"	kind:variable	line:87
-DbsCreateUserSession	../pyproject/db/main.py	/^def DbsCreateUserSession(dictSerial):$/;"	kind:function	line:34
+DbsCreateUserSession	../pyproject/db/main.py	/^def DbsCreateUserSession(dictSerial):$/;"	kind:function	line:35
 DbsCreateUserSession	../pyproject/rpc/rpc_def.py	/^DbsCreateUserSession = 7002$/;"	kind:variable	line:48
 DbsGetIDData	../pyproject/db/main.py	/^def DbsGetIDData(dictSerial):$/;"	kind:function	line:18
 DbsGetIDData	../pyproject/rpc/rpc_def.py	/^DbsGetIDData = 7006$/;"	kind:variable	line:54
 DbsGetRoomIDSector	../pyproject/db/main.py	/^def DbsGetRoomIDSector(dictSerial):$/;"	kind:function	line:22
 DbsGetRoomIDSector	../pyproject/rpc/rpc_def.py	/^DbsGetRoomIDSector = 7005$/;"	kind:variable	line:53
-DbsGetUserSession	../pyproject/db/main.py	/^def DbsGetUserSession(dictSerial):$/;"	kind:function	line:42
+DbsGetUserSession	../pyproject/db/main.py	/^def DbsGetUserSession(dictSerial):$/;"	kind:function	line:43
 DbsGetUserSession	../pyproject/rpc/rpc_def.py	/^DbsGetUserSession = 7000$/;"	kind:variable	line:46
-DbsLoadPlayerData	../pyproject/db/main.py	/^def DbsLoadPlayerData(dictSerial):$/;"	kind:function	line:38
+DbsLoadPlayerData	../pyproject/db/main.py	/^def DbsLoadPlayerData(dictSerial):$/;"	kind:function	line:39
 DbsLoadPlayerData	../pyproject/rpc/rpc_def.py	/^DbsLoadPlayerData = 7001$/;"	kind:variable	line:47
-DbsMgr	../pyproject/db/backup.py	/^class DbsMgr(object):$/;"	kind:class	line:48
 DbsMgr	../pyproject/db/dbs_mgr.py	/^class DbsMgr(object):$/;"	kind:class	line:48
-DbsMgr	../pyproject/db/dbs_mgr_mp.py	/^class DbsMgr(object):$/;"	kind:class	line:53
-DbsPersistentPlayerData	../pyproject/db/main.py	/^def DbsPersistentPlayerData(dictSerial):$/;"	kind:function	line:26
+DbsMgr	../pyproject/db/dbs_mgr_mp.py	/^class DbsMgr(object):$/;"	kind:class	line:54
+DbsPersistentPlayerData	../pyproject/db/main.py	/^def DbsPersistentPlayerData(dictSerial):$/;"	kind:function	line:27
 DbsPersistentPlayerData	../pyproject/rpc/rpc_def.py	/^DbsPersistentPlayerData = 7004$/;"	kind:variable	line:52
-DbsTest	../pyproject/db/main.py	/^def DbsTest(dictSerial):$/;"	kind:function	line:30
+DbsQueueStartUp	../pyproject/db/main.py	/^def DbsQueueStartUp(dictSerial):$/;"	kind:function	line:47
+DbsQueueStartUp	../pyproject/rpc/rpc_def.py	/^DbsQueueStartUp = 7008$/;"	kind:variable	line:56
+DbsTest	../pyproject/db/main.py	/^def DbsTest(dictSerial):$/;"	kind:function	line:31
 DbsTest	../pyproject/rpc/rpc_def.py	/^DbsTest = 7003$/;"	kind:variable	line:49
 DbsUpdateID	../pyproject/db/main.py	/^def DbsUpdateID(dictSerial):$/;"	kind:function	line:14
 DbsUpdateID	../pyproject/rpc/rpc_def.py	/^DbsUpdateID = 7007$/;"	kind:variable	line:55
@@ -267,16 +271,14 @@ Destroy	../pyproject/state/state_machine.py	/^    def Destroy(self):$/;"	kind:me
 DingZhuang	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def DingZhuang(self):$/;"	kind:member	line:101
 Dismiss	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def Dismiss(self):$/;"	kind:member	line:151
 DispatchRequest	../pyproject/wsurl/wsurl.py	/^    def DispatchRequest(self):$/;"	kind:member	line:89
-DispathJob	../pyproject/db/backup.py	/^    def DispathJob(self, a):$/;"	kind:member	line:94
 DispathJob	../pyproject/db/dbs_mgr.py	/^    def DispathJob(self, a):$/;"	kind:member	line:79
-DispathWorkRet	../pyproject/db/dbs_mgr_mp.py	/^    def DispathWorkRet(self):$/;"	kind:member	line:69
+DispathWorkRet	../pyproject/db/dbs_mgr_mp.py	/^    def DispathWorkRet(self):$/;"	kind:member	line:67
 Distribution	../pylib/pkg_resources.py	/^class Distribution(object):$/;"	kind:class	line:2052
 DistributionNotFound	../pylib/pkg_resources.py	/^class DistributionNotFound(ResolutionError):$/;"	kind:class	line:172
 DoAsynCall	../pyproject/db/dbs_client.py	/^def DoAsynCall(cmd, session, sendParams, funCb=None, callbackParams=None, nChannel=None):$/;"	kind:function	line:21
 DoubleByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def DoubleByteSize(field_number, double):$/;"	kind:function	line:171
 DoubleDecoder	../pylib/google/protobuf/internal/decoder.py	/^DoubleDecoder = _DoubleDecoder()$/;"	kind:variable	line:371
 DoubleEncoder	../pylib/google/protobuf/internal/encoder.py	/^DoubleEncoder   = _FloatingPointEncoder(wire_format.WIRETYPE_FIXED64, '<d')$/;"	kind:variable	line:612
-DumpDbQueue	../pyproject/db/backup.py	/^    def DumpDbQueue(self):$/;"	kind:member	line:125
 DumpDbQueue	../pyproject/db/dbs_mgr.py	/^    def DumpDbQueue(self):$/;"	kind:member	line:115
 DumpPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def DumpPos(self, nPos):$/;"	kind:member	line:202
 DumpTraceBack	../pylib/save_dump_mgr.py	/^def DumpTraceBack():$/;"	kind:function	line:124
@@ -297,6 +299,8 @@ EXCEPTION	../pylib/thrift/Thrift.py	/^  EXCEPTION = 3$/;"	kind:variable	line:65
 EggMetadata	../pylib/pkg_resources.py	/^class EggMetadata(ZipProvider):$/;"	kind:class	line:1543
 EggProvider	../pylib/pkg_resources.py	/^class EggProvider(NullProvider):$/;"	kind:class	line:1246
 EmptyProvider	../pylib/pkg_resources.py	/^class EmptyProvider(NullProvider):$/;"	kind:class	line:1297
+Encode	../pyproject/encode_mgr/bin_encoder.py	/^    def Encode(self, cmd):$/;"	kind:member	line:25
+Encode	../pyproject/encode_mgr/bin_encoder.py	/^    def Encode(self, cmd):$/;"	kind:member	line:95
 EncodeError	../pylib/google/protobuf/message.py	/^class EncodeError(Error): pass$/;"	kind:class	line:42
 EncodeField	../pylib/google/protobuf/internal/encoder.py	/^      def EncodeField(write, value):$/;"	kind:function	line:431
 EncodeField	../pylib/google/protobuf/internal/encoder.py	/^      def EncodeField(write, value):$/;"	kind:function	line:465
@@ -407,7 +411,7 @@ Gac2GasChangeScene	../pyproject/rpc/rpc_def.py	/^Gac2GasChangeScene = 10002$/;"	
 Gac2GasCreateRoom	../pyproject/rpc/rpc_def.py	/^Gac2GasCreateRoom = 10010$/;"	kind:variable	line:7
 Gac2GasEnterRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasEnterRoom(nPlayerGID, reqObj):$/;"	kind:function	line:142
 Gac2GasEnterRoom	../pyproject/rpc/rpc_def.py	/^Gac2GasEnterRoom = 10011$/;"	kind:variable	line:8
-Gac2GasExeCode	../pyproject/gas/main.py	/^def Gac2GasExeCode(nPlayerGID, szCode):$/;"	kind:function	line:40
+Gac2GasExeCode	../pyproject/gas/main.py	/^def Gac2GasExeCode(nPlayerGID, szCode):$/;"	kind:function	line:44
 Gac2GasExeCode	../pyproject/rpc/rpc_def.py	/^Gac2GasExeCode = 10900$/;"	kind:variable	line:11
 Gac2GasOptMj	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasOptMj(nPlayerGID, reqObj):$/;"	kind:function	line:148
 Gac2GasOptMj	../pyproject/rpc/rpc_def.py	/^Gac2GasOptMj = 10021$/;"	kind:variable	line:9
@@ -461,33 +465,29 @@ GccRoomObj	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^class GccRoomObj(obje
 GccSceneMgr	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^class GccSceneMgr(object):$/;"	kind:class	line:15
 GenCardArr	../pyproject/gas/gas_mj/check_hu.py	/^def GenCardArr():$/;"	kind:function	line:76
 GenCbSerial	../pyproject/db/dbs_client.py	/^def GenCbSerial():$/;"	kind:function	line:16
-GenJob	../pyproject/db/backup.py	/^    def GenJob(self, dictSerial, funObj):$/;"	kind:member	line:189
-GenJob	../pyproject/db/backup.py	/^GenJob = _dbs.GenJob$/;"	kind:variable	line:201
 GenJob	../pyproject/db/dbs_mgr.py	/^    def GenJob(self, dictSerial, funObj):$/;"	kind:member	line:163
 GenJob	../pyproject/db/dbs_mgr.py	/^GenJob = _dbs.GenJob$/;"	kind:variable	line:175
-GenJob	../pyproject/db/dbs_mgr_mp.py	/^    def GenJob(self, dictSerial, szFunName):$/;"	kind:member	line:138
-GenJob	../pyproject/db/dbs_mgr_mp.py	/^GenJob = _dbs.GenJob$/;"	kind:variable	line:146
+GenJob	../pyproject/db/dbs_mgr_mp.py	/^    def GenJob(self, dictSerial, szFunName):$/;"	kind:member	line:179
+GenJob	../pyproject/db/dbs_mgr_mp.py	/^GenJob = _dbs.GenJob$/;"	kind:variable	line:196
 GenJobID	../pyproject/wsurl/wsurl.py	/^    def GenJobID(self):$/;"	kind:member	line:34
-GenPlayerID	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^GenPlayerID = _PlayerIDMgr.gen_id$/;"	kind:variable	line:75
-GenPlayerID	../pyproject/id_manager/idmanager.py	/^GenPlayerID = _PlayerIDMgr.gen_id$/;"	kind:variable	line:102
+GenPlayerID	../pyproject/id_manager/player_id_mgr.py	/^GenPlayerID = _idMgr.gen_id$/;"	kind:variable	line:96
 GenPos	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GenPos(self):$/;"	kind:member	line:163
-GenRoomIDSector	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^GenRoomIDSector = _roomIDMgr.gen_id_sector$/;"	kind:variable	line:78
-GenRoomIDSector	../pyproject/id_manager/idmanager.py	/^GenRoomIDSector = _roomIDMgr.gen_id_sector$/;"	kind:variable	line:105
+GenRoomIDSector	../pyproject/id_manager/room_id_mgr.py	/^GenRoomIDSector = _roomIDMgr.gen_id_sector$/;"	kind:variable	line:73
 GeneratedProtocolMessageType	../pylib/google/protobuf/reflection.py	/^class GeneratedProtocolMessageType(type):$/;"	kind:class	line:73
 GeneratedServiceStubType	../pylib/google/protobuf/service_reflection.py	/^class GeneratedServiceStubType(GeneratedServiceType):$/;"	kind:class	line:84
 GeneratedServiceType	../pylib/google/protobuf/service_reflection.py	/^class GeneratedServiceType(type):$/;"	kind:class	line:42
 Get	../pyproject/wsurl/wsurl.py	/^    def Get(self,url, callback):$/;"	kind:member	line:62
 GetAllBaiBanComb	../pyproject/gas/gas_mj/check_hu.py	/^def GetAllBaiBanComb(nUsedNum, nTotalNum, listOrder):$/;"	kind:function	line:158
 GetBaiBanCard	../pyproject/gas/gas_mj/check_hu.py	/^def GetBaiBanCard():$/;"	kind:function	line:64
+GetBytes	../pyproject/encode_mgr/bin_encoder.py	/^    def GetBytes(self, nbytes):$/;"	kind:member	line:33
 GetCardListByPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCardListByPos(self, nPos):$/;"	kind:member	line:213
 GetCardListEx	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCardListEx(self, nPos):$/;"	kind:member	line:57
 GetCardNameChinese	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardNameChinese(nCard):$/;"	kind:function	line:73
 GetCardNum	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardNum():$/;"	kind:function	line:80
 GetCardType	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardType(nCard):$/;"	kind:function	line:67
 GetCardValue	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardValue(nCard):$/;"	kind:function	line:70
-GetCbID	../pyproject/db/backup.py	/^    def GetCbID(self):$/;"	kind:member	line:36
 GetCbID	../pyproject/db/dbs_mgr.py	/^    def GetCbID(self):$/;"	kind:member	line:36
-GetCbID	../pyproject/db/dbs_mgr_mp.py	/^    def GetCbID(self):$/;"	kind:member	line:41
+GetCbID	../pyproject/db/dbs_mgr_mp.py	/^    def GetCbID(self):$/;"	kind:member	line:42
 GetConfig	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetConfig(self):$/;"	kind:member	line:216
 GetConfig	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetConfig(self):$/;"	kind:member	line:36
 GetCreateRoomNeedMoney	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def GetCreateRoomNeedMoney(self):$/;"	kind:member	line:18
@@ -514,6 +514,7 @@ GetGlobalID	../pyproject/entity/gas_player_entity.py	/^    def GetGlobalID(self)
 GetGlobalID	../pyproject/entity/player_in_login.py	/^    def GetGlobalID(self):$/;"	kind:member	line:11
 GetGlobalID	../pyproject/entity/player_in_login.py	/^    def GetGlobalID(self):$/;"	kind:member	line:24
 GetHuType	../pyproject/gas/gas_mj/check_hu.py	/^def GetHuType(mjArr, hunMj):$/;"	kind:function	line:444
+GetInt	../pyproject/encode_mgr/bin_encoder.py	/^    def GetInt(self):$/;"	kind:member	line:44
 GetJinPaiList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetJinPaiList(self):$/;"	kind:member	line:151
 GetJinPaiNum	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetJinPaiNum(self):$/;"	kind:member	line:222
 GetMaxJuNum	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetMaxJuNum(self):$/;"	kind:member	line:90
@@ -530,33 +531,31 @@ GetNextPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetNextPos(self):$/;"
 GetOptions	../pylib/google/protobuf/descriptor.py	/^  def GetOptions(self):$/;"	kind:member	line:94
 GetOwner	../pyproject/compment/base_compment.py	/^    def GetOwner(self):$/;"	kind:member	line:8
 GetOwner	../pyproject/state/state_machine.py	/^    def GetOwner(self):$/;"	kind:member	line:8
-GetParam	../pyproject/db/backup.py	/^    def GetParam(self):$/;"	kind:member	line:42
 GetParam	../pyproject/db/dbs_mgr.py	/^    def GetParam(self):$/;"	kind:member	line:42
-GetParam	../pyproject/db/dbs_mgr_mp.py	/^    def GetParam(self):$/;"	kind:member	line:47
+GetParam	../pyproject/db/dbs_mgr_mp.py	/^    def GetParam(self):$/;"	kind:member	line:48
 GetPersistentDict	../pyproject/entity/gas_player_entity.py	/^    def GetPersistentDict(self):$/;"	kind:member	line:103
 GetPlayer	../pyproject/login/login_mgr.py	/^def GetPlayer(nPlayerGID):$/;"	kind:function	line:152
 GetPosCardList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetPosCardList(self, nPos):$/;"	kind:member	line:148
 GetPrevPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetPrevPos(self, nPos):$/;"	kind:member	line:143
 GetPrototype	../pylib/google/protobuf/message_factory.py	/^  def GetPrototype(self, descriptor):$/;"	kind:member	line:48
 GetQiPaiExpireSecond	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetQiPaiExpireSecond(self):$/;"	kind:member	line:97
-GetQueueID	../pyproject/db/backup.py	/^    def GetQueueID(self):$/;"	kind:member	line:30
 GetQueueID	../pyproject/db/dbs_mgr.py	/^    def GetQueueID(self):$/;"	kind:member	line:30
-GetQueueID	../pyproject/db/dbs_mgr_mp.py	/^    def GetQueueID(self):$/;"	kind:member	line:35
+GetQueueID	../pyproject/db/dbs_mgr_mp.py	/^    def GetQueueID(self):$/;"	kind:member	line:36
 GetRequestClass	../pylib/google/protobuf/service.py	/^  def GetRequestClass(self, method_descriptor):$/;"	kind:member	line:93
 GetResponseClass	../pylib/google/protobuf/service.py	/^  def GetResponseClass(self, method_descriptor):$/;"	kind:member	line:108
+GetRet	../pyproject/db/redis_mgr.py	/^def GetRet():$/;"	kind:function	line:37
 GetRoomID	../pyproject/entity/gas_player_entity.py	/^    def GetRoomID(self):$/;"	kind:member	line:34
 GetRoomID	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetRoomID(self):$/;"	kind:member	line:57
 GetRoomObj	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetRoomObj(self):$/;"	kind:member	line:60
 GetRoomObjByPlayerGID	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def GetRoomObjByPlayerGID(self, nPlayerGID):$/;"	kind:member	line:33
 GetScene	../pyproject/entity/base_entity.py	/^    def GetScene(self):$/;"	kind:member	line:17
 GetSceneName	../pylib/ffext.py	/^def GetSceneName():$/;"	kind:function	line:364
-GetSceneName	../pyproject/db/backup.py	/^    def GetSceneName(self):$/;"	kind:member	line:33
 GetSceneName	../pyproject/db/dbs_mgr.py	/^    def GetSceneName(self):$/;"	kind:member	line:33
-GetSceneName	../pyproject/db/dbs_mgr_mp.py	/^    def GetSceneName(self):$/;"	kind:member	line:38
-GetSession	../pyproject/db/backup.py	/^    def GetSession(self):$/;"	kind:member	line:39
+GetSceneName	../pyproject/db/dbs_mgr_mp.py	/^    def GetSceneName(self):$/;"	kind:member	line:39
 GetSession	../pyproject/db/dbs_mgr.py	/^    def GetSession(self):$/;"	kind:member	line:39
-GetSession	../pyproject/db/dbs_mgr_mp.py	/^    def GetSession(self):$/;"	kind:member	line:44
+GetSession	../pyproject/db/dbs_mgr_mp.py	/^    def GetSession(self):$/;"	kind:member	line:45
 GetState	../pyproject/entity/gcc_player_entity.py	/^    def GetState(self):$/;"	kind:member	line:12
+GetStr	../pyproject/encode_mgr/bin_encoder.py	/^    def GetStr(self):$/;"	kind:member	line:39
 GetTopLevelContainingType	../pylib/google/protobuf/descriptor.py	/^  def GetTopLevelContainingType(self):$/;"	kind:member	line:150
 GetTypeChecker	../pylib/google/protobuf/internal/type_checkers.py	/^def GetTypeChecker(cpp_type, field_type):$/;"	kind:function	line:56
 GetUrlMgr	../pyproject/wsurl/http_mod.py	/^def GetUrlMgr():$/;"	kind:function	line:7
@@ -564,7 +563,6 @@ Getter	../pylib/google/protobuf/internal/cpp_message.py	/^  def Getter(self):$/;
 Getter	../pylib/google/protobuf/internal/cpp_message.py	/^  def Getter(self):$/;"	kind:function	line:277
 Getter	../pylib/google/protobuf/internal/cpp_message.py	/^  def Getter(self):$/;"	kind:function	line:81
 Getter	../pylib/google/protobuf/internal/cpp_message.py	/^  def Getter(self):$/;"	kind:function	line:93
-GrapJobFromQueue	../pyproject/db/backup.py	/^    def GrapJobFromQueue(self, nQueueID):$/;"	kind:member	line:165
 GrapJobFromQueue	../pyproject/db/dbs_mgr.py	/^    def GrapJobFromQueue(self, nQueueID):$/;"	kind:member	line:140
 GroupByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def GroupByteSize(field_number, message):$/;"	kind:function	line:193
 GroupDecoder	../pylib/google/protobuf/internal/decoder.py	/^def GroupDecoder(field_number, is_repeated, is_packed, key, new_default):$/;"	kind:function	line:452
@@ -601,31 +599,30 @@ IResourceProvider	../pylib/pkg_resources.py	/^class IResourceProvider(IMetadataP
 IThriftClientFactory	../pylib/thrift/transport/TTwisted.py	/^class IThriftClientFactory(Interface):$/;"	kind:class	line:141
 IThriftServerFactory	../pylib/thrift/transport/TTwisted.py	/^class IThriftServerFactory(Interface):$/;"	kind:class	line:132
 ImpDbsCreateUserSession	../pyproject/db/dbs_opt.py	/^def ImpDbsCreateUserSession(conn, job):$/;"	kind:function	line:64
-ImpDbsCreateUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsCreateUserSession(conn, job):$/;"	kind:function	line:80
+ImpDbsCreateUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsCreateUserSession(conn, job):$/;"	kind:function	line:72
 ImpDbsGetRoomIDSector	../pyproject/db/dbs_opt.py	/^def ImpDbsGetRoomIDSector(conn, job):$/;"	kind:function	line:23
-ImpDbsGetRoomIDSector	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsGetRoomIDSector(conn, job):$/;"	kind:function	line:41
 ImpDbsLoadPlayerData	../pyproject/db/dbs_opt.py	/^def ImpDbsLoadPlayerData(conn, job):$/;"	kind:function	line:92
-ImpDbsLoadPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsLoadPlayerData(conn, job):$/;"	kind:function	line:108
+ImpDbsLoadPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsLoadPlayerData(conn, job):$/;"	kind:function	line:100
 ImpDbsPersistentPlayerData	../pyproject/db/dbs_opt.py	/^def ImpDbsPersistentPlayerData(conn, job):$/;"	kind:function	line:74
-ImpDbsPersistentPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsPersistentPlayerData(conn, job):$/;"	kind:function	line:90
+ImpDbsPersistentPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsPersistentPlayerData(conn, job):$/;"	kind:function	line:82
 ImpDbsTest	../pyproject/db/dbs_opt.py	/^def ImpDbsTest(conn, job):$/;"	kind:function	line:29
-ImpDbsTest	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsTest(conn, job):$/;"	kind:function	line:48
+ImpDbsTest	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsTest(conn, job):$/;"	kind:function	line:40
 ImpGetIDData	../pyproject/db/dbs_opt_mp.py	/^def ImpGetIDData(conn, job):$/;"	kind:function	line:15
+ImpGetIDData	../pyproject/id_manager/player_id_mgr.py	/^    def ImpGetIDData(self, conn):$/;"	kind:member	line:40
 ImpGetUserSession	../pyproject/db/dbs_opt.py	/^def ImpGetUserSession(conn, job):$/;"	kind:function	line:34
-ImpGetUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpGetUserSession(conn, job):$/;"	kind:function	line:53
+ImpGetUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpGetUserSession(conn, job):$/;"	kind:function	line:45
 ImpLoader	../pylib/pkg_resources.py	/^class ImpLoader:$/;"	kind:class	line:1580
 ImpUpdateID	../pyproject/db/dbs_opt.py	/^def ImpUpdateID(conn, job):$/;"	kind:function	line:15
 ImpUpdateID	../pyproject/db/dbs_opt_mp.py	/^def ImpUpdateID(conn, job):$/;"	kind:function	line:32
+ImpUpdateID	../pyproject/id_manager/player_id_mgr.py	/^    def ImpUpdateID(self, conn, listData):$/;"	kind:member	line:57
 ImpWrapper	../pylib/pkg_resources.py	/^    ImpWrapper = ImpImporter    # Python 2.5, use pkgutil's implementation$/;"	kind:variable	line:1633
 ImpWrapper	../pylib/pkg_resources.py	/^class ImpWrapper:$/;"	kind:class	line:1559
 Init	../pylib/google/protobuf/internal/cpp_message.py	/^  def Init(self, **kwargs):$/;"	kind:function	line:454
 Init	../pyproject/auto_update/auto_update.py	/^def Init():$/;"	kind:function	line:12
-Init	../pyproject/db/backup.py	/^    def Init(self):$/;"	kind:member	line:104
-Init	../pyproject/db/backup.py	/^    def Init(self, funObj, nQueueID, nSession, szSrcScene, cb_id=0, funParam=None):$/;"	kind:member	line:19
 Init	../pyproject/db/dbs_mgr.py	/^    def Init(self):$/;"	kind:member	line:89
 Init	../pyproject/db/dbs_mgr.py	/^    def Init(self, funObj, nQueueID, nSession, szSrcScene, cb_id=0, funParam=None):$/;"	kind:member	line:19
 Init	../pyproject/db/dbs_mgr_mp.py	/^    def Init(self):$/;"	kind:member	line:116
-Init	../pyproject/db/dbs_mgr_mp.py	/^    def Init(self, funObj, nQueueID, nSession, szSrcScene, cb_id=0, funParam=None):$/;"	kind:member	line:24
+Init	../pyproject/db/dbs_mgr_mp.py	/^    def Init(self, funObj, nQueueID, nSession, szSrcScene, cb_id=0, funParam=None):$/;"	kind:member	line:25
 Init	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^    def Init(self, dictData):$/;"	kind:member	line:22
 InitCompment	../pyproject/entity/gas_player_entity.py	/^    def InitCompment(self, dictData):$/;"	kind:member	line:52
 InitCurlCache	../pyproject/wsurl/wsurl_thread.py	/^    def InitCurlCache(self):$/;"	kind:member	line:26
@@ -650,6 +647,7 @@ InternalParse	../pylib/google/protobuf/internal/python_message.py	/^  def Intern
 InternalSerialize	../pylib/google/protobuf/internal/python_message.py	/^  def InternalSerialize(self, write_bytes):$/;"	kind:function	line:781
 IsBaiBan	../pyproject/gas/gas_mj/check_hu.py	/^def IsBaiBan(nCard):$/;"	kind:function	line:61
 IsCanceled	../pylib/google/protobuf/service.py	/^  def IsCanceled(self):$/;"	kind:member	line:178
+IsDbQueue	../pyproject/util/util.py	/^def IsDbQueue(szScene):$/;"	kind:function	line:6
 IsGasScene	../pyproject/util/util.py	/^def IsGasScene(szScene):$/;"	kind:function	line:3
 IsHalf	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def IsHalf(self):$/;"	kind:member	line:219
 IsInState	../pyproject/state/state_machine.py	/^    def IsInState(self, state):$/;"	kind:member	line:28
@@ -760,6 +758,7 @@ NextToken	../pylib/google/protobuf/text_format.py	/^  def NextToken(self):$/;"	k
 NextTurn	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def NextTurn(self):$/;"	kind:member	line:278
 NoticeMemberEvent	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def NoticeMemberEvent(self, ev, nModMember):$/;"	kind:member	line:121
 NoticeMsg	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def NoticeMsg(self, msg, msgData):$/;"	kind:member	line:118
+NoticeOtherService	../pyproject/db/dbs_mgr_mp.py	/^    def NoticeOtherService():$/;"	kind:member	line:165
 NotifyOnCancel	../pylib/google/protobuf/service.py	/^  def NotifyOnCancel(self, callback):$/;"	kind:member	line:187
 NullMessageListener	../pylib/google/protobuf/internal/message_listener.py	/^class NullMessageListener(object):$/;"	kind:class	line:73
 NullProvider	../pylib/pkg_resources.py	/^class NullProvider:$/;"	kind:class	line:1149
@@ -767,8 +766,12 @@ OBRACKET	../pylib/pkg_resources.py	/^OBRACKET = re.compile(r"\\s*\\[").match$/;"
 ONEWAY	../pylib/thrift/Thrift.py	/^  ONEWAY = 4$/;"	kind:variable	line:66
 ONLINE_TIME	../pyproject/db/table/table_property_def.py	/^    ONLINE_TIME = "ot"$/;"	kind:variable	line:6
 OnCreateUserSessionCb	../pyproject/login/login_mgr.py	/^def OnCreateUserSessionCb(dictRet, listBindData):$/;"	kind:function	line:35
-OnDbAsynCallReturn	../pyproject/db/dbs_client.py	/^def OnDbAsynCallReturn(dictRet):$/;"	kind:function	line:41
-OnDbAsynCallReturn	../pyproject/rpc/rpc_def.py	/^OnDbAsynCallReturn = 8001/;"	kind:variable	line:57
+OnDbAsynCallReturn	../pyproject/db/dbs_client.py	/^def OnDbAsynCallReturn(dictRet):$/;"	kind:function	line:42
+OnDbAsynCallReturn	../pyproject/rpc/rpc_def.py	/^OnDbAsynCallReturn = 8001$/;"	kind:variable	line:58
+OnDbsStartUp	../pyproject/gas/main.py	/^def OnDbsStartUp(dictSerial):$/;"	kind:function	line:40
+OnDbsStartUp	../pyproject/gcc/main.py	/^def OnDbsStartUp(dictSerial):$/;"	kind:function	line:13
+OnDbsStartUp	../pyproject/login/main.py	/^def OnDbsStartUp(dictSerial):$/;"	kind:function	line:14
+OnDbsStartUp	../pyproject/rpc/rpc_def.py	/^OnDbsStartUp = 8002/;"	kind:variable	line:59
 OnDestroy	../pyproject/compment/compment_money.py	/^    def OnDestroy(self):$/;"	kind:member	line:12
 OnDestroy	../pyproject/state/state_machine.py	/^    def OnDestroy(self):$/;"	kind:member	line:15
 OnEnter	../pyproject/state/state_machine.py	/^    def OnEnter(self):$/;"	kind:member	line:21
@@ -786,8 +789,6 @@ OnMemberExit	../pyproject/entity/rule_base.py	/^    def OnMemberExit(self, nMemb
 OnMemberExit	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OnMemberExit(self, nMemberGID):$/;"	kind:member	line:516
 OnMemberExit	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnMemberExit(self, nPlayerGID):$/;"	kind:member	line:78
 OnMemberExit	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^OnMemberExit = _roomMgr.OnMemberExit$/;"	kind:variable	line:92
-OnOneDbQueryDone	../pyproject/db/backup.py	/^    def OnOneDbQueryDone(self, dbRet, job):$/;"	kind:member	line:135
-OnOneDbQueryDone	../pyproject/db/backup.py	/^OnOneDbQueryDone = _dbs.OnOneDbQueryDone$/;"	kind:variable	line:199
 OnOneDbQueryDone	../pyproject/db/dbs_mgr.py	/^    def OnOneDbQueryDone(self, dictSerial, job):$/;"	kind:member	line:125
 OnOneDbQueryDone	../pyproject/db/dbs_mgr.py	/^OnOneDbQueryDone = _dbs.OnOneDbQueryDone$/;"	kind:variable	line:173
 OnPlayerChangeScene	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def OnPlayerChangeScene(self, nPlayerGID, szSerial):$/;"	kind:member	line:80
@@ -800,6 +801,8 @@ OnPlayerOffline	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def OnPlayerOf
 OnPlayerOffline	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def OnPlayerOffline(self, nPlayerGID):$/;"	kind:member	line:67
 OnPlayerOffline	../pyproject/rpc/rpc_def.py	/^OnPlayerOffline = 1$/;"	kind:variable	line:24
 OnPlayerTrueOffline	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def OnPlayerTrueOffline(self, nPlayerGID):$/;"	kind:member	line:74
+OnQueueStartUp	../pyproject/db/dbs_mgr_mp.py	/^    def OnQueueStartUp(self, szQueueName):$/;"	kind:member	line:152
+OnQueueStartUp	../pyproject/db/dbs_mgr_mp.py	/^OnQueueStartUp = _dbs.OnQueueStartUp$/;"	kind:variable	line:197
 OnReloadedSomeFile	../pyproject/auto_update/auto_update.py	/^def OnReloadedSomeFile():$/;"	kind:function	line:53
 OnResdualTimeOut	../pyproject/residual/residual_mgr.py	/^    def OnResdualTimeOut(self, nPlayerGID):$/;"	kind:member	line:17
 OnRoomDismiss	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnRoomDismiss(self, nRoomID, listRoomPlayers):$/;"	kind:member	line:21
@@ -867,11 +870,12 @@ Post	../pyproject/wsurl/wsurl.py	/^    def Post(self,url,callback,data):$/;"	kin
 PrintField	../pylib/google/protobuf/text_format.py	/^def PrintField(field, value, out, indent=0, as_utf8=False, as_one_line=False):$/;"	kind:function	line:77
 PrintFieldValue	../pylib/google/protobuf/text_format.py	/^def PrintFieldValue(field, value, out, indent=0,$/;"	kind:function	line:110
 PrintMessage	../pylib/google/protobuf/text_format.py	/^def PrintMessage(message, out, indent=0, as_utf8=False, as_one_line=False):$/;"	kind:function	line:68
+ProdJob	../pyproject/db/redis_mgr.py	/^def ProdJob():$/;"	kind:function	line:29
 ProtoTypeToCppProtoType	../pylib/google/protobuf/descriptor.py	/^  def ProtoTypeToCppProtoType(proto_type):$/;"	kind:member	line:469
+R	../pyproject/db/redis_mgr.py	/^def R(qret_, qjob_):$/;"	kind:function	line:5
 REPLY	../pylib/thrift/Thrift.py	/^  REPLY = 2$/;"	kind:variable	line:64
 RESIDUAL_TIME	../pyproject/residual/residual_mgr.py	/^RESIDUAL_TIME = 60 * 60 * 1000$/;"	kind:variable	line:7
 RESULT	../pyproject/db/dbs_def.py	/^RESULT = "r"$/;"	kind:variable	line:5
-RandomChoose	../pyproject/db/backup.py	/^    def RandomChoose(self):$/;"	kind:member	line:60
 RandomChoose	../pyproject/db/dbs_mgr.py	/^    def RandomChoose(self):$/;"	kind:member	line:57
 ReadTag	../pylib/google/protobuf/internal/decoder.py	/^def ReadTag(buffer, pos):$/;"	kind:function	line:160
 RecordTouchEvent	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RecordTouchEvent(self, nPos, listData):$/;"	kind:member	line:379
@@ -912,7 +916,8 @@ ResourceManager	../pylib/pkg_resources.py	/^class ResourceManager:$/;"	kind:clas
 Response	../pyproject/wsurl/wsurl_thread.py	/^    def Response(self, response):$/;"	kind:member	line:39
 ResponseException	../pylib/thrift/server/THttpServer.py	/^class ResponseException(Exception):$/;"	kind:class	line:26
 ResponseLogin	../pyproject/rpc/rpc_def.py	/^ResponseLogin = 20001$/;"	kind:variable	line:13
-RetGetIDAutoInc	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def RetGetIDAutoInc(self, dbRet):$/;"	kind:member	line:21
+RetGetIDAutoInc	../pyproject/id_manager/player_id_mgr.py	/^    def RetGetIDAutoInc(self, dbRet):$/;"	kind:member	line:21
+RetGetIDAutoInc	../pyproject/id_manager/room_id_mgr.py	/^    def RetGetIDAutoInc(self, dbRet):$/;"	kind:member	line:19
 RoomMemberProperty	../pyproject/util/enum_def.py	/^class RoomMemberProperty(const_entity.Const):$/;"	kind:class	line:70
 RoomObj	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^class RoomObj(object):$/;"	kind:class	line:15
 RoomService	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^class RoomService(object):$/;"	kind:class	line:14
@@ -978,9 +983,8 @@ SetIsRunning	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^    def SetIsRunnin
 SetListener	../pylib/google/protobuf/internal/python_message.py	/^  def SetListener(self, listener):$/;"	kind:function	line:708
 SetRoomID	../pyproject/entity/gas_player_entity.py	/^    def SetRoomID(self, nRoomID):$/;"	kind:member	line:31
 SetScene	../pyproject/entity/base_entity.py	/^    def SetScene(self, sceneObj):$/;"	kind:member	line:14
-SetSession	../pyproject/db/backup.py	/^    def SetSession(self, session):$/;"	kind:member	line:27
 SetSession	../pyproject/db/dbs_mgr.py	/^    def SetSession(self, session):$/;"	kind:member	line:27
-SetSession	../pyproject/db/dbs_mgr_mp.py	/^    def SetSession(self, session):$/;"	kind:member	line:32
+SetSession	../pyproject/db/dbs_mgr_mp.py	/^    def SetSession(self, session):$/;"	kind:member	line:33
 SetState	../pyproject/entity/gcc_player_entity.py	/^    def SetState(self, nState):$/;"	kind:member	line:15
 Setter	../pylib/google/protobuf/internal/cpp_message.py	/^  def Setter(self, new_value):$/;"	kind:function	line:179
 Setter	../pylib/google/protobuf/internal/cpp_message.py	/^  def Setter(self, new_value):$/;"	kind:function	line:285
@@ -1035,7 +1039,7 @@ StringSizer	../pylib/google/protobuf/internal/encoder.py	/^def StringSizer(field
 SynPlayerData	../pyproject/rpc/rpc_def.py	/^SynPlayerData = 30003$/;"	kind:variable	line:21
 SynSceneInfo	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def SynSceneInfo(self, nPlayerGID):$/;"	kind:member	line:38
 SynSceneInfo	../pyproject/rpc/rpc_def.py	/^SynSceneInfo = 30002$/;"	kind:variable	line:20
-SyncJob	../pyproject/db/dbs_mgr_mp.py	/^class SyncJob(object):$/;"	kind:class	line:15
+SyncJob	../pyproject/db/dbs_mgr_mp.py	/^class SyncJob(object):$/;"	kind:class	line:16
 SyncQueryTrans	../pyproject/db/dbs_common.py	/^def SyncQueryTrans(nType, conn, sql):$/;"	kind:function	line:6
 TAG_TYPE_BITS	../pylib/google/protobuf/internal/wire_format.py	/^TAG_TYPE_BITS = 3  # Number of bits used to hold type info in a proto tag.$/;"	kind:variable	line:40
 TAG_TYPE_MASK	../pylib/google/protobuf/internal/wire_format.py	/^TAG_TYPE_MASK = (1 << TAG_TYPE_BITS) - 1  # 0x7$/;"	kind:variable	line:41
@@ -1130,7 +1134,7 @@ TZlibTransportFactory	../pylib/thrift/transport/TZlibTransport.py	/^class TZlibT
 TableName	../pyproject/db/table/table_property_def.py	/^class TableName(const_entity.Const):$/;"	kind:class	line:8
 TagByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def TagByteSize(field_number):$/;"	kind:function	line:224
 TagBytes	../pylib/google/protobuf/internal/encoder.py	/^def TagBytes(field_number, wire_type):$/;"	kind:function	line:388
-Test1	../pyproject/wsurl/http_mod.py	/^def Test1():$/;"	kind:function	line:21
+Test1	../pyproject/wsurl/http_mod.py	/^def Test1(cb):$/;"	kind:function	line:14
 Test1	../pyproject/wsurl/wsurl.py	/^def Test1():$/;"	kind:function	line:103
 Test2	../pyproject/wsurl/wsurl.py	/^def Test2(q):$/;"	kind:function	line:146
 Test3	../pyproject/wsurl/wsurl.py	/^def Test3():$/;"	kind:function	line:173
@@ -1373,8 +1377,6 @@ _POS_INF	../pylib/google/protobuf/internal/encoder.py	/^_POS_INF = 1e10000$/;"	k
 _PYTHON_TO_CPP_PROTO_TYPE_MAP	../pylib/google/protobuf/descriptor.py	/^  _PYTHON_TO_CPP_PROTO_TYPE_MAP = {$/;"	kind:variable	line:398
 _ParseError	../pylib/google/protobuf/text_format.py	/^  def _ParseError(self, message):$/;"	kind:member	line:561
 _ParseOptions	../pylib/google/protobuf/descriptor.py	/^def _ParseOptions(message, string):$/;"	kind:function	line:678
-_PlayerIDMgr	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^_PlayerIDMgr = idgen_t(EIdType.eIdTypePlayer, nServerID)$/;"	kind:variable	line:74
-_PlayerIDMgr	../pyproject/id_manager/idmanager.py	/^_PlayerIDMgr = idgen_t("", EIdType.eIdTypePlayer, nServerID)$/;"	kind:variable	line:101
 _PopLine	../pylib/google/protobuf/text_format.py	/^  def _PopLine(self):$/;"	kind:member	line:336
 _PropertyName	../pylib/google/protobuf/internal/python_message.py	/^def _PropertyName(proto_field_name):$/;"	kind:function	line:113
 _QUERY_ROOM_SCENE_REQ	../pyproject/proto/query_room_scene_pb2.py	/^_QUERY_ROOM_SCENE_REQ = _descriptor.Descriptor($/;"	kind:variable	line:29
@@ -1599,12 +1601,13 @@ __init__	../pylib/thrift_example/ff/ttypes.py	/^  def __init__(self, num=thrift_
 __init__	../pyproject/base_scene/base_scene.py	/^    def __init__(self):$/;"	kind:member	line:11
 __init__	../pyproject/compment/base_compment.py	/^    def __init__(self, owner, szName):$/;"	kind:member	line:4
 __init__	../pyproject/compment/compment_money.py	/^    def __init__(self, owner):$/;"	kind:member	line:7
-__init__	../pyproject/db/backup.py	/^    def __init__(self):$/;"	kind:member	line:11
-__init__	../pyproject/db/backup.py	/^    def __init__(self):$/;"	kind:member	line:49
 __init__	../pyproject/db/dbs_mgr.py	/^    def __init__(self):$/;"	kind:member	line:11
 __init__	../pyproject/db/dbs_mgr.py	/^    def __init__(self):$/;"	kind:member	line:49
-__init__	../pyproject/db/dbs_mgr_mp.py	/^    def __init__(self):$/;"	kind:member	line:16
-__init__	../pyproject/db/dbs_mgr_mp.py	/^    def __init__(self):$/;"	kind:member	line:54
+__init__	../pyproject/db/dbs_mgr_mp.py	/^    def __init__(self):$/;"	kind:member	line:17
+__init__	../pyproject/db/dbs_mgr_mp.py	/^    def __init__(self):$/;"	kind:member	line:55
+__init__	../pyproject/encode_mgr/bin_encoder.py	/^    def __init__(self):$/;"	kind:member	line:7
+__init__	../pyproject/encode_mgr/bin_encoder.py	/^    def __init__(self):$/;"	kind:member	line:77
+__init__	../pyproject/encode_mgr/bin_encoder.py	/^    def __init__(self, buf):$/;"	kind:member	line:30
 __init__	../pyproject/entity/base_entity.py	/^    def __init__(self):$/;"	kind:member	line:8
 __init__	../pyproject/entity/gas_player_entity.py	/^    def __init__(self):$/;"	kind:member	line:16
 __init__	../pyproject/entity/gcc_player_entity.py	/^    def __init__(self):$/;"	kind:member	line:5
@@ -1617,11 +1620,11 @@ __init__	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def __init__(self):
 __init__	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def __init__(self, nRoomID, nMaster, roomMgr, dictConfig):$/;"	kind:member	line:16
 __init__	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def __init__(self):$/;"	kind:member	line:20
 __init__	../pyproject/gate_mgr/gate_mgr.py	/^    def __init__(self):$/;"	kind:member	line:8
-__init__	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def __init__(self, type_id_ = 0, server_id_ = 0):$/;"	kind:member	line:12
 __init__	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def __init__(self):$/;"	kind:member	line:11
 __init__	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^    def __init__(self):$/;"	kind:member	line:5
 __init__	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def __init__(self):$/;"	kind:member	line:16
-__init__	../pyproject/id_manager/idmanager.py	/^    def __init__(self, db_host_, type_id_ = 0, server_id_ = 0):$/;"	kind:member	line:7
+__init__	../pyproject/id_manager/player_id_mgr.py	/^    def __init__(self, type_id_ = 0, server_id_ = 0):$/;"	kind:member	line:13
+__init__	../pyproject/id_manager/room_id_mgr.py	/^    def __init__(self, type_id_ = 0, server_id_ = 0):$/;"	kind:member	line:11
 __init__	../pyproject/login/login_mgr.py	/^    def __init__(self):$/;"	kind:member	line:14
 __init__	../pyproject/msg_def/ttypes.py	/^  def __init__(self, key=None, value=None,):$/;"	kind:member	line:33
 __init__	../pyproject/msg_def/ttypes.py	/^  def __init__(self, nick_name=thrift_spec[1][4], password=thrift_spec[2][4], register_flag=thrift_spec[3][4], email=thrift_spec[4][4],):$/;"	kind:member	line:117
@@ -1650,6 +1653,7 @@ __init__.py	../pyproject/cfg_py/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/compment/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/db/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/db/table/__init__.py	1;"	kind:file	line:1
+__init__.py	../pyproject/encode_mgr/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/entity/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gas/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gas/gas_game_rule/__init__.py	1;"	kind:file	line:1
@@ -1658,7 +1662,6 @@ __init__.py	../pyproject/gas/gas_room_mgr/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gas/gas_scene/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gate_mgr/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gcc/__init__.py	1;"	kind:file	line:1
-__init__.py	../pyproject/gcc/gcc_id_mgr/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gcc/gcc_room_mgr/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/gcc/gcc_scene/__init__.py	1;"	kind:file	line:1
 __init__.py	../pyproject/id_manager/__init__.py	1;"	kind:file	line:1
@@ -1806,9 +1809,8 @@ _b	../pyproject/proto/syn_owner_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:
 _bypass_ensure_directory	../pylib/pkg_resources.py	/^def _bypass_ensure_directory(name, mode=0777):$/;"	kind:function	line:29
 _call_module_func	../pyproject/auto_update/xupdate.py	/^def _call_module_func(module, func_name, *args):$/;"	kind:function	line:209
 _cbProcess	../pylib/thrift/transport/TTwisted.py	/^    def _cbProcess(self, _, request, tmo):$/;"	kind:member	line:203
-_dbs	../pyproject/db/backup.py	/^_dbs = DbsMgr()$/;"	kind:variable	line:198
 _dbs	../pyproject/db/dbs_mgr.py	/^_dbs = DbsMgr()$/;"	kind:variable	line:172
-_dbs	../pyproject/db/dbs_mgr_mp.py	/^_dbs = DbsMgr()$/;"	kind:variable	line:144
+_dbs	../pyproject/db/dbs_mgr_mp.py	/^_dbs = DbsMgr()$/;"	kind:variable	line:194
 _declare_state	../pylib/pkg_resources.py	/^def _declare_state(vartype, **kw):$/;"	kind:function	line:44
 _dep_map	../pylib/pkg_resources.py	/^    _dep_map = property(_dep_map)$/;"	kind:variable	line:2145
 _dep_map	../pylib/pkg_resources.py	/^    def _dep_map(self):$/;"	kind:member	line:2135
@@ -1833,6 +1835,7 @@ _handle_ns	../pylib/pkg_resources.py	/^def _handle_ns(packageName, path_item):$/
 _has	../pylib/pkg_resources.py	/^    def _has(self, fspath):$/;"	kind:member	line:1436
 _has	../pylib/pkg_resources.py	/^    def _has(self, path):$/;"	kind:member	line:1216
 _has	../pylib/pkg_resources.py	/^    def _has(self, path):$/;"	kind:member	line:1275
+_idMgr	../pyproject/id_manager/player_id_mgr.py	/^_idMgr = idgen_t(EIdType.eIdTypePlayer, conf.dict_cfg["server_id"])$/;"	kind:variable	line:95
 _implementation_type	../pylib/google/protobuf/internal/api_implementation.py	/^  _implementation_type = 'cpp'$/;"	kind:variable	line:50
 _implementation_type	../pylib/google/protobuf/internal/api_implementation.py	/^_implementation_type = os.getenv('PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION',$/;"	kind:variable	line:42
 _implementation_version	../pylib/google/protobuf/internal/api_implementation.py	/^_implementation_version = int(_implementation_version_str)$/;"	kind:variable	line:74
@@ -1858,6 +1861,7 @@ _manager	../pylib/pkg_resources.py	/^_manager = ResourceManager()$/;"	kind:varia
 _mjEventMgr	../pyproject/gas/gas_mj/gas_mj_event_mgr.py	/^_mjEventMgr = GasMjEventMgr()$/;"	kind:variable	line:206
 _mkstemp	../pylib/pkg_resources.py	/^def _mkstemp(*args,**kw):$/;"	kind:function	line:2575
 _normalize_cached	../pylib/pkg_resources.py	/^def _normalize_cached(filename,_cache={}):$/;"	kind:function	line:1831
+_onGetHttpRet	../pyproject/db/redis_mgr.py	/^        def _onGetHttpRet(httpRsp):$/;"	kind:function	line:11
 _parse_version_parts	../pylib/pkg_resources.py	/^def _parse_version_parts(s):$/;"	kind:function	line:1875
 _parts	../pylib/pkg_resources.py	/^    def _parts(self,zip_path):$/;"	kind:member	line:1332
 _pool	../pylib/google/protobuf/internal/cpp_message.py	/^_pool = GetDescriptorPool()$/;"	kind:variable	line:55
@@ -1867,8 +1871,7 @@ _reinit_buffers	../pylib/thrift/transport/TZlibTransport.py	/^  def _reinit_buff
 _resolveAddr	../pylib/thrift/transport/TSocket.py	/^  def _resolveAddr(self):$/;"	kind:member	line:29
 _resource_to_zip	../pylib/pkg_resources.py	/^    def _resource_to_zip(self,resource_name):$/;"	kind:member	line:1449
 _retGetGateAddr	../pyproject/login/login_mgr.py	/^        def _retGetGateAddr(err, msg):$/;"	kind:function	line:109
-_roomIDMgr	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^_roomIDMgr = idgen_t(EIdType.eIdTypeRoom, nServerID)$/;"	kind:variable	line:77
-_roomIDMgr	../pyproject/id_manager/idmanager.py	/^_roomIDMgr = idgen_t("", EIdType.eIdTypeRoom, nServerID)$/;"	kind:variable	line:104
+_roomIDMgr	../pyproject/id_manager/room_id_mgr.py	/^_roomIDMgr = idgen_t(EIdType.eIdTypeRoom, conf.dict_cfg["server_id"])$/;"	kind:variable	line:72
 _roomMgr	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^_roomMgr = RoomService()$/;"	kind:variable	line:90
 _select	../pylib/thrift/server/TNonblockingServer.py	/^    def _select(self):$/;"	kind:member	line:287
 _set_message	../pylib/thrift/Thrift.py	/^    def _set_message(self, message):$/;"	kind:member	line:84
@@ -1923,11 +1926,11 @@ append	../pylib/google/protobuf/internal/containers.py	/^  def append(self, valu
 append	../pylib/google/protobuf/internal/cpp_message.py	/^  def append(self, value):$/;"	kind:member	line:114
 as_requirement	../pylib/pkg_resources.py	/^    def as_requirement(self):$/;"	kind:member	line:2212
 auto_update.py	../pyproject/auto_update/auto_update.py	1;"	kind:file	line:1
-backup.py	../pyproject/db/backup.py	1;"	kind:file	line:1
 base_compment.py	../pyproject/compment/base_compment.py	1;"	kind:file	line:1
 base_entity.py	../pyproject/entity/base_entity.py	1;"	kind:file	line:1
 base_scene.py	../pyproject/base_scene/base_scene.py	1;"	kind:file	line:1
 best_match	../pylib/pkg_resources.py	/^    def best_match(self, req, working_set, installer=None):$/;"	kind:member	line:780
+bin_encoder.py	../pyproject/encode_mgr/bin_encoder.py	1;"	kind:file	line:1
 bind_event	../pylib/event_bus.py	/^    def bind_event(self, event_class_, consumer_func):$/;"	kind:member	line:17
 bind_event	../pylib/event_bus.py	/^def bind_event(event_class_):$/;"	kind:function	line:52
 bind_func	../pylib/ffext.py	/^    def bind_func(func_):$/;"	kind:function	line:332
@@ -1938,6 +1941,7 @@ broadcast_msg_gate	../pylib/ffext.py	/^def broadcast_msg_gate(gate_name_, cmd_, 
 broadcast_msg_session	../pylib/ffext.py	/^def broadcast_msg_session(cmd_, body):$/;"	kind:function	line:182
 buffer	../test.py	/^buffer = struct.pack(szFormat, nTotalSize, 1001, 0, szMsg)$/;"	kind:variable	line:22
 buildProtocol	../pylib/thrift/transport/TTwisted.py	/^    def buildProtocol(self, addr):$/;"	kind:member	line:179
+c	../pyproject/db/redis_mgr.py	/^c = 0$/;"	kind:variable	line:28
 c	../pyproject/wsurl/wsurl.py	/^    def c(b):$/;"	kind:function	line:176
 callTime	../pyproject/gas/gas_mj/check_hu.py	/^callTime = 0$/;"	kind:variable	line:29
 call_service	../pylib/ffext.py	/^def call_service(name_, cmd_, msg_, callback_ = None):$/;"	kind:function	line:278
@@ -1947,7 +1951,6 @@ canHu	../pyproject/gas/gas_mj/check_hu.py	/^def canHu( hunNum, arr ):$/;"	kind:f
 can_add	../pylib/pkg_resources.py	/^    def can_add(self, dist):$/;"	kind:member	line:724
 cancel_timer	../pylib/ffext.py	/^def cancel_timer(id):$/;"	kind:function	line:39
 card_serial	../pyproject/proto/common_info_pb2.py	/^card_serial = _reflection.GeneratedProtocolMessageType('card_serial', (_message.Message,), dict($/;"	kind:variable	line:656
-cb1	../pyproject/wsurl/http_mod.py	/^def cb1():$/;"	kind:function	line:14
 change_scene_pb2.py	../pyproject/proto/change_scene_pb2.py	1;"	kind:file	line:1
 change_scene_req	../pyproject/proto/change_scene_pb2.py	/^change_scene_req = _reflection.GeneratedProtocolMessageType('change_scene_req', (_message.Message,), dict($/;"	kind:variable	line:100
 change_scene_rsp	../pyproject/proto/change_scene_pb2.py	/^change_scene_rsp = _reflection.GeneratedProtocolMessageType('change_scene_rsp', (_message.Message,), dict($/;"	kind:variable	line:107
@@ -1956,8 +1959,8 @@ chat_msg_t	../pyproject/msg_def/ttypes.py	/^class chat_msg_t:$/;"	kind:class	lin
 chat_msg_t	../thrift_def/gen-py/msg_def/ttypes.py	/^class chat_msg_t:$/;"	kind:class	line:20
 check_hu.py	../pyproject/gas/gas_mj/check_hu.py	1;"	kind:file	line:1
 check_version_conflict	../pylib/pkg_resources.py	/^    def check_version_conflict(self):$/;"	kind:member	line:2298
-cleanup	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def cleanup(self):$/;"	kind:member	line:43
-cleanup	../pyproject/id_manager/idmanager.py	/^    def cleanup(self):$/;"	kind:member	line:45
+cleanup	../pyproject/id_manager/player_id_mgr.py	/^    def cleanup(self):$/;"	kind:member	line:68
+cleanup	../pyproject/id_manager/room_id_mgr.py	/^    def cleanup(self):$/;"	kind:member	line:41
 cleanup_resources	../pylib/pkg_resources.py	/^    def cleanup_resources(self, force=False):$/;"	kind:member	line:1052
 client_class	../pylib/thrift/transport/TTwisted.py	/^    client_class = Attribute("Thrift client class")$/;"	kind:variable	line:143
 clone	../pylib/pkg_resources.py	/^    def clone(self,**kw):$/;"	kind:member	line:2326
@@ -2082,15 +2085,15 @@ deserialize	../pylib/thrift/TSerialization.py	/^def deserialize(base,$/;"	kind:f
 dictMjOpt	../pyproject/gas/gas_mj/gas_mj_rcp.py	/^dictMjOpt = {$/;"	kind:variable	line:10
 dict_cfg	../pyproject/conf.py	/^dict_cfg = {$/;"	kind:variable	line:3
 dict_cfg	../pyproject/conf1.py	/^dict_cfg = {$/;"	kind:variable	line:3
-dict_merge	../pyproject/util/util.py	/^def dict_merge(dictSrc, dictDst):$/;"	kind:function	line:6
+dict_merge	../pyproject/util/util.py	/^def dict_merge(dictSrc, dictDst):$/;"	kind:function	line:9
 dict_white_list	../pyproject/white_list.py	/^dict_white_list = {$/;"	kind:variable	line:5
 dispatch	../pylib/thrift/transport/TTwisted.py	/^    def dispatch(self, msg):$/;"	kind:member	line:108
 dispatch	../pylib/thrift/transport/TTwisted.py	/^    def dispatch(self, msg):$/;"	kind:member	line:75
 do_POST	../pylib/thrift/server/THttpServer.py	/^      def do_POST(self):$/;"	kind:member	line:65
 dump	../pylib/event_bus.py	/^    def dump(self):$/;"	kind:member	line:45
 dump	../pylib/ffext.py	/^    def dump(self):$/;"	kind:member	line:242
-dump_id	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def dump_id(self, id_):$/;"	kind:member	line:61
-dump_id	../pyproject/id_manager/idmanager.py	/^    def dump_id(self, id_):$/;"	kind:member	line:72
+dump_id	../pyproject/id_manager/player_id_mgr.py	/^    def dump_id(self, id_):$/;"	kind:member	line:82
+dump_id	../pyproject/id_manager/room_id_mgr.py	/^    def dump_id(self, id_):$/;"	kind:member	line:59
 dump_stdout_to_log	../pylib/ffext.py	/^def dump_stdout_to_log():$/;"	kind:function	line:352
 eDel	../pyproject/util/enum_def.py	/^    eDel = 3$/;"	kind:variable	line:9
 eDisConnect	../pyproject/util/enum_def.py	/^    eDisConnect = 0$/;"	kind:variable	line:63
@@ -2241,9 +2244,8 @@ event_bus_t	../pylib/event_bus.py	/^class event_bus_t(object):$/;"	kind:class	li
 event_type	../pyproject/proto/common_info_pb2.py	/^event_type = enum_type_wrapper.EnumTypeWrapper(_EVENT_TYPE)$/;"	kind:variable	line:191
 event_type_member	../pyproject/proto/common_info_pb2.py	/^event_type_member = enum_type_wrapper.EnumTypeWrapper(_EVENT_TYPE_MEMBER)$/;"	kind:variable	line:72
 excel2json.py	../pyproject/excel2json.py	1;"	kind:file	line:1
-exe	../pyproject/db/backup.py	/^    def exe(self, dbsConn):$/;"	kind:member	line:45
 exe	../pyproject/db/dbs_mgr.py	/^    def exe(self, dbsConn):$/;"	kind:member	line:45
-exe	../pyproject/db/dbs_mgr_mp.py	/^    def exe(self, dbsConn):$/;"	kind:member	line:50
+exe	../pyproject/db/dbs_mgr_mp.py	/^    def exe(self, dbsConn):$/;"	kind:member	line:51
 exit_room_pb2.py	../pyproject/proto/exit_room_pb2.py	1;"	kind:file	line:1
 exit_room_req	../pyproject/proto/exit_room_pb2.py	/^exit_room_req = _reflection.GeneratedProtocolMessageType('exit_room_req', (_message.Message,), dict($/;"	kind:variable	line:95
 exit_room_rsp	../pyproject/proto/exit_room_pb2.py	/^exit_room_rsp = _reflection.GeneratedProtocolMessageType('exit_room_rsp', (_message.Message,), dict($/;"	kind:variable	line:102
@@ -2643,16 +2645,14 @@ gas_room_mgr.py	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	1;"	kind:file	line
 gas_room_obj.py	../pyproject/gas/gas_room_mgr/gas_room_obj.py	1;"	kind:file	line:1
 gas_scene_mgr.py	../pyproject/gas/gas_scene/gas_scene_mgr.py	1;"	kind:file	line:1
 gate_mgr.py	../pyproject/gate_mgr/gate_mgr.py	1;"	kind:file	line:1
-gcc_id_mgr.py	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	1;"	kind:file	line:1
 gcc_player_entity.py	../pyproject/entity/gcc_player_entity.py	1;"	kind:file	line:1
 gcc_room_mgr.py	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	1;"	kind:file	line:1
 gcc_room_obj.py	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	1;"	kind:file	line:1
 gcc_scene_mgr.py	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	1;"	kind:file	line:1
 gen_cpp	../pylib/thrift/TSCons.py	/^def gen_cpp(env, dir, file):$/;"	kind:function	line:31
-gen_id	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def gen_id(self):$/;"	kind:member	line:46
-gen_id	../pyproject/id_manager/idmanager.py	/^    def gen_id(self, conn):$/;"	kind:member	line:52
-gen_id_sector	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def gen_id_sector(self, nInc=1):$/;"	kind:member	line:54
-gen_id_sector	../pyproject/id_manager/idmanager.py	/^    def gen_id_sector(self, conn, nInc=1):$/;"	kind:member	line:62
+gen_id	../pyproject/id_manager/player_id_mgr.py	/^    def gen_id(self, conn):$/;"	kind:member	line:71
+gen_id	../pyproject/id_manager/room_id_mgr.py	/^    def gen_id(self):$/;"	kind:member	line:44
+gen_id_sector	../pyproject/id_manager/room_id_mgr.py	/^    def gen_id_sector(self, nInc=1):$/;"	kind:member	line:52
 get	../pyproject/login/login_mgr.py	/^    def get(self, session_id_):$/;"	kind:member	line:17
 getChild	../pylib/thrift/transport/TTwisted.py	/^    def getChild(self, path, request):$/;"	kind:member	line:200
 getCompRatio	../pylib/thrift/transport/TZlibTransport.py	/^  def getCompRatio(self):$/;"	kind:member	line:119
@@ -2723,14 +2723,14 @@ host	../pylib/ffext.py	/^    def host(self):$/;"	kind:member	line:219
 http_mod.py	../pyproject/wsurl/http_mod.py	1;"	kind:file	line:1
 i_am_class_method	../pyproject/auto_update/xupdate.py	/^    def i_am_class_method(cls):$/;"	kind:member	line:171
 i_am_static_method	../pyproject/auto_update/xupdate.py	/^    def i_am_static_method():$/;"	kind:member	line:167
-idgen_t	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^class idgen_t(object):$/;"	kind:class	line:11
-idgen_t	../pyproject/id_manager/idmanager.py	/^class idgen_t(object):$/;"	kind:class	line:6
+idgen_t	../pyproject/id_manager/player_id_mgr.py	/^class idgen_t(object):$/;"	kind:class	line:12
+idgen_t	../pyproject/id_manager/room_id_mgr.py	/^class idgen_t(object):$/;"	kind:class	line:10
 idlist	../pyproject/login/login_mgr.py	/^    def idlist(self):$/;"	kind:member	line:29
-idmanager.py	../pyproject/id_manager/idmanager.py	1;"	kind:file	line:1
 impl_func	../pylib/ffext.py	/^        def impl_func(msg_):$/;"	kind:function	line:333
 init	../pylib/google/protobuf/internal/python_message.py	/^  def init(self, **kwargs):$/;"	kind:function	line:300
-init	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def init(self):$/;"	kind:member	line:40
-init	../pyproject/id_manager/idmanager.py	/^    def init(self, conn):$/;"	kind:member	line:17
+init	../pyproject/id_manager/player_id_mgr.py	/^    def init(self, conn):$/;"	kind:member	line:64
+init	../pyproject/id_manager/room_id_mgr.py	/^    def init(self):$/;"	kind:member	line:38
+init	../pyproject/id_manager/room_id_mgr.py	/^init = _roomIDMgr.init$/;"	kind:variable	line:74
 insert	../pylib/google/protobuf/internal/containers.py	/^  def insert(self, key, value):$/;"	kind:member	line:116
 insert	../pylib/google/protobuf/internal/cpp_message.py	/^  def insert(self, key, value):$/;"	kind:member	line:122
 insert_on	../pylib/pkg_resources.py	/^    def insert_on(self, path, loc = None):$/;"	kind:member	line:2257
@@ -2816,7 +2816,6 @@ load_entry_point	../pylib/pkg_resources.py	/^    def load_entry_point(self, grou
 load_entry_point	../pylib/pkg_resources.py	/^def load_entry_point(dist, group, name):$/;"	kind:function	line:316
 load_module	../pylib/pkg_resources.py	/^    def load_module(self, fullname):$/;"	kind:member	line:1588
 loader	../pylib/pkg_resources.py	/^    loader = None$/;"	kind:variable	line:1154
-lock	../pyproject/db/redis_mgr.py	/^    lock = manager.Lock() #��ʼ��һ����$/;"	kind:variable	line:29
 locked	../pylib/thrift/server/TNonblockingServer.py	/^def locked(func):$/;"	kind:function	line:67
 login	../pyproject/proto/login_pb2.py	/^login = 2$/;"	kind:variable	line:55
 login_mgr.py	../pyproject/login/login_mgr.py	1;"	kind:file	line:1
@@ -2834,7 +2833,6 @@ main.py	../pyproject/login/main.py	1;"	kind:file	line:1
 majmap	../pyproject/gas/gas_mj/check_hu.py	/^majmap = {"101":"一万","102":"二万","103":"三万","104":"四万","105":"五万","106":"六万","107":"七万","108":"八万","109":"九万",$/;"	kind:variable	line:53
 makeZigZag	../pylib/thrift/protocol/TCompactProtocol.py	/^def makeZigZag(n, bits):$/;"	kind:function	line:47
 make_helper	../pylib/thrift/protocol/TCompactProtocol.py	/^def make_helper(v_from, container):$/;"	kind:function	line:36
-manager	../pyproject/db/redis_mgr.py	/^    manager = multiprocessing.Manager()$/;"	kind:variable	line:26
 mb	../pylib/thrift_example/thrift_example.py	/^mb = TTransport.TMemoryBuffer()$/;"	kind:variable	line:9
 mb2	../pylib/thrift_example/thrift_example.py	/^mb2 = TTransport.TMemoryBuffer(ret)$/;"	kind:variable	line:21
 message	../pylib/thrift/Thrift.py	/^    message = property(_get_message, _set_message)$/;"	kind:variable	line:86
@@ -2850,8 +2848,6 @@ msg_pb2.py	../pylib/protobuf_example/msg_pb2.py	1;"	kind:file	line:1
 multi_send_msg_session	../pylib/ffext.py	/^def multi_send_msg_session(session_id_list, cmd_, body):$/;"	kind:function	line:180
 mystdout_t	../pylib/ffext.py	/^class mystdout_t(object):$/;"	kind:class	line:346
 nHeadSize	../test.py	/^    nHeadSize = struct.calcsize("IHH")$/;"	kind:variable	line:31
-nServerID	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^nServerID = 1$/;"	kind:variable	line:73
-nServerID	../pyproject/id_manager/idmanager.py	/^nServerID = 1$/;"	kind:variable	line:100
 nTotalSize	../test.py	/^nTotalSize = struct.calcsize(szFormat)$/;"	kind:variable	line:17
 name	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  name='CodeGeneratorRequest',$/;"	kind:variable	line:23
 name	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  name='CodeGeneratorResponse',$/;"	kind:variable	line:106
@@ -3289,8 +3285,9 @@ options	../pyproject/proto/syn_owner_pb2.py	/^      options=None),$/;"	kind:vari
 options	../pyproject/proto/syn_owner_pb2.py	/^      options=None),$/;"	kind:variable	line:70
 options	../pyproject/proto/syn_owner_pb2.py	/^  options=None,$/;"	kind:variable	line:77
 other_player_info	../pyproject/proto/common_info_pb2.py	/^other_player_info = _reflection.GeneratedProtocolMessageType('other_player_info', (_message.Message,), dict($/;"	kind:variable	line:621
-p	../pyproject/db/redis_mgr.py	/^    p = Pool(processes=5)$/;"	kind:variable	line:30
+p	../pyproject/db/redis_mgr.py	/^p = multiprocessing.Process(target=R, args=(qret, qjob))$/;"	kind:variable	line:19
 p	../pyproject/wsurl/wsurl.py	/^    def p(b):$/;"	kind:function	line:183
+p1	../pyproject/db/redis_mgr.py	/^p1 = multiprocessing.Process(target=R, args=(qret, qjob))$/;"	kind:variable	line:22
 package	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  package='google.protobuf.compiler',$/;"	kind:variable	line:16
 package	../pylib/google/protobuf/descriptor_pb2.py	/^  package='google.protobuf',$/;"	kind:variable	line:14
 package	../pylib/protobuf_example/msg_pb2.py	/^  package='',$/;"	kind:variable	line:15
@@ -3319,13 +3316,13 @@ parse_version	../pylib/pkg_resources.py	/^def parse_version(s):$/;"	kind:functio
 parsed_version	../pylib/pkg_resources.py	/^    def parsed_version(self):$/;"	kind:member	line:2107
 parsed_version	../pylib/pkg_resources.py	/^    parsed_version = property(parsed_version)$/;"	kind:variable	line:2114
 pkg_resources.py	../pylib/pkg_resources.py	1;"	kind:file	line:1
+player_id_mgr.py	../pyproject/id_manager/player_id_mgr.py	1;"	kind:file	line:1
 player_in_login.py	../pyproject/entity/player_in_login.py	1;"	kind:file	line:1
 plugin_pb2.py	../pylib/google/protobuf/compiler/plugin_pb2.py	1;"	kind:file	line:1
 po	../test.py	/^    po = recv_msg_pb2.recv_info()$/;"	kind:variable	line:36
 po	../test.py	/^po = recv_msg_pb2.recv_info()$/;"	kind:variable	line:8
 post	../pylib/event_bus.py	/^    def post(self, event_):$/;"	kind:member	line:25
 postprocess	../pylib/pkg_resources.py	/^    def postprocess(self, tempname, filename):$/;"	kind:member	line:985
-pr	../pyproject/db/redis_mgr.py	/^    pr = p.apply_async(read,args=(q,))$/;"	kind:variable	line:32
 pr	../pyproject/gas/main.py	/^pr = cProfile.Profile()$/;"	kind:variable	line:11
 prepare	../pylib/thrift/server/TNonblockingServer.py	/^    def prepare(self):$/;"	kind:member	line:248
 process	../pylib/thrift/Thrift.py	/^  def process(iprot, oprot):$/;"	kind:member	line:72
@@ -3337,9 +3334,9 @@ protobuf_to_value	../pylib/ffext.py	/^            def protobuf_to_value(val_):$/
 protobuf_to_value	../pylib/ffext.py	/^def protobuf_to_value(msg_type_, val_):$/;"	kind:function	line:62
 protocol	../pylib/thrift/transport/TTwisted.py	/^    protocol = ThriftClientProtocol$/;"	kind:variable	line:169
 protocol	../pylib/thrift/transport/TTwisted.py	/^    protocol = ThriftServerProtocol$/;"	kind:variable	line:154
-pw	../pyproject/db/redis_mgr.py	/^    pw = p.apply_async(write,args=(q,lock))$/;"	kind:variable	line:31
 python_message.py	../pylib/google/protobuf/internal/python_message.py	1;"	kind:file	line:1
-q	../pyproject/db/redis_mgr.py	/^    q = manager.Queue()$/;"	kind:variable	line:28
+qjob	../pyproject/db/redis_mgr.py	/^qjob = multiprocessing.Queue()$/;"	kind:variable	line:18
+qret	../pyproject/db/redis_mgr.py	/^qret = multiprocessing.Queue()$/;"	kind:variable	line:17
 query	../pylib/ffext.py	/^    def query(self, sql_, callback_=None, dict_params=None):$/;"	kind:member	line:221
 query_result_t	../pylib/ffext.py	/^class query_result_t(object):$/;"	kind:class	line:236
 query_room_scene_pb2.py	../pyproject/proto/query_room_scene_pb2.py	1;"	kind:file	line:1
@@ -3360,7 +3357,6 @@ read	../pylib/thrift/transport/TTransport.py	/^  def read(self, sz):$/;"	kind:me
 read	../pylib/thrift/transport/TTransport.py	/^  def read(self, sz):$/;"	kind:member	line:51
 read	../pylib/thrift/transport/TZlibTransport.py	/^  def read(self, sz):$/;"	kind:member	line:181
 read	../pylib/thrift_example/ff/ttypes.py	/^  def read(self, iprot):$/;"	kind:member	line:34
-read	../pyproject/db/redis_mgr.py	/^def read(q):$/;"	kind:function	line:16
 read	../pyproject/msg_def/ttypes.py	/^  def read(self, iprot):$/;"	kind:member	line:123
 read	../pyproject/msg_def/ttypes.py	/^  def read(self, iprot):$/;"	kind:member	line:37
 read	../thrift_def/gen-py/msg_def/ttypes.py	/^  def read(self, iprot):$/;"	kind:member	line:123
@@ -3476,6 +3472,7 @@ resource_string	../pylib/pkg_resources.py	/^    def resource_string(self, packag
 ret	../pylib/thrift_example/thrift_example.py	/^ret = mb.getvalue()$/;"	kind:variable	line:18
 ret	../pyproject/rpc/rpc_property_def.py	/^    ret = "0"/;"	kind:variable	line:7
 rmSample	../pyproject/gas/gas_mj/check_hu.py	/^def rmSample( mj, mjArr, cnt=0 ):$/;"	kind:function	line:657
+room_id_mgr.py	../pyproject/id_manager/room_id_mgr.py	1;"	kind:file	line:1
 room_option	../pyproject/proto/common_info_pb2.py	/^room_option = enum_type_wrapper.EnumTypeWrapper(_ROOM_OPTION)$/;"	kind:variable	line:49
 room_state_running.py	../pyproject/state/room_state_running.py	1;"	kind:file	line:1
 room_state_waiting.py	../pyproject/state/room_state_waiting.py	1;"	kind:file	line:1
@@ -3644,6 +3641,7 @@ serve	../pylib/thrift/server/TServer.py	/^  def serve(self):$/;"	kind:member	lin
 serveClient	../pylib/thrift/server/TProcessPoolServer.py	/^    def serveClient(self, client):$/;"	kind:member	line:65
 serveClient	../pylib/thrift/server/TServer.py	/^  def serveClient(self, client):$/;"	kind:member	line:153
 serveThread	../pylib/thrift/server/TServer.py	/^  def serveThread(self):$/;"	kind:member	line:144
+server	../pyproject/encode_mgr/bin_encoder.py	/^def server(port):$/;"	kind:function	line:100
 service.py	../pylib/google/protobuf/service.py	1;"	kind:file	line:1
 service_reflection.py	../pylib/google/protobuf/service_reflection.py	1;"	kind:file	line:1
 session_call	../pylib/ffext.py	/^def session_call(cmd_, protocol_type_ = 'json'):$/;"	kind:function	line:80
@@ -3859,8 +3857,8 @@ update	../pyproject/auto_update/xupdate.py	/^def update(module_name, is_update_d
 updateFuncCode	../pyproject/auto_update/xupdate.py	/^def updateFuncCode(oldobj,newobj):$/;"	kind:function	line:359
 updateObj	../pyproject/auto_update/xupdate.py	/^def updateObj(oldobj,newobj,is_update_data=False):$/;"	kind:function	line:331
 update_data	../pyproject/auto_update/xupdate.py	/^def update_data(oldobj, newobj, depth=1):$/;"	kind:function	line:39
-update_id	../pyproject/gcc/gcc_id_mgr/gcc_id_mgr.py	/^    def update_id(self):$/;"	kind:member	line:66
-update_id	../pyproject/id_manager/idmanager.py	/^    def update_id(self, conn):$/;"	kind:member	line:77
+update_id	../pyproject/id_manager/player_id_mgr.py	/^    def update_id(self, conn):$/;"	kind:member	line:87
+update_id	../pyproject/id_manager/room_id_mgr.py	/^    def update_id(self):$/;"	kind:member	line:64
 util.py	../pyproject/util/util.py	1;"	kind:file	line:1
 validate	../pylib/thrift_example/ff/ttypes.py	/^  def validate(self):$/;"	kind:member	line:65
 validate	../pyproject/msg_def/ttypes.py	/^  def validate(self):$/;"	kind:member	line:181
@@ -3881,7 +3879,7 @@ version	../pylib/pkg_resources.py	/^    version = property(version)$/;"	kind:var
 wake_up	../pylib/thrift/server/TNonblockingServer.py	/^    def wake_up(self):$/;"	kind:member	line:259
 white_list.py	../pyproject/white_list.py	1;"	kind:file	line:1
 wire_format.py	../pylib/google/protobuf/internal/wire_format.py	1;"	kind:file	line:1
-worker	../pyproject/db/dbs_mgr_mp.py	/^    def worker(self, nQueueID, workQueue, retQueue):$/;"	kind:member	line:84
+worker	../pyproject/db/dbs_mgr_mp.py	/^    def worker(self, nQueueID, workQueue, retQueue):$/;"	kind:member	line:82
 workerProcess	../pylib/thrift/server/TProcessPoolServer.py	/^    def workerProcess(self):$/;"	kind:member	line:51
 wraper	../pylib/event_bus.py	/^    def wraper(func_):$/;"	kind:function	line:58
 write	../pylib/ffext.py	/^    def write(self, x):$/;"	kind:member	line:347
@@ -3899,7 +3897,6 @@ write	../pylib/thrift/transport/TTransport.py	/^  def write(self, buf):$/;"	kind
 write	../pylib/thrift/transport/TTwisted.py	/^    def write(self, buf):$/;"	kind:member	line:38
 write	../pylib/thrift/transport/TZlibTransport.py	/^  def write(self, buf):$/;"	kind:member	line:211
 write	../pylib/thrift_example/ff/ttypes.py	/^  def write(self, oprot):$/;"	kind:member	line:53
-write	../pyproject/db/redis_mgr.py	/^def write(q,lock):$/;"	kind:function	line:9
 write	../pyproject/msg_def/ttypes.py	/^  def write(self, oprot):$/;"	kind:member	line:157
 write	../pyproject/msg_def/ttypes.py	/^  def write(self, oprot):$/;"	kind:member	line:66
 write	../thrift_def/gen-py/msg_def/ttypes.py	/^  def write(self, oprot):$/;"	kind:member	line:157

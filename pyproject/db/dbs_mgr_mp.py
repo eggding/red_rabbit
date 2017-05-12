@@ -141,35 +141,6 @@ class DbsMgr(object):
             charset='utf8',
         )
 
-        if scene_def.DB_SERVICE_DEFAULT != ff.service_name:
-            ffext.call_service(scene_def.DB_SERVICE_DEFAULT, rpc_def.DbsQueueStartUp, {"queue_name": ff.service_name})
-            return
-
-        self.m_dictDbsQueueLoad = {}
-        for i in xrange(0, self.m_nQueueNum):
-            self.m_dictDbsQueueLoad["{0}{1}".format(scene_def.DB_SERVICE_DEFAULT, i)] = False
-
-    def OnQueueStartUp(self, szQueueName):
-        if ff.service_name != scene_def.DB_SERVICE_DEFAULT:
-            return
-        self.m_dictDbsQueueLoad[szQueueName] = True
-        for bFlag in self.m_dictDbsQueueLoad.itervalues():
-            if bFlag is False:
-                return
-
-        tick_mgr.RegisterOnceTick(1000, DbsMgr.NoticeOtherService)
-        # DbsMgr.NoticeOtherService()
-
-    @staticmethod
-    def NoticeOtherService():
-        listService = ["gcc", "login"]
-        nGasNum = conf.dict_cfg["gas"]["num"]
-        for i in xrange(0, nGasNum):
-            listService.append("gas@{0}".format(i))
-
-        for szScene in listService:
-            ffext.call_service(szScene, rpc_def.OnDbsStartUp, {})
-
     def Add2JobQueue(self, nChannel, szSerial):
         nQueueID = nChannel % self.m_nQueueNum
         jobQueue = self.m_dictChannel2Queue[nQueueID]
@@ -193,4 +164,3 @@ class DbsMgr(object):
 _dbs = DbsMgr()
 Add2JobQueue = _dbs.Add2JobQueue
 GenJob = _dbs.GenJob
-OnQueueStartUp = _dbs.OnQueueStartUp

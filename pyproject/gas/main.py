@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author  : jh.feng
 
-import ffext
+import ffext, ff
 import sys
 sys.path.append("./pyproject")
 
@@ -21,8 +21,6 @@ def Tick2DumpProfile():
     ps = pstats.Stats(pr, stream=s)# .sort_stats(sortby)
     ps.print_stats()
     aa = s.getvalue()
-
-    import ff
     with open('./profile_{0}.out'.format(ff.service_name),'w') as f:
         f.write(aa)
 
@@ -33,11 +31,12 @@ excel2json.LoadAllCfg()
 
 import conf as conf
 import rpc.rpc_def as rpc_def
+import rpc.scene_def as scene_def
 import entity.entity_mgr as entity_mgr
 import gas.gas_scene.gas_scene_mgr as gas_scene_mgr
 
-@ffext.reg_service(rpc_def.OnDbsStartUp)
-def OnDbsStartUp(dictSerial):
+@ffext.reg_service(rpc_def.OnAllServiceStartUp)
+def OnAllServiceStartUp(dictSerial):
     pass
 
 @ffext.session_call(rpc_def.Gac2GasExeCode)
@@ -49,5 +48,7 @@ def Gac2GasExeCode(nPlayerGID, szCode):
     import util.gm_tool as gm_tool
     gm_tool.ExeCode(szCode, nPlayerGID)
 
+def A():
+    ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnServiceConn, {"service": ff.service_name})
 
-# tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
+tick_mgr.RegisterOnceTick(100, A)
