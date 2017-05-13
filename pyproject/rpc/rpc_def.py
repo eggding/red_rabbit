@@ -58,3 +58,6 @@ DbsQueueStartUp = 7008
 OnDbAsynCallReturn = 8001
 OnAllServiceStartUp = 8002
 OnServiceConn = 8003
+
+Peer = 9000
+RspPeer = 9001

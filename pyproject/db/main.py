@@ -42,6 +42,10 @@ def DbsLoadPlayerData(dictSerial):
 def DbsGetUserSession(dictSerial):
     db_mgr.GenJob(dictSerial, "ImpGetUserSession")
 
+@ffext.reg_service(rpc_def.Peer)
+def Peer(dictSerial):
+    ffext.call_service(scene_def.GATE_MASTER, rpc_def.RspPeer, {"service": ff.service_name})
+
 @ffext.reg_service(rpc_def.OnAllServiceStartUp)
 def OnAllServiceStartUp(dictSerial):
     pass

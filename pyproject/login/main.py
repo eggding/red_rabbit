@@ -11,6 +11,11 @@ import login.login_mgr as login_mgr
 def OnAllServiceStartUp(dictSerial):
     pass
 
+@ffext.reg_service(rpc_def.Peer)
+def Peer(dictSerial):
+    ffext.call_service(scene_def.GATE_MASTER, rpc_def.RspPeer, {"service": ff.service_name})
+
+
 def A():
     ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnServiceConn, {"service": ff.service_name})
 

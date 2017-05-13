@@ -102,7 +102,10 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     try:
         req_login.ParseFromString(szAuthKey)
     except:
+        print("req_login.ParseFromString error! ")
         return []
+
+    print("req_login.type ", req_login.type)
 
     nType = req_login.type
     if nType == login_pb2.login_type.Value("get_gate_info"):
