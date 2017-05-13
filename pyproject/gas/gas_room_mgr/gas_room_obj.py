@@ -26,9 +26,8 @@ class RoomObj(object):
         self.m_sm = state_machine.StateMachine()
         self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
 
-        self.MemberEnter(nMaster)
-
         self.m_gameRuleObj = game_rule_mgr.GetGameRule(EGameRule.eGameRuleMj)(self)
+        self.MemberEnter(nMaster)
 
     def GameRuleOpt(self, nPlayerGID, reqObj):
         self.m_gameRuleObj.GacOpt(nPlayerGID, reqObj)
@@ -59,6 +58,52 @@ class RoomObj(object):
 
     def OnGameEnd(self):
         self.Dismiss()
+
+    def SynGameInfo(self, nPlayerGID, bIsGameRunning):
+        nPos = self.GetMemberPos(nPlayerGID)
+
+        import rpc.rpc_def as rpc_def
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.syn_game_info()
+        rsp.room_id = self.GetRoomID()
+        rsp.cfg.member_num = 0
+        rsp.cfg.multi = 0
+        rsp.cfg.total_start_game_num = 0
+        # rsp.cfg.avg = 0
+        rsp.cfg.opt = 1
+
+        # required uint32         member_num = 1; // 开局人数
+        # required uint32         multi = 2; // 游金倍数
+        # required uint32         total_start_game_num = 3; // 总场数
+        # required uint32         avg = 4; // 是否均摊
+        # required room_option    opt = 5; // 玩法选项
+
+
+        rsp.cur_game_num = 0
+        rsp.cur_round = self.m_gameRuleObj.GetCurJu()
+        rsp.cur_turn = 0
+        rsp.remain_card_num = self.m_gameRuleObj.GetCardRemain()
+        rsp.master_id = self.m_gameRuleObj.GetZhuang()
+
+        for nGoldCard in self.m_gameRuleObj.GetJinPaiList():
+            tmpObj = rsp.list_gold_card.add()
+            tmpObj = nGoldCard
+
+        for nCard in self.m_gameRuleObj.GetPosCardList(nPos):
+            tmpObj = rsp.list_owner_card.add()
+            tmpObj = nCard
+
+        import entity.entity_mgr as entity_mgr
+        listMembers = self.GetMemberList()
+        for nMember in listMembers:
+            inf = rsp.list_members.add()
+            inf.pos = self.GetMemberPos(nMember)
+            Player = entity_mgr.GetEntity(nMember)
+            Player.Serial2Client(inf)
+
+        print("syn game info ", nPlayerGID)
+
+        ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspSynGameData, rsp.SerializeToString())
 
     def Serial(self):
         dictSerial = {

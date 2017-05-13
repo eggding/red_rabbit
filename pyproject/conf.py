@@ -13,13 +13,13 @@ dict_cfg = {
     "broker_slave_2": {
         "listen_addr": "tcp://127.0.0.1:10342"
     },
-    # "dbs": {
-    #     "queue_num": 3,
-    #     "host": "localhost:3306",
-    #     "user": "root",
-    #     "db": "red_rabbit",
-    #     "pwd": "pascalx64",
-    # },
+    "dbs": {
+        "queue_num": 3,
+        "host": "localhost:3306",
+        "user": "root",
+        "db": "red_rabbit",
+        "pwd": "pascalx64",
+    },
     # "dbs": {
     #     "queue_num": 3,
     #     "host": "localhost:3306",

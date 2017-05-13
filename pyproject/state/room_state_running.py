@@ -25,6 +25,7 @@ class RoomStateRunning(state_machine.StateBase):
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.ePlaying
 
         roomObj.GetGameRule().OnMemberEnter(nMember)
+        roomObj.SynGameInfo(nMember, bIsGameRunning=True)
         return True
 
     def MemberExit(self, nMember):

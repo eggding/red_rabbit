@@ -27,6 +27,8 @@ class RoomStateWaiting(state_machine.StateBase):
         Player = entity_mgr.GetEntity(nMember)
         Player.SetRoomID(roomObj.GetRoomID())
 
+        roomObj.SynGameInfo(nMember, bIsGameRunning=False)
+
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberEnter {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
 

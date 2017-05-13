@@ -80,29 +80,25 @@ class GasMjRule(rule_base.GameRuleBase):
             self.m_dictPosEventRecord[nPos] = []
             self.m_dictPosCarListEx[nPos] =  []
 
-    def SynGameInfo(self, nPos):
-        import proto.common_info_pb2 as common_info_pb2
-        rsp = common_info_pb2.syn_game_info()
-        rsp.room_id = self.m_roomObj.GetRoomID()
-        rsp.cur_game_num = 0
-        rsp.cur_round = self.m_nCurJu
-        rsp.cur_turn = 0
-        rsp.remain_card_num = len(self.m_listGlobalCard) - self.m_nNextCardIndex
-        rsp.master_id = self.m_nZhuang
-        rsp.list_gold_card = self.m_listGlobalCard
-        rsp.list_owner_card = 0
+    def GetZhuang(self):
+        return self.m_nZhuang
 
-        # required uint32             room_id = 1; // 房间id
-        # required game_cfg           cfg = 2; // 玩法配置
-        # required uint32             cur_game_num = 3; // 当前场数
-        # required uint32             cur_round = 4; // 当前局数
-        # required uint32             cur_turn = 5; // 当前第几轮
-        # required uint32             remain_card_num = 6; //剩余牌的数量
-        # required uint32             master_id = 7; // 庄家
-        # repeated uint32             list_gold_card = 8; // 金牌
-        # repeated uint32             list_owner_card = 9; // 自己的牌
-        # repeated other_player_info  list_members = 10;  // 房间其他成员
+    def GetCurJu(self):
+        return self.m_nCurJu
 
+    def GetCardRemain(self):
+        return len(self.m_listGlobalCard) - self.m_nNextCardIndex
+
+    def GetJinPaiList(self):
+        return self.m_listJinPai
+
+    def GetPosCardList(self, nPos):
+        if nPos not in self.m_dictPosCarList:
+            return []
+
+        listCard = self.m_dictPosCarListEx[nPos][:]
+        listCard.extend(self.m_dictPosCarList[nPos][:])
+        return listCard
 
     def AddTouchEvent(self, nPos, tupleEventData):
         self.m_dictPosEventRecord[nPos].append(tupleEventData)
@@ -164,12 +160,6 @@ class GasMjRule(rule_base.GameRuleBase):
         if nPos == 1:
             return self.m_roomObj.GetMemberNum()
         return nPos - 1
-
-    def GetPosCardList(self, nPos):
-        return self.m_dictPosCarList[nPos]
-
-    def GetJinPaiList(self):
-        return self.m_listJinPai
 
     def CheckBuHua(self, nPos, nCard=None):
         if nCard is not None:
