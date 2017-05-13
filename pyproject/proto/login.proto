@@ -10,8 +10,8 @@ enum login_type
 // 请求登录, 协议号 10001
 message login_req
 {
-    required login_type type = 1;
-    required bytes      auth_info = 2;
+    required login_type type = 1; //登录填2
+    required bytes      auth_info = 2; // "1234"
 };
 
 // 协议号 20001

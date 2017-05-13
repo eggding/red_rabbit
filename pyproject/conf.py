@@ -20,24 +20,23 @@ dict_cfg = {
     #     "db": "red_rabbit",
     #     "pwd": "pascalx64",
     # },
-    "dbs": {
-        "queue_num": 3,
-        "host": "localhost:3306",
-        "user": "root",
-        "db": "game",
-        "pwd": "2VP8lYkg",
-    },
-    "gate": {
-        "num": 2,
-        "gate@master": "tcp://112.74.124.100:10245",
-        "gate@0": "tcp://112.74.124.100:10242",
-        "gate@1": "tcp://112.74.124.100:10243",
-    },
-    # "gate": {
-    #     "gate@master": "tcp://192.168.74.130:10245",
-    #     "gate@0": "tcp://192.168.74.130:10242",
-    #     "gate@1": "tcp://192.168.74.130:10243",
+    # "dbs": {
+    #     "queue_num": 3,
+    #     "host": "localhost:3306",
+    #     "user": "root",
+    #     "db": "game",
+    #     "pwd": "2VP8lYkg",
     # },
+    # "gate": {
+    #     "gate@master": "tcp://112.74.124.100:10245",
+    #     "gate@0": "tcp://112.74.124.100:10242",
+    #     "gate@1": "tcp://112.74.124.100:10243",
+    # },
+    "gate": {
+        "gate@master": "tcp://192.168.74.130:10245",
+        "gate@0": "tcp://192.168.74.130:10242",
+        "gate@1": "tcp://192.168.74.130:10243",
+    },
     # "gate": {
     #     "gate@master": "tcp://127.0.0.1:10245",
     #     "gate@0": "tcp://127.0.0.1:10242",

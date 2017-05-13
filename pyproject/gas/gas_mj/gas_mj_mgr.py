@@ -25,9 +25,6 @@ class GasMjRule(rule_base.GameRuleBase):
         # 局数
         self.m_nCurJu = 0
 
-        # 当前第几轮
-        self.m_nTurnNum = 0
-
         # 庄家
         self.m_nZhuang = 0
 
@@ -66,7 +63,6 @@ class GasMjRule(rule_base.GameRuleBase):
     def InitDefault(self):
         self.m_dictOptTick = {}
         self.m_nMemberNum = self.m_roomObj.GetMemberNum()
-        self.m_nTurnNum = 0
         self.m_nZhuang = 0
 
         self.m_nCurOptMember = 1
@@ -83,6 +79,30 @@ class GasMjRule(rule_base.GameRuleBase):
             self.m_dictPosHistory[nPos] = []
             self.m_dictPosEventRecord[nPos] = []
             self.m_dictPosCarListEx[nPos] =  []
+
+    def SynGameInfo(self, nPos):
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.syn_game_info()
+        rsp.room_id = self.m_roomObj.GetRoomID()
+        rsp.cur_game_num = 0
+        rsp.cur_round = self.m_nCurJu
+        rsp.cur_turn = 0
+        rsp.remain_card_num = len(self.m_listGlobalCard) - self.m_nNextCardIndex
+        rsp.master_id = self.m_nZhuang
+        rsp.list_gold_card = self.m_listGlobalCard
+        rsp.list_owner_card = 0
+
+        # required uint32             room_id = 1; // 房间id
+        # required game_cfg           cfg = 2; // 玩法配置
+        # required uint32             cur_game_num = 3; // 当前场数
+        # required uint32             cur_round = 4; // 当前局数
+        # required uint32             cur_turn = 5; // 当前第几轮
+        # required uint32             remain_card_num = 6; //剩余牌的数量
+        # required uint32             master_id = 7; // 庄家
+        # repeated uint32             list_gold_card = 8; // 金牌
+        # repeated uint32             list_owner_card = 9; // 自己的牌
+        # repeated other_player_info  list_members = 10;  // 房间其他成员
+
 
     def AddTouchEvent(self, nPos, tupleEventData):
         self.m_dictPosEventRecord[nPos].append(tupleEventData)
