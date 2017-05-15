@@ -98,6 +98,8 @@ class GasMjEventMgr(object):
                 rsp.ev_data = str(nCard)
                 szRspSerial = rsp.SerializeToString()
                 framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+
+                mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
                     tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
 
@@ -112,6 +114,8 @@ class GasMjEventMgr(object):
                 rsp.ev_data = str(nCard)
                 szRspSerial = rsp.SerializeToString()
                 framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+
+                mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
                     tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
 
@@ -127,6 +131,7 @@ class GasMjEventMgr(object):
                 szRspSerial = rsp.SerializeToString()
                 framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
 
+                mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
                     tick_mgr.RegisterOnceTick(100, mjMgr.RequestPeng, [nMember, nOptMember, nCard])
 
@@ -170,6 +175,8 @@ class GasMjEventMgr(object):
             szRspSerial = rsp.SerializeToString()
             framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
             framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CanHu {0}, {1} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
+
+            mjMgr.SetCurEventOptMember(nOptMember)
             if mjMgr.IsTuoGuan(nOptMember) is True:
                 tick_mgr.RegisterOnceTick(100, mjMgr.RequestHu, [nOptMember])
 
@@ -179,6 +186,8 @@ class GasMjEventMgr(object):
             rsp.ev_data = str(nCard)
             szRspSerial = rsp.SerializeToString()
             framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+
+            mjMgr.SetCurEventOptMember(nOptMember)
             if mjMgr.IsTuoGuan(nOptMember):
                 tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nOptMember, nOptMember, nCard])
 

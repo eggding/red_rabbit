@@ -3,6 +3,12 @@ import ffext
 from util.enum_def import EDbsOptType
 import MySQLdb
 
+def Ping(conn):
+    print("dbs_common.Ping")
+    conn.ping()
+    ret = SyncQueryTrans(EDbsOptType.eQuery, conn, "select * from account limit 1")
+    print("pint ret ", ret)
+
 def SyncQueryTrans(nType, conn, sql):
     try:
         cur = conn.cursor()

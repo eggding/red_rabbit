@@ -27,6 +27,8 @@ class EMjEvent(const_entity.Const):
     ev_kai_jin = 14 # 开金
     ev_mo_pai = 15 # 摸牌
     ev_qi_pai = 16 # 弃牌
+    ev_pass = 17
+    ev_cha_pai = 18
 
     ev_dan_you = 21 # 单游
     ev_shuang_you = 22 # 双游
@@ -42,9 +44,10 @@ class EMjEvent(const_entity.Const):
     ev_hu_san_jin_dao = 85 # 三金倒
     ev_hu_si_jin_dao = 86 # 四金倒
     ev_hu_wu_jin_dao = 87 # 五金倒
-    ev_hu_ba_xian_guo_hai = 88 # 八仙过海
-    ev_hu_shi_san_yao = 89 # 十三幺
-    ev_hu_qi_dui_zi = 90 # 七对子
+    ev_hu_liu_jin_dao = 88
+    ev_hu_ba_xian_guo_hai = 89 # 八仙过海
+    ev_hu_shi_san_yao = 90 # 十三幺
+    ev_hu_qi_dui_zi = 91 # 七对子
 
     ev_syn_card = 149 # 同步自己的牌序
     ev_syn_order = 150 # 同步当前局数、第几轮、出牌顺序顺序

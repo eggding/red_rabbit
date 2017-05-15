@@ -1,15 +1,17 @@
 syntax = "proto2";
 
+// 查询房间所在的场景
+
 // proto 10003
 message query_room_scene_req
 {
-    required uint32 room_id = 1;
+    required uint32 room_id = 1; // 房间id
 };
 
 // proto 20003
 message query_room_scene_rsp
 {
     required uint32 ret = 1;
-    required uint32 room_id = 2;
-    required bytes  scene_name = 3;
+    required uint32 room_id = 2; // 房间id
+    required bytes  scene_name = 3; // 场景信息
 };

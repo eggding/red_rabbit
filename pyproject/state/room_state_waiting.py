@@ -4,7 +4,7 @@
 import ffext
 import entity.entity_mgr as entity_mgr
 import state_machine as state_machine
-from util.enum_def import EStatusInRoom, RoomMemberProperty
+from util.enum_def import EStatusInRoom, RoomMemberProperty, EMemberEvent
 
 class RoomStateWaiting(state_machine.StateBase):
     def __init__(self, owner):
@@ -27,7 +27,8 @@ class RoomStateWaiting(state_machine.StateBase):
         Player = entity_mgr.GetEntity(nMember)
         Player.SetRoomID(roomObj.GetRoomID())
 
-        roomObj.SynGameInfo(nMember, bIsGameRunning=False)
+        roomObj.SynGameInfo(nMember, bSynAll=True)
+        roomObj.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
 
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberEnter {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
@@ -50,4 +51,6 @@ class RoomStateWaiting(state_machine.StateBase):
 
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberExit {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
+
+        roomObj.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
 

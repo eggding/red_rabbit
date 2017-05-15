@@ -2,7 +2,7 @@
 
 import util.tick_mgr as tick_mgr
 
-g_nPersistentGap = 2 * 1000# 1000 * 60 * 5
+g_nPersistentGap = 10 * 1000# 1000 * 60 * 5
 
 class BaseEntity(object):
     def __init__(self):

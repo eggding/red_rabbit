@@ -35,6 +35,13 @@ class RoomObj(object):
     def GetConfig(self):
         return self.m_dictCfg
 
+    def GetMemberByPos(self, nPos):
+        for nMember, listData in self.m_dictMember.iteritems():
+            nCurPos = listData[RoomMemberProperty.ePos]
+            if nCurPos != nPos:
+                continue
+            return nMember
+
     def GetCreateRoomNeedMoney(self):
         return parameter_common.parameter_common[3]["参数"]
 
@@ -59,49 +66,39 @@ class RoomObj(object):
     def OnGameEnd(self):
         self.Dismiss()
 
-    def SynGameInfo(self, nPlayerGID, bIsGameRunning):
-        nPos = self.GetMemberPos(nPlayerGID)
-
-        import rpc.rpc_def as rpc_def
+    def SynGameInfo(self, nPlayerGID, bSynAll=False):
         import proto.common_info_pb2 as common_info_pb2
         rsp = common_info_pb2.syn_game_info()
         rsp.room_id = self.GetRoomID()
-        rsp.cfg.member_num = 0
-        rsp.cfg.multi = 0
-        rsp.cfg.total_start_game_num = 0
-        # rsp.cfg.avg = 0
-        rsp.cfg.opt = 1
-
-        # required uint32         member_num = 1; // 开局人数
-        # required uint32         multi = 2; // 游金倍数
-        # required uint32         total_start_game_num = 3; // 总场数
-        # required uint32         avg = 4; // 是否均摊
-        # required room_option    opt = 5; // 玩法选项
-
-
-        rsp.cur_game_num = 0
+        rsp.cur_game_num = 0 #
         rsp.cur_round = self.m_gameRuleObj.GetCurJu()
-        rsp.cur_turn = 0
+        rsp.cur_turn = self.m_gameRuleObj.GetCurTurn()
         rsp.remain_card_num = self.m_gameRuleObj.GetCardRemain()
-        rsp.master_id = self.m_gameRuleObj.GetZhuang()
 
-        for nGoldCard in self.m_gameRuleObj.GetJinPaiList():
-            tmpObj = rsp.list_gold_card.add()
-            tmpObj = nGoldCard
+        nZhuang = self.m_gameRuleObj.GetZhuang()
+        rsp.master_id = nZhuang if nZhuang == 0 else self.GetMemberPos(nZhuang)
 
-        for nCard in self.m_gameRuleObj.GetPosCardList(nPos):
-            tmpObj = rsp.list_owner_card.add()
-            tmpObj = nCard
+        listJinPai = self.m_gameRuleObj.GetJinPaiList()
+        for nJin in listJinPai:
+            rsp.list_gold_card.append(nJin)
 
-        import entity.entity_mgr as entity_mgr
-        listMembers = self.GetMemberList()
-        for nMember in listMembers:
-            inf = rsp.list_members.add()
-            inf.pos = self.GetMemberPos(nMember)
-            Player = entity_mgr.GetEntity(nMember)
-            Player.Serial2Client(inf)
+        rsp.pos_owner = self.GetMemberPos(nPlayerGID)
+        rsp.opt_pos = self.m_gameRuleObj.GetCurOptMemberPos()
 
-        print("syn game info ", nPlayerGID)
+        for nMember, listVal in self.m_dictMember.iteritems():
+            nPos = listVal[RoomMemberProperty.ePos]
+            tmp = rsp.card_info.add()
+            self.m_gameRuleObj.InitCardInfoByPos(nPos, tmp, True if nPlayerGID == nMember else False)
+
+        if bSynAll is True:
+            for nMember in self.m_dictMember.iterkeys():
+                if nMember == nPlayerGID:
+                    continue
+                tmp = rsp.list_members.add()
+                tmp.pos = self.GetMemberPos(nMember)
+                Player = entity_mgr.GetEntity(nMember)
+                assert Player is not None
+                Player.Serial2Client(tmp)
 
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspSynGameData, rsp.SerializeToString())
 
@@ -178,6 +175,7 @@ class RoomObj(object):
         for nMemberOther, dictData in self.m_dictMember.iteritems():
             if nMemberOther == nModMember:
                 continue
+            print("ffext.send_msg_session ", nMemberOther)
             ffext.send_msg_session(nMemberOther, rpc_def.Gas2GacOnTouchMemberEvent, rsp.SerializeToString())
 
     def MemberEnter(self, nMember):

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='opt.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\topt.proto\x1a\x11\x63ommon_info.proto\"P\n\x07opt_req\x12\x1d\n\x08opt_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x10\n\x08opt_data\x18\x02 \x02(\r\x12\x14\n\x0copt_data_str\x18\x03 \x02(\x0c\"(\n\x07opt_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x10\n\x08ret_data\x18\x02 \x02(\x0c')
+  serialized_pb=_b('\n\topt.proto\x1a\x11\x63ommon_info.proto\">\n\x07opt_req\x12\x1d\n\x08opt_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x14\n\x0copt_data_str\x18\x03 \x01(\x0c\"/\n\x07opt_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x17\n\x0fowner_card_list\x18\x02 \x03(\r\"8\n\rsyn_card_info\x12\'\n\x0elist_card_info\x18\x01 \x03(\x0b\x32\x0f.game_card_list\"\x86\x01\n\x0esyn_game_order\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x0f\n\x07opt_pos\x18\x07 \x02(\r')
   ,
   dependencies=[common__info__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -43,15 +43,8 @@ _OPT_REQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='opt_data', full_name='opt_req.opt_data', index=1,
-      number=2, type=13, cpp_type=3, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='opt_data_str', full_name='opt_req.opt_data_str', index=2,
-      number=3, type=12, cpp_type=9, label=2,
+      name='opt_data_str', full_name='opt_req.opt_data_str', index=1,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -69,7 +62,7 @@ _OPT_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=32,
-  serialized_end=112,
+  serialized_end=94,
 )
 
 
@@ -88,9 +81,9 @@ _OPT_RSP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ret_data', full_name='opt_rsp.ret_data', index=1,
-      number=2, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
+      name='owner_card_list', full_name='opt_rsp.owner_card_list', index=1,
+      number=2, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -106,13 +99,113 @@ _OPT_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=154,
+  serialized_start=96,
+  serialized_end=143,
+)
+
+
+_SYN_CARD_INFO = _descriptor.Descriptor(
+  name='syn_card_info',
+  full_name='syn_card_info',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='list_card_info', full_name='syn_card_info.list_card_info', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=145,
+  serialized_end=201,
+)
+
+
+_SYN_GAME_ORDER = _descriptor.Descriptor(
+  name='syn_game_order',
+  full_name='syn_game_order',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='room_id', full_name='syn_game_order.room_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cur_game_num', full_name='syn_game_order.cur_game_num', index=1,
+      number=3, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cur_round', full_name='syn_game_order.cur_round', index=2,
+      number=4, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cur_turn', full_name='syn_game_order.cur_turn', index=3,
+      number=5, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='remain_card_num', full_name='syn_game_order.remain_card_num', index=4,
+      number=6, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='opt_pos', full_name='syn_game_order.opt_pos', index=5,
+      number=7, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=204,
+  serialized_end=338,
 )
 
 _OPT_REQ.fields_by_name['opt_type'].enum_type = common__info__pb2._EVENT_TYPE
+_SYN_CARD_INFO.fields_by_name['list_card_info'].message_type = common__info__pb2._GAME_CARD_LIST
 DESCRIPTOR.message_types_by_name['opt_req'] = _OPT_REQ
 DESCRIPTOR.message_types_by_name['opt_rsp'] = _OPT_RSP
+DESCRIPTOR.message_types_by_name['syn_card_info'] = _SYN_CARD_INFO
+DESCRIPTOR.message_types_by_name['syn_game_order'] = _SYN_GAME_ORDER
 
 opt_req = _reflection.GeneratedProtocolMessageType('opt_req', (_message.Message,), dict(
   DESCRIPTOR = _OPT_REQ,
@@ -127,6 +220,20 @@ opt_rsp = _reflection.GeneratedProtocolMessageType('opt_rsp', (_message.Message,
   # @@protoc_insertion_point(class_scope:opt_rsp)
   ))
 _sym_db.RegisterMessage(opt_rsp)
+
+syn_card_info = _reflection.GeneratedProtocolMessageType('syn_card_info', (_message.Message,), dict(
+  DESCRIPTOR = _SYN_CARD_INFO,
+  __module__ = 'opt_pb2'
+  # @@protoc_insertion_point(class_scope:syn_card_info)
+  ))
+_sym_db.RegisterMessage(syn_card_info)
+
+syn_game_order = _reflection.GeneratedProtocolMessageType('syn_game_order', (_message.Message,), dict(
+  DESCRIPTOR = _SYN_GAME_ORDER,
+  __module__ = 'opt_pb2'
+  # @@protoc_insertion_point(class_scope:syn_game_order)
+  ))
+_sym_db.RegisterMessage(syn_game_order)
 
 
 # @@protoc_insertion_point(module_scope)

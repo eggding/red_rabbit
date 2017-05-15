@@ -1,28 +1,5 @@
 syntax = "proto2";
 
-// 数据格式:类型=value/100, 数值=value%10
-// [111-119] 万
-// [121-129]
-// [131-139]
-// [141-149]
-
-// [211-219] 筒
-// [221-229]
-// [231-239]
-// [241-249]
-
-// [311-319] 索
-// [321-329]
-// [331-339]
-// [341-349]
-
-// [411-417] 东西南北中发白
-// [421-427]
-// [431-437]
-// [441-447]
-
-// [511-518] 春、夏、秋、冬，梅、兰、竹、菊
-
 enum room_option
 {
     half = 1; // 半自摸
@@ -47,6 +24,8 @@ enum event_type
     ev_kai_jin = 14; // 开金
     ev_mo_pai = 15; // 摸牌
     ev_qi_pai = 16; // 弃牌
+    ev_pass = 17; // 过
+    ev_cha_pai = 18; // 查牌
 
     ev_dan_you = 21; // 单游
     ev_shuang_you = 22; // 双游
@@ -54,6 +33,10 @@ enum event_type
 
     ev_fen_bing_1 = 24; // 1轮被跟
     ev_fen_bing_2 = 25; // 2轮被跟
+    ev_be_peng = 26; // 被碰
+    ev_be_gang = 27; // 被杠
+    ev_be_gang_hu = 28; // 被杠胡
+    ev_be_cha = 29; // 被查
 
     ev_hu_normal = 81; // 普通胡
     ev_hu_cha_hua = 82; // 查花胡
@@ -62,13 +45,12 @@ enum event_type
     ev_hu_san_jin_dao = 85; // 三金倒
     ev_hu_si_jin_dao = 86; // 四金倒
     ev_hu_wu_jin_dao = 87; // 五金倒
-    ev_hu_ba_xian_guo_hai = 88; // 八仙过海
-    ev_hu_shi_san_yao = 89; // 十三幺
-    ev_hu_qi_dui_zi = 90; // 七对子
+    ev_hu_liu_jin_dao = 88; // 六金倒
+    ev_hu_ba_xian_guo_hai = 89; // 八仙过海
+    ev_hu_shi_san_yao = 90; // 十三幺
+    ev_hu_qi_dui_zi = 91; // 七对子
 
-
-    ev_syn_card = 149; // 同步自己的牌序
-    ev_syn_order = 150; // 同步当前局数、第几轮、出牌顺序顺序
+    ev_syn_zhuang = 120; // 同步庄家信息
 };
 
 message other_player_info
@@ -80,6 +62,7 @@ message other_player_info
     required uint32 pos = 5; // 位置
 };
 
+// 房间玩法配置
 message game_cfg
 {
     required uint32         member_num = 1; // 开局人数
@@ -89,45 +72,62 @@ message game_cfg
     required room_option    opt = 5; // 玩法选项
 };
 
+// 玩家牌堆信息
+// 需要客户端进行缓存，如果牌堆是空的，用回缓存的数据
+message game_card_list
+{
+    required uint32 pos = 1; // 位置
+    required uint32 card_num = 2; // 手上的牌数量
+    repeated uint32 list_card_have = 3; // 手上的牌(可能没有)
+    repeated uint32 list_card_hist = 4; // 打出去的牌堆
+    repeated uint32 list_card_show = 5; // 碰、杠、事件的牌堆
+};
+
 // 同步房间信息，协议号 20014
 message syn_game_info
 {
     required uint32             room_id = 1; // 房间id
-    required game_cfg           cfg = 2; // 玩法配置
+    optional game_cfg           cfg = 2; // 玩法配置
     required uint32             cur_game_num = 3; // 当前场数
     required uint32             cur_round = 4; // 当前局数
     required uint32             cur_turn = 5; // 当前第几轮
     required uint32             remain_card_num = 6; //剩余牌的数量
     required uint32             master_id = 7; // 庄家
     repeated uint32             list_gold_card = 8; // 金牌
-    repeated uint32             list_owner_card = 9; // 自己的牌
+    repeated game_card_list     card_info = 9; // 各个位置的牌堆信息
     repeated other_player_info  list_members = 10;  // 房间其他成员
+    required uint32             opt_pos = 11; // 当前轮到哪一个位置的玩家操作
+    required uint32             pos_owner = 12; // 自己的位置
 };
 
-// 触发事件, 协议号20013
+// 通知客户端触发事件, 协议号20013
+// 碰、杠、补花、查花、单双三游、胡事件 事件参数就是牌 例子 "101"
+// 被跟 事件参数没有，只有触发对象
+// 被碰、被杠、被杠胡、被查 等通知类操作的 ev_target 表示被碰的对象、ev_target_src是操作对象
 message on_touch_event
 {
     required event_type ev_type = 1; // 事件类型
-    required uint64     ev_target = 2; // 事件产生对象
-    required bytes      ev_data = 3; // 事件参数
+    required uint64     ev_target = 3; // 事件对象
+    required bytes      ev_data = 4; // 事件参数
+    optional uint64     ev_target_src = 5; // 操作对象(产生被碰、杠等事件)
 };
 
-// 触发玩家事件, 分配协议号 20011
+// 通知客户端触发玩家进入/离开事件, 分配协议号 20011
 message on_touch_event_member
 {
-    required event_type_member ev_type = 1;
-    repeated other_player_info list_member = 2;
+    required event_type_member ev_type = 1; // 触发的事件类型
+    repeated other_player_info list_member = 2; // 玩家列表信息
 }
 
 message card_serial
 {
-    required uint64 player_id = 1;
-    repeated uint32 list_card_info = 2;
-    required uint32 score = 3;
+    required uint64 player_id = 1; // 玩家id
+    repeated uint32 list_card_info = 2; // 玩家牌序
+    required uint32 score = 3; // 积分
 };
 
 
-// 同步战斗结果, 分配协议号 20012
+// 玩法结果, 分配协议号 20012
 message syn_game_ret
 {
     required uint32             room_id = 1;
@@ -139,5 +139,5 @@ message syn_game_ret
 message notic_msg
 {
     required uint32 msg_id = 1;
-    optional bytes msg_content = 2;
+    optional bytes msg_content = 2; //公告消息内容
 }

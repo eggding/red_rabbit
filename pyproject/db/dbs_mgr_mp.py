@@ -140,6 +140,12 @@ class DbsMgr(object):
             db=cfg["db"],
             charset='utf8',
         )
+        self.DoConnPring()
+
+    def DoConnPring(self):
+        tick_mgr.RegisterOnceTick(60 * 60 * 1000, self.DoConnPring)
+        import dbs_common as dbs_common
+        dbs_common.Ping(self.m_nConn)
 
     def Add2JobQueue(self, nChannel, szSerial):
         nQueueID = nChannel % self.m_nQueueNum

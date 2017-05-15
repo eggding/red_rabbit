@@ -31,7 +31,7 @@ def PacketCreateRoomBuff():
     req.cfg.multi = 5
     req.cfg.total_start_game_num = 5
     req.cfg.opt = 2
-    # req.cfg.avg = 0
+    req.cfg.avg = 0
     szRet = req.SerializeToString()
 
     # 计算protobol消息体的字节数
@@ -68,8 +68,9 @@ def StartUp():
     c = 0
     import random
     while True:
-        sock = socket.create_connection(("192.168.74.130", 10242))
-        # sock = socket.create_connection(("127.0.0.1", 10242))
+        # sock = socket.create_connection(("112.74.124.100", 10242))
+        # sock = socket.create_connection(("192.168.74.130", 10242))
+        sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
         # syn scene

@@ -13,16 +13,14 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
-import common_info_pb2 as common__info__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='exit_room.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0f\x65xit_room.proto\x1a\x11\x63ommon_info.proto\" \n\rexit_room_req\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"\x1c\n\rexit_room_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r')
-  ,
-  dependencies=[common__info__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x0f\x65xit_room.proto\" \n\rexit_room_req\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"\x1c\n\rexit_room_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r')
+)
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -54,8 +52,8 @@ _EXIT_ROOM_REQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38,
-  serialized_end=70,
+  serialized_start=19,
+  serialized_end=51,
 )
 
 
@@ -85,8 +83,8 @@ _EXIT_ROOM_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=72,
-  serialized_end=100,
+  serialized_start=53,
+  serialized_end=81,
 )
 
 DESCRIPTOR.message_types_by_name['exit_room_req'] = _EXIT_ROOM_REQ

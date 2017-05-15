@@ -2,11 +2,17 @@ syntax = "proto2";
 
 import "common_info.proto";
 
+// 碰, opt_data_str = 要碰的玩家id,要碰那个牌组合成字符串 例子 "4958588,101"
+// 杠, opt_data_str = 要杠的玩家id,要杠那个牌组合成字符串 例子 "4958588,101"
+// 胡, opt_data_str 不用填
+// 过, opt_data_str 不用填
+// 打牌, opt_data_str = 要打的那个牌id 例子 "101"，返回信息会更新自己的牌堆
+// 查花、查胡, opt_data_str = 要查的玩家id,要查那个牌组合成字符串 例子 "4958588,101"
+
 // 玩家操作请求信息，协议号 10021
 message opt_req
 {
-    required event_type opt_type = 1; // 碰、杠、胡等
-    optional uint32 opt_data = 2;
+    required event_type opt_type = 1; // 碰、杠、胡、过、打牌、查花、查胡
     optional bytes opt_data_str = 3;
 };
 
@@ -14,6 +20,23 @@ message opt_req
 message opt_rsp
 {
     required uint32 ret = 1;
-    optional bytes  ret_data = 2;
+    repeated uint32 owner_card_list = 2; // 自己牌序
 };
 
+// 协议号 20041
+message syn_card_info
+{
+    repeated game_card_list list_card_info = 1; // 数组、同步牌堆
+};
+
+// 协议号 20042
+// 同步当前玩法时机
+message syn_game_order
+{
+    required uint32 room_id = 1;
+    required uint32 cur_game_num = 3; // 当前场数
+    required uint32 cur_round = 4; // 当前局数
+    required uint32 cur_turn = 5; // 当前第几轮
+    required uint32 remain_card_num = 6; //剩余牌的数量
+    required uint32 opt_pos = 7; // 当前轮到哪一个位置的玩家操作
+};

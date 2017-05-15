@@ -25,8 +25,15 @@ class GasPlayerEntity(base_entity.BaseEntity):
         self.online_time = 0
         self.ip         = None
         self.gate_name  = None
+        self.m_bIsResidual = False
 
         self.m_nCurRoomID = None
+
+    def SetResidual(self, bFlag):
+        self.m_bIsResidual = bFlag
+
+    def IsInResidualState(self):
+        return self.m_bIsResidual
 
     def SetRoomID(self, nRoomID):
         self.m_nCurRoomID = nRoomID

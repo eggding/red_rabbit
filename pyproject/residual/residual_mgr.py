@@ -3,6 +3,7 @@
 import ff
 import ffext
 import util.tick_mgr as tick_mgr
+import entity.entity_mgr as entity_mgr
 
 RESIDUAL_TIME = 60 * 60 * 1000
 
@@ -23,10 +24,14 @@ class ResidualMgr(object):
         assert nPlayerGID in self.m_dictRsidualPlayer
         tick_mgr.UnRegisterOnceTick(self.m_dictRsidualPlayer[nPlayerGID])
         self.m_dictRsidualPlayer.pop(nPlayerGID)
+        Player = entity_mgr.GetEntity(nPlayerGID)
+        Player.SetResidual(False)
         ffext.LOGINFO("FFSCENE_PYTHON", "RemoveResidualPlayer {0}".format(nPlayerGID))
 
     def AddResidualPlayer(self, nPlayerGID):
         assert nPlayerGID not in self.m_dictRsidualPlayer
         nTickID = tick_mgr.RegisterOnceTick(RESIDUAL_TIME, self.OnResdualTimeOut, nPlayerGID)
         self.m_dictRsidualPlayer[nPlayerGID] = nTickID
+        Player = entity_mgr.GetEntity(nPlayerGID)
+        Player.SetResidual(True)
         ffext.LOGINFO("FFSCENE_PYTHON", "AddResidualPlayer {0}".format(nPlayerGID))

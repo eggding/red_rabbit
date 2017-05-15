@@ -2,16 +2,16 @@ syntax = "proto2";
 
 enum login_type
 {
-    get_gate_info = 1;
-    login = 2;
-    gm_code = 3;
+    get_gate_info = 1; // 查询gate地址
+    login = 2; // 登录请求
+    gm_code = 3; // 测试环境开放给客户端用的gm指令
 };
 
 // 请求登录, 协议号 10001
 message login_req
 {
-    required login_type type = 1; //登录填2
-    required bytes      auth_info = 2; // "1234"
+    required login_type type = 1;
+    required bytes      auth_info = 2;
 };
 
 // 协议号 20001

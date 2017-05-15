@@ -6,7 +6,7 @@ import json
 import rpc.rpc_def as rpc_def
 import entity.entity_mgr as entity_mgr
 import state_machine as state_machine
-from util.enum_def import EStatusInRoom, RoomMemberProperty
+from util.enum_def import EStatusInRoom, RoomMemberProperty, EMemberEvent
 
 class RoomStateRunning(state_machine.StateBase):
     def __init__(self, owner):
@@ -25,7 +25,8 @@ class RoomStateRunning(state_machine.StateBase):
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.ePlaying
 
         roomObj.GetGameRule().OnMemberEnter(nMember)
-        roomObj.SynGameInfo(nMember, bIsGameRunning=True)
+        roomObj.SynGameInfo(nMember, bSynAll=True)
+        roomObj.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
         return True
 
     def MemberExit(self, nMember):
@@ -39,4 +40,5 @@ class RoomStateRunning(state_machine.StateBase):
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eOffline
 
         roomObj.GetGameRule().OnMemberExit(nMember)
+        roomObj.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
 
