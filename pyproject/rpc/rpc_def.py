@@ -15,6 +15,7 @@ Gas2GacRetChangeScene = 20002
 Gas2GacretQueryRoomScene = 20003
 
 Gas2GacOnTouchMemberEvent = 20011
+Gas2GacSynGameRet = 20012
 Gas2GacOnTouchGameEvent = 20013
 Gas2GacRspSynGameData = 20014
 Gas2GacRspOpt = 20021

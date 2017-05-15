@@ -126,7 +126,7 @@ def StartUp(nId=None):
 
         while True:
             # print(sock.recv(3948))
-            print(sock.recv(39484))
+            tmp = sock.recv(39484)
             time.sleep(1)
 
 

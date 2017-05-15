@@ -138,7 +138,6 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictCfg = dictCfg
 
     def GetQiPaiExpireSecond(self):
-        print(parameter_common.parameter_common[1]["参数"])
         return parameter_common.parameter_common[1]["参数"]
 
     def DingZhuang(self):
@@ -302,27 +301,13 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictPosCarList[nPosZhuang].append(nCard)
         self.StartQiPaiTick(nPosZhuang)
 
-        while True:
-            bContinueBuHua = False
-            for nPos in xrange(1, self.m_nMemberNum + 1):
-                bHaveHuaPai, _ = self.CheckBuHua(nPos)
-                if bHaveHuaPai is True:
-                    bContinueBuHua = True
-            if bContinueBuHua is False:
-                break
-
-        for i in xrange(1, self.m_nMemberNum + 1):
-            ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.FaPai {0}, {1}".format(i, self.DumpPos(i)))
-
     def NextTurn(self):
         nPos = self.GetNextPos()
         self.m_nCurTurn += 1
         self.MoPai(nPos)
 
     def GetEventExpireTime(self):
-        print(parameter_common.parameter_common[2]["参数"])
         return parameter_common.parameter_common[2]["参数"]
-        # return self.m_dictCfg.get("event_expire_time", 3)
 
     def AutoQiPai(self, nPos):
         self.StopQiPaiTick(nPos)
@@ -443,6 +428,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_nCurOptMemberPos = nToPos
         self.StopQiPaiTick(nFromPos)
         self.StartQiPaiTick(nToPos)
+        self.SynOrder()
 
     def RequestHu(self, nPlayerGID):
         nPlayerGID = nPlayerGID[0]
@@ -452,7 +438,7 @@ class GasMjRule(rule_base.GameRuleBase):
             return
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.Hu@@@@@ {0}, {1}, {2}".format(nPlayerGID, self.DumpPos(nPos), self.m_listJinPai))
-        self.OneJuEnd()
+        self.OneJuEnd(nPos)
 
     def RecordTouchEvent(self, nPos, listData):
         self.m_dictPosEventRecord[nPos].append(listData)
@@ -559,11 +545,37 @@ class GasMjRule(rule_base.GameRuleBase):
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPeng {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPengRet {0}".format(self.DumpPos(nPosOwner)))
 
-    def CalScore(self):
-        pass
+    def GetAllCardList(self, nPos):
+        listTmp = self.m_dictPosCarListEx[nPos][:]
+        listTmp.extend(self.m_dictPosCarList[nPos])
+        return listTmp
 
-    def OneJuEnd(self):
-        self.CalScore()
+    def CalScore(self, nWndPos):
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.syn_game_ret()
+        rsp.room_id = self.m_roomObj.GetRoomID()
+
+        import entity.entity_mgr as entity_mgr
+        for nMember in self.m_roomObj.GetMemberList():
+            tmp = rsp.list_member.add()
+            tmp.pos = self.m_roomObj.GetMemberPos(nMember)
+            Player = entity_mgr.GetEntity(nMember)
+            assert Player is not None
+            Player.Serial2Client(tmp)
+
+            tmp = rsp.list_car_serial.add()
+            tmp.player_id = nMember
+            tmp.score = random.randint(1, 100)
+            nPos = self.m_roomObj.GetMemberPos(nMember)
+            listCardData = self.GetAllCardList(nPos)
+            for nCard in listCardData:
+                tmp.list_card_info.append(nCard)
+
+        for nMember in self.m_roomObj.GetMemberList():
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacSynGameRet, rsp.SerializeToString())
+
+    def OneJuEnd(self, nWndPos=None):
+        self.CalScore(nWndPos)
         self.StartJu()
 
     def CleanGoogleProtoList(self, listData):
@@ -627,6 +639,19 @@ class GasMjRule(rule_base.GameRuleBase):
         listMember = self.m_roomObj.GetMemberList()
         for nMember in listMember:
             self.m_roomObj.SynGameInfo(nMember, bSynAll=False)
+
+        while True:
+            bContinueBuHua = False
+            for nPos in xrange(1, self.m_nMemberNum + 1):
+                bHaveHuaPai, _ = self.CheckBuHua(nPos)
+                if bHaveHuaPai is True:
+                    bContinueBuHua = True
+            if bContinueBuHua is False:
+                break
+
+        for i in xrange(1, self.m_nMemberNum + 1):
+            ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.FaPai {0}, {1}".format(i, self.DumpPos(i)))
+
 
     def SerialCardInfo(self, nPos, bSynCardHave=False):
         import proto.common_info_pb2 as common_info_pb2

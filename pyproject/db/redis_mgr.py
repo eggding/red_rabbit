@@ -12,5 +12,4 @@ for pos in listMember:
     # cardInfo.list_card_hist.pop()
     # cardInfo.list_card_hist.add()
     # cardInfo.list_card_show.add()
-
 # print(rsp.list_card_info[0])

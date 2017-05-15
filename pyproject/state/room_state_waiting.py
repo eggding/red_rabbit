@@ -43,6 +43,8 @@ class RoomStateWaiting(state_machine.StateBase):
         Player = entity_mgr.GetEntity(nMember)
         Player.SetRoomID(None)
 
+        roomObj.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
+
         assert nMember in roomObj.m_dictMember
         if 1 == len(roomObj.m_dictMember):
             roomObj.Dismiss()
@@ -51,6 +53,4 @@ class RoomStateWaiting(state_machine.StateBase):
 
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberExit {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
-
-        roomObj.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
 
