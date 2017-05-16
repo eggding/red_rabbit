@@ -38,16 +38,23 @@ class RoomService(object):
         roomObj = self.m_dictRoomID2Room[nRoomID]
         return roomObj
 
+    def RandomChooseRoom(self):
+        for nRoomID, roomObj in self.m_dictRoomID2Room.iteritems():
+            if roomObj.GetMemberList() != 4:
+                return nRoomID
+        return 0
+
     def EnterRoom(self, nPlayerGID, nRoomID=None):
         if nRoomID is None:
             return
 
-        if 0 == nRoomID and len(self.m_dictRoomID2Room) != 0:
-            nRoomID = self.m_dictRoomID2Room.keys()[0]
+        if 0 == nRoomID:
+            nRoomID = self.RandomChooseRoom()
 
         roomObj = self.m_dictRoomID2Room.get(nRoomID)
         if roomObj is None:
             return
+
         roomObj.MemberEnter(nPlayerGID)
 
     def OnGetRoomIDRet(self, nRoomID, nPlayerGID, dictCfg):

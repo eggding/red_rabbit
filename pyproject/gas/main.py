@@ -37,7 +37,7 @@ import gas.gas_scene.gas_scene_mgr as gas_scene_mgr
 
 @ffext.reg_service(rpc_def.OnAllServiceStartUp)
 def OnAllServiceStartUp(dictSerial):
-    pass
+    import robot.robot_mgr as robot_mgr
 
 @ffext.reg_service(rpc_def.Peer)
 def Peer(dictSerial):

@@ -97,8 +97,8 @@ def StartUp(nId=None):
     global gIndex
     gIndex = nId
     while True:
-        # sock = socket.create_connection(("112.74.124.100", 10242))
-        sock = socket.create_connection(("127.0.0.1", 10242))
+        sock = socket.create_connection(("112.74.124.100", 10242))
+        # sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
 

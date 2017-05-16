@@ -33,6 +33,7 @@ def once_timer(timeout_, func_, data=None):
     global g_timer_callback_dict, GID
     GID += 1
     g_timer_callback_dict[GID] = [func_, data]
+
     ff.ffscene_obj.once_timer(timeout_, GID)
     return GID
 

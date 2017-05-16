@@ -43,7 +43,8 @@ dict_cfg = {
         "gate@1": "tcp://127.0.0.1:10243",
     },
     "gas": {
-        "num": 3
+        "num": 3,
+        "robot_num": 9,
     },
     "gm_service": {
 

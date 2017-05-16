@@ -132,7 +132,7 @@ class GasMjRule(rule_base.GameRuleBase):
 
     def GetMaxJuNum(self):
         nChangNum = self.GetConfig()["total_start_game_num"]
-        return nChangNum * 5
+        return nChangNum * 1
 
     def InitWithCfg(self, dictCfg):
         self.m_dictCfg = dictCfg
@@ -218,24 +218,29 @@ class GasMjRule(rule_base.GameRuleBase):
 
         return bNewCardIsHuaPai, nDstCard
 
-    def MoPai(self, nPos):
+    def MoPai(self, nPos, bCheckEventAndBuHua):
         assert self.m_nNextCardIndex < self.m_nMaxCardNum
         nCard = self.GetNextCard()
         self.m_dictPosCarList[nPos].append(nCard)
-
-        ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.MoPai {0}, {1}, {2} {3}".format(nPos, self.m_roomObj.GetMemberIDByPos(nPos), check_hu.GetCardNameChinese(nCard), len(self.m_dictPosCarList[nPos])))
-        gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_mo_pai, [nPos, nCard])
         self.StartQiPaiTick(nPos)
         self.SynOrder()
+
         if self.m_nNextCardIndex >= self.m_nMaxCardNum - 12:
             self.OneJuEnd()
             return
 
-        while True:
-            bHaveHuaPai, nCard = self.CheckBuHua(nPos, nCard)
-            self.SynOrder()
-            if bHaveHuaPai is False:
-                break
+        ffext.LOGINFO("FFSCENE_PYTHON",
+                      "GasMj.MoPai {0}, {1}, {2} {3}".format(nPos, self.m_roomObj.GetMemberIDByPos(nPos),
+                                                             check_hu.GetCardNameChinese(nCard),
+                                                             len(self.m_dictPosCarList[nPos])))
+
+        if bCheckEventAndBuHua is True:
+            gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_mo_pai, [nPos, nCard])
+            while True:
+                bHaveHuaPai, nCard = self.CheckBuHua(nPos, nCard)
+                self.SynOrder()
+                if bHaveHuaPai is False:
+                    break
 
     def DumpPos(self, nPos):
         szSerial = ""
@@ -296,15 +301,12 @@ class GasMjRule(rule_base.GameRuleBase):
                 nCard = self.GetNextCard()
                 self.m_dictPosCarList[nPos].append(nCard)
 
-        self.m_nCurOptMemberPos = nPosZhuang
-        nCard = self.GetNextCard()
-        self.m_dictPosCarList[nPosZhuang].append(nCard)
-        self.StartQiPaiTick(nPosZhuang)
+        self.m_nCurOptMemberPos = self.GetPrevPos(nPosZhuang)
 
-    def NextTurn(self):
+    def NextTurn(self, bCheckEventAndBuHua=True):
         nPos = self.GetNextPos()
         self.m_nCurTurn += 1
-        self.MoPai(nPos)
+        self.MoPai(nPos, bCheckEventAndBuHua)
 
     def GetEventExpireTime(self):
         return parameter_common.parameter_common[2]["参数"]
@@ -639,6 +641,8 @@ class GasMjRule(rule_base.GameRuleBase):
         listMember = self.m_roomObj.GetMemberList()
         for nMember in listMember:
             self.m_roomObj.SynGameInfo(nMember, bSynAll=False)
+
+        self.NextTurn(bCheckEventAndBuHua=False)
 
         while True:
             bContinueBuHua = False

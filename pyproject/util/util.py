@@ -1,5 +1,10 @@
 # -*- coding:utf-8 -*-
 
+def IsRobot(nPlayerGID):
+    if nPlayerGID < 1000:
+        return True
+    return False
+
 def IsGasScene(szScene):
     return True if szScene.find("gas") != -1 else False
 

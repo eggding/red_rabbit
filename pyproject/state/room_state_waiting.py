@@ -28,7 +28,6 @@ class RoomStateWaiting(state_machine.StateBase):
         Player.SetRoomID(roomObj.GetRoomID())
 
         roomObj.SynGameInfo(nMember, bSynAll=True)
-        roomObj.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
 
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberEnter {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
@@ -42,8 +41,6 @@ class RoomStateWaiting(state_machine.StateBase):
         roomObj = self.GetOwner()
         Player = entity_mgr.GetEntity(nMember)
         Player.SetRoomID(None)
-
-        roomObj.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
 
         assert nMember in roomObj.m_dictMember
         if 1 == len(roomObj.m_dictMember):

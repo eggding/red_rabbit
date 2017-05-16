@@ -26,7 +26,6 @@ class RoomStateRunning(state_machine.StateBase):
 
         roomObj.GetGameRule().OnMemberEnter(nMember)
         roomObj.SynGameInfo(nMember, bSynAll=True)
-        roomObj.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
         return True
 
     def MemberExit(self, nMember):
@@ -40,5 +39,4 @@ class RoomStateRunning(state_machine.StateBase):
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eOffline
 
         roomObj.GetGameRule().OnMemberExit(nMember)
-        roomObj.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)
 

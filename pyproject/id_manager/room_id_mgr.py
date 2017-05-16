@@ -24,15 +24,15 @@ class idgen_t(object):
         self.auto_inc_id = nAutoIncId
         self.runing_flag = nRunningFlag
         if self.runing_flag != 0:
-            self.auto_inc_id += 500
+            self.auto_inc_id += 50
             ffext.ERROR('last idgen shut down not ok, inc 50')
 
         if self.type_id == EIdType.eIdTypeRoom:
             if self.auto_inc_id < 100000:
                 self.auto_inc_id = 100000
         else:
-            if self.auto_inc_id < 65535:
-                self.auto_inc_id = 65535
+            if self.auto_inc_id < 100:
+                self.auto_inc_id = 100
         self.m_bInit = True
 
     def init(self):

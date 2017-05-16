@@ -31,9 +31,11 @@ class GasSceneMgr(base_scene.BaseScene):
         gasPlayer.InitFromDict(dictSerialData)
         gasPlayer.SetScene(self)
         entity_mgr.AddEntity(gasPlayer.GetGlobalID(), gasPlayer)
-        ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": gasPlayer.GetGlobalID(),
-                                                                                "scene": ff.service_name})
-        self.SynSceneInfo(gasPlayer.GetGlobalID())
+
+        if util.IsRobot(gasPlayer.GetGlobalID()) is False:
+            self.SynSceneInfo(gasPlayer.GetGlobalID())
+            ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": gasPlayer.GetGlobalID(),
+                                                                                    "scene": ff.service_name})
 
     def SynSceneInfo(self, nPlayerGID):
         rsp = change_scene_pb2.change_scene_rsp()

@@ -89,8 +89,9 @@ def StartUp():
 
         while True:
             # print(sock.recv(3948))
-            sock.recv(39484)
-            time.sleep(1)
+            t = sock.recv(39484)
+            print(t)
+            time.sleep(0.5)
 
         time.sleep(9939)
 
