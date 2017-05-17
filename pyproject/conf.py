@@ -44,7 +44,7 @@ dict_cfg = {
     },
     "gas": {
         "num": 3,
-        "robot_num": 9,
+        "robot_num": 300,
     },
     "gm_service": {
 

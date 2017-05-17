@@ -5,6 +5,7 @@ import "common_info.proto";
 // 创建房间 分配协议号 10010
 message create_room_req
 {
+    optional bool proto_id_10010 = 99;
     required uint32 game_type = 1; // 游戏类型
     required game_cfg cfg = 2;
 };
@@ -13,6 +14,7 @@ message create_room_req
 // 分配协议号 20010
 message create_room_rsp
 {
+    optional bool proto_id_20010 = 99;
     required uint32     ret = 1;
     required uint32     game_type = 2;
     optional uint32     room_id = 3;

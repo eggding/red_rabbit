@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='exit_room.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0f\x65xit_room.proto\" \n\rexit_room_req\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"\x1c\n\rexit_room_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r')
+  serialized_pb=_b('\n\x0f\x65xit_room.proto\"8\n\rexit_room_req\x12\x16\n\x0eproto_id_10015\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"4\n\rexit_room_rsp\x12\x16\n\x0eproto_id_20015\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -34,7 +34,14 @@ _EXIT_ROOM_REQ = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='room_id', full_name='exit_room_req.room_id', index=0,
+      name='proto_id_10015', full_name='exit_room_req.proto_id_10015', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='room_id', full_name='exit_room_req.room_id', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -53,7 +60,7 @@ _EXIT_ROOM_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=19,
-  serialized_end=51,
+  serialized_end=75,
 )
 
 
@@ -65,7 +72,14 @@ _EXIT_ROOM_RSP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ret', full_name='exit_room_rsp.ret', index=0,
+      name='proto_id_20015', full_name='exit_room_rsp.proto_id_20015', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='exit_room_rsp.ret', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -83,8 +97,8 @@ _EXIT_ROOM_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=53,
-  serialized_end=81,
+  serialized_start=77,
+  serialized_end=129,
 )
 
 DESCRIPTOR.message_types_by_name['exit_room_req'] = _EXIT_ROOM_REQ

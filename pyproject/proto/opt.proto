@@ -12,6 +12,7 @@ import "common_info.proto";
 // 玩家操作请求信息，协议号 10021
 message opt_req
 {
+    optional bool proto_id_10021 = 99;
     required event_type opt_type = 1; // 碰、杠、胡、过、打牌、查花、查胡
     optional bytes opt_data_str = 3;
 };
@@ -19,13 +20,17 @@ message opt_req
 // 协议号 20021
 message opt_rsp
 {
-    required uint32 ret = 1;
-    repeated uint32 owner_card_list = 2; // 自己牌序
+    optional bool       proto_id_20021 = 99;
+    required uint32     ret = 1;
+    required event_type opt_type = 2;
+    repeated uint32     listen_card = 3; // 听牌
+    repeated uint32     owner_card_list = 4; // 自己牌序
 };
 
 // 协议号 20041
 message syn_card_info
 {
+    optional bool           proto_id_20041 = 99;
     repeated game_card_list list_card_info = 1; // 数组、同步牌堆
 };
 
@@ -33,6 +38,7 @@ message syn_card_info
 // 同步当前玩法时机
 message syn_game_order
 {
+    optional bool proto_id_20042 = 99;
     required uint32 room_id = 1;
     required uint32 cur_game_num = 3; // 当前场数
     required uint32 cur_round = 4; // 当前局数

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='enter_room.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x10\x65nter_room.proto\x1a\x11\x63ommon_info.proto\"!\n\x0e\x65nter_room_req\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"?\n\x0e\x65nter_room_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12 \n\x08ret_data\x18\x02 \x01(\x0b\x32\x0e.syn_game_info')
+  serialized_pb=_b('\n\x10\x65nter_room.proto\x1a\x11\x63ommon_info.proto\"9\n\x0e\x65nter_room_req\x12\x16\n\x0eproto_id_10011\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"W\n\x0e\x65nter_room_rsp\x12\x16\n\x0eproto_id_20011\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12 \n\x08ret_data\x18\x02 \x01(\x0b\x32\x0e.syn_game_info')
   ,
   dependencies=[common__info__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -36,7 +36,14 @@ _ENTER_ROOM_REQ = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='room_id', full_name='enter_room_req.room_id', index=0,
+      name='proto_id_10011', full_name='enter_room_req.proto_id_10011', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='room_id', full_name='enter_room_req.room_id', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -55,7 +62,7 @@ _ENTER_ROOM_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=39,
-  serialized_end=72,
+  serialized_end=96,
 )
 
 
@@ -67,14 +74,21 @@ _ENTER_ROOM_RSP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ret', full_name='enter_room_rsp.ret', index=0,
+      name='proto_id_20011', full_name='enter_room_rsp.proto_id_20011', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='enter_room_rsp.ret', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ret_data', full_name='enter_room_rsp.ret_data', index=1,
+      name='ret_data', full_name='enter_room_rsp.ret_data', index=2,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -92,8 +106,8 @@ _ENTER_ROOM_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=74,
-  serialized_end=137,
+  serialized_start=98,
+  serialized_end=185,
 )
 
 _ENTER_ROOM_RSP.fields_by_name['ret_data'].message_type = common__info__pb2._SYN_GAME_INFO

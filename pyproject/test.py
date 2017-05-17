@@ -18,24 +18,32 @@ def TestEnterRoom()\
 
 def StartGame():
     threads = []
-    t1 = threading.Thread(target=CreateRoom)
-    threads.append(t1)
+    for i in xrange(0, 1):
+        t1 = threading.Thread(target=CreateRoom)
+        threads.append(t1)
 
-    t2 = threading.Thread(target=TestEnterRoom)
-    threads.append(t2)
-
-    t21 = threading.Thread(target=TestEnterRoom)
-    threads.append(t21)
-
-    t22 = threading.Thread(target=TestEnterRoom)
-    threads.append(t22)
     for t in threads:
         # t.setDaemon(True)
-        time.sleep(0.1)
         t.start()
+
+
+        # t2 = threading.Thread(target=TestEnterRoom)
+    # threads.append(t2)
+    #
+    # t21 = threading.Thread(target=fTestEnterRoom)
+    # threads.append(t21)
+    #
+    # t22 = threading.Thread(target=TestEnterRoom)
+    # threads.append(t22)
+    # for t in threads:
+    #     # t.setDaemon(True)
+    #     time.sleep(0.1)
+    #     t.start()
 
 if __name__ == '__main__':
     for i in xrange(0, 1):
         print("start game ", i)
         print("\n" * 10)
+        if i % 5 == 0:
+            time.sleep(0.15)
         StartGame()

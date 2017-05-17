@@ -49,8 +49,6 @@ enum event_type
     ev_hu_ba_xian_guo_hai = 89; // 八仙过海
     ev_hu_shi_san_yao = 90; // 十三幺
     ev_hu_qi_dui_zi = 91; // 七对子
-
-    ev_syn_zhuang = 120; // 同步庄家信息
 };
 
 message other_player_info
@@ -86,6 +84,7 @@ message game_card_list
 // 同步房间信息，协议号 20014
 message syn_game_info
 {
+    optional bool               proto_id_20014 = 99;
     required uint32             room_id = 1; // 房间id
     optional game_cfg           cfg = 2; // 玩法配置
     required uint32             cur_game_num = 3; // 当前场数
@@ -106,6 +105,7 @@ message syn_game_info
 // 被碰、被杠、被杠胡、被查 等通知类操作的 ev_target 表示被碰的对象、ev_target_src是操作对象
 message on_touch_event
 {
+    optional bool       proto_id_20013 = 99;
     required event_type ev_type = 1; // 事件类型
     required uint64     ev_target = 3; // 事件对象
     required bytes      ev_data = 4; // 事件参数
@@ -130,14 +130,16 @@ message card_serial
 // 玩法结果, 分配协议号 20012
 message syn_game_ret
 {
+    optional bool               proto_id_20012 = 99;
     required uint32             room_id = 1;
     repeated other_player_info  list_member = 2;
     repeated card_serial        list_car_serial = 3;
 };
 
-// 公告/提示 消息同步, 分配协议号 20013
+// 公告/提示 消息同步, 分配协议号 20018
 message notic_msg
 {
+    optional bool proto_id_20018 = 99;
     required uint32 msg_id = 1;
     optional bytes msg_content = 2; //公告消息内容
 }

@@ -421,9 +421,16 @@ class GasMjRule(rule_base.GameRuleBase):
         import proto.opt_pb2 as opt_pb2
         rsp = opt_pb2.opt_rsp()
         rsp.ret = 0
-        listCard = self.m_dictPosCarList[nPos]
-        for nCard in listCard:
-            rsp.owner_card_list.append(nCard)
+        if nOptType not in (EMjEvent.ev_pass, EMjEvent.ev_hu_normal):
+            listCard = self.m_dictPosCarList[nPos]
+            for nCard in listCard:
+                rsp.owner_card_list.append(nCard)
+
+        if nOptType in (EMjEvent.ev_qi_pai, ):
+            listListenCard = check_hu.getTingArr(self.m_dictPosCarList[nPos], self.GetJinPaiList())
+            for nCard in listListenCard:
+                rsp.listen_card.append(nCard)
+
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspOpt, rsp.SerializeToString())
 
     def ChangeOrder(self, nFromPos, nToPos):

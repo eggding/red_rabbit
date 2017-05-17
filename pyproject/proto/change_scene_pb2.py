@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='change_scene.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x12\x63hange_scene.proto\"&\n\x10\x63hange_scene_req\x12\x12\n\nscene_name\x18\x01 \x02(\x0c\"3\n\x10\x63hange_scene_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x12\n\nscene_name\x18\x02 \x02(\x0c')
+  serialized_pb=_b('\n\x12\x63hange_scene.proto\">\n\x10\x63hange_scene_req\x12\x16\n\x0eproto_id_10002\x18\x63 \x01(\x08\x12\x12\n\nscene_name\x18\x01 \x02(\x0c\"K\n\x10\x63hange_scene_rsp\x12\x16\n\x0eproto_id_20002\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x12\n\nscene_name\x18\x02 \x02(\x0c')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -34,7 +34,14 @@ _CHANGE_SCENE_REQ = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='scene_name', full_name='change_scene_req.scene_name', index=0,
+      name='proto_id_10002', full_name='change_scene_req.proto_id_10002', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='scene_name', full_name='change_scene_req.scene_name', index=1,
       number=1, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -53,7 +60,7 @@ _CHANGE_SCENE_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=60,
+  serialized_end=84,
 )
 
 
@@ -65,14 +72,21 @@ _CHANGE_SCENE_RSP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ret', full_name='change_scene_rsp.ret', index=0,
+      name='proto_id_20002', full_name='change_scene_rsp.proto_id_20002', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='change_scene_rsp.ret', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='scene_name', full_name='change_scene_rsp.scene_name', index=1,
+      name='scene_name', full_name='change_scene_rsp.scene_name', index=2,
       number=2, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -90,8 +104,8 @@ _CHANGE_SCENE_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=62,
-  serialized_end=113,
+  serialized_start=86,
+  serialized_end=161,
 )
 
 DESCRIPTOR.message_types_by_name['change_scene_req'] = _CHANGE_SCENE_REQ

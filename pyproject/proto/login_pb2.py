@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='login.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0blogin.proto\"9\n\tlogin_req\x12\x19\n\x04type\x18\x01 \x02(\x0e\x32\x0b.login_type\x12\x11\n\tauth_info\x18\x02 \x02(\x0c\"O\n\tlogin_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x11\n\tgate_info\x18\x04 \x01(\x0c*7\n\nlogin_type\x12\x11\n\rget_gate_info\x10\x01\x12\t\n\x05login\x10\x02\x12\x0b\n\x07gm_code\x10\x03')
+  serialized_pb=_b('\n\x0blogin.proto\"Q\n\tlogin_req\x12\x16\n\x0eproto_id_10001\x18\x63 \x01(\x08\x12\x19\n\x04type\x18\x01 \x02(\x0e\x32\x0b.login_type\x12\x11\n\tauth_info\x18\x02 \x02(\x0c\"g\n\tlogin_rsp\x12\x16\n\x0eproto_id_20001\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x11\n\tgate_info\x18\x04 \x01(\x0c*7\n\nlogin_type\x12\x11\n\rget_gate_info\x10\x01\x12\t\n\x05login\x10\x02\x12\x0b\n\x07gm_code\x10\x03')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -45,8 +45,8 @@ _LOGIN_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=155,
-  serialized_end=210,
+  serialized_start=203,
+  serialized_end=258,
 )
 _sym_db.RegisterEnumDescriptor(_LOGIN_TYPE)
 
@@ -65,14 +65,21 @@ _LOGIN_REQ = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='login_req.type', index=0,
+      name='proto_id_10001', full_name='login_req.proto_id_10001', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='login_req.type', index=1,
       number=1, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='auth_info', full_name='login_req.auth_info', index=1,
+      name='auth_info', full_name='login_req.auth_info', index=2,
       number=2, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -91,7 +98,7 @@ _LOGIN_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=15,
-  serialized_end=72,
+  serialized_end=96,
 )
 
 
@@ -103,28 +110,35 @@ _LOGIN_RSP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ret', full_name='login_rsp.ret', index=0,
+      name='proto_id_20001', full_name='login_rsp.proto_id_20001', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='login_rsp.ret', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='player_id', full_name='login_rsp.player_id', index=1,
+      name='player_id', full_name='login_rsp.player_id', index=2,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='room_id', full_name='login_rsp.room_id', index=2,
+      name='room_id', full_name='login_rsp.room_id', index=3,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='gate_info', full_name='login_rsp.gate_info', index=3,
+      name='gate_info', full_name='login_rsp.gate_info', index=4,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -142,8 +156,8 @@ _LOGIN_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=74,
-  serialized_end=153,
+  serialized_start=98,
+  serialized_end=201,
 )
 
 _LOGIN_REQ.fields_by_name['type'].enum_type = _LOGIN_TYPE

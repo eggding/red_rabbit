@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='create_room.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x11\x63reate_room.proto\x1a\x11\x63ommon_info.proto\"<\n\x0f\x63reate_room_req\x12\x11\n\tgame_type\x18\x01 \x02(\r\x12\x16\n\x03\x63\x66g\x18\x02 \x02(\x0b\x32\t.game_cfg\"g\n\x0f\x63reate_room_rsp\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tgame_type\x18\x02 \x02(\r\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x0b\n\x03pos\x18\x04 \x01(\r\x12\x16\n\x03\x63\x66g\x18\x05 \x01(\x0b\x32\t.game_cfg')
+  serialized_pb=_b('\n\x11\x63reate_room.proto\x1a\x11\x63ommon_info.proto\"T\n\x0f\x63reate_room_req\x12\x16\n\x0eproto_id_10010\x18\x63 \x01(\x08\x12\x11\n\tgame_type\x18\x01 \x02(\r\x12\x16\n\x03\x63\x66g\x18\x02 \x02(\x0b\x32\t.game_cfg\"\x7f\n\x0f\x63reate_room_rsp\x12\x16\n\x0eproto_id_20010\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x11\n\tgame_type\x18\x02 \x02(\r\x12\x0f\n\x07room_id\x18\x03 \x01(\r\x12\x0b\n\x03pos\x18\x04 \x01(\r\x12\x16\n\x03\x63\x66g\x18\x05 \x01(\x0b\x32\t.game_cfg')
   ,
   dependencies=[common__info__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -36,14 +36,21 @@ _CREATE_ROOM_REQ = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='game_type', full_name='create_room_req.game_type', index=0,
+      name='proto_id_10010', full_name='create_room_req.proto_id_10010', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='game_type', full_name='create_room_req.game_type', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='cfg', full_name='create_room_req.cfg', index=1,
+      name='cfg', full_name='create_room_req.cfg', index=2,
       number=2, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -62,7 +69,7 @@ _CREATE_ROOM_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=40,
-  serialized_end=100,
+  serialized_end=124,
 )
 
 
@@ -74,35 +81,42 @@ _CREATE_ROOM_RSP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ret', full_name='create_room_rsp.ret', index=0,
+      name='proto_id_20010', full_name='create_room_rsp.proto_id_20010', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='create_room_rsp.ret', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='game_type', full_name='create_room_rsp.game_type', index=1,
+      name='game_type', full_name='create_room_rsp.game_type', index=2,
       number=2, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='room_id', full_name='create_room_rsp.room_id', index=2,
+      name='room_id', full_name='create_room_rsp.room_id', index=3,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='pos', full_name='create_room_rsp.pos', index=3,
+      name='pos', full_name='create_room_rsp.pos', index=4,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='cfg', full_name='create_room_rsp.cfg', index=4,
+      name='cfg', full_name='create_room_rsp.cfg', index=5,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -120,8 +134,8 @@ _CREATE_ROOM_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=102,
-  serialized_end=205,
+  serialized_start=126,
+  serialized_end=253,
 )
 
 _CREATE_ROOM_REQ.fields_by_name['cfg'].message_type = common__info__pb2._GAME_CFG

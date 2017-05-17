@@ -5,12 +5,14 @@ import "common_info.proto";
 // 进入房间 分配协议号 10011
 message enter_room_req
 {
+    optional bool proto_id_10011 = 99;
     required uint32 room_id = 1;
 };
 
 // 分配协议号 20011
 message enter_room_rsp
 {
+    optional bool proto_id_20011 = 99;
     required uint32 ret = 1;
     optional syn_game_info ret_data = 2;
 };
