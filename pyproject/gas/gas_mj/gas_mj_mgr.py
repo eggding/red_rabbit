@@ -149,7 +149,11 @@ class GasMjRule(rule_base.GameRuleBase):
         nRoomMemberNum = len(listRoomMember)
         assert nRoomMemberNum in (2, 4)
 
-        nRanPos = random.randint(0, nRoomMemberNum - 1)
+        if self.GetConfig().get("zhuang_pos") is not None:
+            nRanPos = self.GetConfig().get("zhuang_pos")
+        else:
+            nRanPos = random.randint(0, nRoomMemberNum - 1)
+
         nZhuang = listRoomMember[nRanPos]
         self.m_nZhuang = nZhuang
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.DingZhuang {0}, pos {1}".format(nZhuang, self.m_roomObj.GetMemberPos(nZhuang)))
@@ -168,6 +172,9 @@ class GasMjRule(rule_base.GameRuleBase):
             self.m_listGlobalCard[nLen] = self.m_listGlobalCard[nPos]
             self.m_listGlobalCard[nPos] = nTmpVal
             nLen -= 1
+
+        if self.GetConfig().get("card_list_all") is not None:
+            self.m_listGlobalCard = self.GetConfig().get("card_list_all")
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.XiPai {0}".format(json.dumps(self.m_listGlobalCard)))
 
@@ -277,6 +284,9 @@ class GasMjRule(rule_base.GameRuleBase):
 
             assert nCard is not None
             self.m_listJinPai.append(nCard)
+
+        if self.GetConfig().get("list_jin_pai") is not None:
+            self.m_listJinPai = self.GetConfig().get("list_jin_pai")
 
         gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_kai_jin, self.m_listJinPai[:])
 

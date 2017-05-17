@@ -1,4 +1,16 @@
 # -*- coding:utf-8 -*-
+import os
+
+def GetLocalIP():
+    # return "127.0.0.1"
+    out = os.popen("ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $1}' | head -1").read()
+    return out[:-1]
+
+def GetPwd():
+    dictTmp = {
+        "112.74.124.100": "2VP8lYkg",
+    }
+    return dictTmp.get(GetLocalIP(), "pascalx64")
 
 dict_cfg = {
     "server_id": 1,
@@ -18,33 +30,16 @@ dict_cfg = {
         "host": "localhost:3306",
         "user": "root",
         "db": "red_rabbit",
-        "pwd": "pascalx64",
+        "pwd": "{0}".format(GetPwd()),
     },
-    # "dbs": {
-    #     "queue_num": 3,
-    #     "host": "localhost:3306",
-    #     "user": "root",
-    #     "db": "game",
-    #     "pwd": "2VP8lYkg",
-    # },
-    # "gate": {
-    #     "gate@master": "tcp://112.74.124.100:10245",
-    #     "gate@0": "tcp://112.74.124.100:10242",
-    #     "gate@1": "tcp://112.74.124.100:10243",
-    # },
-    # "gate": {
-    #     "gate@master": "tcp://192.168.74.130:10245",
-    #     "gate@0": "tcp://192.168.74.130:10242",
-    #     "gate@1": "tcp://192.168.74.130:10243",
-    # },
     "gate": {
-        "gate@master": "tcp://127.0.0.1:10245",
-        "gate@0": "tcp://127.0.0.1:10242",
-        "gate@1": "tcp://127.0.0.1:10243",
+        "gate@master": "tcp://{0}:10245".format(GetLocalIP()),
+        "gate@0": "tcp://{0}:10242".format(GetLocalIP()),
+        "gate@1": "tcp://{0}:10243".format(GetLocalIP()),
     },
     "gas": {
         "num": 3,
-        "robot_num": 300,
+        "robot_num": 10,
     },
     "gm_service": {
 

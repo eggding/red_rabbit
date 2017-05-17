@@ -42,6 +42,19 @@ def ImpDbsTest(conn, job):
     # sql = "SELECT DATA_INFO_BASE FROM player limit 10;"
     # conn.query(sql, db_mgr.OnOneDbQueryDone, job)
 
+def ImpGetAllGmConfig(conn, job):
+    dictRet = {
+        dbs_def.FLAG: True,
+    }
+    sql = "select * FROM `game_config`"
+    ret = dbs_common.SyncQueryTrans(EDbsOptType.eQuery, conn, sql)
+    if ret is None:
+        dictRet[dbs_def.FLAG] = False
+        return dictRet
+
+    dictRet[dbs_def.RESULT] = ret
+    return dictRet
+
 def ImpGetUserSession(conn, job):
     dictRet = {
         dbs_def.FLAG: True,

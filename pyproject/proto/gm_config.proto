@@ -1,0 +1,44 @@
+syntax = "proto2";
+
+// 配置具体信息 json
+//dictRoomCfg = {
+//        "member_num": gameCfg.member_num,
+//        "multi": gameCfg.multi,
+//        "total_start_game_num": gameCfg.total_start_game_num,
+//        "opt": gameCfg.opt,
+//        "avg": 0,
+//          "card_list_all": [101, 102, 103, 401 ...],
+//          "zhuang_pos": 1,
+//          "card_list_pos1": [101, 102, ...],
+//          "card_list_pos2": [101, 102, ...],
+//          "card_list_pos3": [101, 102, ...],
+//          "card_list_pos4": [101, 102, ...],
+//    }
+
+// 加载所有配置
+message load_config_req
+{
+    optional bool proto_id_10050 = 99;
+};
+
+message load_config_rsp
+{
+    optional bool proto_id_20050 = 99;
+    required uint32 ret = 1;
+    repeated bytes conf_arr = 2;
+};
+
+// 增删配置
+message opt_config_req
+{
+    optional bool proto_id_10051 = 99;
+    required bool is_add = 1;
+    required bytes conf_data = 2;
+};
+
+message opt_config_rsp
+{
+    optional bool proto_id_20051 = 99;
+    required uint32 ret = 1;
+    repeated bytes conf_arr = 2;
+};

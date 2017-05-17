@@ -4,16 +4,15 @@
 import socket
 import struct, time
 
-# import wsurl.wsurl as wsurl
-# wsurl.Test1()
-
-import entity.entity_mgr as entity_mgr
-print(len(entity_mgr.g_dictAllEntity))
 
 
 szCode = """
-import entity.entity_mgr as entity_mgr
-print(len(entity_mgr.g_dictAllEntity))
+def get_ip():
+    import os
+    out = os.popen("ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $1}' | head -1").read()
+    print out
+
+get_ip()
 """
 
 
@@ -35,8 +34,8 @@ def PackSendGmCode():
     return struct.pack(szFormat, nTotalSize, 10001, 0, szMsg)
 
 while True:
-    # sock = socket.create_connection(("192.168.74.130", 10243))
-    sock = socket.create_connection(("127.0.0.1", 10242))
+    sock = socket.create_connection(("192.168.74.130", 10243))
+    # sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PackSendGmCode())
     print(sock.recv(93939))
     time.sleep(39)

@@ -69,8 +69,8 @@ def StartUp():
     import random
     while True:
         # sock = socket.create_connection(("112.74.124.100", 10242))
-        # sock = socket.create_connection(("192.168.74.130", 10242))
-        sock = socket.create_connection(("127.0.0.1", 10242))
+        sock = socket.create_connection(("192.168.74.130", 10242))
+        # sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
         # syn scene

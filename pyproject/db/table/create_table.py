@@ -45,14 +45,14 @@ create table IF NOT EXISTS player
 
 # ALTER TABLE `player` ADD INDEX player_search ( `SESSION_ID` );
 
-sql_create_player_money = """
-create table IF NOT EXISTS player_money
+sql_create_account = """
+create table IF NOT EXISTS game_config
 (
-  SESSION_ID bigint not null,
-  MONEY_TYPE int not null,
-  MONEY_VALUE int not null,
-  primary key(SESSION_ID, MONEY_TYPE)
+  CONFIG_ID bigint not null,
+  CONFIG_DATA JSON,
+  primary key(CONFIG_ID)
 )ENGINE=INNODB DEFAULT CHARSET=utf8;
 """
+
 
 
