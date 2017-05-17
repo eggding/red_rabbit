@@ -115,6 +115,7 @@ message on_touch_event
 // 通知客户端触发玩家进入/离开事件, 分配协议号 20011
 message on_touch_event_member
 {
+    optional bool proto_id_20011 = 99;
     required event_type_member ev_type = 1; // 触发的事件类型
     repeated other_player_info list_member = 2; // 玩家列表信息
 }
