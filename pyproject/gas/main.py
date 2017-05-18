@@ -43,6 +43,10 @@ def OnAllServiceStartUp(dictSerial):
 def Peer(dictSerial):
     ffext.call_service(scene_def.GATE_MASTER, rpc_def.RspPeer, {"service": ff.service_name})
 
+@ffext.reg_service(rpc_def.TestService)
+def TestService(dictSerial):
+    print("test service on ", ff.service_name)
+
 @ffext.session_call(rpc_def.Gac2GasExeCode)
 def Gac2GasExeCode(nPlayerGID, szCode):
     if conf.dict_cfg["debug_env"] is False:

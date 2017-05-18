@@ -7,12 +7,19 @@ import struct, time
 
 
 szCode = """
-def get_ip():
-    import os
-    out = os.popen("ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $1}' | head -1").read()
-    print out
-
-get_ip()
+from greenlet import greenlet
+def test1():
+    print(12)
+    gr2.switch()
+    print(34)
+    gr2.switch()
+def test2():
+    print(56)
+    gr1.switch()
+    print(78)
+gr1 = greenlet(test1)
+gr2 = greenlet(test2)
+gr1.switch()
 """
 
 

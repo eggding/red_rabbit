@@ -56,7 +56,8 @@ def Peer(dictSerial):
 
 @ffext.reg_service(rpc_def.OnAllServiceStartUp)
 def OnAllServiceStartUp(dictSerial):
-    pass
+    if ff.service_name != scene_def.DB_SERVICE_DEFAULT:
+        return
 
 def A():
     ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnServiceConn, {"service": ff.service_name})

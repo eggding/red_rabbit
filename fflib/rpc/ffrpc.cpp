@@ -37,6 +37,15 @@ int ffrpc_t::open(const string& opt_)
 
     m_master_broker_sock = connect_to_broker(m_host, BROKER_MASTER_NODE_ID);
 
+    socket_ptr_t sock_test = net_factory_t::connect("tcp://127.0.0.1:10422", this);
+    if (NULL != sock_test)
+    {
+        register_client_to_slave_broker_t::in_t msg;
+        msg.node_id = m_node_id;
+        msg_sender_t::send(sock_test, CLIENT_REGISTER_TO_SLAVE_BROKER, msg);
+        printf("tcp://127.0.0.1:10422 connect done...");
+    }
+
     if (NULL == m_master_broker_sock)
     {
         LOGERROR((FFRPC, "ffrpc_t::open failed, can't connect to remote broker<%s>", m_host.c_str()));
@@ -218,7 +227,7 @@ int ffrpc_t::handle_broker_sync_data(broker_sync_all_registered_data_t::out_t& m
         if (it2 != m_reg_iterface.end() && NULL == m_ffslot_callback.get_callback(it->second))
         {
             m_ffslot_interface.bind(it->second, it2->second);
-            LOGTRACE((FFRPC, "ffrpc_t::handle_broker_sync_data msg name[%s] -> msg id[%u]", it->first.c_str(), it->second));
+            LOGINFO((FFRPC, "ffrpc_t::handle_broker_sync_data msg name[%s] -> msg id[%u]", it->first.c_str(), it->second));
         }
     }
     
