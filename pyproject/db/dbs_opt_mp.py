@@ -42,11 +42,35 @@ def ImpDbsTest(conn, job):
     # sql = "SELECT DATA_INFO_BASE FROM player limit 10;"
     # conn.query(sql, db_mgr.OnOneDbQueryDone, job)
 
+def ImpDbsSaveAllGmConfig(conn, job):
+    dictRet = {
+        dbs_def.FLAG: True,
+    }
+    szData = job.GetParam()
+    sql = "select * FROM `game_config` limit 1"
+    ret = dbs_common.SyncQueryTrans(EDbsOptType.eQuery, conn, sql)
+    if ret is None:
+        dictRet[dbs_def.FLAG] = False
+        return dictRet
+
+    if len(ret) == 0:
+        sql = "INSERT INTO `game_config` VALUES('%s', '%s')" % (1, szData)
+    else:
+        sql = "UPDATE `game_config` SET CONFIG_DATA = '%s' where CONFIG_ID = '%s'" % (szData.encode("utf-8"), 1)
+
+    ret = dbs_common.SyncQueryTrans(EDbsOptType.eQuery, conn, sql)
+    if ret is None:
+        dictRet[dbs_def.FLAG] = False
+        return dictRet
+
+    dictRet[dbs_def.RESULT] = ret
+    return dictRet
+
 def ImpGetAllGmConfig(conn, job):
     dictRet = {
         dbs_def.FLAG: True,
     }
-    sql = "select * FROM `game_config`"
+    sql = "select * FROM `game_config` limit 1"
     ret = dbs_common.SyncQueryTrans(EDbsOptType.eQuery, conn, sql)
     if ret is None:
         dictRet[dbs_def.FLAG] = False

@@ -15,6 +15,10 @@ def OnAllServiceStartUp(dictSerial):
     import id_manager.room_id_mgr as room_id_mgr
     room_id_mgr.init()
 
+    import robot.gm_opt_config as gm_opt_config
+    gm_opt_config.LoadAllConfig()
+
+
 @ffext.reg_service(rpc_def.Peer)
 def Peer(dictSerial):
     ffext.call_service(scene_def.GATE_MASTER, rpc_def.RspPeer, {"service": ff.service_name})

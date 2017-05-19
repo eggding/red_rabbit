@@ -7,8 +7,9 @@ Gac2GasQueryRoomScene = 10003
 Gac2GasCreateRoom = 10010
 Gac2GasEnterRoom = 10011
 Gac2GasOptMj = 10021
-Gac2GasLoadAllConfig = 10050
 
+Gac2GasQueryGameConf = 10050
+Gac2GasOptGameConf = 10051
 Gac2GasExeCode = 10900
 
 
@@ -22,7 +23,8 @@ Gas2GacRspSynGameData = 20014
 Gas2GacRspOpt = 20021
 Gas2GacSynCardInfo = 20041
 Gac2GasSynGameOrder = 20042
-Gas2GacRetLoadAllConfig = 20050
+Gas2GacSynAllConfig = 20050
+Gas2GacRetModifyConfig = 20051
 
 SynSceneInfo = 30002
 SynPlayerData = 30003
@@ -41,6 +43,8 @@ Gas2GccGenRoomID = 2062
 Gas2GccGetRoomSceneByRoomID = 2063
 Gas2GccOnRoomDismiss = 2064
 Gas2GccStartGameOnRoom = 2065
+Gas2GccQueryGmConfig = 2066
+Gas2GccModifyGmConfig = 2067
 
 Gcc2GasPlayerOffline = 3000
 Gcc2GasRetGenRoomID = 3001
@@ -61,6 +65,7 @@ DbsGetIDData = 7006
 DbsUpdateID = 7007
 DbsQueueStartUp = 7008
 DbsGetAllGmConfig = 7009
+DbsSaveAllGmConfig = 7010
 
 OnDbAsynCallReturn = 8001
 OnAllServiceStartUp = 8002

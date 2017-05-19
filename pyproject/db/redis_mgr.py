@@ -81,4 +81,8 @@ def handle(socket,address):
         ])
 
 server = StreamServer(('127.0.0.1', 10422), handle)
-server.serve_forever()
+# server.serve_forever()
+
+import proto.gm_config_pb2 as gm_config_pb2
+req = gm_config_pb2.opt_config_req()
+req.

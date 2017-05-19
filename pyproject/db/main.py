@@ -46,8 +46,10 @@ def DbsGetUserSession(dictSerial):
 def DbsGetAllGmConfig(dictSerial):
     db_mgr.GenJob(dictSerial, "ImpGetAllGmConfig")
 
-
-
+@ffext.reg_service(rpc_def.DbsSaveAllGmConfig)
+def DbsSaveAllGmConfig(dictSerial):
+    print("ImpDbsSaveAllGmConfig ", dictSerial)
+    db_mgr.GenJob(dictSerial, "ImpDbsSaveAllGmConfig")
 
 
 @ffext.reg_service(rpc_def.Peer)

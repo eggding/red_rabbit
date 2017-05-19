@@ -46,3 +46,18 @@ message syn_game_order
     required uint32 remain_card_num = 6; //剩余牌的数量
     required uint32 opt_pos = 7; // 当前轮到哪一个位置的玩家操作
 };
+
+
+// 协议号 10043
+// 准备操作
+message game_ready_req
+{
+    optional bool proto_id_10043 = 99;
+};
+
+// 协议号 20043
+message game_ready_rsp
+{
+    optional bool proto_id_20043 = 99;
+    required uint32 ret = 1;
+};

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='opt.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\topt.proto\x1a\x11\x63ommon_info.proto\"V\n\x07opt_req\x12\x16\n\x0eproto_id_10021\x18\x63 \x01(\x08\x12\x1d\n\x08opt_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x14\n\x0copt_data_str\x18\x03 \x01(\x0c\"{\n\x07opt_rsp\x12\x16\n\x0eproto_id_20021\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x1d\n\x08opt_type\x18\x02 \x02(\x0e\x32\x0b.event_type\x12\x13\n\x0blisten_card\x18\x03 \x03(\r\x12\x17\n\x0fowner_card_list\x18\x04 \x03(\r\"P\n\rsyn_card_info\x12\x16\n\x0eproto_id_20041\x18\x63 \x01(\x08\x12\'\n\x0elist_card_info\x18\x01 \x03(\x0b\x32\x0f.game_card_list\"\x9e\x01\n\x0esyn_game_order\x12\x16\n\x0eproto_id_20042\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x0f\n\x07opt_pos\x18\x07 \x02(\r')
+  serialized_pb=_b('\n\topt.proto\x1a\x11\x63ommon_info.proto\"V\n\x07opt_req\x12\x16\n\x0eproto_id_10021\x18\x63 \x01(\x08\x12\x1d\n\x08opt_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x14\n\x0copt_data_str\x18\x03 \x01(\x0c\"{\n\x07opt_rsp\x12\x16\n\x0eproto_id_20021\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x1d\n\x08opt_type\x18\x02 \x02(\x0e\x32\x0b.event_type\x12\x13\n\x0blisten_card\x18\x03 \x03(\r\x12\x17\n\x0fowner_card_list\x18\x04 \x03(\r\"P\n\rsyn_card_info\x12\x16\n\x0eproto_id_20041\x18\x63 \x01(\x08\x12\'\n\x0elist_card_info\x18\x01 \x03(\x0b\x32\x0f.game_card_list\"\x9e\x01\n\x0esyn_game_order\x12\x16\n\x0eproto_id_20042\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x0f\n\x07opt_pos\x18\x07 \x02(\r\"(\n\x0egame_ready_req\x12\x16\n\x0eproto_id_10043\x18\x63 \x01(\x08\"5\n\x0egame_ready_rsp\x12\x16\n\x0eproto_id_20043\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r')
   ,
   dependencies=[common__info__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -242,6 +242,75 @@ _SYN_GAME_ORDER = _descriptor.Descriptor(
   serialized_end=486,
 )
 
+
+_GAME_READY_REQ = _descriptor.Descriptor(
+  name='game_ready_req',
+  full_name='game_ready_req',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proto_id_10043', full_name='game_ready_req.proto_id_10043', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=488,
+  serialized_end=528,
+)
+
+
+_GAME_READY_RSP = _descriptor.Descriptor(
+  name='game_ready_rsp',
+  full_name='game_ready_rsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proto_id_20043', full_name='game_ready_rsp.proto_id_20043', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='game_ready_rsp.ret', index=1,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=530,
+  serialized_end=583,
+)
+
 _OPT_REQ.fields_by_name['opt_type'].enum_type = common__info__pb2._EVENT_TYPE
 _OPT_RSP.fields_by_name['opt_type'].enum_type = common__info__pb2._EVENT_TYPE
 _SYN_CARD_INFO.fields_by_name['list_card_info'].message_type = common__info__pb2._GAME_CARD_LIST
@@ -249,6 +318,8 @@ DESCRIPTOR.message_types_by_name['opt_req'] = _OPT_REQ
 DESCRIPTOR.message_types_by_name['opt_rsp'] = _OPT_RSP
 DESCRIPTOR.message_types_by_name['syn_card_info'] = _SYN_CARD_INFO
 DESCRIPTOR.message_types_by_name['syn_game_order'] = _SYN_GAME_ORDER
+DESCRIPTOR.message_types_by_name['game_ready_req'] = _GAME_READY_REQ
+DESCRIPTOR.message_types_by_name['game_ready_rsp'] = _GAME_READY_RSP
 
 opt_req = _reflection.GeneratedProtocolMessageType('opt_req', (_message.Message,), dict(
   DESCRIPTOR = _OPT_REQ,
@@ -277,6 +348,20 @@ syn_game_order = _reflection.GeneratedProtocolMessageType('syn_game_order', (_me
   # @@protoc_insertion_point(class_scope:syn_game_order)
   ))
 _sym_db.RegisterMessage(syn_game_order)
+
+game_ready_req = _reflection.GeneratedProtocolMessageType('game_ready_req', (_message.Message,), dict(
+  DESCRIPTOR = _GAME_READY_REQ,
+  __module__ = 'opt_pb2'
+  # @@protoc_insertion_point(class_scope:game_ready_req)
+  ))
+_sym_db.RegisterMessage(game_ready_req)
+
+game_ready_rsp = _reflection.GeneratedProtocolMessageType('game_ready_rsp', (_message.Message,), dict(
+  DESCRIPTOR = _GAME_READY_RSP,
+  __module__ = 'opt_pb2'
+  # @@protoc_insertion_point(class_scope:game_ready_rsp)
+  ))
+_sym_db.RegisterMessage(game_ready_rsp)
 
 
 # @@protoc_insertion_point(module_scope)

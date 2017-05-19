@@ -3,6 +3,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -19,22 +20,118 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='gm_config.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x0fgm_config.proto\")\n\x0fload_config_req\x12\x16\n\x0eproto_id_10050\x18\x63 \x01(\x08\"H\n\x0fload_config_rsp\x12\x16\n\x0eproto_id_20050\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x10\n\x08\x63onf_arr\x18\x02 \x03(\x0c\"K\n\x0eopt_config_req\x12\x16\n\x0eproto_id_10051\x18\x63 \x01(\x08\x12\x0e\n\x06is_add\x18\x01 \x02(\x08\x12\x11\n\tconf_data\x18\x02 \x02(\x0c\"G\n\x0eopt_config_rsp\x12\x16\n\x0eproto_id_20051\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x10\n\x08\x63onf_arr\x18\x02 \x03(\x0c')
+  serialized_pb=_b('\n\x0fgm_config.proto\"\x86\x01\n\x0b\x63onfig_data\x12\x13\n\x0b\x63onfig_name\x18\x01 \x02(\x0c\x12\x12\n\npos_1_card\x18\x02 \x01(\x0c\x12\x12\n\npos_2_card\x18\x03 \x01(\x0c\x12\x12\n\npos_3_card\x18\x04 \x01(\x0c\x12\x12\n\npos_4_card\x18\x05 \x01(\x0c\x12\x12\n\ncard_order\x18\x06 \x01(\x0c\"/\n\x15syn_all_gm_config_req\x12\x16\n\x0eproto_id_10050\x18\x63 \x01(\x08\"t\n\x15syn_all_gm_config_rsp\x12\x16\n\x0eproto_id_20050\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x14\n\x0c\x63ur_use_conf\x18\x02 \x02(\x0c\x12 \n\nconfig_arr\x18\x03 \x03(\x0b\x32\x0c.config_data\"k\n\x0eopt_config_req\x12\x16\n\x0eproto_id_10051\x18\x63 \x01(\x08\x12 \n\x08opt_type\x18\x01 \x02(\x0e\x32\x0e.gm_config_opt\x12\x1f\n\tconf_data\x18\x02 \x01(\x0b\x32\x0c.config_data\"\x80\x01\n\x0eopt_config_rsp\x12\x16\n\x0eproto_id_20051\x18\x63 \x01(\x08\x12 \n\x08opt_type\x18\x01 \x02(\x0e\x32\x0e.gm_config_opt\x12\x14\n\x0c\x63ur_use_conf\x18\x02 \x01(\x0c\x12\x1e\n\x08ret_data\x18\x03 \x01(\x0b\x32\x0c.config_data*2\n\rgm_config_opt\x12\t\n\x05\x61pply\x10\x01\x12\n\n\x06\x64\x65lete\x10\x02\x12\n\n\x06modify\x10\x03')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
+_GM_CONFIG_OPT = _descriptor.EnumDescriptor(
+  name='gm_config_opt',
+  full_name='gm_config_opt',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='apply', index=0, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='delete', index=1, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='modify', index=2, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=563,
+  serialized_end=613,
+)
+_sym_db.RegisterEnumDescriptor(_GM_CONFIG_OPT)
+
+gm_config_opt = enum_type_wrapper.EnumTypeWrapper(_GM_CONFIG_OPT)
+apply = 1
+delete = 2
+modify = 3
 
 
 
-_LOAD_CONFIG_REQ = _descriptor.Descriptor(
-  name='load_config_req',
-  full_name='load_config_req',
+_CONFIG_DATA = _descriptor.Descriptor(
+  name='config_data',
+  full_name='config_data',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='proto_id_10050', full_name='load_config_req.proto_id_10050', index=0,
+      name='config_name', full_name='config_data.config_name', index=0,
+      number=1, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_1_card', full_name='config_data.pos_1_card', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_2_card', full_name='config_data.pos_2_card', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_3_card', full_name='config_data.pos_3_card', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_4_card', full_name='config_data.pos_4_card', index=4,
+      number=5, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='card_order', full_name='config_data.card_order', index=5,
+      number=6, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=20,
+  serialized_end=154,
+)
+
+
+_SYN_ALL_GM_CONFIG_REQ = _descriptor.Descriptor(
+  name='syn_all_gm_config_req',
+  full_name='syn_all_gm_config_req',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proto_id_10050', full_name='syn_all_gm_config_req.proto_id_10050', index=0,
       number=99, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -52,35 +149,42 @@ _LOAD_CONFIG_REQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19,
-  serialized_end=60,
+  serialized_start=156,
+  serialized_end=203,
 )
 
 
-_LOAD_CONFIG_RSP = _descriptor.Descriptor(
-  name='load_config_rsp',
-  full_name='load_config_rsp',
+_SYN_ALL_GM_CONFIG_RSP = _descriptor.Descriptor(
+  name='syn_all_gm_config_rsp',
+  full_name='syn_all_gm_config_rsp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='proto_id_20050', full_name='load_config_rsp.proto_id_20050', index=0,
+      name='proto_id_20050', full_name='syn_all_gm_config_rsp.proto_id_20050', index=0,
       number=99, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ret', full_name='load_config_rsp.ret', index=1,
+      name='ret', full_name='syn_all_gm_config_rsp.ret', index=1,
       number=1, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='conf_arr', full_name='load_config_rsp.conf_arr', index=2,
-      number=2, type=12, cpp_type=9, label=3,
+      name='cur_use_conf', full_name='syn_all_gm_config_rsp.cur_use_conf', index=2,
+      number=2, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='config_arr', full_name='syn_all_gm_config_rsp.config_arr', index=3,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -97,8 +201,8 @@ _LOAD_CONFIG_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=62,
-  serialized_end=134,
+  serialized_start=205,
+  serialized_end=321,
 )
 
 
@@ -117,16 +221,16 @@ _OPT_CONFIG_REQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_add', full_name='opt_config_req.is_add', index=1,
-      number=1, type=8, cpp_type=7, label=2,
-      has_default_value=False, default_value=False,
+      name='opt_type', full_name='opt_config_req.opt_type', index=1,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='conf_data', full_name='opt_config_req.conf_data', index=2,
-      number=2, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -142,8 +246,8 @@ _OPT_CONFIG_REQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=136,
-  serialized_end=211,
+  serialized_start=323,
+  serialized_end=430,
 )
 
 
@@ -162,16 +266,23 @@ _OPT_CONFIG_RSP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ret', full_name='opt_config_rsp.ret', index=1,
-      number=1, type=13, cpp_type=3, label=2,
-      has_default_value=False, default_value=0,
+      name='opt_type', full_name='opt_config_rsp.opt_type', index=1,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='conf_arr', full_name='opt_config_rsp.conf_arr', index=2,
-      number=2, type=12, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='cur_use_conf', full_name='opt_config_rsp.cur_use_conf', index=2,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ret_data', full_name='opt_config_rsp.ret_data', index=3,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -187,28 +298,42 @@ _OPT_CONFIG_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=213,
-  serialized_end=284,
+  serialized_start=433,
+  serialized_end=561,
 )
 
-DESCRIPTOR.message_types_by_name['load_config_req'] = _LOAD_CONFIG_REQ
-DESCRIPTOR.message_types_by_name['load_config_rsp'] = _LOAD_CONFIG_RSP
+_SYN_ALL_GM_CONFIG_RSP.fields_by_name['config_arr'].message_type = _CONFIG_DATA
+_OPT_CONFIG_REQ.fields_by_name['opt_type'].enum_type = _GM_CONFIG_OPT
+_OPT_CONFIG_REQ.fields_by_name['conf_data'].message_type = _CONFIG_DATA
+_OPT_CONFIG_RSP.fields_by_name['opt_type'].enum_type = _GM_CONFIG_OPT
+_OPT_CONFIG_RSP.fields_by_name['ret_data'].message_type = _CONFIG_DATA
+DESCRIPTOR.message_types_by_name['config_data'] = _CONFIG_DATA
+DESCRIPTOR.message_types_by_name['syn_all_gm_config_req'] = _SYN_ALL_GM_CONFIG_REQ
+DESCRIPTOR.message_types_by_name['syn_all_gm_config_rsp'] = _SYN_ALL_GM_CONFIG_RSP
 DESCRIPTOR.message_types_by_name['opt_config_req'] = _OPT_CONFIG_REQ
 DESCRIPTOR.message_types_by_name['opt_config_rsp'] = _OPT_CONFIG_RSP
+DESCRIPTOR.enum_types_by_name['gm_config_opt'] = _GM_CONFIG_OPT
 
-load_config_req = _reflection.GeneratedProtocolMessageType('load_config_req', (_message.Message,), dict(
-  DESCRIPTOR = _LOAD_CONFIG_REQ,
+config_data = _reflection.GeneratedProtocolMessageType('config_data', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIG_DATA,
   __module__ = 'gm_config_pb2'
-  # @@protoc_insertion_point(class_scope:load_config_req)
+  # @@protoc_insertion_point(class_scope:config_data)
   ))
-_sym_db.RegisterMessage(load_config_req)
+_sym_db.RegisterMessage(config_data)
 
-load_config_rsp = _reflection.GeneratedProtocolMessageType('load_config_rsp', (_message.Message,), dict(
-  DESCRIPTOR = _LOAD_CONFIG_RSP,
+syn_all_gm_config_req = _reflection.GeneratedProtocolMessageType('syn_all_gm_config_req', (_message.Message,), dict(
+  DESCRIPTOR = _SYN_ALL_GM_CONFIG_REQ,
   __module__ = 'gm_config_pb2'
-  # @@protoc_insertion_point(class_scope:load_config_rsp)
+  # @@protoc_insertion_point(class_scope:syn_all_gm_config_req)
   ))
-_sym_db.RegisterMessage(load_config_rsp)
+_sym_db.RegisterMessage(syn_all_gm_config_req)
+
+syn_all_gm_config_rsp = _reflection.GeneratedProtocolMessageType('syn_all_gm_config_rsp', (_message.Message,), dict(
+  DESCRIPTOR = _SYN_ALL_GM_CONFIG_RSP,
+  __module__ = 'gm_config_pb2'
+  # @@protoc_insertion_point(class_scope:syn_all_gm_config_rsp)
+  ))
+_sym_db.RegisterMessage(syn_all_gm_config_rsp)
 
 opt_config_req = _reflection.GeneratedProtocolMessageType('opt_config_req', (_message.Message,), dict(
   DESCRIPTOR = _OPT_CONFIG_REQ,
