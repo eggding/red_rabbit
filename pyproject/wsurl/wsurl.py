@@ -24,7 +24,7 @@ class WsUrl(object):
 
     def RegTick(self):
         self.UnRegTick()
-        # self.m_tickUpdate = tick_mgr.RegisterOnceTick(456, self.DispatchRequest)
+        self.m_tickUpdate = tick_mgr.RegisterOnceTick(456, self.DispatchRequest)
 
     def UnRegTick(self):
         if self.m_tickUpdate is not None:
@@ -87,6 +87,7 @@ class WsUrl(object):
         self.m_listThread=[]
 
     def DispatchRequest(self):
+        print("DispatchRequest ")
         while self.m_bOpen:
             try:
                 httpReponse = self.m_queueResult.get(False)

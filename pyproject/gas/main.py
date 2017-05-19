@@ -46,6 +46,7 @@ def Peer(dictSerial):
 @ffext.reg_service(rpc_def.TestService)
 def TestService(dictSerial):
     print("test service on ", ff.service_name)
+    print(dictSerial)
 
 @ffext.session_call(rpc_def.Gac2GasExeCode)
 def Gac2GasExeCode(nPlayerGID, szCode):
