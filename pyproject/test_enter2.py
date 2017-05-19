@@ -47,9 +47,9 @@ def PackSetConf():
     req.opt_type = gm_config_pb2.gm_config_opt.Value("modify")
     req.conf_data.config_name = "test a, b, c"
     req.conf_data.pos_1_card = "101,102"
-    req.conf_data.pos_2_card = "101,102"
-    req.conf_data.pos_3_card = "103,109,503"
-    req.conf_data.pos_4_card = "401,502"
+    req.conf_data.pos_2_card = "101,102,407"
+    req.conf_data.pos_3_card = "103,109,503,405"
+    req.conf_data.pos_4_card = "401,502, 489"
     szAuthCode = req.SerializeToString()
 
     # 计算protobol消息体的字节数
@@ -109,6 +109,25 @@ def PacketEnterRoomBuff():
     szFormat = "IHH%ds" % len(szAuthCode)
     return struct.pack(szFormat, nTotalSize, 10003, 0, szAuthCode)
 
+def PacketGetGate():
+    szAuthCode = "aa"
+
+    import proto.login_pb2 as login_pb2
+    req = login_pb2.login_req()
+    req.type = login_pb2.login_type.Value("get_gate_info")
+    req.auth_info = szAuthCode
+    szAuthCode = req.SerializeToString()
+
+    # 计算protobol消息体的字节数
+    szFormat = "%ds" % len(szAuthCode)
+    nTotalSize = struct.calcsize(szFormat)
+
+    # 二进制化消息包
+    # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
+    szFormat = "IHH%ds" % len(szAuthCode)
+    return struct.pack(szFormat, nTotalSize, 10001, 0, szAuthCode)
+
+
 def StartUp(nId=None):
     if nId is None:
         import random
@@ -116,13 +135,17 @@ def StartUp(nId=None):
     global gIndex
     gIndex = nId
     while True:
-        # sock = socket.create_connection(("112.74.124.100", 10242))
-        sock = socket.create_connection(("192.168.74.130", 10242))
-        sock.send(PacketLoginBuff())
-        print(sock.recv(93939))
-
-        # syn scene
-        print(sock.recv(93939))
+        sock = socket.create_connection(("112.74.124.100", 10242))
+        # sock = socket.create_connection(("192.168.74.130", 10242))
+        sock.send(PacketGetGate())
+        print(sock.recv(4444))
+        sock.send("333")
+        print(sock.recv(4444))
+        # sock.send(PacketLoginBuff())
+        # print(sock.recv(93939))
+        #
+        # # syn scene
+        # print(sock.recv(93939))
 
         # sock.send(PacketQueryRoomScene())
         # szRet = sock.recv(93939)
@@ -140,12 +163,12 @@ def StartUp(nId=None):
         # sock.send(PacketChangeScene(rsp.scene_name))
         # sock.recv(399)
 
-        sock.send(PacketEnterRoom(0))
-        print("11 .")
-        print(sock.recv(3884))
-
-        sock.send(PackSetConf())
-        print(sock.recv(3884))
+        # sock.send(PacketEnterRoom(0))
+        # print("11 .")
+        # print(sock.recv(3884))
+        #
+        # sock.send(PackSetConf())
+        # print(sock.recv(3884))
 
         # while True:
         #     # print(sock.recv(3948))

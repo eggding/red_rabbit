@@ -26,6 +26,7 @@ def StartGame():
         # t.setDaemon(True)
         t.start()
 
+    # msg.conf_data.config_name = ""
 
         # t2 = threading.Thread(target=TestEnterRoom)
     # threads.append(t2)
