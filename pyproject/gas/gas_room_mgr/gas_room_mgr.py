@@ -58,6 +58,7 @@ class RoomService(object):
         roomObj.MemberEnter(nPlayerGID)
 
     def OnGetRoomIDRet(self, nRoomID, nPlayerGID, dictCfg):
+        print("start room with config ", dictCfg)
         ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.OnGetRoomIDRet {0}, {1}".format(nRoomID, nPlayerGID))
         roomObj = gas_room_obj.RoomObj(nRoomID, nPlayerGID, self, dictCfg)
         self.m_dictRoomID2Room[nRoomID] = roomObj
@@ -74,8 +75,8 @@ class RoomService(object):
         else:
             nDelZhuanShiNum = nNeedZhuanShiNum
 
-        if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelZhuanShiNum) is False:
-            return
+        # if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelZhuanShiNum) is False:
+        #     return
 
         ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.CreateRoom {0}".format(nRoomMaster))
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccGenRoomID, {"player_id": nRoomMaster,

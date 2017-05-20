@@ -7,10 +7,17 @@ import copy
 import rpc.rpc_def as rpc_def
 import db.dbs_client as dbs_client
 import db.dbs_def as dbs_def
-import proto.gm_config_pb2 as gm_config_pb2
 
 g_szCurConfigName = None
 g_dictAllGmConfig = {}
+
+def GetCurrentConfig():
+    global g_szCurConfigName
+    if g_szCurConfigName is None:
+        return {}
+
+    global g_dictAllGmConfig
+    return copy.deepcopy(g_dictAllGmConfig[g_szCurConfigName])
 
 def SaveAllConfig():
     global g_dictAllGmConfig, g_szCurConfigName
@@ -22,11 +29,6 @@ def SaveAllConfig():
         dictCopy["g_szCurConfigName"] = ""
 
     dbs_client.DoAsynCall(rpc_def.DbsSaveAllGmConfig, 0, json.dumps(dictCopy))
-
-    # import conf as conf
-    # nGasNum = conf.dict_cfg["gas"]["num"]
-    # for i in xrange(0, nGasNum):
-    #     ffext.call_service("gas@{0}".format(i), rpc_def.AllGasUpdateGmConfig, dictCopy)
 
 def OnLoadAllConfigCb(dictDbRet, nPlayerGID):
     assert dictDbRet[dbs_def.FLAG] is True
@@ -56,28 +58,27 @@ def Gas2GccQueryGmConfig(dictData):
 def Gas2GccModifyGmConfig(dictData):
     global g_szCurConfigName
     import proto.gm_config_pb2 as gm_config_pb2
-    reqObj = gm_config_pb2.opt_config_req()
-    reqObj.ParseFromString(dictData["data"])
-    nOptType = reqObj.opt_type
-    dictTmp = {}
+    nOptType = dictData["opt_type"]
     if nOptType == gm_config_pb2.gm_config_opt.Value("delete"):
-        szName = reqObj.conf_data.config_name
+        szName = dictData["config_name"]
         del g_dictAllGmConfig[szName]
 
     elif nOptType == gm_config_pb2.gm_config_opt.Value("modify"):
-        szName = reqObj.conf_data.config_name
-        dictTmp = {
-            "config_name": reqObj.conf_data.config_name,
-            "pos_1_card": reqObj.conf_data.pos_1_card,
-            "pos_2_card": reqObj.conf_data.pos_2_card,
-            "pos_3_card": reqObj.conf_data.pos_3_card,
-            "pos_4_card": reqObj.conf_data.pos_4_card,
-            "card_order": reqObj.conf_data.card_order,
-        }
-        g_dictAllGmConfig[szName] = dictTmp
+        szName = dictData["config_name"]
+
+        dictRet = {}
+        for i in xrange(1, 5):
+            szTmp = dictData["pos_{0}_card".format(i)]
+            nLen = len(map(int, szTmp.split(",")))
+            dictRet[nLen] = dictRet.get(nLen, 0) + 1
+
+        assert len(dictRet) == 2
+        assert sum(dictRet.keys()) == (13 + 14)
+
+        g_dictAllGmConfig[szName] = dictData
 
     elif nOptType == gm_config_pb2.gm_config_opt.Value("apply"):
-        szName = reqObj.conf_data.config_name
+        szName = dictData["config_name"]
         if szName not in g_dictAllGmConfig:
             return
         g_szCurConfigName = szName
@@ -86,4 +87,4 @@ def Gas2GccModifyGmConfig(dictData):
 
     return {"opt_type": nOptType,
             "conf_name": g_szCurConfigName,
-            "dict_data": dictTmp}
+            "dict_data": dictData}

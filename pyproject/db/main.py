@@ -48,7 +48,6 @@ def DbsGetAllGmConfig(dictSerial):
 
 @ffext.reg_service(rpc_def.DbsSaveAllGmConfig)
 def DbsSaveAllGmConfig(dictSerial):
-    print("ImpDbsSaveAllGmConfig ", dictSerial)
     db_mgr.GenJob(dictSerial, "ImpDbsSaveAllGmConfig")
 
 

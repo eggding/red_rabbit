@@ -2,7 +2,7 @@
 import os
 
 def GetLocalIP():
-    # return "127.0.0.1"
+    return "127.0.0.1"
     # return "112.74.124.100"
     out = os.popen("ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $1}' | head -1").read()
     return out[:-1]
@@ -47,7 +47,7 @@ dict_cfg = {
     },
     "gas": {
         "num": 3,
-        "robot_num": 0,
+        "robot_num": 6,
     },
     "gm_service": {
 

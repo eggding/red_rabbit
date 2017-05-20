@@ -173,9 +173,6 @@ class GasMjRule(rule_base.GameRuleBase):
             self.m_listGlobalCard[nPos] = nTmpVal
             nLen -= 1
 
-        if self.GetConfig().get("card_list_all") is not None:
-            self.m_listGlobalCard = self.GetConfig().get("card_list_all")
-
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.XiPai {0}".format(json.dumps(self.m_listGlobalCard)))
 
     def GetNextPos(self):
@@ -284,9 +281,6 @@ class GasMjRule(rule_base.GameRuleBase):
 
             assert nCard is not None
             self.m_listJinPai.append(nCard)
-
-        if self.GetConfig().get("list_jin_pai") is not None:
-            self.m_listJinPai = self.GetConfig().get("list_jin_pai")
 
         gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_kai_jin, self.m_listJinPai[:])
 
@@ -650,11 +644,39 @@ class GasMjRule(rule_base.GameRuleBase):
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.StartJu {0}".format(self.m_nCurJu))
         self.m_nCurJu += 1
-        self.DingZhuang()
-        self.XiPai()
-        self.KaiJin()
-        self.FaPai()
 
+        szCardOrder = self.GetConfig().get("card_order")
+        if szCardOrder is not None:
+            self.m_listGlobalCard = map(int, szCardOrder.split(","))
+
+            nPosZhuang = None
+            for nPos in xrange(1, 5):
+                listCard = map(int, self.GetConfig().get("pos_{0}_card".format(nPos)).split(","))
+                self.m_dictPosCarList[nPos] = listCard
+                if len(listCard) == 14:
+                    nPosZhuang = nPos
+            assert nPosZhuang is not None
+
+            self.m_nZhuang = self.m_roomObj.GetMemberIDByPos(nPosZhuang)
+            nZhuangExCard = self.m_dictPosCarList[nPosZhuang][-1:][0]
+            self.m_dictPosCarList[nPosZhuang] = self.m_dictPosCarList[nPosZhuang][:-1]
+
+            listTmp = [nZhuangExCard]
+            listTmp.extend(self.m_listGlobalCard)
+            self.m_listGlobalCard = listTmp
+
+            self.m_nNextCardIndex = 0
+            self.m_nCurOptMemberPos = self.GetPrevPos(nPosZhuang)
+
+            ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.XiPai {0}".format(json.dumps(self.m_listGlobalCard)))
+            ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.DingZhuang {0}, pos {1}".format(self.m_nZhuang, self.m_roomObj.GetMemberPos(self.m_nZhuang)))
+
+        else:
+            self.DingZhuang()
+            self.XiPai()
+            self.FaPai()
+
+        self.KaiJin()
         listMember = self.m_roomObj.GetMemberList()
         for nMember in listMember:
             self.m_roomObj.SynGameInfo(nMember, bSynAll=False)

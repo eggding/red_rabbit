@@ -34,8 +34,18 @@ def Gac2GasQueryGameConf(nPlayerGID, reqObj):
 
 @ffext.session_call(rpc_def.Gac2GasOptGameConf, gm_config_pb2.opt_config_req)
 def Gac2GasOptGameConf(nPlayerGID, reqObj):
+
+    # required gm_config_opt  opt_type = 1;
+    # optional config_data    conf_data = 2;
+
     dictData = {
-        "data": reqObj.SerializeToString(),
+        "opt_type": reqObj.opt_type,
+        "config_name": reqObj.conf_data.config_name,
+        "pos_1_card": reqObj.conf_data.pos_1_card,
+        "pos_2_card": reqObj.conf_data.pos_2_card,
+        "pos_3_card": reqObj.conf_data.pos_3_card,
+        "pos_4_card": reqObj.conf_data.pos_4_card,
+        "card_order": reqObj.conf_data.card_order,
     }
 
     def _cb(err, data):
@@ -46,14 +56,13 @@ def Gac2GasOptGameConf(nPlayerGID, reqObj):
         else:
             rsp.cur_use_conf = data["conf_name"].encode("utf-8")
 
-        if len(data["dict_data"]) != 0:
-            dictTmp = data["dict_data"]
-            rsp.ret_data.config_name = dictTmp["config_name"].encode("utf-8")
-            rsp.ret_data.pos_1_card = dictTmp["pos_1_card"].encode("utf-8")
-            rsp.ret_data.pos_2_card = dictTmp["pos_2_card"].encode("utf-8")
-            rsp.ret_data.pos_3_card = dictTmp["pos_3_card"].encode("utf-8")
-            rsp.ret_data.pos_4_card = dictTmp["pos_4_card"].encode("utf-8")
-            rsp.ret_data.card_order = dictTmp["card_order"].encode("utf-8")
+            data = data["dict_data"]
+            rsp.ret_data.config_name = data["config_name"].encode("utf-8")
+            rsp.ret_data.pos_1_card = data["pos_1_card"].encode("utf-8")
+            rsp.ret_data.pos_2_card = data["pos_2_card"].encode("utf-8")
+            rsp.ret_data.pos_3_card = data["pos_3_card"].encode("utf-8")
+            rsp.ret_data.pos_4_card = data["pos_4_card"].encode("utf-8")
+            rsp.ret_data.card_order = data["card_order"].encode("utf-8")
 
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetModifyConfig, rsp.SerializeToString())
 

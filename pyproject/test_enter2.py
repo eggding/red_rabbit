@@ -44,12 +44,32 @@ def PacketQueryRoomScene():
 def PackSetConf():
     import proto.gm_config_pb2 as gm_config_pb2
     req = gm_config_pb2.opt_config_req()
-    req.opt_type = gm_config_pb2.gm_config_opt.Value("modify")
-    req.conf_data.config_name = "test a, b, c"
-    req.conf_data.pos_1_card = "101,102"
-    req.conf_data.pos_2_card = "101,102,407"
-    req.conf_data.pos_3_card = "103,109,503,405"
-    req.conf_data.pos_4_card = "401,502, 489"
+    req.opt_type = gm_config_pb2.gm_config_opt.Value("apply")
+    req.conf_data.config_name = "test_config"
+    req.conf_data.pos_1_card = "101,102,103,104,105,106,107,108,109,501,402,403,404"
+    req.conf_data.pos_2_card = "201,202,203,204,205,206,207,208,209,502,503,504,404,505"
+    req.conf_data.pos_3_card = "301,302,303,304,305,306,307,308,309,405,402,403,404"
+    req.conf_data.pos_4_card = "401,402,403,404,405,406,407,308,309,405,402,403,506"
+
+    import gas.gas_mj.check_hu as check_hu
+    import copy
+    g_listAllMj = copy.copy(check_hu.g_mjsArr)
+    for i in xrange(1, 5):
+        szData = getattr(req.conf_data, "pos_{0}_card".format(i))
+        assert szData is not None
+
+        listTmp = map(int, szData.split(","))
+        for nCard in listTmp:
+            assert nCard in g_listAllMj, nCard
+            g_listAllMj.remove(nCard)
+
+    szRet = ""
+    for nCard in g_listAllMj:
+        if len(szRet) != 0:
+            szRet += ","
+        szRet += str(nCard)
+    req.conf_data.card_order = szRet
+
     szAuthCode = req.SerializeToString()
 
     # 计算protobol消息体的字节数
@@ -135,17 +155,18 @@ def StartUp(nId=None):
     global gIndex
     gIndex = nId
     while True:
-        sock = socket.create_connection(("112.74.124.100", 10242))
+        # sock = socket.create_connection(("112.74.124.100", 10242))
         # sock = socket.create_connection(("192.168.74.130", 10242))
-        sock.send(PacketGetGate())
-        print(sock.recv(4444))
-        sock.send("333")
-        print(sock.recv(4444))
-        # sock.send(PacketLoginBuff())
-        # print(sock.recv(93939))
-        #
-        # # syn scene
-        # print(sock.recv(93939))
+        sock = socket.create_connection(("127.0.0.1", 10242))
+        # sock.send(PackSetConf())
+        # print(sock.recv(4444))
+        # sock.send("333")
+        # print(sock.recv(4444))
+        sock.send(PacketLoginBuff())
+        print(sock.recv(93939))
+
+        # syn scene
+        print(sock.recv(93939))
 
         # sock.send(PacketQueryRoomScene())
         # szRet = sock.recv(93939)
@@ -167,8 +188,8 @@ def StartUp(nId=None):
         # print("11 .")
         # print(sock.recv(3884))
         #
-        # sock.send(PackSetConf())
-        # print(sock.recv(3884))
+        sock.send(PackSetConf())
+        print(sock.recv(3884))
 
         # while True:
         #     # print(sock.recv(3948))

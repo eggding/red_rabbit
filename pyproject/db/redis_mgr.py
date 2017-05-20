@@ -83,5 +83,6 @@ def handle(socket,address):
 server = StreamServer(('127.0.0.1', 10422), handle)
 # server.serve_forever()
 
-
+a = [1, 2, 3]
+print(a[:-1], a[-1:])
 

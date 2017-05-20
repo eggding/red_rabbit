@@ -56,9 +56,14 @@ class GccRoomMgr(object):
         gccRoomObj.SetGasID(szGasID)
         self.m_dictRoomID2RoomObj[nRoomId] = gccRoomObj
         self.m_dictGas2RoomNum[szGasID] = self.m_dictGas2RoomNum.get(szGasID, 0) + 1
-        ffext.call_service(szGasID, rpc_def.Gcc2GasRetGenRoomID, {"room_id": nRoomId,
-                                                                  "player_id": nPlayerGID,
-                                                                  "cfg": dictCfg})
+
+        import robot.gm_opt_config as gm_opt_config
+        dictCurCfg = gm_opt_config.GetCurrentConfig()
+        dictCurCfg.update(dictCfg)
+        dictTmp = {"room_id": nRoomId,
+                  "player_id": nPlayerGID,
+                  "cfg": dictCurCfg}
+        ffext.call_service(szGasID, rpc_def.Gcc2GasRetGenRoomID, dictTmp)
 
     def ChangeRoomStateRunning(self, nRoomID):
         roomObj = self.m_dictRoomID2RoomObj.get(nRoomID)
