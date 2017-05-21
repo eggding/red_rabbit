@@ -3,7 +3,7 @@
 
 import ff, ffext
 import entity.entity_mgr as entity_mgr
-from util.enum_def import RoomMemberProperty, EGameRule, EMemberEvent, EMoneyType
+from util.enum_def import RoomMemberProperty, EGameRule, EMemberEvent, EMoneyType, EStatusInRoom
 import state.state_machine as state_machine
 import state.room_state_waiting as room_state_waiting
 import state.room_state_running as room_state_running
@@ -51,6 +51,9 @@ class RoomObj(object):
     def GetMemberPos(self, nMember):
         return self.m_dictMember[nMember][RoomMemberProperty.ePos]
 
+    def GetMemberState(self, nMember):
+        return self.m_dictMember[nMember][RoomMemberProperty.eStatus]
+
     def GetMemberIDByPos(self, nPos):
         for nMemberGID, dictData in self.m_dictMember.iteritems():
             if dictData[RoomMemberProperty.ePos] == nPos:
@@ -96,6 +99,7 @@ class RoomObj(object):
                     continue
                 tmp = rsp.list_members.add()
                 tmp.pos = self.GetMemberPos(nMember)
+                tmp.state = self.GetMemberState(nMember)
                 Player = entity_mgr.GetEntity(nMember)
                 assert Player is not None
                 Player.Serial2Client(tmp)
@@ -114,7 +118,15 @@ class RoomObj(object):
         if self.m_sm.IsInState(room_state_running.RoomStateRunning) is True:
             return False
 
-        return len(self.m_dictMember) == self.m_nMaxMember
+        if len(self.m_dictMember) != self.m_nMaxMember:
+            return False
+
+        for nMember, listData in self.m_dictMember.iteritems():
+            nFlag = listData[RoomMemberProperty.eStatus]
+            if nFlag != EStatusInRoom.eReady:
+                return False
+
+        return True
 
     def StartGameOnRoom(self):
         ffext.LOGINFO("FFSCENE_PYTHON", "StartGameOnRoom {0}".format(self.GetRoomID()))
@@ -133,8 +145,8 @@ class RoomObj(object):
                 nDelNum = nRoomMasterDel
             else:
                 nDelNum = nRoomOtherDel
-            if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelNum) is False:
-                return
+            # if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelNum) is False:
+            #     return
 
         for nMember in self.m_dictMember.iterkeys():
             Player = entity_mgr.GetEntity(nMember)
@@ -143,8 +155,9 @@ class RoomObj(object):
             else:
                 nDelNum = nRoomOtherDel
             if nDelNum != 0:
-                if Player.AddMoney(EMoneyType.eZhuanShi, -nDelNum, "开场扣除") is False:
-                    return
+                pass
+                # if Player.AddMoney(EMoneyType.eZhuanShi, -nDelNum, "开场扣除") is False:
+                #     return
 
         self.m_sm.ChangeState(room_state_running.RoomStateRunning(self))
         for nMember in self.m_dictMember.iterkeys():
@@ -182,6 +195,9 @@ class RoomObj(object):
         bRet = self.m_sm.GetCurState().MemberEnter(nMember)
         if bRet is True:
             self.NoticeMemberEvent(EMemberEvent.evMemberEnter, nMember)
+
+    def MemberReady(self, nMember):
+        self.m_sm.GetCurState().MemberReady(nMember)
 
     def MemberExit(self, nMember):
         self.NoticeMemberEvent(EMemberEvent.evMemberExit, nMember)

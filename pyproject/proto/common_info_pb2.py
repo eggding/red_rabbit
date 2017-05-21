@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='common_info.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x11\x63ommon_info.proto\"i\n\x11other_player_info\x12\x11\n\tplayer_id\x18\x01 \x02(\x04\x12\x13\n\x0bplayer_name\x18\x02 \x02(\x0c\x12\x13\n\x0bwechat_info\x18\x03 \x02(\x0c\x12\n\n\x02ip\x18\x04 \x02(\x0c\x12\x0b\n\x03pos\x18\x05 \x02(\r\"s\n\x08game_cfg\x12\x12\n\nmember_num\x18\x01 \x02(\r\x12\r\n\x05multi\x18\x02 \x02(\r\x12\x1c\n\x14total_start_game_num\x18\x03 \x02(\r\x12\x0b\n\x03\x61vg\x18\x04 \x02(\r\x12\x19\n\x03opt\x18\x05 \x02(\x0e\x32\x0c.room_option\"w\n\x0egame_card_list\x12\x0b\n\x03pos\x18\x01 \x02(\r\x12\x10\n\x08\x63\x61rd_num\x18\x02 \x02(\r\x12\x16\n\x0elist_card_have\x18\x03 \x03(\r\x12\x16\n\x0elist_card_hist\x18\x04 \x03(\r\x12\x16\n\x0elist_card_show\x18\x05 \x03(\r\"\xc1\x02\n\rsyn_game_info\x12\x16\n\x0eproto_id_20014\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x16\n\x03\x63\x66g\x18\x02 \x01(\x0b\x32\t.game_cfg\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x11\n\tmaster_id\x18\x07 \x02(\r\x12\x16\n\x0elist_gold_card\x18\x08 \x03(\r\x12\"\n\tcard_info\x18\t \x03(\x0b\x32\x0f.game_card_list\x12(\n\x0clist_members\x18\n \x03(\x0b\x32\x12.other_player_info\x12\x0f\n\x07opt_pos\x18\x0b \x02(\r\x12\x11\n\tpos_owner\x18\x0c \x02(\r\"\x81\x01\n\x0eon_touch_event\x12\x16\n\x0eproto_id_20013\x18\x63 \x01(\x08\x12\x1c\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x11\n\tev_target\x18\x03 \x02(\x04\x12\x0f\n\x07\x65v_data\x18\x04 \x02(\x0c\x12\x15\n\rev_target_src\x18\x05 \x01(\x04\"}\n\x15on_touch_event_member\x12\x16\n\x0eproto_id_20011\x18\x63 \x01(\x08\x12#\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x12.event_type_member\x12\'\n\x0blist_member\x18\x02 \x03(\x0b\x32\x12.other_player_info\"G\n\x0b\x63\x61rd_serial\x12\x11\n\tplayer_id\x18\x01 \x02(\x04\x12\x16\n\x0elist_card_info\x18\x02 \x03(\r\x12\r\n\x05score\x18\x03 \x02(\r\"\x87\x01\n\x0csyn_game_ret\x12\x16\n\x0eproto_id_20012\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\'\n\x0blist_member\x18\x02 \x03(\x0b\x32\x12.other_player_info\x12%\n\x0flist_car_serial\x18\x03 \x03(\x0b\x32\x0c.card_serial\"H\n\tnotic_msg\x12\x16\n\x0eproto_id_20018\x18\x63 \x01(\x08\x12\x0e\n\x06msg_id\x18\x01 \x02(\r\x12\x13\n\x0bmsg_content\x18\x02 \x01(\x0c*!\n\x0broom_option\x12\x08\n\x04half\x10\x01\x12\x08\n\x04\x66ull\x10\x02*<\n\x11\x65vent_type_member\x12\x13\n\x0f\x65v_member_enter\x10\x01\x12\x12\n\x0e\x65v_member_exit\x10\x02*\xc6\x04\n\nevent_type\x12\x15\n\x11\x65v_gang_with_peng\x10\x01\x12\x11\n\rev_gang_other\x10\x02\x12\x0f\n\x0b\x65v_gang_all\x10\x03\x12\x0b\n\x07\x65v_peng\x10\x0b\x12\n\n\x06\x65v_chi\x10\x0c\x12\r\n\tev_bu_hua\x10\r\x12\x0e\n\nev_kai_jin\x10\x0e\x12\r\n\tev_mo_pai\x10\x0f\x12\r\n\tev_qi_pai\x10\x10\x12\x0b\n\x07\x65v_pass\x10\x11\x12\x0e\n\nev_cha_pai\x10\x12\x12\x0e\n\nev_dan_you\x10\x15\x12\x11\n\rev_shuang_you\x10\x16\x12\x0e\n\nev_san_you\x10\x17\x12\x11\n\rev_fen_bing_1\x10\x18\x12\x11\n\rev_fen_bing_2\x10\x19\x12\x0e\n\nev_be_peng\x10\x1a\x12\x0e\n\nev_be_gang\x10\x1b\x12\x11\n\rev_be_gang_hu\x10\x1c\x12\r\n\tev_be_cha\x10\x1d\x12\x10\n\x0c\x65v_hu_normal\x10Q\x12\x11\n\rev_hu_cha_hua\x10R\x12\x14\n\x10\x65v_hu_qiang_gang\x10S\x12\x13\n\x0f\x65v_hu_qiang_jin\x10T\x12\x15\n\x11\x65v_hu_san_jin_dao\x10U\x12\x14\n\x10\x65v_hu_si_jin_dao\x10V\x12\x14\n\x10\x65v_hu_wu_jin_dao\x10W\x12\x15\n\x11\x65v_hu_liu_jin_dao\x10X\x12\x19\n\x15\x65v_hu_ba_xian_guo_hai\x10Y\x12\x15\n\x11\x65v_hu_shi_san_yao\x10Z\x12\x13\n\x0f\x65v_hu_qi_dui_zi\x10[')
+  serialized_pb=_b('\n\x11\x63ommon_info.proto\"\x87\x01\n\x11other_player_info\x12\x11\n\tplayer_id\x18\x01 \x02(\x04\x12\x13\n\x0bplayer_name\x18\x02 \x02(\x0c\x12\x13\n\x0bwechat_info\x18\x03 \x02(\x0c\x12\n\n\x02ip\x18\x04 \x02(\x0c\x12\x0b\n\x03pos\x18\x05 \x02(\r\x12\x1c\n\x05state\x18\x06 \x01(\x0e\x32\r.member_state\"s\n\x08game_cfg\x12\x12\n\nmember_num\x18\x01 \x02(\r\x12\r\n\x05multi\x18\x02 \x02(\r\x12\x1c\n\x14total_start_game_num\x18\x03 \x02(\r\x12\x0b\n\x03\x61vg\x18\x04 \x02(\r\x12\x19\n\x03opt\x18\x05 \x02(\x0e\x32\x0c.room_option\"w\n\x0egame_card_list\x12\x0b\n\x03pos\x18\x01 \x02(\r\x12\x10\n\x08\x63\x61rd_num\x18\x02 \x02(\r\x12\x16\n\x0elist_card_have\x18\x03 \x03(\r\x12\x16\n\x0elist_card_hist\x18\x04 \x03(\r\x12\x16\n\x0elist_card_show\x18\x05 \x03(\r\"\xc1\x02\n\rsyn_game_info\x12\x16\n\x0eproto_id_20014\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x16\n\x03\x63\x66g\x18\x02 \x01(\x0b\x32\t.game_cfg\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x11\n\tmaster_id\x18\x07 \x02(\r\x12\x16\n\x0elist_gold_card\x18\x08 \x03(\r\x12\"\n\tcard_info\x18\t \x03(\x0b\x32\x0f.game_card_list\x12(\n\x0clist_members\x18\n \x03(\x0b\x32\x12.other_player_info\x12\x0f\n\x07opt_pos\x18\x0b \x02(\r\x12\x11\n\tpos_owner\x18\x0c \x02(\r\"\x81\x01\n\x0eon_touch_event\x12\x16\n\x0eproto_id_20013\x18\x63 \x01(\x08\x12\x1c\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x11\n\tev_target\x18\x03 \x02(\x04\x12\x0f\n\x07\x65v_data\x18\x04 \x02(\x0c\x12\x15\n\rev_target_src\x18\x05 \x01(\x04\"}\n\x15on_touch_event_member\x12\x16\n\x0eproto_id_20011\x18\x63 \x01(\x08\x12#\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x12.event_type_member\x12\'\n\x0blist_member\x18\x02 \x03(\x0b\x32\x12.other_player_info\"G\n\x0b\x63\x61rd_serial\x12\x11\n\tplayer_id\x18\x01 \x02(\x04\x12\x16\n\x0elist_card_info\x18\x02 \x03(\r\x12\r\n\x05score\x18\x03 \x02(\r\"\x87\x01\n\x0csyn_game_ret\x12\x16\n\x0eproto_id_20012\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\'\n\x0blist_member\x18\x02 \x03(\x0b\x32\x12.other_player_info\x12%\n\x0flist_car_serial\x18\x03 \x03(\x0b\x32\x0c.card_serial\"H\n\tnotic_msg\x12\x16\n\x0eproto_id_20018\x18\x63 \x01(\x08\x12\x0e\n\x06msg_id\x18\x01 \x02(\r\x12\x13\n\x0bmsg_content\x18\x02 \x01(\x0c\"(\n\x0eheart_beat_req\x12\x16\n\x0eproto_id_10000\x18\x63 \x01(\x08\"F\n\x0eheart_beat_rsp\x12\x16\n\x0eproto_id_20000\x18\x63 \x01(\x08\x12\x1c\n\x14next_heart_beat_time\x18\x01 \x02(\x04*!\n\x0broom_option\x12\x08\n\x04half\x10\x01\x12\x08\n\x04\x66ull\x10\x02*<\n\x11\x65vent_type_member\x12\x13\n\x0f\x65v_member_enter\x10\x01\x12\x12\n\x0e\x65v_member_exit\x10\x02*I\n\x0cmember_state\x12\x0e\n\ne_un_ready\x10\x01\x12\x0b\n\x07\x65_ready\x10\x02\x12\r\n\te_offline\x10\x03\x12\r\n\te_playing\x10\x04*\xc6\x04\n\nevent_type\x12\x15\n\x11\x65v_gang_with_peng\x10\x01\x12\x11\n\rev_gang_other\x10\x02\x12\x0f\n\x0b\x65v_gang_all\x10\x03\x12\x0b\n\x07\x65v_peng\x10\x0b\x12\n\n\x06\x65v_chi\x10\x0c\x12\r\n\tev_bu_hua\x10\r\x12\x0e\n\nev_kai_jin\x10\x0e\x12\r\n\tev_mo_pai\x10\x0f\x12\r\n\tev_qi_pai\x10\x10\x12\x0b\n\x07\x65v_pass\x10\x11\x12\x0e\n\nev_cha_pai\x10\x12\x12\x0e\n\nev_dan_you\x10\x15\x12\x11\n\rev_shuang_you\x10\x16\x12\x0e\n\nev_san_you\x10\x17\x12\x11\n\rev_fen_bing_1\x10\x18\x12\x11\n\rev_fen_bing_2\x10\x19\x12\x0e\n\nev_be_peng\x10\x1a\x12\x0e\n\nev_be_gang\x10\x1b\x12\x11\n\rev_be_gang_hu\x10\x1c\x12\r\n\tev_be_cha\x10\x1d\x12\x10\n\x0c\x65v_hu_normal\x10Q\x12\x11\n\rev_hu_cha_hua\x10R\x12\x14\n\x10\x65v_hu_qiang_gang\x10S\x12\x13\n\x0f\x65v_hu_qiang_jin\x10T\x12\x15\n\x11\x65v_hu_san_jin_dao\x10U\x12\x14\n\x10\x65v_hu_si_jin_dao\x10V\x12\x14\n\x10\x65v_hu_wu_jin_dao\x10W\x12\x15\n\x11\x65v_hu_liu_jin_dao\x10X\x12\x19\n\x15\x65v_hu_ba_xian_guo_hai\x10Y\x12\x15\n\x11\x65v_hu_shi_san_yao\x10Z\x12\x13\n\x0f\x65v_hu_qi_dui_zi\x10[')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -41,8 +41,8 @@ _ROOM_OPTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1234,
-  serialized_end=1267,
+  serialized_start=1379,
+  serialized_end=1412,
 )
 _sym_db.RegisterEnumDescriptor(_ROOM_OPTION)
 
@@ -64,12 +64,43 @@ _EVENT_TYPE_MEMBER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1269,
-  serialized_end=1329,
+  serialized_start=1414,
+  serialized_end=1474,
 )
 _sym_db.RegisterEnumDescriptor(_EVENT_TYPE_MEMBER)
 
 event_type_member = enum_type_wrapper.EnumTypeWrapper(_EVENT_TYPE_MEMBER)
+_MEMBER_STATE = _descriptor.EnumDescriptor(
+  name='member_state',
+  full_name='member_state',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='e_un_ready', index=0, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='e_ready', index=1, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='e_offline', index=2, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='e_playing', index=3, number=4,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=1476,
+  serialized_end=1549,
+)
+_sym_db.RegisterEnumDescriptor(_MEMBER_STATE)
+
+member_state = enum_type_wrapper.EnumTypeWrapper(_MEMBER_STATE)
 _EVENT_TYPE = _descriptor.EnumDescriptor(
   name='event_type',
   full_name='event_type',
@@ -203,8 +234,8 @@ _EVENT_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1332,
-  serialized_end=1914,
+  serialized_start=1552,
+  serialized_end=2134,
 )
 _sym_db.RegisterEnumDescriptor(_EVENT_TYPE)
 
@@ -213,6 +244,10 @@ half = 1
 full = 2
 ev_member_enter = 1
 ev_member_exit = 2
+e_un_ready = 1
+e_ready = 2
+e_offline = 3
+e_playing = 4
 ev_gang_with_peng = 1
 ev_gang_other = 2
 ev_gang_all = 3
@@ -289,6 +324,13 @@ _OTHER_PLAYER_INFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='other_player_info.state', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -301,8 +343,8 @@ _OTHER_PLAYER_INFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21,
-  serialized_end=126,
+  serialized_start=22,
+  serialized_end=157,
 )
 
 
@@ -360,8 +402,8 @@ _GAME_CFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=128,
-  serialized_end=243,
+  serialized_start=159,
+  serialized_end=274,
 )
 
 
@@ -419,8 +461,8 @@ _GAME_CARD_LIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=245,
-  serialized_end=364,
+  serialized_start=276,
+  serialized_end=395,
 )
 
 
@@ -534,8 +576,8 @@ _SYN_GAME_INFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=367,
-  serialized_end=688,
+  serialized_start=398,
+  serialized_end=719,
 )
 
 
@@ -593,8 +635,8 @@ _ON_TOUCH_EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=691,
-  serialized_end=820,
+  serialized_start=722,
+  serialized_end=851,
 )
 
 
@@ -638,8 +680,8 @@ _ON_TOUCH_EVENT_MEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=822,
-  serialized_end=947,
+  serialized_start=853,
+  serialized_end=978,
 )
 
 
@@ -683,8 +725,8 @@ _CARD_SERIAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=949,
-  serialized_end=1020,
+  serialized_start=980,
+  serialized_end=1051,
 )
 
 
@@ -735,8 +777,8 @@ _SYN_GAME_RET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1023,
-  serialized_end=1158,
+  serialized_start=1054,
+  serialized_end=1189,
 )
 
 
@@ -780,10 +822,80 @@ _NOTIC_MSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1160,
-  serialized_end=1232,
+  serialized_start=1191,
+  serialized_end=1263,
 )
 
+
+_HEART_BEAT_REQ = _descriptor.Descriptor(
+  name='heart_beat_req',
+  full_name='heart_beat_req',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proto_id_10000', full_name='heart_beat_req.proto_id_10000', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1265,
+  serialized_end=1305,
+)
+
+
+_HEART_BEAT_RSP = _descriptor.Descriptor(
+  name='heart_beat_rsp',
+  full_name='heart_beat_rsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proto_id_20000', full_name='heart_beat_rsp.proto_id_20000', index=0,
+      number=99, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='next_heart_beat_time', full_name='heart_beat_rsp.next_heart_beat_time', index=1,
+      number=1, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1307,
+  serialized_end=1377,
+)
+
+_OTHER_PLAYER_INFO.fields_by_name['state'].enum_type = _MEMBER_STATE
 _GAME_CFG.fields_by_name['opt'].enum_type = _ROOM_OPTION
 _SYN_GAME_INFO.fields_by_name['cfg'].message_type = _GAME_CFG
 _SYN_GAME_INFO.fields_by_name['card_info'].message_type = _GAME_CARD_LIST
@@ -802,8 +914,11 @@ DESCRIPTOR.message_types_by_name['on_touch_event_member'] = _ON_TOUCH_EVENT_MEMB
 DESCRIPTOR.message_types_by_name['card_serial'] = _CARD_SERIAL
 DESCRIPTOR.message_types_by_name['syn_game_ret'] = _SYN_GAME_RET
 DESCRIPTOR.message_types_by_name['notic_msg'] = _NOTIC_MSG
+DESCRIPTOR.message_types_by_name['heart_beat_req'] = _HEART_BEAT_REQ
+DESCRIPTOR.message_types_by_name['heart_beat_rsp'] = _HEART_BEAT_RSP
 DESCRIPTOR.enum_types_by_name['room_option'] = _ROOM_OPTION
 DESCRIPTOR.enum_types_by_name['event_type_member'] = _EVENT_TYPE_MEMBER
+DESCRIPTOR.enum_types_by_name['member_state'] = _MEMBER_STATE
 DESCRIPTOR.enum_types_by_name['event_type'] = _EVENT_TYPE
 
 other_player_info = _reflection.GeneratedProtocolMessageType('other_player_info', (_message.Message,), dict(
@@ -868,6 +983,20 @@ notic_msg = _reflection.GeneratedProtocolMessageType('notic_msg', (_message.Mess
   # @@protoc_insertion_point(class_scope:notic_msg)
   ))
 _sym_db.RegisterMessage(notic_msg)
+
+heart_beat_req = _reflection.GeneratedProtocolMessageType('heart_beat_req', (_message.Message,), dict(
+  DESCRIPTOR = _HEART_BEAT_REQ,
+  __module__ = 'common_info_pb2'
+  # @@protoc_insertion_point(class_scope:heart_beat_req)
+  ))
+_sym_db.RegisterMessage(heart_beat_req)
+
+heart_beat_rsp = _reflection.GeneratedProtocolMessageType('heart_beat_rsp', (_message.Message,), dict(
+  DESCRIPTOR = _HEART_BEAT_RSP,
+  __module__ = 'common_info_pb2'
+  # @@protoc_insertion_point(class_scope:heart_beat_rsp)
+  ))
+_sym_db.RegisterMessage(heart_beat_rsp)
 
 
 # @@protoc_insertion_point(module_scope)

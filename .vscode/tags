@@ -4,9 +4,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-A	../pyproject/db/main.py	/^def A():$/;"	kind:function	line:62
-A	../pyproject/gas/main.py	/^def A():$/;"	kind:function	line:59
-A	../pyproject/gcc/main.py	/^def A():$/;"	kind:function	line:23
+A	../pyproject/db/main.py	/^def A():$/;"	kind:function	line:63
+A	../pyproject/gas/main.py	/^def A():$/;"	kind:function	line:61
+A	../pyproject/gcc/main.py	/^def A():$/;"	kind:function	line:27
 A	../pyproject/login/main.py	/^def A():$/;"	kind:function	line:19
 ALREADY_OPEN	../pylib/thrift/transport/TTransport.py	/^  ALREADY_OPEN = 2$/;"	kind:variable	line:30
 Add	../pylib/google/protobuf/descriptor_database.py	/^  def Add(self, file_desc_proto):$/;"	kind:member	line:43
@@ -25,16 +25,17 @@ AddResidualPlayer	../pyproject/residual/residual_mgr.py	/^    def AddResidualPla
 AddTouchEvent	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def AddTouchEvent(self, nPos, tupleEventData):$/;"	kind:member	line:130
 All2ExeCode	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^def All2ExeCode(dictData):$/;"	kind:function	line:121
 All2ExeCode	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^def All2ExeCode(dictData):$/;"	kind:function	line:85
-All2ExeCode	../pyproject/rpc/rpc_def.py	/^All2ExeCode = 4000$/;"	kind:variable	line:50
-AppendInt	../pyproject/db/redis_mgr.py	/^    def AppendInt(self, val):$/;"	kind:member	line:17
+All2ExeCode	../pyproject/rpc/rpc_def.py	/^All2ExeCode = 4000$/;"	kind:variable	line:54
+AppendInt	../pyproject/db/redis_mgr.py	/^    def AppendInt(self, val):$/;"	kind:member	line:20
 AppendInt	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendInt(self, nVal):$/;"	kind:member	line:20
 AppendInt	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendInt(self, nVal):$/;"	kind:member	line:90
-AppendStr	../pyproject/db/redis_mgr.py	/^    def AppendStr(self, szVal):$/;"	kind:member	line:22
+AppendShortInt	../pyproject/db/redis_mgr.py	/^    def AppendShortInt(self, val):$/;"	kind:member	line:25
+AppendStr	../pyproject/db/redis_mgr.py	/^    def AppendStr(self, szVal):$/;"	kind:member	line:30
 AppendStr	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendStr(self, szMsg):$/;"	kind:member	line:11
 AppendStr	../pyproject/encode_mgr/bin_encoder.py	/^    def AppendStr(self, szMsg):$/;"	kind:member	line:81
 AsynJob	../pyproject/db/dbs_mgr.py	/^class AsynJob(object):$/;"	kind:class	line:10
 AtEnd	../pylib/google/protobuf/text_format.py	/^  def AtEnd(self):$/;"	kind:member	line:328
-AutoQiPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def AutoQiPai(self, nPos):$/;"	kind:member	line:324
+AutoQiPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def AutoQiPai(self, nPos):$/;"	kind:member	line:318
 AutoSelectRoom	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def AutoSelectRoom(self):$/;"	kind:member	line:22
 AvailableDistributions	../pylib/pkg_resources.py	/^AvailableDistributions = Environment    # XXX backward compatibility$/;"	kind:variable	line:841
 BAD_SEQUENCE_ID	../pylib/thrift/Thrift.py	/^  BAD_SEQUENCE_ID = 4$/;"	kind:variable	line:100
@@ -45,7 +46,7 @@ BOOL	../pylib/thrift/Thrift.py	/^  BOOL   = 2$/;"	kind:variable	line:26
 BOOL_READ	../pylib/thrift/protocol/TCompactProtocol.py	/^BOOL_READ = 8$/;"	kind:variable	line:33
 BOOL_WRITE	../pylib/thrift/protocol/TCompactProtocol.py	/^BOOL_WRITE = 4$/;"	kind:variable	line:29
 BROKER_CLIENT_REGISTER	../pyproject/encode_mgr/bin_encoder.py	/^BROKER_CLIENT_REGISTER = 3$/;"	kind:variable	line:73
-BUFSIZE	../pyproject/db/redis_mgr.py	/^BUFSIZE=1024$/;"	kind:variable	line:8
+BUFSIZE	../pyproject/db/redis_mgr.py	/^BUFSIZE=1024$/;"	kind:variable	line:11
 BYTE	../pylib/thrift/Thrift.py	/^  BYTE   = 3$/;"	kind:variable	line:27
 BYTE	../pylib/thrift/protocol/TCompactProtocol.py	/^  BYTE = 0x03$/;"	kind:variable	line:83
 BaseCompment	../pyproject/compment/base_compment.py	/^class BaseCompment(object):$/;"	kind:class	line:3
@@ -96,17 +97,17 @@ CREATE_TIME	../pyproject/db/table/table_property_def.py	/^    CREATE_TIME = "cre
 CReadableTransport	../pylib/thrift/transport/TTransport.py	/^class CReadableTransport:$/;"	kind:class	line:75
 CTYPES	../pylib/thrift/protocol/TCompactProtocol.py	/^CTYPES = {TType.STOP: CompactType.STOP,$/;"	kind:variable	line:94
 CURL_CACHE_NUM	../pyproject/wsurl/wsurl_thread.py	/^CURL_CACHE_NUM = 1000$/;"	kind:variable	line:13
-CalScore	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CalScore(self, nWndPos):$/;"	kind:member	line:572
+CalScore	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CalScore(self, nWndPos):$/;"	kind:member	line:566
 CallMethod	../pylib/google/protobuf/service.py	/^  def CallMethod(self, method_descriptor, rpc_controller,$/;"	kind:member	line:217
 CallMethod	../pylib/google/protobuf/service.py	/^  def CallMethod(self, method_descriptor, rpc_controller,$/;"	kind:member	line:65
 CanStartGame	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def CanStartGame(self):$/;"	kind:member	line:113
-CancelAutoTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CancelAutoTick(self):$/;"	kind:member	line:379
-ChangeOrder	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def ChangeOrder(self, nFromPos, nToPos):$/;"	kind:member	line:446
-ChangeRoomStateRunning	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def ChangeRoomStateRunning(self, nRoomID):$/;"	kind:member	line:63
+CancelAutoTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CancelAutoTick(self):$/;"	kind:member	line:373
+ChangeOrder	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def ChangeOrder(self, nFromPos, nToPos):$/;"	kind:member	line:440
+ChangeRoomStateRunning	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def ChangeRoomStateRunning(self, nRoomID):$/;"	kind:member	line:68
 ChangeState	../pyproject/state/state_machine.py	/^    def ChangeState(self, newState):$/;"	kind:member	line:39
 CheckAllServiceDone	../pyproject/gate_mgr/game_manager.py	/^    def CheckAllServiceDone(self):$/;"	kind:member	line:44
 CheckBaXianGuoHai	../pyproject/gas/gas_mj/check_hu.py	/^def CheckBaXianGuoHai(listMj):$/;"	kind:function	line:531
-CheckBuHua	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CheckBuHua(self, nPos, nCard=None):$/;"	kind:member	line:197
+CheckBuHua	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CheckBuHua(self, nPos, nCard=None):$/;"	kind:member	line:194
 CheckDanYou	../pyproject/gas/gas_mj/check_hu.py	/^def CheckDanYou(listMj, listHunMj):$/;"	kind:function	line:456
 CheckEnterRoom	../pyproject/robot/robot_mgr.py	/^    def CheckEnterRoom(self, nGID):$/;"	kind:member	line:29
 CheckFileAndUpdate	../pyproject/auto_update/auto_update.py	/^def CheckFileAndUpdate(szFilePath):$/;"	kind:function	line:28
@@ -119,7 +120,7 @@ CheckValue	../pylib/google/protobuf/internal/type_checkers.py	/^  def CheckValue
 CheckValue	../pylib/google/protobuf/internal/type_checkers.py	/^  def CheckValue(self, proposed_value):$/;"	kind:member	line:87
 ChooseMaxLen	../pyproject/db/dbs_mgr.py	/^    def ChooseMaxLen(self):$/;"	kind:member	line:64
 ChooseOneGas	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def ChooseOneGas(self):$/;"	kind:member	line:26
-CleanGoogleProtoList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CleanGoogleProtoList(self, listData):$/;"	kind:member	line:600
+CleanGoogleProtoList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def CleanGoogleProtoList(self, listData):$/;"	kind:member	line:594
 Clear	../pylib/google/protobuf/internal/cpp_message.py	/^  def Clear(self):$/;"	kind:function	line:539
 Clear	../pylib/google/protobuf/internal/python_message.py	/^  def Clear(self):$/;"	kind:function	line:644
 Clear	../pylib/google/protobuf/message.py	/^  def Clear(self):$/;"	kind:member	line:121
@@ -156,7 +157,7 @@ CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, pro
 CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, proto):$/;"	kind:member	line:536
 CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, proto):$/;"	kind:member	line:604
 CopyToProto	../pylib/google/protobuf/descriptor.py	/^  def CopyToProto(self, proto):$/;"	kind:member	line:669
-CreateRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def CreateRoom(self, nRoomMaster, dictRoomCfg):$/;"	kind:member	line:65
+CreateRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def CreateRoom(self, nRoomMaster, dictRoomCfg):$/;"	kind:member	line:66
 CreateRoom	../pyproject/test.py	/^def CreateRoom():$/;"	kind:function	line:10
 DB_CALLBACK_DICT	../pylib/ffext.py	/^DB_CALLBACK_DICT = {}$/;"	kind:variable	line:215
 DB_CALLBACK_ID	../pylib/ffext.py	/^DB_CALLBACK_ID = 0$/;"	kind:variable	line:214
@@ -215,19 +216,24 @@ DESCRIPTOR	../pyproject/proto/enter_room_pb2.py	/^DESCRIPTOR = _descriptor.FileD
 DESCRIPTOR	../pyproject/proto/exit_room_pb2.py	/^  DESCRIPTOR = _EXIT_ROOM_REQ,$/;"	kind:variable	line:108
 DESCRIPTOR	../pyproject/proto/exit_room_pb2.py	/^  DESCRIPTOR = _EXIT_ROOM_RSP,$/;"	kind:variable	line:115
 DESCRIPTOR	../pyproject/proto/exit_room_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:18
-DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _LOAD_CONFIG_REQ,$/;"	kind:variable	line:200
-DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _LOAD_CONFIG_RSP,$/;"	kind:variable	line:207
-DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _OPT_CONFIG_REQ,$/;"	kind:variable	line:214
-DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _OPT_CONFIG_RSP,$/;"	kind:variable	line:221
-DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:18
+DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _CONFIG_DATA,$/;"	kind:variable	line:318
+DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _OPT_CONFIG_REQ,$/;"	kind:variable	line:339
+DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _OPT_CONFIG_RSP,$/;"	kind:variable	line:346
+DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _SYN_ALL_GM_CONFIG_REQ,$/;"	kind:variable	line:325
+DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^  DESCRIPTOR = _SYN_ALL_GM_CONFIG_RSP,$/;"	kind:variable	line:332
+DESCRIPTOR	../pyproject/proto/gm_config_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:19
 DESCRIPTOR	../pyproject/proto/login_pb2.py	/^  DESCRIPTOR = _LOGIN_REQ,$/;"	kind:variable	line:169
 DESCRIPTOR	../pyproject/proto/login_pb2.py	/^  DESCRIPTOR = _LOGIN_RSP,$/;"	kind:variable	line:176
 DESCRIPTOR	../pyproject/proto/login_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:19
-DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _OPT_REQ,$/;"	kind:variable	line:254
-DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _OPT_RSP,$/;"	kind:variable	line:261
-DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _SYN_CARD_INFO,$/;"	kind:variable	line:268
-DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _SYN_GAME_ORDER,$/;"	kind:variable	line:275
+DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _GAME_READY_REQ,$/;"	kind:variable	line:353
+DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _GAME_READY_RSP,$/;"	kind:variable	line:360
+DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _OPT_REQ,$/;"	kind:variable	line:325
+DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _OPT_RSP,$/;"	kind:variable	line:332
+DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _SYN_CARD_INFO,$/;"	kind:variable	line:339
+DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^  DESCRIPTOR = _SYN_GAME_ORDER,$/;"	kind:variable	line:346
 DESCRIPTOR	../pyproject/proto/opt_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:19
+DESCRIPTOR	../pyproject/proto/player_data_pb2.py	/^  DESCRIPTOR = _SYN_PLAYER_DATA,$/;"	kind:variable	line:83
+DESCRIPTOR	../pyproject/proto/player_data_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:18
 DESCRIPTOR	../pyproject/proto/query_room_scene_pb2.py	/^  DESCRIPTOR = _QUERY_ROOM_SCENE_REQ,$/;"	kind:variable	line:108
 DESCRIPTOR	../pyproject/proto/query_room_scene_pb2.py	/^  DESCRIPTOR = _QUERY_ROOM_SCENE_RSP,$/;"	kind:variable	line:115
 DESCRIPTOR	../pyproject/proto/query_room_scene_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	kind:variable	line:18
@@ -236,26 +242,28 @@ DISTRO	../pylib/pkg_resources.py	/^DISTRO   = re.compile(r"\\s*((\\w|[-.])+)").m
 DOUBLE	../pylib/thrift/Thrift.py	/^  DOUBLE = 4$/;"	kind:variable	line:29
 DOUBLE	../pylib/thrift/protocol/TCompactProtocol.py	/^  DOUBLE = 0x07$/;"	kind:variable	line:87
 DbsCreateUserSession	../pyproject/db/main.py	/^def DbsCreateUserSession(dictSerial):$/;"	kind:function	line:34
-DbsCreateUserSession	../pyproject/rpc/rpc_def.py	/^DbsCreateUserSession = 7002$/;"	kind:variable	line:54
+DbsCreateUserSession	../pyproject/rpc/rpc_def.py	/^DbsCreateUserSession = 7002$/;"	kind:variable	line:58
 DbsGetAllGmConfig	../pyproject/db/main.py	/^def DbsGetAllGmConfig(dictSerial):$/;"	kind:function	line:46
-DbsGetAllGmConfig	../pyproject/rpc/rpc_def.py	/^DbsGetAllGmConfig = 7009$/;"	kind:variable	line:63
+DbsGetAllGmConfig	../pyproject/rpc/rpc_def.py	/^DbsGetAllGmConfig = 7009$/;"	kind:variable	line:67
 DbsGetIDData	../pyproject/db/main.py	/^def DbsGetIDData(dictSerial):$/;"	kind:function	line:18
-DbsGetIDData	../pyproject/rpc/rpc_def.py	/^DbsGetIDData = 7006$/;"	kind:variable	line:60
+DbsGetIDData	../pyproject/rpc/rpc_def.py	/^DbsGetIDData = 7006$/;"	kind:variable	line:64
 DbsGetRoomIDSector	../pyproject/db/main.py	/^def DbsGetRoomIDSector(dictSerial):$/;"	kind:function	line:22
-DbsGetRoomIDSector	../pyproject/rpc/rpc_def.py	/^DbsGetRoomIDSector = 7005$/;"	kind:variable	line:59
+DbsGetRoomIDSector	../pyproject/rpc/rpc_def.py	/^DbsGetRoomIDSector = 7005$/;"	kind:variable	line:63
 DbsGetUserSession	../pyproject/db/main.py	/^def DbsGetUserSession(dictSerial):$/;"	kind:function	line:42
-DbsGetUserSession	../pyproject/rpc/rpc_def.py	/^DbsGetUserSession = 7000$/;"	kind:variable	line:52
+DbsGetUserSession	../pyproject/rpc/rpc_def.py	/^DbsGetUserSession = 7000$/;"	kind:variable	line:56
 DbsLoadPlayerData	../pyproject/db/main.py	/^def DbsLoadPlayerData(dictSerial):$/;"	kind:function	line:38
-DbsLoadPlayerData	../pyproject/rpc/rpc_def.py	/^DbsLoadPlayerData = 7001$/;"	kind:variable	line:53
+DbsLoadPlayerData	../pyproject/rpc/rpc_def.py	/^DbsLoadPlayerData = 7001$/;"	kind:variable	line:57
 DbsMgr	../pyproject/db/dbs_mgr.py	/^class DbsMgr(object):$/;"	kind:class	line:48
 DbsMgr	../pyproject/db/dbs_mgr_mp.py	/^class DbsMgr(object):$/;"	kind:class	line:54
 DbsPersistentPlayerData	../pyproject/db/main.py	/^def DbsPersistentPlayerData(dictSerial):$/;"	kind:function	line:26
-DbsPersistentPlayerData	../pyproject/rpc/rpc_def.py	/^DbsPersistentPlayerData = 7004$/;"	kind:variable	line:58
-DbsQueueStartUp	../pyproject/rpc/rpc_def.py	/^DbsQueueStartUp = 7008$/;"	kind:variable	line:62
+DbsPersistentPlayerData	../pyproject/rpc/rpc_def.py	/^DbsPersistentPlayerData = 7004$/;"	kind:variable	line:62
+DbsQueueStartUp	../pyproject/rpc/rpc_def.py	/^DbsQueueStartUp = 7008$/;"	kind:variable	line:66
+DbsSaveAllGmConfig	../pyproject/db/main.py	/^def DbsSaveAllGmConfig(dictSerial):$/;"	kind:function	line:50
+DbsSaveAllGmConfig	../pyproject/rpc/rpc_def.py	/^DbsSaveAllGmConfig = 7010$/;"	kind:variable	line:68
 DbsTest	../pyproject/db/main.py	/^def DbsTest(dictSerial):$/;"	kind:function	line:30
-DbsTest	../pyproject/rpc/rpc_def.py	/^DbsTest = 7003$/;"	kind:variable	line:55
+DbsTest	../pyproject/rpc/rpc_def.py	/^DbsTest = 7003$/;"	kind:variable	line:59
 DbsUpdateID	../pyproject/db/main.py	/^def DbsUpdateID(dictSerial):$/;"	kind:function	line:14
-DbsUpdateID	../pyproject/rpc/rpc_def.py	/^DbsUpdateID = 7007$/;"	kind:variable	line:61
+DbsUpdateID	../pyproject/rpc/rpc_def.py	/^DbsUpdateID = 7007$/;"	kind:variable	line:65
 DeSerial	../pyproject/entity/gas_player_entity.py	/^    def DeSerial(self, dictSerial):$/;"	kind:member	line:102
 DecodeError	../pylib/google/protobuf/message.py	/^class DecodeError(Error): pass$/;"	kind:class	line:41
 DecodeField	../pylib/google/protobuf/internal/decoder.py	/^      def DecodeField(buffer, pos, end, message, field_dict):$/;"	kind:function	line:229
@@ -298,7 +306,7 @@ DoubleByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def DoubleByte
 DoubleDecoder	../pylib/google/protobuf/internal/decoder.py	/^DoubleDecoder = _DoubleDecoder()$/;"	kind:variable	line:371
 DoubleEncoder	../pylib/google/protobuf/internal/encoder.py	/^DoubleEncoder   = _FloatingPointEncoder(wire_format.WIRETYPE_FIXED64, '<d')$/;"	kind:variable	line:612
 DumpDbQueue	../pyproject/db/dbs_mgr.py	/^    def DumpDbQueue(self):$/;"	kind:member	line:115
-DumpPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def DumpPos(self, nPos):$/;"	kind:member	line:252
+DumpPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def DumpPos(self, nPos):$/;"	kind:member	line:249
 DumpTraceBack	../pylib/save_dump_mgr.py	/^def DumpTraceBack():$/;"	kind:function	line:124
 ECardType	../pyproject/util/enum_def.py	/^class ECardType(const_entity.Const):$/;"	kind:class	line:12
 EDbsOptType	../pyproject/util/enum_def.py	/^class EDbsOptType(const_entity.Const):$/;"	kind:class	line:6
@@ -348,10 +356,10 @@ EncodeRepeatedField	../pylib/google/protobuf/internal/encoder.py	/^    def Encod
 EncodeRepeatedField	../pylib/google/protobuf/internal/encoder.py	/^    def EncodeRepeatedField(write, value):$/;"	kind:function	line:726
 EncodeSignedVarint	../pylib/google/protobuf/internal/encoder.py	/^  def EncodeSignedVarint(write, value):$/;"	kind:function	line:361
 EncodeVarint	../pylib/google/protobuf/internal/encoder.py	/^  def EncodeVarint(write, value):$/;"	kind:function	line:344
-Encoder	../pyproject/db/redis_mgr.py	/^class Encoder(object):$/;"	kind:class	line:12
+Encoder	../pyproject/db/redis_mgr.py	/^class Encoder(object):$/;"	kind:class	line:15
 Enter	../pyproject/state/state_machine.py	/^    def Enter(self):$/;"	kind:member	line:18
 EnterRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def EnterRoom(self, nPlayerGID, nRoomID=None):$/;"	kind:member	line:47
-EnterRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^EnterRoom = _roomMgr.EnterRoom$/;"	kind:variable	line:98
+EnterRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^EnterRoom = _roomMgr.EnterRoom$/;"	kind:variable	line:99
 EntryPoint	../pylib/pkg_resources.py	/^class EntryPoint(object):$/;"	kind:class	line:1929
 EnumByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def EnumByteSize(field_number, enum):$/;"	kind:function	line:179
 EnumDescriptor	../pylib/google/protobuf/descriptor.py	/^class EnumDescriptor(_NestedDescriptorBase):$/;"	kind:class	line:489
@@ -381,7 +389,7 @@ FORMAT_DOUBLE_LITTLE_ENDIAN	../pylib/google/protobuf/internal/wire_format.py	/^F
 FORMAT_FLOAT_LITTLE_ENDIAN	../pylib/google/protobuf/internal/wire_format.py	/^FORMAT_FLOAT_LITTLE_ENDIAN = '<f'$/;"	kind:variable	line:68
 FORMAT_UINT32_LITTLE_ENDIAN	../pylib/google/protobuf/internal/wire_format.py	/^FORMAT_UINT32_LITTLE_ENDIAN = '<I'$/;"	kind:variable	line:66
 FORMAT_UINT64_LITTLE_ENDIAN	../pylib/google/protobuf/internal/wire_format.py	/^FORMAT_UINT64_LITTLE_ENDIAN = '<Q'$/;"	kind:variable	line:67
-FaPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def FaPai(self):$/;"	kind:member	line:300
+FaPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def FaPai(self):$/;"	kind:member	line:294
 Failed	../pylib/google/protobuf/service.py	/^  def Failed(self):$/;"	kind:member	line:140
 FieldDescriptor	../pylib/google/protobuf/descriptor.py	/^class FieldDescriptor(DescriptorBase):$/;"	kind:class	line:311
 FieldDescriptorProto	../pylib/google/protobuf/descriptor_pb2.py	/^class FieldDescriptorProto(_message.Message):$/;"	kind:class	line:1249
@@ -428,50 +436,57 @@ GID	../pylib/ffext.py	/^GID = 0$/;"	kind:variable	line:31
 G_ALLOC_ID	../pylib/ffext.py	/^G_ALLOC_ID = 0$/;"	kind:variable	line:358
 Gac2GasChangeScene	../pyproject/rpc/rpc_def.py	/^Gac2GasChangeScene = 10002$/;"	kind:variable	line:5
 Gac2GasCreateRoom	../pyproject/rpc/rpc_def.py	/^Gac2GasCreateRoom = 10010$/;"	kind:variable	line:7
-Gac2GasEnterRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasEnterRoom(nPlayerGID, reqObj):$/;"	kind:function	line:149
+Gac2GasEnterRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasEnterRoom(nPlayerGID, reqObj):$/;"	kind:function	line:150
 Gac2GasEnterRoom	../pyproject/rpc/rpc_def.py	/^Gac2GasEnterRoom = 10011$/;"	kind:variable	line:8
-Gac2GasExeCode	../pyproject/gas/main.py	/^def Gac2GasExeCode(nPlayerGID, szCode):$/;"	kind:function	line:51
-Gac2GasExeCode	../pyproject/rpc/rpc_def.py	/^Gac2GasExeCode = 10900$/;"	kind:variable	line:12
-Gac2GasLoadAllConfig	../pyproject/robot/gm_opt_config.py	/^def Gac2GasLoadAllConfig(nPlayerGID, reqObj):$/;"	kind:function	line:26
-Gac2GasLoadAllConfig	../pyproject/rpc/rpc_def.py	/^Gac2GasLoadAllConfig = 10050$/;"	kind:variable	line:10
-Gac2GasOptMj	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasOptMj(nPlayerGID, reqObj):$/;"	kind:function	line:155
+Gac2GasExeCode	../pyproject/gas/main.py	/^def Gac2GasExeCode(nPlayerGID, szCode):$/;"	kind:function	line:53
+Gac2GasExeCode	../pyproject/rpc/rpc_def.py	/^Gac2GasExeCode = 10900$/;"	kind:variable	line:13
+Gac2GasOptGameConf	../pyproject/robot/gas_gm_config_opt.py	/^def Gac2GasOptGameConf(nPlayerGID, reqObj):$/;"	kind:function	line:36
+Gac2GasOptGameConf	../pyproject/rpc/rpc_def.py	/^Gac2GasOptGameConf = 10051$/;"	kind:variable	line:12
+Gac2GasOptMj	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasOptMj(nPlayerGID, reqObj):$/;"	kind:function	line:156
 Gac2GasOptMj	../pyproject/rpc/rpc_def.py	/^Gac2GasOptMj = 10021$/;"	kind:variable	line:9
-Gac2GasQueryRoomScene	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasQueryRoomScene(nPlayerGID, reqObj):$/;"	kind:function	line:127
+Gac2GasQueryGameConf	../pyproject/robot/gas_gm_config_opt.py	/^def Gac2GasQueryGameConf(nPlayerGID, reqObj):$/;"	kind:function	line:13
+Gac2GasQueryGameConf	../pyproject/rpc/rpc_def.py	/^Gac2GasQueryGameConf = 10050$/;"	kind:variable	line:11
+Gac2GasQueryRoomScene	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gac2GasQueryRoomScene(nPlayerGID, reqObj):$/;"	kind:function	line:128
 Gac2GasQueryRoomScene	../pyproject/rpc/rpc_def.py	/^Gac2GasQueryRoomScene = 10003$/;"	kind:variable	line:6
 Gac2GasRequestChangeScene	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^def Gac2GasRequestChangeScene(nPlayerGID, reqObj):$/;"	kind:function	line:102
-Gac2GasSynGameOrder	../pyproject/rpc/rpc_def.py	/^Gac2GasSynGameOrder = 20042$/;"	kind:variable	line:24
-GacGasCreateRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def GacGasCreateRoom(nPlayerGID, reqObj):$/;"	kind:function	line:135
-GacOpt	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GacOpt(self, nPlayerGID, reqObj):$/;"	kind:member	line:396
+Gac2GasSynGameOrder	../pyproject/rpc/rpc_def.py	/^Gac2GasSynGameOrder = 20042$/;"	kind:variable	line:25
+GacGasCreateRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def GacGasCreateRoom(nPlayerGID, reqObj):$/;"	kind:function	line:136
+GacOpt	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GacOpt(self, nPlayerGID, reqObj):$/;"	kind:member	line:390
 GacRequsetLogin	../pyproject/rpc/rpc_def.py	/^GacRequsetLogin = 10001$/;"	kind:variable	line:4
-GameEnd	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GameEnd(self):$/;"	kind:member	line:694
+GameEnd	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GameEnd(self):$/;"	kind:member	line:716
 GameManager	../pyproject/gate_mgr/game_manager.py	/^class GameManager(object):$/;"	kind:class	line:11
 GameRuleBase	../pyproject/entity/rule_base.py	/^class GameRuleBase(object):$/;"	kind:class	line:4
 GameRuleOpt	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GameRuleOpt(self, nPlayerGID, reqObj):$/;"	kind:member	line:32
-GameStart	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GameStart(self):$/;"	kind:member	line:691
-Gas2GacOnTouchGameEvent	../pyproject/rpc/rpc_def.py	/^Gas2GacOnTouchGameEvent = 20013$/;"	kind:variable	line:20
-Gas2GacOnTouchMemberEvent	../pyproject/rpc/rpc_def.py	/^Gas2GacOnTouchMemberEvent = 20011$/;"	kind:variable	line:18
-Gas2GacRetChangeScene	../pyproject/rpc/rpc_def.py	/^Gas2GacRetChangeScene = 20002$/;"	kind:variable	line:16
-Gas2GacRetLoadAllConfig	../pyproject/rpc/rpc_def.py	/^Gas2GacRetLoadAllConfig = 20050$/;"	kind:variable	line:25
-Gas2GacRspOpt	../pyproject/rpc/rpc_def.py	/^Gas2GacRspOpt = 20021$/;"	kind:variable	line:22
-Gas2GacRspSynGameData	../pyproject/rpc/rpc_def.py	/^Gas2GacRspSynGameData = 20014$/;"	kind:variable	line:21
-Gas2GacSynCardInfo	../pyproject/rpc/rpc_def.py	/^Gas2GacSynCardInfo = 20041$/;"	kind:variable	line:23
-Gas2GacSynGameRet	../pyproject/rpc/rpc_def.py	/^Gas2GacSynGameRet = 20012$/;"	kind:variable	line:19
-Gas2GacretQueryRoomScene	../pyproject/rpc/rpc_def.py	/^Gas2GacretQueryRoomScene = 20003$/;"	kind:variable	line:17
+GameStart	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GameStart(self):$/;"	kind:member	line:713
+Gas2GacOnTouchGameEvent	../pyproject/rpc/rpc_def.py	/^Gas2GacOnTouchGameEvent = 20013$/;"	kind:variable	line:21
+Gas2GacOnTouchMemberEvent	../pyproject/rpc/rpc_def.py	/^Gas2GacOnTouchMemberEvent = 20011$/;"	kind:variable	line:19
+Gas2GacRetChangeScene	../pyproject/rpc/rpc_def.py	/^Gas2GacRetChangeScene = 20002$/;"	kind:variable	line:17
+Gas2GacRetModifyConfig	../pyproject/rpc/rpc_def.py	/^Gas2GacRetModifyConfig = 20051$/;"	kind:variable	line:27
+Gas2GacRspOpt	../pyproject/rpc/rpc_def.py	/^Gas2GacRspOpt = 20021$/;"	kind:variable	line:23
+Gas2GacRspSynGameData	../pyproject/rpc/rpc_def.py	/^Gas2GacRspSynGameData = 20014$/;"	kind:variable	line:22
+Gas2GacSynAllConfig	../pyproject/rpc/rpc_def.py	/^Gas2GacSynAllConfig = 20050$/;"	kind:variable	line:26
+Gas2GacSynCardInfo	../pyproject/rpc/rpc_def.py	/^Gas2GacSynCardInfo = 20041$/;"	kind:variable	line:24
+Gas2GacSynGameRet	../pyproject/rpc/rpc_def.py	/^Gas2GacSynGameRet = 20012$/;"	kind:variable	line:20
+Gas2GacretQueryRoomScene	../pyproject/rpc/rpc_def.py	/^Gas2GacretQueryRoomScene = 20003$/;"	kind:variable	line:18
 Gas2GccGenRoomID	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def Gas2GccGenRoomID(self, szGasID, nPlayerGID, dictCfg):$/;"	kind:member	line:48
-Gas2GccGenRoomID	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccGenRoomID(dictData):$/;"	kind:function	line:93
-Gas2GccGenRoomID	../pyproject/rpc/rpc_def.py	/^Gas2GccGenRoomID = 2062$/;"	kind:variable	line:40
+Gas2GccGenRoomID	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccGenRoomID(dictData):$/;"	kind:function	line:98
+Gas2GccGenRoomID	../pyproject/rpc/rpc_def.py	/^Gas2GccGenRoomID = 2062$/;"	kind:variable	line:42
 Gas2GccGetRoomSceneByRoomID	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def Gas2GccGetRoomSceneByRoomID(self, szGasID, nPlayerGID, nRoomID):$/;"	kind:member	line:28
-Gas2GccGetRoomSceneByRoomID	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccGetRoomSceneByRoomID(dictData):$/;"	kind:function	line:86
-Gas2GccGetRoomSceneByRoomID	../pyproject/rpc/rpc_def.py	/^Gas2GccGetRoomSceneByRoomID = 2063$/;"	kind:variable	line:41
-Gas2GccOnRoomDismiss	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccOnRoomDismiss(dictData):$/;"	kind:function	line:80
-Gas2GccOnRoomDismiss	../pyproject/rpc/rpc_def.py	/^Gas2GccOnRoomDismiss = 2064$/;"	kind:variable	line:42
+Gas2GccGetRoomSceneByRoomID	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccGetRoomSceneByRoomID(dictData):$/;"	kind:function	line:91
+Gas2GccGetRoomSceneByRoomID	../pyproject/rpc/rpc_def.py	/^Gas2GccGetRoomSceneByRoomID = 2063$/;"	kind:variable	line:43
+Gas2GccModifyGmConfig	../pyproject/robot/gm_opt_config.py	/^def Gas2GccModifyGmConfig(dictData):$/;"	kind:function	line:58
+Gas2GccModifyGmConfig	../pyproject/rpc/rpc_def.py	/^Gas2GccModifyGmConfig = 2067$/;"	kind:variable	line:47
+Gas2GccOnRoomDismiss	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccOnRoomDismiss(dictData):$/;"	kind:function	line:85
+Gas2GccOnRoomDismiss	../pyproject/rpc/rpc_def.py	/^Gas2GccOnRoomDismiss = 2064$/;"	kind:variable	line:44
 Gas2GccPlayerTrueOffline	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^def Gas2GccPlayerTrueOffline(dictData):$/;"	kind:function	line:91
-Gas2GccPlayerTrueOffline	../pyproject/rpc/rpc_def.py	/^Gas2GccPlayerTrueOffline = 2061$/;"	kind:variable	line:39
-Gas2GccStartGameOnRoom	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccStartGameOnRoom(dictData):$/;"	kind:function	line:100
-Gas2GccStartGameOnRoom	../pyproject/rpc/rpc_def.py	/^Gas2GccStartGameOnRoom = 2065$/;"	kind:variable	line:43
+Gas2GccPlayerTrueOffline	../pyproject/rpc/rpc_def.py	/^Gas2GccPlayerTrueOffline = 2061$/;"	kind:variable	line:41
+Gas2GccQueryGmConfig	../pyproject/robot/gm_opt_config.py	/^def Gas2GccQueryGmConfig(dictData):$/;"	kind:function	line:51
+Gas2GccQueryGmConfig	../pyproject/rpc/rpc_def.py	/^Gas2GccQueryGmConfig = 2066$/;"	kind:variable	line:46
+Gas2GccStartGameOnRoom	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^def Gas2GccStartGameOnRoom(dictData):$/;"	kind:function	line:105
+Gas2GccStartGameOnRoom	../pyproject/rpc/rpc_def.py	/^Gas2GccStartGameOnRoom = 2065$/;"	kind:variable	line:45
 Gas2GccSynPlayerGasID	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def Gas2GccSynPlayerGasID(self, nPlayerGID, szGasID):$/;"	kind:member	line:51
 Gas2GccSynPlayerGasID	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^def Gas2GccSynPlayerGasID(dictData):$/;"	kind:function	line:101
-Gas2GccSynPlayerGasID	../pyproject/rpc/rpc_def.py	/^Gas2GccSynPlayerGasID = 2060$/;"	kind:variable	line:38
+Gas2GccSynPlayerGasID	../pyproject/rpc/rpc_def.py	/^Gas2GccSynPlayerGasID = 2060$/;"	kind:variable	line:40
 GasGameRuleMgr	../pyproject/gas/gas_game_rule/game_rule_mgr.py	/^class GasGameRuleMgr(object):$/;"	kind:class	line:7
 GasMjEventMgr	../pyproject/gas/gas_mj/gas_mj_event_mgr.py	/^class GasMjEventMgr(object):$/;"	kind:class	line:12
 GasMjRule	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^class GasMjRule(rule_base.GameRuleBase):$/;"	kind:class	line:15
@@ -479,13 +494,13 @@ GasPlayerEntity	../pyproject/entity/gas_player_entity.py	/^class GasPlayerEntity
 GasSceneMgr	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^class GasSceneMgr(base_scene.BaseScene):$/;"	kind:class	line:19
 GateMgr	../pyproject/gate_mgr/gate_mgr.py	/^class GateMgr(object):$/;"	kind:class	line:7
 Gcc2GasPlayerOffline	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^def Gcc2GasPlayerOffline(dictData):$/;"	kind:function	line:127
-Gcc2GasPlayerOffline	../pyproject/rpc/rpc_def.py	/^Gcc2GasPlayerOffline = 3000$/;"	kind:variable	line:45
-Gcc2GasRetGenRoomID	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gcc2GasRetGenRoomID(dictData):$/;"	kind:function	line:120
-Gcc2GasRetGenRoomID	../pyproject/rpc/rpc_def.py	/^Gcc2GasRetGenRoomID = 3001$/;"	kind:variable	line:46
-Gcc2GasRetGetRoomScene	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gcc2GasRetGetRoomScene(dictData):$/;"	kind:function	line:103
-Gcc2GasRetGetRoomScene	../pyproject/rpc/rpc_def.py	/^Gcc2GasRetGetRoomScene = 3002$/;"	kind:variable	line:47
+Gcc2GasPlayerOffline	../pyproject/rpc/rpc_def.py	/^Gcc2GasPlayerOffline = 3000$/;"	kind:variable	line:49
+Gcc2GasRetGenRoomID	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gcc2GasRetGenRoomID(dictData):$/;"	kind:function	line:121
+Gcc2GasRetGenRoomID	../pyproject/rpc/rpc_def.py	/^Gcc2GasRetGenRoomID = 3001$/;"	kind:variable	line:50
+Gcc2GasRetGetRoomScene	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^def Gcc2GasRetGetRoomScene(dictData):$/;"	kind:function	line:104
+Gcc2GasRetGetRoomScene	../pyproject/rpc/rpc_def.py	/^Gcc2GasRetGetRoomScene = 3002$/;"	kind:variable	line:51
 Gcc2GasRetSynPlayerState	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^def Gcc2GasRetSynPlayerState(dictData):$/;"	kind:function	line:132
-Gcc2GasRetSynPlayerState	../pyproject/rpc/rpc_def.py	/^Gcc2GasRetSynPlayerState = 3003$/;"	kind:variable	line:48
+Gcc2GasRetSynPlayerState	../pyproject/rpc/rpc_def.py	/^Gcc2GasRetSynPlayerState = 3003$/;"	kind:variable	line:52
 Gcc2GasSessionConn	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def Gcc2GasSessionConn(self, nPlayerGID, szSerial):$/;"	kind:member	line:46
 GccPlayerEntity	../pyproject/entity/gcc_player_entity.py	/^class GccPlayerEntity(object):$/;"	kind:class	line:4
 GccRoomMgr	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^class GccRoomMgr(object):$/;"	kind:class	line:11
@@ -506,11 +521,11 @@ GeneratedServiceStubType	../pylib/google/protobuf/service_reflection.py	/^class 
 GeneratedServiceType	../pylib/google/protobuf/service_reflection.py	/^class GeneratedServiceType(type):$/;"	kind:class	line:42
 Get	../pyproject/wsurl/wsurl.py	/^    def Get(self,url, callback):$/;"	kind:member	line:62
 GetAllBaiBanComb	../pyproject/gas/gas_mj/check_hu.py	/^def GetAllBaiBanComb(nUsedNum, nTotalNum, listOrder):$/;"	kind:function	line:158
-GetAllCardList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetAllCardList(self, nPos):$/;"	kind:member	line:567
+GetAllCardList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetAllCardList(self, nPos):$/;"	kind:member	line:561
 GetBaiBanCard	../pyproject/gas/gas_mj/check_hu.py	/^def GetBaiBanCard():$/;"	kind:function	line:64
-GetBuf	../pyproject/db/redis_mgr.py	/^    def GetBuf(self):$/;"	kind:member	line:29
+GetBuf	../pyproject/db/redis_mgr.py	/^    def GetBuf(self):$/;"	kind:member	line:35
 GetBytes	../pyproject/encode_mgr/bin_encoder.py	/^    def GetBytes(self, nbytes):$/;"	kind:member	line:33
-GetCardListByPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCardListByPos(self, nPos):$/;"	kind:member	line:263
+GetCardListByPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCardListByPos(self, nPos):$/;"	kind:member	line:260
 GetCardListEx	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCardListEx(self, nPos):$/;"	kind:member	line:63
 GetCardListHist	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCardListHist(self, nPos):$/;"	kind:member	line:66
 GetCardNameChinese	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardNameChinese(nCard):$/;"	kind:function	line:73
@@ -520,21 +535,23 @@ GetCardType	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardType(nCard):$/;"	ki
 GetCardValue	../pyproject/gas/gas_mj/check_hu.py	/^def GetCardValue(nCard):$/;"	kind:function	line:70
 GetCbID	../pyproject/db/dbs_mgr.py	/^    def GetCbID(self):$/;"	kind:member	line:36
 GetCbID	../pyproject/db/dbs_mgr_mp.py	/^    def GetCbID(self):$/;"	kind:member	line:42
-GetConfig	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetConfig(self):$/;"	kind:member	line:266
+GetConfig	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetConfig(self):$/;"	kind:member	line:263
 GetConfig	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetConfig(self):$/;"	kind:member	line:35
 GetCreateRoomNeedMoney	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def GetCreateRoomNeedMoney(self):$/;"	kind:member	line:18
 GetCreateRoomNeedMoney	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetCreateRoomNeedMoney(self):$/;"	kind:member	line:45
 GetCurEventOptMember	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCurEventOptMember(self):$/;"	kind:member	line:60
 GetCurJu	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCurJu(self):$/;"	kind:member	line:107
 GetCurOptMemberPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCurOptMemberPos(self):$/;"	kind:member	line:110
-GetCurPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCurPos(self):$/;"	kind:member	line:189
+GetCurPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCurPos(self):$/;"	kind:member	line:186
 GetCurState	../pyproject/state/state_machine.py	/^    def GetCurState(self):$/;"	kind:member	line:31
 GetCurTurn	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetCurTurn(self):$/;"	kind:member	line:104
+GetCurrentConfig	../pyproject/robot/gm_opt_config.py	/^def GetCurrentConfig():$/;"	kind:function	line:14
+GetDbName	../pyproject/conf.py	/^def GetDbName():$/;"	kind:function	line:16
 GetDescriptor	../pylib/google/protobuf/service.py	/^  def GetDescriptor():$/;"	kind:member	line:61
 GetDescriptorPool	../pylib/google/protobuf/internal/cpp_message.py	/^def GetDescriptorPool():$/;"	kind:function	line:50
 GetEmptyPos	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetEmptyPos(self):$/;"	kind:member	line:203
 GetEntity	../pyproject/entity/entity_mgr.py	/^def GetEntity(session):$/;"	kind:function	line:15
-GetEventExpireTime	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetEventExpireTime(self):$/;"	kind:member	line:321
+GetEventExpireTime	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetEventExpireTime(self):$/;"	kind:member	line:315
 GetExtensionDescriptor	../pylib/google/protobuf/internal/cpp_message.py	/^def GetExtensionDescriptor(full_extension_name):$/;"	kind:function	line:68
 GetFieldDescriptor	../pylib/google/protobuf/internal/cpp_message.py	/^def GetFieldDescriptor(full_field_name):$/;"	kind:function	line:58
 GetGameRule	../pyproject/gas/gas_game_rule/game_rule_mgr.py	/^    def GetGameRule(self, nRuleType):$/;"	kind:member	line:14
@@ -543,7 +560,7 @@ GetGameRule	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetGameRule(
 GetGasID	../pyproject/entity/gcc_player_entity.py	/^    def GetGasID(self):$/;"	kind:member	line:30
 GetGasID	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^    def GetGasID(self):$/;"	kind:member	line:19
 GetGasName	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def GetGasName(self, n):$/;"	kind:member	line:23
-GetGateIp	../pyproject/rpc/rpc_def.py	/^GetGateIp = 1001$/;"	kind:variable	line:33
+GetGateIp	../pyproject/rpc/rpc_def.py	/^GetGateIp = 1001$/;"	kind:variable	line:35
 GetGateName	../pyproject/entity/player_in_login.py	/^    def GetGateName(self):$/;"	kind:member	line:14
 GetGateName	../pyproject/gate_mgr/gate_mgr.py	/^    def GetGateName(self, i):$/;"	kind:member	line:11
 GetGlobalID	../pyproject/entity/gas_player_entity.py	/^    def GetGlobalID(self):$/;"	kind:member	line:44
@@ -552,7 +569,7 @@ GetGlobalID	../pyproject/entity/player_in_login.py	/^    def GetGlobalID(self):$
 GetHuType	../pyproject/gas/gas_mj/check_hu.py	/^def GetHuType(mjArr, hunMj):$/;"	kind:function	line:444
 GetInt	../pyproject/encode_mgr/bin_encoder.py	/^    def GetInt(self):$/;"	kind:member	line:44
 GetJinPaiList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetJinPaiList(self):$/;"	kind:member	line:116
-GetJinPaiNum	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetJinPaiNum(self):$/;"	kind:member	line:272
+GetJinPaiNum	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetJinPaiNum(self):$/;"	kind:member	line:269
 GetLocalIP	../pyproject/conf.py	/^def GetLocalIP():$/;"	kind:function	line:4
 GetMaxJuNum	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetMaxJuNum(self):$/;"	kind:member	line:133
 GetMemberByPos	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def GetMemberByPos(self, nPos):$/;"	kind:member	line:38
@@ -564,8 +581,8 @@ GetMessages	../pylib/google/protobuf/message_factory.py	/^def GetMessages(file_p
 GetMinestSessionGate	../pyproject/gate_mgr/gate_mgr.py	/^    def GetMinestSessionGate(self):$/;"	kind:member	line:14
 GetMinestSessionGate	../pyproject/gate_mgr/gate_mgr.py	/^def GetMinestSessionGate(session):$/;"	kind:function	line:40
 GetName	../pyproject/compment/base_compment.py	/^    def GetName(self):$/;"	kind:member	line:15
-GetNextCard	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetNextCard(self):$/;"	kind:member	line:295
-GetNextPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetNextPos(self):$/;"	kind:member	line:181
+GetNextCard	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetNextCard(self):$/;"	kind:member	line:289
+GetNextPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetNextPos(self):$/;"	kind:member	line:178
 GetOptions	../pylib/google/protobuf/descriptor.py	/^  def GetOptions(self):$/;"	kind:member	line:94
 GetOwner	../pyproject/compment/base_compment.py	/^    def GetOwner(self):$/;"	kind:member	line:8
 GetOwner	../pyproject/state/state_machine.py	/^    def GetOwner(self):$/;"	kind:member	line:8
@@ -575,9 +592,9 @@ GetPersistentDict	../pyproject/entity/gas_player_entity.py	/^    def GetPersiste
 GetPlayer	../pyproject/login/login_mgr.py	/^def GetPlayer(nPlayerGID):$/;"	kind:function	line:155
 GetPosCardList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetPosCardList(self, nPos):$/;"	kind:member	line:119
 GetPosCardListAll	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetPosCardListAll(self, nPos):$/;"	kind:member	line:122
-GetPrevPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetPrevPos(self, nPos):$/;"	kind:member	line:192
+GetPrevPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetPrevPos(self, nPos):$/;"	kind:member	line:189
 GetPrototype	../pylib/google/protobuf/message_factory.py	/^  def GetPrototype(self, descriptor):$/;"	kind:member	line:48
-GetPwd	../pyproject/conf.py	/^def GetPwd():$/;"	kind:function	line:9
+GetPwd	../pyproject/conf.py	/^def GetPwd():$/;"	kind:function	line:10
 GetQiPaiExpireSecond	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetQiPaiExpireSecond(self):$/;"	kind:member	line:140
 GetQueueID	../pyproject/db/dbs_mgr.py	/^    def GetQueueID(self):$/;"	kind:member	line:30
 GetQueueID	../pyproject/db/dbs_mgr_mp.py	/^    def GetQueueID(self):$/;"	kind:member	line:36
@@ -596,7 +613,7 @@ GetSession	../pyproject/db/dbs_mgr_mp.py	/^    def GetSession(self):$/;"	kind:me
 GetState	../pyproject/entity/gcc_player_entity.py	/^    def GetState(self):$/;"	kind:member	line:12
 GetStr	../pyproject/encode_mgr/bin_encoder.py	/^    def GetStr(self):$/;"	kind:member	line:39
 GetTopLevelContainingType	../pylib/google/protobuf/descriptor.py	/^  def GetTopLevelContainingType(self):$/;"	kind:member	line:150
-GetTotalSize	../pyproject/db/redis_mgr.py	/^    def GetTotalSize(self):$/;"	kind:member	line:32
+GetTotalSize	../pyproject/db/redis_mgr.py	/^    def GetTotalSize(self):$/;"	kind:member	line:38
 GetTypeChecker	../pylib/google/protobuf/internal/type_checkers.py	/^def GetTypeChecker(cpp_type, field_type):$/;"	kind:function	line:56
 GetUrlMgr	../pyproject/wsurl/http_mod.py	/^def GetUrlMgr():$/;"	kind:function	line:7
 GetZhuang	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def GetZhuang(self):$/;"	kind:member	line:101
@@ -640,19 +657,20 @@ IResourceProvider	../pylib/pkg_resources.py	/^class IResourceProvider(IMetadataP
 IThriftClientFactory	../pylib/thrift/transport/TTwisted.py	/^class IThriftClientFactory(Interface):$/;"	kind:class	line:141
 IThriftServerFactory	../pylib/thrift/transport/TTwisted.py	/^class IThriftServerFactory(Interface):$/;"	kind:class	line:132
 ImpDbsCreateUserSession	../pyproject/db/dbs_opt.py	/^def ImpDbsCreateUserSession(conn, job):$/;"	kind:function	line:64
-ImpDbsCreateUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsCreateUserSession(conn, job):$/;"	kind:function	line:85
+ImpDbsCreateUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsCreateUserSession(conn, job):$/;"	kind:function	line:109
 ImpDbsGetRoomIDSector	../pyproject/db/dbs_opt.py	/^def ImpDbsGetRoomIDSector(conn, job):$/;"	kind:function	line:23
 ImpDbsLoadPlayerData	../pyproject/db/dbs_opt.py	/^def ImpDbsLoadPlayerData(conn, job):$/;"	kind:function	line:92
-ImpDbsLoadPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsLoadPlayerData(conn, job):$/;"	kind:function	line:113
+ImpDbsLoadPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsLoadPlayerData(conn, job):$/;"	kind:function	line:137
 ImpDbsPersistentPlayerData	../pyproject/db/dbs_opt.py	/^def ImpDbsPersistentPlayerData(conn, job):$/;"	kind:function	line:74
-ImpDbsPersistentPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsPersistentPlayerData(conn, job):$/;"	kind:function	line:95
+ImpDbsPersistentPlayerData	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsPersistentPlayerData(conn, job):$/;"	kind:function	line:119
+ImpDbsSaveAllGmConfig	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsSaveAllGmConfig(conn, job):$/;"	kind:function	line:45
 ImpDbsTest	../pyproject/db/dbs_opt.py	/^def ImpDbsTest(conn, job):$/;"	kind:function	line:29
 ImpDbsTest	../pyproject/db/dbs_opt_mp.py	/^def ImpDbsTest(conn, job):$/;"	kind:function	line:40
-ImpGetAllGmConfig	../pyproject/db/dbs_opt_mp.py	/^def ImpGetAllGmConfig(conn, job):$/;"	kind:function	line:45
+ImpGetAllGmConfig	../pyproject/db/dbs_opt_mp.py	/^def ImpGetAllGmConfig(conn, job):$/;"	kind:function	line:69
 ImpGetIDData	../pyproject/db/dbs_opt_mp.py	/^def ImpGetIDData(conn, job):$/;"	kind:function	line:15
 ImpGetIDData	../pyproject/id_manager/player_id_mgr.py	/^    def ImpGetIDData(self, conn):$/;"	kind:member	line:40
 ImpGetUserSession	../pyproject/db/dbs_opt.py	/^def ImpGetUserSession(conn, job):$/;"	kind:function	line:34
-ImpGetUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpGetUserSession(conn, job):$/;"	kind:function	line:58
+ImpGetUserSession	../pyproject/db/dbs_opt_mp.py	/^def ImpGetUserSession(conn, job):$/;"	kind:function	line:82
 ImpLoader	../pylib/pkg_resources.py	/^class ImpLoader:$/;"	kind:class	line:1580
 ImpUpdateID	../pyproject/db/dbs_opt.py	/^def ImpUpdateID(conn, job):$/;"	kind:function	line:15
 ImpUpdateID	../pyproject/db/dbs_opt_mp.py	/^def ImpUpdateID(conn, job):$/;"	kind:function	line:32
@@ -666,7 +684,7 @@ Init	../pyproject/db/dbs_mgr.py	/^    def Init(self, funObj, nQueueID, nSession,
 Init	../pyproject/db/dbs_mgr_mp.py	/^    def Init(self):$/;"	kind:member	line:116
 Init	../pyproject/db/dbs_mgr_mp.py	/^    def Init(self, funObj, nQueueID, nSession, szSrcScene, cb_id=0, funParam=None):$/;"	kind:member	line:25
 Init	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^    def Init(self, dictData):$/;"	kind:member	line:22
-InitCardInfoByPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def InitCardInfoByPos(self, nPos, gameCardListObj, bSynOwnerCard=False):$/;"	kind:member	line:619
+InitCardInfoByPos	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def InitCardInfoByPos(self, nPos, gameCardListObj, bSynOwnerCard=False):$/;"	kind:member	line:613
 InitCompment	../pyproject/entity/gas_player_entity.py	/^    def InitCompment(self, dictData):$/;"	kind:member	line:59
 InitCurlCache	../pyproject/wsurl/wsurl_thread.py	/^    def InitCurlCache(self):$/;"	kind:member	line:26
 InitDefault	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def InitDefault(self):$/;"	kind:member	line:80
@@ -692,7 +710,7 @@ IsBaiBan	../pyproject/gas/gas_mj/check_hu.py	/^def IsBaiBan(nCard):$/;"	kind:fun
 IsCanceled	../pylib/google/protobuf/service.py	/^  def IsCanceled(self):$/;"	kind:member	line:178
 IsDbQueue	../pyproject/util/util.py	/^def IsDbQueue(szScene):$/;"	kind:function	line:11
 IsGasScene	../pyproject/util/util.py	/^def IsGasScene(szScene):$/;"	kind:function	line:8
-IsHalf	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def IsHalf(self):$/;"	kind:member	line:269
+IsHalf	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def IsHalf(self):$/;"	kind:member	line:266
 IsInResidualState	../pyproject/entity/gas_player_entity.py	/^    def IsInResidualState(self):$/;"	kind:member	line:35
 IsInState	../pyproject/state/state_machine.py	/^    def IsInState(self, state):$/;"	kind:member	line:28
 IsInitialized	../pylib/google/protobuf/internal/cpp_message.py	/^  def IsInitialized(self, errors=None):$/;"	kind:function	line:551
@@ -706,7 +724,7 @@ IsRunning	../pyproject/gcc/gcc_room_mgr/gcc_room_obj.py	/^    def IsRunning(self
 IsTokenValid	../pyproject/util/gm_tool.py	/^def IsTokenValid(szToken, ip):$/;"	kind:function	line:12
 IsTuoGuan	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def IsTuoGuan(self, nMember):$/;"	kind:member	line:72
 IsTypePackable	../pylib/google/protobuf/internal/wire_format.py	/^def IsTypePackable(field_type):$/;"	kind:function	line:259
-KaiJin	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def KaiJin(self):$/;"	kind:member	line:275
+KaiJin	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def KaiJin(self):$/;"	kind:member	line:272
 KillAllProcess	../start_all.py	/^def KillAllProcess():$/;"	kind:function	line:14
 KillAllProcess	../start_all_1.py	/^def KillAllProcess():$/;"	kind:function	line:14
 KillAllProcess	../start_all_2.py	/^def KillAllProcess():$/;"	kind:function	line:14
@@ -727,9 +745,10 @@ ListFields	../pylib/google/protobuf/internal/cpp_message.py	/^  def ListFields(s
 ListFields	../pylib/google/protobuf/internal/python_message.py	/^  def ListFields(self):$/;"	kind:function	line:577
 ListFields	../pylib/google/protobuf/message.py	/^  def ListFields(self):$/;"	kind:member	line:223
 LoadAllCfg	../pyproject/excel2json.py	/^def LoadAllCfg():$/;"	kind:function	line:98
+LoadAllConfig	../pyproject/robot/gm_opt_config.py	/^def LoadAllConfig():$/;"	kind:function	line:47
 Location	../pylib/google/protobuf/descriptor_pb2.py	/^  class Location(_message.Message):$/;"	kind:class	line:1336
 Login2GccPlayerOffline	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^def Login2GccPlayerOffline(dictData):$/;"	kind:function	line:96
-Login2GccPlayerOffline	../pyproject/rpc/rpc_def.py	/^Login2GccPlayerOffline = 1059$/;"	kind:variable	line:37
+Login2GccPlayerOffline	../pyproject/rpc/rpc_def.py	/^Login2GccPlayerOffline = 1059$/;"	kind:variable	line:39
 Login2GccSessionConn	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def Login2GccSessionConn(self, nPlayerGID, szSerial):$/;"	kind:member	line:36
 Login2GccSessionConn	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^def Login2GccSessionConn(nPlayerGID, szSrcScene, szSerial):$/;"	kind:function	line:106
 LoginMgr	../pyproject/login/login_mgr.py	/^class LoginMgr(object):$/;"	kind:class	line:13
@@ -785,7 +804,7 @@ MessageToString	../pylib/google/protobuf/text_format.py	/^def MessageToString(me
 MethodDescriptor	../pylib/google/protobuf/descriptor.py	/^class MethodDescriptor(DescriptorBase):$/;"	kind:class	line:614
 MethodDescriptorProto	../pylib/google/protobuf/descriptor_pb2.py	/^class MethodDescriptorProto(_message.Message):$/;"	kind:class	line:1273
 MethodOptions	../pylib/google/protobuf/descriptor_pb2.py	/^class MethodOptions(_message.Message):$/;"	kind:class	line:1315
-MoPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def MoPai(self, nPos, bCheckEventAndBuHua):$/;"	kind:member	line:228
+MoPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def MoPai(self, nPos, bCheckEventAndBuHua):$/;"	kind:member	line:225
 Modified	../pylib/google/protobuf/internal/message_listener.py	/^  def Modified(self):$/;"	kind:member	line:50
 Modified	../pylib/google/protobuf/internal/message_listener.py	/^  def Modified(self):$/;"	kind:member	line:77
 Modified	../pylib/google/protobuf/internal/python_message.py	/^  def Modified(self):$/;"	kind:function	line:980
@@ -800,7 +819,7 @@ NewCMessage	../pylib/google/protobuf/internal/cpp_message.py	/^def NewCMessage(f
 NewMessage	../pylib/google/protobuf/internal/cpp_message.py	/^def NewMessage(bases, message_descriptor, dictionary):$/;"	kind:function	line:374
 NewMessage	../pylib/google/protobuf/internal/python_message.py	/^def NewMessage(bases, descriptor, dictionary):$/;"	kind:function	line:76
 NextToken	../pylib/google/protobuf/text_format.py	/^  def NextToken(self):$/;"	kind:member	line:569
-NextTurn	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def NextTurn(self, bCheckEventAndBuHua=True):$/;"	kind:member	line:316
+NextTurn	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def NextTurn(self, bCheckEventAndBuHua=True):$/;"	kind:member	line:310
 NoticeAll	../pyproject/gate_mgr/game_manager.py	/^    def NoticeAll(self):$/;"	kind:member	line:51
 NoticeMemberEvent	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def NoticeMemberEvent(self, ev, nModMember):$/;"	kind:member	line:163
 NoticeMsg	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def NoticeMsg(self, msg, msgData):$/;"	kind:member	line:160
@@ -810,14 +829,14 @@ NullProvider	../pylib/pkg_resources.py	/^class NullProvider:$/;"	kind:class	line
 OBRACKET	../pylib/pkg_resources.py	/^OBRACKET = re.compile(r"\\s*\\[").match$/;"	kind:variable	line:1863
 ONEWAY	../pylib/thrift/Thrift.py	/^  ONEWAY = 4$/;"	kind:variable	line:66
 ONLINE_TIME	../pyproject/db/table/table_property_def.py	/^    ONLINE_TIME = "ot"$/;"	kind:variable	line:6
-OnAllServiceStartUp	../pyproject/db/main.py	/^def OnAllServiceStartUp(dictSerial):$/;"	kind:function	line:58
+OnAllServiceStartUp	../pyproject/db/main.py	/^def OnAllServiceStartUp(dictSerial):$/;"	kind:function	line:59
 OnAllServiceStartUp	../pyproject/gas/main.py	/^def OnAllServiceStartUp(dictSerial):$/;"	kind:function	line:39
 OnAllServiceStartUp	../pyproject/gcc/main.py	/^def OnAllServiceStartUp(dictSerial):$/;"	kind:function	line:14
 OnAllServiceStartUp	../pyproject/login/main.py	/^def OnAllServiceStartUp(dictSerial):$/;"	kind:function	line:11
-OnAllServiceStartUp	../pyproject/rpc/rpc_def.py	/^OnAllServiceStartUp = 8002$/;"	kind:variable	line:66
+OnAllServiceStartUp	../pyproject/rpc/rpc_def.py	/^OnAllServiceStartUp = 8002$/;"	kind:variable	line:71
 OnCreateUserSessionCb	../pyproject/login/login_mgr.py	/^def OnCreateUserSessionCb(dictRet, listBindData):$/;"	kind:function	line:35
 OnDbAsynCallReturn	../pyproject/db/dbs_client.py	/^def OnDbAsynCallReturn(dictRet):$/;"	kind:function	line:42
-OnDbAsynCallReturn	../pyproject/rpc/rpc_def.py	/^OnDbAsynCallReturn = 8001$/;"	kind:variable	line:65
+OnDbAsynCallReturn	../pyproject/rpc/rpc_def.py	/^OnDbAsynCallReturn = 8001$/;"	kind:variable	line:70
 OnDestroy	../pyproject/compment/compment_money.py	/^    def OnDestroy(self):$/;"	kind:member	line:12
 OnDestroy	../pyproject/state/state_machine.py	/^    def OnDestroy(self):$/;"	kind:member	line:15
 OnEnter	../pyproject/state/state_machine.py	/^    def OnEnter(self):$/;"	kind:member	line:21
@@ -826,27 +845,27 @@ OnEnteredGasScene	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^def OnEnteredGas
 OnGameEnd	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def OnGameEnd(self):$/;"	kind:member	line:66
 OnGetRoomIDRet	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnGetRoomIDRet(self, nRoomID, nPlayerGID, dictCfg):$/;"	kind:member	line:60
 OnGetUseSessonCb	../pyproject/login/login_mgr.py	/^def OnGetUseSessonCb(dictRet, listBindData):$/;"	kind:function	line:56
-OnLoadAllConfigCb	../pyproject/robot/gm_opt_config.py	/^def OnLoadAllConfigCb(dictDbRet, nPlayerGID):$/;"	kind:function	line:11
+OnLoadAllConfigCb	../pyproject/robot/gm_opt_config.py	/^def OnLoadAllConfigCb(dictDbRet, nPlayerGID):$/;"	kind:function	line:33
 OnLoadPlayerDataDone	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def OnLoadPlayerDataDone(self, dictSerialData, szSerial):$/;"	kind:member	line:25
 OnMemberEnter	../pyproject/entity/rule_base.py	/^    def OnMemberEnter(self, nMemberGID):$/;"	kind:member	line:11
-OnMemberEnter	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OnMemberEnter(self, nMemberGID):$/;"	kind:member	line:701
-OnMemberEnter	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnMemberEnter(self, nPlayerGID):$/;"	kind:member	line:91
-OnMemberEnter	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^OnMemberEnter = _roomMgr.OnMemberEnter$/;"	kind:variable	line:100
+OnMemberEnter	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OnMemberEnter(self, nMemberGID):$/;"	kind:member	line:723
+OnMemberEnter	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnMemberEnter(self, nPlayerGID):$/;"	kind:member	line:92
+OnMemberEnter	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^OnMemberEnter = _roomMgr.OnMemberEnter$/;"	kind:variable	line:101
 OnMemberExit	../pyproject/entity/rule_base.py	/^    def OnMemberExit(self, nMemberGID):$/;"	kind:member	line:8
-OnMemberExit	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OnMemberExit(self, nMemberGID):$/;"	kind:member	line:698
-OnMemberExit	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnMemberExit(self, nPlayerGID):$/;"	kind:member	line:85
-OnMemberExit	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^OnMemberExit = _roomMgr.OnMemberExit$/;"	kind:variable	line:99
+OnMemberExit	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OnMemberExit(self, nMemberGID):$/;"	kind:member	line:720
+OnMemberExit	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def OnMemberExit(self, nPlayerGID):$/;"	kind:member	line:86
+OnMemberExit	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^OnMemberExit = _roomMgr.OnMemberExit$/;"	kind:variable	line:100
 OnOneDbQueryDone	../pyproject/db/dbs_mgr.py	/^    def OnOneDbQueryDone(self, dictSerial, job):$/;"	kind:member	line:125
 OnOneDbQueryDone	../pyproject/db/dbs_mgr.py	/^OnOneDbQueryDone = _dbs.OnOneDbQueryDone$/;"	kind:variable	line:173
 OnPlayerChangeScene	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def OnPlayerChangeScene(self, nPlayerGID, szSerial):$/;"	kind:member	line:82
-OnPlayerEnter	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def OnPlayerEnter(self, nPlayerGID):$/;"	kind:member	line:71
-OnPlayerEnter	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^OnPlayerEnter = _gccRoomMgr.OnPlayerEnter$/;"	kind:variable	line:76
-OnPlayerExit	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def OnPlayerExit(self, nPlayerGID):$/;"	kind:member	line:68
-OnPlayerExit	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^OnPlayerExit = _gccRoomMgr.OnPlayerExit$/;"	kind:variable	line:75
+OnPlayerEnter	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def OnPlayerEnter(self, nPlayerGID):$/;"	kind:member	line:76
+OnPlayerEnter	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^OnPlayerEnter = _gccRoomMgr.OnPlayerEnter$/;"	kind:variable	line:81
+OnPlayerExit	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def OnPlayerExit(self, nPlayerGID):$/;"	kind:member	line:73
+OnPlayerExit	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^OnPlayerExit = _gccRoomMgr.OnPlayerExit$/;"	kind:variable	line:80
 OnPlayerGameEnd	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def OnPlayerGameEnd(self, nPlayerGID):$/;"	kind:member	line:77
 OnPlayerOffline	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def OnPlayerOffline(self, nPlayerGID):$/;"	kind:member	line:57
 OnPlayerOffline	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def OnPlayerOffline(self, nPlayerGID):$/;"	kind:member	line:67
-OnPlayerOffline	../pyproject/rpc/rpc_def.py	/^OnPlayerOffline = 1$/;"	kind:variable	line:31
+OnPlayerOffline	../pyproject/rpc/rpc_def.py	/^OnPlayerOffline = 1$/;"	kind:variable	line:33
 OnPlayerTrueOffline	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^    def OnPlayerTrueOffline(self, nPlayerGID):$/;"	kind:member	line:74
 OnReloadedSomeFile	../pyproject/auto_update/auto_update.py	/^def OnReloadedSomeFile():$/;"	kind:function	line:53
 OnResdualTimeOut	../pyproject/residual/residual_mgr.py	/^    def OnResdualTimeOut(self, nPlayerGID):$/;"	kind:member	line:18
@@ -855,49 +874,51 @@ OnRoomDismiss	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^    def OnRoomDism
 OnRspPeer	../pyproject/gate_mgr/game_manager.py	/^    def OnRspPeer(self, szService):$/;"	kind:member	line:34
 OnServiceConn	../pyproject/gate_mgr/game_manager.py	/^    def OnServiceConn(self, szServiceName):$/;"	kind:member	line:60
 OnServiceConn	../pyproject/gate_mgr/game_manager.py	/^def OnServiceConn(dictSerial):$/;"	kind:function	line:67
-OnServiceConn	../pyproject/rpc/rpc_def.py	/^OnServiceConn = 8003$/;"	kind:variable	line:67
+OnServiceConn	../pyproject/rpc/rpc_def.py	/^OnServiceConn = 8003$/;"	kind:variable	line:72
 OnServiceDisConn	../pyproject/gate_mgr/game_manager.py	/^    def OnServiceDisConn(self, szServiceName):$/;"	kind:member	line:57
 OnSessionConnectGate	../pyproject/gate_mgr/gate_mgr.py	/^def OnSessionConnectGate(dictData):$/;"	kind:function	line:46
-OnSessionConnectGate	../pyproject/rpc/rpc_def.py	/^OnSessionConnectGate = 1002$/;"	kind:variable	line:34
+OnSessionConnectGate	../pyproject/rpc/rpc_def.py	/^OnSessionConnectGate = 1002$/;"	kind:variable	line:36
 OnSessionDisConnGate	../pyproject/gate_mgr/gate_mgr.py	/^def OnSessionDisConnGate(dictData):$/;"	kind:function	line:52
-OnSessionDisConnGate	../pyproject/rpc/rpc_def.py	/^OnSessionDisConnGate = 1003$/;"	kind:variable	line:35
+OnSessionDisConnGate	../pyproject/rpc/rpc_def.py	/^OnSessionDisConnGate = 1003$/;"	kind:variable	line:37
 OnSessionOffline	../pyproject/gate_mgr/gate_mgr.py	/^    def OnSessionOffline(self, szGate, session):$/;"	kind:member	line:33
 OnSessionOnline	../pyproject/gate_mgr/gate_mgr.py	/^    def OnSessionOnline(self, szGate, session):$/;"	kind:member	line:27
 OnTimerPersistent	../pyproject/entity/base_entity.py	/^    def OnTimerPersistent(self):$/;"	kind:member	line:30
 OnUpdate	../pyproject/auto_update/auto_update.py	/^def OnUpdate():$/;"	kind:function	line:74
-OneJuEnd	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OneJuEnd(self, nWndPos=None):$/;"	kind:member	line:596
-OptQiPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OptQiPai(self, nPos, nCardID):$/;"	kind:member	line:353
+OneJuEnd	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OneJuEnd(self, nWndPos=None):$/;"	kind:member	line:590
+OptQiPai	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def OptQiPai(self, nPos, nCardID):$/;"	kind:member	line:347
 PARAMS	../pyproject/db/dbs_def.py	/^PARAMS = "p"$/;"	kind:variable	line:8
 PLAYER_MONEY	../pyproject/db/table/table_property_def.py	/^    PLAYER_MONEY = "player_money"$/;"	kind:variable	line:9
 PROTOCOL_ERROR	../pylib/thrift/Thrift.py	/^  PROTOCOL_ERROR = 7$/;"	kind:variable	line:103
 PROTOCOL_ID	../pylib/thrift/protocol/TCompactProtocol.py	/^  PROTOCOL_ID = 0x82$/;"	kind:variable	line:119
 PY_MAJOR	../pylib/pkg_resources.py	/^PY_MAJOR = sys.version[:3]$/;"	kind:variable	line:178
 PackSendGmCode	../pyproject/test_enter.py	/^def PackSendGmCode():$/;"	kind:function	line:26
+PackSetConf	../pyproject/test_enter2.py	/^def PackSetConf():$/;"	kind:function	line:44
 PackTag	../pylib/google/protobuf/internal/wire_format.py	/^def PackTag(field_number, wire_type):$/;"	kind:function	line:80
 PackedFieldSize	../pylib/google/protobuf/internal/encoder.py	/^      def PackedFieldSize(value):$/;"	kind:function	line:131
 PackedFieldSize	../pylib/google/protobuf/internal/encoder.py	/^      def PackedFieldSize(value):$/;"	kind:function	line:160
 PackedFieldSize	../pylib/google/protobuf/internal/encoder.py	/^      def PackedFieldSize(value):$/;"	kind:function	line:189
 PacketChangeScene	../pyproject/test_enter1.py	/^def PacketChangeScene(scene_name):$/;"	kind:function	line:60
-PacketChangeScene	../pyproject/test_enter2.py	/^def PacketChangeScene(scene_name):$/;"	kind:function	line:56
+PacketChangeScene	../pyproject/test_enter2.py	/^def PacketChangeScene(scene_name):$/;"	kind:function	line:99
 PacketChangeScene	../pyproject/test_enter3.py	/^def PacketChangeScene(scene_name):$/;"	kind:function	line:56
 PacketChangeScene	../pyproject/test_query_room_and_enter.py	/^def PacketChangeScene(scene_name):$/;"	kind:function	line:55
 PacketCreateRoomBuff	../pyproject/test_create_room.py	/^def PacketCreateRoomBuff():$/;"	kind:function	line:26
 PacketEnterRoom	../pyproject/test_enter1.py	/^def PacketEnterRoom(nRoomID):$/;"	kind:function	line:44
-PacketEnterRoom	../pyproject/test_enter2.py	/^def PacketEnterRoom(nRoomID):$/;"	kind:function	line:40
+PacketEnterRoom	../pyproject/test_enter2.py	/^def PacketEnterRoom(nRoomID):$/;"	kind:function	line:85
 PacketEnterRoom	../pyproject/test_enter3.py	/^def PacketEnterRoom(nRoomID):$/;"	kind:function	line:40
 PacketEnterRoom	../pyproject/test_query_room_and_enter.py	/^def PacketEnterRoom(nRoomID):$/;"	kind:function	line:39
 PacketEnterRoomBuff	../pyproject/test_enter1.py	/^def PacketEnterRoomBuff():$/;"	kind:function	line:76
-PacketEnterRoomBuff	../pyproject/test_enter2.py	/^def PacketEnterRoomBuff():$/;"	kind:function	line:72
+PacketEnterRoomBuff	../pyproject/test_enter2.py	/^def PacketEnterRoomBuff():$/;"	kind:function	line:115
 PacketEnterRoomBuff	../pyproject/test_enter3.py	/^def PacketEnterRoomBuff():$/;"	kind:function	line:72
 PacketEnterRoomBuff	../pyproject/test_query_room_and_enter.py	/^def PacketEnterRoomBuff():$/;"	kind:function	line:71
 PacketExeCode	../pyproject/test_create_room.py	/^def PacketExeCode():$/;"	kind:function	line:52
+PacketGetGate	../pyproject/test_enter2.py	/^def PacketGetGate():$/;"	kind:function	line:132
 PacketLoginBuff	../pyproject/test_create_room.py	/^def PacketLoginBuff():$/;"	kind:function	line:8
 PacketLoginBuff	../pyproject/test_enter1.py	/^def PacketLoginBuff():$/;"	kind:function	line:9
-PacketLoginBuff	../pyproject/test_enter2.py	/^def PacketLoginBuff():$/;"	kind:function	line:7
+PacketLoginBuff	../pyproject/test_enter2.py	/^def PacketLoginBuff():$/;"	kind:function	line:9
 PacketLoginBuff	../pyproject/test_enter3.py	/^def PacketLoginBuff():$/;"	kind:function	line:7
 PacketLoginBuff	../pyproject/test_query_room_and_enter.py	/^def PacketLoginBuff():$/;"	kind:function	line:7
 PacketQueryRoomScene	../pyproject/test_enter1.py	/^def PacketQueryRoomScene():$/;"	kind:function	line:29
-PacketQueryRoomScene	../pyproject/test_enter2.py	/^def PacketQueryRoomScene():$/;"	kind:function	line:25
+PacketQueryRoomScene	../pyproject/test_enter2.py	/^def PacketQueryRoomScene():$/;"	kind:function	line:29
 PacketQueryRoomScene	../pyproject/test_enter3.py	/^def PacketQueryRoomScene():$/;"	kind:function	line:25
 PacketQueryRoomScene	../pyproject/test_query_room_and_enter.py	/^def PacketQueryRoomScene():$/;"	kind:function	line:24
 ParseBool	../pylib/google/protobuf/text_format.py	/^def ParseBool(text):$/;"	kind:function	line:686
@@ -910,12 +931,12 @@ ParseFromString	../pylib/google/protobuf/message.py	/^  def ParseFromString(self
 ParseInteger	../pylib/google/protobuf/text_format.py	/^def ParseInteger(text, is_signed=False, is_long=False):$/;"	kind:function	line:628
 ParseMessage	../pylib/google/protobuf/reflection.py	/^def ParseMessage(descriptor, byte_str):$/;"	kind:function	line:152
 PathMetadata	../pylib/pkg_resources.py	/^class PathMetadata(DefaultProvider):$/;"	kind:class	line:1518
-Peer	../pyproject/db/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:54
-Peer	../pyproject/gas/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:43
+Peer	../pyproject/db/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:55
+Peer	../pyproject/gas/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:44
 Peer	../pyproject/gate_mgr/game_manager.py	/^    def Peer(self):$/;"	kind:member	line:29
-Peer	../pyproject/gcc/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:19
+Peer	../pyproject/gcc/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:23
 Peer	../pyproject/login/main.py	/^def Peer(dictSerial):$/;"	kind:function	line:15
-Peer	../pyproject/rpc/rpc_def.py	/^Peer = 9000$/;"	kind:variable	line:71
+Peer	../pyproject/rpc/rpc_def.py	/^Peer = 9000$/;"	kind:variable	line:76
 Persistent	../pyproject/entity/gas_player_entity.py	/^    def Persistent(self):$/;"	kind:member	line:116
 Ping	../pyproject/db/dbs_common.py	/^def Ping(conn):$/;"	kind:function	line:6
 Player	../pyproject/db/table/table_property_def.py	/^class Player(const_entity.Const):$/;"	kind:class	line:11
@@ -934,13 +955,13 @@ RESULT	../pyproject/db/dbs_def.py	/^RESULT = "r"$/;"	kind:variable	line:5
 RandomChoose	../pyproject/db/dbs_mgr.py	/^    def RandomChoose(self):$/;"	kind:member	line:57
 RandomChooseRoom	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^    def RandomChooseRoom(self):$/;"	kind:member	line:41
 ReadTag	../pylib/google/protobuf/internal/decoder.py	/^def ReadTag(buffer, pos):$/;"	kind:function	line:160
-RecordTouchEvent	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RecordTouchEvent(self, nPos, listData):$/;"	kind:member	line:462
+RecordTouchEvent	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RecordTouchEvent(self, nPos, listData):$/;"	kind:member	line:456
 RecordVar	../pylib/save_dump_mgr.py	/^class RecordVar(object):$/;"	kind:class	line:10
 RegTick	../pyproject/wsurl/wsurl.py	/^    def RegTick(self):$/;"	kind:member	line:25
 RegisterExtension	../pylib/google/protobuf/internal/cpp_message.py	/^  def RegisterExtension(extension_handle):$/;"	kind:function	line:640
 RegisterExtension	../pylib/google/protobuf/internal/python_message.py	/^  def RegisterExtension(extension_handle):$/;"	kind:function	line:530
 RegisterOnceTick	../pyproject/util/tick_mgr.py	/^def RegisterOnceTick(nMs, funObj, param=None):$/;"	kind:function	line:6
-RemoveCardFromList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RemoveCardFromList(self, listCard, nCardID, nRemoveNum):$/;"	kind:member	line:383
+RemoveCardFromList	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RemoveCardFromList(self, listCard, nCardID, nRemoveNum):$/;"	kind:member	line:377
 RemoveJob	../pyproject/wsurl/wsurl.py	/^    def RemoveJob(self, nJobID):$/;"	kind:member	line:47
 RemoveJobsByCallback	../pyproject/wsurl/wsurl.py	/^    def RemoveJobsByCallback(self, callback):$/;"	kind:member	line:56
 RemoveResidualPlayer	../pyproject/residual/residual_mgr.py	/^    def RemoveResidualPlayer(self, nPlayerGID):$/;"	kind:member	line:23
@@ -959,11 +980,11 @@ RepeatedScalarFieldContainer	../pylib/google/protobuf/internal/containers.py	/^c
 RepeatedScalarProperty	../pylib/google/protobuf/internal/cpp_message.py	/^def RepeatedScalarProperty(cdescriptor):$/;"	kind:function	line:169
 ReplaceHex	../pylib/google/protobuf/text_format.py	/^  def ReplaceHex(m):$/;"	kind:function	line:615
 RequestChangeScene	../pyproject/entity/gas_player_entity.py	/^    def RequestChangeScene(self, szDstScene, dictExtra=None):$/;"	kind:member	line:70
-RequestGang	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestGang(self, listData):$/;"	kind:member	line:490
-RequestGangAll	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestGangAll(self, nPlayerGID, nTargetMember, nCardID):$/;"	kind:member	line:465
+RequestGang	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestGang(self, listData):$/;"	kind:member	line:484
+RequestGangAll	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestGangAll(self, nPlayerGID, nTargetMember, nCardID):$/;"	kind:member	line:459
 RequestHander	../pylib/thrift/server/THttpServer.py	/^    class RequestHander(BaseHTTPServer.BaseHTTPRequestHandler):$/;"	kind:class	line:64
-RequestHu	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestHu(self, nPlayerGID):$/;"	kind:member	line:452
-RequestPeng	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestPeng(self, listData):$/;"	kind:member	line:540
+RequestHu	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestHu(self, nPlayerGID):$/;"	kind:member	line:446
+RequestPeng	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def RequestPeng(self, listData):$/;"	kind:member	line:534
 Requirement	../pylib/pkg_resources.py	/^class Requirement:$/;"	kind:class	line:2462
 Reset	../pylib/google/protobuf/service.py	/^  def Reset(self):$/;"	kind:member	line:132
 ResidualMgr	../pyproject/residual/residual_mgr.py	/^class ResidualMgr(object):$/;"	kind:class	line:10
@@ -971,7 +992,7 @@ ResolutionError	../pylib/pkg_resources.py	/^class ResolutionError(Exception):$/;
 ResourceManager	../pylib/pkg_resources.py	/^class ResourceManager:$/;"	kind:class	line:862
 Response	../pyproject/wsurl/wsurl_thread.py	/^    def Response(self, response):$/;"	kind:member	line:39
 ResponseException	../pylib/thrift/server/THttpServer.py	/^class ResponseException(Exception):$/;"	kind:class	line:26
-ResponseLogin	../pyproject/rpc/rpc_def.py	/^ResponseLogin = 20001$/;"	kind:variable	line:15
+ResponseLogin	../pyproject/rpc/rpc_def.py	/^ResponseLogin = 20001$/;"	kind:variable	line:16
 RetGetIDAutoInc	../pyproject/id_manager/player_id_mgr.py	/^    def RetGetIDAutoInc(self, dbRet):$/;"	kind:member	line:21
 RetGetIDAutoInc	../pyproject/id_manager/room_id_mgr.py	/^    def RetGetIDAutoInc(self, dbRet):$/;"	kind:member	line:19
 RobotMgr	../pyproject/robot/robot_mgr.py	/^class RobotMgr(object):$/;"	kind:class	line:9
@@ -985,7 +1006,7 @@ RpcController	../pylib/google/protobuf/service.py	/^class RpcController(object):
 RpcException	../pylib/google/protobuf/service.py	/^class RpcException(Exception):$/;"	kind:class	line:46
 RpcProperty	../pyproject/rpc/rpc_property_def.py	/^class RpcProperty(const_entity.Const):$/;"	kind:class	line:6
 RspPeer	../pyproject/gate_mgr/game_manager.py	/^def RspPeer(dictData):$/;"	kind:function	line:73
-RspPeer	../pyproject/rpc/rpc_def.py	/^RspPeer = 9001/;"	kind:variable	line:72
+RspPeer	../pyproject/rpc/rpc_def.py	/^RspPeer = 9001/;"	kind:variable	line:77
 SEND_ANSWER	../pylib/thrift/server/TNonblockingServer.py	/^SEND_ANSWER = 3$/;"	kind:variable	line:63
 SESSION	../pyproject/db/dbs_def.py	/^SESSION = "s"$/;"	kind:variable	line:6
 SESSION_ID	../pyproject/db/table/table_property_def.py	/^    SESSION_ID = "SESSION_ID"$/;"	kind:variable	line:12
@@ -1012,16 +1033,19 @@ STOP	../pylib/thrift/protocol/TCompactProtocol.py	/^  STOP = 0x00$/;"	kind:varia
 STRING	../pylib/thrift/Thrift.py	/^  STRING = 11$/;"	kind:variable	line:33
 STRUCT	../pylib/thrift/Thrift.py	/^  STRUCT = 12$/;"	kind:variable	line:35
 STRUCT	../pylib/thrift/protocol/TCompactProtocol.py	/^  STRUCT = 0x0C$/;"	kind:variable	line:92
+SaveAllConfig	../pyproject/robot/gm_opt_config.py	/^def SaveAllConfig():$/;"	kind:function	line:22
 SaveCfgJson	../pyproject/excel2json.py	/^def SaveCfgJson(szFileName, dictData):$/;"	kind:function	line:51
 ScalarProperty	../pylib/google/protobuf/internal/cpp_message.py	/^def ScalarProperty(cdescriptor):$/;"	kind:function	line:78
 SendCode	../pyproject/util/gm_tool.py	/^def SendCode(szScene, szCode):$/;"	kind:function	line:22
+SendMsg	../pyproject/db/redis_mgr.py	/^def SendMsg(sock, nCmd, dictMsg):$/;"	kind:function	line:42
 Serial	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def Serial(self):$/;"	kind:member	line:105
 Serial2Client	../pyproject/entity/gas_player_entity.py	/^    def Serial2Client(self, rsp):$/;"	kind:member	line:87
 Serial2Dict	../pyproject/entity/gas_player_entity.py	/^    def Serial2Dict(self):$/;"	kind:member	line:93
 Serial2Dict	../pyproject/entity/player_in_login.py	/^    def Serial2Dict(self):$/;"	kind:member	line:17
 Serial2List	../pyproject/compment/compment_money.py	/^    def Serial2List(self):$/;"	kind:member	line:37
 SerialAllMoney	../pyproject/compment/compment_money.py	/^    def SerialAllMoney(self):$/;"	kind:member	line:24
-SerialCardInfo	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def SerialCardInfo(self, nPos, bSynCardHave=False):$/;"	kind:member	line:677
+SerialCardInfo	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def SerialCardInfo(self, nPos, bSynCardHave=False):$/;"	kind:member	line:699
+SerialList2String	../pyproject/robot/gas_gm_config_opt.py	/^def SerialList2String(listData):$/;"	kind:function	line:9
 SerializePartialToString	../pylib/google/protobuf/internal/cpp_message.py	/^  def SerializePartialToString(self):$/;"	kind:function	line:565
 SerializePartialToString	../pylib/google/protobuf/internal/python_message.py	/^  def SerializePartialToString(self):$/;"	kind:function	line:775
 SerializePartialToString	../pylib/google/protobuf/message.py	/^  def SerializePartialToString(self):$/;"	kind:member	line:196
@@ -1076,33 +1100,34 @@ StartCancel	../pylib/google/protobuf/service.py	/^  def StartCancel(self):$/;"	k
 StartDbMgr	../start_all.py	/^def StartDbMgr():$/;"	kind:function	line:40
 StartDbMgr	../start_all_1.py	/^def StartDbMgr():$/;"	kind:function	line:40
 StartDbMgr	../start_all_2.py	/^def StartDbMgr():$/;"	kind:function	line:40
-StartEventTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StartEventTick(self):$/;"	kind:member	line:349
+StartEventTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StartEventTick(self):$/;"	kind:member	line:343
 StartGame	../pyproject/test.py	/^def StartGame():$/;"	kind:function	line:19
 StartGameOnRoom	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def StartGameOnRoom(self):$/;"	kind:member	line:119
-StartJu	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StartJu(self):$/;"	kind:member	line:640
+StartJu	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StartJu(self):$/;"	kind:member	line:634
 StartLoginAndGcc	../start_all.py	/^def StartLoginAndGcc():$/;"	kind:function	line:54
 StartLoginAndGcc	../start_all_1.py	/^def StartLoginAndGcc():$/;"	kind:function	line:54
 StartLoginAndGcc	../start_all_2.py	/^def StartLoginAndGcc():$/;"	kind:function	line:54
 StartOnceTick	../pyproject/entity/base_entity.py	/^    def StartOnceTick(self):$/;"	kind:member	line:26
-StartQiPaiTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StartQiPaiTick(self, nPos):$/;"	kind:member	line:374
+StartQiPaiTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StartQiPaiTick(self, nPos):$/;"	kind:member	line:368
 StartUp	../pyproject/test_create_room.py	/^def StartUp():$/;"	kind:function	line:67
 StartUp	../pyproject/test_enter1.py	/^def StartUp(nId=None):$/;"	kind:function	line:93
+StartUp	../pyproject/test_enter2.py	/^def StartUp(nId=None):$/;"	kind:function	line:151
 StateBase	../pyproject/state/state_machine.py	/^class StateBase(object):$/;"	kind:class	line:4
 StateMachine	../pyproject/state/state_machine.py	/^class StateMachine(object):$/;"	kind:class	line:24
 Stop	../pyproject/wsurl/wsurl.py	/^    def Stop(self):$/;"	kind:member	line:79
-StopEventTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StopEventTick(self):$/;"	kind:member	line:343
+StopEventTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StopEventTick(self):$/;"	kind:member	line:337
 StopOnceTick	../pyproject/entity/base_entity.py	/^    def StopOnceTick(self):$/;"	kind:member	line:20
-StopQiPaiTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StopQiPaiTick(self, nPos):$/;"	kind:member	line:368
+StopQiPaiTick	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def StopQiPaiTick(self, nPos):$/;"	kind:member	line:362
 StringByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def StringByteSize(field_number, string):$/;"	kind:function	line:183
 StringDecoder	../pylib/google/protobuf/internal/decoder.py	/^def StringDecoder(field_number, is_repeated, is_packed, key, new_default):$/;"	kind:function	line:377
 StringEncoder	../pylib/google/protobuf/internal/encoder.py	/^def StringEncoder(field_number, is_repeated, is_packed):$/;"	kind:function	line:652
 StringIO	../pylib/pkg_resources.py	/^def StringIO(*args, **kw):$/;"	kind:function	line:1673
 StringSizer	../pylib/google/protobuf/internal/encoder.py	/^def StringSizer(field_number, is_repeated, is_packed):$/;"	kind:function	line:227
 SynGameInfo	../pyproject/gas/gas_room_mgr/gas_room_obj.py	/^    def SynGameInfo(self, nPlayerGID, bSynAll=False):$/;"	kind:member	line:69
-SynOrder	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def SynOrder(self):$/;"	kind:member	line:605
-SynPlayerData	../pyproject/rpc/rpc_def.py	/^SynPlayerData = 30003$/;"	kind:variable	line:28
+SynOrder	../pyproject/gas/gas_mj/gas_mj_mgr.py	/^    def SynOrder(self):$/;"	kind:member	line:599
+SynPlayerData	../pyproject/rpc/rpc_def.py	/^SynPlayerData = 30003$/;"	kind:variable	line:30
 SynSceneInfo	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^    def SynSceneInfo(self, nPlayerGID):$/;"	kind:member	line:40
-SynSceneInfo	../pyproject/rpc/rpc_def.py	/^SynSceneInfo = 30002$/;"	kind:variable	line:27
+SynSceneInfo	../pyproject/rpc/rpc_def.py	/^SynSceneInfo = 30002$/;"	kind:variable	line:29
 SyncJob	../pyproject/db/dbs_mgr_mp.py	/^class SyncJob(object):$/;"	kind:class	line:16
 SyncQueryTrans	../pyproject/db/dbs_common.py	/^def SyncQueryTrans(nType, conn, sql):$/;"	kind:function	line:12
 TAG_TYPE_BITS	../pylib/google/protobuf/internal/wire_format.py	/^TAG_TYPE_BITS = 3  # Number of bits used to hold type info in a proto tag.$/;"	kind:variable	line:40
@@ -1198,15 +1223,14 @@ TZlibTransportFactory	../pylib/thrift/transport/TZlibTransport.py	/^class TZlibT
 TableName	../pyproject/db/table/table_property_def.py	/^class TableName(const_entity.Const):$/;"	kind:class	line:8
 TagByteSize	../pylib/google/protobuf/internal/wire_format.py	/^def TagByteSize(field_number):$/;"	kind:function	line:224
 TagBytes	../pylib/google/protobuf/internal/encoder.py	/^def TagBytes(field_number, wire_type):$/;"	kind:function	line:388
-Test	../pyproject/robot/gm_opt_config.py	/^def Test():$/;"	kind:function	line:22
 Test1	../pyproject/wsurl/http_mod.py	/^def Test1(cb):$/;"	kind:function	line:14
 Test1	../pyproject/wsurl/wsurl.py	/^def Test1():$/;"	kind:function	line:104
 Test2	../pyproject/wsurl/wsurl.py	/^def Test2(q):$/;"	kind:function	line:147
 Test3	../pyproject/wsurl/wsurl.py	/^def Test3():$/;"	kind:function	line:174
 TestEnterRoom	../pyproject/test.py	/^        :$/;"	kind:function	line:14
 TestMsg	../pylib/protobuf_example/msg_pb2.py	/^class TestMsg(_message.Message):$/;"	kind:class	line:64
-TestService	../pyproject/gas/main.py	/^def TestService(dictSerial):$/;"	kind:function	line:47
-TestService	../pyproject/rpc/rpc_def.py	/^TestService = 8999$/;"	kind:variable	line:69
+TestService	../pyproject/gas/main.py	/^def TestService(dictSerial):$/;"	kind:function	line:48
+TestService	../pyproject/rpc/rpc_def.py	/^TestService = 8999$/;"	kind:variable	line:74
 Thrift.py	../pylib/thrift/Thrift.py	1;"	kind:file	line:1
 ThriftClientFactory	../pylib/thrift/transport/TTwisted.py	/^class ThriftClientFactory(ClientFactory):$/;"	kind:class	line:165
 ThriftClientProtocol	../pylib/thrift/transport/TTwisted.py	/^class ThriftClientProtocol(basic.Int32StringReceiver):$/;"	kind:class	line:60
@@ -1323,6 +1347,7 @@ _CHANGE_SCENE_RSP	../pyproject/proto/change_scene_pb2.py	/^_CHANGE_SCENE_RSP = _
 _CODEGENERATORREQUEST	../pylib/google/protobuf/compiler/plugin_pb2.py	/^_CODEGENERATORREQUEST = _descriptor.Descriptor($/;"	kind:variable	line:22
 _CODEGENERATORRESPONSE	../pylib/google/protobuf/compiler/plugin_pb2.py	/^_CODEGENERATORRESPONSE = _descriptor.Descriptor($/;"	kind:variable	line:105
 _CODEGENERATORRESPONSE_FILE	../pylib/google/protobuf/compiler/plugin_pb2.py	/^_CODEGENERATORRESPONSE_FILE = _descriptor.Descriptor($/;"	kind:variable	line:64
+_CONFIG_DATA	../pyproject/proto/gm_config_pb2.py	/^_CONFIG_DATA = _descriptor.Descriptor($/;"	kind:variable	line:60
 _CPPTYPE_MESSAGE	../pylib/google/protobuf/internal/cpp_message.py	/^_CPPTYPE_MESSAGE = _net_proto2___python.CPPTYPE_MESSAGE$/;"	kind:variable	line:46
 _CREATE_ROOM_REQ	../pyproject/proto/create_room_pb2.py	/^_CREATE_ROOM_REQ = _descriptor.Descriptor($/;"	kind:variable	line:31
 _CREATE_ROOM_RSP	../pyproject/proto/create_room_pb2.py	/^_CREATE_ROOM_RSP = _descriptor.Descriptor($/;"	kind:variable	line:76
@@ -1388,6 +1413,9 @@ _FloatDecoder	../pylib/google/protobuf/internal/decoder.py	/^def _FloatDecoder()
 _FloatingPointEncoder	../pylib/google/protobuf/internal/encoder.py	/^def _FloatingPointEncoder(wire_type, format):$/;"	kind:function	line:511
 _GAME_CARD_LIST	../pyproject/proto/common_info_pb2.py	/^_GAME_CARD_LIST = _descriptor.Descriptor($/;"	kind:variable	line:368
 _GAME_CFG	../pyproject/proto/common_info_pb2.py	/^_GAME_CFG = _descriptor.Descriptor($/;"	kind:variable	line:309
+_GAME_READY_REQ	../pyproject/proto/opt_pb2.py	/^_GAME_READY_REQ = _descriptor.Descriptor($/;"	kind:variable	line:246
+_GAME_READY_RSP	../pyproject/proto/opt_pb2.py	/^_GAME_READY_RSP = _descriptor.Descriptor($/;"	kind:variable	line:277
+_GM_CONFIG_OPT	../pyproject/proto/gm_config_pb2.py	/^_GM_CONFIG_OPT = _descriptor.EnumDescriptor($/;"	kind:variable	line:27
 _GenerateNonImplementedMethod	../pylib/google/protobuf/service_reflection.py	/^  def _GenerateNonImplementedMethod(self, method):$/;"	kind:member	line:205
 _GenerateStubMethod	../pylib/google/protobuf/service_reflection.py	/^  def _GenerateStubMethod(self, method):$/;"	kind:member	line:265
 _GetAllDescriptors	../pylib/google/protobuf/message_factory.py	/^def _GetAllDescriptors(desc_protos, package):$/;"	kind:function	line:98
@@ -1405,8 +1433,6 @@ _IsMessageSetExtension	../pylib/google/protobuf/internal/python_message.py	/^def
 _IsPresent	../pylib/google/protobuf/internal/python_message.py	/^def _IsPresent(item):$/;"	kind:function	line:562
 _LABEL_OPTIONAL	../pylib/google/protobuf/internal/cpp_message.py	/^_LABEL_OPTIONAL = _net_proto2___python.LABEL_OPTIONAL$/;"	kind:variable	line:45
 _LABEL_REPEATED	../pylib/google/protobuf/internal/cpp_message.py	/^_LABEL_REPEATED = _net_proto2___python.LABEL_REPEATED$/;"	kind:variable	line:44
-_LOAD_CONFIG_REQ	../pyproject/proto/gm_config_pb2.py	/^_LOAD_CONFIG_REQ = _descriptor.Descriptor($/;"	kind:variable	line:29
-_LOAD_CONFIG_RSP	../pyproject/proto/gm_config_pb2.py	/^_LOAD_CONFIG_RSP = _descriptor.Descriptor($/;"	kind:variable	line:60
 _LOGIN_REQ	../pyproject/proto/login_pb2.py	/^_LOGIN_REQ = _descriptor.Descriptor($/;"	kind:variable	line:60
 _LOGIN_RSP	../pyproject/proto/login_pb2.py	/^_LOGIN_RSP = _descriptor.Descriptor($/;"	kind:variable	line:105
 _LOGIN_TYPE	../pyproject/proto/login_pb2.py	/^_LOGIN_TYPE = _descriptor.EnumDescriptor($/;"	kind:variable	line:27
@@ -1440,8 +1466,8 @@ _NewMessage	../pylib/google/protobuf/reflection.py	/^  _NewMessage = python_mess
 _NonImplementedMethod	../pylib/google/protobuf/service_reflection.py	/^  def _NonImplementedMethod(self, method_name, rpc_controller, callback):$/;"	kind:member	line:218
 _ON_TOUCH_EVENT	../pyproject/proto/common_info_pb2.py	/^_ON_TOUCH_EVENT = _descriptor.Descriptor($/;"	kind:variable	line:542
 _ON_TOUCH_EVENT_MEMBER	../pyproject/proto/common_info_pb2.py	/^_ON_TOUCH_EVENT_MEMBER = _descriptor.Descriptor($/;"	kind:variable	line:601
-_OPT_CONFIG_REQ	../pyproject/proto/gm_config_pb2.py	/^_OPT_CONFIG_REQ = _descriptor.Descriptor($/;"	kind:variable	line:105
-_OPT_CONFIG_RSP	../pyproject/proto/gm_config_pb2.py	/^_OPT_CONFIG_RSP = _descriptor.Descriptor($/;"	kind:variable	line:150
+_OPT_CONFIG_REQ	../pyproject/proto/gm_config_pb2.py	/^_OPT_CONFIG_REQ = _descriptor.Descriptor($/;"	kind:variable	line:209
+_OPT_CONFIG_RSP	../pyproject/proto/gm_config_pb2.py	/^_OPT_CONFIG_RSP = _descriptor.Descriptor($/;"	kind:variable	line:254
 _OPT_REQ	../pyproject/proto/opt_pb2.py	/^_OPT_REQ = _descriptor.Descriptor($/;"	kind:variable	line:31
 _OPT_RSP	../pyproject/proto/opt_pb2.py	/^_OPT_RSP = _descriptor.Descriptor($/;"	kind:variable	line:76
 _OTHER_PLAYER_INFO	../pyproject/proto/common_info_pb2.py	/^_OTHER_PLAYER_INFO = _descriptor.Descriptor($/;"	kind:variable	line:250
@@ -1463,10 +1489,13 @@ _SERVICEDESCRIPTORPROTO	../pylib/google/protobuf/descriptor_pb2.py	/^_SERVICEDES
 _SERVICEOPTIONS	../pylib/google/protobuf/descriptor_pb2.py	/^_SERVICEOPTIONS = _descriptor.Descriptor($/;"	kind:variable	line:932
 _SOURCECODEINFO	../pylib/google/protobuf/descriptor_pb2.py	/^_SOURCECODEINFO = _descriptor.Descriptor($/;"	kind:variable	line:1140
 _SOURCECODEINFO_LOCATION	../pylib/google/protobuf/descriptor_pb2.py	/^_SOURCECODEINFO_LOCATION = _descriptor.Descriptor($/;"	kind:variable	line:1092
+_SYN_ALL_GM_CONFIG_REQ	../pyproject/proto/gm_config_pb2.py	/^_SYN_ALL_GM_CONFIG_REQ = _descriptor.Descriptor($/;"	kind:variable	line:126
+_SYN_ALL_GM_CONFIG_RSP	../pyproject/proto/gm_config_pb2.py	/^_SYN_ALL_GM_CONFIG_RSP = _descriptor.Descriptor($/;"	kind:variable	line:157
 _SYN_CARD_INFO	../pyproject/proto/opt_pb2.py	/^_SYN_CARD_INFO = _descriptor.Descriptor($/;"	kind:variable	line:135
 _SYN_GAME_INFO	../pyproject/proto/common_info_pb2.py	/^_SYN_GAME_INFO = _descriptor.Descriptor($/;"	kind:variable	line:427
 _SYN_GAME_ORDER	../pyproject/proto/opt_pb2.py	/^_SYN_GAME_ORDER = _descriptor.Descriptor($/;"	kind:variable	line:173
 _SYN_GAME_RET	../pyproject/proto/common_info_pb2.py	/^_SYN_GAME_RET = _descriptor.Descriptor($/;"	kind:variable	line:691
+_SYN_PLAYER_DATA	../pyproject/proto/player_data_pb2.py	/^_SYN_PLAYER_DATA = _descriptor.Descriptor($/;"	kind:variable	line:29
 _ServiceBuilder	../pylib/google/protobuf/service_reflection.py	/^class _ServiceBuilder(object):$/;"	kind:class	line:114
 _ServiceStubBuilder	../pylib/google/protobuf/service_reflection.py	/^class _ServiceStubBuilder(object):$/;"	kind:class	line:230
 _ServiceStubInit	../pylib/google/protobuf/service_reflection.py	/^    def _ServiceStubInit(stub, rpc_channel):$/;"	kind:function	line:258
@@ -1679,7 +1708,7 @@ __init__	../pyproject/db/dbs_mgr.py	/^    def __init__(self):$/;"	kind:member	li
 __init__	../pyproject/db/dbs_mgr.py	/^    def __init__(self):$/;"	kind:member	line:49
 __init__	../pyproject/db/dbs_mgr_mp.py	/^    def __init__(self):$/;"	kind:member	line:17
 __init__	../pyproject/db/dbs_mgr_mp.py	/^    def __init__(self):$/;"	kind:member	line:55
-__init__	../pyproject/db/redis_mgr.py	/^    def __init__(self):$/;"	kind:member	line:13
+__init__	../pyproject/db/redis_mgr.py	/^    def __init__(self):$/;"	kind:member	line:16
 __init__	../pyproject/encode_mgr/bin_encoder.py	/^    def __init__(self):$/;"	kind:member	line:7
 __init__	../pyproject/encode_mgr/bin_encoder.py	/^    def __init__(self):$/;"	kind:member	line:77
 __init__	../pyproject/encode_mgr/bin_encoder.py	/^    def __init__(self, buf):$/;"	kind:member	line:30
@@ -1800,16 +1829,20 @@ __module__	../pyproject/proto/enter_room_pb2.py	/^  __module__ = 'enter_room_pb2
 __module__	../pyproject/proto/enter_room_pb2.py	/^  __module__ = 'enter_room_pb2'$/;"	kind:variable	line:126
 __module__	../pyproject/proto/exit_room_pb2.py	/^  __module__ = 'exit_room_pb2'$/;"	kind:variable	line:109
 __module__	../pyproject/proto/exit_room_pb2.py	/^  __module__ = 'exit_room_pb2'$/;"	kind:variable	line:116
-__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:201
-__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:208
-__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:215
-__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:222
+__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:319
+__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:326
+__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:333
+__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:340
+__module__	../pyproject/proto/gm_config_pb2.py	/^  __module__ = 'gm_config_pb2'$/;"	kind:variable	line:347
 __module__	../pyproject/proto/login_pb2.py	/^  __module__ = 'login_pb2'$/;"	kind:variable	line:170
 __module__	../pyproject/proto/login_pb2.py	/^  __module__ = 'login_pb2'$/;"	kind:variable	line:177
-__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:255
-__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:262
-__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:269
-__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:276
+__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:326
+__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:333
+__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:340
+__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:347
+__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:354
+__module__	../pyproject/proto/opt_pb2.py	/^  __module__ = 'opt_pb2'$/;"	kind:variable	line:361
+__module__	../pyproject/proto/player_data_pb2.py	/^  __module__ = 'player_data_pb2'$/;"	kind:variable	line:84
 __module__	../pyproject/proto/query_room_scene_pb2.py	/^  __module__ = 'query_room_scene_pb2'$/;"	kind:variable	line:109
 __module__	../pyproject/proto/query_room_scene_pb2.py	/^  __module__ = 'query_room_scene_pb2'$/;"	kind:variable	line:116
 __ne__	../pylib/google/protobuf/internal/containers.py	/^  def __ne__(self, other):$/;"	kind:member	line:70
@@ -1888,9 +1921,12 @@ _b	../pyproject/proto/exit_room_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:
 _b	../pyproject/proto/gm_config_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
 _b	../pyproject/proto/login_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
 _b	../pyproject/proto/opt_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
+_b	../pyproject/proto/player_data_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
 _b	../pyproject/proto/query_room_scene_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	kind:variable	line:5
 _bypass_ensure_directory	../pylib/pkg_resources.py	/^def _bypass_ensure_directory(name, mode=0777):$/;"	kind:function	line:29
 _call_module_func	../pyproject/auto_update/xupdate.py	/^def _call_module_func(module, func_name, *args):$/;"	kind:function	line:209
+_cb	../pyproject/robot/gas_gm_config_opt.py	/^    def _cb(err, data):$/;"	kind:function	line:51
+_cb	../pyproject/robot/gas_gm_config_opt.py	/^    def _cb(err, dictData):$/;"	kind:function	line:15
 _cbProcess	../pylib/thrift/transport/TTwisted.py	/^    def _cbProcess(self, _, request, tmo):$/;"	kind:member	line:203
 _dbs	../pyproject/db/dbs_mgr.py	/^_dbs = DbsMgr()$/;"	kind:variable	line:172
 _dbs	../pyproject/db/dbs_mgr_mp.py	/^_dbs = DbsMgr()$/;"	kind:variable	line:170
@@ -1906,7 +1942,7 @@ _gamMgr	../pyproject/gate_mgr/game_manager.py	/^_gamMgr = GameManager()$/;"	kind
 _gameRuleMgr	../pyproject/gas/gas_game_rule/game_rule_mgr.py	/^_gameRuleMgr = GasGameRuleMgr()$/;"	kind:variable	line:17
 _gasSceneMgr	../pyproject/gas/gas_scene/gas_scene_mgr.py	/^_gasSceneMgr = GasSceneMgr()$/;"	kind:variable	line:99
 _gateMgr	../pyproject/gate_mgr/gate_mgr.py	/^_gateMgr = GateMgr()$/;"	kind:variable	line:37
-_gccRoomMgr	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^_gccRoomMgr = GccRoomMgr()$/;"	kind:variable	line:74
+_gccRoomMgr	../pyproject/gcc/gcc_room_mgr/gcc_room_mgr.py	/^_gccRoomMgr = GccRoomMgr()$/;"	kind:variable	line:79
 _gccSceneMgr	../pyproject/gcc/gcc_scene/gcc_scene_mgr.py	/^_gccSceneMgr = GccSceneMgr()$/;"	kind:variable	line:82
 _get	../pylib/pkg_resources.py	/^    _get          = lambda self,path: ''$/;"	kind:variable	line:1301
 _get	../pylib/pkg_resources.py	/^    def _get(self, path):$/;"	kind:member	line:1236
@@ -1956,7 +1992,7 @@ _resource_to_zip	../pylib/pkg_resources.py	/^    def _resource_to_zip(self,resou
 _retGetGateAddr	../pyproject/login/login_mgr.py	/^        def _retGetGateAddr(err, msg):$/;"	kind:function	line:112
 _robotMgr	../pyproject/robot/robot_mgr.py	/^_robotMgr = RobotMgr()$/;"	kind:variable	line:44
 _roomIDMgr	../pyproject/id_manager/room_id_mgr.py	/^_roomIDMgr = idgen_t(EIdType.eIdTypeRoom, conf.dict_cfg["server_id"])$/;"	kind:variable	line:72
-_roomMgr	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^_roomMgr = RoomService()$/;"	kind:variable	line:97
+_roomMgr	../pyproject/gas/gas_room_mgr/gas_room_mgr.py	/^_roomMgr = RoomService()$/;"	kind:variable	line:98
 _select	../pylib/thrift/server/TNonblockingServer.py	/^    def _select(self):$/;"	kind:member	line:287
 _set_message	../pylib/thrift/Thrift.py	/^    def _set_message(self, message):$/;"	kind:member	line:84
 _set_parent_ns	../pylib/pkg_resources.py	/^def _set_parent_ns(packageName):$/;"	kind:function	line:1838
@@ -1973,9 +2009,10 @@ _sym_db	../pyproject/proto/common_info_pb2.py	/^_sym_db = _symbol_database.Defau
 _sym_db	../pyproject/proto/create_room_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
 _sym_db	../pyproject/proto/enter_room_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
 _sym_db	../pyproject/proto/exit_room_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
-_sym_db	../pyproject/proto/gm_config_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
+_sym_db	../pyproject/proto/gm_config_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:14
 _sym_db	../pyproject/proto/login_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:14
 _sym_db	../pyproject/proto/opt_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
+_sym_db	../pyproject/proto/player_data_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
 _sym_db	../pyproject/proto/query_room_scene_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	kind:variable	line:13
 _update_classmethod	../pyproject/auto_update/xupdate.py	/^def _update_classmethod(oldobj, newobj, depth):$/;"	kind:function	line:154
 _update_dict	../pyproject/auto_update/xupdate.py	/^def _update_dict(old_dict, new_dict, depth):$/;"	kind:function	line:70
@@ -1987,6 +2024,7 @@ _update_old_style_class	../pyproject/auto_update/xupdate.py	/^def _update_old_st
 _update_staticmethod	../pyproject/auto_update/xupdate.py	/^def _update_staticmethod(oldobj, newobj, depth):$/;"	kind:function	line:146
 _validate_cert	../pylib/thrift/transport/TSSLSocket.py	/^  def _validate_cert(self):$/;"	kind:member	line:105
 _zipinfo_name	../pylib/pkg_resources.py	/^    def _zipinfo_name(self, fspath):$/;"	kind:member	line:1323
+a	../pyproject/db/redis_mgr.py	/^a = [1, 2, 3]$/;"	kind:variable	line:86
 accept	../pylib/thrift/transport/TSSLSocket.py	/^  def accept(self):$/;"	kind:member	line:186
 accept	../pylib/thrift/transport/TSocket.py	/^  def accept(self):$/;"	kind:member	line:172
 accept	../pylib/thrift/transport/TTransport.py	/^  def accept(self):$/;"	kind:member	line:109
@@ -2007,6 +2045,7 @@ analyzeAnGang	../pyproject/gas/gas_mj/check_hu.py	/^def analyzeAnGang( mjArr, hu
 api_implementation.py	../pylib/google/protobuf/internal/api_implementation.py	1;"	kind:file	line:1
 append	../pylib/google/protobuf/internal/containers.py	/^  def append(self, value):$/;"	kind:member	line:109
 append	../pylib/google/protobuf/internal/cpp_message.py	/^  def append(self, value):$/;"	kind:member	line:114
+apply	../pyproject/proto/gm_config_pb2.py	/^apply = 1$/;"	kind:variable	line:54
 as_requirement	../pylib/pkg_resources.py	/^    def as_requirement(self):$/;"	kind:member	line:2212
 auto_update.py	../pyproject/auto_update/auto_update.py	1;"	kind:file	line:1
 base_compment.py	../pyproject/compment/base_compment.py	1;"	kind:file	line:1
@@ -2066,6 +2105,7 @@ compment_money.py	../pyproject/compment/compment_money.py	1;"	kind:file	line:1
 component_re	../pylib/pkg_resources.py	/^component_re = re.compile(r'(\\d+ | [a-z]+ | \\.| -)', re.VERBOSE)$/;"	kind:variable	line:1872
 conf.py	../pyproject/conf.py	1;"	kind:file	line:1
 conf1.py	../pyproject/conf1.py	1;"	kind:file	line:1
+config_data	../pyproject/proto/gm_config_pb2.py	/^config_data = _reflection.GeneratedProtocolMessageType('config_data', (_message.Message,), dict($/;"	kind:variable	line:317
 connectionLost	../pylib/thrift/transport/TTwisted.py	/^    def connectionLost(self, reason=connectionDone):$/;"	kind:member	line:83
 connectionMade	../pylib/thrift/transport/TTwisted.py	/^    def connectionMade(self):$/;"	kind:member	line:78
 const_entity.py	../pyproject/entity/const_entity.py	1;"	kind:file	line:1
@@ -2121,17 +2161,22 @@ containing_type	../pyproject/proto/enter_room_pb2.py	/^  containing_type=None,$/
 containing_type	../pyproject/proto/enter_room_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:74
 containing_type	../pyproject/proto/exit_room_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:34
 containing_type	../pyproject/proto/exit_room_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:72
-containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:110
-containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:155
-containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:34
+containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:131
+containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:162
+containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:214
+containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:259
+containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:46
 containing_type	../pyproject/proto/gm_config_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:65
 containing_type	../pyproject/proto/login_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:110
 containing_type	../pyproject/proto/login_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:46
 containing_type	../pyproject/proto/login_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:65
 containing_type	../pyproject/proto/opt_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:140
 containing_type	../pyproject/proto/opt_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:178
+containing_type	../pyproject/proto/opt_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:251
+containing_type	../pyproject/proto/opt_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:282
 containing_type	../pyproject/proto/opt_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:36
 containing_type	../pyproject/proto/opt_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:81
+containing_type	../pyproject/proto/player_data_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:34
 containing_type	../pyproject/proto/query_room_scene_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:34
 containing_type	../pyproject/proto/query_room_scene_pb2.py	/^  containing_type=None,$/;"	kind:variable	line:65
 cpp_message.py	../pylib/google/protobuf/internal/cpp_message.py	1;"	kind:file	line:1
@@ -2161,6 +2206,7 @@ declare_namespace	../pylib/pkg_resources.py	/^def declare_namespace(packageName)
 decode_buff	../pylib/ffext.py	/^def decode_buff(dest, val_):$/;"	kind:function	line:71
 decoder.py	../pylib/google/protobuf/internal/decoder.py	1;"	kind:file	line:1
 default_except_handler	../pylib/event_bus.py	/^        def default_except_handler(exception_):$/;"	kind:function	line:10
+delete	../pyproject/proto/gm_config_pb2.py	/^delete = 2$/;"	kind:variable	line:55
 dependencies	../pyproject/proto/create_room_pb2.py	/^  dependencies=[common__info__pb2.DESCRIPTOR,])$/;"	kind:variable	line:25
 dependencies	../pyproject/proto/enter_room_pb2.py	/^  dependencies=[common__info__pb2.DESCRIPTOR,])$/;"	kind:variable	line:25
 dependencies	../pyproject/proto/opt_pb2.py	/^  dependencies=[common__info__pb2.DESCRIPTOR,])$/;"	kind:variable	line:25
@@ -2170,7 +2216,7 @@ descriptor_pb2.py	../pylib/google/protobuf/descriptor_pb2.py	1;"	kind:file	line:
 descriptor_pool.py	../pylib/google/protobuf/descriptor_pool.py	1;"	kind:file	line:1
 deserialize	../pylib/thrift/TSerialization.py	/^def deserialize(base,$/;"	kind:function	line:32
 dictMjOpt	../pyproject/gas/gas_mj/gas_mj_rcp.py	/^dictMjOpt = {$/;"	kind:variable	line:10
-dict_cfg	../pyproject/conf.py	/^dict_cfg = {$/;"	kind:variable	line:15
+dict_cfg	../pyproject/conf.py	/^dict_cfg = {$/;"	kind:variable	line:22
 dict_cfg	../pyproject/conf1.py	/^dict_cfg = {$/;"	kind:variable	line:3
 dict_merge	../pyproject/util/util.py	/^def dict_merge(dictSrc, dictDst):$/;"	kind:function	line:14
 dict_white_list	../pyproject/white_list.py	/^dict_white_list = {$/;"	kind:variable	line:5
@@ -2260,16 +2306,20 @@ enum_types	../pyproject/proto/enter_room_pb2.py	/^  enum_types=[$/;"	kind:variab
 enum_types	../pyproject/proto/enter_room_pb2.py	/^  enum_types=[$/;"	kind:variable	line:56
 enum_types	../pyproject/proto/exit_room_pb2.py	/^  enum_types=[$/;"	kind:variable	line:54
 enum_types	../pyproject/proto/exit_room_pb2.py	/^  enum_types=[$/;"	kind:variable	line:92
-enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:137
-enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:182
-enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:47
-enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:92
+enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:113
+enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:144
+enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:196
+enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:241
+enum_types	../pyproject/proto/gm_config_pb2.py	/^  enum_types=[$/;"	kind:variable	line:293
 enum_types	../pyproject/proto/login_pb2.py	/^  enum_types=[$/;"	kind:variable	line:151
 enum_types	../pyproject/proto/login_pb2.py	/^  enum_types=[$/;"	kind:variable	line:92
 enum_types	../pyproject/proto/opt_pb2.py	/^  enum_types=[$/;"	kind:variable	line:122
 enum_types	../pyproject/proto/opt_pb2.py	/^  enum_types=[$/;"	kind:variable	line:160
 enum_types	../pyproject/proto/opt_pb2.py	/^  enum_types=[$/;"	kind:variable	line:233
+enum_types	../pyproject/proto/opt_pb2.py	/^  enum_types=[$/;"	kind:variable	line:264
+enum_types	../pyproject/proto/opt_pb2.py	/^  enum_types=[$/;"	kind:variable	line:302
 enum_types	../pyproject/proto/opt_pb2.py	/^  enum_types=[$/;"	kind:variable	line:63
+enum_types	../pyproject/proto/player_data_pb2.py	/^  enum_types=[$/;"	kind:variable	line:68
 enum_types	../pyproject/proto/query_room_scene_pb2.py	/^  enum_types=[$/;"	kind:variable	line:47
 enum_types	../pyproject/proto/query_room_scene_pb2.py	/^  enum_types=[$/;"	kind:variable	line:92
 error_msg.py	../pyproject/util/error_msg.py	1;"	kind:file	line:1
@@ -2395,16 +2445,20 @@ extension_ranges	../pyproject/proto/enter_room_pb2.py	/^  extension_ranges=[],$/
 extension_ranges	../pyproject/proto/enter_room_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:61
 extension_ranges	../pyproject/proto/exit_room_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:59
 extension_ranges	../pyproject/proto/exit_room_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:97
-extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:142
-extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:187
-extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:52
-extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:97
+extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:118
+extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:149
+extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:201
+extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:246
+extension_ranges	../pyproject/proto/gm_config_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:298
 extension_ranges	../pyproject/proto/login_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:156
 extension_ranges	../pyproject/proto/login_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:97
 extension_ranges	../pyproject/proto/opt_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:127
 extension_ranges	../pyproject/proto/opt_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:165
 extension_ranges	../pyproject/proto/opt_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:238
+extension_ranges	../pyproject/proto/opt_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:269
+extension_ranges	../pyproject/proto/opt_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:307
 extension_ranges	../pyproject/proto/opt_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:68
+extension_ranges	../pyproject/proto/player_data_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:73
 extension_ranges	../pyproject/proto/query_room_scene_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:52
 extension_ranges	../pyproject/proto/query_room_scene_pb2.py	/^  extension_ranges=[],$/;"	kind:variable	line:97
 extensions	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  extensions=[$/;"	kind:variable	line:127
@@ -2448,22 +2502,27 @@ extensions	../pyproject/proto/enter_room_pb2.py	/^  extensions=[$/;"	kind:variab
 extensions	../pyproject/proto/enter_room_pb2.py	/^  extensions=[$/;"	kind:variable	line:98
 extensions	../pyproject/proto/exit_room_pb2.py	/^  extensions=[$/;"	kind:variable	line:51
 extensions	../pyproject/proto/exit_room_pb2.py	/^  extensions=[$/;"	kind:variable	line:89
-extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:134
-extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:179
-extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:44
-extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:89
+extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:110
+extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:141
+extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:193
+extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:238
+extensions	../pyproject/proto/gm_config_pb2.py	/^  extensions=[$/;"	kind:variable	line:290
 extensions	../pyproject/proto/login_pb2.py	/^  extensions=[$/;"	kind:variable	line:148
 extensions	../pyproject/proto/login_pb2.py	/^  extensions=[$/;"	kind:variable	line:89
 extensions	../pyproject/proto/opt_pb2.py	/^  extensions=[$/;"	kind:variable	line:119
 extensions	../pyproject/proto/opt_pb2.py	/^  extensions=[$/;"	kind:variable	line:157
 extensions	../pyproject/proto/opt_pb2.py	/^  extensions=[$/;"	kind:variable	line:230
+extensions	../pyproject/proto/opt_pb2.py	/^  extensions=[$/;"	kind:variable	line:261
+extensions	../pyproject/proto/opt_pb2.py	/^  extensions=[$/;"	kind:variable	line:299
 extensions	../pyproject/proto/opt_pb2.py	/^  extensions=[$/;"	kind:variable	line:60
+extensions	../pyproject/proto/player_data_pb2.py	/^  extensions=[$/;"	kind:variable	line:65
 extensions	../pyproject/proto/query_room_scene_pb2.py	/^  extensions=[$/;"	kind:variable	line:44
 extensions	../pyproject/proto/query_room_scene_pb2.py	/^  extensions=[$/;"	kind:variable	line:89
 extraction_error	../pylib/pkg_resources.py	/^    def extraction_error(self):$/;"	kind:member	line:903
 extraction_path	../pylib/pkg_resources.py	/^    extraction_path = None$/;"	kind:variable	line:864
 extras	../pylib/pkg_resources.py	/^    def extras(self):$/;"	kind:member	line:2340
 extras	../pylib/pkg_resources.py	/^    extras = property(extras)$/;"	kind:variable	line:2342
+f	../pyproject/db/redis_mgr.py	/^def f(url, sock):$/;"	kind:function	line:66
 fastbinary	../pylib/thrift/protocol/TBase.py	/^  fastbinary = None$/;"	kind:variable	line:27
 fastbinary	../pylib/thrift_example/ff/ttypes.py	/^  fastbinary = None$/;"	kind:variable	line:16
 fastbinary	../pyproject/msg_def/ttypes.py	/^  fastbinary = None$/;"	kind:variable	line:16
@@ -2520,16 +2579,20 @@ fields	../pyproject/proto/enter_room_pb2.py	/^  fields=[$/;"	kind:variable	line:
 fields	../pyproject/proto/enter_room_pb2.py	/^  fields=[$/;"	kind:variable	line:75
 fields	../pyproject/proto/exit_room_pb2.py	/^  fields=[$/;"	kind:variable	line:35
 fields	../pyproject/proto/exit_room_pb2.py	/^  fields=[$/;"	kind:variable	line:73
-fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:111
-fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:156
-fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:35
+fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:132
+fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:163
+fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:215
+fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:260
 fields	../pyproject/proto/gm_config_pb2.py	/^  fields=[$/;"	kind:variable	line:66
 fields	../pyproject/proto/login_pb2.py	/^  fields=[$/;"	kind:variable	line:111
 fields	../pyproject/proto/login_pb2.py	/^  fields=[$/;"	kind:variable	line:66
 fields	../pyproject/proto/opt_pb2.py	/^  fields=[$/;"	kind:variable	line:141
 fields	../pyproject/proto/opt_pb2.py	/^  fields=[$/;"	kind:variable	line:179
+fields	../pyproject/proto/opt_pb2.py	/^  fields=[$/;"	kind:variable	line:252
+fields	../pyproject/proto/opt_pb2.py	/^  fields=[$/;"	kind:variable	line:283
 fields	../pyproject/proto/opt_pb2.py	/^  fields=[$/;"	kind:variable	line:37
 fields	../pyproject/proto/opt_pb2.py	/^  fields=[$/;"	kind:variable	line:82
+fields	../pyproject/proto/player_data_pb2.py	/^  fields=[$/;"	kind:variable	line:35
 fields	../pyproject/proto/query_room_scene_pb2.py	/^  fields=[$/;"	kind:variable	line:35
 fields	../pyproject/proto/query_room_scene_pb2.py	/^  fields=[$/;"	kind:variable	line:66
 file	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:109
@@ -2580,17 +2643,22 @@ file	../pyproject/proto/enter_room_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable
 file	../pyproject/proto/enter_room_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:73
 file	../pyproject/proto/exit_room_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:33
 file	../pyproject/proto/exit_room_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:71
-file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:109
-file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:154
-file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:33
+file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:130
+file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:161
+file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:213
+file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:258
+file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:31
 file	../pyproject/proto/gm_config_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:64
 file	../pyproject/proto/login_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:109
 file	../pyproject/proto/login_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:31
 file	../pyproject/proto/login_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:64
 file	../pyproject/proto/opt_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:139
 file	../pyproject/proto/opt_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:177
+file	../pyproject/proto/opt_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:250
+file	../pyproject/proto/opt_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:281
 file	../pyproject/proto/opt_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:35
 file	../pyproject/proto/opt_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:80
+file	../pyproject/proto/player_data_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:33
 file	../pyproject/proto/query_room_scene_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:33
 file	../pyproject/proto/query_room_scene_pb2.py	/^  file=DESCRIPTOR,$/;"	kind:variable	line:64
 file_ns_handler	../pylib/pkg_resources.py	/^def file_ns_handler(importer, path_item, packageName, module):$/;"	kind:function	line:1805
@@ -2642,17 +2710,22 @@ filename	../pyproject/proto/enter_room_pb2.py	/^  filename=None,$/;"	kind:variab
 filename	../pyproject/proto/enter_room_pb2.py	/^  filename=None,$/;"	kind:variable	line:72
 filename	../pyproject/proto/exit_room_pb2.py	/^  filename=None,$/;"	kind:variable	line:32
 filename	../pyproject/proto/exit_room_pb2.py	/^  filename=None,$/;"	kind:variable	line:70
-filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:108
-filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:153
-filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:32
+filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:129
+filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:160
+filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:212
+filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:257
+filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:30
 filename	../pyproject/proto/gm_config_pb2.py	/^  filename=None,$/;"	kind:variable	line:63
 filename	../pyproject/proto/login_pb2.py	/^  filename=None,$/;"	kind:variable	line:108
 filename	../pyproject/proto/login_pb2.py	/^  filename=None,$/;"	kind:variable	line:30
 filename	../pyproject/proto/login_pb2.py	/^  filename=None,$/;"	kind:variable	line:63
 filename	../pyproject/proto/opt_pb2.py	/^  filename=None,$/;"	kind:variable	line:138
 filename	../pyproject/proto/opt_pb2.py	/^  filename=None,$/;"	kind:variable	line:176
+filename	../pyproject/proto/opt_pb2.py	/^  filename=None,$/;"	kind:variable	line:249
+filename	../pyproject/proto/opt_pb2.py	/^  filename=None,$/;"	kind:variable	line:280
 filename	../pyproject/proto/opt_pb2.py	/^  filename=None,$/;"	kind:variable	line:34
 filename	../pyproject/proto/opt_pb2.py	/^  filename=None,$/;"	kind:variable	line:79
+filename	../pyproject/proto/player_data_pb2.py	/^  filename=None,$/;"	kind:variable	line:32
 filename	../pyproject/proto/query_room_scene_pb2.py	/^  filename=None,$/;"	kind:variable	line:32
 filename	../pyproject/proto/query_room_scene_pb2.py	/^  filename=None,$/;"	kind:variable	line:63
 fileno	../pylib/thrift/server/TNonblockingServer.py	/^    def fileno(self):$/;"	kind:member	line:212
@@ -2731,20 +2804,26 @@ full_name	../pyproject/proto/enter_room_pb2.py	/^  full_name='enter_room_req',$/
 full_name	../pyproject/proto/enter_room_pb2.py	/^  full_name='enter_room_rsp',$/;"	kind:variable	line:71
 full_name	../pyproject/proto/exit_room_pb2.py	/^  full_name='exit_room_req',$/;"	kind:variable	line:31
 full_name	../pyproject/proto/exit_room_pb2.py	/^  full_name='exit_room_rsp',$/;"	kind:variable	line:69
-full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='load_config_req',$/;"	kind:variable	line:31
-full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='load_config_rsp',$/;"	kind:variable	line:62
-full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='opt_config_req',$/;"	kind:variable	line:107
-full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='opt_config_rsp',$/;"	kind:variable	line:152
+full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='config_data',$/;"	kind:variable	line:62
+full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='gm_config_opt',$/;"	kind:variable	line:29
+full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='opt_config_req',$/;"	kind:variable	line:211
+full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='opt_config_rsp',$/;"	kind:variable	line:256
+full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='syn_all_gm_config_req',$/;"	kind:variable	line:128
+full_name	../pyproject/proto/gm_config_pb2.py	/^  full_name='syn_all_gm_config_rsp',$/;"	kind:variable	line:159
 full_name	../pyproject/proto/login_pb2.py	/^  full_name='login_req',$/;"	kind:variable	line:62
 full_name	../pyproject/proto/login_pb2.py	/^  full_name='login_rsp',$/;"	kind:variable	line:107
 full_name	../pyproject/proto/login_pb2.py	/^  full_name='login_type',$/;"	kind:variable	line:29
+full_name	../pyproject/proto/opt_pb2.py	/^  full_name='game_ready_req',$/;"	kind:variable	line:248
+full_name	../pyproject/proto/opt_pb2.py	/^  full_name='game_ready_rsp',$/;"	kind:variable	line:279
 full_name	../pyproject/proto/opt_pb2.py	/^  full_name='opt_req',$/;"	kind:variable	line:33
 full_name	../pyproject/proto/opt_pb2.py	/^  full_name='opt_rsp',$/;"	kind:variable	line:78
 full_name	../pyproject/proto/opt_pb2.py	/^  full_name='syn_card_info',$/;"	kind:variable	line:137
 full_name	../pyproject/proto/opt_pb2.py	/^  full_name='syn_game_order',$/;"	kind:variable	line:175
+full_name	../pyproject/proto/player_data_pb2.py	/^  full_name='syn_player_data',$/;"	kind:variable	line:31
 full_name	../pyproject/proto/query_room_scene_pb2.py	/^  full_name='query_room_scene_req',$/;"	kind:variable	line:31
 full_name	../pyproject/proto/query_room_scene_pb2.py	/^  full_name='query_room_scene_rsp',$/;"	kind:variable	line:62
 gIndex	../pyproject/test_enter1.py	/^gIndex = 0$/;"	kind:variable	line:7
+gIndex	../pyproject/test_enter2.py	/^gIndex = 0$/;"	kind:variable	line:7
 g_NeedHunCount	../pyproject/gas/gas_mj/check_hu.py	/^g_NeedHunCount = 4$/;"	kind:variable	line:32
 g_ReadTBinaryProtocol	../pylib/ffext.py	/^g_ReadTBinaryProtocol = TBinaryProtocol.TBinaryProtocol(g_ReadTMemoryBuffer)$/;"	kind:variable	line:69
 g_ReadTMemoryBuffer	../pylib/ffext.py	/^g_ReadTMemoryBuffer   = TTransport.TMemoryBuffer()$/;"	kind:variable	line:68
@@ -2754,6 +2833,7 @@ g_call_service_id	../pylib/ffext.py	/^g_call_service_id   = 1$/;"	kind:variable	
 g_call_service_wait_return_dict	../pylib/ffext.py	/^g_call_service_wait_return_dict = {}$/;"	kind:variable	line:276
 g_dLastModifyTime	../pyproject/auto_update/auto_update.py	/^g_dLastModifyTime = {}  #szFilePath:time$/;"	kind:variable	line:9
 g_dictAllEntity	../pyproject/entity/entity_mgr.py	/^g_dictAllEntity = {} # session 2 entityid$/;"	kind:variable	line:3
+g_dictAllGmConfig	../pyproject/robot/gm_opt_config.py	/^g_dictAllGmConfig = {}$/;"	kind:variable	line:12
 g_dictSerial2CbInfo	../pyproject/db/dbs_client.py	/^g_dictSerial2CbInfo = {}$/;"	kind:variable	line:14
 g_dictToken	../pyproject/util/gm_tool.py	/^g_dictToken = {$/;"	kind:variable	line:8
 g_job	../pyproject/wsurl/wsurl.py	/^g_job=0$/;"	kind:variable	line:100
@@ -2768,6 +2848,7 @@ g_session_enter_callback	../pylib/ffext.py	/^g_session_enter_callback   = None$/
 g_session_logic_callback_dict	../pylib/ffext.py	/^g_session_logic_callback_dict = {}#cmd -> func callback$/;"	kind:variable	line:15
 g_session_offline_callback	../pylib/ffext.py	/^g_session_offline_callback = None$/;"	kind:variable	line:14
 g_session_verify_callback	../pylib/ffext.py	/^g_session_verify_callback  = None$/;"	kind:variable	line:12
+g_szCurConfigName	../pyproject/robot/gm_opt_config.py	/^g_szCurConfigName = None$/;"	kind:variable	line:11
 g_testMjsArr	../pyproject/gas/gas_mj/check_hu.py	/^g_testMjsArr = [$/;"	kind:variable	line:84
 g_timer_callback_dict	../pylib/ffext.py	/^g_timer_callback_dict = {}$/;"	kind:variable	line:16
 g_urlMgr	../pyproject/wsurl/http_mod.py	/^g_urlMgr = None$/;"	kind:variable	line:5
@@ -2775,7 +2856,10 @@ gac2room_rpc.py	../pyproject/rpc/gac2room_rpc.py	1;"	kind:file	line:1
 game_card_list	../pyproject/proto/common_info_pb2.py	/^game_card_list = _reflection.GeneratedProtocolMessageType('game_card_list', (_message.Message,), dict($/;"	kind:variable	line:823
 game_cfg	../pyproject/proto/common_info_pb2.py	/^game_cfg = _reflection.GeneratedProtocolMessageType('game_cfg', (_message.Message,), dict($/;"	kind:variable	line:816
 game_manager.py	../pyproject/gate_mgr/game_manager.py	1;"	kind:file	line:1
+game_ready_req	../pyproject/proto/opt_pb2.py	/^game_ready_req = _reflection.GeneratedProtocolMessageType('game_ready_req', (_message.Message,), dict($/;"	kind:variable	line:352
+game_ready_rsp	../pyproject/proto/opt_pb2.py	/^game_ready_rsp = _reflection.GeneratedProtocolMessageType('game_ready_rsp', (_message.Message,), dict($/;"	kind:variable	line:359
 game_rule_mgr.py	../pyproject/gas/gas_game_rule/game_rule_mgr.py	1;"	kind:file	line:1
+gas_gm_config_opt.py	../pyproject/robot/gas_gm_config_opt.py	1;"	kind:file	line:1
 gas_mj_event_mgr.py	../pyproject/gas/gas_mj/gas_mj_event_mgr.py	1;"	kind:file	line:1
 gas_mj_mgr.py	../pyproject/gas/gas_mj/gas_mj_mgr.py	1;"	kind:file	line:1
 gas_mj_rcp.py	../pyproject/gas/gas_mj/gas_mj_rcp.py	1;"	kind:file	line:1
@@ -2845,6 +2929,7 @@ getter	../pylib/google/protobuf/internal/python_message.py	/^  def getter(self):
 getter	../pylib/google/protobuf/internal/python_message.py	/^  def getter(self):$/;"	kind:function	line:491
 getvalue	../pylib/thrift/transport/TTransport.py	/^  def getvalue(self):$/;"	kind:member	line:228
 gm_code	../pyproject/proto/login_pb2.py	/^gm_code = 3$/;"	kind:variable	line:56
+gm_config_opt	../pyproject/proto/gm_config_pb2.py	/^gm_config_opt = enum_type_wrapper.EnumTypeWrapper(_GM_CONFIG_OPT)$/;"	kind:variable	line:53
 gm_config_pb2.py	../pyproject/proto/gm_config_pb2.py	1;"	kind:file	line:1
 gm_opt_config.py	../pyproject/robot/gm_opt_config.py	1;"	kind:file	line:1
 gm_tool.py	../pyproject/util/gm_tool.py	1;"	kind:file	line:1
@@ -2852,7 +2937,7 @@ gtime	../pyproject/wsurl/wsurl.py	/^gtime=0$/;"	kind:variable	line:101
 half	../pyproject/proto/common_info_pb2.py	/^half = 1$/;"	kind:variable	line:212
 handle	../pylib/thrift/server/TNonblockingServer.py	/^    def handle(self):$/;"	kind:member	line:300
 handle	../pylib/thrift/server/TServer.py	/^  def handle(self, client):$/;"	kind:member	line:114
-handle	../pyproject/db/redis_mgr.py	/^def handle(socket,address):$/;"	kind:function	line:35
+handle	../pyproject/db/redis_mgr.py	/^def handle(socket,address):$/;"	kind:function	line:72
 has_metadata	../pylib/pkg_resources.py	/^    def has_metadata(name):$/;"	kind:member	line:331
 has_metadata	../pylib/pkg_resources.py	/^    def has_metadata(self, name):$/;"	kind:member	line:1172
 has_metadata	../pylib/pkg_resources.py	/^    def has_metadata(self,name):$/;"	kind:member	line:1492
@@ -2930,16 +3015,20 @@ is_extendable	../pyproject/proto/enter_room_pb2.py	/^  is_extendable=False,$/;"	
 is_extendable	../pyproject/proto/enter_room_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:59
 is_extendable	../pyproject/proto/exit_room_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:57
 is_extendable	../pyproject/proto/exit_room_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:95
-is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:140
-is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:185
-is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:50
-is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:95
+is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:116
+is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:147
+is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:199
+is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:244
+is_extendable	../pyproject/proto/gm_config_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:296
 is_extendable	../pyproject/proto/login_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:154
 is_extendable	../pyproject/proto/login_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:95
 is_extendable	../pyproject/proto/opt_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:125
 is_extendable	../pyproject/proto/opt_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:163
 is_extendable	../pyproject/proto/opt_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:236
+is_extendable	../pyproject/proto/opt_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:267
+is_extendable	../pyproject/proto/opt_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:305
 is_extendable	../pyproject/proto/opt_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:66
+is_extendable	../pyproject/proto/player_data_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:71
 is_extendable	../pyproject/proto/query_room_scene_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:50
 is_extendable	../pyproject/proto/query_room_scene_pb2.py	/^  is_extendable=False,$/;"	kind:variable	line:95
 is_readable	../pylib/thrift/server/TNonblockingServer.py	/^    def is_readable(self):$/;"	kind:member	line:203
@@ -2960,8 +3049,6 @@ listen	../pylib/thrift/transport/TSocket.py	/^  def listen(self):$/;"	kind:membe
 listen	../pylib/thrift/transport/TTransport.py	/^  def listen(self):$/;"	kind:member	line:106
 listen	../pylib/thrift/transport/TZlibTransport.py	/^  def listen(self):$/;"	kind:member	line:167
 load	../pylib/pkg_resources.py	/^    def load(self, require=True, env=None, installer=None):$/;"	kind:member	line:1952
-load_config_req	../pyproject/proto/gm_config_pb2.py	/^load_config_req = _reflection.GeneratedProtocolMessageType('load_config_req', (_message.Message,), dict($/;"	kind:variable	line:199
-load_config_rsp	../pyproject/proto/gm_config_pb2.py	/^load_config_rsp = _reflection.GeneratedProtocolMessageType('load_config_rsp', (_message.Message,), dict($/;"	kind:variable	line:206
 load_entry_point	../pylib/pkg_resources.py	/^    def load_entry_point(self, group, name):$/;"	kind:member	line:2216
 load_entry_point	../pylib/pkg_resources.py	/^def load_entry_point(dist, group, name):$/;"	kind:function	line:316
 load_module	../pylib/pkg_resources.py	/^    def load_module(self, fullname):$/;"	kind:member	line:1588
@@ -2993,6 +3080,7 @@ metadata_isdir	../pylib/pkg_resources.py	/^    def metadata_isdir(name):$/;"	kin
 metadata_isdir	../pylib/pkg_resources.py	/^    def metadata_isdir(self,name):$/;"	kind:member	line:1186
 metadata_listdir	../pylib/pkg_resources.py	/^    def metadata_listdir(name):$/;"	kind:member	line:346
 metadata_listdir	../pylib/pkg_resources.py	/^    def metadata_listdir(self,name):$/;"	kind:member	line:1193
+modify	../pyproject/proto/gm_config_pb2.py	/^modify = 3$/;"	kind:variable	line:56
 module_path	../pylib/pkg_resources.py	/^    module_path   = None$/;"	kind:variable	line:1303
 msg_pb2.py	../pylib/protobuf_example/msg_pb2.py	1;"	kind:file	line:1
 multi_send_msg_session	../pylib/ffext.py	/^def multi_send_msg_session(session_id_list, cmd_, body):$/;"	kind:function	line:181
@@ -3055,20 +3143,26 @@ name	../pyproject/proto/enter_room_pb2.py	/^  name='enter_room_rsp',$/;"	kind:va
 name	../pyproject/proto/exit_room_pb2.py	/^  name='exit_room.proto',$/;"	kind:variable	line:19
 name	../pyproject/proto/exit_room_pb2.py	/^  name='exit_room_req',$/;"	kind:variable	line:30
 name	../pyproject/proto/exit_room_pb2.py	/^  name='exit_room_rsp',$/;"	kind:variable	line:68
-name	../pyproject/proto/gm_config_pb2.py	/^  name='gm_config.proto',$/;"	kind:variable	line:19
-name	../pyproject/proto/gm_config_pb2.py	/^  name='load_config_req',$/;"	kind:variable	line:30
-name	../pyproject/proto/gm_config_pb2.py	/^  name='load_config_rsp',$/;"	kind:variable	line:61
-name	../pyproject/proto/gm_config_pb2.py	/^  name='opt_config_req',$/;"	kind:variable	line:106
-name	../pyproject/proto/gm_config_pb2.py	/^  name='opt_config_rsp',$/;"	kind:variable	line:151
+name	../pyproject/proto/gm_config_pb2.py	/^  name='config_data',$/;"	kind:variable	line:61
+name	../pyproject/proto/gm_config_pb2.py	/^  name='gm_config.proto',$/;"	kind:variable	line:20
+name	../pyproject/proto/gm_config_pb2.py	/^  name='gm_config_opt',$/;"	kind:variable	line:28
+name	../pyproject/proto/gm_config_pb2.py	/^  name='opt_config_req',$/;"	kind:variable	line:210
+name	../pyproject/proto/gm_config_pb2.py	/^  name='opt_config_rsp',$/;"	kind:variable	line:255
+name	../pyproject/proto/gm_config_pb2.py	/^  name='syn_all_gm_config_req',$/;"	kind:variable	line:127
+name	../pyproject/proto/gm_config_pb2.py	/^  name='syn_all_gm_config_rsp',$/;"	kind:variable	line:158
 name	../pyproject/proto/login_pb2.py	/^  name='login.proto',$/;"	kind:variable	line:20
 name	../pyproject/proto/login_pb2.py	/^  name='login_req',$/;"	kind:variable	line:61
 name	../pyproject/proto/login_pb2.py	/^  name='login_rsp',$/;"	kind:variable	line:106
 name	../pyproject/proto/login_pb2.py	/^  name='login_type',$/;"	kind:variable	line:28
+name	../pyproject/proto/opt_pb2.py	/^  name='game_ready_req',$/;"	kind:variable	line:247
+name	../pyproject/proto/opt_pb2.py	/^  name='game_ready_rsp',$/;"	kind:variable	line:278
 name	../pyproject/proto/opt_pb2.py	/^  name='opt.proto',$/;"	kind:variable	line:20
 name	../pyproject/proto/opt_pb2.py	/^  name='opt_req',$/;"	kind:variable	line:32
 name	../pyproject/proto/opt_pb2.py	/^  name='opt_rsp',$/;"	kind:variable	line:77
 name	../pyproject/proto/opt_pb2.py	/^  name='syn_card_info',$/;"	kind:variable	line:136
 name	../pyproject/proto/opt_pb2.py	/^  name='syn_game_order',$/;"	kind:variable	line:174
+name	../pyproject/proto/player_data_pb2.py	/^  name='player_data.proto',$/;"	kind:variable	line:19
+name	../pyproject/proto/player_data_pb2.py	/^  name='syn_player_data',$/;"	kind:variable	line:30
 name	../pyproject/proto/query_room_scene_pb2.py	/^  name='query_room_scene.proto',$/;"	kind:variable	line:19
 name	../pyproject/proto/query_room_scene_pb2.py	/^  name='query_room_scene_req',$/;"	kind:variable	line:30
 name	../pyproject/proto/query_room_scene_pb2.py	/^  name='query_room_scene_rsp',$/;"	kind:variable	line:61
@@ -3115,16 +3209,20 @@ nested_types	../pyproject/proto/enter_room_pb2.py	/^  nested_types=[],$/;"	kind:
 nested_types	../pyproject/proto/enter_room_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:55
 nested_types	../pyproject/proto/exit_room_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:53
 nested_types	../pyproject/proto/exit_room_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:91
-nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:136
-nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:181
-nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:46
-nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:91
+nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:112
+nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:143
+nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:195
+nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:240
+nested_types	../pyproject/proto/gm_config_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:292
 nested_types	../pyproject/proto/login_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:150
 nested_types	../pyproject/proto/login_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:91
 nested_types	../pyproject/proto/opt_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:121
 nested_types	../pyproject/proto/opt_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:159
 nested_types	../pyproject/proto/opt_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:232
+nested_types	../pyproject/proto/opt_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:263
+nested_types	../pyproject/proto/opt_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:301
 nested_types	../pyproject/proto/opt_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:62
+nested_types	../pyproject/proto/player_data_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:67
 nested_types	../pyproject/proto/query_room_scene_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:46
 nested_types	../pyproject/proto/query_room_scene_pb2.py	/^  nested_types=[],$/;"	kind:variable	line:91
 normalize_path	../pylib/pkg_resources.py	/^def normalize_path(filename):$/;"	kind:function	line:1827
@@ -3152,16 +3250,20 @@ oneofs	../pyproject/proto/enter_room_pb2.py	/^  oneofs=[$/;"	kind:variable	line:
 oneofs	../pyproject/proto/enter_room_pb2.py	/^  oneofs=[$/;"	kind:variable	line:62
 oneofs	../pyproject/proto/exit_room_pb2.py	/^  oneofs=[$/;"	kind:variable	line:60
 oneofs	../pyproject/proto/exit_room_pb2.py	/^  oneofs=[$/;"	kind:variable	line:98
-oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:143
-oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:188
-oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:53
-oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:98
+oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:119
+oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:150
+oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:202
+oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:247
+oneofs	../pyproject/proto/gm_config_pb2.py	/^  oneofs=[$/;"	kind:variable	line:299
 oneofs	../pyproject/proto/login_pb2.py	/^  oneofs=[$/;"	kind:variable	line:157
 oneofs	../pyproject/proto/login_pb2.py	/^  oneofs=[$/;"	kind:variable	line:98
 oneofs	../pyproject/proto/opt_pb2.py	/^  oneofs=[$/;"	kind:variable	line:128
 oneofs	../pyproject/proto/opt_pb2.py	/^  oneofs=[$/;"	kind:variable	line:166
 oneofs	../pyproject/proto/opt_pb2.py	/^  oneofs=[$/;"	kind:variable	line:239
+oneofs	../pyproject/proto/opt_pb2.py	/^  oneofs=[$/;"	kind:variable	line:270
+oneofs	../pyproject/proto/opt_pb2.py	/^  oneofs=[$/;"	kind:variable	line:308
 oneofs	../pyproject/proto/opt_pb2.py	/^  oneofs=[$/;"	kind:variable	line:69
+oneofs	../pyproject/proto/player_data_pb2.py	/^  oneofs=[$/;"	kind:variable	line:74
 oneofs	../pyproject/proto/query_room_scene_pb2.py	/^  oneofs=[$/;"	kind:variable	line:53
 oneofs	../pyproject/proto/query_room_scene_pb2.py	/^  oneofs=[$/;"	kind:variable	line:98
 open	../pylib/thrift/transport/THttpClient.py	/^  def open(self):$/;"	kind:member	line:71
@@ -3174,11 +3276,11 @@ open	../pylib/thrift/transport/TTransport.py	/^  def open(self):$/;"	kind:member
 open	../pylib/thrift/transport/TZlibTransport.py	/^  def open(self):$/;"	kind:member	line:162
 oprot_factory	../pylib/thrift/transport/TTwisted.py	/^    oprot_factory = Attribute("Output protocol factory")$/;"	kind:variable	line:138
 oprot_factory	../pylib/thrift/transport/TTwisted.py	/^    oprot_factory = Attribute("Output protocol factory")$/;"	kind:variable	line:147
-opt_config_req	../pyproject/proto/gm_config_pb2.py	/^opt_config_req = _reflection.GeneratedProtocolMessageType('opt_config_req', (_message.Message,), dict($/;"	kind:variable	line:213
-opt_config_rsp	../pyproject/proto/gm_config_pb2.py	/^opt_config_rsp = _reflection.GeneratedProtocolMessageType('opt_config_rsp', (_message.Message,), dict($/;"	kind:variable	line:220
+opt_config_req	../pyproject/proto/gm_config_pb2.py	/^opt_config_req = _reflection.GeneratedProtocolMessageType('opt_config_req', (_message.Message,), dict($/;"	kind:variable	line:338
+opt_config_rsp	../pyproject/proto/gm_config_pb2.py	/^opt_config_rsp = _reflection.GeneratedProtocolMessageType('opt_config_rsp', (_message.Message,), dict($/;"	kind:variable	line:345
 opt_pb2.py	../pyproject/proto/opt_pb2.py	1;"	kind:file	line:1
-opt_req	../pyproject/proto/opt_pb2.py	/^opt_req = _reflection.GeneratedProtocolMessageType('opt_req', (_message.Message,), dict($/;"	kind:variable	line:253
-opt_rsp	../pyproject/proto/opt_pb2.py	/^opt_rsp = _reflection.GeneratedProtocolMessageType('opt_rsp', (_message.Message,), dict($/;"	kind:variable	line:260
+opt_req	../pyproject/proto/opt_pb2.py	/^opt_req = _reflection.GeneratedProtocolMessageType('opt_req', (_message.Message,), dict($/;"	kind:variable	line:324
+opt_rsp	../pyproject/proto/opt_pb2.py	/^opt_rsp = _reflection.GeneratedProtocolMessageType('opt_rsp', (_message.Message,), dict($/;"	kind:variable	line:331
 options	../pylib/google/protobuf/compiler/plugin_pb2.py	/^      options=None),$/;"	kind:variable	line:118
 options	../pylib/google/protobuf/compiler/plugin_pb2.py	/^      options=None),$/;"	kind:variable	line:125
 options	../pylib/google/protobuf/compiler/plugin_pb2.py	/^      options=None),$/;"	kind:variable	line:35
@@ -3450,20 +3552,33 @@ options	../pyproject/proto/exit_room_pb2.py	/^      options=None),$/;"	kind:vari
 options	../pyproject/proto/exit_room_pb2.py	/^      options=None),$/;"	kind:variable	line:87
 options	../pyproject/proto/exit_room_pb2.py	/^  options=None,$/;"	kind:variable	line:56
 options	../pyproject/proto/exit_room_pb2.py	/^  options=None,$/;"	kind:variable	line:94
-options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:118
-options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:125
-options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:132
-options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:163
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:101
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:108
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:139
 options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:170
 options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:177
-options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:42
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:184
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:191
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:222
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:229
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:236
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:267
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:274
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:281
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:288
 options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:73
 options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:80
 options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:87
-options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:139
-options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:184
-options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:49
-options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:94
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None),$/;"	kind:variable	line:94
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None,$/;"	kind:variable	line:35
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None,$/;"	kind:variable	line:39
+options	../pyproject/proto/gm_config_pb2.py	/^      options=None,$/;"	kind:variable	line:43
+options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:115
+options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:146
+options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:198
+options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:243
+options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:295
+options	../pyproject/proto/gm_config_pb2.py	/^  options=None,$/;"	kind:variable	line:47
 options	../pyproject/proto/login_pb2.py	/^      options=None),$/;"	kind:variable	line:118
 options	../pyproject/proto/login_pb2.py	/^      options=None),$/;"	kind:variable	line:125
 options	../pyproject/proto/login_pb2.py	/^      options=None),$/;"	kind:variable	line:132
@@ -3490,6 +3605,9 @@ options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	l
 options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:214
 options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:221
 options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:228
+options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:259
+options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:290
+options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:297
 options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:44
 options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:51
 options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	line:58
@@ -3498,7 +3616,14 @@ options	../pyproject/proto/opt_pb2.py	/^      options=None),$/;"	kind:variable	l
 options	../pyproject/proto/opt_pb2.py	/^  options=None,$/;"	kind:variable	line:124
 options	../pyproject/proto/opt_pb2.py	/^  options=None,$/;"	kind:variable	line:162
 options	../pyproject/proto/opt_pb2.py	/^  options=None,$/;"	kind:variable	line:235
+options	../pyproject/proto/opt_pb2.py	/^  options=None,$/;"	kind:variable	line:266
+options	../pyproject/proto/opt_pb2.py	/^  options=None,$/;"	kind:variable	line:304
 options	../pyproject/proto/opt_pb2.py	/^  options=None,$/;"	kind:variable	line:65
+options	../pyproject/proto/player_data_pb2.py	/^      options=None),$/;"	kind:variable	line:42
+options	../pyproject/proto/player_data_pb2.py	/^      options=None),$/;"	kind:variable	line:49
+options	../pyproject/proto/player_data_pb2.py	/^      options=None),$/;"	kind:variable	line:56
+options	../pyproject/proto/player_data_pb2.py	/^      options=None),$/;"	kind:variable	line:63
+options	../pyproject/proto/player_data_pb2.py	/^  options=None,$/;"	kind:variable	line:70
 options	../pyproject/proto/query_room_scene_pb2.py	/^      options=None),$/;"	kind:variable	line:42
 options	../pyproject/proto/query_room_scene_pb2.py	/^      options=None),$/;"	kind:variable	line:73
 options	../pyproject/proto/query_room_scene_pb2.py	/^      options=None),$/;"	kind:variable	line:80
@@ -3515,9 +3640,10 @@ package	../pyproject/proto/common_info_pb2.py	/^  package='',$/;"	kind:variable	
 package	../pyproject/proto/create_room_pb2.py	/^  package='',$/;"	kind:variable	line:21
 package	../pyproject/proto/enter_room_pb2.py	/^  package='',$/;"	kind:variable	line:21
 package	../pyproject/proto/exit_room_pb2.py	/^  package='',$/;"	kind:variable	line:20
-package	../pyproject/proto/gm_config_pb2.py	/^  package='',$/;"	kind:variable	line:20
+package	../pyproject/proto/gm_config_pb2.py	/^  package='',$/;"	kind:variable	line:21
 package	../pyproject/proto/login_pb2.py	/^  package='',$/;"	kind:variable	line:21
 package	../pyproject/proto/opt_pb2.py	/^  package='',$/;"	kind:variable	line:21
+package	../pyproject/proto/player_data_pb2.py	/^  package='',$/;"	kind:variable	line:20
 package	../pyproject/proto/query_room_scene_pb2.py	/^  package='',$/;"	kind:variable	line:20
 parameter_common	../pyproject/cfg_py/parameter_common.py	/^parameter_common = {1: {"ID": 1,$/;"	kind:variable	line:3
 parameter_common.py	../pyproject/cfg_py/parameter_common.py	1;"	kind:file	line:1
@@ -3534,6 +3660,7 @@ parse_version	../pylib/pkg_resources.py	/^def parse_version(s):$/;"	kind:functio
 parsed_version	../pylib/pkg_resources.py	/^    def parsed_version(self):$/;"	kind:member	line:2107
 parsed_version	../pylib/pkg_resources.py	/^    parsed_version = property(parsed_version)$/;"	kind:variable	line:2114
 pkg_resources.py	../pylib/pkg_resources.py	1;"	kind:file	line:1
+player_data_pb2.py	../pyproject/proto/player_data_pb2.py	1;"	kind:file	line:1
 player_id_mgr.py	../pyproject/id_manager/player_id_mgr.py	1;"	kind:file	line:1
 player_in_login.py	../pyproject/entity/player_in_login.py	1;"	kind:file	line:1
 plugin_pb2.py	../pylib/google/protobuf/compiler/plugin_pb2.py	1;"	kind:file	line:1
@@ -3693,7 +3820,6 @@ room_state_running.py	../pyproject/state/room_state_running.py	1;"	kind:file	lin
 room_state_waiting.py	../pyproject/state/room_state_waiting.py	1;"	kind:file	line:1
 rpc_def.py	../pyproject/rpc/rpc_def.py	1;"	kind:file	line:1
 rpc_property_def.py	../pyproject/rpc/rpc_property_def.py	1;"	kind:file	line:1
-rsp	../pyproject/test_enter2.py	/^    rsp = query_room_scene_pb2.query_room_scene_rsp()$/;"	kind:variable	line:107
 rsp	../pyproject/test_enter3.py	/^    rsp = query_room_scene_pb2.query_room_scene_rsp()$/;"	kind:variable	line:107
 rsp	../pyproject/test_query_room_and_enter.py	/^    rsp = query_room_scene_pb2.query_room_scene_rsp()$/;"	kind:variable	line:106
 rule_base.py	../pyproject/entity/rule_base.py	1;"	kind:file	line:1
@@ -3770,10 +3896,12 @@ serialized_end	../pyproject/proto/enter_room_pb2.py	/^  serialized_end=185,$/;"	
 serialized_end	../pyproject/proto/enter_room_pb2.py	/^  serialized_end=96,$/;"	kind:variable	line:65
 serialized_end	../pyproject/proto/exit_room_pb2.py	/^  serialized_end=129,$/;"	kind:variable	line:101
 serialized_end	../pyproject/proto/exit_room_pb2.py	/^  serialized_end=75,$/;"	kind:variable	line:63
-serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=134,$/;"	kind:variable	line:101
-serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=211,$/;"	kind:variable	line:146
-serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=284,$/;"	kind:variable	line:191
-serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=60,$/;"	kind:variable	line:56
+serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=154,$/;"	kind:variable	line:122
+serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=203,$/;"	kind:variable	line:153
+serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=321,$/;"	kind:variable	line:205
+serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=430,$/;"	kind:variable	line:250
+serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=561,$/;"	kind:variable	line:302
+serialized_end	../pyproject/proto/gm_config_pb2.py	/^  serialized_end=613,$/;"	kind:variable	line:49
 serialized_end	../pyproject/proto/login_pb2.py	/^  serialized_end=201,$/;"	kind:variable	line:160
 serialized_end	../pyproject/proto/login_pb2.py	/^  serialized_end=258,$/;"	kind:variable	line:49
 serialized_end	../pyproject/proto/login_pb2.py	/^  serialized_end=96,$/;"	kind:variable	line:101
@@ -3781,6 +3909,9 @@ serialized_end	../pyproject/proto/opt_pb2.py	/^  serialized_end=118,$/;"	kind:va
 serialized_end	../pyproject/proto/opt_pb2.py	/^  serialized_end=243,$/;"	kind:variable	line:131
 serialized_end	../pyproject/proto/opt_pb2.py	/^  serialized_end=325,$/;"	kind:variable	line:169
 serialized_end	../pyproject/proto/opt_pb2.py	/^  serialized_end=486,$/;"	kind:variable	line:242
+serialized_end	../pyproject/proto/opt_pb2.py	/^  serialized_end=528,$/;"	kind:variable	line:273
+serialized_end	../pyproject/proto/opt_pb2.py	/^  serialized_end=583,$/;"	kind:variable	line:311
+serialized_end	../pyproject/proto/player_data_pb2.py	/^  serialized_end=121,$/;"	kind:variable	line:77
 serialized_end	../pyproject/proto/query_room_scene_pb2.py	/^  serialized_end=139,$/;"	kind:variable	line:101
 serialized_end	../pyproject/proto/query_room_scene_pb2.py	/^  serialized_end=65,$/;"	kind:variable	line:56
 serialized_pb	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_pb='\\n%google\/protobuf\/compiler\/plugin.proto\\x12\\x18google.protobuf.compiler\\x1a google\/protobuf\/descriptor.proto\\"}\\n\\x14\\x43odeGeneratorRequest\\x12\\x18\\n\\x10\\x66ile_to_generate\\x18\\x01 \\x03(\\t\\x12\\x11\\n\\tparameter\\x18\\x02 \\x01(\\t\\x12\\x38\\n\\nproto_file\\x18\\x0f \\x03(\\x0b\\x32$.google.protobuf.FileDescriptorProto\\"\\xaa\\x01\\n\\x15\\x43odeGeneratorResponse\\x12\\r\\n\\x05\\x65rror\\x18\\x01 \\x01(\\t\\x12\\x42\\n\\x04\\x66ile\\x18\\x0f \\x03(\\x0b\\x32\\x34.google.protobuf.compiler.CodeGeneratorResponse.File\\x1a>\\n\\x04\\x46ile\\x12\\x0c\\n\\x04name\\x18\\x01 \\x01(\\t\\x12\\x17\\n\\x0finsertion_point\\x18\\x02 \\x01(\\t\\x12\\x0f\\n\\x07\\x63ontent\\x18\\x0f \\x01(\\tB,\\n\\x1c\\x63om.google.protobuf.compilerB\\x0cPluginProtos')$/;"	kind:variable	line:17
@@ -3791,9 +3922,10 @@ serialized_pb	../pyproject/proto/common_info_pb2.py	/^  serialized_pb=_b('\\n\\x
 serialized_pb	../pyproject/proto/create_room_pb2.py	/^  serialized_pb=_b('\\n\\x11\\x63reate_room.proto\\x1a\\x11\\x63ommon_info.proto\\"T\\n\\x0f\\x63reate_room_req\\x12\\x16\\n\\x0eproto_id_10010\\x18\\x63 \\x01(\\x08\\x12\\x11\\n\\tgame_type\\x18\\x01 \\x02(\\r\\x12\\x16\\n\\x03\\x63\\x66g\\x18\\x02 \\x02(\\x0b\\x32\\t.game_cfg\\"\\x7f\\n\\x0f\\x63reate_room_rsp\\x12\\x16\\n\\x0eproto_id_20010\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x11\\n\\tgame_type\\x18\\x02 \\x02(\\r\\x12\\x0f\\n\\x07room_id\\x18\\x03 \\x01(\\r\\x12\\x0b\\n\\x03pos\\x18\\x04 \\x01(\\r\\x12\\x16\\n\\x03\\x63\\x66g\\x18\\x05 \\x01(\\x0b\\x32\\t.game_cfg')$/;"	kind:variable	line:23
 serialized_pb	../pyproject/proto/enter_room_pb2.py	/^  serialized_pb=_b('\\n\\x10\\x65nter_room.proto\\x1a\\x11\\x63ommon_info.proto\\"9\\n\\x0e\\x65nter_room_req\\x12\\x16\\n\\x0eproto_id_10011\\x18\\x63 \\x01(\\x08\\x12\\x0f\\n\\x07room_id\\x18\\x01 \\x02(\\r\\"W\\n\\x0e\\x65nter_room_rsp\\x12\\x16\\n\\x0eproto_id_20011\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12 \\n\\x08ret_data\\x18\\x02 \\x01(\\x0b\\x32\\x0e.syn_game_info')$/;"	kind:variable	line:23
 serialized_pb	../pyproject/proto/exit_room_pb2.py	/^  serialized_pb=_b('\\n\\x0f\\x65xit_room.proto\\"8\\n\\rexit_room_req\\x12\\x16\\n\\x0eproto_id_10015\\x18\\x63 \\x01(\\x08\\x12\\x0f\\n\\x07room_id\\x18\\x01 \\x02(\\r\\"4\\n\\rexit_room_rsp\\x12\\x16\\n\\x0eproto_id_20015\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r')$/;"	kind:variable	line:22
-serialized_pb	../pyproject/proto/gm_config_pb2.py	/^  serialized_pb=_b('\\n\\x0fgm_config.proto\\")\\n\\x0fload_config_req\\x12\\x16\\n\\x0eproto_id_10050\\x18\\x63 \\x01(\\x08\\"H\\n\\x0fload_config_rsp\\x12\\x16\\n\\x0eproto_id_20050\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x10\\n\\x08\\x63onf_arr\\x18\\x02 \\x03(\\x0c\\"K\\n\\x0eopt_config_req\\x12\\x16\\n\\x0eproto_id_10051\\x18\\x63 \\x01(\\x08\\x12\\x0e\\n\\x06is_add\\x18\\x01 \\x02(\\x08\\x12\\x11\\n\\tconf_data\\x18\\x02 \\x02(\\x0c\\"G\\n\\x0eopt_config_rsp\\x12\\x16\\n\\x0eproto_id_20051\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x10\\n\\x08\\x63onf_arr\\x18\\x02 \\x03(\\x0c')$/;"	kind:variable	line:22
+serialized_pb	../pyproject/proto/gm_config_pb2.py	/^  serialized_pb=_b('\\n\\x0fgm_config.proto\\"\\x86\\x01\\n\\x0b\\x63onfig_data\\x12\\x13\\n\\x0b\\x63onfig_name\\x18\\x01 \\x02(\\x0c\\x12\\x12\\n\\npos_1_card\\x18\\x02 \\x01(\\x0c\\x12\\x12\\n\\npos_2_card\\x18\\x03 \\x01(\\x0c\\x12\\x12\\n\\npos_3_card\\x18\\x04 \\x01(\\x0c\\x12\\x12\\n\\npos_4_card\\x18\\x05 \\x01(\\x0c\\x12\\x12\\n\\ncard_order\\x18\\x06 \\x01(\\x0c\\"\/\\n\\x15syn_all_gm_config_req\\x12\\x16\\n\\x0eproto_id_10050\\x18\\x63 \\x01(\\x08\\"t\\n\\x15syn_all_gm_config_rsp\\x12\\x16\\n\\x0eproto_id_20050\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x14\\n\\x0c\\x63ur_use_conf\\x18\\x02 \\x02(\\x0c\\x12 \\n\\nconfig_arr\\x18\\x03 \\x03(\\x0b\\x32\\x0c.config_data\\"k\\n\\x0eopt_config_req\\x12\\x16\\n\\x0eproto_id_10051\\x18\\x63 \\x01(\\x08\\x12 \\n\\x08opt_type\\x18\\x01 \\x02(\\x0e\\x32\\x0e.gm_config_opt\\x12\\x1f\\n\\tconf_data\\x18\\x02 \\x01(\\x0b\\x32\\x0c.config_data\\"\\x80\\x01\\n\\x0eopt_config_rsp\\x12\\x16\\n\\x0eproto_id_20051\\x18\\x63 \\x01(\\x08\\x12 \\n\\x08opt_type\\x18\\x01 \\x02(\\x0e\\x32\\x0e.gm_config_opt\\x12\\x14\\n\\x0c\\x63ur_use_conf\\x18\\x02 \\x01(\\x0c\\x12\\x1e\\n\\x08ret_data\\x18\\x03 \\x01(\\x0b\\x32\\x0c.config_data*2\\n\\rgm_config_opt\\x12\\t\\n\\x05\\x61pply\\x10\\x01\\x12\\n\\n\\x06\\x64\\x65lete\\x10\\x02\\x12\\n\\n\\x06modify\\x10\\x03')$/;"	kind:variable	line:23
 serialized_pb	../pyproject/proto/login_pb2.py	/^  serialized_pb=_b('\\n\\x0blogin.proto\\"Q\\n\\tlogin_req\\x12\\x16\\n\\x0eproto_id_10001\\x18\\x63 \\x01(\\x08\\x12\\x19\\n\\x04type\\x18\\x01 \\x02(\\x0e\\x32\\x0b.login_type\\x12\\x11\\n\\tauth_info\\x18\\x02 \\x02(\\x0c\\"g\\n\\tlogin_rsp\\x12\\x16\\n\\x0eproto_id_20001\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x11\\n\\tplayer_id\\x18\\x02 \\x01(\\x04\\x12\\x0f\\n\\x07room_id\\x18\\x03 \\x01(\\r\\x12\\x11\\n\\tgate_info\\x18\\x04 \\x01(\\x0c*7\\n\\nlogin_type\\x12\\x11\\n\\rget_gate_info\\x10\\x01\\x12\\t\\n\\x05login\\x10\\x02\\x12\\x0b\\n\\x07gm_code\\x10\\x03')$/;"	kind:variable	line:23
-serialized_pb	../pyproject/proto/opt_pb2.py	/^  serialized_pb=_b('\\n\\topt.proto\\x1a\\x11\\x63ommon_info.proto\\"V\\n\\x07opt_req\\x12\\x16\\n\\x0eproto_id_10021\\x18\\x63 \\x01(\\x08\\x12\\x1d\\n\\x08opt_type\\x18\\x01 \\x02(\\x0e\\x32\\x0b.event_type\\x12\\x14\\n\\x0copt_data_str\\x18\\x03 \\x01(\\x0c\\"{\\n\\x07opt_rsp\\x12\\x16\\n\\x0eproto_id_20021\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x1d\\n\\x08opt_type\\x18\\x02 \\x02(\\x0e\\x32\\x0b.event_type\\x12\\x13\\n\\x0blisten_card\\x18\\x03 \\x03(\\r\\x12\\x17\\n\\x0fowner_card_list\\x18\\x04 \\x03(\\r\\"P\\n\\rsyn_card_info\\x12\\x16\\n\\x0eproto_id_20041\\x18\\x63 \\x01(\\x08\\x12\\'\\n\\x0elist_card_info\\x18\\x01 \\x03(\\x0b\\x32\\x0f.game_card_list\\"\\x9e\\x01\\n\\x0esyn_game_order\\x12\\x16\\n\\x0eproto_id_20042\\x18\\x63 \\x01(\\x08\\x12\\x0f\\n\\x07room_id\\x18\\x01 \\x02(\\r\\x12\\x14\\n\\x0c\\x63ur_game_num\\x18\\x03 \\x02(\\r\\x12\\x11\\n\\tcur_round\\x18\\x04 \\x02(\\r\\x12\\x10\\n\\x08\\x63ur_turn\\x18\\x05 \\x02(\\r\\x12\\x17\\n\\x0fremain_card_num\\x18\\x06 \\x02(\\r\\x12\\x0f\\n\\x07opt_pos\\x18\\x07 \\x02(\\r')$/;"	kind:variable	line:23
+serialized_pb	../pyproject/proto/opt_pb2.py	/^  serialized_pb=_b('\\n\\topt.proto\\x1a\\x11\\x63ommon_info.proto\\"V\\n\\x07opt_req\\x12\\x16\\n\\x0eproto_id_10021\\x18\\x63 \\x01(\\x08\\x12\\x1d\\n\\x08opt_type\\x18\\x01 \\x02(\\x0e\\x32\\x0b.event_type\\x12\\x14\\n\\x0copt_data_str\\x18\\x03 \\x01(\\x0c\\"{\\n\\x07opt_rsp\\x12\\x16\\n\\x0eproto_id_20021\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x1d\\n\\x08opt_type\\x18\\x02 \\x02(\\x0e\\x32\\x0b.event_type\\x12\\x13\\n\\x0blisten_card\\x18\\x03 \\x03(\\r\\x12\\x17\\n\\x0fowner_card_list\\x18\\x04 \\x03(\\r\\"P\\n\\rsyn_card_info\\x12\\x16\\n\\x0eproto_id_20041\\x18\\x63 \\x01(\\x08\\x12\\'\\n\\x0elist_card_info\\x18\\x01 \\x03(\\x0b\\x32\\x0f.game_card_list\\"\\x9e\\x01\\n\\x0esyn_game_order\\x12\\x16\\n\\x0eproto_id_20042\\x18\\x63 \\x01(\\x08\\x12\\x0f\\n\\x07room_id\\x18\\x01 \\x02(\\r\\x12\\x14\\n\\x0c\\x63ur_game_num\\x18\\x03 \\x02(\\r\\x12\\x11\\n\\tcur_round\\x18\\x04 \\x02(\\r\\x12\\x10\\n\\x08\\x63ur_turn\\x18\\x05 \\x02(\\r\\x12\\x17\\n\\x0fremain_card_num\\x18\\x06 \\x02(\\r\\x12\\x0f\\n\\x07opt_pos\\x18\\x07 \\x02(\\r\\"(\\n\\x0egame_ready_req\\x12\\x16\\n\\x0eproto_id_10043\\x18\\x63 \\x01(\\x08\\"5\\n\\x0egame_ready_rsp\\x12\\x16\\n\\x0eproto_id_20043\\x18\\x63 \\x01(\\x08\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r')$/;"	kind:variable	line:23
+serialized_pb	../pyproject/proto/player_data_pb2.py	/^  serialized_pb=_b('\\n\\x11player_data.proto\\"d\\n\\x0fsyn_player_data\\x12\\x16\\n\\x0eproto_id_20052\\x18\\x63 \\x01(\\x08\\x12\\x11\\n\\tplayer_id\\x18\\x01 \\x02(\\x04\\x12\\x13\\n\\x0bwechat_info\\x18\\x02 \\x02(\\x0c\\x12\\x11\\n\\tdata_info\\x18\\x03 \\x02(\\x0c')$/;"	kind:variable	line:22
 serialized_pb	../pyproject/proto/query_room_scene_pb2.py	/^  serialized_pb=_b('\\n\\x16query_room_scene.proto\\"\\'\\n\\x14query_room_scene_req\\x12\\x0f\\n\\x07room_id\\x18\\x01 \\x02(\\r\\"H\\n\\x14query_room_scene_rsp\\x12\\x0b\\n\\x03ret\\x18\\x01 \\x02(\\r\\x12\\x0f\\n\\x07room_id\\x18\\x02 \\x02(\\r\\x12\\x12\\n\\nscene_name\\x18\\x03 \\x02(\\x0c')$/;"	kind:variable	line:22
 serialized_start	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_start=101,$/;"	kind:variable	line:59
 serialized_start	../pylib/google/protobuf/compiler/plugin_pb2.py	/^  serialized_start=229,$/;"	kind:variable	line:135
@@ -3843,10 +3975,12 @@ serialized_start	../pyproject/proto/enter_room_pb2.py	/^  serialized_start=39,$/
 serialized_start	../pyproject/proto/enter_room_pb2.py	/^  serialized_start=98,$/;"	kind:variable	line:109
 serialized_start	../pyproject/proto/exit_room_pb2.py	/^  serialized_start=19,$/;"	kind:variable	line:62
 serialized_start	../pyproject/proto/exit_room_pb2.py	/^  serialized_start=77,$/;"	kind:variable	line:100
-serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=136,$/;"	kind:variable	line:145
-serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=19,$/;"	kind:variable	line:55
-serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=213,$/;"	kind:variable	line:190
-serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=62,$/;"	kind:variable	line:100
+serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=156,$/;"	kind:variable	line:152
+serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=20,$/;"	kind:variable	line:121
+serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=205,$/;"	kind:variable	line:204
+serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=323,$/;"	kind:variable	line:249
+serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=433,$/;"	kind:variable	line:301
+serialized_start	../pyproject/proto/gm_config_pb2.py	/^  serialized_start=563,$/;"	kind:variable	line:48
 serialized_start	../pyproject/proto/login_pb2.py	/^  serialized_start=15,$/;"	kind:variable	line:100
 serialized_start	../pyproject/proto/login_pb2.py	/^  serialized_start=203,$/;"	kind:variable	line:48
 serialized_start	../pyproject/proto/login_pb2.py	/^  serialized_start=98,$/;"	kind:variable	line:159
@@ -3854,6 +3988,9 @@ serialized_start	../pyproject/proto/opt_pb2.py	/^  serialized_start=120,$/;"	kin
 serialized_start	../pyproject/proto/opt_pb2.py	/^  serialized_start=245,$/;"	kind:variable	line:168
 serialized_start	../pyproject/proto/opt_pb2.py	/^  serialized_start=32,$/;"	kind:variable	line:71
 serialized_start	../pyproject/proto/opt_pb2.py	/^  serialized_start=328,$/;"	kind:variable	line:241
+serialized_start	../pyproject/proto/opt_pb2.py	/^  serialized_start=488,$/;"	kind:variable	line:272
+serialized_start	../pyproject/proto/opt_pb2.py	/^  serialized_start=530,$/;"	kind:variable	line:310
+serialized_start	../pyproject/proto/player_data_pb2.py	/^  serialized_start=21,$/;"	kind:variable	line:76
 serialized_start	../pyproject/proto/query_room_scene_pb2.py	/^  serialized_start=26,$/;"	kind:variable	line:55
 serialized_start	../pyproject/proto/query_room_scene_pb2.py	/^  serialized_start=67,$/;"	kind:variable	line:100
 serve	../pylib/thrift/server/THttpServer.py	/^  def serve(self):$/;"	kind:member	line:86
@@ -3867,7 +4004,7 @@ serve	../pylib/thrift/server/TServer.py	/^  def serve(self):$/;"	kind:member	lin
 serveClient	../pylib/thrift/server/TProcessPoolServer.py	/^    def serveClient(self, client):$/;"	kind:member	line:65
 serveClient	../pylib/thrift/server/TServer.py	/^  def serveClient(self, client):$/;"	kind:member	line:153
 serveThread	../pylib/thrift/server/TServer.py	/^  def serveThread(self):$/;"	kind:member	line:144
-server	../pyproject/db/redis_mgr.py	/^server = StreamServer(('127.0.0.1', 10422), handle)$/;"	kind:variable	line:56
+server	../pyproject/db/redis_mgr.py	/^server = StreamServer(('127.0.0.1', 10422), handle)$/;"	kind:variable	line:83
 server	../pyproject/encode_mgr/bin_encoder.py	/^def server(port):$/;"	kind:function	line:100
 service.py	../pylib/google/protobuf/service.py	1;"	kind:file	line:1
 service_reflection.py	../pylib/google/protobuf/service_reflection.py	1;"	kind:file	line:1
@@ -3895,7 +4032,6 @@ singleton_register_dict	../pylib/ffext.py	/^singleton_register_dict = {}$/;"	kin
 size	../pyproject/login/login_mgr.py	/^    def size(self):$/;"	kind:member	line:26
 skip	../pylib/thrift/protocol/TProtocol.py	/^  def skip(self, type):$/;"	kind:member	line:160
 sock	../pyproject/test_enter.py	/^    sock = socket.create_connection(("192.168.74.130", 10243))$/;"	kind:variable	line:44
-sock	../pyproject/test_enter2.py	/^    sock = socket.create_connection(("192.168.74.130", 10242))$/;"	kind:variable	line:90
 sock	../pyproject/test_enter3.py	/^    sock = socket.create_connection(("192.168.74.130", 10242))$/;"	kind:variable	line:90
 sock	../pyproject/test_query_room_and_enter.py	/^    sock = socket.create_connection(("127.0.0.1", 10242))$/;"	kind:variable	line:90
 sock	../test.py	/^sock = socket.create_connection(("127.0.0.1", 10242))$/;"	kind:variable	line:4
@@ -3915,10 +4051,13 @@ stop	../pylib/thrift/server/TProcessPoolServer.py	/^    def stop(self):$/;"	kind
 stringReceived	../pylib/thrift/transport/TTwisted.py	/^    def stringReceived(self, frame):$/;"	kind:member	line:120
 stringReceived	../pylib/thrift/transport/TTwisted.py	/^    def stringReceived(self, frame):$/;"	kind:member	line:90
 subscribe	../pylib/pkg_resources.py	/^    def subscribe(self, callback):$/;"	kind:member	line:673
-syn_card_info	../pyproject/proto/opt_pb2.py	/^syn_card_info = _reflection.GeneratedProtocolMessageType('syn_card_info', (_message.Message,), dict($/;"	kind:variable	line:267
+syn_all_gm_config_req	../pyproject/proto/gm_config_pb2.py	/^syn_all_gm_config_req = _reflection.GeneratedProtocolMessageType('syn_all_gm_config_req', (_message.Message,), dict($/;"	kind:variable	line:324
+syn_all_gm_config_rsp	../pyproject/proto/gm_config_pb2.py	/^syn_all_gm_config_rsp = _reflection.GeneratedProtocolMessageType('syn_all_gm_config_rsp', (_message.Message,), dict($/;"	kind:variable	line:331
+syn_card_info	../pyproject/proto/opt_pb2.py	/^syn_card_info = _reflection.GeneratedProtocolMessageType('syn_card_info', (_message.Message,), dict($/;"	kind:variable	line:338
 syn_game_info	../pyproject/proto/common_info_pb2.py	/^syn_game_info = _reflection.GeneratedProtocolMessageType('syn_game_info', (_message.Message,), dict($/;"	kind:variable	line:830
-syn_game_order	../pyproject/proto/opt_pb2.py	/^syn_game_order = _reflection.GeneratedProtocolMessageType('syn_game_order', (_message.Message,), dict($/;"	kind:variable	line:274
+syn_game_order	../pyproject/proto/opt_pb2.py	/^syn_game_order = _reflection.GeneratedProtocolMessageType('syn_game_order', (_message.Message,), dict($/;"	kind:variable	line:345
 syn_game_ret	../pyproject/proto/common_info_pb2.py	/^syn_game_ret = _reflection.GeneratedProtocolMessageType('syn_game_ret', (_message.Message,), dict($/;"	kind:variable	line:858
+syn_player_data	../pyproject/proto/player_data_pb2.py	/^syn_player_data = _reflection.GeneratedProtocolMessageType('syn_player_data', (_message.Message,), dict($/;"	kind:variable	line:82
 sync_query	../pylib/ffext.py	/^    def sync_query(self, sql_):$/;"	kind:member	line:227
 syntax	../pyproject/proto/change_scene_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:103
 syntax	../pyproject/proto/change_scene_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
@@ -3942,11 +4081,12 @@ syntax	../pyproject/proto/enter_room_pb2.py	/^  syntax='proto2',$/;"	kind:variab
 syntax	../pyproject/proto/exit_room_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
 syntax	../pyproject/proto/exit_room_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:58
 syntax	../pyproject/proto/exit_room_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:96
-syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:141
-syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:186
-syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
-syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:51
-syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:96
+syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:117
+syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:148
+syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:200
+syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:22
+syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:245
+syntax	../pyproject/proto/gm_config_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:297
 syntax	../pyproject/proto/login_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:155
 syntax	../pyproject/proto/login_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:22
 syntax	../pyproject/proto/login_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:96
@@ -3954,7 +4094,11 @@ syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line
 syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:164
 syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:22
 syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:237
+syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:268
+syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:306
 syntax	../pyproject/proto/opt_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:67
+syntax	../pyproject/proto/player_data_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
+syntax	../pyproject/proto/player_data_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:72
 syntax	../pyproject/proto/query_room_scene_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:21
 syntax	../pyproject/proto/query_room_scene_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:51
 syntax	../pyproject/proto/query_room_scene_pb2.py	/^  syntax='proto2',$/;"	kind:variable	line:96
@@ -3967,7 +4111,6 @@ szBrokerMaster	../start_all_2.py	/^szBrokerMaster = "-broker {0}".format(szAddrM
 szEngineBin	../start_all.py	/^szEngineBin = ".\/app_engine"$/;"	kind:variable	line:7
 szEngineBin	../start_all_1.py	/^szEngineBin = ".\/app_engine"$/;"	kind:variable	line:7
 szEngineBin	../start_all_2.py	/^szEngineBin = ".\/app_engine"$/;"	kind:variable	line:7
-szFormat	../pyproject/test_enter2.py	/^    szFormat = "IHH"$/;"	kind:variable	line:102
 szFormat	../pyproject/test_enter3.py	/^    szFormat = "IHH"$/;"	kind:variable	line:102
 szFormat	../pyproject/test_query_room_and_enter.py	/^    szFormat = "IHH"$/;"	kind:variable	line:101
 szFormat	../test.py	/^szFormat = "%ds" % len(szMsg)$/;"	kind:variable	line:16
@@ -3978,8 +4121,6 @@ szMaster	../start_all_2.py	/^szMaster = "-master 1"$/;"	kind:variable	line:9
 szMsg	../test.py	/^szMsg = po.SerializeToString()$/;"	kind:variable	line:12
 szPath	../pyproject/excel2json.py	/^szPath = ".\/pyproject\/cfg_excel\/"$/;"	kind:variable	line:8
 szProtoBufData	../test.py	/^    szProtoBufData = szrsp[nHeadSize:]$/;"	kind:variable	line:35
-szRet	../pyproject/test_enter2.py	/^    szRet = sock.recv(93939)$/;"	kind:variable	line:99
-szRet	../pyproject/test_enter2.py	/^    szRet = szRet[struct.calcsize(szFormat):]$/;"	kind:variable	line:104
 szRet	../pyproject/test_enter3.py	/^    szRet = sock.recv(93939)$/;"	kind:variable	line:99
 szRet	../pyproject/test_enter3.py	/^    szRet = szRet[struct.calcsize(szFormat):]$/;"	kind:variable	line:104
 szRet	../pyproject/test_query_room_and_enter.py	/^    szRet = sock.recv(93939)$/;"	kind:variable	line:98
@@ -4086,6 +4227,9 @@ type	../pyproject/proto/common_info_pb2.py	/^      type=None),$/;"	kind:variable
 type	../pyproject/proto/common_info_pb2.py	/^      type=None),$/;"	kind:variable	line:90
 type	../pyproject/proto/common_info_pb2.py	/^      type=None),$/;"	kind:variable	line:94
 type	../pyproject/proto/common_info_pb2.py	/^      type=None),$/;"	kind:variable	line:98
+type	../pyproject/proto/gm_config_pb2.py	/^      type=None),$/;"	kind:variable	line:36
+type	../pyproject/proto/gm_config_pb2.py	/^      type=None),$/;"	kind:variable	line:40
+type	../pyproject/proto/gm_config_pb2.py	/^      type=None),$/;"	kind:variable	line:44
 type	../pyproject/proto/login_pb2.py	/^      type=None),$/;"	kind:variable	line:36
 type	../pyproject/proto/login_pb2.py	/^      type=None),$/;"	kind:variable	line:40
 type	../pyproject/proto/login_pb2.py	/^      type=None),$/;"	kind:variable	line:44
@@ -4110,6 +4254,7 @@ values	../pylib/google/protobuf/internal/enum_type_wrapper.py	/^  def values(sel
 values	../pyproject/proto/common_info_pb2.py	/^  values=[$/;"	kind:variable	line:32
 values	../pyproject/proto/common_info_pb2.py	/^  values=[$/;"	kind:variable	line:55
 values	../pyproject/proto/common_info_pb2.py	/^  values=[$/;"	kind:variable	line:78
+values	../pyproject/proto/gm_config_pb2.py	/^  values=[$/;"	kind:variable	line:32
 values	../pyproject/proto/login_pb2.py	/^  values=[$/;"	kind:variable	line:32
 version	../pylib/pkg_resources.py	/^    def version(self):$/;"	kind:member	line:2117
 version	../pylib/pkg_resources.py	/^    version = property(version)$/;"	kind:variable	line:2129

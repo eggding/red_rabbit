@@ -64,7 +64,8 @@ def StartLoginAndGcc():
 def StartAllGas():
     nGasNum = conf.dict_cfg["gas"]["num"]
     for i in xrange(0, nGasNum):
-        szCmd = "{0} -scene gas@{1} {2} -python_path ./pyproject/gas &".format(szEngineBin, i, szBrokerMaster)
+        szLogConf = "-log_path ./log -log_filename {0} -log_class DB_MGR,XX,BROKER,FFRPC,FFGATE,FFSCENE,FFSCENE_PYTHON,FFNET -log_print_screen true -log_print_file true -log_level 3".format("gas@{0}".format(i))
+        szCmd = "{0} -scene gas@{1} {2} -python_path ./pyproject/gas {3} &".format(szEngineBin, i, szBrokerMaster, szLogConf)
         print(szCmd)
         os.system(szCmd)
 

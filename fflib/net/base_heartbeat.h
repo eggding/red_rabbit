@@ -55,7 +55,7 @@ private:
 
 template <typename T>
 base_heartbeat_t<T>::base_heartbeat_t():
-    m_timeout(10*3600*24*365),//! love you 1w year
+    m_timeout(30),//! love you 1w year
     m_timeout_callback(NULL)
 {
     m_cur_tick = ::time(NULL);

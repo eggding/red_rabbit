@@ -1,0 +1,51 @@
+19:02:42.669 INFO  [13813] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+19:02:42.684 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:42.684 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:42.684 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:42.684 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:42.684 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:42.684 INFO  [13813] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10341>,node_id_[1]
+19:02:42.685 INFO  [13813] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10342>,node_id_[2]
+19:02:42.705 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:42.705 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:42.706 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:42.706 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:42.706 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:42.788 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:42.791 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:42.792 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:42.797 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:42.797 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:42.886 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:42.887 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:42.887 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:42.887 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:42.887 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:42.953 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:42.953 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:42.953 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:42.954 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:42.954 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:43.102 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:43.103 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:43.111 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:43.113 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:43.113 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:43.252 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::route_logic_msg_t::in_t] -> msg id[4]
+19:02:43.254 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::scene_call_msg_t::in_t] -> msg id[5]
+19:02:43.255 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_enter_scene_t::in_t] -> msg id[6]
+19:02:43.255 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_offline_t::in_t] -> msg id[7]
+19:02:43.255 INFO  [13813] [FFRPC] ffrpc_t::handle_broker_sync_data msg name[ff::session_verify_t::in_t] -> msg id[8]
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> GasSceneMgr.Login2GccSessionConn 300, {"ip": "127.0.0.1", "gate": "gate@0"}
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> GasSceneMgr.Login2GccSessionConn 301, {"ip": "127.0.0.1", "gate": "gate@0"}
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> GasSceneMgr.Login2GccSessionConn 302, {"ip": "127.0.0.1", "gate": "gate@0"}
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> GasSceneMgr.Login2GccSessionConn 303, {"ip": "127.0.0.1", "gate": "gate@0"}
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> GasSceneMgr.Login2GccSessionConn 304, {"ip": "127.0.0.1", "gate": "gate@0"}
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> GasSceneMgr.Login2GccSessionConn 305, {"ip": "127.0.0.1", "gate": "gate@0"}
+19:02:45.290 INFO  [13813] [FFSCENE_PYTHON] <gas@2> RobotMgr.CreateRobot 6 done.
+19:02:45.302 INFO  [13813] [FFSCENE_PYTHON] <gas@2> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 300, "r": {"create_time": 1494930658, "sex": 0, "money_list": [], "SESSION_ID": 300, "name": "name_300"}, "cb": 1, "gate": "gate@0"}
+19:02:45.340 INFO  [13813] [FFSCENE_PYTHON] <gas@2> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 302, "r": {"create_time": 1494930658, "sex": 0, "money_list": [], "SESSION_ID": 302, "name": "name_302"}, "cb": 3, "gate": "gate@0"}
+19:02:45.340 INFO  [13813] [FFSCENE_PYTHON] <gas@2> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 305, "r": {"create_time": 1494931677, "sex": 1, "money_list": [], "SESSION_ID": 305, "name": "name_305"}, "cb": 6, "gate": "gate@0"}
+19:02:45.340 INFO  [13813] [FFSCENE_PYTHON] <gas@2> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 303, "r": {"create_time": 1494930658, "sex": 1, "money_list": [], "SESSION_ID": 303, "name": "name_303"}, "cb": 4, "gate": "gate@0"}
+19:02:45.340 INFO  [13813] [FFSCENE_PYTHON] <gas@2> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 301, "r": {"create_time": 1494930658, "sex": 1, "money_list": [], "SESSION_ID": 301, "name": "name_301"}, "cb": 2, "gate": "gate@0"}
+19:02:45.341 INFO  [13813] [FFSCENE_PYTHON] <gas@2> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 304, "r": {"create_time": 1494931677, "sex": 0, "money_list": [], "SESSION_ID": 304, "name": "name_304"}, "cb": 5, "gate": "gate@0"}

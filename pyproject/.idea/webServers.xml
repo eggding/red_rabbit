@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5f45e3d1-0acb-48a5-b7a3-90ccbcb4f8fb" name="t" url="http://112.74.124.100">
+        <fileTransfer host="112.74.124.100" port="61111" privateKey="$USER_HOME$/.ssh/qipai" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="61111" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

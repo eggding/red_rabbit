@@ -28,6 +28,8 @@ def Gac2GasQueryGameConf(nPlayerGID, reqObj):
             confObj.pos_3_card = SerialList2String(dictTmp["pos_3_card"])
             confObj.pos_4_card = SerialList2String(dictTmp["pos_4_card"])
             confObj.card_order = SerialList2String(dictTmp["card_order"])
+
+        print("rsp.SerializeToString() ", rsp.SerializeToString())
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacSynAllConfig, rsp.SerializeToString())
 
     ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccQueryGmConfig, {}, _cb)

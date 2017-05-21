@@ -6,6 +6,7 @@ import entity.entity_mgr as entity_mgr
 import rpc.rpc_def as rpc_def
 import rpc.scene_def as scene_def
 import proto.query_room_scene_pb2 as query_room_scene_pb2
+import proto.opt_pb2 as opt_pb2
 import gas_room_obj as gas_room_obj
 import cfg_py.parameter_common as parameter_common
 
@@ -95,10 +96,17 @@ class RoomService(object):
             return
         roomObj.MemberEnter(nPlayerGID)
 
+    def MemberReady(self, nPlayerGID):
+        roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
+        if roomObj is None:
+            return
+        roomObj.MemberReady(nPlayerGID)
+
 _roomMgr = RoomService()
 EnterRoom = _roomMgr.EnterRoom
 OnMemberExit = _roomMgr.OnMemberExit
 OnMemberEnter = _roomMgr.OnMemberEnter
+MemberReady = _roomMgr.MemberReady
 
 @ffext.reg_service(rpc_def.Gcc2GasRetGetRoomScene)
 def Gcc2GasRetGetRoomScene(dictData):
@@ -123,6 +131,14 @@ def Gcc2GasRetGenRoomID(dictData):
     nPlayerGID = dictData["player_id"]
     dictCfg = dictData["cfg"]
     _roomMgr.OnGetRoomIDRet(nRoomID, nPlayerGID, dictCfg)
+
+@ffext.session_call(rpc_def.Gac2GasGameReady, opt_pb2.game_ready_req)
+def Gac2GasGameReady(nPlayerGID, reqObj):
+    _roomMgr.MemberReady(nPlayerGID)
+
+    rsp = opt_pb2.game_ready_rsp()
+    rsp.ret = 0
+    ffext.send_msg_session(nPlayerGID, rpc_def.Gac2GasRetGameReady, rsp.SerializeToString())
 
 @ffext.session_call(rpc_def.Gac2GasQueryRoomScene, query_room_scene_pb2.query_room_scene_req)
 def Gac2GasQueryRoomScene(nPlayerGID, reqObj):

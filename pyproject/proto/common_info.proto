@@ -12,6 +12,15 @@ enum event_type_member
     ev_member_exit = 2; // 玩家推出房间事件
 };
 
+// 玩家状态枚举
+enum member_state
+{
+    e_un_ready = 1; // 未准备
+    e_ready = 2; // 准备状态
+    e_offline = 3; // 离线状态
+    e_playing = 4; // 开始游戏状态
+};
+
 enum event_type
 {
     ev_gang_with_peng = 1; // 杠其他人，自己的3个牌有1个是碰回来的
@@ -58,6 +67,7 @@ message other_player_info
     required bytes  wechat_info = 3; // 微信信息
     required bytes  ip = 4; // ip
     required uint32 pos = 5; // 位置
+    optional member_state state = 6; // 玩家状态
 };
 
 // 房间玩法配置
@@ -143,4 +153,16 @@ message notic_msg
     optional bool proto_id_20018 = 99;
     required uint32 msg_id = 1;
     optional bytes msg_content = 2; //公告消息内容
-}
+};
+
+message heart_beat_req
+{
+    optional bool proto_id_10000 = 99;
+};
+
+// heart beat
+message heart_beat_rsp
+{
+    optional bool   proto_id_20000 = 99;
+    required uint64 next_heart_beat_time = 1; // 下一次发送心跳的时间
+};

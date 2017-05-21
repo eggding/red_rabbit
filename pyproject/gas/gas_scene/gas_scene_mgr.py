@@ -98,6 +98,14 @@ class GasSceneMgr(base_scene.BaseScene):
 
 _gasSceneMgr = GasSceneMgr()
 
+import proto.common_info_pb2 as common_info_pb2
+@ffext.session_call(rpc_def.GacHeartBreat, common_info_pb2.heart_beat_req)
+def GacHeartBreat(nPlayerGID, reqObj):
+    print("GacHeartBreat ", nPlayerGID)
+    rsp = common_info_pb2.heart_beat_rsp()
+    rsp.next_heart_beat_time = 10
+    ffext.send_msg_session(nPlayerGID, rpc_def.RspHeartBreat, rsp.SerializeToString())
+
 @ffext.session_call(rpc_def.Gac2GasChangeScene, change_scene_pb2.change_scene_req)
 def Gac2GasRequestChangeScene(nPlayerGID, reqObj):
     szDstScene = reqObj.scene_name

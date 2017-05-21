@@ -74,6 +74,9 @@ class GasPlayerEntity(base_entity.BaseEntity):
         if util.IsGasScene(szDstScene) is False:
             return False
 
+        if self.GetRoomID() is not None:
+            return False
+
         dictTmp = self.Serial2Dict()
         if dictExtra is not None:
             util.dict_merge(dictExtra, dictTmp)

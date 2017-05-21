@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+// 同步玩数据
+message syn_player_data
+{
+    optional bool   proto_id_20052 = 99;
+    required uint64 player_id = 1;
+    required bytes  wechat_info = 2;
+    required bytes  data_info = 3; // {"money_list": [(1, 100), (2, 1992)]} json money_list表示货币类型为1的有100, 货币类型为2的有1992个
+};

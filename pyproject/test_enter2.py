@@ -44,8 +44,8 @@ def PacketQueryRoomScene():
 def PackSetConf():
     import proto.gm_config_pb2 as gm_config_pb2
     req = gm_config_pb2.opt_config_req()
-    req.opt_type = gm_config_pb2.gm_config_opt.Value("apply")
-    req.conf_data.config_name = "test_config"
+    req.opt_type = gm_config_pb2.gm_config_opt.Value("modify")
+    req.conf_data.config_name = "test_config_11"
     req.conf_data.pos_1_card = "101,102,103,104,105,106,107,108,109,501,402,403,404"
     req.conf_data.pos_2_card = "201,202,203,204,205,206,207,208,209,502,503,504,404,505"
     req.conf_data.pos_3_card = "301,302,303,304,305,306,307,308,309,405,402,403,404"
@@ -163,10 +163,31 @@ def StartUp(nId=None):
         # sock.send("333")
         # print(sock.recv(4444))
         sock.send(PacketLoginBuff())
-        print(sock.recv(93939))
+        szRet = sock.recv(9999)
+
+        szFormat = "IHH"
+        nTotalBytes, cmd, flag = struct.unpack_from(szFormat, szRet)
+        print('nTotalBytes, cmd, flag ', nTotalBytes, cmd, flag)
+        szRet = szRet[struct.calcsize(szFormat): struct.calcsize(szFormat) + nTotalBytes]
+
+        import proto.login_pb2 as login_pb2
+        rsp = login_pb2.login_rsp()
+        rsp.ParseFromString(szRet)
+        print(rsp.ret, rsp.player_id)
+
+        szRet = sock.recv(9999)
+
+        szFormat = "IHH"
+        nTotalBytes, cmd, flag = struct.unpack_from(szFormat, szRet)
+        print('nTotalBytes, cmd, flag ', nTotalBytes, cmd, flag)
+        szRet = szRet[struct.calcsize(szFormat): struct.calcsize(szFormat) + nTotalBytes]
+
+        print(szRet)
+
+
 
         # syn scene
-        print(sock.recv(93939))
+        print("get syn scene")
 
         # sock.send(PacketQueryRoomScene())
         # szRet = sock.recv(93939)
@@ -188,13 +209,15 @@ def StartUp(nId=None):
         # print("11 .")
         # print(sock.recv(3884))
         #
-        sock.send(PackSetConf())
-        print(sock.recv(3884))
+        # sock.send(PackSetConf())
+        # print(sock.recv(3884))
+        print("start sleep")
+        time.sleep(31)
+        print("sleep end")
 
-        # while True:
-        #     # print(sock.recv(3948))
-        #     tmp = sock.recv(39484)
-        #     time.sleep(1)
+        sock.send(222)
+        tmp = sock.recv(39484)
+        time.sleep(1)
 
 
         time.sleep(9939)

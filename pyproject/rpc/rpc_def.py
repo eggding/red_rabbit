@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # 开放给客户端的协议 10001 - 20000
+GacHeartBreat = 10000
 GacRequsetLogin = 10001
 Gac2GasChangeScene = 10002
 Gac2GasQueryRoomScene = 10003
@@ -8,11 +9,13 @@ Gac2GasCreateRoom = 10010
 Gac2GasEnterRoom = 10011
 Gac2GasOptMj = 10021
 
+Gac2GasGameReady = 10043
+
 Gac2GasQueryGameConf = 10050
 Gac2GasOptGameConf = 10051
 Gac2GasExeCode = 10900
 
-
+RspHeartBreat = 20000
 ResponseLogin = 20001
 Gas2GacRetChangeScene = 20002
 Gas2GacretQueryRoomScene = 20003
@@ -23,6 +26,7 @@ Gas2GacRspSynGameData = 20014
 Gas2GacRspOpt = 20021
 Gas2GacSynCardInfo = 20041
 Gac2GasSynGameOrder = 20042
+Gac2GasRetGameReady = 20043
 Gas2GacSynAllConfig = 20050
 Gas2GacRetModifyConfig = 20051
 

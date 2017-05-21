@@ -40,5 +40,6 @@ class RobotMgr(object):
     def Try2EnterRoom(self, nGID):
         import gas.gas_room_mgr.gas_room_mgr as gas_room_mgr
         gas_room_mgr.EnterRoom(nGID, 0)
+        gas_room_mgr.MemberReady(nGID)
 
 _robotMgr = RobotMgr()

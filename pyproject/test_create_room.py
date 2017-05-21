@@ -43,6 +43,20 @@ def PacketCreateRoomBuff():
     szFormat = "IHH%ds" % len(szRet)
     return struct.pack(szFormat, nTotalSize, 10010, 0, szRet)
 
+def PacketReady():
+    import proto.opt_pb2 as opt_pb2
+    req = opt_pb2.game_ready_req()
+    szRet = req.SerializeToString()
+
+    # 计算protobol消息体的字节数
+    szFormat = "%ds" % len(szRet)
+    nTotalSize = struct.calcsize(szFormat)
+
+    # 二进制化消息包
+    # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
+    szFormat = "IHH%ds" % len(szRet)
+    return struct.pack(szFormat, nTotalSize, 10043, 0, szRet)
+
 
 szCode = """
 Player.m_PlayerMoneyMgr.AddMoney(1, 200, "gm test add money")
@@ -73,7 +87,7 @@ def StartUp():
         sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
-        # syn scene
+        # # syn scene
         print(sock.recv(93939))
 
         sock.send(PacketExeCode())
@@ -81,6 +95,9 @@ def StartUp():
 
         # time.sleep(0.3)
         sock.send(PacketCreateRoomBuff())
+        time.sleep(5)
+
+        sock.send(PacketReady())
 
         # time.sleep(1)
         # sock.send(PacketExeCode())

@@ -74,6 +74,7 @@ def OnGetUseSessonCb(dictRet, listBindData):
 
     if _loginMgr.get(session_id) is not None:
         ffext.on_verify_auth_callback(0, "player is online.", cb_id)
+        print("player online ...")
         return
 
     player = player_in_login.PlayerInLogin(session_id, online_time, ip, gate_name)

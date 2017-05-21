@@ -79,6 +79,7 @@ def decode_buff(dest, val_):
     # return dest
 
 def session_call(cmd_, protocol_type_ = 'json'):
+    print("session_call ", cmd_)
     global g_session_logic_callback_dict
     def session_logic_callback(func_):
         if protocol_type_ == 'json':
