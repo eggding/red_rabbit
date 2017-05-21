@@ -72,7 +72,7 @@ class RoomStateWaiting(state_machine.StateBase):
                 break
 
         print("member exit all is robot ", bAllIsRobot)
-        if bAllIsRobot is True:
+        if bAllIsRobot is True and len(roomObj.m_dictMember) != 0:
             roomObj.Dismiss()
 
         import json

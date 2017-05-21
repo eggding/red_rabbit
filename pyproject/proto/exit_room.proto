@@ -4,12 +4,11 @@ syntax = "proto2";
 message exit_room_req
 {
     optional bool proto_id_10015 = 99;
-    required uint32 room_id = 1;
 };
 
 // 协议号 20015
 message exit_room_rsp
 {
-    optional bool proto_id_20015 = 99;
+    optional bool   proto_id_20015 = 99;
     required uint32 ret = 1;
 };

@@ -229,6 +229,8 @@ class GasMjRule(rule_base.GameRuleBase):
         self.StartQiPaiTick(nPos)
         self.SynOrder()
 
+        # 查花检查
+
         if self.m_nNextCardIndex >= self.m_nMaxCardNum - 12:
             self.OneJuEnd()
             return

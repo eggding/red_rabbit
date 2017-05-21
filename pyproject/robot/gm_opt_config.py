@@ -13,7 +13,7 @@ g_dictAllGmConfig = {}
 
 def GetCurrentConfig():
     global g_szCurConfigName
-    if g_szCurConfigName is None:
+    if g_szCurConfigName is None or len(g_szCurConfigName) == 0:
         return {}
 
     global g_dictAllGmConfig
@@ -62,6 +62,9 @@ def Gas2GccModifyGmConfig(dictData):
     if nOptType == gm_config_pb2.gm_config_opt.Value("delete"):
         szName = dictData["config_name"]
         del g_dictAllGmConfig[szName]
+
+        if szName == g_szCurConfigName:
+            g_szCurConfigName = None
 
     elif nOptType == gm_config_pb2.gm_config_opt.Value("modify"):
         szName = dictData["config_name"]

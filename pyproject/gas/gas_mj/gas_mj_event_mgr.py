@@ -71,16 +71,16 @@ class GasMjEventMgr(object):
         assert ((nTotal - 1) % 3 == 0), nTotal
 
         listJinPai = mjMgr.GetJinPaiList()
-        tingArr = check_hu_mgr.getTingArr(listCardOwner, listJinPai)
-        if len(tingArr) != 0:
-            # rsp = common_info_pb2.on_touch_event()
-            # rsp.ev_type = EMjEvent.ev_hu_normal
-            # rsp.ev_target = nOptMember
-            # rsp.ev_data = json.dumps(tingArr)
-            # szRspSerial = rsp.SerializeToString()
-            # framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-            framework.LOGINFO("FFSCENE_PYTHON",
-                              "GasMj.tingArr {0}, {1}, {2} ".format(nPos, json.dumps(tingArr), mjMgr.DumpPos(nPos)))
+        # tingArr = check_hu_mgr.getTingArr(listCardOwner, listJinPai)
+        # if len(tingArr) != 0:
+        #     # rsp = common_info_pb2.on_touch_event()
+        #     # rsp.ev_type = EMjEvent.ev_hu_normal
+        #     # rsp.ev_target = nOptMember
+        #     # rsp.ev_data = json.dumps(tingArr)
+        #     # szRspSerial = rsp.SerializeToString()
+        #     # framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+        #     framework.LOGINFO("FFSCENE_PYTHON",
+        #                       "GasMj.tingArr {0}, {1}, {2} ".format(nPos, json.dumps(tingArr), mjMgr.DumpPos(nPos)))
 
         bNextTurn = True
         for nMember in listMember:

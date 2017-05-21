@@ -13,16 +13,14 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
-import common_info_pb2 as common__info__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='enter_room.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x10\x65nter_room.proto\x1a\x11\x63ommon_info.proto\"9\n\x0e\x65nter_room_req\x12\x16\n\x0eproto_id_10011\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"W\n\x0e\x65nter_room_rsp\x12\x16\n\x0eproto_id_20011\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12 \n\x08ret_data\x18\x02 \x01(\x0b\x32\x0e.syn_game_info')
-  ,
-  dependencies=[common__info__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x10\x65nter_room.proto\"9\n\x0e\x65nter_room_req\x12\x16\n\x0eproto_id_10011\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\"5\n\x0e\x65nter_room_rsp\x12\x16\n\x0eproto_id_20011\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r')
+)
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -61,8 +59,8 @@ _ENTER_ROOM_REQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39,
-  serialized_end=96,
+  serialized_start=20,
+  serialized_end=77,
 )
 
 
@@ -87,13 +85,6 @@ _ENTER_ROOM_RSP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-    _descriptor.FieldDescriptor(
-      name='ret_data', full_name='enter_room_rsp.ret_data', index=2,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
   ],
   extensions=[
   ],
@@ -106,11 +97,10 @@ _ENTER_ROOM_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=98,
-  serialized_end=185,
+  serialized_start=79,
+  serialized_end=132,
 )
 
-_ENTER_ROOM_RSP.fields_by_name['ret_data'].message_type = common__info__pb2._SYN_GAME_INFO
 DESCRIPTOR.message_types_by_name['enter_room_req'] = _ENTER_ROOM_REQ
 DESCRIPTOR.message_types_by_name['enter_room_rsp'] = _ENTER_ROOM_RSP
 

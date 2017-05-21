@@ -7,6 +7,7 @@ import rpc.rpc_def as rpc_def
 import rpc.scene_def as scene_def
 import proto.query_room_scene_pb2 as query_room_scene_pb2
 import proto.opt_pb2 as opt_pb2
+import proto.exit_room_pb2 as exit_room_pb2
 import gas_room_obj as gas_room_obj
 import cfg_py.parameter_common as parameter_common
 
@@ -47,22 +48,34 @@ class RoomService(object):
 
     def EnterRoom(self, nPlayerGID, nRoomID=None):
         if nRoomID is None:
-            return
+            return False
 
         if 0 == nRoomID:
             nRoomID = self.RandomChooseRoom()
 
         roomObj = self.m_dictRoomID2Room.get(nRoomID)
         if roomObj is None:
-            return
+            return False
 
-        roomObj.MemberEnter(nPlayerGID)
+        return roomObj.MemberEnter(nPlayerGID)
 
     def OnGetRoomIDRet(self, nRoomID, nPlayerGID, dictCfg):
         print("start room with config ", dictCfg)
         ffext.LOGINFO("FFSCENE_PYTHON", " GasRoomMgr.OnGetRoomIDRet {0}, {1}".format(nRoomID, nPlayerGID))
         roomObj = gas_room_obj.RoomObj(nRoomID, nPlayerGID, self, dictCfg)
         self.m_dictRoomID2Room[nRoomID] = roomObj
+
+        rsp = create_room_pb2.create_room_rsp()
+        rsp.ret = 0
+        rsp.game_type = 1
+        rsp.room_id = nRoomID
+        rsp.pos = roomObj.GetMemberPos(nPlayerGID)
+        rsp.cfg.member_num = dictCfg["member_num"]
+        rsp.cfg.multi = dictCfg["multi"]
+        rsp.cfg.total_start_game_num = dictCfg["total_start_game_num"]
+        rsp.cfg.avg = dictCfg["avg"]
+        rsp.cfg.opt = dictCfg["opt"]
+        ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetCreateRoom, rsp.SerializeToString())
 
     def CreateRoom(self, nRoomMaster, dictRoomCfg):
         Player = entity_mgr.GetEntity(nRoomMaster)
@@ -135,10 +148,16 @@ def Gcc2GasRetGenRoomID(dictData):
 @ffext.session_call(rpc_def.Gac2GasGameReady, opt_pb2.game_ready_req)
 def Gac2GasGameReady(nPlayerGID, reqObj):
     _roomMgr.MemberReady(nPlayerGID)
-
     rsp = opt_pb2.game_ready_rsp()
     rsp.ret = 0
     ffext.send_msg_session(nPlayerGID, rpc_def.Gac2GasRetGameReady, rsp.SerializeToString())
+
+@ffext.session_call(rpc_def.Gac2GasExitRoom, exit_room_pb2.exit_room_req)
+def Gac2GasGameReady(nPlayerGID, reqObj):
+    _roomMgr.OnMemberExit(nPlayerGID)
+    rsp = exit_room_pb2.exit_room_rsp()
+    rsp.ret = 0
+    ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetExitRoom, rsp.SerializeToString())
 
 @ffext.session_call(rpc_def.Gac2GasQueryRoomScene, query_room_scene_pb2.query_room_scene_req)
 def Gac2GasQueryRoomScene(nPlayerGID, reqObj):
@@ -165,7 +184,12 @@ import proto.enter_room_pb2 as enter_room_pb2
 @ffext.session_call(rpc_def.Gac2GasEnterRoom, enter_room_pb2.enter_room_req)
 def Gac2GasEnterRoom(nPlayerGID, reqObj):
     nRoomID = reqObj.room_id
-    _roomMgr.EnterRoom(nPlayerGID, nRoomID)
+    bRet = _roomMgr.EnterRoom(nPlayerGID, nRoomID)
+    nMsgID = 0 if bRet is True else 10004
+
+    rsp = enter_room_pb2.enter_room_rsp()
+    rsp.ret = nMsgID
+    ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetEnterRoom, rsp.SerializeToString())
 
 import proto.opt_pb2 as opt_pb2
 @ffext.session_call(rpc_def.Gac2GasOptMj, opt_pb2.opt_req)
