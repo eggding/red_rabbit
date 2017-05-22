@@ -33,6 +33,10 @@ Gac2GasSynGameOrder = 20042
 Gac2GasRetGameReady = 20043
 Gas2GacSynAllConfig = 20050
 Gas2GacRetModifyConfig = 20051
+Gas2GacRetShowResultOne = 20061
+Gas2GacRetShowResultAll = 20062
+Gas2GacRetStartNewRound = 20063
+Gas2GacRetSynMemberState = 20064
 
 SynSceneInfo = 30002
 SynPlayerData = 30003

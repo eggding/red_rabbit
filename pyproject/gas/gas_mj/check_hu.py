@@ -61,6 +61,9 @@ listShiSanYao = [101, 109, 201, 209, 301, 309, 401, 402, 403, 404, 405, 406, 407
 def IsBaiBan(nCard):
     return 407 == nCard
 
+def IsHuaPai(nCard):
+    return GetCardType(nCard) == 5
+
 def GetBaiBanCard():
     return 407
 

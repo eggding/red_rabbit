@@ -43,6 +43,20 @@ def PacketCreateRoomBuff():
     szFormat = "IHH%ds" % len(szRet)
     return struct.pack(szFormat, nTotalSize, 10010, 0, szRet)
 
+def PacketHeartBreat():
+    import proto.common_info_pb2 as common_info_pb2
+    rsp = common_info_pb2.heart_beat_req()
+    szRet = rsp.SerializeToString()
+
+    # 计算protobol消息体的字节数
+    szFormat = "%ds" % len(szRet)
+    nTotalSize = struct.calcsize(szFormat)
+
+    # 二进制化消息包
+    # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
+    szFormat = "IHH%ds" % len(szRet)
+    return struct.pack(szFormat, nTotalSize, 10000, 0, szRet)
+
 def PacketReady():
     import proto.opt_pb2 as opt_pb2
     req = opt_pb2.game_ready_req()
@@ -103,12 +117,18 @@ def StartUp():
         # sock.send(PacketExeCode())
         # print("send exe code done.")
 
-
+        c = 1
         while True:
             # print(sock.recv(3948))
+            sock.send(PacketReady())
             t = sock.recv(39484)
             print(t)
             time.sleep(0.5)
+
+            # if c % 5 == 0:
+
+            if c % 10 == 0:
+                sock.send(PacketHeartBreat())
 
         time.sleep(9939)
 

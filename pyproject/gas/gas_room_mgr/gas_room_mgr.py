@@ -42,6 +42,8 @@ class RoomService(object):
 
     def RandomChooseRoom(self):
         for nRoomID, roomObj in self.m_dictRoomID2Room.iteritems():
+            if roomObj.IsRunning() is True:
+                continue
             if roomObj.GetMemberList() != 4:
                 return nRoomID
         return 0

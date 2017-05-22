@@ -29,6 +29,7 @@ class RoomStateWaiting(state_machine.StateBase):
         Player.SetRoomID(roomObj.GetRoomID())
 
         roomObj.SynGameInfo(nMember, bSynAll=True)
+        roomObj.SynMemberState2All(nMember, EStatusInRoom.eUnReady)
 
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberEnter {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
@@ -44,12 +45,10 @@ class RoomStateWaiting(state_machine.StateBase):
             return
 
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eReady
+        roomObj.SynMemberState2All(nMember, EStatusInRoom.eReady)
 
         import json
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateWaiting.MemberReady {0} -> {1}".format(nMember, json.dumps(roomObj.m_dictMember)))
-
-        roomObj.SynGameInfo(nMember, bSynAll=True)
-
         if roomObj.CanStartGame() is True:
             roomObj.StartGameOnRoom()
 
@@ -59,6 +58,8 @@ class RoomStateWaiting(state_machine.StateBase):
         Player.SetRoomID(None)
 
         assert nMember in roomObj.m_dictMember
+        roomObj.SynMemberState2All(nMember, EStatusInRoom.eExitRoom)
+
         if 1 == len(roomObj.m_dictMember):
             roomObj.Dismiss()
         else:

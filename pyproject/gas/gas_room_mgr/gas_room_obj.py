@@ -21,6 +21,7 @@ class RoomObj(object):
         self.m_dictMember = {} # member -> [nPos, status]
 
         self.m_dictCfg = dictConfig
+        self.m_bIsFirstStart = True
 
         # 初始化状态机
         self.m_sm = state_machine.StateMachine()
@@ -60,6 +61,9 @@ class RoomObj(object):
                 return nMemberGID
         assert False
 
+    def IsRunning(self):
+        return self.m_sm.IsInState(room_state_running.RoomStateRunning)
+
     def GetMemberList(self):
         return self.m_dictMember.keys()
 
@@ -69,6 +73,23 @@ class RoomObj(object):
     def OnGameEnd(self):
         self.Dismiss()
 
+    def SynMemberState2All(self, nMemberID, nState):
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.syn_member_state_rsp()
+        rsp.ret = 0
+        rsp.room_id = self.GetRoomID()
+        rsp.member_info.pos = self.GetMemberPos(nMemberID)
+        rsp.member_info.state = nState
+
+        Player = entity_mgr.GetEntity(nMemberID)
+        assert Player is not None
+        Player.Serial2Client(rsp.member_info)
+
+        for nMember in self.m_dictMember.iterkeys():
+            if nMemberID == nMember:
+                continue
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacRetSynMemberState, rsp.SerializeToString())
+
     def SynGameInfo(self, nPlayerGID, bSynAll=False):
         import proto.common_info_pb2 as common_info_pb2
         rsp = common_info_pb2.syn_game_info()
@@ -77,6 +98,7 @@ class RoomObj(object):
         rsp.cur_round = self.m_gameRuleObj.GetCurJu()
         rsp.cur_turn = self.m_gameRuleObj.GetCurTurn()
         rsp.remain_card_num = self.m_gameRuleObj.GetCardRemain()
+        rsp.room_state = EStatusInRoom.eWaiting if self.m_sm.IsInState(room_state_running.RoomStateRunning) is False else EStatusInRoom.eRunning
 
         nZhuang = self.m_gameRuleObj.GetZhuang()
         rsp.master_id = nZhuang if nZhuang == 0 else self.GetMemberPos(nZhuang)
@@ -128,41 +150,54 @@ class RoomObj(object):
 
         return True
 
+    def ChangeRoomStateToWaiting(self):
+        import util.util as util
+        for nMember, listData in self.m_dictMember.iteritems():
+            if util.IsRobot(nMember) is True:
+                listData[RoomMemberProperty.eStatus] = EStatusInRoom.eReady
+            else:
+                listData[RoomMemberProperty.eStatus] = EStatusInRoom.eUnReady
+        self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
+
     def StartGameOnRoom(self):
         ffext.LOGINFO("FFSCENE_PYTHON", "StartGameOnRoom {0}".format(self.GetRoomID()))
-        bIsAvg = True if self.GetConfig()["avg"] != 0 else False
-        if bIsAvg is True:
-            nRoomMasterDel = self.GetCreateRoomNeedMoney() / self.GetConfig()["member_num"]
-            assert nRoomMasterDel > 0
-            nRoomOtherDel = nRoomMasterDel
-        else:
-            nRoomMasterDel = self.GetCreateRoomNeedMoney()
-            nRoomOtherDel = 0
 
-        for nMember in self.m_dictMember.iterkeys():
-            Player = entity_mgr.GetEntity(nMember)
-            if nMember == self.m_nMaster:
-                nDelNum = nRoomMasterDel
+        if self.m_bIsFirstStart is True:
+            bIsAvg = True if self.GetConfig()["avg"] != 0 else False
+            if bIsAvg is True:
+                nRoomMasterDel = self.GetCreateRoomNeedMoney() / self.GetConfig()["member_num"]
+                assert nRoomMasterDel > 0
+                nRoomOtherDel = nRoomMasterDel
             else:
-                nDelNum = nRoomOtherDel
-            # if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelNum) is False:
-            #     return
+                nRoomMasterDel = self.GetCreateRoomNeedMoney()
+                nRoomOtherDel = 0
 
-        for nMember in self.m_dictMember.iterkeys():
-            Player = entity_mgr.GetEntity(nMember)
-            if nMember == self.m_nMaster:
-                nDelNum = nRoomMasterDel
-            else:
-                nDelNum = nRoomOtherDel
-            if nDelNum != 0:
-                pass
-                # if Player.AddMoney(EMoneyType.eZhuanShi, -nDelNum, "开场扣除") is False:
+            for nMember in self.m_dictMember.iterkeys():
+                Player = entity_mgr.GetEntity(nMember)
+                if nMember == self.m_nMaster:
+                    nDelNum = nRoomMasterDel
+                else:
+                    nDelNum = nRoomOtherDel
+                # if Player.IsMoneyEnough(EMoneyType.eZhuanShi, nDelNum) is False:
                 #     return
 
-        self.m_sm.ChangeState(room_state_running.RoomStateRunning(self))
-        for nMember in self.m_dictMember.iterkeys():
-            Player = entity_mgr.GetEntity(nMember)
-            Player.SetRoomID(self.GetRoomID())
+            for nMember in self.m_dictMember.iterkeys():
+                Player = entity_mgr.GetEntity(nMember)
+                if nMember == self.m_nMaster:
+                    nDelNum = nRoomMasterDel
+                else:
+                    nDelNum = nRoomOtherDel
+                if nDelNum != 0:
+                    pass
+                    # if Player.AddMoney(EMoneyType.eZhuanShi, -nDelNum, "开场扣除") is False:
+                    #     return
+
+            self.m_sm.ChangeState(room_state_running.RoomStateRunning(self))
+            for nMember in self.m_dictMember.iterkeys():
+                Player = entity_mgr.GetEntity(nMember)
+                Player.SetRoomID(self.GetRoomID())
+        else:
+            self.m_bIsFirstStart = False
 
         self.m_gameRuleObj.GameStart()
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccStartGameOnRoom, {"room_id": self.GetRoomID()})
@@ -210,6 +245,7 @@ class RoomObj(object):
     def Dismiss(self):
         self.m_roomMgr.OnRoomDismiss(self.GetRoomID(), self.m_dictMember.keys())
         self.m_dictMember = {}
+        self.m_bIsFirstStart = True
         self.Destroy()
 
     def Destroy(self):

@@ -13,7 +13,7 @@ class GasMjEventMgr(object):
     def __init__(self):
         self.m_dictEventType2Opt = {EMjEvent.ev_bu_hua: self.EventBuHua,
                                     EMjEvent.ev_mo_pai: self.TouchEventMoPai,
-                                    EMjEvent.ev_qi_pai: self.TouchEventQiPai,
+                                    EMjEvent.ev_be_qi_pai: self.TouchEventQiPai,
                                     EMjEvent.ev_kai_jin: self.TouchEventKaiJin,
                                     EMjEvent.ev_peng: self.TouchEventPeng,
                                     EMjEvent.ev_gang_with_peng: self.TouchEventGangWithPeng,
@@ -59,7 +59,7 @@ class GasMjEventMgr(object):
         listMember = roomObj.GetMemberList()
         nOptMember = roomObj.GetMemberIDByPos(nPos)
         rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = EMjEvent.ev_qi_pai
+        rsp.ev_type = EMjEvent.ev_be_qi_pai
         rsp.ev_target = nOptMember
         rsp.ev_data = str(nCard)
         szRspSerial = rsp.SerializeToString()

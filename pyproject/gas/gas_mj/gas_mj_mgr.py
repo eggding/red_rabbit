@@ -5,7 +5,7 @@ import ffext
 import json
 import random
 import rpc.rpc_def as rpc_def
-from util.enum_def import EGameRule, ECardType, EMjEvent
+from util.enum_def import EGameRule, ECardType, EMjEvent, EStatusInRoom
 import entity.rule_base as rule_base
 import util.tick_mgr as tick_mgr
 import check_hu as check_hu
@@ -53,6 +53,9 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictOptTick = {}
         self.m_dictPosHistory = {}
         self.m_dictPosEventRecord = {}
+
+        # 各种计数
+        self.m_dictTotalCount = {}
 
     def SetCurEventOptMember(self, nPlayerGID):
         self.m_nEventOptPlayer = nPlayerGID
@@ -127,12 +130,15 @@ class GasMjRule(rule_base.GameRuleBase):
         listCard.extend(self.m_dictPosCarList[nPos][:])
         return listCard
 
-    def AddTouchEvent(self, nPos, tupleEventData):
-        self.m_dictPosEventRecord[nPos].append(tupleEventData)
+    def GetJuNumWithOneGameNum(self):
+        """
+        :return: 
+        """
+        return 2
 
     def GetMaxJuNum(self):
         nChangNum = self.GetConfig()["total_start_game_num"]
-        return nChangNum * 1
+        return nChangNum * self.GetJuNumWithOneGameNum()
 
     def InitWithCfg(self, dictCfg):
         self.m_dictCfg = dictCfg
@@ -330,7 +336,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictPosCarList[nPos].remove(nCardID)
         self.m_dictPosHistory[nPos].append((self.m_nNextCardIndex - 1, nCardID))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.AutoQiPai {0}, {1}, {2}. {3} {4}".format(nPos, self.m_roomObj.GetMemberIDByPos(nPos), check_hu.GetCardNameChinese(nCardID), json.dumps(tingArr), len(self.m_dictPosCarList[nPos])))
-        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_qi_pai, [nPos, nCardID])
+        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_be_qi_pai, [nPos, nCardID])
         if bCanNextTurn is True:
             self.NextTurn()
         else:
@@ -355,7 +361,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictPosHistory[nPos].append((self.m_nNextCardIndex - 1, nCardID))
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.OptQiPai {0}, {1}".format(nPos, check_hu.GetCardNameChinese(nCardID)))
-        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_qi_pai, [nPos, nCardID])
+        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_be_qi_pai, [nPos, nCardID])
         if bCanNextTurn is True:
             self.NextTurn()
         else:
@@ -415,7 +421,7 @@ class GasMjRule(rule_base.GameRuleBase):
                 return
             self.RequestHu(nPlayerGID)
 
-        elif nOptType == EMjEvent.ev_qi_pai:
+        elif nOptType == EMjEvent.ev_be_qi_pai:
             if self.GetCurOptMemberPos() != nPos:
                 return
             nCardID = int(reqObj.opt_data_str)
@@ -432,7 +438,7 @@ class GasMjRule(rule_base.GameRuleBase):
             for nCard in listCard:
                 rsp.owner_card_list.append(nCard)
 
-        if nOptType in (EMjEvent.ev_qi_pai, ):
+        if nOptType in (EMjEvent.ev_be_qi_pai, ):
             listListenCard = check_hu.getTingArr(self.m_dictPosCarList[nPos], self.GetJinPaiList())
             for nCard in listListenCard:
                 rsp.listen_card.append(nCard)
@@ -452,6 +458,7 @@ class GasMjRule(rule_base.GameRuleBase):
         if check_hu.testHu(0, listCard, self.m_listJinPai) is False:
             return
 
+        self.SynOtherTouchEvent(EMjEvent.ev_be_hu_normal, 0, nPlayerGID, "")
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.Hu@@@@@ {0}, {1}, {2}".format(nPlayerGID, self.DumpPos(nPos), self.m_listJinPai))
         self.OneJuEnd(nPos)
 
@@ -478,6 +485,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.RecordTouchEvent(nPosOwner, [EMjEvent.ev_gang_all, nTargetMember, nCardID])
         self.ChangeOrder(nPosOwner, nPosOwner)
         self.StopEventTick()
+        self.SynOtherTouchEvent(EMjEvent.ev_gang_all, 0, nPlayerGID, str(nCardID))
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGangAll {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGangRetAll {0}".format(self.DumpPos(nPosOwner)))
@@ -523,6 +531,8 @@ class GasMjRule(rule_base.GameRuleBase):
 
         self.ChangeOrder(nPosTarget, nPosOwner)
         self.StopEventTick()
+        self.SynOtherTouchEvent(EMjEvent.ev_gang_with_peng if bGangTypeWithPeng is True else EMjEvent.ev_gang_other,
+                                nTargetMember, nPlayerGID, str(nCardID))
 
         if bGangTypeWithPeng is True:
             self.RecordTouchEvent(nPosOwner, [EMjEvent.ev_gang_with_peng, nTargetMember, nCardID])
@@ -557,53 +567,166 @@ class GasMjRule(rule_base.GameRuleBase):
         self.ChangeOrder(nPosTarget, nPosOwner)
 
         self.RecordTouchEvent(nPosOwner, [EMjEvent.ev_peng, nTargetMember, nCardID])
+        self.SynOtherTouchEvent(EMjEvent.ev_be_peng, nTargetMember, nPlayerGID, str(nCardID))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPeng {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestPengRet {0}".format(self.DumpPos(nPosOwner)))
+
+    def SynOtherTouchEvent(self, nEventType, nTarget, nTargetSrc, szOptData):
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.on_touch_event()
+        rsp.ev_type = nEventType
+        rsp.ev_target = nTarget
+        rsp.ev_target_src = nTargetSrc
+        rsp.ev_data = szOptData
+        szRspSerial = rsp.SerializeToString()
+        for nMember in self.m_roomObj.GetMemberList():
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
 
     def GetAllCardList(self, nPos):
         listTmp = self.m_dictPosCarListEx[nPos][:]
         listTmp.extend(self.m_dictPosCarList[nPos])
         return listTmp
 
-    def CalScore(self, nWndPos):
-        import proto.common_info_pb2 as common_info_pb2
-        rsp = common_info_pb2.syn_game_ret()
+    def SerialList2Str(self, listData):
+        szRet = ""
+        for nData in listData:
+            if len(szRet) != 0:
+                szRet += ","
+            szRet += str(nData)
+        return szRet
+
+    def CalToatlScore(self, nPos):
+        return 1
+
+    def ShowResultOne(self, nWinnerPos):
+        if nWinnerPos is None:
+            nWinnerPos = -1
+        import proto.show_result_pb2 as show_result_pb2
+        rsp = show_result_pb2.show_result_one_rsp()
+        rsp.master_pos = self.m_roomObj.GetMemberPos(self.m_nZhuang)
+        rsp.winner_pos = nWinnerPos
+        rsp.golden_card_list = self.SerialList2Str(self.m_listJinPai)
+        rsp.hu_type = EMjEvent.ev_hu_normal
         rsp.room_id = self.m_roomObj.GetRoomID()
+
+        import check_hu as check_hu_mgr
+        import entity.entity_mgr as entity_mgr
+        for nMember in self.m_roomObj.GetMemberList():
+            dataInfo = rsp.list_data.add()
+
+            nPos = self.m_roomObj.GetMemberPos(nMember)
+            Player = entity_mgr.GetEntity(nMember)
+            dataInfo.wecaht_info = Player.GetWeChatInfo().encode('utf-8')
+            dataInfo.player_id = nMember
+            dataInfo.pos = nPos
+
+            tmpCardList = self.m_dictPosCarList[nPos]
+            tmpCardList.extend(self.m_dictPosCarListEx[nPos])
+            dataInfo.card_list = self.SerialList2Str(tmpCardList)
+
+            listHuaPai = []
+            for nCard in self.m_dictPosHistory[nPos]:
+                nCard = nCard[-1:][0]
+                if check_hu_mgr.IsHuaPai(nCard) is False:
+                    continue
+                listHuaPai.append(nCard)
+            dataInfo.hua_list = self.SerialList2Str(listHuaPai)
+
+            dataInfo.event_list = ""
+            dataInfo.total_score = self.CalToatlScore(nPos)
+
+        for nMember in self.m_roomObj.GetMemberList():
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacRetShowResultOne, rsp.SerializeToString())
+
+    def ShowResultAll(self, nWinnerPos):
+        import proto.show_result_pb2 as show_result_pb2
+        rsp = show_result_pb2.show_result_all_rsp()
+        rsp.room_id = self.m_roomObj.GetRoomID()
+        rsp.cur_round = self.m_nCurJu
+        rsp.total_round = self.GetMaxJuNum()
+        rsp.room_master_pos = 1 # self.m_roomObj.GetMemberPos()
+        rsp.winner_pos = 1
 
         import entity.entity_mgr as entity_mgr
         for nMember in self.m_roomObj.GetMemberList():
-            tmp = rsp.list_member.add()
-            tmp.pos = self.m_roomObj.GetMemberPos(nMember)
+            allData = rsp.list_data.add()
+            allData.wecaht_info = "333"
+
             Player = entity_mgr.GetEntity(nMember)
             assert Player is not None
-            Player.Serial2Client(tmp)
+            allData.player_id = nMember
+            allData.pos = self.m_roomObj.GetMemberPos(nMember)
 
-            tmp = rsp.list_car_serial.add()
-            tmp.player_id = nMember
-            tmp.score = random.randint(1, 100)
-            nPos = self.m_roomObj.GetMemberPos(nMember)
-            listCardData = self.GetAllCardList(nPos)
-            for nCard in listCardData:
-                tmp.list_card_info.append(nCard)
+            dictData = self.m_dictTotalCount.get(nMember)
+            if dictData is None:
+                allData.hu_num = 0
+                allData.dan_you_num = 0
+                allData.shuang_you_num = 0
+                allData.sam_you_num = 0
+                allData.kai_gang_num = 0
+                allData.total_score = 0
+            else:
+                allData.hu_num = dictData.get("hu_num", 0)
+                allData.dan_you_num = dictData.get("dan_you_num", 0)
+                allData.shuang_you_num = dictData.get("shuang_you_num", 0)
+                allData.sam_you_num = dictData.get("sam_you_num", 0)
+                allData.kai_gang_num = dictData.get("kai_gang_num", 0)
+                allData.total_score = dictData.get("total_score", 0)
 
         for nMember in self.m_roomObj.GetMemberList():
-            ffext.send_msg_session(nMember, rpc_def.Gas2GacSynGameRet, rsp.SerializeToString())
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacRetShowResultAll, rsp.SerializeToString())
 
-    def OneJuEnd(self, nWndPos=None):
-        self.CalScore(nWndPos)
-        self.StartJu()
+    def InitHistCounterDefault(self, nMember):
+        if nMember in self.m_dictTotalCount:
+            return
+        self.m_dictTotalCount[nMember] = {
+            "total_score": 0,
+            "hu_num": 0,
+            "kai_gang_num": 0,
+            "dan_you_num": 0,
+            "shuang_you_num": 0,
+            "sam_you_num": 0,
+        }
 
-    def CleanGoogleProtoList(self, listData):
-        nSize = len(listData)
-        while nSize > 0:
-            listData.pop()
+    def AddCounterRecordHist(self, nWinnerPos):
+        if nWinnerPos is None:
+            return
+        nMemberWinner = self.m_roomObj.GetMemberIDByPos(nWinnerPos)
+        self.InitHistCounterDefault(nMemberWinner)
+        self.m_dictTotalCount[nMemberWinner]["total_score"] += self.CalToatlScore(nWinnerPos)
+        self.m_dictTotalCount[nMemberWinner]["hu_num"] += 1
+
+        for nPos, listRecordData in self.m_dictPosEventRecord.iteritems():
+            if 0 == len(listRecordData):
+                continue
+            nMember = self.m_roomObj.GetMemberIDByPos(nPos)
+            self.InitHistCounterDefault(nMember)
+            for tupleRecordData in listRecordData:
+                nEvent, nTarget, nCard = tupleRecordData
+                if nEvent in (EMjEvent.ev_gang_with_peng, EMjEvent.ev_gang_other, EMjEvent.ev_gang_all):
+                    self.m_dictTotalCount[nMember]["kai_gang_num"] += 1
+
+    def OneJuEnd(self, nWinnerPos=None):
+        self.AddCounterRecordHist(nWinnerPos)
+        if self.m_nCurJu % self.GetJuNumWithOneGameNum() == 0:
+            self.ShowResultAll(nWinnerPos)
+        else:
+            self.ShowResultOne(nWinnerPos)
+
+        self.CancelAutoTick()
+        self.InitDefault()
+        if self.m_nCurJu >= self.GetMaxJuNum():
+            self.GameEnd()
+            return
+        self.m_roomObj.ChangeRoomStateToWaiting()
+        self.NoticeAllStartNewJu()
 
     def SynOrder(self):
         import proto.opt_pb2 as opt_pb2
         rsp = opt_pb2.syn_game_order()
         rsp.room_id = self.m_roomObj.GetRoomID()
-        rsp.cur_game_num = self.m_nCurJu
-        rsp.cur_round = self.m_nCurTurn / 4
+        rsp.cur_game_num = 0
+        rsp.cur_round = self.m_nCurJu
         rsp.cur_turn = self.m_nCurTurn
         rsp.remain_card_num = len(self.m_listGlobalCard) - self.m_nNextCardIndex
         rsp.opt_pos = self.m_nCurOptMemberPos
@@ -616,22 +739,44 @@ class GasMjRule(rule_base.GameRuleBase):
         gameCardListObj.pos = nPos
         if nPos not in self.m_dictPosCarList:
             gameCardListObj.card_num = 0
+            gameCardListObj.list_card_show = ""
             return
 
         gameCardListObj.card_num = len(self.m_dictPosCarList[nPos])
 
         listHist = self.m_dictPosHistory[nPos]
         for nCard in listHist:
-            gameCardListObj.list_card_hist.append(nCard)
+            gameCardListObj.list_card_hist.append(nCard[-1:][0])
 
-        listEx = self.m_dictPosCarListEx[nPos]
-        for nCard in listEx:
-            gameCardListObj.list_card_show.append(nCard)
+        listTouchEvent = self.m_dictPosEventRecord[nPos]
+        szRet = ""
+        if len(listTouchEvent) != 0:
+            for tupleOneEvent in listTouchEvent:
+                nEvent, nTarget, nCard = tupleOneEvent
+                if nEvent in (EMjEvent.ev_gang_all, EMjEvent.ev_gang_other, EMjEvent.ev_gang_with_peng):
+                    szTmp = "{0}:{1}".format(nEvent, nCard)
+                elif nEvent == EMjEvent.ev_peng:
+                    szTmp = "{0}:{1}".format(nEvent, nCard)
+                else:
+                    szTmp = ""
+                if len(szRet) != 0:
+                    szRet += "|"
+                szRet += szTmp
+        gameCardListObj.list_card_show = szRet
 
         if bSynOwnerCard is True:
             listCardHave = self.m_dictPosCarList[nPos]
             for nCard in listCardHave:
                 gameCardListObj.list_card_have.append(nCard)
+
+    def NoticeAllStartNewJu(self):
+        import proto.common_info_pb2 as common_info_pb2
+        rsp = common_info_pb2.start_new_round_rsp()
+        rsp.room_id = self.m_roomObj.GetRoomID()
+        listMember = self.m_roomObj.GetMemberList()
+        for nMember in listMember:
+            rsp.pos_owner = self.m_roomObj.GetMemberPos(nMember)
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacRetStartNewRound, rsp.SerializeToString())
 
     def StartJu(self):
         """
@@ -640,9 +785,6 @@ class GasMjRule(rule_base.GameRuleBase):
         """
         self.CancelAutoTick()
         self.InitDefault()
-        if self.m_nCurJu >= self.GetMaxJuNum():
-            self.GameEnd()
-            return
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.StartJu {0}".format(self.m_nCurJu))
         self.m_nCurJu += 1

@@ -12,6 +12,9 @@ class RoomStateRunning(state_machine.StateBase):
     def __init__(self, owner):
         super(RoomStateRunning, self).__init__(owner)
 
+    def MemberReady(self, nMember):
+        pass
+
     def MemberEnter(self, nMember):
         ffext.LOGINFO("FFSCENE_PYTHON", "RoomStateRunning.MemberEnter {0}".format(nMember))
         roomObj = self.GetOwner()
@@ -26,6 +29,7 @@ class RoomStateRunning(state_machine.StateBase):
 
         roomObj.GetGameRule().OnMemberEnter(nMember)
         roomObj.SynGameInfo(nMember, bSynAll=True)
+        roomObj.SynMemberState2All(nMember, EStatusInRoom.ePlaying)
         return True
 
     def MemberExit(self, nMember):
@@ -37,6 +41,6 @@ class RoomStateRunning(state_machine.StateBase):
         assert nMember in roomObj.m_dictMember
         dictState = roomObj.m_dictMember[nMember]
         dictState[RoomMemberProperty.eStatus] = EStatusInRoom.eOffline
-
+        roomObj.SynMemberState2All(nMember, EStatusInRoom.eOffline)
         roomObj.GetGameRule().OnMemberExit(nMember)
 

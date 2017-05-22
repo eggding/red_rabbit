@@ -45,7 +45,7 @@ _OPT_REQ = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='opt_type', full_name='opt_req.opt_type', index=1,
       number=1, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
+      has_default_value=False, default_value=101,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -97,7 +97,7 @@ _OPT_RSP = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='opt_type', full_name='opt_rsp.opt_type', index=2,
       number=2, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
+      has_default_value=False, default_value=101,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),

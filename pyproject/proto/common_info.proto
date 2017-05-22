@@ -19,45 +19,63 @@ enum member_state
     e_ready = 2; // 准备状态
     e_offline = 3; // 离线状态
     e_playing = 4; // 开始游戏状态
+    e_exit_room = 5; // 离开房间
+};
+
+enum room_state
+{
+    e_waiting = 101;
+    e_running = 202;
 };
 
 enum event_type
 {
-    ev_gang_with_peng = 1; // 杠其他人，自己的3个牌有1个是碰回来的
-    ev_gang_other = 2; // 杠其他人，自己摸了3个
-    ev_gang_all = 3; // 自己摸回来4个一样的杠牌
+    ev_gang_with_peng   = 101; // 杠其他人，自己的3个牌有1个是碰回来的
+    ev_gang_other       = 102; // 杠其他人，自己摸了3个
+    ev_gang_all         = 103; // 自己摸回来4个一样的杠牌
+    ev_peng             = 111; // 碰
+    ev_chi              = 112; // 吃
+    ev_pass             = 117; // 过
+    ev_cha_pai          = 118; // 查牌
+    ev_dan_you          = 121; // 单游
+    ev_shuang_you       = 122; // 双游
+    ev_san_you          = 123; // 三游
+    ev_hu_normal        = 181; // 普通胡
+    ev_hu_cha_hua       = 182; // 查花胡
+    ev_hu_qiang_gang    = 183; // 抢杠胡
+    ev_hu_qiang_jin     = 184; // 枪金胡
+    ev_hu_san_jin_dao   = 185; // 三金倒
+    ev_hu_si_jin_dao    = 186; // 四金倒
+    ev_hu_wu_jin_dao    = 187; // 五金倒
+    ev_hu_liu_jin_dao   = 188; // 六金倒
+    ev_hu_ba_xian_guo_hai = 189; // 八仙过海
+    ev_hu_shi_san_yao   = 190; // 十三幺
+    ev_hu_qi_dui_zi     = 191; // 七对子
 
-    ev_peng = 11; // 碰
-    ev_chi = 12; // 吃
-    ev_bu_hua = 13; // 补花
-    ev_kai_jin = 14; // 开金
-    ev_mo_pai = 15; // 摸牌
-    ev_qi_pai = 16; // 弃牌
-    ev_pass = 17; // 过
-    ev_cha_pai = 18; // 查牌
-
-    ev_dan_you = 21; // 单游
-    ev_shuang_you = 22; // 双游
-    ev_san_you = 23; // 三游
-
-    ev_fen_bing_1 = 24; // 1轮被跟
-    ev_fen_bing_2 = 25; // 2轮被跟
-    ev_be_peng = 26; // 被碰
-    ev_be_gang = 27; // 被杠
-    ev_be_gang_hu = 28; // 被杠胡
-    ev_be_cha = 29; // 被查
-
-    ev_hu_normal = 81; // 普通胡
-    ev_hu_cha_hua = 82; // 查花胡
-    ev_hu_qiang_gang = 83; // 抢杠胡
-    ev_hu_qiang_jin = 84; // 枪金胡
-    ev_hu_san_jin_dao = 85; // 三金倒
-    ev_hu_si_jin_dao = 86; // 四金倒
-    ev_hu_wu_jin_dao = 87; // 五金倒
-    ev_hu_liu_jin_dao = 88; // 六金倒
-    ev_hu_ba_xian_guo_hai = 89; // 八仙过海
-    ev_hu_shi_san_yao = 90; // 十三幺
-    ev_hu_qi_dui_zi = 91; // 七对子
+    ev_bu_hua               = 213; // 补花
+    ev_kai_jin              = 214; // 开金
+    ev_mo_pai               = 215; // 摸牌
+    ev_be_qi_pai            = 216; // 弃牌
+    ev_be_dan_you           = 221; // 单游
+    ev_be_shuang_you        = 222; // 双游
+    ev_be_san_you           = 223; // 三游
+    ev_be_fen_bing_1        = 224; // 1轮被跟
+    ev_be_fen_bing_2        = 225; // 2轮被跟
+    ev_be_peng              = 226; // 被碰
+    ev_be_gang              = 227; // 被杠
+    ev_be_gang_hu           = 228; // 被杠胡
+    ev_be_cha               = 229; // 被查
+    ev_be_hu_normal         = 281; // 普通胡
+    ev_be_hu_cha_hua        = 282; // 查花胡
+    ev_be_hu_qiang_gang     = 283; // 抢杠胡
+    ev_be_hu_qiang_jin      = 284; // 枪金胡
+    ev_be_hu_san_jin_dao    = 285; // 三金倒
+    ev_be_hu_si_jin_dao     = 286; // 四金倒
+    ev_be_hu_wu_jin_dao     = 287; // 五金倒
+    ev_be_hu_liu_jin_dao    = 288; // 六金倒
+    ev_be_hu_ba_xian_guo_hai = 289; // 八仙过海
+    ev_be_hu_shi_san_yao    = 290; // 十三幺
+    ev_be_hu_qi_dui_zi      = 291; // 七对子
 };
 
 message other_player_info
@@ -88,7 +106,7 @@ message game_card_list
     required uint32 card_num = 2; // 手上的牌数量
     repeated uint32 list_card_have = 3; // 手上的牌(可能没有)
     repeated uint32 list_card_hist = 4; // 打出去的牌堆
-    repeated uint32 list_card_show = 5; // 碰、杠、事件的牌堆
+    required bytes list_card_show = 5; // 碰、杠、事件的牌堆
 };
 
 // 同步房间信息，协议号 20014
@@ -107,6 +125,7 @@ message syn_game_info
     repeated other_player_info  list_members = 10;  // 房间其他成员
     required uint32             opt_pos = 11; // 当前轮到哪一个位置的玩家操作
     required uint32             pos_owner = 12; // 自己的位置
+    required room_state         room_state = 13; // 当前房间状态
 };
 
 // 通知客户端触发事件, 协议号20013
@@ -130,23 +149,6 @@ message on_touch_event_member
     repeated other_player_info list_member = 2; // 玩家列表信息
 }
 
-message card_serial
-{
-    required uint64 player_id = 1; // 玩家id
-    repeated uint32 list_card_info = 2; // 玩家牌序
-    required uint32 score = 3; // 积分
-};
-
-
-// 玩法结果, 分配协议号 20012
-message syn_game_ret
-{
-    optional bool               proto_id_20012 = 99;
-    required uint32             room_id = 1;
-    repeated other_player_info  list_member = 2;
-    repeated card_serial        list_car_serial = 3;
-};
-
 // 公告/提示 消息同步, 分配协议号 20018
 message notic_msg
 {
@@ -166,3 +168,30 @@ message heart_beat_rsp
     optional bool   proto_id_20000 = 99;
     required uint64 next_heart_beat_time = 1; // 下一次发送心跳的时间
 };
+
+// 开始新的一局
+message start_new_round_rsp
+{
+    optional bool               proto_id_20063 = 99;
+    required uint32             room_id = 1; // 房间id
+    required uint32             pos_owner = 2; // 自己的位置
+};
+
+// 同步玩家状态
+message syn_member_state_rsp
+{
+    optional bool proto_id_20064 = 99;
+    required uint32 ret = 1;
+    required uint32 room_id = 2;
+    required other_player_info member_info = 3;
+};
+
+// 协议流程
+// 1.start_new_round_rsp(开始新的一局)
+// 2.game_ready_req（成员准备）
+// 3.syn_game_info (同步开局信息)
+// 4.syn_game_order(同步操作顺序)
+// 5.on_touch_event（触发事件）
+// 6.player_opt(玩家操作)
+// ... 重复4-6操作
+// final show_result（结果显示）

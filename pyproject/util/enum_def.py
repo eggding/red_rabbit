@@ -19,74 +19,51 @@ class ECardType(const_entity.Const):
 import proto.common_info_pb2 as common_info_pb2
 
 class EMjEvent(const_entity.Const):
-    # ev_gang_with_peng = 1; // 杠其他人，自己的3个牌有1个是碰回来的
-    # ev_gang_other = 2; // 杠其他人，自己摸了3个
-    # ev_gang_all = 3; // 自己摸回来4个一样的杠牌
-    #
-    # ev_peng = 11; // 碰
-    # ev_chi = 12; // 吃
-    # ev_bu_hua = 13; // 补花
-    # ev_kai_jin = 14; // 开金
-    # ev_mo_pai = 15; // 摸牌
-    # ev_qi_pai = 16; // 弃牌
-    # ev_pass = 17; // 过
-    # ev_cha_pai = 18; // 查牌
-    #
-    # ev_dan_you = 21; // 单游
-    # ev_shuang_you = 22; // 双游
-    # ev_san_you = 23; // 三游
-    #
-    # ev_fen_bing_1 = 24; // 1
-    # 轮被跟
-    # ev_fen_bing_2 = 25; // 2
-    # 轮被跟
-    # ev_be_peng = 26; // 被碰
-    # ev_be_gang = 27; // 被杠
-    # ev_be_gang_hu = 28; // 被杠胡
-    # ev_be_cha = 29; // 被查
-    #
-    # ev_hu_normal = 81; // 普通胡
-    # ev_hu_cha_hua = 82; // 查花胡
-    # ev_hu_qiang_gang = 83; // 抢杠胡
-    # ev_hu_qiang_jin = 84; // 枪金胡
-    # ev_hu_san_jin_dao = 85; // 三金倒
-    # ev_hu_si_jin_dao = 86; // 四金倒
-    # ev_hu_wu_jin_dao = 87; // 五金倒
-    # ev_hu_liu_jin_dao = 88; // 六金倒
-    # ev_hu_ba_xian_guo_hai = 89; // 八仙过海
-    # ev_hu_shi_san_yao = 90; // 十三幺
-    # ev_hu_qi_dui_zi = 91; // 七对子
-    ev_gang_with_peng = 1
-    ev_gang_other = 2
-    ev_gang_all = 3
-    ev_peng = 11
-    ev_chi = 12
-    ev_bu_hua = 13
-    ev_kai_jin = 14
-    ev_mo_pai = 15
-    ev_qi_pai = 16
-    ev_pass = 17
-    ev_cha_pai = 18
-    ev_dan_you = 21
-    ev_shuang_you = 22
-    ev_san_you = 23
-    ev_fen_bing_1 = 24
-    ev_fen_bing_2 = 25
-    ev_be_peng = 26
-    ev_be_gang = 27
-    ev_be_gang_hu = 28
-    ev_be_cha = 29
-    ev_hu_normal = 81
-    ev_hu_cha_hua = 82
-    ev_hu_qiang_gang = 83
-    ev_hu_qiang_jin = 84
-    ev_hu_san_jin_dao = 85
-    ev_hu_si_jin_dao = 86
-    ev_hu_wu_jin_dao = 87
-    ev_hu_liu_jin_dao = 88
-    ev_hu_ba_xian_guo_hai = 89
-    ev_hu_shi_san_yao = 90
-    ev_hu_qi_dui_zi = 91
+    ev_gang_with_peng = 101
+    ev_gang_other = 102
+    ev_gang_all = 103
+    ev_peng = 111
+    ev_chi = 112
+    ev_pass = 117
+    ev_cha_pai = 118
+    ev_dan_you = 121
+    ev_shuang_you = 122
+    ev_san_you = 123
+    ev_hu_normal = 181
+    ev_hu_cha_hua = 182
+    ev_hu_qiang_gang = 183
+    ev_hu_qiang_jin = 184
+    ev_hu_san_jin_dao = 185
+    ev_hu_si_jin_dao = 186
+    ev_hu_wu_jin_dao = 187
+    ev_hu_liu_jin_dao = 188
+    ev_hu_ba_xian_guo_hai = 189
+    ev_hu_shi_san_yao = 190
+    ev_hu_qi_dui_zi = 191
+    ev_bu_hua = 213
+    ev_kai_jin = 214
+    ev_mo_pai = 215
+    ev_be_qi_pai = 216
+    ev_be_dan_you = 221
+    ev_be_shuang_you = 222
+    ev_be_san_you = 223
+    ev_be_fen_bing_1 = 224
+    ev_be_fen_bing_2 = 225
+    ev_be_peng = 226
+    ev_be_gang = 227
+    ev_be_gang_hu = 228
+    ev_be_cha = 229
+    ev_be_hu_normal = 281
+    ev_be_hu_cha_hua = 282
+    ev_be_hu_qiang_gang = 283
+    ev_be_hu_qiang_jin = 284
+    ev_be_hu_san_jin_dao = 285
+    ev_be_hu_si_jin_dao = 286
+    ev_be_hu_wu_jin_dao = 287
+    ev_be_hu_liu_jin_dao = 288
+    ev_be_hu_ba_xian_guo_hai = 289
+    ev_be_hu_shi_san_yao = 290
+    ev_be_hu_qi_dui_zi = 291
 
 class EMoneyType(const_entity.Const):
     eZhuanShi = 1
@@ -115,6 +92,7 @@ class EStatusInRoom(const_entity.Const):
     eReady = 2
     eOffline = 3
     ePlaying = 4
+    eExitRoom = 5
 
     eWaiting = 101
-    eRunning = 102
+    eRunning = 202

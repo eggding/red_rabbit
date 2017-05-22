@@ -1,0 +1,53 @@
+syntax = "proto2";
+
+import "common_info.proto";
+
+// 结算结果里面的玩家数据信息
+message result_player_data_one
+{
+    required bytes      wecaht_info = 1;
+    required uint64     player_id = 2;
+    required uint32     pos = 3;
+    required bytes      card_list = 4; // 玩家牌序
+    required bytes      hua_list = 5; // 花牌
+    required bytes      event_list = 7; // ev_hu,add_score; ev_hu1,add_score1 事件列表, ev_type 对应common里面的事件类型
+    required uint32     total_score = 8; // 积分
+};
+
+// 结算结果里面的玩家数据信息
+message result_player_data_all
+{
+    required bytes      wecaht_info = 1;
+    required uint64     player_id = 2;
+    required uint32     pos = 3;
+    required uint32     hu_num = 4; // 胡次数统计
+    required uint32     dan_you_num = 5; // 单游次数统计
+    required uint32     shuang_you_num = 6; // 双游次数统计
+    required uint32     sam_you_num = 7; // 三游次数统计
+    required uint32     kai_gang_num = 8; // 开扛次数统计
+    required uint32     total_score = 9; // 积分
+};
+
+// 每一局玩法的结果结算
+message show_result_one_rsp
+{
+    optional bool               	proto_id_20061 = 99;
+    required uint32                 room_id = 1;
+    required uint32                 master_pos = 2; // 庄家位置
+    required uint32                 winner_pos = 3; // 赢家位置
+    required bytes                  golden_card_list = 4; // 金牌
+    required event_type             hu_type = 5; // 胡类型
+    repeated result_player_data_one list_data = 6; // 玩家列表
+};
+
+// 结果汇总
+message show_result_all_rsp
+{
+    optional bool               	proto_id_20062 = 99;
+    required uint32                 room_id = 1;
+    required uint32                 cur_round = 2;
+    required uint32                 total_round = 3;
+    required uint32                 room_master_pos = 4; // 房主位置
+    required uint32                 winner_pos = 5; // 赢家位置
+    repeated result_player_data_all list_data = 6; // 玩家列表
+};

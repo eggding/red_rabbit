@@ -9,3 +9,4 @@ protoc -I ./proto/ --python_out=./proto ./proto/change_scene.proto
 protoc -I ./proto/ --python_out=./proto ./proto/query_room_scene.proto
 protoc -I ./proto/ --python_out=./proto ./proto/gm_config.proto
 protoc -I ./proto/ --python_out=./proto ./proto/player_data.proto
+protoc -I ./proto/ --python_out=./proto ./proto/show_result.proto
