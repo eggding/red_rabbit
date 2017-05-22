@@ -176,6 +176,9 @@ def to_str(msg):
 def change_session_scene(session_id, scene_name, extra):
     return ff.ffscene_obj.change_session_scene(session_id, scene_name, extra)
 
+def connect_to_outer_service(service_name, service_addr):
+    return ff.ffscene_obj.connect_outer_service(service_name, service_addr)
+
 def send_msg_session(session_id, cmd_, body):
     return ff.py_send_msg_session(session_id, cmd_, to_str(body))
     ff.ffscene_obj.send_msg_session(session_id, cmd_, to_str(body))

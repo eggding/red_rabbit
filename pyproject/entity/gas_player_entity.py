@@ -29,6 +29,14 @@ class GasPlayerEntity(base_entity.BaseEntity):
 
         self.m_nCurRoomID = None
 
+        self.m_nTotalPlayNum = 0
+
+    def AddTotalPlayNum(self):
+        self.m_nTotalPlayNum += 1
+
+    def GetTotalPlayNum(self):
+        return self.m_nTotalPlayNum
+
     def SetResidual(self, bFlag):
         self.m_bIsResidual = bFlag
 
@@ -53,8 +61,17 @@ class GasPlayerEntity(base_entity.BaseEntity):
         self.m_session = int(session)
         self.m_szName = dictData[PlayerPro.NAME].encode("utf-8")
         self.m_nSex = int(dictData[PlayerPro.SEX])
+        self.m_nTotalPlayNum = dictData.get(PlayerPro.TOTAL_PLAY_NUM, 0)
 
         self.InitCompment(dictData)
+
+    def GetPersistentDict(self):
+        dictSerial = {
+            PlayerPro.MONEY_LIST: self.m_PlayerMoneyMgr.Serial2List(),
+            PlayerPro.TOTAL_PLAY_NUM: self.m_nTotalPlayNum,
+        }
+        return dictSerial
+
 
     def InitCompment(self, dictData):
         moneyMgr = compment_money.PlayerMoneyMgr(self)
@@ -112,12 +129,6 @@ class GasPlayerEntity(base_entity.BaseEntity):
         self.m_session = dictSerial[PlayerPro.SESSION_ID]
         self.gate_name = dictSerial[PlayerPro.GATE_NAME]
         self.InitCompment(dictSerial)
-
-    def GetPersistentDict(self):
-        dictSerial = {
-            PlayerPro.MONEY_LIST: self.m_PlayerMoneyMgr.Serial2List(),
-        }
-        return dictSerial
 
     def Persistent(self):
         ffext.LOGINFO("FFSCENE_PYTHON", "Persistent {0}".format(self.GetGlobalID()))

@@ -52,6 +52,9 @@ enum event_type
     ev_hu_shi_san_yao   = 190; // 十三幺
     ev_hu_qi_dui_zi     = 191; // 七对子
 
+    ev_be_gang_with_peng    = 201; // 杠其他人，自己的3个牌有1个是碰回来的
+    ev_be_gang_other        = 202; // 杠其他人，自己摸了3个
+    ev_be_gang_all          = 203; // 自己摸回来4个一样的杠牌
     ev_bu_hua               = 213; // 补花
     ev_kai_jin              = 214; // 开金
     ev_mo_pai               = 215; // 摸牌
@@ -62,7 +65,6 @@ enum event_type
     ev_be_fen_bing_1        = 224; // 1轮被跟
     ev_be_fen_bing_2        = 225; // 2轮被跟
     ev_be_peng              = 226; // 被碰
-    ev_be_gang              = 227; // 被杠
     ev_be_gang_hu           = 228; // 被杠胡
     ev_be_cha               = 229; // 被查
     ev_be_hu_normal         = 281; // 普通胡
@@ -86,6 +88,7 @@ message other_player_info
     required bytes  ip = 4; // ip
     required uint32 pos = 5; // 位置
     optional member_state state = 6; // 玩家状态
+    required uint32 total_play_num = 7; // 对局数
 };
 
 // 房间玩法配置

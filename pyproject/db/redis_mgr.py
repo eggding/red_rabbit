@@ -62,27 +62,21 @@ def SendMsg(sock, nCmd, dictMsg):
     data = struct.pack(szFormat, nTotalSize, 6, 0, szMsg)
     sock.send(data)
 
-
 def f(url, sock):
     print('GET: %s' % url)
     resp = urllib2.urlopen(url)
     data = resp.read()
     SendMsg(sock, 8999, {"url": url})
 
-def handle(socket,address):
+def handle(socket, address):
     data = socket.recv(BUFSIZE)
-    while True:
-        gevent.sleep(3)
-
-        gevent.joinall([
-            gevent.spawn(f, 'https://www.python.org/', socket),
-            gevent.spawn(f, 'https://www.yahoo.com/', socket),
-            gevent.spawn(f, 'https://github.com/', socket),
-        ])
+    print("get msg ", address, data)
+    gevent.joinall([
+        gevent.spawn(f, 'https://www.python.org/', socket),
+        gevent.spawn(f, 'https://www.yahoo.com/', socket),
+        gevent.spawn(f, 'https://github.com/', socket),
+    ])
 
 server = StreamServer(('127.0.0.1', 10422), handle)
-# server.serve_forever()
-
-a = [1, 2, 3]
-print(a[:-1], a[-1:])
+server.serve_forever()
 

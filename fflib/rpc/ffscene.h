@@ -69,6 +69,8 @@ public:
 
     void on_verify_auth_callback(userid_t session, string& extra_data, int cb_id);
 
+    int connect_outer_service(string& service_name, string& conn_addr);
+
     ffrpc_t& get_rpc() { return *m_ffrpc; }
 private:
     //! 处理client 上线

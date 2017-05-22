@@ -70,6 +70,11 @@ public:
 
     //! 判断某个service是否存在
     bool is_exist(const string& service_name_);
+
+    //! 连接集群外的服务
+    int connect_to_outer_service(const string& service_name, const string& conn_addr);
+    int connect_to_service(const string& name_, const string& conn_addr_);
+
 private:
     //! 处理连接断开
     int handle_broken_impl(socket_ptr_t sock_);
@@ -98,11 +103,13 @@ private:
     ffslot_t                                m_ffslot_interface;//! 通过reg 注册的接口会暂时的存放在这里
     ffslot_t                                m_ffslot_callback;//! 
     socket_ptr_t                            m_master_broker_sock;
+    socket_ptr_t                            m_tmp;
     map<string, ffslot_t::callback_t*>      m_reg_iterface;
     map<uint32_t, slave_broker_info_t>      m_slave_broker_sockets;//! node id -> info
     map<string, uint32_t>                   m_msg2id;
     map<uint32_t, broker_client_info_t>     m_broker_client_info;//! node id -> service
     map<string, uint32_t>                   m_broker_client_name2nodeid;//! service name -> service node id
+    map<string, socket_ptr_t>               m_outer_service_sock; // ! service name -> outer serivce sock
 };
 
 //! 注册接口

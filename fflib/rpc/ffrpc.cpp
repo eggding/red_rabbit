@@ -26,6 +26,32 @@ ffrpc_t::~ffrpc_t()
     
 }
 
+//! 调用远程的接口
+int ffrpc_t::connect_to_service(const string& name_, const string& conn_addr_)
+{
+    m_tq.produce(task_binder_t::gen(&ffrpc_t::connect_to_outer_service, this, name_, conn_addr_));   
+    return 0;
+}
+
+int ffrpc_t::connect_to_outer_service(const string& service_name, const string& conn_addr)
+{
+    // map<string, socket_ptr_t>::iterator it = m_outer_service_sock.find(service_name);
+    // if (it != m_outer_service_sock.end())
+    // {
+    //     LOGERROR((FFRPC, "ffrpc_t::connect_to_outer_service failed, can't connect to remote service<%s>", conn_addr.c_str()));
+    //     return -1;
+    // }
+    m_tmp = net_factory_t::connect(conn_addr.c_str(), this);
+    if (NULL == m_tmp)
+    {
+        LOGERROR((FFRPC, "ffrpc_t::connect_to_outer_service failed, can't connect to remote service<%s>", conn_addr.c_str()));
+        return -1;
+    }
+
+    // m_outer_service_sock.insert(make_pair(service_name, sock_));
+    return 0;
+}
+
 int ffrpc_t::open(const string& opt_)
 {
     net_factory_t::start(1);
@@ -36,16 +62,6 @@ int ffrpc_t::open(const string& opt_)
             .bind(BROKER_TO_CLIENT_MSG, ffrpc_ops_t::gen_callback(&ffrpc_t::handle_broker_route_msg, this));
 
     m_master_broker_sock = connect_to_broker(m_host, BROKER_MASTER_NODE_ID);
-
-    socket_ptr_t sock_test = net_factory_t::connect("tcp://127.0.0.1:10422", this);
-    if (NULL != sock_test)
-    {
-        register_client_to_slave_broker_t::in_t msg;
-        msg.node_id = m_node_id;
-        msg_sender_t::send(sock_test, CLIENT_REGISTER_TO_SLAVE_BROKER, msg);
-        printf("tcp://127.0.0.1:10422 connect done...");
-    }
-
     if (NULL == m_master_broker_sock)
     {
         LOGERROR((FFRPC, "ffrpc_t::open failed, can't connect to remote broker<%s>", m_host.c_str()));
@@ -227,7 +243,7 @@ int ffrpc_t::handle_broker_sync_data(broker_sync_all_registered_data_t::out_t& m
         if (it2 != m_reg_iterface.end() && NULL == m_ffslot_callback.get_callback(it->second))
         {
             m_ffslot_interface.bind(it->second, it2->second);
-            LOGINFO((FFRPC, "ffrpc_t::handle_broker_sync_data msg name[%s] -> msg id[%u]", it->first.c_str(), it->second));
+            // LOGINFO((FFRPC, "ffrpc_t::handle_broker_sync_data msg name[%s] -> msg id[%u]", it->first.c_str(), it->second));
         }
     }
     
@@ -322,6 +338,30 @@ int ffrpc_t::trigger_callback(broker_route_t::in_t& msg_)
 int ffrpc_t::call_impl(const string& service_name_, const string& msg_name_, const string& body_, ffslot_t::callback_t* callback_)
 {
     LOGTRACE((FFRPC, "ffrpc_t::call_impl begin service_name_<%s>, msg_name_<%s>", service_name_.c_str(), msg_name_.c_str()));
+
+    // service not in cluster
+    // map<string, socket_ptr_t>::iterator it1 = m_outer_service_sock.find(service_name_);
+    // if (it1 != m_outer_service_sock.end())
+    // {
+    //     broker_route_t::in_t msg;
+    //     msg.dest_node_id     = 0;
+    //     msg.from_node_id     = 0;
+    //     msg.msg_id           = 0;
+    //     msg.body             = body_;
+    //     msg.callback_id      = 0;
+    //     msg.bridge_route_id  = 0;
+    //     msg_sender_t::send(it1->second, "test hello");
+    //     cout << "send outer msg " << service_name_ << " done !" << endl;
+    //     delete callback_;
+    //     return 0;
+    // }
+
+    if (strcmp("http_service", service_name_.c_str()) == 0)
+    {
+        msg_sender_t::send(m_tmp, "test hello");
+        return 0;
+    }
+
     map<string, uint32_t>::iterator it = m_broker_client_name2nodeid.find(service_name_);
     if (it == m_broker_client_name2nodeid.end())
     {

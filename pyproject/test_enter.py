@@ -30,7 +30,7 @@ def PackSendGmCode():
     req_login = login_pb2.login_req()
     req_login.type = 3
     req_login.auth_info = "{0}#{1}#{2}".format(szToken, szScene, szCode)
-    szMsg = req_login.SerializeToString()
+    szMsg = "航空自卫队" #  req_login.SerializeToString()
     # 计算protobol消息体的字节数
     szFormat = "%ds" % len(szMsg)
     nTotalSize = struct.calcsize(szFormat)
@@ -41,7 +41,7 @@ def PackSendGmCode():
     return struct.pack(szFormat, nTotalSize, 10001, 0, szMsg)
 
 while True:
-    sock = socket.create_connection(("192.168.74.130", 10243))
+    sock = socket.create_connection(("112.74.124.100", 9501))
     # sock = socket.create_connection(("127.0.0.1", 10242))
     sock.send(PackSendGmCode())
     print(sock.recv(93939))

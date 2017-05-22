@@ -42,7 +42,8 @@ int ffscene_python_t::open(arg_helper_t& arg_helper)
               .reg(&ffscene_python_t::sync_db_query, "sync_db_query")
               .reg(&ffscene_python_t::call_service, "call_service")
               .reg(&ffscene_python_t::bridge_call_service, "bridge_call_service")
-              .reg(&ffscene_python_t::on_verify_auth_callback, "on_verify_auth_callback");
+              .reg(&ffscene_python_t::on_verify_auth_callback, "on_verify_auth_callback")
+              .reg(&ffscene_python_t::connect_outer_service, "connect_outer_service");
 
     (*m_ffpython).reg(&ffdb_t::escape, "escape")
                  .reg(&ffscene_python_t::py_send_msg_session, "py_send_msg_session")

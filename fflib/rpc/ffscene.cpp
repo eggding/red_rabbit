@@ -154,6 +154,12 @@ int ffscene_t::send_msg_session(const userid_t& session_id_, uint16_t cmd_, cons
     LOGTRACE((FFSCENE, "ffscene_t::send_msg_session end ok gate[%s]", it->second.gate_name));
     return 0;
 }
+
+int ffscene_t::connect_outer_service(string& service_name, string& conn_addr)
+{
+    return m_ffrpc->connect_to_service(service_name, conn_addr);
+}
+
 //! 多播
 int ffscene_t::multicast_msg_session(const vector<userid_t>& session_id_, uint16_t cmd_, const string& data_)
 {

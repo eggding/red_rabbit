@@ -26,6 +26,10 @@ message result_player_data_all
     required uint32     sam_you_num = 7; // 三游次数统计
     required uint32     kai_gang_num = 8; // 开扛次数统计
     required uint32     total_score = 9; // 积分
+    required bytes      card_list = 10; // 玩家牌序
+    required bytes      hua_list = 11; // 花牌
+    required bytes      event_list = 12; // ev_hu,add_score; ev_hu1,add_score1 事件列表, ev_type 对应common里面的事件类型
+
 };
 
 // 每一局玩法的结果结算

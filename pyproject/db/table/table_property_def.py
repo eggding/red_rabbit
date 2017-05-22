@@ -14,6 +14,7 @@ class Player(const_entity.Const):
     SEX = "sex"
     CREATE_TIME = "create_time"
     MONEY_LIST = "money_list"
+    TOTAL_PLAY_NUM = "tot_play"
     LATEST_LOGOUT_TIME = "last_log_out"
 
     # memory
