@@ -19,6 +19,7 @@ class RoomObj(object):
         self.m_nRoomID = nRoomID
         self.m_nMaster = nMaster
         self.m_dictMember = {} # member -> [nPos, status]
+        self.m_listClientLoaded = []
 
         self.m_dictCfg = dictConfig
         self.m_bIsFirstStart = True
@@ -29,6 +30,16 @@ class RoomObj(object):
 
         self.m_gameRuleObj = game_rule_mgr.GetGameRule(EGameRule.eGameRuleMj)(self)
         self.MemberEnter(nMaster)
+
+    def IsMemberLoaded(self, nMember):
+        return nMember in self.m_listClientLoaded
+
+    def OnMemberLoaded(self, nMember):
+        if nMember in self.m_listClientLoaded:
+            return
+        self.m_listClientLoaded.append(nMember)
+
+        self.SynGameInfo(nMember, bSynAll=True)
 
     def GameRuleOpt(self, nPlayerGID, reqObj):
         self.m_gameRuleObj.GacOpt(nPlayerGID, reqObj)
@@ -88,6 +99,10 @@ class RoomObj(object):
         for nMember in self.m_dictMember.iterkeys():
             if nMemberID == nMember:
                 continue
+
+            if self.IsMemberLoaded(nMember) is False:
+                continue
+
             ffext.send_msg_session(nMember, rpc_def.Gas2GacRetSynMemberState, rsp.SerializeToString())
 
     def SynGameInfo(self, nPlayerGID, bSynAll=False):
@@ -119,6 +134,10 @@ class RoomObj(object):
             for nMember in self.m_dictMember.iterkeys():
                 if nMember == nPlayerGID:
                     continue
+
+                if self.IsMemberLoaded(nMember) is False:
+                    continue
+
                 tmp = rsp.list_members.add()
                 tmp.pos = self.GetMemberPos(nMember)
                 tmp.state = self.GetMemberState(nMember)
@@ -158,6 +177,7 @@ class RoomObj(object):
             else:
                 listData[RoomMemberProperty.eStatus] = EStatusInRoom.eUnReady
         self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
+        self.m_listClientLoaded = []
 
     def StartGameOnRoom(self):
         ffext.LOGINFO("FFSCENE_PYTHON", "StartGameOnRoom {0}".format(self.GetRoomID()))

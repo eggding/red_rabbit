@@ -8,6 +8,7 @@ import rpc.scene_def as scene_def
 import proto.query_room_scene_pb2 as query_room_scene_pb2
 import proto.opt_pb2 as opt_pb2
 import proto.exit_room_pb2 as exit_room_pb2
+import proto.common_info_pb2 as common_info_pb2
 import gas_room_obj as gas_room_obj
 import cfg_py.parameter_common as parameter_common
 
@@ -200,3 +201,11 @@ def Gac2GasOptMj(nPlayerGID, reqObj):
     if roomObj is None:
         return
     roomObj.GameRuleOpt(nPlayerGID, reqObj)
+
+@ffext.session_call(rpc_def.Gac2GasLoadAllDone, common_info_pb2.client_load_done_req)
+def Gac2GasLoadAllDone(nPlayerGID, reqObj):
+    roomObj = _roomMgr.GetRoomObjByPlayerGID(nPlayerGID)
+    if roomObj is None:
+        return
+    roomObj.OnMemberLoaded()
+

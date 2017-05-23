@@ -770,13 +770,14 @@ class GasMjRule(rule_base.GameRuleBase):
                 gameCardListObj.list_card_have.append(nCard)
 
     def NoticeAllStartNewJu(self):
-        import proto.common_info_pb2 as common_info_pb2
-        rsp = common_info_pb2.start_new_round_rsp()
-        rsp.room_id = self.m_roomObj.GetRoomID()
-        listMember = self.m_roomObj.GetMemberList()
-        for nMember in listMember:
-            rsp.pos_owner = self.m_roomObj.GetMemberPos(nMember)
-            ffext.send_msg_session(nMember, rpc_def.Gas2GacRetStartNewRound, rsp.SerializeToString())
+        pass
+        # import proto.common_info_pb2 as common_info_pb2
+        # rsp = common_info_pb2.start_new_round_rsp()
+        # rsp.room_id = self.m_roomObj.GetRoomID()
+        # listMember = self.m_roomObj.GetMemberList()
+        # for nMember in listMember:
+        #     rsp.pos_owner = self.m_roomObj.GetMemberPos(nMember)
+        #     ffext.send_msg_session(nMember, rpc_def.Gas2GacRetStartNewRound, rsp.SerializeToString())
 
     def StartJu(self):
         """

@@ -11,6 +11,7 @@ Gac2GasExitRoom = 10015
 Gac2GasOptMj = 10021
 
 Gac2GasGameReady = 10043
+Gac2GasLoadAllDone = 10045
 
 Gac2GasQueryGameConf = 10050
 Gac2GasOptGameConf = 10051
