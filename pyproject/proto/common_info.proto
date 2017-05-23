@@ -28,6 +28,13 @@ enum room_state
     e_running = 202;
 };
 
+enum card_list_type
+{
+    eTypeHave = 1; // 手上的
+    eTypeShow = 2; // 碰、杠
+    eTypeHist = 3; // 打出去的（花牌也在里面）
+};
+
 enum event_type
 {
     ev_gang_with_peng   = 101; // 杠其他人，自己的3个牌有1个是碰回来的
@@ -35,6 +42,7 @@ enum event_type
     ev_gang_all         = 103; // 自己摸回来4个一样的杠牌
     ev_peng             = 111; // 碰
     ev_chi              = 112; // 吃
+    ev_qi_pai           = 116; // 弃牌
     ev_pass             = 117; // 过
     ev_cha_pai          = 118; // 查牌
     ev_dan_you          = 121; // 单游
@@ -172,13 +180,6 @@ message heart_beat_rsp
     required uint64 next_heart_beat_time = 1; // 下一次发送心跳的时间
 };
 
-// 开始新的一局
-message start_new_round_rsp
-{
-    optional bool               proto_id_20063 = 99;
-    required uint32             room_id = 1; // 房间id
-    required uint32             pos_owner = 2; // 自己的位置
-};
 
 // 同步玩家状态
 message syn_member_state_rsp
@@ -189,12 +190,46 @@ message syn_member_state_rsp
     required other_player_info member_info = 3;
 };
 
+
+// 同步某个位置的某种类型的牌堆信息
+message syn_card_list_by_type
+{
+    optional bool           proto_id_20065 = 99;
+    required uint32         pos = 1;
+    required card_list_type type = 2;
+    repeated bytes          card_list = 3;
+};
+
+
+// 客户端加载完成后的通知
+message client_load_done_req
+{
+    optional bool           proto_id_10045 = 99;
+};
+
+message client_load_done_rsp
+{
+    optional bool       proto_id_20045 = 99;
+    required uint32     ret = 1;
+};
+
+
+
+
+
+
+
+
+
+
 // 协议流程
-// 1.start_new_round_rsp(开始新的一局)
-// 2.game_ready_req（成员准备）
-// 3.syn_game_info (同步开局信息)
-// 4.syn_game_order(同步操作顺序)
-// 5.on_touch_event（触发事件）
-// 6.player_opt(玩家操作)
-// ... 重复4-6操作
+// 1.客户端通过show_result判断是否还有下一局，如果有则点击下一局，进行加载初始化
+// 2.加载完成后发送 client_load_done_req
+// 3.syn_game_info (同步房间信息)
+// 4.game_ready_req（成员准备）
+// 5.syn_game_info (同步开局信息)
+// 6.syn_game_order(同步操作顺序)
+// 7.on_touch_event（触发事件）
+// 8.player_opt(玩家操作)
+// ... 重复6-8操作
 // final show_result（结果显示）

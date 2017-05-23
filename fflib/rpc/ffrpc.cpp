@@ -6,11 +6,13 @@
 using namespace ff;
 
 #define FFRPC                   "FFRPC"
+#define EX_SERVICE_NODE_BEGIN   1999
 
 ffrpc_t::ffrpc_t(string service_name_):
     m_service_name(service_name_),
     m_node_id(0),
     m_callback_id(0),
+    m_ex_service_node_id(EX_SERVICE_NODE_BEGIN),
     m_master_broker_sock(NULL)
 {
     if (m_service_name.empty())
@@ -35,20 +37,25 @@ int ffrpc_t::connect_to_service(const string& name_, const string& conn_addr_)
 
 int ffrpc_t::connect_to_outer_service(const string& service_name, const string& conn_addr)
 {
-    // map<string, socket_ptr_t>::iterator it = m_outer_service_sock.find(service_name);
-    // if (it != m_outer_service_sock.end())
-    // {
-    //     LOGERROR((FFRPC, "ffrpc_t::connect_to_outer_service failed, can't connect to remote service<%s>", conn_addr.c_str()));
-    //     return -1;
-    // }
-    m_tmp = net_factory_t::connect(conn_addr.c_str(), this);
-    if (NULL == m_tmp)
+    map<string, socket_ptr_t>::iterator it = m_outer_service_sock.find(service_name);
+    if (it != m_outer_service_sock.end())
+    {
+        LOGERROR((FFRPC, "ffrpc_t::connect_to_outer_service failed, can't connect to remote service<%s>", conn_addr.c_str()));
+        return -1;
+    }
+    socket_ptr_t sock = net_factory_t::connect(conn_addr.c_str(), this);
+    if (NULL == sock)
     {
         LOGERROR((FFRPC, "ffrpc_t::connect_to_outer_service failed, can't connect to remote service<%s>", conn_addr.c_str()));
         return -1;
     }
 
-    // m_outer_service_sock.insert(make_pair(service_name, sock_));
+    uint32_t n_allow_node_id = m_ex_service_node_id ++;
+    session_data_t* psession = new session_data_t(n_allow_node_id);
+    sock->set_data(psession);
+
+    m_outer_service_sock.insert(make_pair(service_name, sock));
+    m_outer_service_nodeid2name.insert(make_pair(n_allow_node_id, service_name));
     return 0;
 }
 
@@ -166,12 +173,16 @@ int ffrpc_t::handle_msg(const message_t& msg_, socket_ptr_t sock_)
 
 int ffrpc_t::handle_broken_impl(socket_ptr_t sock_)
 {
+    cout << "nodehandle_broken_impl_id " << endl;
     if (NULL == sock_->get_data<session_data_t>())
     {
         sock_->safe_delete();
         return 0;
     }
-    if (BROKER_MASTER_NODE_ID == sock_->get_data<session_data_t>()->get_node_id())
+
+    uint32_t node_id = sock_->get_data<session_data_t>()->get_node_id();
+    cout << "node_id " << node_id << endl;
+    if (BROKER_MASTER_NODE_ID == node_id)
     {
         m_master_broker_sock = NULL;
         //! 连接到broker master的连接断开了
@@ -194,7 +205,25 @@ int ffrpc_t::handle_broken_impl(socket_ptr_t sock_)
     }
     else
     {
-        m_slave_broker_sockets.erase(sock_->get_data<session_data_t>()->get_node_id());
+        if (node_id >= EX_SERVICE_NODE_BEGIN)
+        {
+            // outer service
+             map<uint32_t, string>::iterator it_outer = m_outer_service_nodeid2name.find(node_id);
+             if (it_outer != m_outer_service_nodeid2name.end())
+             {
+                 string& service_name = it_outer->second;
+                 cout << "dis conn service " << service_name << endl;
+                 map<string, socket_ptr_t>::iterator it_tmp = m_outer_service_sock.find(service_name);
+                 if (it_tmp != m_outer_service_sock.end())
+                 {
+                     m_outer_service_sock.erase(it_tmp);
+                 }
+             }
+        }
+        else
+        {
+            m_slave_broker_sockets.erase(node_id);
+        }
     }
     delete sock_->get_data<session_data_t>();
     sock_->set_data(NULL);
@@ -340,25 +369,12 @@ int ffrpc_t::call_impl(const string& service_name_, const string& msg_name_, con
     LOGTRACE((FFRPC, "ffrpc_t::call_impl begin service_name_<%s>, msg_name_<%s>", service_name_.c_str(), msg_name_.c_str()));
 
     // service not in cluster
-    // map<string, socket_ptr_t>::iterator it1 = m_outer_service_sock.find(service_name_);
-    // if (it1 != m_outer_service_sock.end())
-    // {
-    //     broker_route_t::in_t msg;
-    //     msg.dest_node_id     = 0;
-    //     msg.from_node_id     = 0;
-    //     msg.msg_id           = 0;
-    //     msg.body             = body_;
-    //     msg.callback_id      = 0;
-    //     msg.bridge_route_id  = 0;
-    //     msg_sender_t::send(it1->second, "test hello");
-    //     cout << "send outer msg " << service_name_ << " done !" << endl;
-    //     delete callback_;
-    //     return 0;
-    // }
-
-    if (strcmp("http_service", service_name_.c_str()) == 0)
+    map<string, socket_ptr_t>::iterator it1 = m_outer_service_sock.find(service_name_);
+    if (it1 != m_outer_service_sock.end())
     {
-        msg_sender_t::send(m_tmp, "test hello");
+        msg_sender_t::send(it1->second, body_);
+        cout << "send outer msg " << service_name_ << " done !" << endl;
+        delete callback_;
         return 0;
     }
 

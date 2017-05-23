@@ -61,3 +61,32 @@ message game_ready_rsp
     optional bool proto_id_20043 = 99;
     required uint32 ret = 1;
 };
+
+
+// 托管,
+// 关于托管状态，每次重新登录后都是非托管状态
+message set_auto_req
+{
+    optional bool proto_id_10048 = 99;
+};
+message set_auto_rsp
+{
+    optional bool proto_id_20048 = 99;
+    required uint32 ret = 1;
+    required uint32 is_auto = 2; // 0 非托管 1 托管
+};
+
+// 取消托管
+message cancel_auto_req
+{
+    optional bool proto_id_10049 = 99;
+};
+
+message cancel_auto_rsp
+{
+    optional bool proto_id_20049 = 99;
+    required uint32 ret = 1;
+    required uint32 is_auto = 2; // 0 非托管 1 托管
+};
+
+

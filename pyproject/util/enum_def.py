@@ -96,3 +96,11 @@ class EStatusInRoom(const_entity.Const):
 
     eWaiting = 101
     eRunning = 202
+
+class EServiceNotInCluster(const_entity.Const):
+    eServiceLog = "log"
+    eServiceHttp = "http"
+
+class ELogType(const_entity.Const):
+    eLogin = "login"
+    eLogOut = "logout"

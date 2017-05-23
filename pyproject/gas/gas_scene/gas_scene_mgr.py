@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author  : jh.feng
 
+import time
 import json
 import ffext, ff
 import util.util as util
@@ -13,8 +14,10 @@ import entity.gas_player_entity as gas_player_entity
 import residual.residual_mgr as residual_mgr
 import gas.gas_room_mgr.gas_room_mgr as gas_room_mgr
 import base_scene.base_scene as base_scene
-
+import log_mgr.log_mgr as log_mgr
 import proto.change_scene_pb2 as change_scene_pb2
+
+from util.enum_def import ELogType
 
 class GasSceneMgr(base_scene.BaseScene):
     def __init__(self):
@@ -31,7 +34,9 @@ class GasSceneMgr(base_scene.BaseScene):
         gasPlayer.InitFromDict(dictSerialData)
         gasPlayer.SetScene(self)
         entity_mgr.AddEntity(gasPlayer.GetGlobalID(), gasPlayer)
-
+        log_mgr.LogInfo(gasPlayer.GetGlobalID(), ELogType.eLogin, {"LOG_TYPE": ELogType.eLogin,
+                                                                   "SESSION_ID": gasPlayer.GetGlobalID(),
+                                                                   "LOGIN_TIME": int(time.time())})
         if util.IsRobot(gasPlayer.GetGlobalID()) is False:
             self.SynSceneInfo(gasPlayer.GetGlobalID())
             ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": gasPlayer.GetGlobalID(),
@@ -73,6 +78,9 @@ class GasSceneMgr(base_scene.BaseScene):
         entity_mgr.DelEntity(nPlayerGID)
 
         ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccPlayerTrueOffline, {"id": nPlayerGID})
+        log_mgr.LogInfo(nPlayerGID, ELogType.eLogOut, {"LOG_TYPE": ELogType.eLogOut,
+                                                           "SESSION_ID": nPlayerGID,
+                                                           "LOGOUT_TIME": int(time.time())})
 
     def OnPlayerGameEnd(self, nPlayerGID):
         if self.m_residualMgr.IsPlayerInResidual(nPlayerGID) is True:

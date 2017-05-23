@@ -96,6 +96,7 @@ private:
     timer_service_t                         m_timer;
     string                                  m_service_name;//! 注册的服务名称
     uint32_t                                m_node_id;     //! 通过注册broker，分配的node id
+    uint32_t                                m_ex_service_node_id;     //! 通过注册broker，分配的node id
     uint32_t                                m_callback_id;//! 回调函数的唯一id值
     task_queue_t                            m_tq;
     thread_t                                m_thread;
@@ -103,13 +104,13 @@ private:
     ffslot_t                                m_ffslot_interface;//! 通过reg 注册的接口会暂时的存放在这里
     ffslot_t                                m_ffslot_callback;//! 
     socket_ptr_t                            m_master_broker_sock;
-    socket_ptr_t                            m_tmp;
     map<string, ffslot_t::callback_t*>      m_reg_iterface;
     map<uint32_t, slave_broker_info_t>      m_slave_broker_sockets;//! node id -> info
     map<string, uint32_t>                   m_msg2id;
     map<uint32_t, broker_client_info_t>     m_broker_client_info;//! node id -> service
     map<string, uint32_t>                   m_broker_client_name2nodeid;//! service name -> service node id
     map<string, socket_ptr_t>               m_outer_service_sock; // ! service name -> outer serivce sock
+    map<uint32_t, string>                   m_outer_service_nodeid2name; // ! service name -> outer serivce sock
 };
 
 //! 注册接口

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='show_result.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x11show_result.proto\x1a\x11\x63ommon_info.proto\"\x9b\x01\n\x16result_player_data_one\x12\x13\n\x0bwecaht_info\x18\x01 \x02(\x0c\x12\x11\n\tplayer_id\x18\x02 \x02(\x04\x12\x0b\n\x03pos\x18\x03 \x02(\r\x12\x11\n\tcard_list\x18\x04 \x02(\x0c\x12\x10\n\x08hua_list\x18\x05 \x02(\x0c\x12\x12\n\nevent_list\x18\x07 \x02(\x0c\x12\x13\n\x0btotal_score\x18\x08 \x02(\r\"\xca\x01\n\x16result_player_data_all\x12\x13\n\x0bwecaht_info\x18\x01 \x02(\x0c\x12\x11\n\tplayer_id\x18\x02 \x02(\x04\x12\x0b\n\x03pos\x18\x03 \x02(\r\x12\x0e\n\x06hu_num\x18\x04 \x02(\r\x12\x13\n\x0b\x64\x61n_you_num\x18\x05 \x02(\r\x12\x16\n\x0eshuang_you_num\x18\x06 \x02(\r\x12\x13\n\x0bsam_you_num\x18\x07 \x02(\r\x12\x14\n\x0ckai_gang_num\x18\x08 \x02(\r\x12\x13\n\x0btotal_score\x18\t \x02(\r\"\xca\x01\n\x13show_result_one_rsp\x12\x16\n\x0eproto_id_20061\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x12\n\nmaster_pos\x18\x02 \x02(\r\x12\x12\n\nwinner_pos\x18\x03 \x02(\r\x12\x18\n\x10golden_card_list\x18\x04 \x02(\x0c\x12\x1c\n\x07hu_type\x18\x05 \x02(\x0e\x32\x0b.event_type\x12*\n\tlist_data\x18\x06 \x03(\x0b\x32\x17.result_player_data_one\"\xbf\x01\n\x13show_result_all_rsp\x12\x16\n\x0eproto_id_20062\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x11\n\tcur_round\x18\x02 \x02(\r\x12\x13\n\x0btotal_round\x18\x03 \x02(\r\x12\x17\n\x0froom_master_pos\x18\x04 \x02(\r\x12\x12\n\nwinner_pos\x18\x05 \x02(\r\x12*\n\tlist_data\x18\x06 \x03(\x0b\x32\x17.result_player_data_all')
+  serialized_pb=_b('\n\x11show_result.proto\x1a\x11\x63ommon_info.proto\"\xbf\x01\n\x16result_player_data_one\x12\x13\n\x0bwecaht_info\x18\x01 \x02(\x0c\x12\x11\n\tplayer_id\x18\x02 \x02(\x04\x12\x0b\n\x03pos\x18\x03 \x02(\r\x12\x11\n\tcard_list\x18\x04 \x02(\x0c\x12\x10\n\x08hua_list\x18\x05 \x02(\x0c\x12\x12\n\nevent_list\x18\x06 \x02(\x0c\x12\"\n\tcard_info\x18\x07 \x02(\x0b\x32\x0f.game_card_list\x12\x13\n\x0btotal_score\x18\x08 \x02(\r\"\xca\x01\n\x16result_player_data_all\x12\x13\n\x0bwecaht_info\x18\x01 \x02(\x0c\x12\x11\n\tplayer_id\x18\x02 \x02(\x04\x12\x0b\n\x03pos\x18\x03 \x02(\r\x12\x0e\n\x06hu_num\x18\x04 \x02(\r\x12\x13\n\x0b\x64\x61n_you_num\x18\x05 \x02(\r\x12\x16\n\x0eshuang_you_num\x18\x06 \x02(\r\x12\x13\n\x0bsam_you_num\x18\x07 \x02(\r\x12\x14\n\x0ckai_gang_num\x18\x08 \x02(\r\x12\x13\n\x0btotal_score\x18\t \x02(\r\"\xf2\x01\n\x13show_result_one_rsp\x12\x16\n\x0eproto_id_20061\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x11\n\tcur_round\x18\x02 \x02(\r\x12\x13\n\x0btotal_round\x18\x03 \x02(\r\x12\x12\n\nmaster_pos\x18\x04 \x02(\r\x12\x12\n\nwinner_pos\x18\x05 \x02(\r\x12\x18\n\x10golden_card_list\x18\x06 \x02(\x0c\x12\x1c\n\x07hu_type\x18\x07 \x02(\x0e\x32\x0b.event_type\x12*\n\tlist_data\x18\x08 \x03(\x0b\x32\x17.result_player_data_one\"\xbf\x01\n\x13show_result_all_rsp\x12\x16\n\x0eproto_id_20062\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x11\n\tcur_round\x18\x02 \x02(\r\x12\x13\n\x0btotal_round\x18\x03 \x02(\r\x12\x17\n\x0froom_master_pos\x18\x04 \x02(\r\x12\x12\n\nwinner_pos\x18\x05 \x02(\r\x12*\n\tlist_data\x18\x06 \x03(\x0b\x32\x17.result_player_data_all')
   ,
   dependencies=[common__info__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -72,13 +72,20 @@ _RESULT_PLAYER_DATA_ONE = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='event_list', full_name='result_player_data_one.event_list', index=5,
-      number=7, type=12, cpp_type=9, label=2,
+      number=6, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='total_score', full_name='result_player_data_one.total_score', index=6,
+      name='card_info', full_name='result_player_data_one.card_info', index=6,
+      number=7, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='total_score', full_name='result_player_data_one.total_score', index=7,
       number=8, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -97,7 +104,7 @@ _RESULT_PLAYER_DATA_ONE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=41,
-  serialized_end=196,
+  serialized_end=232,
 )
 
 
@@ -183,8 +190,8 @@ _RESULT_PLAYER_DATA_ALL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=199,
-  serialized_end=401,
+  serialized_start=235,
+  serialized_end=437,
 )
 
 
@@ -210,36 +217,50 @@ _SHOW_RESULT_ONE_RSP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='master_pos', full_name='show_result_one_rsp.master_pos', index=2,
+      name='cur_round', full_name='show_result_one_rsp.cur_round', index=2,
       number=2, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='winner_pos', full_name='show_result_one_rsp.winner_pos', index=3,
+      name='total_round', full_name='show_result_one_rsp.total_round', index=3,
       number=3, type=13, cpp_type=3, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='golden_card_list', full_name='show_result_one_rsp.golden_card_list', index=4,
-      number=4, type=12, cpp_type=9, label=2,
+      name='master_pos', full_name='show_result_one_rsp.master_pos', index=4,
+      number=4, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='winner_pos', full_name='show_result_one_rsp.winner_pos', index=5,
+      number=5, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='golden_card_list', full_name='show_result_one_rsp.golden_card_list', index=6,
+      number=6, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='hu_type', full_name='show_result_one_rsp.hu_type', index=5,
-      number=5, type=14, cpp_type=8, label=2,
+      name='hu_type', full_name='show_result_one_rsp.hu_type', index=7,
+      number=7, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=101,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='list_data', full_name='show_result_one_rsp.list_data', index=6,
-      number=6, type=11, cpp_type=10, label=3,
+      name='list_data', full_name='show_result_one_rsp.list_data', index=8,
+      number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -256,8 +277,8 @@ _SHOW_RESULT_ONE_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=404,
-  serialized_end=606,
+  serialized_start=440,
+  serialized_end=682,
 )
 
 
@@ -329,10 +350,11 @@ _SHOW_RESULT_ALL_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=609,
-  serialized_end=800,
+  serialized_start=685,
+  serialized_end=876,
 )
 
+_RESULT_PLAYER_DATA_ONE.fields_by_name['card_info'].message_type = common__info__pb2._GAME_CARD_LIST
 _SHOW_RESULT_ONE_RSP.fields_by_name['hu_type'].enum_type = common__info__pb2._EVENT_TYPE
 _SHOW_RESULT_ONE_RSP.fields_by_name['list_data'].message_type = _RESULT_PLAYER_DATA_ONE
 _SHOW_RESULT_ALL_RSP.fields_by_name['list_data'].message_type = _RESULT_PLAYER_DATA_ALL
