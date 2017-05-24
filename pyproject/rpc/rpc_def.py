@@ -38,6 +38,7 @@ Gas2GacRetShowResultOne = 20061
 Gas2GacRetShowResultAll = 20062
 Gas2GacRetStartNewRound = 20063
 Gas2GacRetSynMemberState = 20064
+Gas2GacRetSynCardListByType = 20065
 
 SynSceneInfo = 30002
 SynPlayerData = 30003

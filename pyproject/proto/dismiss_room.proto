@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+enum state_in_dismiss
+{
+    agree   = 1; // 同意
+    reject  = 2; // 拒绝
+    un_opt  = 3; // 未操作
+    apply_dismiss = 4; // 申请解散
+};
+
+message room_dismiss_state
+{
+    required uint32             pos = 1;
+    required bytes              wechat_info = 2;
+    required state_in_dismiss   state = 3; // 状态
+};
+
+// 申请解散房间
+message dismiss_room_req
+{
+    optional bool proto_id_10071 = 99;
+};
+message dismiss_room_rsp
+{
+    optional bool   proto_id_20071 = 99;
+    required uint32 ret = 1;
+    repeated room_dismiss_state list_state = 2; // 所有人操作状态
+};
+
+// 解散房间操作
+message dismiss_room_opt_req
+{
+    optional bool               proto_id_10072 = 99;
+    required state_in_dismiss   state = 1;
+};
+message dismiss_room_opt_rsp
+{
+    optional bool   proto_id_20072 = 99;
+    required uint32 ret = 1;
+    repeated room_dismiss_state list_state = 2; // 所有人操作状态
+};
+
+// 更新其他人操作
+message syn_dismiss_room_state
+{
+    optional bool   proto_id_20272 = 99;
+    required uint32 ret = 1;
+    repeated room_dismiss_state list_state = 2; // 所有人操作状态
+};

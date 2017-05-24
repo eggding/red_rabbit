@@ -128,7 +128,7 @@ class RoomObj(object):
         for nMember, listVal in self.m_dictMember.iteritems():
             nPos = listVal[RoomMemberProperty.ePos]
             tmp = rsp.card_info.add()
-            self.m_gameRuleObj.InitCardInfoByPos(nPos, tmp, True if nPlayerGID == nMember else False)
+            self.m_gameRuleObj.GetMemberAllCardInfo(nPos, tmp, True if nPlayerGID == nMember else False)
 
         if bSynAll is True:
             for nMember in self.m_dictMember.iterkeys():

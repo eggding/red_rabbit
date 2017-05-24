@@ -1,0 +1,2222 @@
+07:15:24.879 INFO  [9452] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+07:15:24.888 INFO  [9452] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10341>,node_id_[1]
+07:15:24.890 INFO  [9452] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10342>,node_id_[2]
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 100, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 101, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 102, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 103, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 104, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 105, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:27.435 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RobotMgr.CreateRobot 6 done.
+07:15:27.449 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 100, "r": {"name": "name_100", "SESSION_ID": 100, "sex": 0, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 1, "gate": "gate@0"}
+07:15:27.453 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 103, "r": {"name": "name_103", "SESSION_ID": 103, "sex": 1, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 4, "gate": "gate@0"}
+07:15:27.455 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 102, "r": {"name": "name_102", "SESSION_ID": 102, "sex": 0, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 3, "gate": "gate@0"}
+07:15:27.456 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 105, "r": {"name": "name_105", "SESSION_ID": 105, "sex": 1, "create_time": 1494931677, "tot_play": 0, "money_list": []}, "cb": 6, "gate": "gate@0"}
+07:15:27.472 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 101, "r": {"name": "name_101", "SESSION_ID": 101, "sex": 1, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 2, "gate": "gate@0"}
+07:15:27.473 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 104, "r": {"name": "name_104", "SESSION_ID": 104, "sex": 0, "create_time": 1494931677, "tot_play": 0, "money_list": []}, "cb": 5, "gate": "gate@0"}
+07:15:29.702 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 70525, {"ip": "127.0.0.1", "gate": "gate@0"}
+07:15:29.745 INFO  [9452] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 70525, "r": {"create_time": 1495667729, "name": "name_70525", "SESSION_ID": 70525, "sex": 1}, "cb": 7, "gate": "gate@0"}
+07:15:29.749 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[76]
+07:15:29.751 INFO  [9452] [FFSCENE_PYTHON] <gas@0> AddMoney 70525 200 {"1": 200} gm test add money
+07:15:29.751 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GmTool.ExeCode 
+Player.m_PlayerMoneyMgr.AddMoney(1, 200, "gm test add money")
+
+07:15:29.757 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[14]
+07:15:29.757 INFO  [9452] [FFSCENE_PYTHON] <gas@0>  GasRoomMgr.CreateRoom 70525
+07:15:29.759 INFO  [9452] [FFSCENE_PYTHON] <gas@0>  GasRoomMgr.OnGetRoomIDRet 104419, 70525
+07:15:29.760 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberEnter 70525 -> {"70525": {"0": 1, "1": 1}}
+07:15:32.437 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:32.437 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberEnter 100 -> {"100": {"0": 2, "1": 1}, "70525": {"0": 1, "1": 1}}
+07:15:32.438 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberReady 100 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 1}}
+07:15:32.439 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:32.440 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberEnter 101 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 1}, "101": {"0": 3, "1": 1}}
+07:15:32.440 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:32.440 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberReady 101 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 1}, "101": {"0": 3, "1": 2}}
+07:15:32.441 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:32.442 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberEnter 102 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 1}, "102": {"0": 4, "1": 1}, "101": {"0": 3, "1": 2}}
+07:15:32.442 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:32.443 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:32.443 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberReady 102 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 1}, "102": {"0": 4, "1": 2}, "101": {"0": 3, "1": 2}}
+07:15:34.766 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:34.767 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberReady 70525 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 2}, "102": {"0": 4, "1": 2}, "101": {"0": 3, "1": 2}}
+07:15:34.767 INFO  [9452] [FFSCENE_PYTHON] <gas@0> StartGameOnRoom 104419
+07:15:34.767 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.StartJu 0
+07:15:34.767 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.XiPai [505, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 201, 202, 203, 204, 205, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 208, 209, 301, 302, 303, 304, 305, 306, 307, 301, 302, 303, 304, 305, 306, 307, 308, 309, 301, 302, 303, 304, 305, 306, 307, 308, 309, 401, 406, 407, 401, 406, 407, 401, 405, 406, 407, 507, 508]
+07:15:34.767 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.DingZhuang 100, pos 2
+07:15:34.768 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.768 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.768 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.768 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.KaiJin [101, 102]
+07:15:34.769 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.771 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.772 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.772 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.773 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.773 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.773 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三万 14
+07:15:34.773 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.774 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.774 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.774 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 1, 春, 四万
+07:15:34.774 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.774 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.775 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 夏, 五万
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.775 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 秋, 六万
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.775 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 冬, 七万
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:34.775 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:34.775 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 4, 兰, 八万
+07:15:34.776 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 1, 一万, 二万, 三万, 四万, 四万, 五万, 六万, 七万, 八万, 九万, 西风, 南风, 北风, 
+07:15:34.776 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 2, 三万, 五万, 六万, 七万, 一筒, 二筒, 三筒, 四筒, 五筒, 六筒, 七筒, 八筒, 九筒, 北风, 
+07:15:34.776 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 3, 一索, 二索, 三索, 四索, 五索, 六索, 七索, 八索, 九索, 西风, 南风, 北风, 红中, 
+07:15:34.776 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 4, 八万, 八索, 九索, 东风, 西风, 西风, 南风, 南风, 北风, 红中, 红中, 发财, 白板, 
+07:15:34.777 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:35.267 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:35.767 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:35.779 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 三万. [103, 404] 13
+07:15:35.786 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:35.789 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:35.789 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:35.790 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:35.791 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:35.791 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:35.791 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 九万 14
+07:15:35.791 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:35.792 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000664 
+07:15:35.792 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:35.792 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:35.792 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:36.268 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:36.769 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:36.798 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 三索. [] 13
+07:15:36.799 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:36.800 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:36.800 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:36.801 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:36.801 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:36.801 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:36.801 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 一万 14
+07:15:36.801 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:36.802 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000859 
+07:15:36.803 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:36.803 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:36.803 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:37.269 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:37.770 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:37.808 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 八万. [] 13
+07:15:37.808 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:37.808 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:37.808 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:37.810 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:37.810 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:37.810 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:37.811 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 二万 14
+07:15:37.811 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00064 
+07:15:37.812 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:37.812 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:37.812 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:38.271 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:38.772 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:38.813 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 北风. [402, 403, 404] 13
+07:15:38.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:38.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:38.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:38.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:38.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:38.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:38.816 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三万 14
+07:15:38.816 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:38.816 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000389 
+07:15:38.816 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:38.816 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:38.817 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:39.272 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:39.773 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:39.822 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 三万. [103, 404] 13
+07:15:39.823 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:39.823 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:39.823 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:39.824 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:39.824 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:39.824 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:39.824 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 四万 14
+07:15:39.825 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:39.825 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000554 
+07:15:39.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:39.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:39.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:40.273 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:40.774 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:40.830 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 红中. [] 13
+07:15:40.830 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:40.830 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:40.831 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:40.831 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:40.831 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [401, 402, 403, 404, 405, 406, 407, 308, 309, 405, 402, 403, 101], 405 
+07:15:41.275 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:41.775 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:41.832 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:41.832 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:41.832 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:41.832 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 五万 14
+07:15:41.832 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:41.833 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000732 
+07:15:41.833 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:41.834 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:41.834 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:42.276 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:42.777 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:42.840 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 八索. [] 13
+07:15:42.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:42.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:42.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:42.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:42.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:42.842 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:42.842 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 六万 14
+07:15:42.842 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000322 
+07:15:42.842 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:42.842 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:42.843 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:43.277 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:43.778 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:43.851 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 四万. [103, 104, 106, 109, 402, 403] 13
+07:15:43.851 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:43.852 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:43.852 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:43.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:43.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:43.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:43.853 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 七万 14
+07:15:43.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:43.854 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000409 
+07:15:43.854 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:43.854 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:43.854 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:44.279 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:44.779 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:44.861 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 七万. [107, 404] 13
+07:15:44.861 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:44.861 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:44.861 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:44.862 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:44.862 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:44.863 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:44.863 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 八万 14
+07:15:44.863 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:44.864 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000618 
+07:15:44.864 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:44.864 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:44.864 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:45.279 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:45.780 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:45.869 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 九万. [] 13
+07:15:45.869 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:45.869 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:45.869 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:45.870 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:45.870 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:45.870 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:45.870 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 九万 14
+07:15:45.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:45.871 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000538 
+07:15:45.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:45.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:45.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:46.281 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:46.781 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:46.878 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 九索. [] 13
+07:15:46.878 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:46.878 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:46.878 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:46.878 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:46.878 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:46.878 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:46.879 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 一万 14
+07:15:46.879 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000181 
+07:15:46.879 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e00\u4e07, \u4e00\u4e07, \u4e8c\u4e07, \u4e8c\u4e07, \u4e09\u4e07, \u56db\u4e07, \u4e94\u4e07, \u516d\u4e07, \u516d\u4e07, \u4e03\u4e07, \u516b\u4e07, \u4e5d\u4e07, \u897f\u98ce, \u5357\u98ce, " 
+07:15:46.879 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:46.879 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:46.879 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:47.282 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:47.783 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:47.887 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 八万. [103, 104, 105, 106, 107, 108, 109, 402, 403] 13
+07:15:47.887 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:47.887 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:47.887 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:47.888 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:47.889 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:47.889 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:47.889 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 二万 14
+07:15:47.889 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:47.889 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000449 
+07:15:47.890 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:47.890 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e8c\u4e07, \u4e94\u4e07, \u516d\u4e07, \u4e03\u4e07, \u4e00\u7b52, \u4e8c\u7b52, \u4e09\u7b52, \u56db\u7b52, \u4e94\u7b52, \u516d\u7b52, \u4e03\u7b52, \u516b\u7b52, \u4e5d\u7b52, \u5317\u98ce, " 
+07:15:47.890 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:47.890 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:47.890 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:48.283 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:48.784 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:48.894 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 七万. [105, 106, 107, 201, 202, 203, 204, 205, 206, 207, 208, 209, 404] 13
+07:15:48.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:48.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:48.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:48.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:48.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:48.896 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:48.896 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 三万 14
+07:15:48.896 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:48.896 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000518 
+07:15:48.897 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:48.897 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:48.897 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:49.285 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:49.785 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:49.905 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 八索. [] 13
+07:15:49.905 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:49.905 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:49.906 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:49.907 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:49.907 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:49.907 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:49.907 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 四万 14
+07:15:49.907 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:49.908 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000785 
+07:15:49.908 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:49.909 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:49.909 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:50.286 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:50.786 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:50.912 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 东风. [] 13
+07:15:50.913 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:50.913 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:50.913 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:50.913 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:50.913 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:50.914 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:50.914 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 五万 14
+07:15:50.914 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000195 
+07:15:50.914 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e00\u4e07, \u4e00\u4e07, \u4e8c\u4e07, \u4e8c\u4e07, \u4e09\u4e07, \u56db\u4e07, \u4e94\u4e07, \u4e94\u4e07, \u516d\u4e07, \u516d\u4e07, \u4e03\u4e07, \u4e5d\u4e07, \u897f\u98ce, \u5357\u98ce, " 
+07:15:50.914 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:50.915 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:50.915 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:51.287 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:51.787 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:51.922 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 南风. [103, 105, 106, 109, 402, 403] 13
+07:15:51.922 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:51.922 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:51.922 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:51.923 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:51.923 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [402, 403, 404, 405, 406, 407, 405, 402, 403, 101, 105, 109, 104], 403 
+07:15:52.288 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:52.789 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:52.927 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:52.927 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:52.927 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:52.927 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 六万 14
+07:15:52.928 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:52.928 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000541 
+07:15:52.928 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:52.929 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:52.929 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:53.289 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:53.790 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:53.936 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 六万. [105, 106, 404] 13
+07:15:53.936 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:53.936 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:53.936 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:53.936 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [101, 102, 103, 105, 106, 107, 109, 402, 104, 102, 106, 101, 105], 106 
+07:15:54.046 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:54.046 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:54.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:54.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:54.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:54.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:54.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:54.048 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:54.048 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:54.048 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:54.048 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:54.048 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:54.048 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [70525, 100, 106, 1]
+07:15:54.049 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 一万, 一万, 二万, 二万, 三万, 四万, 五万, 五万, 七万, 九万, 西风, 
+07:15:54.291 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:54.791 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:55.053 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 三万. [104, 105, 107, 109, 103, 402] 10
+07:15:55.053 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.053 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.053 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.054 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.055 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.055 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.055 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 七万 14
+07:15:55.055 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.056 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00046 
+07:15:55.056 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.056 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e8c\u4e07, \u4e94\u4e07, \u516d\u4e07, \u4e03\u4e07, \u4e00\u7b52, \u4e8c\u7b52, \u4e09\u7b52, \u56db\u7b52, \u4e94\u7b52, \u516d\u7b52, \u4e03\u7b52, \u516b\u7b52, \u4e5d\u7b52, \u5317\u98ce, " 
+07:15:55.056 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.057 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.057 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.166 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.166 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.166 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.166 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Hu@@@@@ 100, 二万, 五万, 六万, 七万, 一筒, 二筒, 三筒, 四筒, 五筒, 六筒, 七筒, 八筒, 九筒, 北风, , [101, 102]
+07:15:55.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.179 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.179 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.292 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:55.292 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberReady 70525 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 2}, "102": {"0": 4, "1": 2}, "101": {"0": 3, "1": 2}}
+07:15:55.293 INFO  [9452] [FFSCENE_PYTHON] <gas@0> StartGameOnRoom 104419
+07:15:55.293 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.StartJu 1
+07:15:55.293 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.XiPai [505, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 201, 202, 203, 204, 205, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 208, 209, 301, 302, 303, 304, 305, 306, 307, 301, 302, 303, 304, 305, 306, 307, 308, 309, 301, 302, 303, 304, 305, 306, 307, 308, 309, 401, 406, 407, 401, 406, 407, 401, 405, 406, 407, 507, 508]
+07:15:55.293 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.DingZhuang 100, pos 2
+07:15:55.293 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.293 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.293 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.294 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.KaiJin [101, 102]
+07:15:55.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.299 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.301 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三万 14
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.301 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 1, 春, 四万
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.301 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 夏, 五万
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.301 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 秋, 六万
+07:15:55.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 冬, 七万
+07:15:55.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:55.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:55.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 4, 兰, 八万
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 1, 一万, 二万, 三万, 四万, 四万, 五万, 六万, 七万, 八万, 九万, 西风, 南风, 北风, 
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 2, 三万, 五万, 六万, 七万, 一筒, 二筒, 三筒, 四筒, 五筒, 六筒, 七筒, 八筒, 九筒, 北风, 
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 3, 一索, 二索, 三索, 四索, 五索, 六索, 七索, 八索, 九索, 西风, 南风, 北风, 红中, 
+07:15:55.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 4, 八万, 八索, 九索, 东风, 西风, 西风, 南风, 南风, 北风, 红中, 红中, 发财, 白板, 
+07:15:55.793 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:56.293 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:56.309 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 三万. [103, 404] 13
+07:15:56.309 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:56.309 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:56.309 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:56.310 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:56.310 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:56.310 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:56.310 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 九万 14
+07:15:56.311 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:56.311 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000581 
+07:15:56.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:56.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:56.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:56.794 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:57.295 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:57.319 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 北风. [] 13
+07:15:57.319 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:57.319 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:57.319 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:57.320 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:57.322 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:57.324 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:57.325 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 一万 14
+07:15:57.326 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:57.327 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.001166 
+07:15:57.328 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:57.328 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:57.328 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:57.795 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:58.296 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:58.325 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 西风. [] 13
+07:15:58.326 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:58.326 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:58.326 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:58.327 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:58.327 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:58.328 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:58.328 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 二万 14
+07:15:58.328 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000489 
+07:15:58.329 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:58.329 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:58.329 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:58.797 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:59.297 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:15:59.336 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 北风. [402, 403, 404] 13
+07:15:59.337 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:59.337 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:59.338 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:59.339 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:59.339 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:59.340 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:59.340 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三万 14
+07:15:59.340 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:59.341 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00059 
+07:15:59.341 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:15:59.341 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:15:59.341 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:15:59.798 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:00.299 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:00.343 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 三万. [103, 404] 13
+07:16:00.344 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:00.344 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:00.344 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:00.345 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:00.345 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:00.346 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:00.346 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 四万 14
+07:16:00.346 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:00.348 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.001167 
+07:16:00.349 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:00.350 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:00.351 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:00.799 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:01.299 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:01.351 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 六索. [] 13
+07:16:01.351 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:01.352 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:01.352 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:01.352 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:01.352 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:01.352 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:01.352 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 五万 14
+07:16:01.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:01.353 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000403 
+07:16:01.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:01.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:01.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:01.800 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:02.301 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:02.359 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 红中. [] 13
+07:16:02.359 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:02.359 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:02.359 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:02.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:02.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:02.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:02.360 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 六万 14
+07:16:02.361 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000321 
+07:16:02.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:02.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:02.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:02.801 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:03.302 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:03.368 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 西风. [103, 104, 106, 109, 402, 403] 13
+07:16:03.368 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:03.368 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:03.368 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:03.369 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:03.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:03.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:03.370 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 七万 14
+07:16:03.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:03.371 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000552 
+07:16:03.371 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:03.372 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:03.372 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:03.803 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:04.303 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:04.376 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 七万. [107, 404] 13
+07:16:04.376 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:04.376 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:04.376 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:04.377 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:04.378 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:04.378 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:04.378 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 八万 14
+07:16:04.378 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:04.379 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000623 
+07:16:04.379 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:04.379 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:04.379 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:04.804 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:05.305 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:05.384 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 二索. [] 13
+07:16:05.384 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:05.384 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:05.384 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:05.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:05.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:05.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:05.385 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 九万 14
+07:16:05.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:05.386 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000505 
+07:16:05.386 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:05.386 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:05.387 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:05.805 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:06.306 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:06.393 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 白板. [] 13
+07:16:06.393 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.393 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.393 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.394 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.394 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.394 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.395 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 一万 14
+07:16:06.395 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000307 
+07:16:06.396 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e00\u4e07, \u4e00\u4e07, \u4e8c\u4e07, \u4e8c\u4e07, \u4e09\u4e07, \u56db\u4e07, \u56db\u4e07, \u4e94\u4e07, \u516d\u4e07, \u516d\u4e07, \u4e03\u4e07, \u516b\u4e07, \u4e5d\u4e07, \u5357\u98ce, " 
+07:16:06.396 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.396 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.396 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.503 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.504 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.504 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.504 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Hu@@@@@ 70525, 一万, 一万, 二万, 二万, 三万, 四万, 四万, 五万, 六万, 六万, 七万, 八万, 九万, 南风, , [101, 102]
+07:16:06.506 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.508 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.509 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.807 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:06.807 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateWaiting.MemberReady 70525 -> {"100": {"0": 2, "1": 2}, "70525": {"0": 1, "1": 2}, "102": {"0": 4, "1": 2}, "101": {"0": 3, "1": 2}}
+07:16:06.807 INFO  [9452] [FFSCENE_PYTHON] <gas@0> StartGameOnRoom 104419
+07:16:06.808 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.StartJu 2
+07:16:06.808 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.XiPai [505, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 201, 202, 203, 204, 205, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 208, 209, 201, 202, 203, 204, 205, 206, 207, 208, 209, 301, 302, 303, 304, 305, 306, 307, 301, 302, 303, 304, 305, 306, 307, 308, 309, 301, 302, 303, 304, 305, 306, 307, 308, 309, 401, 406, 407, 401, 406, 407, 401, 405, 406, 407, 507, 508]
+07:16:06.808 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.DingZhuang 100, pos 2
+07:16:06.808 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.808 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.808 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.808 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.KaiJin [101, 102]
+07:16:06.809 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.811 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.812 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.813 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.813 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.813 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.813 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三万 14
+07:16:06.813 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.813 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.813 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.814 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 1, 春, 四万
+07:16:06.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.814 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 夏, 五万
+07:16:06.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.814 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 秋, 六万
+07:16:06.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.815 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 2, 冬, 七万
+07:16:06.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:06.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:06.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:06.815 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 4, 兰, 八万
+07:16:06.815 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 1, 一万, 二万, 三万, 四万, 四万, 五万, 六万, 七万, 八万, 九万, 西风, 南风, 北风, 
+07:16:06.816 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 2, 三万, 五万, 六万, 七万, 一筒, 二筒, 三筒, 四筒, 五筒, 六筒, 七筒, 八筒, 九筒, 北风, 
+07:16:06.816 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 3, 一索, 二索, 三索, 四索, 五索, 六索, 七索, 八索, 九索, 西风, 南风, 北风, 红中, 
+07:16:06.816 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.FaPai 4, 八万, 八索, 九索, 东风, 西风, 西风, 南风, 南风, 北风, 红中, 红中, 发财, 白板, 
+07:16:07.307 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:07.808 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:07.814 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 北风. [103, 404] 13
+07:16:07.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:07.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:07.814 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:07.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:07.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:07.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:07.815 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 九万 14
+07:16:07.815 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:07.816 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000362 
+07:16:07.816 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:07.816 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:07.816 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:08.308 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:08.809 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:08.825 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 九万. [] 13
+07:16:08.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:08.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:08.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:08.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:08.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:08.826 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:08.827 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 一万 14
+07:16:08.827 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:08.827 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000471 
+07:16:08.827 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:08.827 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:08.827 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:09.310 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:09.812 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:09.836 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 一万. [] 13
+07:16:09.837 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:09.837 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:09.838 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:09.839 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:09.840 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:09.840 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:09.840 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 二万 14
+07:16:09.841 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00064 
+07:16:09.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:09.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:09.841 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:10.311 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:10.812 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:10.849 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 北风. [402, 403, 404] 13
+07:16:10.849 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:10.850 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:10.850 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:10.851 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:10.851 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:10.851 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:10.851 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三万 14
+07:16:10.852 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:10.852 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000514 
+07:16:10.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:10.853 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e09\u4e07, \u4e09\u4e07, \u4e94\u4e07, \u516d\u4e07, \u4e03\u4e07, \u4e00\u7b52, \u4e8c\u7b52, \u4e09\u7b52, \u56db\u7b52, \u4e94\u7b52, \u516d\u7b52, \u4e03\u7b52, \u516b\u7b52, \u4e5d\u7b52, " 
+07:16:10.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:10.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:10.853 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:11.313 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:11.813 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:11.855 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 五万. [105, 106, 107, 103, 201, 202, 203, 204, 205, 206, 207, 208, 209] 13
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:11.856 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 四万 14
+07:16:11.856 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:11.857 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000345 
+07:16:11.857 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:11.857 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:11.857 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:12.314 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:12.815 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:12.865 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 八索. [] 13
+07:16:12.868 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:12.869 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:12.869 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:12.870 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:12.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:12.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:12.871 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 五万 14
+07:16:12.871 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:12.872 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000677 
+07:16:12.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:12.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:12.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:13.315 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:13.816 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:13.872 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 西风. [] 13
+07:16:13.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:13.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:13.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:13.872 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:13.873 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:13.873 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:13.873 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 六万 14
+07:16:13.873 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000323 
+07:16:13.873 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:13.873 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:13.874 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:14.317 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:14.818 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:14.882 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 九万. [103, 104, 106, 109, 402, 403] 13
+07:16:14.883 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:14.883 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:14.883 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:14.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:14.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:14.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:14.884 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 七万 14
+07:16:14.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:14.885 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000749 
+07:16:14.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:14.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:14.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:15.318 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:15.819 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:15.892 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 七万. [106, 107] 13
+07:16:15.892 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:15.892 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:15.892 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:15.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:15.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:15.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:15.893 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 八万 14
+07:16:15.894 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:15.894 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000546 
+07:16:15.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:15.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:15.895 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:16.320 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:16.820 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:16.900 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 四万. [] 13
+07:16:16.900 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:16.900 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:16.900 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:16.901 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [101, 102, 103, 104, 105, 106, 107, 108, 402, 403, 104, 102, 106], 104 
+07:16:17.011 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:17.012 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:17.012 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:17.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:17.014 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:17.014 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [70525, 101, 104, 1]
+07:16:17.014 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 一万, 二万, 二万, 三万, 五万, 六万, 六万, 七万, 八万, 西风, 南风, 
+07:16:17.321 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:17.821 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:18.020 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 六万. [106, 103, 402, 403] 10
+07:16:18.021 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:18.021 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:18.021 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:18.022 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:18.022 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:18.022 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:18.023 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 九万 14
+07:16:18.023 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:18.024 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00065 
+07:16:18.024 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:18.024 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:18.024 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:18.323 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:18.823 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:19.030 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 六万. [106, 109] 13
+07:16:19.030 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:19.030 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:19.030 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:19.031 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:19.031 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:19.031 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:19.031 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 一万 14
+07:16:19.031 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:19.032 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000528 
+07:16:19.032 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:19.032 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:19.032 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:19.323 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:19.824 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:20.037 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 四索. [] 13
+07:16:20.037 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:20.037 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:20.037 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:20.038 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:20.038 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:20.038 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:20.038 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 二万 14
+07:16:20.038 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:20.039 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000477 
+07:16:20.039 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:20.039 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:20.039 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:20.325 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:20.826 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:21.045 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 红中. [] 13
+07:16:21.045 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:21.045 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:21.045 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:21.046 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:21.046 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:21.046 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:21.046 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 三万 11
+07:16:21.047 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000251 
+07:16:21.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:21.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:21.047 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:21.326 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:21.828 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:22.055 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 八万. [105, 108, 103, 402, 403] 10
+07:16:22.055 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:22.055 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:22.055 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:22.056 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:22.056 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:22.056 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:22.056 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 四万 14
+07:16:22.056 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:22.057 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00045 
+07:16:22.057 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:22.057 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:22.057 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:22.328 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:22.829 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:23.063 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 四万. [104] 13
+07:16:23.063 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:23.064 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:23.064 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:23.064 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Gang [101, 102, 103, 105, 107, 402, 403, 102, 106, 103], 104 
+07:16:23.174 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:23.174 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:23.174 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:23.174 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:23.174 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:23.174 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:23.174 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestGangPeng [70525, 100, 104, 1]
+07:16:23.174 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestGangRetPeng 一万, 二万, 二万, 三万, 三万, 五万, 五万, 六万, 七万, 西风, 南风, 
+07:16:23.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:23.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:23.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:23.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:23.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:23.175 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:23.330 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:23.830 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:24.183 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 南风. [105, 103, 402, 403] 10
+07:16:24.184 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:24.184 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:24.184 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:24.184 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:24.184 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [401, 403, 404, 406, 407, 308, 309, 405, 402, 403, 108, 105, 102], 403 
+07:16:24.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:24.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:24.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:24.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:24.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:24.294 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:24.295 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:24.295 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:24.295 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:24.295 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:24.295 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:24.295 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:24.295 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [102, 70525, 403, 4]
+07:16:24.295 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 二万, 五万, 八万, 八索, 九索, 东风, 西风, 北风, 红中, 发财, 白板, 
+07:16:24.331 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:24.832 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:25.302 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 八索. [] 10
+07:16:25.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:25.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:25.302 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:25.304 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:25.304 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:25.304 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:25.304 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 六万 11
+07:16:25.306 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000398 
+07:16:25.306 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e00\u4e07, \u4e8c\u4e07, \u4e8c\u4e07, \u4e09\u4e07, \u4e09\u4e07, \u4e94\u4e07, \u4e94\u4e07, \u516d\u4e07, \u516d\u4e07, \u4e03\u4e07, \u897f\u98ce, " 
+07:16:25.306 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:25.306 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:25.307 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:25.334 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:25.834 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:26.311 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 西风. [105, 106, 107, 103, 402] 10
+07:16:26.311 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:26.311 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:26.311 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:26.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:26.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:26.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:26.312 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 七万 14
+07:16:26.312 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:26.313 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000491 
+07:16:26.313 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:26.313 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:26.313 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:26.335 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:26.836 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:27.314 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 九万. [107, 109] 13
+07:16:27.314 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:27.315 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:27.315 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:27.315 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:27.316 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:27.316 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:27.317 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 八万 14
+07:16:27.318 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:27.318 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000559 
+07:16:27.319 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:27.319 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:27.319 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:27.337 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:27.837 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:28.321 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 红中. [] 13
+07:16:28.321 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:28.321 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:28.321 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:28.322 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:28.322 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:28.322 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:28.322 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 九万 11
+07:16:28.322 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:28.323 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000366 
+07:16:28.323 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:28.323 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:28.323 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:28.338 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:28.838 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:29.330 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 白板. [] 10
+07:16:29.330 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:29.330 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:29.330 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:29.331 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:29.331 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:29.331 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:29.331 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 一筒 11
+07:16:29.331 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000269 
+07:16:29.332 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e00\u4e07, \u4e8c\u4e07, \u4e8c\u4e07, \u4e09\u4e07, \u4e09\u4e07, \u4e94\u4e07, \u4e94\u4e07, \u516d\u4e07, \u516d\u4e07, \u4e03\u4e07, \u4e00\u7b52, " 
+07:16:29.332 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:29.332 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:29.332 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:29.339 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:29.839 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:30.337 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 六万. [105, 106, 107, 103, 201] 10
+07:16:30.338 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:30.338 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:30.338 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:30.338 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:30.338 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:30.339 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:30.339 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 二筒 14
+07:16:30.339 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:30.339 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000523 
+07:16:30.340 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:30.340 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:30.340 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:30.340 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:30.840 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:31.341 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:31.347 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 二筒. [202] 13
+07:16:31.347 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:31.347 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:31.347 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:31.348 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:31.348 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:31.348 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:31.348 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 三筒 14
+07:16:31.348 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:31.348 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000422 
+07:16:31.349 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:31.349 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:31.349 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:31.841 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:32.342 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:32.353 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 八万. [] 13
+07:16:32.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:32.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:32.353 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:32.354 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:32.354 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:32.355 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:32.355 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 四筒 11
+07:16:32.355 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:32.356 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000401 
+07:16:32.356 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:32.356 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:32.357 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:32.843 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:33.343 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:33.355 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 五万. [] 10
+07:16:33.355 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:33.355 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:33.355 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:33.356 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [101, 102, 103, 105, 107, 102, 103, 105, 106, 201], 105 
+07:16:33.844 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:34.345 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:34.363 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:34.363 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:34.363 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:34.363 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 五筒 11
+07:16:34.364 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000495 
+07:16:34.364 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:34.364 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:34.364 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:34.845 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:35.346 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:35.373 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 三万. [105, 103, 201, 205] 10
+07:16:35.373 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:35.374 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:35.374 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:35.374 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:35.374 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [201, 203, 204, 205, 206, 207, 208, 209, 103, 103, 107, 107, 202], 103 
+07:16:35.847 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:36.347 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:36.380 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:36.381 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:36.382 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:36.382 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 六筒 14
+07:16:36.382 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:36.384 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.001067 
+07:16:36.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:36.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:36.385 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:36.847 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:37.349 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:37.389 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 九筒. [206, 209] 13
+07:16:37.390 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:37.390 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:37.390 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:37.391 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:37.391 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:37.392 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:37.392 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 七筒 14
+07:16:37.392 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:37.392 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000484 
+07:16:37.393 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:37.393 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:37.393 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:37.850 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:38.351 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:38.397 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 西风. [] 13
+07:16:38.397 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:38.397 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:38.397 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:38.398 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:38.398 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:38.398 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:38.398 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 八筒 11
+07:16:38.398 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:38.398 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000211 
+07:16:38.398 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:38.399 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:38.399 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:38.851 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:39.352 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:39.406 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 西风. [] 10
+07:16:39.406 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:39.407 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:39.407 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:39.408 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:39.408 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:39.408 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:39.408 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 九筒 11
+07:16:39.409 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000511 
+07:16:39.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:39.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:39.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:39.852 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:40.353 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:40.415 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 五筒. [201, 205, 209] 10
+07:16:40.415 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:40.415 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:40.415 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:40.415 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:40.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:40.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:40.416 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 一筒 14
+07:16:40.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:40.416 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000399 
+07:16:40.416 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:40.417 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:40.417 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:40.854 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:41.354 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:41.425 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 一筒. [201] 13
+07:16:41.425 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:41.425 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:41.425 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:41.426 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:41.426 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:41.426 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:41.426 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 二筒 14
+07:16:41.426 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:41.427 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000529 
+07:16:41.427 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:41.428 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:41.428 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:41.855 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:42.355 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:42.431 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 八万. [] 13
+07:16:42.431 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:42.432 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:42.432 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:42.432 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:42.433 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:42.433 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:42.433 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 三筒 11
+07:16:42.433 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:42.434 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000392 
+07:16:42.434 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:42.434 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:42.434 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:42.856 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:43.357 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:43.439 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 发财. [] 10
+07:16:43.439 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:43.439 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:43.440 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:43.441 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:43.441 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:43.441 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:43.441 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 四筒 11
+07:16:43.441 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000308 
+07:16:43.441 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:43.442 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:43.442 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:43.857 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:44.358 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:44.448 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 九筒. [201, 204, 209] 10
+07:16:44.448 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:44.448 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:44.448 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:44.449 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:44.449 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:44.449 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:44.449 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 五筒 14
+07:16:44.449 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:44.450 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000466 
+07:16:44.450 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:44.450 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:44.450 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:44.859 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:45.359 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:45.457 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 八筒. [205, 208] 13
+07:16:45.457 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:45.457 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:45.457 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:45.458 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:45.459 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:45.459 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:45.459 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 六筒 14
+07:16:45.459 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:45.460 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000414 
+07:16:45.460 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:45.460 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:45.460 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:45.860 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:46.361 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:46.465 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 三索. [] 13
+07:16:46.465 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:46.466 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:46.466 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:46.467 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:46.467 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:46.467 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:46.467 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 七筒 11
+07:16:46.468 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:46.468 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000468 
+07:16:46.469 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:46.469 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:46.470 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:46.861 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:47.362 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:47.472 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 三筒. [] 10
+07:16:47.472 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:47.472 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:47.472 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:47.473 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:47.474 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:47.474 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:47.474 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 八筒 11
+07:16:47.475 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000516 
+07:16:47.475 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:47.475 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:47.475 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:47.863 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:48.363 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:48.481 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 四筒. [208, 201, 204] 10
+07:16:48.481 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:48.481 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:48.481 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:48.481 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:48.482 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:48.482 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:48.482 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 九筒 14
+07:16:48.482 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:48.482 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000408 
+07:16:48.483 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:48.483 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:48.483 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:48.864 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:49.364 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:49.490 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 九筒. [209] 13
+07:16:49.491 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:49.492 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 一筒 14
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:49.492 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000535 
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:49.492 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:49.865 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:50.366 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:50.496 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 一索. [] 13
+07:16:50.496 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:50.497 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:50.497 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:50.497 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:50.497 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:50.497 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:50.498 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 二筒 11
+07:16:50.498 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:50.498 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00024 
+07:16:50.498 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:50.498 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:50.498 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:50.867 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:51.368 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:51.505 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 红中. [] 10
+07:16:51.506 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:51.506 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:51.506 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:51.507 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:51.507 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:51.508 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:51.508 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 三筒 11
+07:16:51.508 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000303 
+07:16:51.509 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CanHu [101, 102], "\u4e00\u4e07, \u4e8c\u4e07, \u4e8c\u4e07, \u4e09\u4e07, \u4e94\u4e07, \u4e94\u4e07, \u516d\u4e07, \u4e03\u4e07, \u4e00\u7b52, \u4e09\u7b52, \u516b\u7b52, " 
+07:16:51.509 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:51.509 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:51.509 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:51.868 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:52.369 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:52.513 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 七万. [105, 106, 107, 103, 208, 201, 203] 10
+07:16:52.513 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:52.513 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:52.513 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:52.514 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:52.514 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [203, 204, 205, 206, 207, 103, 103, 107, 107, 202, 206, 201, 205], 107 
+07:16:52.869 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:53.370 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:53.521 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:53.521 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:53.521 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:53.522 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 四筒 14
+07:16:53.522 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:53.522 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000394 
+07:16:53.522 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:53.522 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:53.522 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:53.871 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:54.371 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:54.530 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 七筒. [201, 204, 207] 13
+07:16:54.530 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:54.530 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:54.530 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:54.531 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:54.532 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:54.532 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:54.532 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 五筒 14
+07:16:54.532 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:54.533 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000602 
+07:16:54.534 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:54.534 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:54.534 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:54.872 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:55.372 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:55.537 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 北风. [] 13
+07:16:55.537 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:55.538 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:55.538 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:55.538 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:55.539 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:55.539 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:55.539 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 六筒 11
+07:16:55.539 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:55.540 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000387 
+07:16:55.540 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:55.540 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:55.540 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:55.873 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:56.373 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:56.547 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 北风. [] 10
+07:16:56.547 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:56.547 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:56.547 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:56.548 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:56.548 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:56.548 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:56.549 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 七筒 11
+07:16:56.550 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000891 
+07:16:56.550 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:56.550 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:56.550 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:56.874 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:57.374 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:57.555 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 八筒. [105, 106, 103, 208, 201, 203, 207] 10
+07:16:57.555 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:57.555 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:57.555 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:57.556 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:57.556 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:57.556 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:57.556 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 八筒 14
+07:16:57.557 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:57.557 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000567 
+07:16:57.558 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:57.558 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:57.558 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:57.875 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:58.376 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:58.565 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 八筒. [208] 13
+07:16:58.565 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:58.565 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:58.565 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:58.565 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:58.565 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:58.565 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:58.566 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 九筒 14
+07:16:58.566 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:58.566 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000332 
+07:16:58.566 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:58.566 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:58.566 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:58.876 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:59.377 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:16:59.572 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 六筒. [] 13
+07:16:59.572 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:59.572 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:16:59.572 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:16:59.573 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:16:59.573 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [203, 204, 205, 206, 103, 103, 107, 107, 202, 206, 201, 205, 204], 206 
+07:16:59.878 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:00.378 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:00.580 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:00.580 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:00.580 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:00.580 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 一索 11
+07:17:00.580 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:00.581 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000545 
+07:17:00.581 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:00.582 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:00.582 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:00.879 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:01.379 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:01.581 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 四筒. [] 10
+07:17:01.581 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:01.581 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:01.581 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:01.581 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:01.581 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [203, 204, 205, 206, 103, 103, 107, 107, 202, 206, 201, 205, 204], 204 
+07:17:01.880 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:02.381 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:02.589 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:02.589 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:02.589 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:02.590 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 二索 11
+07:17:02.590 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000238 
+07:17:02.590 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:02.590 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:02.590 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:02.882 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:03.383 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:03.600 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 二索. [207, 302] 10
+07:17:03.600 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:03.600 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:03.600 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:03.601 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:03.602 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:03.602 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:03.602 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三索 14
+07:17:03.602 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:03.603 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.00058 
+07:17:03.603 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:03.604 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:03.604 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:03.883 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:04.384 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:04.607 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 三索. [303] 13
+07:17:04.607 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:04.607 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:04.608 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:04.608 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:04.609 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:04.609 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:04.609 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 四索 14
+07:17:04.609 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:04.610 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000569 
+07:17:04.610 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:04.610 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:04.610 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:04.884 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:05.385 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:05.616 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 七筒. [] 13
+07:17:05.616 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:05.616 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:05.616 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:05.617 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:05.617 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:05.617 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:05.617 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 五索 11
+07:17:05.617 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:05.618 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000392 
+07:17:05.618 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:05.618 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:05.618 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:05.885 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:06.386 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:06.624 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 一索. [] 10
+07:17:06.624 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:06.624 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:06.624 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:06.625 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:06.625 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:06.625 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:06.625 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 六索 11
+07:17:06.626 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000221 
+07:17:06.626 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:06.626 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:06.626 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:06.887 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:07.387 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:07.632 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 七筒. [207, 306] 10
+07:17:07.632 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:07.632 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:07.633 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:07.633 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:07.634 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:07.634 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:07.634 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 七索 14
+07:17:07.634 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:07.635 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000592 
+07:17:07.635 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:07.635 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:07.635 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:07.888 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:08.389 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:08.641 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 七索. [307] 13
+07:17:08.642 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:08.642 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:08.642 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:08.643 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:08.643 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:08.643 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:08.643 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 一索 14
+07:17:08.643 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:08.644 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000564 
+07:17:08.644 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:08.644 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:08.644 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:08.889 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:09.390 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:09.650 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 七索. [] 13
+07:17:09.650 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:09.650 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:09.650 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:09.651 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:09.651 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:09.651 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:09.652 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 二索 11
+07:17:09.652 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:09.652 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000397 
+07:17:09.653 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:09.653 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:09.653 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:09.891 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:10.391 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:10.657 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 八万. [] 10
+07:17:10.657 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:10.657 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:10.657 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:10.658 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:10.658 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:10.658 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:10.658 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 三索 11
+07:17:10.658 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000238 
+07:17:10.658 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:10.658 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:10.658 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:10.892 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:11.393 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:11.665 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 六索. [306, 303] 10
+07:17:11.665 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:11.666 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:11.666 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:11.667 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:11.667 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:11.667 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:11.667 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 四索 14
+07:17:11.667 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:11.668 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000535 
+07:17:11.668 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:11.668 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:11.671 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:11.894 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:12.394 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:12.676 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 四索. [304] 13
+07:17:12.676 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:12.677 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:12.677 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:12.679 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:12.680 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:12.680 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:12.680 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 五索 14
+07:17:12.680 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:12.681 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000634 
+07:17:12.681 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:12.681 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:12.681 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:12.895 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:13.395 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:13.683 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 一筒. [] 13
+07:17:13.683 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:13.683 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:13.683 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:13.684 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:13.684 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:13.684 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:13.684 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 六索 11
+07:17:13.684 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:13.685 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000402 
+07:17:13.685 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:13.686 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:13.686 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:13.896 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:14.397 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:14.692 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 二筒. [] 10
+07:17:14.693 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:14.693 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:14.693 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:14.694 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:14.694 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:14.694 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:14.694 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 七索 11
+07:17:14.695 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000322 
+07:17:14.695 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:14.696 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:14.696 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:14.897 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:15.398 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:15.702 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 三索. [307, 303] 10
+07:17:15.702 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:15.702 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:15.702 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:15.703 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:15.704 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:15.704 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:15.704 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 八索 14
+07:17:15.704 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:15.704 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000507 
+07:17:15.705 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:15.705 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:15.705 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:15.898 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:16.399 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:16.710 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 八索. [308] 13
+07:17:16.710 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:16.710 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:16.710 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:16.711 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:16.711 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:16.711 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:16.711 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 九索 14
+07:17:16.711 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:16.712 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000442 
+07:17:16.712 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:16.712 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:16.712 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:16.899 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:17.400 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:17.720 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 五索. [] 13
+07:17:17.720 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:17.720 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:17.721 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:17.721 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:17.722 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:17.722 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:17.722 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 一索 11
+07:17:17.722 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:17.723 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000415 
+07:17:17.723 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:17.724 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:17.724 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:17.901 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:18.402 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:18.728 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 九万. [] 10
+07:17:18.728 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:18.728 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:18.728 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:18.729 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:18.729 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:18.730 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:18.730 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 二索 11
+07:17:18.730 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000345 
+07:17:18.731 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:18.731 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:18.731 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:18.902 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:19.402 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:19.737 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 二索. [307, 302] 10
+07:17:19.737 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:19.737 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:19.737 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:19.737 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:19.738 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:19.738 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:19.738 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 三索 14
+07:17:19.738 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:19.738 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000394 
+07:17:19.738 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:19.739 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:19.739 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:19.903 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:20.404 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:20.747 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 三索. [303] 13
+07:17:20.747 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:20.747 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:20.747 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:20.748 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:20.748 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:20.748 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:20.748 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 四索 14
+07:17:20.748 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:20.749 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000398 
+07:17:20.749 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:20.749 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:20.749 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:20.904 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:21.405 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:21.755 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 一万. [] 13
+07:17:21.755 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:21.755 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:21.755 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:21.756 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:21.756 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:21.756 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:21.756 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 五索 11
+07:17:21.756 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:21.757 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000572 
+07:17:21.758 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:21.758 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:21.758 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:21.906 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:22.406 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:22.764 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 六筒. [] 10
+07:17:22.764 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:22.764 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:22.765 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:22.765 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:22.765 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [203, 204, 205, 206, 103, 103, 107, 107, 202, 206, 201, 205, 204], 206 
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:22.875 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:22.876 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:22.876 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:22.876 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:22.876 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [100, 102, 206, 2]
+07:17:22.876 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 三万, 三万, 七万, 七万, 一筒, 二筒, 三筒, 四筒, 四筒, 五筒, 五筒, 
+07:17:22.908 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:23.408 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:23.883 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 四筒. [] 10
+07:17:23.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:23.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:23.884 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:23.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:23.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:23.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:23.885 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 六索 14
+07:17:23.885 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:23.886 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000626 
+07:17:23.886 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:23.886 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:23.887 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:23.909 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:24.410 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:24.892 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 五筒. [] 13
+07:17:24.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:24.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:24.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:24.893 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:24.893 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [203, 205, 103, 103, 107, 107, 202, 201, 205, 204], 205 
+07:17:24.910 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:25.003 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:25.004 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:25.004 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:25.004 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:25.004 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [100, 101, 205, 2]
+07:17:25.004 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 三万, 三万, 七万, 七万, 一筒, 二筒, 三筒, 四筒, 
+07:17:25.411 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:25.912 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:26.013 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 四筒. [201, 204] 7
+07:17:26.013 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:26.014 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:26.014 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:26.015 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:26.016 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:26.016 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:26.016 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 七索 14
+07:17:26.016 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:26.017 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000817 
+07:17:26.018 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:26.018 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:26.018 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:26.412 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:26.913 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:27.022 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 一索. [] 13
+07:17:27.022 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:27.022 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:27.022 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:27.023 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:27.023 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:27.023 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:27.024 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 八索 11
+07:17:27.024 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:27.024 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000506 
+07:17:27.025 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:27.025 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:27.025 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:27.414 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:27.915 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:28.032 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 六索. [] 10
+07:17:28.032 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:28.032 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:28.032 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:28.033 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:28.033 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [302, 306, 309, 403, 203, 202, 209, 304, 305, 309, 304, 306, 307], 306 
+07:17:28.142 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:28.142 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:28.142 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:28.143 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:28.143 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [101, 102, 306, 3]
+07:17:28.143 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 二筒, 三筒, 九筒, 二索, 四索, 四索, 五索, 七索, 九索, 九索, 南风, 
+07:17:28.415 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:28.916 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:29.152 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 三筒. [] 10
+07:17:29.152 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:29.152 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:29.152 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:29.153 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:29.153 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:29.153 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:29.153 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 九索 11
+07:17:29.153 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:29.154 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000362 
+07:17:29.154 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:29.154 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:29.154 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:29.417 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:29.917 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:30.161 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 二万. [] 10
+07:17:30.161 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:30.161 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:30.161 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:30.162 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:30.162 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:30.162 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:30.162 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 东风 11
+07:17:30.163 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000223 
+07:17:30.163 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:30.163 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:30.163 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:30.418 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:30.919 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:31.169 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 东风. [307, 401] 10
+07:17:31.170 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:31.170 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:31.170 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:31.170 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:31.170 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:31.170 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:31.170 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 发财 8
+07:17:31.171 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:31.171 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000232 
+07:17:31.171 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:31.171 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:31.171 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:31.420 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:31.921 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:32.177 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 发财. [406] 7
+07:17:32.178 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:32.178 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:32.178 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:32.179 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:32.179 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:32.179 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:32.179 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 白板 11
+07:17:32.179 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:32.180 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000685 
+07:17:32.180 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:32.180 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:32.181 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:32.421 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:32.922 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:33.188 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 二筒. [] 10
+07:17:33.188 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:33.189 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:33.189 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:33.189 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:33.189 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:33.189 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:33.189 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 东风 11
+07:17:33.190 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:33.190 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000308 
+07:17:33.190 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:33.190 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:33.190 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:33.423 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:33.923 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:34.199 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 东风. [] 10
+07:17:34.199 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:34.200 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:34.200 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:34.200 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:34.200 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:34.200 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:34.200 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 发财 11
+07:17:34.201 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000229 
+07:17:34.201 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:34.201 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:34.201 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:34.424 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:34.925 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:35.210 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 发财. [307, 406] 10
+07:17:35.210 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:35.210 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:35.210 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:35.211 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:35.211 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:35.211 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:35.211 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 白板 8
+07:17:35.211 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:35.211 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000448 
+07:17:35.212 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:35.212 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:35.212 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:35.425 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:35.926 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:36.220 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 白板. [407] 7
+07:17:36.220 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:36.220 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:36.220 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:36.221 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:36.221 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:36.221 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:36.221 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 东风 11
+07:17:36.221 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:36.222 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000458 
+07:17:36.222 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:36.222 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:36.222 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:36.426 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:36.927 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:37.231 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 五索. [] 10
+07:17:37.231 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:37.231 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:37.231 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:37.232 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:37.232 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.Peng [309, 208, 207, 305, 302, 301, 305, 308, 309, 401], 305 
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:37.342 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:37.343 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:37.343 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:37.343 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:37.343 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPeng [102, 101, 305, 4]
+07:17:37.343 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.RequestPengRet 七筒, 八筒, 一索, 二索, 八索, 九索, 九索, 东风, 
+07:17:37.427 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:37.929 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:38.349 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 4, 102, 八筒. [] 7
+07:17:38.350 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:38.350 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:38.350 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:38.350 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:38.350 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:38.351 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:38.351 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 1, 70525, 红中 11
+07:17:38.351 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000224 
+07:17:38.351 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:38.351 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:38.351 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:38.429 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:38.930 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:39.358 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 1, 70525, 七索. [307, 405] 10
+07:17:39.358 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:39.358 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:39.358 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:39.358 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:39.359 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:39.359 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:39.359 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 2, 100, 发财 8
+07:17:39.359 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:39.359 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000345 
+07:17:39.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:39.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:39.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:39.431 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:39.931 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:40.360 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 2, 100, 发财. [406] 7
+07:17:40.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:40.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:40.360 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:40.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:40.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:40.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:40.361 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 3, 101, 白板 11
+07:17:40.361 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:40.362 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.CheckHU 0.000982 
+07:17:40.362 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:40.363 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:40.363 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:40.432 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:40.932 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:41.368 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.AutoQiPai 3, 101, 二索. [] 10
+07:17:41.368 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:41.368 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:41.368 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:41.369 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:41.369 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:41.369 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:41.369 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.MoPai 4, 102, 竹 8
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:41.370 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasMj.BuHua 4, 竹, 菊
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:17:41.370 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:17:41.409 ERROR [9452] [FFSCENE_PYTHON] <gas@0> Traceback (most recent call last):
+  File "./pylib/ffext.py", line 52, in ff_timer_callback
+    cb(data)
+  File "./pyproject/gas/gas_mj/gas_mj_mgr.py", line 343, in AutoQiPai
+    self.NextTurn()
+  File "./pyproject/gas/gas_mj/gas_mj_mgr.py", line 323, in NextTurn
+    self.MoPai(nPos, bCheckEventAndBuHua)
+  File "./pyproject/gas/gas_mj/gas_mj_mgr.py", line 254, in MoPai
+    bHaveHuaPai, nCard = self.CheckBuHua(nPos, nCard)
+  File "./pyproject/gas/gas_mj/gas_mj_mgr.py", line 215, in CheckBuHua
+    nNextCard = self.GetNextCard()
+  File "./pyproject/gas/gas_mj/gas_mj_mgr.py", line 300, in GetNextCard
+    nCard = self.m_listGlobalCard[self.m_nNextCardIndex]
+IndexError: list index out of range
+Detail:
+ Current dump time: 2017-05-25 07:17:41
+ /home/jhfeng/Documents/red_rabbit/pyproject/gas/gas_mj/gas_mj_mgr.py in GetNextCard(self=<gas.gas_mj.gas_mj_mgr.GasMjRule object>)
+   298 
+   299     def GetNextCard(self):
+   300         nCard = self.m_listGlobalCard[self.m_nNextCardIndex]
+   301         self.m_nNextCardIndex += 1
+   302         return nCard
+ Local Var:
+    self = <gas.gas_mj.gas_mj_mgr.GasMjRule object>
+    nCard undefined
+    self.m_listGlobalCard = [505, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, 102, 103, 104, 105, 106, 107, 108, 109, 101, ...]
+    self.m_nNextCardIndex = 92
+
+07:17:41.433 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:41.934 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:42.378 ERROR [9452] [FFSCENE_PYTHON] <gas@0> Traceback (most recent call last):
+  File "./pylib/ffext.py", line 52, in ff_timer_callback
+    cb(data)
+  File "./pyproject/gas/gas_mj/gas_mj_mgr.py", line 330, in AutoQiPai
+    tingArr = check_hu.getTingNumArr(self.m_dictPosCarList[nPos], self.m_listJinPai)
+  File "./pyproject/gas/gas_mj/check_hu.py", line 812, in getTingNumArr
+    sptArr = seprateArr( tmpArr, hunMj )
+  File "./pyproject/gas/gas_mj/check_hu.py", line 244, in seprateArr
+    reArr[t].append( mj )
+IndexError: list index out of range
+Detail:
+ Current dump time: 2017-05-25 07:17:42
+ /home/jhfeng/Documents/red_rabbit/pyproject/gas/gas_mj/check_hu.py in seprateArr(mjArr=[309, 207, 302, 301, 308, 309, 401, 508], hunMj=[101, 102])
+   242         # if ht == t and hv == v:
+   243         #     t = 0
+   244         reArr[t].append( mj )
+   245         sortArr( reArr[t] )
+   246 
+ Local Var:
+    listHunMj = [(1, 1), (1, 2)]
+    h = 102
+    mjArr = [309, 207, 302, 301, 308, 309, 401, 508]
+    hv = 2
+    hunMj = [101, 102]
+    ht = 1
+    mj = 508
+    t = 5
+    v = 8
+    reArr = [[], [], [207], [301, 302, 308, 309, 309], [401]]
+    ].append undefined
+
+07:17:42.434 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:42.935 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:43.435 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:43.936 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:44.437 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:44.937 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:45.438 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:45.939 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:46.439 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:46.939 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:47.440 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:47.940 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:48.441 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:48.942 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:49.443 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:49.943 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:50.444 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:50.944 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:51.445 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:51.946 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:52.447 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:52.947 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:53.447 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:53.948 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:54.449 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:54.950 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:55.450 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:55.950 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:56.451 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:56.952 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:57.452 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:57.953 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:58.454 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:58.954 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:59.457 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:17:59.956 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:00.457 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:00.957 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:01.458 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:01.959 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:02.459 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:02.960 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:03.460 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:03.961 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:04.462 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:04.962 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:05.463 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:05.964 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:06.464 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:06.965 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:07.466 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:07.966 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:08.467 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:08.968 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:09.468 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:09.969 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:10.470 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:10.970 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:11.471 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:11.971 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:12.472 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:12.972 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:13.473 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:13.974 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:14.475 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:14.975 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:15.476 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:15.977 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:16.477 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:16.979 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:17.480 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:17.982 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:18.485 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:18.986 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:19.488 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:19.989 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:20.491 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:20.993 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:21.494 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:21.995 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:22.497 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:22.999 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:23.502 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:24.003 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:24.504 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:25.006 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:25.508 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:26.009 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:26.511 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:27.014 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:27.518 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:28.019 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:28.522 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:29.024 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:29.526 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:30.029 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:30.531 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:31.033 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:31.535 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:32.037 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:32.539 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:33.040 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:33.542 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:34.044 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:34.546 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:35.047 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:35.549 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:36.051 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:36.553 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:37.054 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:37.556 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:38.059 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:38.562 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:39.064 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:39.566 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:40.069 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:40.571 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:41.075 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:41.578 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:42.080 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:42.582 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:43.083 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:43.585 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:44.086 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:44.588 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:45.089 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:45.591 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:46.093 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:46.595 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:47.096 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:47.598 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:48.099 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:48.601 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:49.102 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:49.604 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:50.106 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:50.607 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:51.110 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:51.611 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:52.112 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:52.614 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:53.116 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:53.617 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:54.119 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:54.621 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:55.123 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:55.624 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:56.127 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:56.629 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:57.131 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:57.633 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:58.134 INFO  [9452] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[0]
+07:18:58.288 INFO  [9452] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.OnPlayerOffline 70525
+07:18:58.289 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[100]
+07:18:58.290 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[102]
+07:18:58.290 WARN  [9452] [FFSCENE] ffscene_t::send_msg_session no session id[101]
+07:18:58.290 INFO  [9452] [FFSCENE_PYTHON] <gas@0> RoomStateRunning.MemberOffline 70525
+07:18:58.290 INFO  [9452] [FFSCENE_PYTHON] <gas@0> AddResidualPlayer 70525

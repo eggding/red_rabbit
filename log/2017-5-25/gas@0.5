@@ -1,0 +1,81 @@
+06:19:05.640 INFO  [7213] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
+06:19:05.658 INFO  [7213] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10341>,node_id_[1]
+06:19:05.661 INFO  [7213] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10342>,node_id_[2]
+06:19:07.767 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 100, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:07.769 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 101, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:07.769 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 102, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:07.769 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 103, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:07.769 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 104, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:07.770 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 105, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:07.770 INFO  [7213] [FFSCENE_PYTHON] <gas@0> RobotMgr.CreateRobot 6 done.
+06:19:07.776 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 100, "r": {"name": "name_100", "SESSION_ID": 100, "sex": 0, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 1, "gate": "gate@0"}
+06:19:07.777 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 101, "r": {"name": "name_101", "SESSION_ID": 101, "sex": 1, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 2, "gate": "gate@0"}
+06:19:07.815 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 104, "r": {"name": "name_104", "SESSION_ID": 104, "sex": 0, "create_time": 1494931677, "tot_play": 0, "money_list": []}, "cb": 5, "gate": "gate@0"}
+06:19:07.816 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 102, "r": {"name": "name_102", "SESSION_ID": 102, "sex": 0, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 3, "gate": "gate@0"}
+06:19:07.816 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 103, "r": {"name": "name_103", "SESSION_ID": 103, "sex": 1, "create_time": 1494930406, "tot_play": 0, "money_list": []}, "cb": 4, "gate": "gate@0"}
+06:19:07.817 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 105, "r": {"name": "name_105", "SESSION_ID": 105, "sex": 1, "create_time": 1494931677, "tot_play": 0, "money_list": []}, "cb": 6, "gate": "gate@0"}
+06:19:10.319 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.Login2GccSessionConn 70219, {"ip": "127.0.0.1", "gate": "gate@0"}
+06:19:10.337 INFO  [7213] [FFSCENE_PYTHON] <gas@0> OnLoadPlayerDataDone {"f": true, "ip": "127.0.0.1", "s": 70219, "r": {"create_time": 1495664350, "name": "name_70219", "SESSION_ID": 70219, "sex": 1}, "cb": 7, "gate": "gate@0"}
+06:19:10.361 INFO  [7213] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[76]
+06:19:10.362 INFO  [7213] [FFSCENE_PYTHON] <gas@0> AddMoney 70219 200 {"1": 200} gm test add money
+06:19:10.362 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GmTool.ExeCode 
+Player.m_PlayerMoneyMgr.AddMoney(1, 200, "gm test add money")
+
+06:19:10.399 INFO  [7213] [FFSCENE_PYTHON] ffscene_python_t::gen_logic_callback len[14]
+06:19:10.400 INFO  [7213] [FFSCENE_PYTHON] <gas@0>  GasRoomMgr.CreateRoom 70219
+06:19:10.403 INFO  [7213] [FFSCENE_PYTHON] <gas@0>  GasRoomMgr.OnGetRoomIDRet 104164, 70219
+06:19:10.404 ERROR [7213] [FFSCENE_PYTHON] ffscene_python_t::gen_scene_call_callback exception<SerialCardInfo() takes at most 3 arguments (4 given)
+Traceback (most recent call last):
+
+  File "./pylib/ffext.py", line 305, in ff_scene_call
+    ret = func(msg_)
+
+  File "./pylib/ffext.py", line 340, in impl_func
+    return func_(json_to_value(msg_))
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_mgr.py", line 149, in Gcc2GasRetGenRoomID
+    _roomMgr.OnGetRoomIDRet(nRoomID, nPlayerGID, dictCfg)
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_mgr.py", line 68, in OnGetRoomIDRet
+    roomObj = gas_room_obj.RoomObj(nRoomID, nPlayerGID, self, dictCfg)
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_obj.py", line 32, in __init__
+    self.MemberEnter(nMaster)
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_obj.py", line 250, in MemberEnter
+    bRet = self.m_sm.GetCurState().MemberEnter(nMember)
+
+  File "./pyproject/state/room_state_waiting.py", line 31, in MemberEnter
+    roomObj.SynGameInfo(nMember, bSynAll=True)
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_obj.py", line 131, in SynGameInfo
+    self.m_gameRuleObj.SerialCardInfo(nPos, tmp, True if nPlayerGID == nMember else False)
+
+TypeError: SerialCardInfo() takes at most 3 arguments (4 given)
+
+>
+06:19:11.941 INFO  [7213] [FFSCENE_PYTHON] <gas@0> GasSceneMgr.OnPlayerOffline 70219
+06:19:11.941 ERROR [7213] [FFSCENE_PYTHON] ffscene_python_t::gen_scene_call_callback exception<104164
+Traceback (most recent call last):
+
+  File "./pylib/ffext.py", line 305, in ff_scene_call
+    ret = func(msg_)
+
+  File "./pylib/ffext.py", line 340, in impl_func
+    return func_(json_to_value(msg_))
+
+  File "./pyproject/gas/gas_scene/gas_scene_mgr.py", line 145, in Gcc2GasPlayerOffline
+    _gasSceneMgr.OnPlayerOffline(nPlayerGID)
+
+  File "./pyproject/gas/gas_scene/gas_scene_mgr.py", line 67, in OnPlayerOffline
+    gas_room_mgr.OnMemberExit(nPlayerGID)
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_mgr.py", line 104, in OnMemberExit
+    roomObj = self.GetRoomObjByPlayerGID(nPlayerGID)
+
+  File "./pyproject/gas/gas_room_mgr/gas_room_mgr.py", line 41, in GetRoomObjByPlayerGID
+    roomObj = self.m_dictRoomID2Room[nRoomID]
+
+KeyError: (104164,)
+
+>

@@ -18,7 +18,7 @@ class LogMgr(object):
 _LogMgr = LogMgr()
 
 def LogInfo(nSession, szLogType, szLogContent):
-    nTime = int(time.time() * 100)
+    nTime = int(time.time())
     nServerID = conf.dict_cfg["server_id"]
     _LogMgr.LogInfo("{0}_{1}".format(szLogType, nServerID), "{0}_{1}".format(nSession, nTime), szLogContent)
 

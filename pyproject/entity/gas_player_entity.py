@@ -31,8 +31,8 @@ class GasPlayerEntity(base_entity.BaseEntity):
 
         self.m_nTotalPlayNum = 0
 
-    def AddTotalPlayNum(self):
-        self.m_nTotalPlayNum += 1
+    def AddTotalPlayNum(self, nInc=1):
+        self.m_nTotalPlayNum += nInc
 
     def GetTotalPlayNum(self):
         return self.m_nTotalPlayNum
@@ -112,6 +112,7 @@ class GasPlayerEntity(base_entity.BaseEntity):
         rsp.player_name = self.m_szName.encode("utf-8")
         rsp.wechat_info = "xx"
         rsp.ip = self.ip.encode("utf-8")
+        rsp.total_play_num = self.GetTotalPlayNum()
 
     def Serial2Dict(self):
         dictSerial = self.GetPersistentDict()
