@@ -1,3 +1,0 @@
-07:15:19.277 INFO  [9280] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
-07:15:19.310 INFO  [9280] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10341>,node_id_[1]
-07:15:19.310 INFO  [9280] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10342>,node_id_[2]

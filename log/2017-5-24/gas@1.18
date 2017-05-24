@@ -1,4 +1,0 @@
-07:39:48.533 INFO  [8750] [FFRPC] ffrpc_t::connect_to_broker begin...host_<tcp://127.0.0.1:10241>,node_id_[0]
-07:39:48.533 ERROR [8750] [FFRPC] ffrpc_t::register_to_broker_master failed, can't connect to remote broker<tcp://127.0.0.1:10241>
-07:39:48.533 ERROR [8750] [FFRPC] ffrpc_t::open failed, can't connect to remote broker<tcp://127.0.0.1:10241>
-07:39:48.533 ERROR [8750] [FFSCENE] ffscene_t::open failed check -broker argmuent
