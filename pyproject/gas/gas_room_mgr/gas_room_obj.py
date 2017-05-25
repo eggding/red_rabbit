@@ -243,6 +243,8 @@ class RoomObj(object):
         for nMemberOther, dictData in self.m_dictMember.iteritems():
             if nMemberOther == nModMember:
                 continue
+            if self.IsMemberLoaded(nMemberOther) is False:
+                continue
             print("ffext.send_msg_session ", nMemberOther)
             ffext.send_msg_session(nMemberOther, rpc_def.Gas2GacOnTouchMemberEvent, rsp.SerializeToString())
 

@@ -45,7 +45,7 @@ class GasSceneMgr(base_scene.BaseScene):
     def SynSceneInfo(self, nPlayerGID):
         rsp = change_scene_pb2.change_scene_rsp()
         rsp.ret = 0
-        rsp.scene_name = ff.service_name
+        rsp.scene_name = ff.service_name.encode("utf-8")
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
     def Gcc2GasSessionConn(self, nPlayerGID, szSerial):
@@ -101,7 +101,7 @@ class GasSceneMgr(base_scene.BaseScene):
 
         rsp = change_scene_pb2.change_scene_rsp()
         rsp.ret = 0
-        rsp.scene_name = ff.service_name
+        rsp.scene_name = ff.service_name.encode("utf-8")
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
 _gasSceneMgr = GasSceneMgr()
@@ -129,7 +129,7 @@ def Gac2GasRequestChangeScene(nPlayerGID, reqObj):
         import util.error_msg as error_msg
         rsp = change_scene_pb2.change_scene_rsp()
         rsp.ret = error_msg.ErrorMsg.eSceneInvalid
-        rsp.scene_name = ""
+        rsp.scene_name = "".encode("utf-8")
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
 
