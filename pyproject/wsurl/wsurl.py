@@ -5,8 +5,6 @@
 import Queue
 import wsurl_thread as wsurl_thread
 import wsurl_def as wsurl_def
-import util.tick_mgr as tick_mgr
-
 
 class WsUrl(object):
     def __init__(self,nThreadNum=1):
@@ -20,16 +18,15 @@ class WsUrl(object):
         self.m_dictJobID2Callback = {} #id->callback
         self.m_dictCallback2IDS = {} # callback -> set( ids)
         self.m_tickUpdate=None
-        self.RegTick()
+    #     self.RegTick()
+    #
+    # def RegTick(self):
+    #     self.m_tickUpdate = tick_mgr.RegisterOnceTick(456, self.DispatchRequest)
 
-    def RegTick(self):
-        self.UnRegTick()
-        self.m_tickUpdate = tick_mgr.RegisterOnceTick(456, self.DispatchRequest)
-
-    def UnRegTick(self):
-        if self.m_tickUpdate is not None:
-            tick_mgr.UnRegisterOnceTick(self.m_tickUpdate)
-            self.m_tickUpdate=None
+    # def UnRegTick(self):
+    #     if self.m_tickUpdate is not None:
+    #         tick_mgr.UnRegisterOnceTick(self.m_tickUpdate)
+    #         self.m_tickUpdate=None
 
     def GenJobID(self):
         self.m_nJobID += 1
@@ -87,7 +84,6 @@ class WsUrl(object):
         self.m_listThread=[]
 
     def DispatchRequest(self):
-        print("DispatchRequest ")
         while self.m_bOpen:
             try:
                 httpReponse = self.m_queueResult.get(False)

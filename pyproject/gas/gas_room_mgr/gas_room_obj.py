@@ -112,6 +112,7 @@ class RoomObj(object):
         inf.total_start_game_num = self.m_dictCfg.get("total_start_game_num", 0)
         inf.avg = self.m_dictCfg.get("avg", 0)
         inf.opt = self.m_dictCfg.get("opt", 1)
+        print("111 233 ", inf.opt, inf.avg, inf.total_start_game_num, inf.member_num)
 
     def SynGameInfo(self, nPlayerGID, bSynAll=False):
         import proto.common_info_pb2 as common_info_pb2

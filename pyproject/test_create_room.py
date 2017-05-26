@@ -57,6 +57,21 @@ def PacketHeartBreat():
     szFormat = "IHH%ds" % len(szRet)
     return struct.pack(szFormat, nTotalSize, 10000, 0, szRet)
 
+def PacketAllDone():
+    import proto.common_info_pb2 as common_info_pb2
+    req = common_info_pb2.client_load_done_req()
+    szRet = req.SerializeToString()
+
+    # 计算protobol消息体的字节数
+    szFormat = "%ds" % len(szRet)
+    nTotalSize = struct.calcsize(szFormat)
+
+    # 二进制化消息包
+    # 包头(32bit,16bit,16bit) + 包体(Protocol数据)
+    szFormat = "IHH%ds" % len(szRet)
+    return struct.pack(szFormat, nTotalSize, 10045, 0, szRet)
+
+
 def PacketReady():
     import proto.opt_pb2 as opt_pb2
     req = opt_pb2.game_ready_req()
@@ -96,9 +111,9 @@ def StartUp():
     c = 0
     import random
     while True:
-        # sock = socket.create_connection(("112.74.124.100", 10242))
+        sock = socket.create_connection(("112.74.124.100", 10242))
         # sock = socket.create_connection(("192.168.74.130", 10242))
-        sock = socket.create_connection(("127.0.0.1", 10242))
+        # sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
         # # syn scene
@@ -111,7 +126,7 @@ def StartUp():
         sock.send(PacketCreateRoomBuff())
         time.sleep(5)
 
-        sock.send(PacketReady())
+        sock.send(PacketAllDone())
 
         # time.sleep(1)
         # sock.send(PacketExeCode())

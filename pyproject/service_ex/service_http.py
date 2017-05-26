@@ -1,27 +1,27 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2016/12/13 10:30
-# @Author  : jmhuo
+# @Author  : jh.feng
 
 import pycurl
-import threading
-import Queue
 import time
 from cStringIO import StringIO
-import wsurl_def as wsurl_def
 import urllib
+import Queue
+CURL_CACHE_NUM = 1000
 
-CURL_CACHE_NUM = 100
+from collections import namedtuple
+HttpRequest = namedtuple('HttpRequest', ['id', 'type','url','data'])
+HttpResponse = namedtuple('HttpResponse', ['id','isok', 'status_code', 'content'])
 
-
-class WsUrlThread(threading.Thread):
-    def __init__(self, mgr):
-        threading.Thread.__init__(self)
-        self.m_mgr = mgr
-
+class HttpService(object):
+    def __init__(self):
+        self.m_bOpen = True
         self.m_listPoolCurl = []
         self.m_listFreeCurl = []
         self.m_multiCurl = pycurl.CurlMulti()
         self.InitCurlCache()
+
+        self.m_jobQueue = Queue.Queue()
+        self.m_retQueue = Queue.Queue()
 
     def InitCurlCache(self):
         for i in xrange(CURL_CACHE_NUM):
@@ -37,14 +37,20 @@ class WsUrlThread(threading.Thread):
         self.m_listFreeCurl = self.m_listPoolCurl[:]
 
     def Response(self, response):
-        self.m_mgr.m_queueResult.put(response)
+        self.m_retQueue.put(response)
+
+    def GetRet(self):
+        if self.m_retQueue.empty() is True:
+            return None
+        return self.m_retQueue.get()
 
     def run(self):
+        print("start http service  ")
         self.m_beginTime = time.time()
-        while self.m_mgr.m_bOpen:
-            while self.m_mgr.m_bOpen and self.m_listFreeCurl:
+        while self.m_bOpen:
+            while self.m_listFreeCurl:
                 try:
-                    httpRequest = self.m_mgr.m_queueJob.get(False)
+                    httpRequest = self.m_jobQueue.get(False)
                 except Queue.Empty:
                     break
                 c = self.m_listFreeCurl.pop()
@@ -62,17 +68,17 @@ class WsUrlThread(threading.Thread):
                     c.setopt(pycurl.POSTFIELDS, urllib.urlencode(httpRequest.data))
                 self.m_multiCurl.add_handle(c)
 
-            while self.m_mgr.m_bOpen:
+            while self.m_bOpen:
                 ret, num_handles = self.m_multiCurl.perform()
                 if ret != pycurl.E_CALL_MULTI_PERFORM:
                     break
 
-            while self.m_mgr.m_bOpen:
+            while self.m_bOpen:
                 num_q, ok_list, err_list = self.m_multiCurl.info_read()
                 for c in ok_list:
                     self.m_multiCurl.remove_handle(c)
                     self.m_listFreeCurl.append(c)
-                    response = wsurl_def.HttpResponse(c.m_httpRequest.id,
+                    response = HttpResponse(c.m_httpRequest.id,
                                                       True,
                                                       c.getinfo(pycurl.HTTP_CODE),
                                                       c.m_theStringIO.getvalue())
@@ -80,7 +86,7 @@ class WsUrlThread(threading.Thread):
                 for c, errno, errmsg in err_list:
                     self.m_multiCurl.remove_handle(c)
                     self.m_listFreeCurl.append(c)
-                    response = wsurl_def.HttpResponse(c.m_httpRequest.id,
+                    response = HttpResponse(c.m_httpRequest.id,
                                                       False,
                                                       c.getinfo(pycurl.HTTP_CODE),
                                                       c.m_theStringIO.getvalue())
@@ -96,21 +102,4 @@ class WsUrlThread(threading.Thread):
 
         print "exit"
 
-#
-# >a='''
-# def callback(Player):
-#     def inner(response):
-#         Player.GetGacAvatarRpc().QcPrint(response)
-#         #Player.GetGacAvatarRpc().QcPrint('1')
-#     return inner
-# theApp.GetWsUrlMgr().Get("http://g51-udataresys.nie.netease.com/Recommender/FriendshipService?request=friendship_data&gameId=g51&token=tHAf25XUgM8Amfj&orderId=1852038034&server=1005&roleId=123&friends=", callback=callback(Player) )
-#
-# '''
-#
-# Player.GetGasPlayer().OnGccGM(a)
-
-# !
-# def c(r):
-#     print r
-#
-# theApp.GetWsUrlMgr().Get("http://g51-udataresys.nie.netease.com/Recommender/FriendshipService?request=friendship_data&gameId=g51&token=tHAf25XUgM8Amfj&orderId=1852038034&server=1005&roleId=123&friends=", callback=c )
+_HttpService = HttpService()

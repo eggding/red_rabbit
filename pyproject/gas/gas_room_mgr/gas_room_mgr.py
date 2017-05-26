@@ -207,5 +207,5 @@ def Gac2GasLoadAllDone(nPlayerGID, reqObj):
     roomObj = _roomMgr.GetRoomObjByPlayerGID(nPlayerGID)
     if roomObj is None:
         return
-    roomObj.OnMemberLoaded()
+    roomObj.OnMemberLoaded(nPlayerGID)
 
