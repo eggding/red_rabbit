@@ -105,6 +105,8 @@ def StartUp(nId=None):
         # syn scene
         print(sock.recv(93939))
 
+        time.sleep(100)
+
         sock.send(PacketQueryRoomScene())
         szRet = sock.recv(93939)
         print(szRet)

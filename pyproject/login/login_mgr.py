@@ -66,15 +66,12 @@ def OnGetUseSessonCb(dictRet, listBindData):
 
     session_id = dictRet[dbs_def.RESULT]
     if session_id == 0:
-        # no session, craete it
-        # ffext.LOGINFO("FFSCENE", "session not exist request 2 register session {0}".format(szAuthKey))
-        # dbs_client.DoAsynCall(rpc_def.DbsCreateUserSession, 0, szAuthKey, funCb=OnCreateUserSessionCb, callbackParams=[online_time, ip, gate_name, cb_id])
         ffext.on_verify_auth_callback(0, "err.", cb_id)
         return
 
     if _loginMgr.get(session_id) is not None:
         ffext.on_verify_auth_callback(0, "player is online.", cb_id)
-        print("player online ...")
+        real_session_offline(session_id, 0)
         return
 
     player = player_in_login.PlayerInLogin(session_id, online_time, ip, gate_name)
@@ -144,9 +141,10 @@ def real_session_offline(session_id, online_time):
     ffext.LOGINFO("FFSCENE_PYTHON", "real_session_offline {0}, last scene {1}".format(session_id, ff.service_name))
 
     loginPlayer = GetPlayer(session_id)
-    assert loginPlayer is not None
-    _loginMgr.remove(session_id)
+    if loginPlayer is None:
+        return
 
+    _loginMgr.remove(session_id)
     ffext.call_service(scene_def.GCC_SCENE, rpc_def.Login2GccPlayerOffline, {"id": session_id})
 
     # gate master
