@@ -130,13 +130,14 @@ message syn_game_info
     required uint32             cur_round = 4; // 当前局数
     required uint32             cur_turn = 5; // 当前第几轮
     required uint32             remain_card_num = 6; //剩余牌的数量
-    required uint32             master_id = 7; // 庄家
+    required uint32             zhuang_pos = 7; // 庄家
     repeated uint32             list_gold_card = 8; // 金牌
     repeated game_card_list     card_info = 9; // 各个位置的牌堆信息
     repeated other_player_info  list_members = 10;  // 房间其他成员
     required uint32             opt_pos = 11; // 当前轮到哪一个位置的玩家操作
     required uint32             pos_owner = 12; // 自己的位置
     required room_state         room_state = 13; // 当前房间状态
+    required uint32             room_master_pos = 14; // 房主位置
 };
 
 // 通知客户端触发事件, 协议号20013

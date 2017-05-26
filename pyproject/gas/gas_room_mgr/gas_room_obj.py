@@ -39,6 +39,7 @@ class RoomObj(object):
             return
         self.m_listClientLoaded.append(nMember)
 
+        print("OnMemberLoaded ", nMember)
         self.SynGameInfo(nMember, bSynAll=True)
 
     def GameRuleOpt(self, nPlayerGID, reqObj):
@@ -105,6 +106,13 @@ class RoomObj(object):
 
             ffext.send_msg_session(nMember, rpc_def.Gas2GacRetSynMemberState, rsp.SerializeToString())
 
+    def GetGameCfg(self, inf):
+        inf.member_num = self.m_dictCfg.get("member_num", 0)
+        inf.multi = self.m_dictCfg.get("member_num", 0)
+        inf.total_start_game_num = self.m_dictCfg.get("total_start_game_num", 0)
+        inf.avg = self.m_dictCfg.get("avg", 0)
+        inf.opt = self.m_dictCfg.get("opt", 1)
+
     def SynGameInfo(self, nPlayerGID, bSynAll=False):
         import proto.common_info_pb2 as common_info_pb2
         rsp = common_info_pb2.syn_game_info()
@@ -114,9 +122,11 @@ class RoomObj(object):
         rsp.cur_turn = self.m_gameRuleObj.GetCurTurn()
         rsp.remain_card_num = self.m_gameRuleObj.GetCardRemain()
         rsp.room_state = EStatusInRoom.eWaiting if self.m_sm.IsInState(room_state_running.RoomStateRunning) is False else EStatusInRoom.eRunning
+        self.GetGameCfg(rsp.cfg)
 
         nZhuang = self.m_gameRuleObj.GetZhuang()
-        rsp.master_id = nZhuang if nZhuang == 0 else self.GetMemberPos(nZhuang)
+        rsp.zhuang_pos = nZhuang if nZhuang == 0 else self.GetMemberPos(nZhuang)
+        rsp.room_master_pos = self.GetMemberPos(self.m_nMaster)
 
         listJinPai = self.m_gameRuleObj.GetJinPaiList()
         for nJin in listJinPai:
@@ -135,9 +145,6 @@ class RoomObj(object):
                 if nMember == nPlayerGID:
                     continue
 
-                if self.IsMemberLoaded(nMember) is False:
-                    continue
-
                 tmp = rsp.list_members.add()
                 tmp.pos = self.GetMemberPos(nMember)
                 tmp.state = self.GetMemberState(nMember)
@@ -145,7 +152,9 @@ class RoomObj(object):
                 assert Player is not None
                 Player.Serial2Client(tmp)
 
-        ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspSynGameData, rsp.SerializeToString())
+        if self.IsMemberLoaded(nPlayerGID) is True:
+            print("111 ", rsp.SerializeToString())
+            ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspSynGameData, rsp.SerializeToString())
 
     def Serial(self):
         dictSerial = {
