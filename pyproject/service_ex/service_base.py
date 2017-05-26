@@ -10,7 +10,7 @@ g_szServiceMgr = "service_mgr"
 
 def ServiceCheckTick():
     tick_mgr.RegisterOnceTick(10000, ServiceCheckTick)
-    ffext.call_service(g_szServiceMgr, 0, "test")
+    ffext.call_service(g_szServiceMgr, 0, "test aaa")
 
 def Connect2ExService():
     import conf as conf
@@ -26,3 +26,4 @@ def ServiceExRsp(dictSerial):
     print(dictSerial)
 
 Connect2ExService()
+ServiceCheckTick()

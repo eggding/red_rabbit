@@ -354,7 +354,7 @@ int ffrpc_t::trigger_callback(broker_route_t::in_t& msg_)
     catch(exception& e_)
     {
         LOGERROR((BROKER, "ffbroker_t::handle_broker_route_msg exception<%s>", e_.what()));
-        if (msg_.msg_id == 0)//! callback msg
+        if (msg_.msg_id == 0)//! callback msfg
         {
             m_ffslot.del(msg_.callback_id);
         }
@@ -372,7 +372,9 @@ int ffrpc_t::call_impl(const string& service_name_, const string& msg_name_, con
     map<string, socket_ptr_t>::iterator it1 = m_outer_service_sock.find(service_name_);
     if (it1 != m_outer_service_sock.end())
     {
-        msg_sender_t::send(it1->second, body_);
+        scene_call_msg_t::in_t req;
+        req.decode_data(body_);
+        msg_sender_t::send(it1->second, req.body);
         delete callback_;
         return 0;
     }
