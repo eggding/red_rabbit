@@ -105,12 +105,12 @@ class GasPlayerEntity(base_entity.BaseEntity):
         return True
 
     def GetWeChatInfo(self):
-        return "abe"
+        return "test_wechat_info"
 
     def Serial2Client(self, rsp):
         rsp.player_id = self.GetGlobalID()
         rsp.player_name = self.m_szName.encode("utf-8")
-        rsp.wechat_info = "xx"
+        rsp.wechat_info = self.GetWeChatInfo().encode("utf-8")
         rsp.ip = self.ip.encode("utf-8")
         rsp.total_play_num = self.GetTotalPlayNum()
 

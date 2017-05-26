@@ -7,6 +7,7 @@ sys.path.append("./pyproject")
 
 import cProfile
 import StringIO, pstats
+import service_ex.service_base as service_base
 
 pr = cProfile.Profile()
 pr.enable()
@@ -15,14 +16,15 @@ g_nProfileSeconds = 60
 
 import util.tick_mgr as tick_mgr
 def Tick2DumpProfile():
-    tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
-    s = StringIO.StringIO()
-    # sortby = 'cumulative'
-    ps = pstats.Stats(pr, stream=s)# .sort_stats(sortby)
-    ps.print_stats()
-    aa = s.getvalue()
-    with open('./profile_{0}.out'.format(ff.service_name),'w') as f:
-        f.write(aa)
+    pass
+    # tick_mgr.RegisterOnceTick(g_nProfileSeconds * 1000, Tick2DumpProfile)
+    # s = StringIO.StringIO()
+    # # sortby = 'cumulative'
+    # ps = pstats.Stats(pr, stream=s)# .sort_stats(sortby)
+    # ps.print_stats()
+    # aa = s.getvalue()
+    # with open('./profile_{0}.out'.format(ff.service_name),'w') as f:
+    #     f.write(aa)
 
 
 import excel2json as excel2json

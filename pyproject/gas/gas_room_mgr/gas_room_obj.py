@@ -90,12 +90,13 @@ class RoomObj(object):
         rsp = common_info_pb2.syn_member_state_rsp()
         rsp.ret = 0
         rsp.room_id = self.GetRoomID()
-        rsp.member_info.pos = self.GetMemberPos(nMemberID)
-        rsp.member_info.state = nState
+        infMember = rsp.member_info.add()
+        infMember.pos = self.GetMemberPos(nMemberID)
+        infMember.state = nState
 
         Player = entity_mgr.GetEntity(nMemberID)
         assert Player is not None
-        Player.Serial2Client(rsp.member_info)
+        Player.Serial2Client(infMember)
 
         for nMember in self.m_dictMember.iterkeys():
             if nMemberID == nMember:
@@ -247,6 +248,7 @@ class RoomObj(object):
 
         inf = rsp.list_member.add()
         inf.pos = self.GetMemberPos(nModMember)
+        inf.state = self.GetMemberState(nModMember)
         Player = entity_mgr.GetEntity(nModMember)
         Player.Serial2Client(inf)
 

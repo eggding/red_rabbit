@@ -373,7 +373,6 @@ int ffrpc_t::call_impl(const string& service_name_, const string& msg_name_, con
     if (it1 != m_outer_service_sock.end())
     {
         msg_sender_t::send(it1->second, body_);
-        cout << "send outer msg " << service_name_ << " done !" << endl;
         delete callback_;
         return 0;
     }

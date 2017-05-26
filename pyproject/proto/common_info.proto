@@ -188,7 +188,7 @@ message syn_member_state_rsp
     optional bool proto_id_20064 = 99;
     required uint32 ret = 1;
     required uint32 room_id = 2;
-    required other_player_info member_info = 3;
+    repeated other_player_info member_info = 3;
 };
 
 

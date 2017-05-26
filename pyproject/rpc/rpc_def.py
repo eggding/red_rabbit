@@ -85,7 +85,7 @@ OnDbAsynCallReturn = 8001
 OnAllServiceStartUp = 8002
 OnServiceConn = 8003
 
-TestService = 8999
+ServiceExRsp = 8999
 
 Peer = 9000
 RspPeer = 9001

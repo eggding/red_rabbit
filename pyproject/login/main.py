@@ -6,6 +6,7 @@ sys.path.append("./pyproject")
 import rpc.rpc_def as rpc_def
 import rpc.scene_def as scene_def
 import login.login_mgr as login_mgr
+import service_ex.service_base as service_base
 
 @ffext.reg_service(rpc_def.OnAllServiceStartUp)
 def OnAllServiceStartUp(dictSerial):

@@ -86,11 +86,17 @@ def StartAllGate():
         print(szCmd)
         os.system(szCmd)
 
+def StartServiceMgr():
+    szCmd = "python ./pyproject/service_ex/service_mgr.py app_engine_service_mgr&"
+    print(szCmd)
+    os.system(szCmd)
 
 if __name__ == "__main__":
     KillAllProcess()
+    StartServiceMgr()
     StartBrokerCluster()
     StartAllGate()
     StartLoginAndGcc()
     StartAllGas()
     StartDbMgr()
+

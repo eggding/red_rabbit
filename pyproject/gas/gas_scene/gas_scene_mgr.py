@@ -81,6 +81,8 @@ class GasSceneMgr(base_scene.BaseScene):
         log_mgr.LogInfo(nPlayerGID, ELogType.eLogOut, {"LOG_TYPE": ELogType.eLogOut,
                                                            "SESSION_ID": nPlayerGID,
                                                            "LOGOUT_TIME": int(time.time())})
+        # close session
+        ffext.close_session(nPlayerGID)
 
     def OnPlayerGameEnd(self, nPlayerGID):
         if self.m_residualMgr.IsPlayerInResidual(nPlayerGID) is True:
