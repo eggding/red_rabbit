@@ -71,6 +71,23 @@ class GasMjRule(rule_base.GameRuleBase):
             nPos = self.m_roomObj.GetMemberPos(nMember)
             self.m_dictEventNoticePool[nPos] = []
 
+    def AddEventNotic2Poll(self, nPos, eventObj):
+        self.m_dictEventNoticePool[nPos].append(eventObj)
+
+    def SerialEventList2Client(self):
+        import proto.common_info_pb2 as common_info_pb2
+        for nPos, listEvent in self.m_dictEventNoticePool.iteritems():
+            if 0 == len(listEvent):
+                continue
+            nMember = self.m_roomObj.GetMemberIDByPos(nPos)
+            rsp = common_info_pb2.on_touch_event()
+            for eventObj in listEvent:
+                evCli = rsp.event_list.add()
+                eventObj.Serial2Client(evCli)
+            ffext.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, rsp.SerializeToString())
+
+        self.ResetEventNoticePool()
+
     def GetScore(self, nPos):
         return self.m_dictEachJuScore.get(nPos, 0)
 
@@ -90,12 +107,14 @@ class GasMjRule(rule_base.GameRuleBase):
         return self.m_roomObj
 
     def IsTuoGuan(self, nMember):
-        nVal = random.randint(1, 2)
-        return nVal == 1
-        # import entity.entity_mgr as entity_mgr
-        # Player = entity_mgr.GetEntity(nMember)
-        # assert Player is not None
-        # return Player.IsInResidualState()
+        import util.util as util
+        if util.IsRobot(nMember):
+            return True
+
+        import entity.entity_mgr as entity_mgr
+        Player = entity_mgr.GetEntity(nMember)
+        assert Player is not None
+        return Player.IsInResidualState()
 
     def InitDefault(self):
         self.m_dictOptTick = {}
@@ -245,12 +264,6 @@ class GasMjRule(rule_base.GameRuleBase):
 
         return bNewCardIsHuaPai, nDstCard
 
-    def SerialEventList2Client(self):
-        pass
-
-    def AddEvent2NoticePoll(self):
-        pass
-
     def MoPai(self, nPos, bCheckEventAndBuHua):
         assert self.m_nNextCardIndex < self.m_nMaxCardNum
         if self.m_nNextCardIndex >= self.m_nMaxCardNum - 12:
@@ -275,6 +288,8 @@ class GasMjRule(rule_base.GameRuleBase):
                 self.SynOrder()
                 if bHaveHuaPai is False:
                     break
+
+        self.SerialEventList2Client()
 
     def DumpPos(self, nPos):
         szSerial = ""
@@ -363,6 +378,7 @@ class GasMjRule(rule_base.GameRuleBase):
             self.NextTurn()
         else:
             self.StartEventTick()
+            self.SerialEventList2Client()
 
     def StopEventTick(self):
         if self.m_nEventTick is None:
@@ -388,6 +404,7 @@ class GasMjRule(rule_base.GameRuleBase):
             self.NextTurn()
         else:
             self.StartEventTick()
+            self.SerialEventList2Client()
 
     def StopQiPaiTick(self, nPos):
         nTick = self.m_dictOptTick.get(nPos)
@@ -401,13 +418,16 @@ class GasMjRule(rule_base.GameRuleBase):
         nMember = self.m_roomObj.GetMemberIDByPos(nPos)
         import util.util as util
         if util.IsRobot(nMember) is True:
-            nTick = tick_mgr.RegisterOnceTick(int(1 * 1000), self.AutoQiPai, nPos)
+            nTick = tick_mgr.RegisterOnceTick(int(3 * 1000), self.AutoQiPai, nPos)
+        elif self.IsTuoGuan(nMember) is True:
+            nTick = tick_mgr.RegisterOnceTick(int(3 * 1000), self.AutoQiPai, nPos)
         else:
-            nTick = tick_mgr.RegisterOnceTick(int(1 * 1000), self.AutoQiPai, nPos)
+            nTick = tick_mgr.RegisterOnceTick(int(self.GetQiPaiExpireSecond() * 1000), self.AutoQiPai, nPos)
 
         self.m_dictOptTick[nPos] = nTick
 
     def CancelAutoTick(self):
+        self.StopEventTick()
         for nPos, nTickID in self.m_dictOptTick.iteritems():
             self.StopQiPaiTick(nPos)
 
@@ -473,6 +493,7 @@ class GasMjRule(rule_base.GameRuleBase):
                 rsp.listen_card.append(nCard)
 
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspOpt, rsp.SerializeToString())
+        self.SerialEventList2Client()
 
     def ChangeOrder(self, nFromPos, nToPos):
         self.m_nCurOptMemberPos = nToPos
@@ -630,16 +651,11 @@ class GasMjRule(rule_base.GameRuleBase):
             ffext.send_msg_session(nMember, rpc_def.Gas2GacRetSynCardListByType, szRspSerial)
 
     def SynOtherTouchEvent(self, nEventType, nTarget, nTargetSrc, szOptData, listUnNoticePlayer=None):
-        rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = nEventType
-        rsp.ev_target = nTarget
-        rsp.ev_target_src = nTargetSrc
-        rsp.ev_data = szOptData
-        szRspSerial = rsp.SerializeToString()
+        evObj = gas_mj_event_mgr.MjEventObj(nEventType, nTarget, szOptData, nTargetSrc)
         for nMember in self.m_roomObj.GetMemberList():
             if listUnNoticePlayer is not None and nMember in listUnNoticePlayer:
                 continue
-            ffext.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+            self.AddEventNotic2Poll(self.m_roomObj.GetMemberPos(nMember), evObj)
 
     def GetAllCardList(self, nPos):
         listTmp = self.m_dictPosCarListEx[nPos][:]
@@ -773,7 +789,7 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp.cur_round = self.m_nCurJu
         rsp.total_round = self.GetMaxJuNum()
 
-        nRoomMaster = self.m_roomObj.GetMemberPos()
+        nRoomMaster = self.m_roomObj.GetRoomMaster()
         rsp.room_master_pos = self.m_roomObj.GetMemberPos(nRoomMaster)
         rsp.winner_pos = nWinnerPos
 
@@ -928,8 +944,10 @@ class GasMjRule(rule_base.GameRuleBase):
         for i in xrange(1, self.m_nMemberNum + 1):
             ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.FaPai {0}, {1}".format(i, self.DumpPos(i)))
 
+        self.SerialEventList2Client()
 
     def GameStart(self):
+        self.ResetEventNoticePool()
         self.InitHistCounterDefault()
         self.ResetScore()
         self.StartJu()

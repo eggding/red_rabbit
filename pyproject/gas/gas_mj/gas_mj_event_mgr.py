@@ -17,7 +17,10 @@ class MjEventObj(object):
         self.m_szEventData = szData
 
     def Serial2Client(self, inf):
-        pass
+        inf.ev_type = self.m_nEventType
+        inf.ev_target = self.m_nTarget
+        inf.ev_data = self.m_szEventData
+        inf.ev_target_src = self.m_nSrcTarget
 
 class GasMjEventMgr(object):
     def __init__(self):
@@ -40,13 +43,10 @@ class GasMjEventMgr(object):
     def TouchEventKaiJin(self, mjMgr, listJinPai):
         roomObj = mjMgr.GetRoomObj()
         listMember = roomObj.GetMemberList()
-        rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = EMjEvent.ev_kai_jin
-        rsp.ev_target = 0
-        rsp.ev_data = json.dumps(listJinPai)
-        szRspSerial = rsp.SerializeToString()
+        evObj = MjEventObj(EMjEvent.ev_kai_jin, 0, mjMgr.SerialList2Str(listJinPai))
         for nMember in listMember:
-            framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+            nPos = mjMgr.GetRoomObj().GetMemberPos(nMember)
+            mjMgr.AddEventNotic2Poll(nPos, evObj)
 
     def TouchEventGangWithPeng(self, mjMgr, listData):
         pass
@@ -55,12 +55,8 @@ class GasMjEventMgr(object):
         nPos = listData[0]
         roomObj = mjMgr.GetRoomObj()
         nOptMember = roomObj.GetMemberIDByPos(nPos)
-        rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = EMjEvent.ev_hu_ba_xian_guo_hai
-        rsp.ev_target = nOptMember
-        rsp.ev_data = ""
-        szRspSerial = rsp.SerializeToString()
-        framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+        evObj = MjEventObj(EMjEvent.ev_hu_ba_xian_guo_hai, nOptMember, "")
+        mjMgr.AddEventNotic2Poll(nPos, evObj)
         framework.LOGINFO("FFSCENE_PYTHON", "GasMj.BaXianGuoHai {0} {1}".format(nPos, mjMgr.DumpPos(nPos)))
 
     def TouchEventQiPai(self, mjMgr, listData):
@@ -68,29 +64,18 @@ class GasMjEventMgr(object):
         roomObj = mjMgr.GetRoomObj()
         listMember = roomObj.GetMemberList()
         nOptMember = roomObj.GetMemberIDByPos(nPos)
-        rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = EMjEvent.ev_be_qi_pai
-        rsp.ev_target = nOptMember
-        rsp.ev_data = str(nCard)
-        szRspSerial = rsp.SerializeToString()
+
+        evObj = MjEventObj(EMjEvent.ev_be_qi_pai, nOptMember, str(nCard))
         for nMember in listMember:
-            framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+            nMemberPos = roomObj.GetMemberPos(nMember)
+            mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
+            # framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
 
         listCardOwner = mjMgr.GetCardListByPos(nPos)
         nTotal = len(listCardOwner)
         assert ((nTotal - 1) % 3 == 0), nTotal
 
         listJinPai = mjMgr.GetJinPaiList()
-        # tingArr = check_hu_mgr.getTingArr(listCardOwner, listJinPai)
-        # if len(tingArr) != 0:
-        #     # rsp = common_info_pb2.on_touch_event()
-        #     # rsp.ev_type = EMjEvent.ev_hu_normal
-        #     # rsp.ev_target = nOptMember
-        #     # rsp.ev_data = json.dumps(tingArr)
-        #     # szRspSerial = rsp.SerializeToString()
-        #     # framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-        #     framework.LOGINFO("FFSCENE_PYTHON",
-        #                       "GasMj.tingArr {0}, {1}, {2} ".format(nPos, json.dumps(tingArr), mjMgr.DumpPos(nPos)))
 
         bNextTurn = True
         for nMember in listMember:
@@ -103,12 +88,8 @@ class GasMjEventMgr(object):
 
             # check gang, owenr have 3
             if check_hu_mgr.testGang(nCard, listCard, listJinPai) is True:
-                rsp.ev_type = EMjEvent.ev_gang_other
-                rsp.ev_target = nOptMember
-                rsp.ev_data = str(nCard)
-                szRspSerial = rsp.SerializeToString()
-                framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-
+                evObj = MjEventObj(EMjEvent.ev_gang_other, nOptMember, str(nCard))
+                mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
                 mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
                     tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
@@ -119,12 +100,8 @@ class GasMjEventMgr(object):
 
             # check gang with peng
             if check_hu_mgr.testGang(nCard, listCardEx, listJinPai) is True:
-                rsp.ev_type = EMjEvent.ev_gang_with_peng
-                rsp.ev_target = nOptMember
-                rsp.ev_data = str(nCard)
-                szRspSerial = rsp.SerializeToString()
-                framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-
+                evObj = MjEventObj(EMjEvent.ev_gang_with_peng, nOptMember, str(nCard))
+                mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
                 mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
                     tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
@@ -135,12 +112,8 @@ class GasMjEventMgr(object):
 
             # check peng
             if check_hu_mgr.testPeng(nCard, listCard, listJinPai) is True:
-                rsp.ev_type = EMjEvent.ev_peng
-                rsp.ev_target = nOptMember
-                rsp.ev_data = str(nCard)
-                szRspSerial = rsp.SerializeToString()
-                framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-
+                evObj = MjEventObj(EMjEvent.ev_peng, nOptMember, str(nCard))
+                mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
                 mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
                     tick_mgr.RegisterOnceTick(100, mjMgr.RequestPeng, [nMember, nOptMember, nCard])
@@ -172,26 +145,18 @@ class GasMjEventMgr(object):
         nTimeENd = time.clock()
         framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CheckHU {0} ".format(nTimeENd - nTimeCheckPre))
         if bCanHu is True:
-            rsp = common_info_pb2.on_touch_event()
-            rsp.ev_type = EMjEvent.ev_hu_normal
-            rsp.ev_target = nOptMember
-            rsp.ev_data = str(nCard)
-            szRspSerial = rsp.SerializeToString()
-            framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
-            framework.LOGINFO("FFSCENE_PYTHON", "GasMj.CanHu {0}, {1} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
-
+            evObj = MjEventObj(EMjEvent.ev_hu_normal, nOptMember, str(nCard))
+            mjMgr.AddEventNotic2Poll(nPos, evObj)
             mjMgr.SetCurEventOptMember(nOptMember)
             if mjMgr.IsTuoGuan(nOptMember) is True:
                 tick_mgr.RegisterOnceTick(100, mjMgr.RequestHu, [nOptMember])
 
-        if listCard.count(nCard) == 4:
-            rsp = common_info_pb2.on_touch_event()
-            rsp.ev_type = EMjEvent.ev_gang_all
-            rsp.ev_target = nOptMember
-            rsp.ev_data = str(nCard)
-            szRspSerial = rsp.SerializeToString()
-            framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+            framework.LOGINFO("FFSCENE_PYTHON",
+                              "GasMj.CanHu {0}, {1} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
 
+        if listCard.count(nCard) == 4:
+            evObj = MjEventObj(EMjEvent.ev_gang_all, nOptMember, str(nCard))
+            mjMgr.AddEventNotic2Poll(nPos, evObj)
             mjMgr.SetCurEventOptMember(nOptMember)
             if mjMgr.IsTuoGuan(nOptMember):
                 tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nOptMember, nOptMember, nCard])
@@ -207,13 +172,10 @@ class GasMjEventMgr(object):
         listMember = roomObj.GetMemberList()
         nOptMember = roomObj.GetMemberIDByPos(nPos)
 
-        rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = EMjEvent.ev_bu_hua
-        rsp.ev_target = nOptMember
-        rsp.ev_data = "{0},{1}".format(nHuaPai, nCard)
-        szRspSerial = rsp.SerializeToString()
+        evObj = MjEventObj(EMjEvent.ev_bu_hua, nOptMember, "{0},{1}".format(nHuaPai, nCard))
         for nMember in listMember:
-            framework.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
+            nMemberPos = mjMgr.GetRoomObj().GetMemberPos(nMember)
+            mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
 
         return True
 
