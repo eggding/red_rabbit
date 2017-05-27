@@ -86,26 +86,28 @@ class RoomObj(object):
         self.Dismiss()
 
     def SynMemberState2All(self, nMemberID, nState):
-        import proto.common_info_pb2 as common_info_pb2
-        rsp = common_info_pb2.syn_member_state_rsp()
-        rsp.ret = 0
-        rsp.room_id = self.GetRoomID()
-        infMember = rsp.member_info.add()
-        infMember.pos = self.GetMemberPos(nMemberID)
-        infMember.state = nState
-
-        Player = entity_mgr.GetEntity(nMemberID)
-        assert Player is not None
-        Player.Serial2Client(infMember)
-
-        for nMember in self.m_dictMember.iterkeys():
-            if nMemberID == nMember:
-                continue
-
-            if self.IsMemberLoaded(nMember) is False:
-                continue
-
-            ffext.send_msg_session(nMember, rpc_def.Gas2GacRetSynMemberState, rsp.SerializeToString())
+        self.NoticeMemberEvent(EMemberEvent.evUpdateState, nMemberID)
+        # import proto.common_info_pb2 as common_info_pb2
+        # rsp = common_info_pb2.syn_member_state_rsp()
+        # rsp.ret = 0
+        # rsp.room_id = self.GetRoomID()
+        # infMember = rsp.member_info.add()
+        # infMember.pos = self.GetMemberPos(nMemberID)
+        # infMember.state = nState
+        # infMember.total_score = 0
+        #
+        # Player = entity_mgr.GetEntity(nMemberID)
+        # assert Player is not None
+        # Player.Serial2Client(infMember)
+        #
+        # for nMember in self.m_dictMember.iterkeys():
+        #     if nMemberID == nMember:
+        #         continue
+        #
+        #     if self.IsMemberLoaded(nMember) is False:
+        #         continue
+        #
+        #     ffext.send_msg_session(nMember, rpc_def.Gas2GacRetSynMemberState, rsp.SerializeToString())
 
     def GetGameCfg(self, inf):
         inf.member_num = self.m_dictCfg.get("member_num", 0)
@@ -147,6 +149,7 @@ class RoomObj(object):
                 tmp = rsp.list_members.add()
                 tmp.pos = self.GetMemberPos(nMember)
                 tmp.state = self.GetMemberState(nMember)
+                tmp.total_score = self.m_gameRuleObj.GetScore(tmp.pos)
                 Player = entity_mgr.GetEntity(nMember)
                 assert Player is not None
                 Player.Serial2Client(tmp)
@@ -245,6 +248,7 @@ class RoomObj(object):
         inf = rsp.list_member.add()
         inf.pos = self.GetMemberPos(nModMember)
         inf.state = self.GetMemberState(nModMember)
+        inf.total_score = self.m_gameRuleObj.GetScore(inf.pos)
         Player = entity_mgr.GetEntity(nModMember)
         Player.Serial2Client(inf)
 

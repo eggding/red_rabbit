@@ -10,6 +10,7 @@ enum event_type_member
 {
     ev_member_enter = 1; // 玩家进入房间事件
     ev_member_exit = 2; // 玩家推出房间事件
+    ev_update_state = 3; // 更新状态
 };
 
 // 玩家状态枚举
@@ -97,6 +98,7 @@ message other_player_info
     required uint32 pos = 5; // 位置
     optional member_state state = 6; // 玩家状态
     required uint32 total_play_num = 7; // 对局数
+    required uint32 total_score = 8; // 累计积分
 };
 
 // 房间玩法配置

@@ -47,7 +47,7 @@ dict_cfg = {
     },
     "gas": {
         "num": 3,
-        "robot_num": 6,
+        "robot_num": 12,
     },
     "redis": {
         "conn_info": "127.0.0.1:6379",

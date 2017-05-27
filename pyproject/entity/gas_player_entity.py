@@ -107,9 +107,30 @@ class GasPlayerEntity(base_entity.BaseEntity):
     def GetWeChatInfo(self):
         return "test_wechat_info"
 
+    def GetRandomName(self):
+        a = u"比喻还可以突出事物的特征。因为比喻都是取整体上差异较大，而某一方面有共同性的事物来相比，喻体与本体相同之处往往就相当突出。因此，在比喻中，便常常有夸张的性质。如《硕鼠》，就其外形、生物的类别及其发展程度的高低而言，本体与喻体的差别是相当之大的；但是，在不劳而获这一点来说，却完全一致，所以这个比喻实际上是一种夸张的表现。"
+        listTmp = []
+        for i in xrange(0, len(a), 3):
+            listTmp.append(a[i:i + 3])
+
+        print(listTmp)
+
+        import random
+        random.shuffle(listTmp)
+        szName = ""
+        nNum = random.randint(1, 3)
+        for i in xrange(nNum):
+            szName += listTmp[i]
+
+        return szName
+
     def Serial2Client(self, rsp):
         rsp.player_id = self.GetGlobalID()
-        rsp.player_name = self.m_szName.encode("utf-8")
+        if util.IsRobot(self.GetGlobalID()) is False:
+            rsp.player_name = self.m_szName.encode("utf-8")
+        else:
+            rsp.player_name = self.GetRandomName().encode("utf-8")
+
         rsp.wechat_info = self.GetWeChatInfo().encode("utf-8")
         rsp.ip = self.ip.encode("utf-8")
         rsp.total_play_num = self.GetTotalPlayNum()
@@ -132,6 +153,6 @@ class GasPlayerEntity(base_entity.BaseEntity):
         self.InitCompment(dictSerial)
 
     def Persistent(self):
-        ffext.LOGINFO("FFSCENE_PYTHON", "Persistent {0}".format(self.GetGlobalID()))
+        # ffext.LOGINFO("FFSCENE_PYTHON", "Persistent {0}".format(self.GetGlobalID()))
         dictSerial = self.GetPersistentDict()
         dbs_client.DoAsynCall(rpc_def.DbsPersistentPlayerData, self.GetGlobalID(), json.dumps(dictSerial), nChannel=self.GetGlobalID())

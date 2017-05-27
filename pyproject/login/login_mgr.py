@@ -159,11 +159,6 @@ def OnEnterLoginScene(session, src, data):
     loginPlayer = GetPlayer(session)
     assert loginPlayer is not None
 
-    rsp = login_pb2.login_rsp()
-    rsp.ret = 0
-    rsp.player_id = session
-    ffext.send_msg_session(session, rpc_def.ResponseLogin, rsp.SerializeToString())
-
     # gate master
     ffext.call_service(scene_def.GATE_MASTER, rpc_def.OnSessionConnectGate, {"player_id": loginPlayer.GetGlobalID(),
                                                                              "gate_id": loginPlayer.GetGateName()})

@@ -38,6 +38,7 @@ class GasSceneMgr(base_scene.BaseScene):
                                                                    "SESSION_ID": gasPlayer.GetGlobalID(),
                                                                    "LOGIN_TIME": int(time.time())})
         if util.IsRobot(gasPlayer.GetGlobalID()) is False:
+            self.OnLoginDone(gasPlayer.GetGlobalID())
             self.SynSceneInfo(gasPlayer.GetGlobalID())
             ffext.call_service(scene_def.GCC_SCENE, rpc_def.Gas2GccSynPlayerGasID, {"id": gasPlayer.GetGlobalID(),
                                                                                     "scene": ff.service_name})
@@ -48,6 +49,17 @@ class GasSceneMgr(base_scene.BaseScene):
         rsp.scene_name = ff.service_name.encode("utf-8")
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRetChangeScene, rsp.SerializeToString())
 
+    def OnLoginDone(self, nPlayerGID):
+        Player = entity_mgr.GetEntity(nPlayerGID)
+        assert Player is not None
+
+        import proto.login_pb2 as login_pb2
+        rsp = login_pb2.login_rsp()
+        rsp.ret = 0
+        rsp.player_id = nPlayerGID
+        rsp.room_id = 0 if Player.GetRoomID() is None else Player.GetRoomID()
+        ffext.send_msg_session(nPlayerGID, rpc_def.ResponseLogin, rsp.SerializeToString())
+
     def Gcc2GasSessionConn(self, nPlayerGID, szSerial):
         ffext.LOGINFO("FFSCENE_PYTHON", "GasSceneMgr.Login2GccSessionConn {0}, {1}".format(nPlayerGID, szSerial))
         gasPlayer = entity_mgr.GetEntity(nPlayerGID)
@@ -56,6 +68,7 @@ class GasSceneMgr(base_scene.BaseScene):
                 self.m_residualMgr.RemoveResidualPlayer(nPlayerGID)
             gas_room_mgr.OnMemberEnter(nPlayerGID)
             self.SynSceneInfo(nPlayerGID)
+            self.OnLoginDone(nPlayerGID)
         else:
             dbs_client.DoAsynCall(rpc_def.DbsLoadPlayerData, nPlayerGID, 0, nChannel=nPlayerGID, funCb=self.OnLoadPlayerDataDone, callbackParams=szSerial)
 

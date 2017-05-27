@@ -16,14 +16,13 @@ class ECardType(const_entity.Const):
     eZiPai = 4
     eHuaPai = 5
 
-import proto.common_info_pb2 as common_info_pb2
-
 class EMjEvent(const_entity.Const):
     ev_gang_with_peng = 101
     ev_gang_other = 102
     ev_gang_all = 103
     ev_peng = 111
     ev_chi = 112
+    ev_qi_pai = 116
     ev_pass = 117
     ev_cha_pai = 118
     ev_dan_you = 121
@@ -40,6 +39,9 @@ class EMjEvent(const_entity.Const):
     ev_hu_ba_xian_guo_hai = 189
     ev_hu_shi_san_yao = 190
     ev_hu_qi_dui_zi = 191
+    ev_be_gang_with_peng = 201
+    ev_be_gang_other = 202
+    ev_be_gang_all = 203
     ev_bu_hua = 213
     ev_kai_jin = 214
     ev_mo_pai = 215
@@ -50,7 +52,6 @@ class EMjEvent(const_entity.Const):
     ev_be_fen_bing_1 = 224
     ev_be_fen_bing_2 = 225
     ev_be_peng = 226
-    ev_be_gang = 227
     ev_be_gang_hu = 228
     ev_be_cha = 229
     ev_be_hu_normal = 281
@@ -71,6 +72,7 @@ class EMoneyType(const_entity.Const):
 class EMemberEvent(const_entity.Const):
     evMemberEnter = 1 # 玩家进入房间事件
     evMemberExit = 2 # 玩家推出房间事件
+    evUpdateState = 3
 
 class EGameRule(const_entity.Const):
     eGameRuleMj = 1

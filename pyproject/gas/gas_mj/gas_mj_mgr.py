@@ -58,6 +58,10 @@ class GasMjRule(rule_base.GameRuleBase):
 
         # 各种计数
         self.m_dictTotalCount = {}
+        self.m_dictTotalScore = {}
+
+    def GetScore(self, nPos):
+        return self.m_dictTotalScore.get(nPos, 0)
 
     def SetCurEventOptMember(self, nPlayerGID):
         self.m_nEventOptPlayer = nPlayerGID
@@ -102,6 +106,7 @@ class GasMjRule(rule_base.GameRuleBase):
             self.m_dictPosHistory[nPos] = []
             self.m_dictPosEventRecord[nPos] = []
             self.m_dictPosCarListEx[nPos] =  []
+            self.m_dictTotalScore[nPos] = 0
 
     def GetZhuang(self):
         return self.m_nZhuang
@@ -239,6 +244,7 @@ class GasMjRule(rule_base.GameRuleBase):
         nCard = self.GetNextCard()
         self.m_dictPosCarList[nPos].append(nCard)
         self.StartQiPaiTick(nPos)
+        self.SynOtherTouchEvent(EMjEvent.ev_mo_pai, self.m_roomObj.GetMemberIDByPos(nPos), 0, str(nCard))
         self.SynOrder()
 
         ffext.LOGINFO("FFSCENE_PYTHON",
@@ -632,8 +638,13 @@ class GasMjRule(rule_base.GameRuleBase):
             szRet += str(nData)
         return szRet
 
-    def CalToatlScore(self, nPos):
-        return 1
+    def CalToatlScore(self, nPos, bIsWinner):
+        nScore = 0
+        if bIsWinner is True:
+            nScore += 1
+        else:
+            nScore = 0
+        return nScore
 
     def GetHuType(self):
         return EMjEvent.ev_hu_normal
@@ -676,7 +687,9 @@ class GasMjRule(rule_base.GameRuleBase):
 
             self.GetMemberAllCardInfo(nPos, dataInfo.card_info, bSynHaveCard=True)
             dataInfo.event_list = self.GetEventStr()
-            dataInfo.total_score = self.CalToatlScore(nPos)
+
+            self.m_dictTotalScore[nPos] += self.CalToatlScore(nPos, nPos == nWinnerPos)
+            dataInfo.total_score = self.m_dictTotalScore[nPos]
 
         for nMember in self.m_roomObj.GetMemberList():
             ffext.send_msg_session(nMember, rpc_def.Gas2GacRetShowResultOne, rsp.SerializeToString())

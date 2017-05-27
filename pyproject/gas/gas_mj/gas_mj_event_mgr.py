@@ -145,12 +145,6 @@ class GasMjEventMgr(object):
         nPos, nCard = listData
         roomObj = mjMgr.GetRoomObj()
         nOptMember = roomObj.GetMemberIDByPos(nPos)
-        rsp = common_info_pb2.on_touch_event()
-        rsp.ev_type = EMjEvent.ev_mo_pai
-        rsp.ev_target = nOptMember
-        rsp.ev_data = str(nCard)
-        szRspSerial = rsp.SerializeToString()
-        framework.send_msg_session(nOptMember, rpc_def.Gas2GacOnTouchGameEvent, szRspSerial)
 
         nCardType = check_hu_mgr.GetCardType(nCard)
         if nCardType == ECardType.eHuaPai:
