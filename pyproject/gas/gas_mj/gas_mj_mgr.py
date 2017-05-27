@@ -375,7 +375,14 @@ class GasMjRule(rule_base.GameRuleBase):
 
     def StartQiPaiTick(self, nPos):
         self.StopQiPaiTick(nPos)
-        nTick = tick_mgr.RegisterOnceTick(int(self.GetQiPaiExpireSecond() * 1000), self.AutoQiPai, nPos)
+
+        nMember = self.m_roomObj.GetMemberIDByPos(nPos)
+        import util.util as util
+        if util.IsRobot(nMember) is True:
+            nTick = tick_mgr.RegisterOnceTick(int(5 * 1000), self.AutoQiPai, nPos)
+        else:
+            nTick = tick_mgr.RegisterOnceTick(int(self.GetQiPaiExpireSecond() * 1000), self.AutoQiPai, nPos)
+
         self.m_dictOptTick[nPos] = nTick
 
     def CancelAutoTick(self):
