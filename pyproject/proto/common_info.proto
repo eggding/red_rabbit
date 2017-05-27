@@ -146,13 +146,19 @@ message syn_game_info
 // 碰、杠、补花、查花、单双三游、胡事件 事件参数就是牌 例子 "101"
 // 被跟 事件参数没有，只有触发对象
 // 被碰、被杠、被杠胡、被查 等通知类操作的 ev_target 表示被碰的对象、ev_target_src是操作对象
-message on_touch_event
+
+message event_obj
 {
-    optional bool       proto_id_20013 = 99;
     required event_type ev_type = 1; // 事件类型
     required uint64     ev_target = 3; // 事件对象
     required bytes      ev_data = 4; // 事件参数
     optional uint64     ev_target_src = 5; // 操作对象(产生被碰、杠等事件)
+};
+
+message on_touch_event
+{
+    optional bool       proto_id_20013 = 99;
+    repeated event_obj  event_list = 1;
 };
 
 // 通知客户端触发玩家进入/离开事件, 分配协议号 20019

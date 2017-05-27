@@ -31,6 +31,9 @@ class RoomObj(object):
         self.m_gameRuleObj = game_rule_mgr.GetGameRule(EGameRule.eGameRuleMj)(self)
         self.MemberEnter(nMaster)
 
+    def GetRoomMaster(self):
+        return self.m_nMaster
+
     def IsMemberLoaded(self, nMember):
         return nMember in self.m_listClientLoaded
 

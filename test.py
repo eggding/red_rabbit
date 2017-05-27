@@ -37,5 +37,3 @@ while True:
     po.ParseFromString(szProtoBufData)
     print(po.session_id, po.request_type, po.request_data)
     time.sleep(110.1)
-
-

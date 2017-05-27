@@ -9,6 +9,16 @@ import rpc.rpc_def as rpc_def
 import util.tick_mgr as tick_mgr
 import check_hu as check_hu_mgr
 
+class MjEventObj(object):
+    def __init__(self, evType, nTarget, szData, nSrcTarget=0):
+        self.m_nEventType = evType
+        self.m_nTarget = nTarget
+        self.m_nSrcTarget = nSrcTarget
+        self.m_szEventData = szData
+
+    def Serial2Client(self, inf):
+        pass
+
 class GasMjEventMgr(object):
     def __init__(self):
         self.m_dictEventType2Opt = {EMjEvent.ev_bu_hua: self.EventBuHua,
@@ -175,6 +185,7 @@ class GasMjEventMgr(object):
                 tick_mgr.RegisterOnceTick(100, mjMgr.RequestHu, [nOptMember])
 
         if listCard.count(nCard) == 4:
+            rsp = common_info_pb2.on_touch_event()
             rsp.ev_type = EMjEvent.ev_gang_all
             rsp.ev_target = nOptMember
             rsp.ev_data = str(nCard)

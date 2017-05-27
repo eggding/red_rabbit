@@ -58,10 +58,21 @@ class GasMjRule(rule_base.GameRuleBase):
 
         # 各种计数
         self.m_dictTotalCount = {}
-        self.m_dictTotalScore = {}
+        self.m_dictEachJuScore = {}
+
+        # 每个位置的事件触发缓存
+        self.m_dictEventNoticePool = {}
+
+        self.ResetScore()
+
+    def ResetEventNoticePool(self):
+        listMember = self.m_roomObj.GetMemberList()
+        for nMember in listMember:
+            nPos = self.m_roomObj.GetMemberPos(nMember)
+            self.m_dictEventNoticePool[nPos] = []
 
     def GetScore(self, nPos):
-        return self.m_dictTotalScore.get(nPos, 0)
+        return self.m_dictEachJuScore.get(nPos, 0)
 
     def SetCurEventOptMember(self, nPlayerGID):
         self.m_nEventOptPlayer = nPlayerGID
@@ -106,7 +117,12 @@ class GasMjRule(rule_base.GameRuleBase):
             self.m_dictPosHistory[nPos] = []
             self.m_dictPosEventRecord[nPos] = []
             self.m_dictPosCarListEx[nPos] =  []
-            self.m_dictTotalScore[nPos] = 0
+
+    def ResetScore(self):
+        listRoomMember = self.m_roomObj.GetMemberList()
+        nNum = len(listRoomMember)
+        for nPos in xrange(1, nNum + 1):
+            self.m_dictEachJuScore[nPos] = 0
 
     def GetZhuang(self):
         return self.m_nZhuang
@@ -137,15 +153,9 @@ class GasMjRule(rule_base.GameRuleBase):
         listCard.extend(self.m_dictPosCarList[nPos][:])
         return listCard
 
-    def GetJuNumWithOneGameNum(self):
-        """
-        :return: 
-        """
-        return 2
-
     def GetMaxJuNum(self):
         nChangNum = self.GetConfig()["total_start_game_num"]
-        return nChangNum * self.GetJuNumWithOneGameNum()
+        return nChangNum
 
     def InitWithCfg(self, dictCfg):
         self.m_dictCfg = dictCfg
@@ -234,6 +244,12 @@ class GasMjRule(rule_base.GameRuleBase):
                 gas_mj_event_mgr.TouchEvent(EMjEvent.ev_hu_ba_xian_guo_hai, [nPos])
 
         return bNewCardIsHuaPai, nDstCard
+
+    def SerialEventList2Client(self):
+        pass
+
+    def AddEvent2NoticePoll(self):
+        pass
 
     def MoPai(self, nPos, bCheckEventAndBuHua):
         assert self.m_nNextCardIndex < self.m_nMaxCardNum
@@ -385,9 +401,9 @@ class GasMjRule(rule_base.GameRuleBase):
         nMember = self.m_roomObj.GetMemberIDByPos(nPos)
         import util.util as util
         if util.IsRobot(nMember) is True:
-            nTick = tick_mgr.RegisterOnceTick(int(5 * 1000), self.AutoQiPai, nPos)
+            nTick = tick_mgr.RegisterOnceTick(int(1 * 1000), self.AutoQiPai, nPos)
         else:
-            nTick = tick_mgr.RegisterOnceTick(int(self.GetQiPaiExpireSecond() * 1000), self.AutoQiPai, nPos)
+            nTick = tick_mgr.RegisterOnceTick(int(1 * 1000), self.AutoQiPai, nPos)
 
         self.m_dictOptTick[nPos] = nTick
 
@@ -638,20 +654,10 @@ class GasMjRule(rule_base.GameRuleBase):
             szRet += str(nData)
         return szRet
 
-    def CalToatlScore(self, nPos, bIsWinner):
-        nScore = 0
-        if bIsWinner is True:
-            nScore += 1
-        else:
-            nScore = 0
-        return nScore
-
     def GetHuType(self):
         return EMjEvent.ev_hu_normal
 
     def ShowResultOne(self, nWinnerPos):
-        if nWinnerPos is None:
-            nWinnerPos = 0
         import proto.show_result_pb2 as show_result_pb2
         rsp = show_result_pb2.show_result_one_rsp()
         rsp.room_id = self.m_roomObj.GetRoomID()
@@ -687,9 +693,7 @@ class GasMjRule(rule_base.GameRuleBase):
 
             self.GetMemberAllCardInfo(nPos, dataInfo.card_info, bSynHaveCard=True)
             dataInfo.event_list = self.GetEventStr()
-
-            self.m_dictTotalScore[nPos] += self.CalToatlScore(nPos, nPos == nWinnerPos)
-            dataInfo.total_score = self.m_dictTotalScore[nPos]
+            dataInfo.total_score = self.GetScore(nPos)
 
         for nMember in self.m_roomObj.GetMemberList():
             ffext.send_msg_session(nMember, rpc_def.Gas2GacRetShowResultOne, rsp.SerializeToString())
@@ -763,91 +767,91 @@ class GasMjRule(rule_base.GameRuleBase):
             Player.AddTotalPlayNum()
 
     def ShowResultAll(self, nWinnerPos):
-        if nWinnerPos is None:
-            nWinnerPos = 0
         import proto.show_result_pb2 as show_result_pb2
         rsp = show_result_pb2.show_result_all_rsp()
         rsp.room_id = self.m_roomObj.GetRoomID()
         rsp.cur_round = self.m_nCurJu
         rsp.total_round = self.GetMaxJuNum()
-        rsp.room_master_pos = 1 # self.m_roomObj.GetMemberPos()
+
+        nRoomMaster = self.m_roomObj.GetMemberPos()
+        rsp.room_master_pos = self.m_roomObj.GetMemberPos(nRoomMaster)
         rsp.winner_pos = nWinnerPos
 
         import entity.entity_mgr as entity_mgr
         for nMember in self.m_roomObj.GetMemberList():
             allData = rsp.list_data.add()
-            allData.wecaht_info = "333"
 
             Player = entity_mgr.GetEntity(nMember)
             assert Player is not None
             allData.player_id = nMember
             allData.pos = self.m_roomObj.GetMemberPos(nMember)
+            allData.wecaht_info = Player.GetWeChatInfo().encode("utf-8")
 
-            dictData = self.m_dictTotalCount.get(nMember)
-            if dictData is None:
-                allData.hu_num = 0
-                allData.dan_you_num = 0
-                allData.shuang_you_num = 0
-                allData.sam_you_num = 0
-                allData.kai_gang_num = 0
-                allData.total_score = 0
-            else:
-                allData.hu_num = dictData.get("hu_num", 0)
-                allData.dan_you_num = dictData.get("dan_you_num", 0)
-                allData.shuang_you_num = dictData.get("shuang_you_num", 0)
-                allData.sam_you_num = dictData.get("sam_you_num", 0)
-                allData.kai_gang_num = dictData.get("kai_gang_num", 0)
-                allData.total_score = dictData.get("total_score", 0)
+            dictData = self.m_dictTotalCount[allData.pos]
+            allData.hu_num = dictData.get("hu_num", 0)
+            allData.dan_you_num = dictData.get("dan_you_num", 0)
+            allData.shuang_you_num = dictData.get("shuang_you_num", 0)
+            allData.sam_you_num = dictData.get("sam_you_num", 0)
+            allData.kai_gang_num = dictData.get("kai_gang_num", 0)
+            allData.total_score = dictData.get("total_score", 0)
 
         for nMember in self.m_roomObj.GetMemberList():
             ffext.send_msg_session(nMember, rpc_def.Gas2GacRetShowResultAll, rsp.SerializeToString())
 
-    def InitHistCounterDefault(self, nMember):
-        if nMember in self.m_dictTotalCount:
-            return
-        self.m_dictTotalCount[nMember] = {
-            "total_score": 0,
-            "hu_num": 0,
-            "kai_gang_num": 0,
-            "dan_you_num": 0,
-            "shuang_you_num": 0,
-            "sam_you_num": 0,
-        }
+    def InitHistCounterDefault(self):
+        listMember = self.m_roomObj.GetMemberList()
+        for nMember in listMember:
+            nPos = self.m_roomObj.GetMemberPos(nMember)
+            self.m_dictTotalCount[nPos] = {
+                "total_score": 0,
+                "hu_num": 0,
+                "kai_gang_num": 0,
+                "dan_you_num": 0,
+                "shuang_you_num": 0,
+                "sam_you_num": 0,
+            }
+
+    def CalAllMemberScore(self, nWinnerPos):
+        listMember = self.m_roomObj.GetMemberList()
+        for nMember in listMember:
+            nPos = self.m_roomObj.GetMemberPos(nMember)
+            nScore = 0
+            if nWinnerPos == nPos:
+                nScore += 1
+            self.m_dictEachJuScore[nPos] += nScore
+
+        # process total score
+        for nPos, nScore in self.m_dictEachJuScore.iteritems():
+            self.m_dictTotalCount[nPos]["total_score"] += nScore
 
     def AddCounterRecordHist(self, nWinnerPos):
-        if nWinnerPos is None:
+        if nWinnerPos == 0:
             return
-        nMemberWinner = self.m_roomObj.GetMemberIDByPos(nWinnerPos)
-        self.InitHistCounterDefault(nMemberWinner)
-        self.m_dictTotalCount[nMemberWinner]["total_score"] += self.CalToatlScore(nWinnerPos)
-        self.m_dictTotalCount[nMemberWinner]["hu_num"] += 1
-
+        self.m_dictTotalCount[nWinnerPos]["hu_num"] += 1
         for nPos, listRecordData in self.m_dictPosEventRecord.iteritems():
             if 0 == len(listRecordData):
                 continue
-            nMember = self.m_roomObj.GetMemberIDByPos(nPos)
-            self.InitHistCounterDefault(nMember)
             for tupleRecordData in listRecordData:
                 nEvent, nTarget, nCard = tupleRecordData
                 if nEvent in (EMjEvent.ev_gang_with_peng, EMjEvent.ev_gang_other, EMjEvent.ev_gang_all):
-                    self.m_dictTotalCount[nMember]["kai_gang_num"] += 1
+                    self.m_dictTotalCount[nPos]["kai_gang_num"] += 1
 
     def OneJuEnd(self, nWinnerPos=None):
-        self.AddCounterRecordHist(nWinnerPos)
-        self.IncAllMemberPlayNum()
-
-        self.ShowResultOne(nWinnerPos)
-        if self.m_nCurJu % self.GetJuNumWithOneGameNum() == 0:
-            pass
-            # self.ShowResultAll(nWinnerPos)
+        if nWinnerPos is None:
+            nWinnerPos = 0
 
         self.CancelAutoTick()
-        self.InitDefault()
+        self.AddCounterRecordHist(nWinnerPos)
+        self.CalAllMemberScore(nWinnerPos)
+        self.IncAllMemberPlayNum()
+        self.ShowResultOne(nWinnerPos)
+
         if self.m_nCurJu >= self.GetMaxJuNum():
+            self.ShowResultAll(nWinnerPos)
             self.GameEnd()
-            return
-        self.m_roomObj.ChangeRoomStateToWaiting()
-        self.NoticeAllStartNewJu()
+        else:
+            self.InitDefault()
+            self.m_roomObj.ChangeRoomStateToWaiting()
 
     def SynOrder(self):
         import proto.opt_pb2 as opt_pb2
@@ -862,16 +866,6 @@ class GasMjRule(rule_base.GameRuleBase):
         listMember = self.m_roomObj.GetMemberList()
         for nMember in listMember:
             ffext.send_msg_session(nMember, rpc_def.Gac2GasSynGameOrder, rsp.SerializeToString())
-
-    def NoticeAllStartNewJu(self):
-        pass
-        # import proto.common_info_pb2 as common_info_pb2
-        # rsp = common_info_pb2.start_new_round_rsp()
-        # rsp.room_id = self.m_roomObj.GetRoomID()
-        # listMember = self.m_roomObj.GetMemberList()
-        # for nMember in listMember:
-        #     rsp.pos_owner = self.m_roomObj.GetMemberPos(nMember)
-        #     ffext.send_msg_session(nMember, rpc_def.Gas2GacRetStartNewRound, rsp.SerializeToString())
 
     def StartJu(self):
         """
@@ -936,6 +930,8 @@ class GasMjRule(rule_base.GameRuleBase):
 
 
     def GameStart(self):
+        self.InitHistCounterDefault()
+        self.ResetScore()
         self.StartJu()
 
     def GameEnd(self):
