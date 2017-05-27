@@ -55,20 +55,22 @@ def SendMsg(sock, nCmd, dictMsg):
 
 from gevent.server import StreamServer
 
+def handle(socket, address):
+    socket.send("Hello from a telnet!\n")
+    for i in range(5):
+        socket.send(str(i) + '\n')
 
-# this handler will be run for each incoming connection in a dedicated greenlet
-def echo(sock_, address):
-    print('New connection from %s:%s' % address)
-    sock_.sendall(b'Welcome to the echo server! Type quit to exit.\r\n')
-    # using a makefile because we want to use readline()
-    while True:
-        msg = sock_.recv("")
-        sock_.sendall(line)
-        print("echoed %r" % line)
+    import gevent
+    def test(a, b):
+        socket.send("test code.")
 
-# to make the server use SSL, pass certfile and keyfile arguments to the constructor
-server = StreamServer(('127.0.0.1', 10500), echo)
-# to start the server asynchronously, use its start() method;
-# we use blocking serve_forever() here because we have no other jobs
-print('Starting echo server on port 10500')
+    loop = gevent.get_hub().loop
+    t = loop.timer(0.0, 5)  # timer注册回调函数后马上调用回调函数，然后反复每隔5秒调用回调函数
+    timer.start(test, 1, 2)
+    loop.run()  # 运行反应器loop
+
+        # socket.close()
+
+server = StreamServer(('127.0.0.1', 5000), handle)
 server.serve_forever()
+

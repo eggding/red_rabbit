@@ -144,9 +144,6 @@ class RoomObj(object):
 
         if bSynAll is True:
             for nMember in self.m_dictMember.iterkeys():
-                if nMember == nPlayerGID:
-                    continue
-
                 tmp = rsp.list_members.add()
                 tmp.pos = self.GetMemberPos(nMember)
                 tmp.state = self.GetMemberState(nMember)
@@ -155,7 +152,6 @@ class RoomObj(object):
                 Player.Serial2Client(tmp)
 
         if self.IsMemberLoaded(nPlayerGID) is True:
-            print("111 ", rsp.SerializeToString())
             ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspSynGameData, rsp.SerializeToString())
 
     def Serial(self):

@@ -114,7 +114,11 @@ def ff_session_verify(session_key, online_time, ip, gate_name, cb_id):
     '''
     ret= [session_key]
     if g_session_verify_callback != None:
-       ret = g_session_verify_callback(session_key, online_time, ip, gate_name, cb_id)
+        try:
+            ret = g_session_verify_callback(session_key, online_time, ip, gate_name, cb_id)
+        except:
+            save_dump_mgr.DumpTraceBack()
+            ret = [0]
     return ret
 
 def ff_session_enter(session_id, from_scene, extra_data):
@@ -124,7 +128,10 @@ def ff_session_enter(session_id, from_scene, extra_data):
     extra_data 从from_scene附带过来的数据
     '''
     if g_session_enter_callback != None:
-       return g_session_enter_callback(session_id, from_scene, extra_data)
+        try:
+            return g_session_enter_callback(session_id, from_scene, extra_data)
+        except:
+            save_dump_mgr.DumpTraceBack()
 
 def ff_session_offline(session_id, online_time):
     '''
@@ -132,7 +139,10 @@ def ff_session_offline(session_id, online_time):
     online_time 为上线时间
     '''
     if g_session_offline_callback != None:
-       return g_session_offline_callback(session_id, online_time)
+        try:
+            return g_session_offline_callback(session_id, online_time)
+        except:
+            save_dump_mgr.DumpTraceBack()
 
 def ff_session_logic(session_id, cmd, body):
     '''

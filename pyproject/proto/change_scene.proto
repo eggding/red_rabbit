@@ -3,14 +3,15 @@ syntax = "proto2";
 // proto 10002 转场景
 message change_scene_req
 {
-    optional bool proto_id_10002 = 99;
-    required bytes scene_name = 1; //场景ID
+    optional bool   proto_id_10002 = 99;
+    required string scene_name = 1; //场景ID
 };
+
 
 // proto 20002
 message change_scene_rsp
 {
-    optional bool proto_id_20002 = 99;
-    required uint32 ret = 1;
-    required bytes  scene_name = 2; //场景ID
+    optional bool       proto_id_20002 = 99;
+    required uint32     ret = 1;
+    optional string     scene_name = 2; //场景ID
 };

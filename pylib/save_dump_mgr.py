@@ -131,4 +131,6 @@ def DumpTraceBack():
 
     szRet = szTrace + szVar
     # print(szRet)
+    import redis_logger as redis_logger
+    redis_logger.GetLogMgr().LogError(szRet)
     ffext.LOGERROR("FFSCENE_PYTHON", "{0}".format(szRet))

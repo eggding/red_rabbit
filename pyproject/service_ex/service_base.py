@@ -25,5 +25,5 @@ def ServiceExRsp(dictSerial):
     print("test service on ", ff.service_name)
     print(dictSerial)
 
-Connect2ExService()
-ServiceCheckTick()
+# Connect2ExService()
+# ServiceCheckTick()

@@ -91,7 +91,7 @@ def real_session_verify(szAuthKey, online_time, ip, gate_name, cb_id):
     :return:
     """
 
-    if _loginMgr.size() > 2000:
+    if _loginMgr.size() > 3000:
         ffext.on_verify_auth_callback(0, "", cb_id)
         return []
 
