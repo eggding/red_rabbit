@@ -60,12 +60,12 @@ class GasMjEventMgr(object):
         framework.LOGINFO("FFSCENE_PYTHON", "GasMj.BaXianGuoHai {0} {1}".format(nPos, mjMgr.DumpPos(nPos)))
 
     def TouchEventQiPai(self, mjMgr, listData):
-        nPos, nCard = listData
+        nPos, nCard, nCardPos = listData
         roomObj = mjMgr.GetRoomObj()
         listMember = roomObj.GetMemberList()
         nOptMember = roomObj.GetMemberIDByPos(nPos)
 
-        evObj = MjEventObj(EMjEvent.ev_be_qi_pai, nOptMember, str(nCard))
+        evObj = MjEventObj(EMjEvent.ev_be_qi_pai, nOptMember, "{0},{1}".format(nCard, nCardPos + 1))
         for nMember in listMember:
             nMemberPos = roomObj.GetMemberPos(nMember)
             mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
@@ -92,7 +92,7 @@ class GasMjEventMgr(object):
                 mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
                 mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
-                    tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
+                    tick_mgr.RegisterOnceTick(1000, mjMgr.RequestGang, [nMember, nOptMember, nCard])
 
                 framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Gang {0}, {1} ".format(json.dumps(listCard), nCard))
                 bNextTurn = False
@@ -104,7 +104,7 @@ class GasMjEventMgr(object):
                 mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
                 mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
-                    tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nMember, nOptMember, nCard])
+                    tick_mgr.RegisterOnceTick(1000, mjMgr.RequestGang, [nMember, nOptMember, nCard])
 
                 framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Gang {0}, {1} ".format(json.dumps(listCard), nCard))
                 bNextTurn = False
@@ -116,7 +116,7 @@ class GasMjEventMgr(object):
                 mjMgr.AddEventNotic2Poll(nMemberPos, evObj)
                 mjMgr.SetCurEventOptMember(nMember)
                 if mjMgr.IsTuoGuan(nMember):
-                    tick_mgr.RegisterOnceTick(100, mjMgr.RequestPeng, [nMember, nOptMember, nCard])
+                    tick_mgr.RegisterOnceTick(1000, mjMgr.RequestPeng, [nMember, nOptMember, nCard])
 
                 framework.LOGINFO("FFSCENE_PYTHON", "GasMj.Peng {0}, {1} ".format(json.dumps(listCard), nCard))
                 bNextTurn = False
@@ -149,7 +149,7 @@ class GasMjEventMgr(object):
             mjMgr.AddEventNotic2Poll(nPos, evObj)
             mjMgr.SetCurEventOptMember(nOptMember)
             if mjMgr.IsTuoGuan(nOptMember) is True:
-                tick_mgr.RegisterOnceTick(100, mjMgr.RequestHu, [nOptMember])
+                tick_mgr.RegisterOnceTick(1000, mjMgr.RequestHu, [nOptMember])
 
             framework.LOGINFO("FFSCENE_PYTHON",
                               "GasMj.CanHu {0}, {1} ".format(json.dumps(listJinPai), json.dumps(mjMgr.DumpPos(nPos))))
@@ -159,7 +159,7 @@ class GasMjEventMgr(object):
             mjMgr.AddEventNotic2Poll(nPos, evObj)
             mjMgr.SetCurEventOptMember(nOptMember)
             if mjMgr.IsTuoGuan(nOptMember):
-                tick_mgr.RegisterOnceTick(100, mjMgr.RequestGang, [nOptMember, nOptMember, nCard])
+                tick_mgr.RegisterOnceTick(1000, mjMgr.RequestGang, [nOptMember, nOptMember, nCard])
 
             framework.LOGINFO("FFSCENE_PYTHON", "GasMj.GangAll {0}, {1} ".format(json.dumps(listCard), nCard))
 

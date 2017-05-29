@@ -109,7 +109,7 @@ class GasMjRule(rule_base.GameRuleBase):
 
     def IsTuoGuan(self, nMember):
         import util.util as util
-        if util.IsRobot(nMember):
+        if util.IsRobot(nMember) is True:
             return True
 
         import entity.entity_mgr as entity_mgr
@@ -286,9 +286,9 @@ class GasMjRule(rule_base.GameRuleBase):
             gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_mo_pai, [nPos, nCard])
             while True:
                 bHaveHuaPai, nCard = self.CheckBuHua(nPos, nCard)
-                self.SynOrder()
                 if bHaveHuaPai is False:
                     break
+                self.SynOrder()
 
         self.SerialEventList2Client()
 
@@ -363,23 +363,19 @@ class GasMjRule(rule_base.GameRuleBase):
 
     def AutoQiPai(self, nPos):
         self.StopQiPaiTick(nPos)
-        tingArr = check_hu.getTingNumArr(self.m_dictPosCarList[nPos], self.m_listJinPai)
-        if len(tingArr) != 0:
-            nIdx = random.randint(0, len(tingArr) - 1)
-            nCardID = tingArr[nIdx]
-        else:
-            nCardIndex = random.randint(0, len(self.m_dictPosCarList[nPos]) - 1)
-            nCardID = self.m_dictPosCarList[nPos][nCardIndex]
+        nCardPos = random.randint(0, len(self.m_dictPosCarList[nPos]) - 1)
+        nCardID = self.m_dictPosCarList[nPos][nCardPos]
 
-        self.m_dictPosCarList[nPos].remove(nCardID)
+        self.m_dictPosCarList[nPos].pop(nCardPos)
         self.m_dictPosHistory[nPos].append((self.m_nNextCardIndex - 1, nCardID))
-        ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.AutoQiPai {0}, {1}, {2}. {3} {4}".format(nPos, self.m_roomObj.GetMemberIDByPos(nPos), check_hu.GetCardNameChinese(nCardID), json.dumps(tingArr), len(self.m_dictPosCarList[nPos])))
-        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_be_qi_pai, [nPos, nCardID])
+        ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.AutoQiPai {0}, {1}, {2}. {3} {4}".format(nPos, self.m_roomObj.GetMemberIDByPos(nPos), check_hu.GetCardNameChinese(nCardID), json.dumps([]), len(self.m_dictPosCarList[nPos])))
+        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_be_qi_pai, [nPos, nCardID, -1])
+        self.SerialEventList2Client()
+
         if bCanNextTurn is True:
             self.NextTurn()
         else:
             self.StartEventTick()
-            self.SerialEventList2Client()
 
     def StopEventTick(self):
         if self.m_nEventTick is None:
@@ -390,27 +386,32 @@ class GasMjRule(rule_base.GameRuleBase):
     def StartEventTick(self):
         self.StopEventTick()
         if util.IsRobot(self.m_nEventOptPlayer) is True:
-            self.m_nEventTick = tick_mgr.RegisterOnceTick(3 * 1000, self.NextTurn)
+            self.m_nEventTick = tick_mgr.RegisterOnceTick(4 * 1000, self.NextTurn)
         elif self.IsTuoGuan(self.m_nEventOptPlayer) is True:
             self.m_nEventTick = tick_mgr.RegisterOnceTick(1 * 1000, self.NextTurn)
         else:
             self.m_nEventTick = tick_mgr.RegisterOnceTick(int(self.GetEventExpireTime() * 1000), self.NextTurn)
 
-    def OptQiPai(self, nPos, nCardID):
+    def OptQiPai(self, nPos, nCardID, nCardPos):
         listCard = self.m_dictPosCarList[nPos]
         assert nCardID in listCard
 
+        nCardPos -= 1
+        assert 0 <= nCardPos < len(listCard)
+
         self.StopQiPaiTick(nPos)
         listCard.remove(nCardID)
+        # listCard.pop(nCardPos)
         self.m_dictPosHistory[nPos].append((self.m_nNextCardIndex - 1, nCardID))
 
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.OptQiPai {0}, {1}".format(nPos, check_hu.GetCardNameChinese(nCardID)))
-        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_be_qi_pai, [nPos, nCardID])
+        bCanNextTurn = gas_mj_event_mgr.TouchEvent(self, EMjEvent.ev_be_qi_pai, [nPos, nCardID, nCardPos])
+        self.SerialEventList2Client()
+
         if bCanNextTurn is True:
             self.NextTurn()
         else:
             self.StartEventTick()
-            self.SerialEventList2Client()
 
     def StopQiPaiTick(self, nPos):
         nTick = self.m_dictOptTick.get(nPos)
@@ -423,7 +424,7 @@ class GasMjRule(rule_base.GameRuleBase):
 
         nMember = self.m_roomObj.GetMemberIDByPos(nPos)
         if util.IsRobot(nMember) is True:
-            nTick = tick_mgr.RegisterOnceTick(int(3 * 1000), self.AutoQiPai, nPos)
+            nTick = tick_mgr.RegisterOnceTick(int(4 * 1000), self.AutoQiPai, nPos)
         elif self.IsTuoGuan(nMember) is True:
             nTick = tick_mgr.RegisterOnceTick(int(1 * 1000), self.AutoQiPai, nPos)
         else:
@@ -479,8 +480,8 @@ class GasMjRule(rule_base.GameRuleBase):
         elif nOptType in (EMjEvent.ev_be_qi_pai, EMjEvent.ev_qi_pai):
             if self.GetCurOptMemberPos() != nPos:
                 return
-            nCardID = int(reqObj.opt_data_str)
-            self.OptQiPai(nPos, nCardID)
+            nCardID, nCardPos = map(int, reqObj.opt_data_str.split(","))
+            self.OptQiPai(nPos, nCardID, nCardPos)
 
         else:
             return
@@ -489,10 +490,10 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp = opt_pb2.opt_rsp()
         rsp.ret = 0
         rsp.opt_type = nOptType
-        rsp.owner_card_list = ""
 
         if nOptType not in (EMjEvent.ev_pass, EMjEvent.ev_hu_normal):
             listCard = self.m_dictPosCarList[nPos]
+            print("ret listCard ", len(listCard), listCard)
             for nCard in listCard:
                 rsp.owner_card_list.append(nCard)
 
@@ -584,6 +585,8 @@ class GasMjRule(rule_base.GameRuleBase):
         else:
             self.m_dictPosCarListEx[nPosOwner].append(nCardID)
 
+        self.RemoveLastHistCardData(nPosTarget)
+
         nCard = self.GetNextCard()
         self.m_dictPosCarList[nPosOwner].append(nCard)
         while True:
@@ -626,6 +629,7 @@ class GasMjRule(rule_base.GameRuleBase):
         if check_hu.testPeng(nCardID, listCardOwner, self.m_listJinPai) is False:
             return
 
+        self.RemoveLastHistCardData(nPosTarget)
         self.RemoveCardFromList(listCardOwner, nCardID, 2)
         for _ in xrange(0, 3):
             self.m_dictPosCarListEx[nPosOwner].append(nCardID)
@@ -646,14 +650,21 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp.pos = nPos
         rsp.type = nType
 
-        if nType == common_info_pb2.card_list_type.Value("eTypeHave"):
-            rsp.card_list.append(self.SerialList2Str(self.m_dictPosCarList[nPos]))
-        elif nType == common_info_pb2.card_list_type.Value("eTypeShow"):
-            rsp.card_list.append(self.SerialTouchEventData(nPos))
-        elif nType == common_info_pb2.card_list_type.Value("eTypeHist"):
-            rsp.card_list.append(self.SerialList2Str(self.m_dictPosHistory[nPos]))
-        else:
-            assert False
+        nSynCardHave = True if nType == common_info_pb2.card_list_type.Value("eTypeHave") else False
+        self.GetMemberAllCardInfo(nPos, rsp.card_list, nSynCardHave)
+
+        # if nType == common_info_pb2.card_list_type.Value("eTypeHave"):
+        #     rsp.card_list.append(self.SerialList2Str(self.m_dictPosCarList[nPos]))
+        # elif nType == common_info_pb2.card_list_type.Value("eTypeShow"):
+        #     rsp.card_list.append(self.SerialTouchEventData(nPos))
+        # elif nType == common_info_pb2.card_list_type.Value("eTypeHist"):
+        #     listTmp = []
+        #     for tInfo in self.m_dictPosHistory[nPos]:
+        #         _, nCard = tInfo
+        #         listTmp.append(nCard)
+        #     rsp.card_list.append(self.SerialList2Str(listTmp))
+        # else:
+        #     assert False
 
         szRspSerial = rsp.SerializeToString()
         for nMember in self.m_roomObj.GetMemberList():
@@ -688,7 +699,7 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp.master_pos = self.m_roomObj.GetMemberPos(self.m_nZhuang)
         rsp.winner_pos = nWinnerPos
         rsp.golden_card_list = self.SerialList2Str(self.m_listJinPai)
-        rsp.hu_type = check_hu.GetHuType(self.m_dictPosCarList[nWinnerPos], self.m_listJinPai)
+        rsp.hu_type = EMjEvent.ev_liu_ju if nWinnerPos == 0 else check_hu.GetHuType(self.m_dictPosCarList[nWinnerPos], self.m_listJinPai)
 
         import check_hu as check_hu_mgr
         import entity.entity_mgr as entity_mgr
@@ -732,6 +743,12 @@ class GasMjRule(rule_base.GameRuleBase):
         nSize = len(listCardHist)
         assert nSize != 0
         return listCardHist[nSize - 1]
+
+    def RemoveLastHistCardData(self, nPos):
+        listCardHist = self.m_dictPosHistory[nPos]
+        nSize = len(listCardHist)
+        assert nSize != 0
+        listCardHist.pop(nSize - 1)
 
     def SerialTouchEventData(self, nPos):
         szRet = ""

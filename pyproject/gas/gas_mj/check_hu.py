@@ -444,6 +444,11 @@ def canHu( hunNum, arr ):
                 sortArr( tmpArr )
     return False
 
+def CheckSanJinDao(mjArr, hunMj):
+    if 1 != len(hunMj):
+        return False
+    return mjArr.count(hunMj[0]) == 3
+
 def GetHuType(mjArr, hunMj):
     if CheckIsQiDuiZi(mjArr, hunMj) is True:
         return EMjEvent.ev_hu_qi_dui_zi

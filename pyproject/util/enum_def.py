@@ -17,6 +17,7 @@ class ECardType(const_entity.Const):
     eHuaPai = 5
 
 class EMjEvent(const_entity.Const):
+    ev_liu_ju = 1
     ev_gang_with_peng = 101
     ev_gang_other = 102
     ev_gang_all = 103

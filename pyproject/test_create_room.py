@@ -123,7 +123,7 @@ def StartUp():
         sock.send(PacketExeCode())
         print("send exe code done.")
 
-        # time.sleep(0.3)
+        time.sleep(0.3)
         sock.send(PacketCreateRoomBuff())
         print("send careate room done")
         time.sleep(3)

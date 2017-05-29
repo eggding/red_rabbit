@@ -38,6 +38,7 @@ enum card_list_type
 
 enum event_type
 {
+    ev_liu_ju           = 1; // 流局
     ev_gang_with_peng   = 101; // 杠其他人，自己的3个牌有1个是碰回来的
     ev_gang_other       = 102; // 杠其他人，自己摸了3个
     ev_gang_all         = 103; // 自己摸回来4个一样的杠牌
@@ -103,7 +104,7 @@ message other_player_info
     required uint32 pos = 5; // 位置
     optional member_state state = 6; // 玩家状态
     required uint32 total_play_num = 7; // 对局数
-    required uint32 total_score = 8; // 累计积分
+    required int32 total_score = 8; // 累计积分
 };
 
 // 房间玩法配置
@@ -211,7 +212,7 @@ message syn_card_list_by_type
     optional bool           proto_id_20065 = 99;
     required uint32         pos = 1;
     required card_list_type type = 2;
-    repeated bytes          card_list = 3;
+    required game_card_list card_list = 3;
 };
 
 
