@@ -212,7 +212,7 @@ message syn_card_list_by_type
     optional bool           proto_id_20065 = 99;
     required uint32         pos = 1;
     required card_list_type type = 2;
-    required game_card_list card_list = 3;
+    repeated game_card_list card_list = 3;
 };
 
 

@@ -444,12 +444,34 @@ def canHu( hunNum, arr ):
                 sortArr( tmpArr )
     return False
 
-def CheckSanJinDao(mjArr, hunMj):
+def Check3JinDao(mjArr, hunMj):
     if 1 != len(hunMj):
         return False
     return mjArr.count(hunMj[0]) == 3
 
+def Check4JinDao(mjArr, hunMj):
+    return mjArr.count(hunMj[0]) == 4
+
+def Check5JinDao(mjArr, hunMj):
+    return mjArr.count(hunMj[0]) == 5
+
+def Check6JinDao(mjArr, hunMj):
+    return mjArr.count(hunMj[0]) == 6
+
 def GetHuType(mjArr, hunMj):
+
+    if Check3JinDao(mjArr, hunMj) is True:
+        return EMjEvent.ev_hu_san_jin_dao
+
+    if Check4JinDao(mjArr, hunMj) is True:
+        return EMjEvent.ev_hu_si_jin_dao
+
+    if Check5JinDao(mjArr, hunMj) is True:
+        return EMjEvent.ev_hu_wu_jin_dao
+
+    if Check6JinDao(mjArr, hunMj) is True:
+        return EMjEvent.ev_hu_liu_jin_dao
+
     if CheckIsQiDuiZi(mjArr, hunMj) is True:
         return EMjEvent.ev_hu_qi_dui_zi
 
@@ -460,26 +482,6 @@ def GetHuType(mjArr, hunMj):
         return EMjEvent.ev_dan_you
 
     return EMjEvent.ev_hu_normal
-
-def CheckDanYou(listMj, listHunMj):
-    reArr = seprateArr(listMj, listHunMj)
-    if 2 != len(reArr[0]):
-        return False
-    for i in xrange(1, 5):
-        if 0 == len(reArr[i]):
-            continue
-        if 3 != len(reArr[i]):
-            return False
-
-        if reArr[i][0] + 1 == reArr[i][1] and reArr[i][1] + 1 == reArr[i][2]:
-            # a, a+1, a+2
-            pass
-        elif reArr[i][0] == reArr[i][1] and reArr[i][1] == reArr[i][2]:
-            # a, a, a
-            pass
-        else:
-            return False
-    return True
 
 def CheckShiSanYao(listMj, listHunMj):
     if len(listMj) != 14:
@@ -543,6 +545,33 @@ def CheckBaXianGuoHai(listMj):
             nNum += 1
     return nNum == 8
 
+def CheckDanYou(listMj, listHunMj):
+    nTotalJinPai = 0
+    for nJinPai in listHunMj:
+        nTotalJinPai += listMj.count(nJinPai)
+    if nTotalJinPai < 2:
+        return False
+
+    listTmp = listMj[:]
+    nRemain = 2
+    while nRemain > 0:
+        for nJinPai in listHunMj:
+            if nJinPai not in listTmp:
+                continue
+            listTmp.remove(nJinPai)
+            nRemain -= 1
+            break
+
+    nRan = random.randint(0, len(listTmp) - 1)
+    nRepaceCard = listTmp[nRan]
+    listTmp.append(nRepaceCard)
+    listTmp.append(nRepaceCard)
+
+    if testHu(0, listTmp, listHunMj) is True:
+        return True
+
+    return False
+
 # 判断胡牌
 def testHu( mj, mjArr, hunMj ):
 
@@ -558,6 +587,15 @@ def testHu( mj, mjArr, hunMj ):
         return True
 
     if CheckShiSanYao(tmpArr, hunMj) is True:
+        return True
+
+    if Check3JinDao(tmpArr, hunMj) is True:
+        return True
+    if Check4JinDao(tmpArr, hunMj) is True:
+        return True
+    if Check5JinDao(tmpArr, hunMj) is True:
+        return True
+    if Check6JinDao(tmpArr, hunMj) is True:
         return True
 
     listTmpRet = seprateArrAllCombBaiBan(tmpArr, hunMj)
@@ -801,11 +839,10 @@ def getTingArr(mjArr,hunMj):
                                 getNeedHunInSub(t, 0 )
                                 if g_NeedHunCount <= curHunNum - needNum:
                                     tingArr.append(k)
-
-        if(len(tingArr) > 0) and hunMj not in tingArr:
-            tingArr.append(hunMj)
-
-    return  tingArr
+    for nJinPai in hunMj:
+        if nJinPai not in tingArr:
+            tingArr.append(nJinPai)
+    return tingArr
 
 
 

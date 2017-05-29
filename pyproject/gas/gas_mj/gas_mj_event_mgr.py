@@ -16,6 +16,10 @@ class MjEventObj(object):
         self.m_nSrcTarget = nSrcTarget
         self.m_szEventData = szData
 
+    def GetStr(self):
+        import json
+        return json.dumps((self.m_nEventType, self.m_nTarget, self.m_nSrcTarget, self.m_szEventData))
+
     def Serial2Client(self, inf):
         inf.ev_type = self.m_nEventType
         inf.ev_target = self.m_nTarget
@@ -148,6 +152,12 @@ class GasMjEventMgr(object):
             evObj = MjEventObj(EMjEvent.ev_hu_normal, nOptMember, str(nCard))
             mjMgr.AddEventNotic2Poll(nPos, evObj)
             mjMgr.SetCurEventOptMember(nOptMember)
+
+            # 单游
+            if check_hu_mgr.CheckDanYou(listCard, listJinPai) is True:
+                evObj = MjEventObj(EMjEvent.ev_dan_you, nOptMember, str(nCard))
+                mjMgr.AddEventNotic2Poll(nPos, evObj)
+
             if mjMgr.IsTuoGuan(nOptMember) is True:
                 tick_mgr.RegisterOnceTick(1000, mjMgr.RequestHu, [nOptMember])
 

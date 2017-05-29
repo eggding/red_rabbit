@@ -76,6 +76,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.m_dictEventNoticePool[nPos].append(eventObj)
 
     def SerialEventList2Client(self):
+        print("SerialEventList2Client")
         import proto.common_info_pb2 as common_info_pb2
         for nPos, listEvent in self.m_dictEventNoticePool.iteritems():
             if 0 == len(listEvent):
@@ -85,6 +86,7 @@ class GasMjRule(rule_base.GameRuleBase):
             for eventObj in listEvent:
                 evCli = rsp.event_list.add()
                 eventObj.Serial2Client(evCli)
+                print("syn ev ", self.m_roomObj.GetMemberIDByPos(nPos), eventObj.GetStr())
             ffext.send_msg_session(nMember, rpc_def.Gas2GacOnTouchGameEvent, rsp.SerializeToString())
 
         self.ResetEventNoticePool()
@@ -396,8 +398,8 @@ class GasMjRule(rule_base.GameRuleBase):
         listCard = self.m_dictPosCarList[nPos]
         assert nCardID in listCard
 
+        # use 4 client.
         nCardPos -= 1
-        assert 0 <= nCardPos < len(listCard)
 
         self.StopQiPaiTick(nPos)
         listCard.remove(nCardID)
@@ -483,6 +485,11 @@ class GasMjRule(rule_base.GameRuleBase):
             nCardID, nCardPos = map(int, reqObj.opt_data_str.split(","))
             self.OptQiPai(nPos, nCardID, nCardPos)
 
+        elif nOptType == EMjEvent.ev_dan_you:
+            if self.GetCurOptMemberPos() != nPos:
+                return
+            self.RequestDanYou(nPlayerGID)
+
         else:
             return
 
@@ -499,11 +506,18 @@ class GasMjRule(rule_base.GameRuleBase):
 
         if nOptType in (EMjEvent.ev_be_qi_pai, EMjEvent.ev_qi_pai):
             listListenCard = check_hu.getTingArr(self.m_dictPosCarList[nPos], self.GetJinPaiList())
+            print("listListenCard ", listListenCard)
             for nCard in listListenCard:
                 rsp.listen_card.append(nCard)
 
         ffext.send_msg_session(nPlayerGID, rpc_def.Gas2GacRspOpt, rsp.SerializeToString())
         self.SerialEventList2Client()
+
+    def RequestDanYou(self, nPlayerGID):
+        nPos = self.m_roomObj.GetMemberPos(nPlayerGID)
+        listCard = self.m_dictPosCarList[nPos]
+        if check_hu.CheckDanYou(listCard, self.m_listJinPai) is False:
+            return
 
     def ChangeOrder(self, nFromPos, nToPos):
         self.m_nCurOptMemberPos = nToPos
@@ -546,10 +560,9 @@ class GasMjRule(rule_base.GameRuleBase):
         self.ChangeOrder(nPosOwner, nPosOwner)
         self.StopEventTick()
         self.SynOtherTouchEvent(EMjEvent.ev_gang_all, 0, nPlayerGID, str(nCardID))
-
+        self.SerialEventList2Client()
         self.SynCardInfoByType2All(self.m_roomObj.GetMemberPos(nPlayerGID),
                                    common_info_pb2.card_list_type.Value("eTypeShow"))
-
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGangAll {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
         ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGangRetAll {0}".format(self.DumpPos(nPosOwner)))
 
@@ -598,7 +611,7 @@ class GasMjRule(rule_base.GameRuleBase):
         self.StopEventTick()
         self.SynOtherTouchEvent(EMjEvent.ev_gang_with_peng if bGangTypeWithPeng is True else EMjEvent.ev_gang_other,
                                 nTargetMember, nPlayerGID, str(nCardID))
-
+        self.SerialEventList2Client()
         if bGangTypeWithPeng is True:
             self.RecordTouchEvent(nPosOwner, [EMjEvent.ev_gang_with_peng, nTargetMember, nCardID])
             ffext.LOGINFO("FFSCENE_PYTHON", "GasMj.RequestGangPeng {0}".format(json.dumps([nPlayerGID, nTargetMember, nCardID, nPosOwner])))
@@ -612,9 +625,9 @@ class GasMjRule(rule_base.GameRuleBase):
         self.SynCardInfoByType2All(self.m_roomObj.GetMemberPos(nPlayerGID),
                                    common_info_pb2.card_list_type.Value("eTypeShow"))
 
-
     def RequestPeng(self, listData):
         nPlayerGID, nTargetMember, nCardID = listData
+        print("RequestPeng ", listData)
         nPosTarget = self.m_roomObj.GetMemberPos(nTargetMember)
         tupleTmp = self.GetLastHistCardData(nPosTarget)
         nTurnIndex, nHistCardID = tupleTmp
@@ -639,6 +652,8 @@ class GasMjRule(rule_base.GameRuleBase):
 
         self.RecordTouchEvent(nPosOwner, [EMjEvent.ev_peng, nTargetMember, nCardID])
         self.SynOtherTouchEvent(EMjEvent.ev_be_peng, nTargetMember, nPlayerGID, str(nCardID))
+        self.SerialEventList2Client()
+
         self.SynCardInfoByType2All(nPosTarget, common_info_pb2.card_list_type.Value("eTypeHist"))
         self.SynCardInfoByType2All(self.m_roomObj.GetMemberPos(nPlayerGID),
                                    common_info_pb2.card_list_type.Value("eTypeShow"))
@@ -649,9 +664,12 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp = common_info_pb2.syn_card_list_by_type()
         rsp.pos = nPos
         rsp.type = nType
+        tmp = rsp.card_list.add()
+
+        print("SynCardInfoByType2All ", self.m_roomObj.GetMemberIDByPos(nPos), nType)
 
         nSynCardHave = True if nType == common_info_pb2.card_list_type.Value("eTypeHave") else False
-        self.GetMemberAllCardInfo(nPos, rsp.card_list, nSynCardHave)
+        self.GetMemberAllCardInfo(nPos, tmp, nSynCardHave)
 
         # if nType == common_info_pb2.card_list_type.Value("eTypeHave"):
         #     rsp.card_list.append(self.SerialList2Str(self.m_dictPosCarList[nPos]))
@@ -755,6 +773,7 @@ class GasMjRule(rule_base.GameRuleBase):
         listTouchEvent = self.m_dictPosEventRecord[nPos]
         if len(listTouchEvent) == 0:
             return szRet
+        listRepeatCheck = []
         for tupleOneEvent in listTouchEvent:
             nEvent, nTarget, nCard = tupleOneEvent
             if nEvent in (EMjEvent.ev_gang_all, EMjEvent.ev_gang_other, EMjEvent.ev_gang_with_peng):
@@ -763,6 +782,9 @@ class GasMjRule(rule_base.GameRuleBase):
                 szTmp = "{0}:{1}".format(nEvent, nCard)
             else:
                 szTmp = ""
+
+            assert szTmp not in listRepeatCheck
+            listRepeatCheck.append(szTmp)
             if len(szRet) != 0:
                 szRet += "|"
             szRet += szTmp
@@ -789,9 +811,15 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp.card_num = len(listCardHave)
 
         listCardHist = self.m_dictPosHistory[nPos]
+
+        lTmp = []
         for tInfo in listCardHist:
             _, nCard = tInfo
             rsp.list_card_hist.append(nCard)
+            lTmp.append(nCard)
+
+        if len(lTmp) > 0:
+            print("ltmp ", lTmp)
 
         rsp.list_card_show = self.SerialTouchEventData(nPos)
 

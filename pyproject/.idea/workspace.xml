@@ -52,8 +52,8 @@
       <file leaf-file-name="gas_mj_mgr.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_mgr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="667" column="0" lean-forward="true" selection-start-line="667" selection-start-column="0" selection-end-line="667" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="668" column="29" lean-forward="true" selection-start-line="668" selection-start-column="0" selection-end-line="669" selection-end-column="0" />
               <folding>
                 <element signature="e#46#58#0" expanded="true" />
               </folding>
@@ -64,8 +64,8 @@
       <file leaf-file-name="check_hu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gas/gas_mj/check_hu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="444" column="16" lean-forward="true" selection-start-line="444" selection-start-column="16" selection-end-line="444" selection-end-column="16" />
+            <state relative-caret-position="25">
+              <caret line="762" column="21" lean-forward="true" selection-start-line="762" selection-start-column="21" selection-end-line="762" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -74,8 +74,8 @@
       <file leaf-file-name="rpc_def.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpc/rpc_def.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="-12">
+              <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -94,8 +94,8 @@
       <file leaf-file-name="tick_mgr.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/tick_mgr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="150">
+              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -104,8 +104,8 @@
       <file leaf-file-name="common_info.proto" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proto/common_info.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="209" column="29" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="29" />
+            <state relative-caret-position="282">
+              <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -114,18 +114,18 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+            <state relative-caret-position="125">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="enum_def.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/enum_def.py">
+      <file leaf-file-name="test_create_room.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_create_room.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="161">
+              <caret line="112" column="15" lean-forward="false" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -134,18 +134,18 @@
       <file leaf-file-name="gas_mj_event_mgr.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="182" column="30" lean-forward="false" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
+            <state relative-caret-position="179">
+              <caret line="73" column="54" lean-forward="true" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_result.proto" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proto/show_result.proto">
+      <file leaf-file-name="gas_room_obj.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gas/gas_room_mgr/gas_room_obj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+            <state relative-caret-position="299">
+              <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -162,36 +162,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GacOpt</find>
-      <find>def</find>
-      <find>StartQi</find>
-      <find>optqi</find>
-      <find>OptQiPai</find>
-      <find>QiPai</find>
-      <find>10 *</find>
+      <find>list_card_show</find>
       <find>eTypeHave</find>
-      <find>eTypeShow</find>
       <find>eTypeHist</find>
-      <find>2005</find>
-      <find>card_list_type</find>
-      <find>self.m_dictPosHistory</find>
-      <find>def StartEvent</find>
-      <find>score</find>
-      <find>StartJu</find>
-      <find>Check</find>
-      <find>hu_</find>
-      <find>XiPai</find>
-      <find>2</find>
-      <find>200</find>
-      <find>2006</find>
-      <find>SynCardInfoByType2All</find>
-      <find>Gas2GacRetSynCardListByType</find>
+      <find>self.m_dictPosEventRecord</find>
+      <find>RequestPen</find>
+      <find>RequestPeng</find>
       <find>20064</find>
+      <find>def RequestGang</find>
+      <find>2</find>
+      <find>20018</find>
+      <find>2001</find>
+      <find>20019</find>
+      <find>SerialEventList2Client</find>
+      <find>2006</find>
       <find>20065</find>
-      <find>20014</find>
-      <find>card_info</find>
+      <find>Gas2GacRetSynCardListByType</find>
+      <find>list_card_have</find>
+      <find>GetMemberAllCardInfo</find>
+      <find>SynCardInfoByType2All</find>
+      <find>event_list</find>
+      <find>RequestGang</find>
       <find>game_card_list</find>
-      <find>syn_card_list_by_type</find>
+      <find>list_card_hist</find>
+      <find>self.SerialEventList2Client()</find>
+      <find>20</find>
+      <find>200</find>
+      <find>20021</find>
+      <find>Gas2GacRspOpt</find>
+      <find>GacOpt</find>
+      <find>RequestPent</find>
     </findStrings>
     <replaceStrings>
       <replace>筒</replace>
@@ -246,12 +246,12 @@
         <option value="$PROJECT_DIR$/util/enum_def.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test_create_room.py" />
-        <option value="$PROJECT_DIR$/conf.py" />
-        <option value="$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py" />
         <option value="$PROJECT_DIR$/proto/show_result.proto" />
-        <option value="$PROJECT_DIR$/gas/gas_mj/check_hu.py" />
         <option value="$PROJECT_DIR$/proto/common_info.proto" />
+        <option value="$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py" />
+        <option value="$PROJECT_DIR$/conf.py" />
         <option value="$PROJECT_DIR$/gas/gas_mj/gas_mj_mgr.py" />
+        <option value="$PROJECT_DIR$/gas/gas_mj/check_hu.py" />
       </list>
     </option>
   </component>
@@ -999,9 +999,9 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58315337" sideWeight="0.3421875" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41170096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28199565" sideWeight="0.6578125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2613391" sideWeight="0.34479168" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21706264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25053996" sideWeight="0.65520835" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1298,14 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gas/gas_room_mgr/gas_room_obj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proto/common_info_pb2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -1354,22 +1346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_create_room.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/enum_def.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -1386,58 +1362,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gas/gas_room_mgr/gas_room_obj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/util/tick_mgr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="182" column="30" lean-forward="false" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proto/common_info.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="209" column="29" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gas/gas_mj/check_hu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="444" column="16" lean-forward="true" selection-start-line="444" selection-start-column="16" selection-end-line="444" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        <state relative-caret-position="150">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rpc/rpc_def.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="-12">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto/common_info.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_create_room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="112" column="15" lean-forward="false" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_event_mgr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="73" column="54" lean-forward="true" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gas/gas_mj/check_hu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="762" column="21" lean-forward="true" selection-start-line="762" selection-start-column="21" selection-end-line="762" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gas/gas_mj/gas_mj_mgr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="667" column="0" lean-forward="true" selection-start-line="667" selection-start-column="0" selection-end-line="667" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="668" column="29" lean-forward="true" selection-start-line="668" selection-start-column="0" selection-end-line="669" selection-end-column="0" />
           <folding>
             <element signature="e#46#58#0" expanded="true" />
           </folding>
