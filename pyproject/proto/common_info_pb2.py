@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='common_info.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\x11\x63ommon_info.proto\"\x9f\x01\n\x11other_player_info\x12\x11\n\tplayer_id\x18\x01 \x02(\x04\x12\x13\n\x0bplayer_name\x18\x02 \x02(\x0c\x12\x13\n\x0bwechat_info\x18\x03 \x02(\x0c\x12\n\n\x02ip\x18\x04 \x02(\x0c\x12\x0b\n\x03pos\x18\x05 \x02(\r\x12\x1c\n\x05state\x18\x06 \x01(\x0e\x32\r.member_state\x12\x16\n\x0etotal_play_num\x18\x07 \x02(\r\"s\n\x08game_cfg\x12\x12\n\nmember_num\x18\x01 \x02(\r\x12\r\n\x05multi\x18\x02 \x02(\r\x12\x1c\n\x14total_start_game_num\x18\x03 \x02(\r\x12\x0b\n\x03\x61vg\x18\x04 \x02(\r\x12\x19\n\x03opt\x18\x05 \x02(\x0e\x32\x0c.room_option\"w\n\x0egame_card_list\x12\x0b\n\x03pos\x18\x01 \x02(\r\x12\x10\n\x08\x63\x61rd_num\x18\x02 \x02(\r\x12\x16\n\x0elist_card_have\x18\x03 \x03(\r\x12\x16\n\x0elist_card_hist\x18\x04 \x03(\r\x12\x16\n\x0elist_card_show\x18\x05 \x02(\x0c\"\xfc\x02\n\rsyn_game_info\x12\x16\n\x0eproto_id_20014\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x16\n\x03\x63\x66g\x18\x02 \x01(\x0b\x32\t.game_cfg\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x12\n\nzhuang_pos\x18\x07 \x02(\r\x12\x16\n\x0elist_gold_card\x18\x08 \x03(\r\x12\"\n\tcard_info\x18\t \x03(\x0b\x32\x0f.game_card_list\x12(\n\x0clist_members\x18\n \x03(\x0b\x32\x12.other_player_info\x12\x0f\n\x07opt_pos\x18\x0b \x02(\r\x12\x11\n\tpos_owner\x18\x0c \x02(\r\x12\x1f\n\nroom_state\x18\r \x02(\x0e\x32\x0b.room_state\x12\x17\n\x0froom_master_pos\x18\x0e \x02(\r\"\x81\x01\n\x0eon_touch_event\x12\x16\n\x0eproto_id_20013\x18\x63 \x01(\x08\x12\x1c\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x11\n\tev_target\x18\x03 \x02(\x04\x12\x0f\n\x07\x65v_data\x18\x04 \x02(\x0c\x12\x15\n\rev_target_src\x18\x05 \x01(\x04\"}\n\x15on_touch_event_member\x12\x16\n\x0eproto_id_20019\x18\x63 \x01(\x08\x12#\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x12.event_type_member\x12\'\n\x0blist_member\x18\x02 \x03(\x0b\x32\x12.other_player_info\"H\n\tnotic_msg\x12\x16\n\x0eproto_id_20018\x18\x63 \x01(\x08\x12\x0e\n\x06msg_id\x18\x01 \x02(\r\x12\x13\n\x0bmsg_content\x18\x02 \x01(\x0c\"(\n\x0eheart_beat_req\x12\x16\n\x0eproto_id_10000\x18\x63 \x01(\x08\"F\n\x0eheart_beat_rsp\x12\x16\n\x0eproto_id_20000\x18\x63 \x01(\x08\x12\x1c\n\x14next_heart_beat_time\x18\x01 \x02(\x04\"u\n\x14syn_member_state_rsp\x12\x16\n\x0eproto_id_20064\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x0f\n\x07room_id\x18\x02 \x02(\r\x12\'\n\x0bmember_info\x18\x03 \x03(\x0b\x32\x12.other_player_info\"n\n\x15syn_card_list_by_type\x12\x16\n\x0eproto_id_20065\x18\x63 \x01(\x08\x12\x0b\n\x03pos\x18\x01 \x02(\r\x12\x1d\n\x04type\x18\x02 \x02(\x0e\x32\x0f.card_list_type\x12\x11\n\tcard_list\x18\x03 \x03(\x0c\".\n\x14\x63lient_load_done_req\x12\x16\n\x0eproto_id_10045\x18\x63 \x01(\x08\";\n\x14\x63lient_load_done_rsp\x12\x16\n\x0eproto_id_20045\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r*!\n\x0broom_option\x12\x08\n\x04half\x10\x01\x12\x08\n\x04\x66ull\x10\x02*<\n\x11\x65vent_type_member\x12\x13\n\x0f\x65v_member_enter\x10\x01\x12\x12\n\x0e\x65v_member_exit\x10\x02*Z\n\x0cmember_state\x12\x0e\n\ne_un_ready\x10\x01\x12\x0b\n\x07\x65_ready\x10\x02\x12\r\n\te_offline\x10\x03\x12\r\n\te_playing\x10\x04\x12\x0f\n\x0b\x65_exit_room\x10\x05*+\n\nroom_state\x12\r\n\te_waiting\x10\x65\x12\x0e\n\te_running\x10\xca\x01*=\n\x0e\x63\x61rd_list_type\x12\r\n\teTypeHave\x10\x01\x12\r\n\teTypeShow\x10\x02\x12\r\n\teTypeHist\x10\x03*\x85\x08\n\nevent_type\x12\x15\n\x11\x65v_gang_with_peng\x10\x65\x12\x11\n\rev_gang_other\x10\x66\x12\x0f\n\x0b\x65v_gang_all\x10g\x12\x0b\n\x07\x65v_peng\x10o\x12\n\n\x06\x65v_chi\x10p\x12\r\n\tev_qi_pai\x10t\x12\x0b\n\x07\x65v_pass\x10u\x12\x0e\n\nev_cha_pai\x10v\x12\x0e\n\nev_dan_you\x10y\x12\x11\n\rev_shuang_you\x10z\x12\x0e\n\nev_san_you\x10{\x12\x11\n\x0c\x65v_hu_normal\x10\xb5\x01\x12\x12\n\rev_hu_cha_hua\x10\xb6\x01\x12\x15\n\x10\x65v_hu_qiang_gang\x10\xb7\x01\x12\x14\n\x0f\x65v_hu_qiang_jin\x10\xb8\x01\x12\x16\n\x11\x65v_hu_san_jin_dao\x10\xb9\x01\x12\x15\n\x10\x65v_hu_si_jin_dao\x10\xba\x01\x12\x15\n\x10\x65v_hu_wu_jin_dao\x10\xbb\x01\x12\x16\n\x11\x65v_hu_liu_jin_dao\x10\xbc\x01\x12\x1a\n\x15\x65v_hu_ba_xian_guo_hai\x10\xbd\x01\x12\x16\n\x11\x65v_hu_shi_san_yao\x10\xbe\x01\x12\x14\n\x0f\x65v_hu_qi_dui_zi\x10\xbf\x01\x12\x19\n\x14\x65v_be_gang_with_peng\x10\xc9\x01\x12\x15\n\x10\x65v_be_gang_other\x10\xca\x01\x12\x13\n\x0e\x65v_be_gang_all\x10\xcb\x01\x12\x0e\n\tev_bu_hua\x10\xd5\x01\x12\x0f\n\nev_kai_jin\x10\xd6\x01\x12\x0e\n\tev_mo_pai\x10\xd7\x01\x12\x11\n\x0c\x65v_be_qi_pai\x10\xd8\x01\x12\x12\n\rev_be_dan_you\x10\xdd\x01\x12\x15\n\x10\x65v_be_shuang_you\x10\xde\x01\x12\x12\n\rev_be_san_you\x10\xdf\x01\x12\x15\n\x10\x65v_be_fen_bing_1\x10\xe0\x01\x12\x15\n\x10\x65v_be_fen_bing_2\x10\xe1\x01\x12\x0f\n\nev_be_peng\x10\xe2\x01\x12\x12\n\rev_be_gang_hu\x10\xe4\x01\x12\x0e\n\tev_be_cha\x10\xe5\x01\x12\x14\n\x0f\x65v_be_hu_normal\x10\x99\x02\x12\x15\n\x10\x65v_be_hu_cha_hua\x10\x9a\x02\x12\x18\n\x13\x65v_be_hu_qiang_gang\x10\x9b\x02\x12\x17\n\x12\x65v_be_hu_qiang_jin\x10\x9c\x02\x12\x19\n\x14\x65v_be_hu_san_jin_dao\x10\x9d\x02\x12\x18\n\x13\x65v_be_hu_si_jin_dao\x10\x9e\x02\x12\x18\n\x13\x65v_be_hu_wu_jin_dao\x10\x9f\x02\x12\x19\n\x14\x65v_be_hu_liu_jin_dao\x10\xa0\x02\x12\x1d\n\x18\x65v_be_hu_ba_xian_guo_hai\x10\xa1\x02\x12\x19\n\x14\x65v_be_hu_shi_san_yao\x10\xa2\x02\x12\x17\n\x12\x65v_be_hu_qi_dui_zi\x10\xa3\x02')
+  serialized_pb=_b('\n\x11\x63ommon_info.proto\"\xb4\x01\n\x11other_player_info\x12\x11\n\tplayer_id\x18\x01 \x02(\x04\x12\x13\n\x0bplayer_name\x18\x02 \x02(\x0c\x12\x13\n\x0bwechat_info\x18\x03 \x02(\x0c\x12\n\n\x02ip\x18\x04 \x02(\x0c\x12\x0b\n\x03pos\x18\x05 \x02(\r\x12\x1c\n\x05state\x18\x06 \x01(\x0e\x32\r.member_state\x12\x16\n\x0etotal_play_num\x18\x07 \x02(\r\x12\x13\n\x0btotal_score\x18\x08 \x02(\r\"s\n\x08game_cfg\x12\x12\n\nmember_num\x18\x01 \x02(\r\x12\r\n\x05multi\x18\x02 \x02(\r\x12\x1c\n\x14total_start_game_num\x18\x03 \x02(\r\x12\x0b\n\x03\x61vg\x18\x04 \x02(\r\x12\x19\n\x03opt\x18\x05 \x02(\x0e\x32\x0c.room_option\"w\n\x0egame_card_list\x12\x0b\n\x03pos\x18\x01 \x02(\r\x12\x10\n\x08\x63\x61rd_num\x18\x02 \x02(\r\x12\x16\n\x0elist_card_have\x18\x03 \x03(\r\x12\x16\n\x0elist_card_hist\x18\x04 \x03(\r\x12\x16\n\x0elist_card_show\x18\x05 \x02(\x0c\"\xfc\x02\n\rsyn_game_info\x12\x16\n\x0eproto_id_20014\x18\x63 \x01(\x08\x12\x0f\n\x07room_id\x18\x01 \x02(\r\x12\x16\n\x03\x63\x66g\x18\x02 \x01(\x0b\x32\t.game_cfg\x12\x14\n\x0c\x63ur_game_num\x18\x03 \x02(\r\x12\x11\n\tcur_round\x18\x04 \x02(\r\x12\x10\n\x08\x63ur_turn\x18\x05 \x02(\r\x12\x17\n\x0fremain_card_num\x18\x06 \x02(\r\x12\x12\n\nzhuang_pos\x18\x07 \x02(\r\x12\x16\n\x0elist_gold_card\x18\x08 \x03(\r\x12\"\n\tcard_info\x18\t \x03(\x0b\x32\x0f.game_card_list\x12(\n\x0clist_members\x18\n \x03(\x0b\x32\x12.other_player_info\x12\x0f\n\x07opt_pos\x18\x0b \x02(\r\x12\x11\n\tpos_owner\x18\x0c \x02(\r\x12\x1f\n\nroom_state\x18\r \x02(\x0e\x32\x0b.room_state\x12\x17\n\x0froom_master_pos\x18\x0e \x02(\r\"d\n\tevent_obj\x12\x1c\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x0b.event_type\x12\x11\n\tev_target\x18\x03 \x02(\x04\x12\x0f\n\x07\x65v_data\x18\x04 \x02(\x0c\x12\x15\n\rev_target_src\x18\x05 \x01(\x04\"H\n\x0eon_touch_event\x12\x16\n\x0eproto_id_20013\x18\x63 \x01(\x08\x12\x1e\n\nevent_list\x18\x01 \x03(\x0b\x32\n.event_obj\"}\n\x15on_touch_event_member\x12\x16\n\x0eproto_id_20019\x18\x63 \x01(\x08\x12#\n\x07\x65v_type\x18\x01 \x02(\x0e\x32\x12.event_type_member\x12\'\n\x0blist_member\x18\x02 \x03(\x0b\x32\x12.other_player_info\"H\n\tnotic_msg\x12\x16\n\x0eproto_id_20018\x18\x63 \x01(\x08\x12\x0e\n\x06msg_id\x18\x01 \x02(\r\x12\x13\n\x0bmsg_content\x18\x02 \x01(\x0c\"(\n\x0eheart_beat_req\x12\x16\n\x0eproto_id_10000\x18\x63 \x01(\x08\"F\n\x0eheart_beat_rsp\x12\x16\n\x0eproto_id_20000\x18\x63 \x01(\x08\x12\x1c\n\x14next_heart_beat_time\x18\x01 \x02(\x04\"u\n\x14syn_member_state_rsp\x12\x16\n\x0eproto_id_20064\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r\x12\x0f\n\x07room_id\x18\x02 \x02(\r\x12\'\n\x0bmember_info\x18\x03 \x03(\x0b\x32\x12.other_player_info\"n\n\x15syn_card_list_by_type\x12\x16\n\x0eproto_id_20065\x18\x63 \x01(\x08\x12\x0b\n\x03pos\x18\x01 \x02(\r\x12\x1d\n\x04type\x18\x02 \x02(\x0e\x32\x0f.card_list_type\x12\x11\n\tcard_list\x18\x03 \x03(\x0c\".\n\x14\x63lient_load_done_req\x12\x16\n\x0eproto_id_10045\x18\x63 \x01(\x08\";\n\x14\x63lient_load_done_rsp\x12\x16\n\x0eproto_id_20045\x18\x63 \x01(\x08\x12\x0b\n\x03ret\x18\x01 \x02(\r*!\n\x0broom_option\x12\x08\n\x04half\x10\x01\x12\x08\n\x04\x66ull\x10\x02*Q\n\x11\x65vent_type_member\x12\x13\n\x0f\x65v_member_enter\x10\x01\x12\x12\n\x0e\x65v_member_exit\x10\x02\x12\x13\n\x0f\x65v_update_state\x10\x03*Z\n\x0cmember_state\x12\x0e\n\ne_un_ready\x10\x01\x12\x0b\n\x07\x65_ready\x10\x02\x12\r\n\te_offline\x10\x03\x12\r\n\te_playing\x10\x04\x12\x0f\n\x0b\x65_exit_room\x10\x05*+\n\nroom_state\x12\r\n\te_waiting\x10\x65\x12\x0e\n\te_running\x10\xca\x01*=\n\x0e\x63\x61rd_list_type\x12\r\n\teTypeHave\x10\x01\x12\r\n\teTypeShow\x10\x02\x12\r\n\teTypeHist\x10\x03*\xeb\x08\n\nevent_type\x12\x15\n\x11\x65v_gang_with_peng\x10\x65\x12\x11\n\rev_gang_other\x10\x66\x12\x0f\n\x0b\x65v_gang_all\x10g\x12\x0b\n\x07\x65v_peng\x10o\x12\n\n\x06\x65v_chi\x10p\x12\r\n\tev_qi_pai\x10t\x12\x0b\n\x07\x65v_pass\x10u\x12\x0e\n\nev_cha_pai\x10v\x12\x0e\n\nev_dan_you\x10y\x12\x11\n\rev_shuang_you\x10z\x12\x0e\n\nev_san_you\x10{\x12\x15\n\x10\x65v_hu_gang_shang\x10\xb4\x01\x12\x11\n\x0c\x65v_hu_normal\x10\xb5\x01\x12\x12\n\rev_hu_cha_hua\x10\xb6\x01\x12\x15\n\x10\x65v_hu_qiang_gang\x10\xb7\x01\x12\x14\n\x0f\x65v_hu_qiang_jin\x10\xb8\x01\x12\x16\n\x11\x65v_hu_san_jin_dao\x10\xb9\x01\x12\x15\n\x10\x65v_hu_si_jin_dao\x10\xba\x01\x12\x15\n\x10\x65v_hu_wu_jin_dao\x10\xbb\x01\x12\x16\n\x11\x65v_hu_liu_jin_dao\x10\xbc\x01\x12\x1a\n\x15\x65v_hu_ba_xian_guo_hai\x10\xbd\x01\x12\x16\n\x11\x65v_hu_shi_san_yao\x10\xbe\x01\x12\x14\n\x0f\x65v_hu_qi_dui_zi\x10\xbf\x01\x12\x0f\n\nev_hu_ping\x10\xc0\x01\x12\x19\n\x14\x65v_be_gang_with_peng\x10\xc9\x01\x12\x15\n\x10\x65v_be_gang_other\x10\xca\x01\x12\x13\n\x0e\x65v_be_gang_all\x10\xcb\x01\x12\x0f\n\nev_be_peng\x10\xd3\x01\x12\x0e\n\tev_be_eat\x10\xd4\x01\x12\x0e\n\tev_bu_hua\x10\xd5\x01\x12\x0f\n\nev_kai_jin\x10\xd6\x01\x12\x0e\n\tev_mo_pai\x10\xd7\x01\x12\x11\n\x0c\x65v_be_qi_pai\x10\xd8\x01\x12\x12\n\rev_be_dan_you\x10\xdd\x01\x12\x15\n\x10\x65v_be_shuang_you\x10\xde\x01\x12\x12\n\rev_be_san_you\x10\xdf\x01\x12\x15\n\x10\x65v_be_fen_bing_1\x10\xe0\x01\x12\x15\n\x10\x65v_be_fen_bing_2\x10\xe1\x01\x12\x12\n\rev_be_gang_hu\x10\xe4\x01\x12\x0e\n\tev_be_cha\x10\xe5\x01\x12\x18\n\x13\x65v_be_hu_gang_shang\x10\x98\x02\x12\x14\n\x0f\x65v_be_hu_normal\x10\x99\x02\x12\x15\n\x10\x65v_be_hu_cha_hua\x10\x9a\x02\x12\x18\n\x13\x65v_be_hu_qiang_gang\x10\x9b\x02\x12\x17\n\x12\x65v_be_hu_qiang_jin\x10\x9c\x02\x12\x19\n\x14\x65v_be_hu_san_jin_dao\x10\x9d\x02\x12\x18\n\x13\x65v_be_hu_si_jin_dao\x10\x9e\x02\x12\x18\n\x13\x65v_be_hu_wu_jin_dao\x10\x9f\x02\x12\x19\n\x14\x65v_be_hu_liu_jin_dao\x10\xa0\x02\x12\x1d\n\x18\x65v_be_hu_ba_xian_guo_hai\x10\xa1\x02\x12\x19\n\x14\x65v_be_hu_shi_san_yao\x10\xa2\x02\x12\x17\n\x12\x65v_be_hu_qi_dui_zi\x10\xa3\x02\x12\x12\n\rev_be_hu_ping\x10\xa4\x02')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -41,8 +41,8 @@ _ROOM_OPTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1591,
-  serialized_end=1624,
+  serialized_start=1656,
+  serialized_end=1689,
 )
 _sym_db.RegisterEnumDescriptor(_ROOM_OPTION)
 
@@ -61,11 +61,15 @@ _EVENT_TYPE_MEMBER = _descriptor.EnumDescriptor(
       name='ev_member_exit', index=1, number=2,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ev_update_state', index=2, number=3,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=1626,
-  serialized_end=1686,
+  serialized_start=1691,
+  serialized_end=1772,
 )
 _sym_db.RegisterEnumDescriptor(_EVENT_TYPE_MEMBER)
 
@@ -99,8 +103,8 @@ _MEMBER_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1688,
-  serialized_end=1778,
+  serialized_start=1774,
+  serialized_end=1864,
 )
 _sym_db.RegisterEnumDescriptor(_MEMBER_STATE)
 
@@ -122,8 +126,8 @@ _ROOM_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1780,
-  serialized_end=1823,
+  serialized_start=1866,
+  serialized_end=1909,
 )
 _sym_db.RegisterEnumDescriptor(_ROOM_STATE)
 
@@ -149,8 +153,8 @@ _CARD_LIST_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1825,
-  serialized_end=1886,
+  serialized_start=1911,
+  serialized_end=1972,
 )
 _sym_db.RegisterEnumDescriptor(_CARD_LIST_TYPE)
 
@@ -206,158 +210,178 @@ _EVENT_TYPE = _descriptor.EnumDescriptor(
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_normal', index=11, number=181,
+      name='ev_hu_gang_shang', index=11, number=180,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_cha_hua', index=12, number=182,
+      name='ev_hu_normal', index=12, number=181,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_qiang_gang', index=13, number=183,
+      name='ev_hu_cha_hua', index=13, number=182,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_qiang_jin', index=14, number=184,
+      name='ev_hu_qiang_gang', index=14, number=183,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_san_jin_dao', index=15, number=185,
+      name='ev_hu_qiang_jin', index=15, number=184,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_si_jin_dao', index=16, number=186,
+      name='ev_hu_san_jin_dao', index=16, number=185,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_wu_jin_dao', index=17, number=187,
+      name='ev_hu_si_jin_dao', index=17, number=186,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_liu_jin_dao', index=18, number=188,
+      name='ev_hu_wu_jin_dao', index=18, number=187,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_ba_xian_guo_hai', index=19, number=189,
+      name='ev_hu_liu_jin_dao', index=19, number=188,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_shi_san_yao', index=20, number=190,
+      name='ev_hu_ba_xian_guo_hai', index=20, number=189,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_hu_qi_dui_zi', index=21, number=191,
+      name='ev_hu_shi_san_yao', index=21, number=190,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_gang_with_peng', index=22, number=201,
+      name='ev_hu_qi_dui_zi', index=22, number=191,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_gang_other', index=23, number=202,
+      name='ev_hu_ping', index=23, number=192,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_gang_all', index=24, number=203,
+      name='ev_be_gang_with_peng', index=24, number=201,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_bu_hua', index=25, number=213,
+      name='ev_be_gang_other', index=25, number=202,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_kai_jin', index=26, number=214,
+      name='ev_be_gang_all', index=26, number=203,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_mo_pai', index=27, number=215,
+      name='ev_be_peng', index=27, number=211,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_qi_pai', index=28, number=216,
+      name='ev_be_eat', index=28, number=212,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_dan_you', index=29, number=221,
+      name='ev_bu_hua', index=29, number=213,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_shuang_you', index=30, number=222,
+      name='ev_kai_jin', index=30, number=214,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_san_you', index=31, number=223,
+      name='ev_mo_pai', index=31, number=215,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_fen_bing_1', index=32, number=224,
+      name='ev_be_qi_pai', index=32, number=216,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_fen_bing_2', index=33, number=225,
+      name='ev_be_dan_you', index=33, number=221,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_peng', index=34, number=226,
+      name='ev_be_shuang_you', index=34, number=222,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_gang_hu', index=35, number=228,
+      name='ev_be_san_you', index=35, number=223,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_cha', index=36, number=229,
+      name='ev_be_fen_bing_1', index=36, number=224,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_normal', index=37, number=281,
+      name='ev_be_fen_bing_2', index=37, number=225,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_cha_hua', index=38, number=282,
+      name='ev_be_gang_hu', index=38, number=228,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_qiang_gang', index=39, number=283,
+      name='ev_be_cha', index=39, number=229,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_qiang_jin', index=40, number=284,
+      name='ev_be_hu_gang_shang', index=40, number=280,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_san_jin_dao', index=41, number=285,
+      name='ev_be_hu_normal', index=41, number=281,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_si_jin_dao', index=42, number=286,
+      name='ev_be_hu_cha_hua', index=42, number=282,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_wu_jin_dao', index=43, number=287,
+      name='ev_be_hu_qiang_gang', index=43, number=283,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_liu_jin_dao', index=44, number=288,
+      name='ev_be_hu_qiang_jin', index=44, number=284,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_ba_xian_guo_hai', index=45, number=289,
+      name='ev_be_hu_san_jin_dao', index=45, number=285,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_shi_san_yao', index=46, number=290,
+      name='ev_be_hu_si_jin_dao', index=46, number=286,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ev_be_hu_qi_dui_zi', index=47, number=291,
+      name='ev_be_hu_wu_jin_dao', index=47, number=287,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ev_be_hu_liu_jin_dao', index=48, number=288,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ev_be_hu_ba_xian_guo_hai', index=49, number=289,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ev_be_hu_shi_san_yao', index=50, number=290,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ev_be_hu_qi_dui_zi', index=51, number=291,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ev_be_hu_ping', index=52, number=292,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=1889,
-  serialized_end=2918,
+  serialized_start=1975,
+  serialized_end=3106,
 )
 _sym_db.RegisterEnumDescriptor(_EVENT_TYPE)
 
@@ -366,6 +390,7 @@ half = 1
 full = 2
 ev_member_enter = 1
 ev_member_exit = 2
+ev_update_state = 3
 e_un_ready = 1
 e_ready = 2
 e_offline = 3
@@ -387,6 +412,7 @@ ev_cha_pai = 118
 ev_dan_you = 121
 ev_shuang_you = 122
 ev_san_you = 123
+ev_hu_gang_shang = 180
 ev_hu_normal = 181
 ev_hu_cha_hua = 182
 ev_hu_qiang_gang = 183
@@ -398,9 +424,12 @@ ev_hu_liu_jin_dao = 188
 ev_hu_ba_xian_guo_hai = 189
 ev_hu_shi_san_yao = 190
 ev_hu_qi_dui_zi = 191
+ev_hu_ping = 192
 ev_be_gang_with_peng = 201
 ev_be_gang_other = 202
 ev_be_gang_all = 203
+ev_be_peng = 211
+ev_be_eat = 212
 ev_bu_hua = 213
 ev_kai_jin = 214
 ev_mo_pai = 215
@@ -410,9 +439,9 @@ ev_be_shuang_you = 222
 ev_be_san_you = 223
 ev_be_fen_bing_1 = 224
 ev_be_fen_bing_2 = 225
-ev_be_peng = 226
 ev_be_gang_hu = 228
 ev_be_cha = 229
+ev_be_hu_gang_shang = 280
 ev_be_hu_normal = 281
 ev_be_hu_cha_hua = 282
 ev_be_hu_qiang_gang = 283
@@ -424,6 +453,7 @@ ev_be_hu_liu_jin_dao = 288
 ev_be_hu_ba_xian_guo_hai = 289
 ev_be_hu_shi_san_yao = 290
 ev_be_hu_qi_dui_zi = 291
+ev_be_hu_ping = 292
 
 
 
@@ -483,6 +513,13 @@ _OTHER_PLAYER_INFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='total_score', full_name='other_player_info.total_score', index=7,
+      number=8, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -496,7 +533,7 @@ _OTHER_PLAYER_INFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=181,
+  serialized_end=202,
 )
 
 
@@ -554,8 +591,8 @@ _GAME_CFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=183,
-  serialized_end=298,
+  serialized_start=204,
+  serialized_end=319,
 )
 
 
@@ -613,8 +650,8 @@ _GAME_CARD_LIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=300,
-  serialized_end=419,
+  serialized_start=321,
+  serialized_end=440,
 )
 
 
@@ -742,8 +779,60 @@ _SYN_GAME_INFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=422,
-  serialized_end=802,
+  serialized_start=443,
+  serialized_end=823,
+)
+
+
+_EVENT_OBJ = _descriptor.Descriptor(
+  name='event_obj',
+  full_name='event_obj',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ev_type', full_name='event_obj.ev_type', index=0,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=101,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ev_target', full_name='event_obj.ev_target', index=1,
+      number=3, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ev_data', full_name='event_obj.ev_data', index=2,
+      number=4, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ev_target_src', full_name='event_obj.ev_target_src', index=3,
+      number=5, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=825,
+  serialized_end=925,
 )
 
 
@@ -762,30 +851,9 @@ _ON_TOUCH_EVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ev_type', full_name='on_touch_event.ev_type', index=1,
-      number=1, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=101,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ev_target', full_name='on_touch_event.ev_target', index=2,
-      number=3, type=4, cpp_type=4, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ev_data', full_name='on_touch_event.ev_data', index=3,
-      number=4, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ev_target_src', full_name='on_touch_event.ev_target_src', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
+      name='event_list', full_name='on_touch_event.event_list', index=1,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -801,8 +869,8 @@ _ON_TOUCH_EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=805,
-  serialized_end=934,
+  serialized_start=927,
+  serialized_end=999,
 )
 
 
@@ -846,8 +914,8 @@ _ON_TOUCH_EVENT_MEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=936,
-  serialized_end=1061,
+  serialized_start=1001,
+  serialized_end=1126,
 )
 
 
@@ -891,8 +959,8 @@ _NOTIC_MSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1135,
+  serialized_start=1128,
+  serialized_end=1200,
 )
 
 
@@ -922,8 +990,8 @@ _HEART_BEAT_REQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1137,
-  serialized_end=1177,
+  serialized_start=1202,
+  serialized_end=1242,
 )
 
 
@@ -960,8 +1028,8 @@ _HEART_BEAT_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1179,
-  serialized_end=1249,
+  serialized_start=1244,
+  serialized_end=1314,
 )
 
 
@@ -1012,8 +1080,8 @@ _SYN_MEMBER_STATE_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1251,
-  serialized_end=1368,
+  serialized_start=1316,
+  serialized_end=1433,
 )
 
 
@@ -1064,8 +1132,8 @@ _SYN_CARD_LIST_BY_TYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1370,
-  serialized_end=1480,
+  serialized_start=1435,
+  serialized_end=1545,
 )
 
 
@@ -1095,8 +1163,8 @@ _CLIENT_LOAD_DONE_REQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1482,
-  serialized_end=1528,
+  serialized_start=1547,
+  serialized_end=1593,
 )
 
 
@@ -1133,8 +1201,8 @@ _CLIENT_LOAD_DONE_RSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1530,
-  serialized_end=1589,
+  serialized_start=1595,
+  serialized_end=1654,
 )
 
 _OTHER_PLAYER_INFO.fields_by_name['state'].enum_type = _MEMBER_STATE
@@ -1143,7 +1211,8 @@ _SYN_GAME_INFO.fields_by_name['cfg'].message_type = _GAME_CFG
 _SYN_GAME_INFO.fields_by_name['card_info'].message_type = _GAME_CARD_LIST
 _SYN_GAME_INFO.fields_by_name['list_members'].message_type = _OTHER_PLAYER_INFO
 _SYN_GAME_INFO.fields_by_name['room_state'].enum_type = _ROOM_STATE
-_ON_TOUCH_EVENT.fields_by_name['ev_type'].enum_type = _EVENT_TYPE
+_EVENT_OBJ.fields_by_name['ev_type'].enum_type = _EVENT_TYPE
+_ON_TOUCH_EVENT.fields_by_name['event_list'].message_type = _EVENT_OBJ
 _ON_TOUCH_EVENT_MEMBER.fields_by_name['ev_type'].enum_type = _EVENT_TYPE_MEMBER
 _ON_TOUCH_EVENT_MEMBER.fields_by_name['list_member'].message_type = _OTHER_PLAYER_INFO
 _SYN_MEMBER_STATE_RSP.fields_by_name['member_info'].message_type = _OTHER_PLAYER_INFO
@@ -1152,6 +1221,7 @@ DESCRIPTOR.message_types_by_name['other_player_info'] = _OTHER_PLAYER_INFO
 DESCRIPTOR.message_types_by_name['game_cfg'] = _GAME_CFG
 DESCRIPTOR.message_types_by_name['game_card_list'] = _GAME_CARD_LIST
 DESCRIPTOR.message_types_by_name['syn_game_info'] = _SYN_GAME_INFO
+DESCRIPTOR.message_types_by_name['event_obj'] = _EVENT_OBJ
 DESCRIPTOR.message_types_by_name['on_touch_event'] = _ON_TOUCH_EVENT
 DESCRIPTOR.message_types_by_name['on_touch_event_member'] = _ON_TOUCH_EVENT_MEMBER
 DESCRIPTOR.message_types_by_name['notic_msg'] = _NOTIC_MSG
@@ -1195,6 +1265,13 @@ syn_game_info = _reflection.GeneratedProtocolMessageType('syn_game_info', (_mess
   # @@protoc_insertion_point(class_scope:syn_game_info)
   ))
 _sym_db.RegisterMessage(syn_game_info)
+
+event_obj = _reflection.GeneratedProtocolMessageType('event_obj', (_message.Message,), dict(
+  DESCRIPTOR = _EVENT_OBJ,
+  __module__ = 'common_info_pb2'
+  # @@protoc_insertion_point(class_scope:event_obj)
+  ))
+_sym_db.RegisterMessage(event_obj)
 
 on_touch_event = _reflection.GeneratedProtocolMessageType('on_touch_event', (_message.Message,), dict(
   DESCRIPTOR = _ON_TOUCH_EVENT,

@@ -49,6 +49,7 @@ enum event_type
     ev_dan_you          = 121; // 单游
     ev_shuang_you       = 122; // 双游
     ev_san_you          = 123; // 三游
+    ev_hu_gang_shang    = 180; // 扛上胡
     ev_hu_normal        = 181; // 普通胡
     ev_hu_cha_hua       = 182; // 查花胡
     ev_hu_qiang_gang    = 183; // 抢杠胡
@@ -60,10 +61,13 @@ enum event_type
     ev_hu_ba_xian_guo_hai = 189; // 八仙过海
     ev_hu_shi_san_yao   = 190; // 十三幺
     ev_hu_qi_dui_zi     = 191; // 七对子
+    ev_hu_ping          = 192; // 平胡
 
     ev_be_gang_with_peng    = 201; // 杠其他人，自己的3个牌有1个是碰回来的
     ev_be_gang_other        = 202; // 杠其他人，自己摸了3个
     ev_be_gang_all          = 203; // 自己摸回来4个一样的杠牌
+    ev_be_peng              = 211; // 被碰
+    ev_be_eat               = 212; // 被吃
     ev_bu_hua               = 213; // 补花
     ev_kai_jin              = 214; // 开金
     ev_mo_pai               = 215; // 摸牌
@@ -73,9 +77,9 @@ enum event_type
     ev_be_san_you           = 223; // 三游
     ev_be_fen_bing_1        = 224; // 1轮被跟
     ev_be_fen_bing_2        = 225; // 2轮被跟
-    ev_be_peng              = 226; // 被碰
     ev_be_gang_hu           = 228; // 被杠胡
     ev_be_cha               = 229; // 被查
+    ev_be_hu_gang_shang     = 280; // 被扛上胡
     ev_be_hu_normal         = 281; // 普通胡
     ev_be_hu_cha_hua        = 282; // 查花胡
     ev_be_hu_qiang_gang     = 283; // 抢杠胡
@@ -87,6 +91,7 @@ enum event_type
     ev_be_hu_ba_xian_guo_hai = 289; // 八仙过海
     ev_be_hu_shi_san_yao    = 290; // 十三幺
     ev_be_hu_qi_dui_zi      = 291; // 七对子
+    ev_be_hu_ping           = 292; // 平胡
 };
 
 message other_player_info

@@ -187,6 +187,8 @@ class RoomObj(object):
         for nMember, listData in self.m_dictMember.iteritems():
             if util.IsRobot(nMember) is True:
                 listData[RoomMemberProperty.eStatus] = EStatusInRoom.eReady
+            elif self.m_gameRuleObj.IsTuoGuan(nMember) is True:
+                listData[RoomMemberProperty.eStatus] = EStatusInRoom.eReady
             else:
                 listData[RoomMemberProperty.eStatus] = EStatusInRoom.eUnReady
         self.m_sm.ChangeState(room_state_waiting.RoomStateWaiting(self))
@@ -243,7 +245,6 @@ class RoomObj(object):
 
     def NoticeMemberEvent(self, ev, nModMember):
         # notice other members
-        import rpc.rpc_def as rpc_def
         import proto.common_info_pb2 as common_info_pb2
         rsp = common_info_pb2.on_touch_event_member()
         rsp.ev_type = ev

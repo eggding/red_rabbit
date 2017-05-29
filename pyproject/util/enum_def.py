@@ -39,9 +39,12 @@ class EMjEvent(const_entity.Const):
     ev_hu_ba_xian_guo_hai = 189
     ev_hu_shi_san_yao = 190
     ev_hu_qi_dui_zi = 191
+    ev_hu_ping = 192
     ev_be_gang_with_peng = 201
     ev_be_gang_other = 202
     ev_be_gang_all = 203
+    ev_be_peng = 211
+    ev_be_eat = 212
     ev_bu_hua = 213
     ev_kai_jin = 214
     ev_mo_pai = 215
@@ -51,7 +54,6 @@ class EMjEvent(const_entity.Const):
     ev_be_san_you = 223
     ev_be_fen_bing_1 = 224
     ev_be_fen_bing_2 = 225
-    ev_be_peng = 226
     ev_be_gang_hu = 228
     ev_be_cha = 229
     ev_be_hu_normal = 281
@@ -65,6 +67,7 @@ class EMjEvent(const_entity.Const):
     ev_be_hu_ba_xian_guo_hai = 289
     ev_be_hu_shi_san_yao = 290
     ev_be_hu_qi_dui_zi = 291
+    ev_be_hu_ping = 292
 
 class EMoneyType(const_entity.Const):
     eZhuanShi = 1

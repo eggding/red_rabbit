@@ -112,11 +112,12 @@ def StartUp():
     import random
     while True:
         # sock = socket.create_connection(("112.74.124.100", 10242))
-        sock = socket.create_connection(("192.168.74.130", 10242))
-        # sock = socket.create_connection(("127.0.0.1", 10242))
+        # sock = socket.create_connection(("192.168.74.130", 10242))
+        sock = socket.create_connection(("127.0.0.1", 10242))
         sock.send(PacketLoginBuff())
         print(sock.recv(93939))
         # # syn scene
+        print("recv scene")
         print(sock.recv(93939))
 
         sock.send(PacketExeCode())
@@ -124,7 +125,8 @@ def StartUp():
 
         # time.sleep(0.3)
         sock.send(PacketCreateRoomBuff())
-        time.sleep(5)
+        print("send careate room done")
+        time.sleep(3)
 
         sock.send(PacketAllDone())
 
@@ -144,6 +146,7 @@ def StartUp():
 
             if c % 10 == 0:
                 sock.send(PacketHeartBreat())
+                sock.send(PacketAllDone())
 
         time.sleep(9939)
 

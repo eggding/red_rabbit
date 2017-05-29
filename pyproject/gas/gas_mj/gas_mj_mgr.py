@@ -4,6 +4,7 @@
 import ffext
 import json
 import random
+import util.util as util
 import rpc.rpc_def as rpc_def
 from util.enum_def import EGameRule, ECardType, EMjEvent, EStatusInRoom
 import entity.rule_base as rule_base
@@ -388,7 +389,12 @@ class GasMjRule(rule_base.GameRuleBase):
 
     def StartEventTick(self):
         self.StopEventTick()
-        self.m_nEventTick = tick_mgr.RegisterOnceTick(self.GetEventExpireTime() * 1000, self.NextTurn)
+        if util.IsRobot(self.m_nEventOptPlayer) is True:
+            self.m_nEventTick = tick_mgr.RegisterOnceTick(3 * 1000, self.NextTurn)
+        elif self.IsTuoGuan(self.m_nEventOptPlayer) is True:
+            self.m_nEventTick = tick_mgr.RegisterOnceTick(1 * 1000, self.NextTurn)
+        else:
+            self.m_nEventTick = tick_mgr.RegisterOnceTick(int(self.GetEventExpireTime() * 1000), self.NextTurn)
 
     def OptQiPai(self, nPos, nCardID):
         listCard = self.m_dictPosCarList[nPos]
@@ -416,11 +422,10 @@ class GasMjRule(rule_base.GameRuleBase):
         self.StopQiPaiTick(nPos)
 
         nMember = self.m_roomObj.GetMemberIDByPos(nPos)
-        import util.util as util
         if util.IsRobot(nMember) is True:
             nTick = tick_mgr.RegisterOnceTick(int(3 * 1000), self.AutoQiPai, nPos)
         elif self.IsTuoGuan(nMember) is True:
-            nTick = tick_mgr.RegisterOnceTick(int(3 * 1000), self.AutoQiPai, nPos)
+            nTick = tick_mgr.RegisterOnceTick(int(1 * 1000), self.AutoQiPai, nPos)
         else:
             nTick = tick_mgr.RegisterOnceTick(int(self.GetQiPaiExpireSecond() * 1000), self.AutoQiPai, nPos)
 
@@ -447,6 +452,7 @@ class GasMjRule(rule_base.GameRuleBase):
     def GacOpt(self, nPlayerGID, reqObj):
         nPos = self.m_roomObj.GetMemberPos(nPlayerGID)
         nOptType = reqObj.opt_type
+        print("GacOpt ", nOptType, reqObj.opt_data_str, self.GetCurOptMemberPos(), nPos)
         if nOptType == EMjEvent.ev_peng:
             if self.GetCurEventOptMember() != nPlayerGID:
                 return
@@ -470,7 +476,7 @@ class GasMjRule(rule_base.GameRuleBase):
                 return
             self.RequestHu(nPlayerGID)
 
-        elif nOptType == EMjEvent.ev_be_qi_pai:
+        elif nOptType in (EMjEvent.ev_be_qi_pai, EMjEvent.ev_qi_pai):
             if self.GetCurOptMemberPos() != nPos:
                 return
             nCardID = int(reqObj.opt_data_str)
@@ -482,12 +488,15 @@ class GasMjRule(rule_base.GameRuleBase):
         import proto.opt_pb2 as opt_pb2
         rsp = opt_pb2.opt_rsp()
         rsp.ret = 0
+        rsp.opt_type = nOptType
+        rsp.owner_card_list = ""
+
         if nOptType not in (EMjEvent.ev_pass, EMjEvent.ev_hu_normal):
             listCard = self.m_dictPosCarList[nPos]
             for nCard in listCard:
                 rsp.owner_card_list.append(nCard)
 
-        if nOptType in (EMjEvent.ev_be_qi_pai, ):
+        if nOptType in (EMjEvent.ev_be_qi_pai, EMjEvent.ev_qi_pai):
             listListenCard = check_hu.getTingArr(self.m_dictPosCarList[nPos], self.GetJinPaiList())
             for nCard in listListenCard:
                 rsp.listen_card.append(nCard)
@@ -670,9 +679,6 @@ class GasMjRule(rule_base.GameRuleBase):
             szRet += str(nData)
         return szRet
 
-    def GetHuType(self):
-        return EMjEvent.ev_hu_normal
-
     def ShowResultOne(self, nWinnerPos):
         import proto.show_result_pb2 as show_result_pb2
         rsp = show_result_pb2.show_result_one_rsp()
@@ -682,7 +688,7 @@ class GasMjRule(rule_base.GameRuleBase):
         rsp.master_pos = self.m_roomObj.GetMemberPos(self.m_nZhuang)
         rsp.winner_pos = nWinnerPos
         rsp.golden_card_list = self.SerialList2Str(self.m_listJinPai)
-        rsp.hu_type = self.GetHuType()
+        rsp.hu_type = check_hu.GetHuType(self.m_dictPosCarList[nWinnerPos], self.m_listJinPai)
 
         import check_hu as check_hu_mgr
         import entity.entity_mgr as entity_mgr
@@ -827,18 +833,148 @@ class GasMjRule(rule_base.GameRuleBase):
                 "sam_you_num": 0,
             }
 
+    def GetMultiOfSingleSwim(self):
+        return 4
+
     def CalAllMemberScore(self, nWinnerPos):
+        """
+        胡牌（平胡/点炮胡）：1分 （基础分） 
+        自摸胡：1*2=2分
+        单游：1*4=4分（默认4倍，具体倍数可设定）
+        双游：1*单游*2=8分（默认4倍，具体倍数可设定）
+        三游：1*单游*4=16分（默认4倍，具体倍数可设定）
+        天胡 = 自摸
+        抢金 = 三金倒 = 四金倒 = 十三幺查牌胡 = 八仙过海 = 单游
+        五金倒 = 十三幺查自摸 = 双游
+        六金倒 = 三游
+        
+        分饼（被跟）：起手（第一圈）庄家打的第一张牌被3个闲家跟：
+                 跟的是序数牌，庄家给每个闲家支付 2 分，一共2*3=6分；
+                 跟的是风牌（东南西北）和字牌（中发白），庄家给3个闲家各支付 1 分共1*3=3分。
+                 第一圈被跟之后，紧跟着第二圈庄家打出的牌又被3个闲家跟，则庄家要在第一次支付的基础上翻倍支付。 	     
+                 跟的是序数牌，庄家给每个闲家支付 4 分，一共4*3=12分；
+                 跟的是风牌和字牌，庄家给每个闲家支付 2 分，一共2*3=6分；以此类推。
+        
+        流局：也要算【花杠】、【明杠】、【暗杠】、【分饼】分。
+        :param nWinnerPos: 
+        :return: 
+        """
+        nPosOfZhuang = self.m_roomObj.GetMemberPos(self.m_nZhuang)
         listMember = self.m_roomObj.GetMemberList()
         for nMember in listMember:
             nPos = self.m_roomObj.GetMemberPos(nMember)
-            nScore = 0
+            # hu
             if nWinnerPos == nPos:
-                nScore += 1
-            self.m_dictEachJuScore[nPos] += nScore
+                self.AssignScoreWithHu(nPos)
+
+            # hua
+            self.AssignScoreWithFlower(nPos)
+
+            # gang
+            listTouchEvent = self.m_dictPosEventRecord[nPos]
+            for tupleOneEv in listTouchEvent:
+                nEventType, nTarget, nCardID = tupleOneEv
+                if nEventType == EMjEvent.ev_gang_all:
+                    self.AssignScoreWithGangAll(nPosOfZhuang, nPos)
+                elif nEventType == EMjEvent.ev_gang_other:
+                    self.AssignScoreWithGangOther(nPosOfZhuang, nPos, nTarget)
+                else:
+                    pass
 
         # process total score
         for nPos, nScore in self.m_dictEachJuScore.iteritems():
             self.m_dictTotalCount[nPos]["total_score"] += nScore
+            print("test total score ", nPos, self.m_dictTotalCount[nPos]["total_score"])
+
+    def AssignScoreWithHu(self, nPosOwner):
+        """
+        胡牌（平胡/点炮胡）：1分 （基础分） 
+        自摸胡：1*2=2分
+        单游：1*4=4分（默认4倍，具体倍数可设定）
+        双游：1*单游*2=8分（默认4倍，具体倍数可设定）
+        三游：1*单游*4=16分（默认4倍，具体倍数可设定）
+        天胡 = 自摸
+        抢金 = 三金倒 = 四金倒 = 十三幺查牌胡 = 八仙过海 = 单游
+        五金倒 = 十三幺查自摸 = 双游
+        六金倒 = 三游
+        :param nPosOwner: 
+        :return: 
+        """
+        dictHuScore = {
+            EMjEvent.ev_hu_normal: 2,
+            EMjEvent.ev_dan_you: self.GetMultiOfSingleSwim(),
+            EMjEvent.ev_shuang_you: 2 * self.GetMultiOfSingleSwim(),
+            EMjEvent.ev_san_you: 3 * self.GetMultiOfSingleSwim(),
+            EMjEvent.ev_hu_qiang_jin: self.GetMultiOfSingleSwim(),
+        }
+        # mjArr, hunMj
+        nHuType = check_hu.GetHuType(self.m_dictPosCarList[nPosOwner], self.m_listJinPai)
+        self.m_dictEachJuScore[nPosOwner] += dictHuScore.get(nHuType, 0)
+
+    def AssignScoreWithFlower(self, nPosOwner):
+        """
+        1分／杠（4花=1明杠，5花=2明杠，6花=3明杠，7花=4明杠，8花=5明杠）（至少有4张花牌才能组成1个花杠）
+        :return: 
+        """
+        nTotal = 0
+        listHist = self.m_dictPosHistory[nPosOwner]
+        for tupleInfo in listHist:
+            _, nCard = tupleInfo
+            if check_hu.IsHuaPai(nCard) is True:
+                nTotal += 1
+
+        dictScoreTmp = {
+            4: 1,
+            5: 2,
+            6: 3,
+            7: 3,
+            8: 5
+        }
+        self.m_dictEachJuScore[nPosOwner] += dictScoreTmp.get(nTotal, 0)
+
+    def AssignScoreWithGangOther(self, nPosOfZhuang, nPosOwner, nTarget):
+        """
+        明杠：1分／杠。A玩家打出牌被B玩家所杠，那么A玩家需要承担三家明杠的费用。（只发生在明杠身上）例子：	
+        如果A庄家杠了B闲家，那么B闲家需要出2*3=6分；
+        如果B闲家杠了A庄家，那么A庄家需要出2*3=6分；
+        如果B闲家杠了C闲家，那么C闲家需要出1+1+2=4分；
+        :param nPosOfZhuang: 
+        :param nPosOwner: 
+        :param nTarget:
+        :return: 
+        """
+        nPosOfTarget = self.m_roomObj.GetMemberPos(nTarget)
+        if nPosOwner == nPosOfZhuang or nTarget == nPosOfZhuang:
+            nScore = 6
+        else:
+            nScore = 4
+        listTmp = [(nPosOwner, nScore), (nPosOfTarget, -nScore)]
+        for tupleRet in listTmp:
+            nPosTmp, nAddVal = tupleRet
+            self.m_dictEachJuScore[nPosTmp] += nAddVal
+
+    def AssignScoreWithGangAll(self, nPosOfZhuang, nPosOwner):
+        nBaseScore = 2 if self.IsHalf() else self.GetMultiOfSingleSwim()
+        listScoreRet = []
+        if nPosOwner == nPosOfZhuang:
+            # 庄家暗杠，三个闲家各给 4 分，共12分。
+            for nPos in xrange(1, self.m_roomObj.GetMemberNum() + 1):
+                if nPos != nPosOwner:
+                    listScoreRet.append((nPosOwner, 2 * nBaseScore))
+                    listScoreRet.append((nPos, -2 * nBaseScore))
+        else:
+            # 闲家暗杠，庄家给 4 分其他两家给 2 分。
+            for nPos in xrange(1, self.m_roomObj.GetMemberNum() + 1):
+                if nPos == nPosOfZhuang:
+                    listScoreRet.append((nPosOwner, 2 * nBaseScore))
+                    listScoreRet.append((nPos, -2 * nBaseScore))
+                elif nPos != nPosOwner:
+                    listScoreRet.append((nPosOwner, nBaseScore))
+                    listScoreRet.append((nPos, -nBaseScore))
+
+        for tupleRet in listScoreRet:
+            nPosTmp, nAddVal = tupleRet
+            self.m_dictEachJuScore[nPosTmp] += nAddVal
 
     def AddCounterRecordHist(self, nWinnerPos):
         if nWinnerPos == 0:

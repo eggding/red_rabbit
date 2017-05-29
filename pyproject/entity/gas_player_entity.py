@@ -113,8 +113,6 @@ class GasPlayerEntity(base_entity.BaseEntity):
         for i in xrange(0, len(a), 3):
             listTmp.append(a[i:i + 3])
 
-        print(listTmp)
-
         import random
         random.shuffle(listTmp)
         szName = ""
