@@ -96,21 +96,3 @@ class WsUrlThread(threading.Thread):
 
         print "exit"
 
-#
-# >a='''
-# def callback(Player):
-#     def inner(response):
-#         Player.GetGacAvatarRpc().QcPrint(response)
-#         #Player.GetGacAvatarRpc().QcPrint('1')
-#     return inner
-# theApp.GetWsUrlMgr().Get("http://g51-udataresys.nie.netease.com/Recommender/FriendshipService?request=friendship_data&gameId=g51&token=tHAf25XUgM8Amfj&orderId=1852038034&server=1005&roleId=123&friends=", callback=callback(Player) )
-#
-# '''
-#
-# Player.GetGasPlayer().OnGccGM(a)
-
-# !
-# def c(r):
-#     print r
-#
-# theApp.GetWsUrlMgr().Get("http://g51-udataresys.nie.netease.com/Recommender/FriendshipService?request=friendship_data&gameId=g51&token=tHAf25XUgM8Amfj&orderId=1852038034&server=1005&roleId=123&friends=", callback=c )
